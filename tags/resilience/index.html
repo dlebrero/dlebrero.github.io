@@ -5,8 +5,8 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Logging levels: the wrong abstraction.</title>
-	<meta content="No more DEBUG/INFO/WARN/ERROR log level." name="description" /><meta content="abstraction, api, bigdata, clojure, good_practices, java, level, log, training, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Logging levels: the wrong abstraction." property="og:title" /><meta content="No more DEBUG/INFO/WARN/ERROR log level." property="og:description" /><meta content="http://www.delebe.com/2016/04/05/how-to-choose-the-correct-logging-level/" property="og:url" /><meta content="Logging levels: the wrong abstraction." name="twitter:title" /><meta content="No more DEBUG/INFO/WARN/ERROR log level." name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="http://www.delebe.com/img/ez@2x.png" name="twitter:image" /><meta content="http://www.delebe.com/img/ez@2x.png" property="og:image" />
+	<title>Daniel Lebrero Berna - Tag resilience</title>
+	<meta content="Daniel Lebrero blog" name="description" /><meta content="api, bigdata, clojure, java, training, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Daniel Lebrero Berna - Tag resilience" property="og:title" /><meta content="Daniel Lebrero blog" property="og:description" /><meta content="http://www.delebe.com" property="og:url" /><meta content="Daniel Lebrero Berna - Tag resilience" name="twitter:title" /><meta content="Daniel Lebrero blog" name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="http://www.delebe.com/img/ez@2x.png" name="twitter:image" /><meta content="http://www.delebe.com/img/ez@2x.png" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 
@@ -34,12 +34,14 @@
 
 <body>
 
+	<div id="top"></div>
    <div id="preloader">
 	   <div id="status">
          <img src="/images/loader.gif" height="60" width="60" alt="" />
          <div class="loader">Loading...</div>
       </div>
    </div>
+
 
    <!-- Header
    =================================================== -->
@@ -63,16 +65,16 @@
          	</a>         
 
 	         <ul id="nav" class="nav">
-	            <li class="current"><a href="/">Home.</a></li>
+	            <li><a href="/">Home.</a></li>
 				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
-	            <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+	            <li id="menu-archives" class="current"><a href="/archives/">Archives.</a></li>
 	         </ul>
 
 	      </nav> <!-- /nav-wrap -->	      
 
 	   </div> <!-- /header-inner -->
 
-   </header>
+   </header> 
 
 
    <!-- Page Title
@@ -99,60 +101,22 @@
 
    	<div class="row">
 
-	   	<div id="main" class="tab-whole eight columns">
+	   	<div id="main" class="tab-whole eight columns entries">
 
-	         <article class="entry">
-
-					<header class="entry-header">
-
-						<h1 class="entry-title">Logging levels: the wrong abstraction.</h1>
-
-						<div class="entry-meta">
-							<ul>
-								<li id="entry-date">Tue, 5 Apr 2016</li>
-							</ul>
-						</div>
-
-					</header>
-
-				 <p class="lead" id="entry-summary">No more DEBUG/INFO/WARN/ERROR log level.</p>
-
-				 
-
-					<div class="entry-content"><p>TLDR; Deciding what log level to use it is the wrong question.</p><p>See that full blog post at IG’s blog <a href="http://labs.ig.com/logging-level-wrong-abstraction">IG’s blog</a>. </p></div>
-
-				 
-
-				 <p class="tags">
-	  			     	<span>Tagged in </span>:
-	  				  	<a href="/tags/good_practices/index.html">good practices </a>
-	  			   </p>
-
-	  			   <div id="pagenav" class="pagenav group">
-		  			   <span class="prev"><a href="/2016/03/17/lines-of-code/#content" rel="prev">Previous</a></span>
-		  				<span class="next"><a href="/2016/05/18/tragedy-100-code-coverage/#content" rel="next">Next</a></span>
-	  				</div>
-
-				</article> <!-- /entry -->
-
-	   	</div> <!-- /main -->
+            <article id="section">
+                <h1 id="section-title">resilience</h1>
+                <h5>
+                    <a title="" href="/2016/11/14/euroclojure-2016-slides/#content">Automating resilience testing with Clojure and Docker - EuroClojure 2016 slides</a>
+                    <small id="entry-date">Mon, 14 Nov 2016</small>
+                </h5>
+            </article>
+	      </div> <!-- /main -->
 
 	      <div class="tab-whole four columns end" id="secondary">
 
-				<aside id="sidebar">
+	         <aside id="sidebar">
 
 	             <!-- /widget_search -->
-
-	            <div class="widget widget_text">
-
-	               <h5 class="widget-title">About me</h5>
-	               <div class="textwidget">
-					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
-					   Daniel Lebrero works as a technical architect at IG on the Big Data team.
-					   With more than 15 years of Java experience and 4 of Clojure,
-					   he is now a big advocate of the functional approach.</div>
-
-			      </div> <!-- /widget_text -->
 
 	            <div class="widget widget_categories">
 
@@ -161,12 +125,9 @@
 
 	            </div> <!-- /widget_categories -->
 
-				<div class="widget">
-					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
-				</div>
-
-	             <!-- /widget_tag_cloud -->
-
+                 <div class="widget">
+                     <h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+                 </div>
 	         </aside> <!-- /sidebar -->
 
 	      </div> <!-- /secondary -->
@@ -192,7 +153,7 @@
 
    <!-- Java Script
    ================================================== -->
-	<div id="scripts" style="display:none;">
+    <div id="scripts" style="display:none;">
 	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	   <script src="/js/jquery-1.10.2.min.js"></script>
 	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
@@ -206,7 +167,6 @@
 	   <div id="debug" style="display: none;">
 	   </div>
    </div>
-
 
 </body>
 
