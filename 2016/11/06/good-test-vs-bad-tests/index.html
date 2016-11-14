@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Good tests, Bad tests</title>
+	<meta content="Unit testing is just another practice, and as such it has its benefits and its costs. How do you know that your test suite is paying off? " name="description" /><meta content="api, bigdata, clojure, good_practices, java, testing, training, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Good tests, Bad tests" property="og:title" /><meta content="Unit testing is just another practice, and as such it has its benefits and its costs. How do you know that your test suite is paying off? " property="og:description" /><meta content="http://www.delebe.com/2016/11/06/good-test-vs-bad-tests/" property="og:url" /><meta content="Good tests, Bad tests" name="twitter:title" /><meta content="Unit testing is just another practice, and as such it has its benefits and its costs. How do you know that your test suite is paying off? " name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="http://www.delebe.com/img/ez@2x.png" name="twitter:image" /><meta content="http://www.delebe.com/img/ez@2x.png" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna" href="/rss-feed" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.png" />
+
+</head>
+
+<body>
+
+   <div id="preloader">
+	   <div id="status">
+         <img src="/images/loader.gif" height="60" width="60" alt="" />
+         <div class="loader">Loading...</div>
+      </div>
+   </div>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+	            <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<h1>@DanLebrero<span>.</span></h1>
+				<p>simple maintainable software</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole eight columns">
+
+	         <article class="entry">
+
+					<header class="entry-header">
+
+						<h1 class="entry-title">Good tests, Bad tests</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Sun, 6 Nov 2016</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Unit testing is just another practice, and as such it has its benefits and its costs. How do you know that your test suite is paying off? </p>
+
+				 
+
+					<div class="entry-content"><p>Unit testing is now an accepted practice, but as with any practice it can be taken to the absurd. I have already written at <a href="http://labs.ig.com/code-coverage-100-percent-tragedy">IG’s blog</a> about it.</p><p>The truth is that writing good tests is as hard as writing good production code. It takes practice and it requires careful thought, but plenty of times I have seen how tests are treated second class citizens <sup><a name="fn1" href="#foot1">1</a></sup>, which usually means that we do not reap the whole benefits that a good test suite can deliver, up to the point that sometimes those suites become more of a burden than an asset.</p><p>Here are the list of things that make a test suite a good one:</p>
+<ol>
+  <li>Support change.</li>
+  <li>Is Robust.</li>
+  <li>Do not have bugs.</li>
+  <li>Is run.</li>
+</ol><h2>Support change</h2><p>A good test suite should be the pillar that allow us to evolve and change our systems. To support change, our test suite has to show the following attributes:</p>
+<ol>
+  <li>Confidence</li>
+  <li>Find bugs</li>
+  <li>Cheap to maintain</li>
+  <li>Document</li>
+</ol><h5>Confidence</h5><p>After making a change, does running your test is enough before committing the code? Is the suite enough deploy to production? </p><p>My experience tells me that unit tests are not enough and some kind of <a href="http://martinfowler.com/bliki/BroadStackTest.html">full stack</a>, BDD and integration test are needed to raise the level of confidence.</p><p>Note that two test that give you confidence in the same area/functionality are probably redundant.</p><p>Also, if you are really confident with your tests, but you are still shipping bugs to production, your confidence is misplaced.</p><h5>Find bugs</h5><p>If you have a test suite that never goes red, your tests are giving you no value as they are not catching any bugs, which is their main reason to be.</p><h5>Cheap to maintain</h5><p>If when you go to refactor you code, you find yourself expending any significant amount of time either fixing your test or rewriting them, then your test suite is not paying off. I have found this is specially true if your unit is the class and if you are using a lot of mock objects, as in most cases you end up with <a href="http://xunitpatterns.com/Fragile%20Test.html#Overspecified%20Software">overspecified software</a></p><h5>Document</h5><p>Tests should tell us what the system does and ideally why it does it.</p><p>A minimum set of tests should also tell us how it does it, but with the expectation that those tests will be thrown away when we make a sizable refactoring.</p><h2>No bugs</h2><p>The best way of knowing that a test is testing what is supposed to test, what it is to say that the test has no bugs, is to see the test change from red to green when you make a change in your production code.</p><p>This is why you should write the test before the production code.</p><h2>Robust</h2><p>If your test suite have a flaky test, one that randomly goes red, it will undermine the whole test suite as people will stop caring about it.</p><p>It is better to remove the flaky tests than to keep it around.</p><h2>Run</h2><p>Maybe this sounds a little bit silly, but I have seen and written a lot of tests that did not invite to be run. These include:</p>
+<ul>
+  <li>Commented out or @Ignored tests.</li>
+  <li>Very slow tests.</li>
+  <li>Tests that require some manual step like installing a DB, an application container or a message broker.</li>
+  <li>Tests that cannot be run or debugged from your IDE.</li>
+</ul>
+<hr /><p>So next time that you have to write or update a test, ask your self:</p>
+<ul>
+  <li>How much confidence is this test going to give you?</li>
+  <li>How likely it is that this test will catch a bug?</li>
+  <li>How likely it is that this test will need to be changed when refactoring?</li>
+  <li>How coupled it is to the implementation?</li>
+  <li>Is the test repeatable?</li>
+  <li>Is the test going to be run?</li>
+  <li>Is the test testing what is supposed to test? Did you saw it red before green?</li>
+</ul></div>
+
+				 <div class="footnotes">
+					 <p id="foot1" class="jumptarget">1.  Test code being equal citizen than production does not mean that we need to follow the same coding principles in both.
+</p>
+				 </div>
+
+				 <p class="tags">
+	  			     	<span>Tagged in </span>:
+	  				  	<a href="/tags/good_practices/index.html">good practices </a><a href="/tags/testing/index.html">testing </a>
+	  			   </p>
+
+	  			   <div id="pagenav" class="pagenav group">
+		  			   <span class="prev"><a href="/2016/06/19/broken-promise-of-static-typing/#content" rel="prev">Previous</a></span>
+		  				<span class="next"></span>
+	  				</div>
+
+				</article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole four columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About the author</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero works as a technical architect at IG on the Big Data team.
+					   With more than 15 years of Java experience and 4 of Clojure,
+					   he is now a big advocate of the functional approach.</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Clojure/index.html">Clojure (2)</a></li><li><a href="/tags/Java/index.html">Java (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (4)</a></li><li><a href="/tags/testing/index.html">testing (3)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
