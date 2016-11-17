@@ -211,7 +211,7 @@
 
 	/* common and shared styles */
 	.section-head p {	width: 100%; } 
-	#page-title h1 {
+	#page-title \ {
 		font: 46px/1.3 "raleway-bold", sans-serif;
 		width: 100%;
 	}
@@ -397,7 +397,7 @@
 @media only screen and (max-width:420px) {
 
 	/* page-title */
-	#page-title h1 {
+	#page-title #the-title {
 		font: 38px/1.3 "raleway-bold", sans-serif;
 	}
 
