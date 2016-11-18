@@ -1410,7 +1410,7 @@ hr {
 	margin: 0 6px;
 	display: inline-block;
 	zoom: 1;
-	*display: inline;
+	display: inline;
 }
 .hero-content .flex-control-paging li a {
 	width: 15px;
