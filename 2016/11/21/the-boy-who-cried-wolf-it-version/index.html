@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>The boy who cried wolf, IT version</title>
+	<meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" name="description" /><meta content="api, bigdata, clojure, fable, good_practices, java, training, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="The boy who cried wolf, IT version" property="og:title" /><meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" property="og:description" /><meta content="http://danlebrero.com/2016/11/21/the-boy-who-cried-wolf-it-version/" property="og:url" /><meta content="The boy who cried wolf, IT version" name="twitter:title" /><meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="http://danlebrero.com/img/ez@2x.png" name="twitter:image" /><meta content="http://danlebrero.com/img/ez@2x.png" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna" href="/rss-feed" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+   <div id="preloader">
+	   <div id="status">
+         <img src="/images/loader.gif" height="60" width="60" alt="" />
+         <div class="loader">Loading...</div>
+      </div>
+   </div>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+	            <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title">@DanLebrero<span>.</span></p>
+				<p>simple maintainable software</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole eight columns">
+
+	         <article class="entry">
+
+					<header class="entry-header">
+
+						<h1 class="entry-title">The boy who cried wolf, IT version</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Mon, 21 Nov 2016</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">How can we apply the fable "The boy who cried wolf" to our development?</p>
+
+				 
+
+					<div class="entry-content"><p>There is a child’s fable that I have always loved, <a href="https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf">The boy who cried wolf</a>.</p><p>It goes more or less like this:</p>
+<blockquote><p>There was once a young shepherd living in the mountains. One day he grow so bored that to have fun he started yelling “Wolf! Wolf! The wolf is attacking my sheep! Help!”.</p><p>At the sound of the yells, people in the nearby village grabbed their pitchforks and shovels and rushed to help the young shepherd, only to find him rolling on the floor laughing.</p><p><small>Rinse and repeat several times, depending on the attention span of your kids.</small></p><p>One day, the wolf actually showed up and the young shepherd yelled and yelled and yelled, but villagers thought: “Oh that boy! We won’t be fooled again. Lets keep to our tasks”. </p><p>And the wolf enjoyed a great feast of mutton and flesh.</p>
+</blockquote><p>Apart of teaching us that we should not lie, what does this fable have to do with development?</p><p>Lets give it a try:</p>
+<blockquote><p>There was once a unit testing suite living in a CI environment. One day the suite started to shout “I found a bug! A bug! Help!”</p><p>At the view of the red status, developers in the nearby cubicle, grabbed their laptops and coffee cups and rushed to fix bug, only to find out the build green again.</p><p><small>Rinse and repeat several times, depending on the attention span of your developers.</small></p><p>One day, an actual bug was introduced and the test suite yelled and yelled and yelled, but the developers thought “Oh those flaky tests! We won’t be fooled again. Lets deploy to production”.</p><p>And the bug enjoyed a great feast of long devs nights and manual data fix.</p>
+</blockquote><p>And another version:</p>
+<blockquote><p>There was once an log file living in a production server. One day the log file started to shout “WARN! WARN! Something is wrong in production! WARN!”</p><p>At the view of the error report, developers jumped from their beds, grabbed their laptops and coffee cups and rushed to investigate the issue, only to find out that it was a one-off innocuous issue.</p><p><small>Rinse and repeat several times, depending on the attention span of your developers.</small></p><p>One day, an actual issue happened and the log file yelled and yelled and yelled, but the developers thought “Oh that noisy log file! We won’t be fooled again. Lets stay on bed”. </p><p>And the issue grew and grew until it brought down the whole of production environment.</p>
+</blockquote><p>That was cute.</p></div>
+
+				 
+
+				 <p class="tags">
+	  			     	<span>Tagged in </span>:
+	  				  	<a href="/tags/fable/index.html">fable </a><a href="/tags/good_practices/index.html">good practices </a>
+	  			   </p>
+
+	  			   <div id="pagenav" class="pagenav group">
+		  			   <span class="prev"><a href="/2016/11/14/euroclojure-2016-slides/#content" rel="prev">Previous</a></span>
+		  				<span class="next"></span>
+	  				</div>
+
+				</article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole four columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero works as a technical architect at IG on the Big Data team.
+					   With more than 15 years of Java experience and 4 of Clojure,
+					   he is now a big advocate of the functional approach.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero">@danlebrero</a> or by <a href="mailto:dlebrero@gmail.com">email</a>.</p>
+				   </div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Clojure/index.html">Clojure (3)</a></li><li><a href="/tags/Java/index.html">Java (1)</a></li><li><a href="/tags/fable/index.html">fable (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (5)</a></li><li><a href="/tags/resilience/index.html">resilience (1)</a></li><li><a href="/tags/testing/index.html">testing (4)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
