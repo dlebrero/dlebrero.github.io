@@ -6,11 +6,11 @@
    ================================================== -->
    <meta charset="utf-8" />
 	<title>The boy who cried wolf, an IT tale</title>
-	<meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" name="description" /><meta content="api, bigdata, clojure, good_practices, java, training, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="The boy who cried wolf, an IT tale" property="og:title" /><meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" property="og:description" /><meta content="http://danlebrero.com/2016/11/21/the-boy-who-cried-wolf-an-it-tale/" property="og:url" /><meta content="The boy who cried wolf, an IT tale" name="twitter:title" /><meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="http://danlebrero.com/img/ez@2x.png" name="twitter:image" /><meta content="http://danlebrero.com/img/ez@2x.png" property="og:image" />
+	<meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" name="description" /><meta content="api, bigdata, clojure, good_practices, java, training, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="The boy who cried wolf, an IT tale" property="og:title" /><meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" property="og:description" /><meta content="http://danlebrero.com/2016/11/21/the-boy-who-cried-wolf-an-it-tale/" property="og:url" /><meta content="The boy who cried wolf, an IT tale" name="twitter:title" /><meta content="How can we apply the fable &quot;The boy who cried wolf&quot; to our development?" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/boy-who-cried-wolf.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/boy-who-cried-wolf.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 
-	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna" href="/rss-feed" />
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna" href="/feed.rss" />
 	<!-- Mobile Specific Metas
     ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -94,7 +94,7 @@
 			<div class="twelve columns">
 
 				<p id="the-title">@DanLebrero<span>.</span></p>
-				<p>simple maintainable software</p>
+				<p>software, simply</p>
 
 			</div>
 
@@ -127,15 +127,22 @@
 
 				 <p class="lead" id="entry-summary">How can we apply the fable "The boy who cried wolf" to our development?</p>
 
-				 
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/boy-who-cried-wolf.jpg" />
+						</div>
+					</div>
 
 					<div class="entry-content"><p>There is a child’s fable that I have always loved, <a href="https://en.wikipedia.org/wiki/The_Boy_Who_Cried_Wolf">The boy who cried wolf</a>.</p><p>It goes more or less like this:</p>
-<blockquote><p>There was once a young shepherd living in the mountains. One day he grow so bored that to have fun he started yelling “Wolf! Wolf! The wolf is attacking my sheep! Help!”.</p><p>At the sound of the yells, people in the nearby village grabbed their pitchforks and shovels and rushed to help the young shepherd, only to find him rolling on the floor laughing.</p><p><small>Rinse and repeat several times, depending on the attention span of your kids.</small></p><p>One day, the wolf actually showed up and the young shepherd yelled and yelled and yelled, but villagers thought: “Oh that boy! We won’t be fooled again. Lets keep to our tasks”. </p><p>And the wolf enjoyed a great feast of mutton and flesh.</p>
-</blockquote><p>Apart of teaching us that we should not lie, what does this fable have to do with development?</p><p>Lets give it a try:</p>
-<blockquote><p>There was once a unit testing suite living in a CI environment. One day the suite started to shout “I found a bug! A bug! Help!”</p><p>At the view of the red status, developers in the nearby cubicle, grabbed their laptops and coffee cups and rushed to fix bug, only to find out the build green again.</p><p><small>Rinse and repeat several times, depending on the attention span of your developers.</small></p><p>One day, an actual bug was introduced and the test suite yelled and yelled and yelled, but the developers thought “Oh those flaky tests! We won’t be fooled again. Lets deploy to production”.</p><p>And the bug enjoyed a great feast of long devs nights and manual data fix.</p>
-</blockquote><p>And another version:</p>
-<blockquote><p>There was once an log file living in a production server. One day the log file started to shout “WARN! WARN! Something is wrong in production! WARN!”</p><p>At the view of the error report, developers jumped from their beds, grabbed their laptops and coffee cups and rushed to investigate the issue, only to find out that it was a one-off innocuous issue.</p><p><small>Rinse and repeat several times, depending on the attention span of your developers.</small></p><p>One day, an actual issue happened and the log file yelled and yelled and yelled, but the developers thought “Oh that noisy log file! We won’t be fooled again. Lets stay on bed”. </p><p>And the issue grew and grew until it brought down the whole of production environment.</p>
-</blockquote><p>That was cute.</p></div>
+<blockquote><p>There was once a young shepherd living in the mountains. One day he grew so bored that to have fun he started yelling “Wolf! Wolf! The wolf is attacking my sheep! Help!”.</p><p>At the sound of the yells, people in the nearby village grabbed their pitchforks and shovels and rushed to help the young shepherd, only to find him rolling on the floor laughing.</p><p><small>Rinse and repeat several times, depending on the attention span of your kids.</small></p><p>One day, the wolf actually showed up and the young shepherd yelled and yelled and yelled, but villagers thought: “Oh that boy! We won’t be fooled again. Lets keep to our tasks”. </p><p>And the wolf enjoyed a great feast of mutton and shepherd flesh.</p>
+</blockquote><p>What does this fable have to do with software development?</p><p>Lets give it a try:</p>
+<blockquote><p>There was once a unit testing suite living in a CI environment. One day the suite started to shout “I found a bug! A bug! Help!”</p><p>At the view of the red status, developers in the nearby cubicle, grabbed their laptops and coffee cups and rushed to fix bug, only to find out the build green again.</p><p><small>Rinse and repeat several times, depending on the attention span of your developers.</small></p><p>One day, an actual bug was introduced and the test suite yelled and yelled and yelled, but the developers thought “Oh those flaky tests! We won’t be fooled again. Lets deploy to production”.</p><p>And the bug enjoyed a great feast of long and stressful developer nights.</p>
+</blockquote><p>Another one:</p>
+<blockquote><p>There was once a log file living in a production server. One day the log file started to shout “WARN! WARN! Something is wrong in production! WARN!”</p><p>At the view of the error report, developers jumped from their beds, grabbed their laptops and coffee cups and rushed to investigate the issue, only to find out that it was a one-off innocuous issue.</p><p><small>Rinse and repeat several times, depending on the attention span of your developers.</small></p><p>One day, an actual issue happened and the log file yelled and yelled and yelled, but the developers thought “Oh that noisy log file! We won’t be fooled again. Lets stay on bed”. </p><p>And the issue enjoyed a great feast of manual and costly data fixes.</p>
+</blockquote>
+<hr /><p>Flaky tests and <a href="https://labs.ig.com/logging-level-wrong-abstraction">incorrect log level</a> on a log file are just technical debt. The cost of that debt is initially paid with the time it takes to rerun the test suite, or the time that it takes to investigate the error reports, but it also includes the resulting loss of confidence that your team has in the test suite and alerts.</p><p>Following the words of the Frederick Brooks on The Mythical Man-Month:</p>
+<blockquote><p>How does a project get to be one year late?  … One day at a time.</p>
+</blockquote><p><em>How a test suite get abandoned?</em> <strong>One flaky test at a time.</strong></p><p><em>How does an error report get completely ignored?</em> <strong>One noisy line at a time.</strong></p></div>
 
 				 
 
@@ -146,7 +153,7 @@
 
 	  			   <div id="pagenav" class="pagenav group">
 		  			   <span class="prev"><a href="/2016/11/14/euroclojure-2016-slides/#content" rel="prev">Previous</a></span>
-		  				<span class="next"></span>
+		  				<span class="next"><a href="/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/#content" rel="next">Next</a></span>
 	  				</div>
 
 				</article> <!-- /entry -->
@@ -175,12 +182,13 @@
 	            <div class="widget widget_categories">
 
 	               <h5 class="widget-title">Categories</h5>
-	               <ul id="categories" class="link-list group"><li><a href="/tags/Clojure/index.html">Clojure (3)</a></li><li><a href="/tags/Java/index.html">Java (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (5)</a></li><li><a href="/tags/resilience/index.html">resilience (1)</a></li><li><a href="/tags/testing/index.html">testing (4)</a></li></ul>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Clojure/index.html">Clojure (4)</a></li><li><a href="/tags/Java/index.html">Java (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (5)</a></li><li><a href="/tags/resilience/index.html">resilience (2)</a></li><li><a href="/tags/testing/index.html">testing (5)</a></li></ul>
 
 	            </div> <!-- /widget_categories -->
 
 				<div class="widget">
 					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
 				</div>
 
 	             <!-- /widget_tag_cloud -->

@@ -10,7 +10,7 @@
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 
-	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna" href="/rss-feed" />
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna" href="/feed.rss" />
 	<!-- Mobile Specific Metas
     ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -94,7 +94,7 @@
 			<div class="twelve columns">
 
 				<p id="the-title">@DanLebrero<span>.</span></p>
-				<p>simple maintainable software</p>
+				<p>software, simply</p>
 
 			</div>
 
@@ -129,40 +129,27 @@
 
 				 
 
-					<div class="entry-content"><p>Unit testing is now an accepted practice, but as with any practice it can be taken to the absurd. I have already written at <a href="http://labs.ig.com/code-coverage-100-percent-tragedy">IG’s blog</a> about it.</p><p>The truth is that writing good tests is as hard as writing good production code. It takes practice and it requires careful thought, but plenty of times I have seen how tests are treated second class citizens <sup><a name="fn1" href="#foot1">1</a></sup>, which usually means that we do not reap the whole benefits that a good test suite can deliver, up to the point that sometimes those suites become more of a burden than an asset.</p><p>Here are the list of things that make a test suite a good one:</p>
+					<div class="entry-content"><p>Unit testing, as with any practice, can be taken to the absurd. I have already written at <a href="http://labs.ig.com/code-coverage-100-percent-tragedy">IG’s blog</a> about it.</p><p>The truth is that writing good tests is as hard as writing good production code. It takes practice and it requires careful thought, but so many times I have seen how tests are treated as second class citizens, which usually means that we do not reap the whole benefits of a good test suite, ending up with suites that are more of a burden than an asset.</p><p>A good test suite:</p>
 <ol>
-  <li>Support change.</li>
-  <li>Is Robust.</li>
-  <li>Do not have bugs.</li>
+  <li>Gives you confidence.</li>
+  <li>Finds bugs.</li>
+  <li>Is cheap to maintain.</li>
+  <li>Document the system.</li>
+  <li>Robustness.</li>
+  <li>Does not have bugs.</li>
   <li>Is run.</li>
-</ol><h2>Support change</h2><p>A good test suite should be the pillar that allow us to evolve and change our systems. To support change, our test suite has to show the following attributes:</p>
-<ol>
-  <li>Confidence</li>
-  <li>Find bugs</li>
-  <li>Cheap to maintain</li>
-  <li>Document</li>
-</ol><h5>Confidence</h5><p>After making a change, is running your test enough to commit the code? Is the suite enough deploy to production? </p><p>My experience tells me that unit tests are not enough and some kind of <a href="http://martinfowler.com/bliki/BroadStackTest.html">full stack</a>, BDD and integration test are needed to raise the level of confidence.</p><p>Note that two test that give you confidence in the same area/functionality are probably redundant.</p><p>Also, if you are really confident with your tests, but you are still shipping bugs to production, your confidence is misplaced.</p><h5>Find bugs</h5><p>If you have a test suite that never goes red, your tests are giving you no value as they are not catching any bugs, which is their main reason to be.</p><h5>Cheap to maintain</h5><p>If when you go to refactor you code, you find yourself expending any significant amount of time either fixing your tests or rewriting them, then your test suite is not paying off. I have found this is specially true if your unit is the class and if you are using a lot of mock objects, as in most cases you end up with <a href="http://xunitpatterns.com/Fragile%20Test.html#Overspecified%20Software">overspecified software</a></p><h5>Document</h5><p>Tests should tell us what the system does and ideally why it does it.</p><p>A minimum set of tests should also tell us how it does it, but with the expectation that those tests will be thrown away when we make a sizable refactoring.</p><h2>No bugs</h2><p>The best way of knowing that a test is testing what is supposed to test, what it is to say that the test has no bugs, is to see the test change from red to green when you make a change in your production code.</p><p>This is why you should write the test before the production code.</p><p>Also consider <a href="http://pitest.org">mutation testing</a> to find the blind spots on your suite.</p><h2>Robust</h2><p>If your test suite has a flaky test, one that randomly goes red, it will undermine the whole test suite as people will stop caring about it.</p><p>It is better to remove the flaky tests than to keep it around.</p><h2>Run</h2><p>Maybe this sounds a little bit silly, but I have seen and written a lot of tests that did not invite to be run. These include:</p>
+</ol><h2>Confidence</h2><p>After making a change, is running your test enough to commit the code? And to deploy to production? </p><p>My experience tells me that unit tests are not enough and some kind of <a href="http://martinfowler.com/bliki/BroadStackTest.html">full stack</a>, BDD and integration tests are needed to raise the level of confidence.</p><p>Note that if two tests give you confidence in the same area/functionality, one of them is redundant.</p><p>Also, if you are really confident about your tests, but you are still shipping bugs to production, your confidence is misplaced.</p><h2>Find bugs</h2><p>If you have a test suite that never goes red, your tests are giving you no value as they are not catching any bugs, which is their main reason for being.</p><h2>Cheap to maintain</h2><p>If when you go to refactor you code, you find yourself expending any significant amount of time either fixing your tests or rewriting them, your test suite is not paying off. I have found this is especially true if your unit is the class and if you are using a lot of mock objects - in most cases you end up with <a href="http://xunitpatterns.com/Fragile%20Test.html#Overspecified%20Software">overspecified software</a>.</p><h2>Document</h2><p>Tests should tell us what the system does and ideally why it does it.</p><p>A minimum set of tests should also tell us how it does it, but with the expectation that those tests will be thrown away when we make a sizable refactoring.</p><h2>No bugs</h2><p>The best way to know that a test is testing what it is supposed to test, i.e. that the test has no bugs, is to see the test change from red to green when you make a change in your production code.</p><p>This is why you should write the test before the production code.</p><p>Also consider <a href="http://pitest.org">mutation testing</a> to find the blind spots on your suite.</p><h2>Robust</h2><p>If your test suite has a flaky test, one that randomly goes red, it will undermine the whole test suite as people stop caring about it.</p><p>It is better to remove the flaky tests than to keep them around.</p><h2>Run</h2><p>Maybe this sounds a little bit silly, but I have seen and written a lot of tests that did not invite to be run. These included:</p>
 <ul>
   <li>Commented out or @Ignored tests.</li>
   <li>Very slow tests.</li>
   <li>Tests that require some manual step like installing a DB, an application container or a message broker.</li>
   <li>Tests that cannot be run or debugged from your IDE.</li>
 </ul>
-<hr /><p>So next time that you have to write or update a test, ask your self:</p>
-<ul>
-  <li>How much confidence is this test going to give you?</li>
-  <li>How likely is it that this test will catch a bug?</li>
-  <li>How likely is it that this test will need to be changed when refactoring?</li>
-  <li>How coupled is it to the implementation?</li>
-  <li>Is the test repeatable?</li>
-  <li>Is the test going to be run?</li>
-  <li>Is the test testing what is supposed to test? Did you saw it red before green?</li>
-</ul></div>
+<hr /><p>In summary, a good test suite will be the pillar that allow us to evolve and change our systems.</p><p><strong>Tests must support change</strong>, not inhibit it.</p><p>At the end of the day, as Dave Thomas and Andy Hunt <a href="http://www.artima.com/intv/dry.html">wisely point out</a>, we are always changing an existing sytem.</p>
+<blockquote><p>All programming is maintenance programming, because you are rarely writing original code.</p><p>It’s only the first 10 minutes that the code’s original, when you type it in the first time. That’s it.</p>
+</blockquote></div>
 
-				 <div class="footnotes">
-					 <p id="foot1" class="jumptarget">1.  Test code being equal citizen than production does not mean that we need to follow the same coding principles in both.
-</p>
-				 </div>
+				 
 
 				 <p class="tags">
 	  			     	<span>Tagged in </span>:
@@ -200,12 +187,13 @@
 	            <div class="widget widget_categories">
 
 	               <h5 class="widget-title">Categories</h5>
-	               <ul id="categories" class="link-list group"><li><a href="/tags/Clojure/index.html">Clojure (3)</a></li><li><a href="/tags/Java/index.html">Java (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (5)</a></li><li><a href="/tags/resilience/index.html">resilience (1)</a></li><li><a href="/tags/testing/index.html">testing (4)</a></li></ul>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Clojure/index.html">Clojure (4)</a></li><li><a href="/tags/Java/index.html">Java (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (5)</a></li><li><a href="/tags/resilience/index.html">resilience (2)</a></li><li><a href="/tags/testing/index.html">testing (5)</a></li></ul>
 
 	            </div> <!-- /widget_categories -->
 
 				<div class="widget">
 					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
 				</div>
 
 	             <!-- /widget_tag_cloud -->
