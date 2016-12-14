@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Thu, 17 Mar 2016 00:00:00 +0100
+Wed, 14 Dec 2016 00:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Thu, 17 Mar 2016 00:00:00 +0100
+Wed, 14 Dec 2016 00:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,20 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Why Java? Why Clojure?
+</title>
+<link>
+http://danlebrero.com/2016/12/14/why-java-why-clojure/
+</link>
+<pubDate>
+Wed, 14 Dec 2016 00:00:00 +0100
+</pubDate>
+<description>
+The reasons to use Java and Clojure are the same
+</description>
+</item>
 <item>
 <title>
 Lines of code actually matters.
