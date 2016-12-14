@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<title>
+Daniel Lebrero Berna Blog
+</title>
+<link>
+http://danlebrero.com
+</link>
+<language>
+en
+</language>
+<lastBuildDate>
+Thu, 17 Mar 2016 00:00:00 +0100
+</lastBuildDate>
+<pubDate>
+Thu, 17 Mar 2016 00:00:00 +0100
+</pubDate>
+<description>
+Daniel Lebrero blog
+</description>
+<generator>
+clj-rss
+</generator>
+<item>
+<title>
+Lines of code actually matters.
+</title>
+<link>
+http://danlebrero.com/2016/03/17/lines-of-code/
+</link>
+<pubDate>
+Thu, 17 Mar 2016 00:00:00 +0100
+</pubDate>
+<description>
+For a long time I thought lines of code was a bogus metric, but after working in both Java and Clojure, I have changed my mind.  
+</description>
+</item>
+</channel>
+</rss>

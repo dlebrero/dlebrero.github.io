@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<title>
+Daniel Lebrero Berna Blog
+</title>
+<link>
+http://danlebrero.com
+</link>
+<language>
+en
+</language>
+<lastBuildDate>
+Mon, 21 Nov 2016 00:00:00 +0100
+</lastBuildDate>
+<pubDate>
+Mon, 21 Nov 2016 00:00:00 +0100
+</pubDate>
+<description>
+Daniel Lebrero blog
+</description>
+<generator>
+clj-rss
+</generator>
+<item>
+<title>
+The boy who cried wolf, an IT tale
+</title>
+<link>
+http://danlebrero.com/2016/11/21/the-boy-who-cried-wolf-an-it-tale/
+</link>
+<pubDate>
+Mon, 21 Nov 2016 00:00:00 +0100
+</pubDate>
+<description>
+How can we apply the fable &quot;The boy who cried wolf&quot; to our development?
+</description>
+</item>
+<item>
+<title>
+Good tests, Bad tests
+</title>
+<link>
+http://danlebrero.com/2016/11/06/good-test-vs-bad-tests/
+</link>
+<pubDate>
+Sun, 06 Nov 2016 00:00:00 +0100
+</pubDate>
+<description>
+Unit testing is just another practice, and as such it has its benefits and its costs. How do you know that your test suite is paying off? 
+</description>
+</item>
+<item>
+<title>
+The tragedy of 100% code coverage
+</title>
+<link>
+http://danlebrero.com/2016/05/18/tragedy-100-code-coverage/
+</link>
+<pubDate>
+Wed, 18 May 2016 00:00:00 +0200
+</pubDate>
+<description>
+TDD and BDD are very good practices, but what are the costs enforcing them?
+</description>
+</item>
+<item>
+<title>
+Logging levels: the wrong abstraction.
+</title>
+<link>
+http://danlebrero.com/2016/04/05/how-to-choose-the-correct-logging-level/
+</link>
+<pubDate>
+Tue, 05 Apr 2016 00:00:00 +0200
+</pubDate>
+<description>
+No more DEBUG/INFO/WARN/ERROR log level.
+</description>
+</item>
+<item>
+<title>
+Lines of code actually matters.
+</title>
+<link>
+http://danlebrero.com/2016/03/17/lines-of-code/
+</link>
+<pubDate>
+Thu, 17 Mar 2016 00:00:00 +0100
+</pubDate>
+<description>
+For a long time I thought lines of code was a bogus metric, but after working in both Java and Clojure, I have changed my mind.  
+</description>
+</item>
+</channel>
+</rss>

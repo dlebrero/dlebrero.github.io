@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<title>
+Daniel Lebrero Berna Blog
+</title>
+<link>
+http://danlebrero.com
+</link>
+<language>
+en
+</language>
+<lastBuildDate>
+Sat, 26 Nov 2016 00:00:00 +0100
+</lastBuildDate>
+<pubDate>
+Sat, 26 Nov 2016 00:00:00 +0100
+</pubDate>
+<description>
+Daniel Lebrero blog
+</description>
+<generator>
+clj-rss
+</generator>
+<item>
+<title>
+Automating resilience testing with Clojure and Docker - EuroClojure 2016 video
+</title>
+<link>
+http://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
+</link>
+<pubDate>
+Sat, 26 Nov 2016 00:00:00 +0100
+</pubDate>
+<description>
+Video from my presentation on EuroClojure 2016
+</description>
+</item>
+<item>
+<title>
+Automating resilience testing with Clojure and Docker - EuroClojure 2016 slides
+</title>
+<link>
+http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
+</link>
+<pubDate>
+Mon, 14 Nov 2016 00:00:00 +0100
+</pubDate>
+<description>
+Slides from my presentation on EuroClojure 2016
+</description>
+</item>
+</channel>
+</rss>
