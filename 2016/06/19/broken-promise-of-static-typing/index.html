@@ -6,7 +6,7 @@
    ================================================== -->
    <meta charset="utf-8" />
 	<title>The broken promise of static typing</title>
-	<meta content="The more advanced the type system, the less bugs that we should have." name="description" /><meta content="Clojure, Haskell, api, bigdata, bugs, clojure, java, static, testing, training, types, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="The broken promise of static typing" property="og:title" /><meta content="The more advanced the type system, the less bugs that we should have." property="og:description" /><meta content="http://danlebrero.com/2016/06/19/broken-promise-of-static-typing/" property="og:url" /><meta content="The broken promise of static typing" name="twitter:title" /><meta content="The more advanced the type system, the less bugs that we should have." name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="http://danlebrero.com/img/ez@2x.png" name="twitter:image" /><meta content="http://danlebrero.com/img/ez@2x.png" property="og:image" />
+	<meta content="The more advanced the type system, the less bugs that we should have." name="description" /><meta content="Clojure Haskell bugs static types" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="The broken promise of static typing" property="og:title" /><meta content="The more advanced the type system, the less bugs that we should have." property="og:description" /><meta content="http://danlebrero.com/2016/06/19/broken-promise-of-static-typing/" property="og:url" /><meta content="The broken promise of static typing" name="twitter:title" /><meta content="The more advanced the type system, the less bugs that we should have." name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="http://danlebrero.com/img/ez@2x.png" name="twitter:image" /><meta content="http://danlebrero.com/img/ez@2x.png" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 
@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="/css/main.css" />
    <link rel="stylesheet" href="/css/media-queries.css" />
    <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
 
    <!-- Script
    =================================================== -->
@@ -93,7 +94,7 @@
 
 			<div class="twelve columns">
 
-				<p id="the-title">@DanLebrero<span>.</span></p>
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
 				<p>software, simply</p>
 
 			</div>
@@ -109,7 +110,7 @@
 
    	<div class="row">
 
-	   	<div id="main" class="tab-whole eight columns">
+	   	<div id="main" class="tab-whole nine columns">
 
 	         <article class="entry">
 
@@ -133,12 +134,15 @@
 
 				 
 
+
 				 <p class="tags">
 	  			     	<span>Tagged in </span>:
 	  				  	<a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/testing/index.html">testing </a>
 	  			   </p>
 
-	  			   <div id="pagenav" class="pagenav group">
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <div id="pagenav" class="pagenav group">
 		  			   <span class="prev"><a href="/2016/05/18/tragedy-100-code-coverage/#content" rel="prev">Previous</a></span>
 		  				<span class="next"><a href="/2016/11/06/good-test-vs-bad-tests/#content" rel="next">Next</a></span>
 	  				</div>
@@ -147,7 +151,7 @@
 
 	   	</div> <!-- /main -->
 
-	      <div class="tab-whole four columns end" id="secondary">
+	      <div class="tab-whole three columns end" id="secondary">
 
 				<aside id="sidebar">
 
@@ -215,7 +219,18 @@
 	   <script src="/js/waypoints.js"></script>
 	   <script src="/js/main.js"></script>
 	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
 	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
 	   <div id="debug" style="display: none;">
 	   </div>
    </div>

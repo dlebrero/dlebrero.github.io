@@ -6,7 +6,7 @@
    ================================================== -->
    <meta charset="utf-8" />
 	<title>Why Java? Why Clojure?</title>
-	<meta content="The reasons to use Java and Clojure are the same" name="description" /><meta content="Clojure, Java, api, bigdata, clojure, java, training, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Why Java? Why Clojure?" property="og:title" /><meta content="The reasons to use Java and Clojure are the same" property="og:description" /><meta content="http://danlebrero.com/2016/12/14/why-java-why-clojure/" property="og:url" /><meta content="Why Java? Why Clojure?" name="twitter:title" /><meta content="The reasons to use Java and Clojure are the same" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/why-java-why-clojure.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/why-java-why-clojure.jpg" property="og:image" />
+	<meta content="The reasons to use Java and Clojure are the same" name="description" /><meta content="why change Clojure Java, why learn Clojure" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Why Java? Why Clojure?" property="og:title" /><meta content="The reasons to use Java and Clojure are the same" property="og:description" /><meta content="http://danlebrero.com/2016/12/14/why-java-why-clojure/" property="og:url" /><meta content="Why Java? Why Clojure?" name="twitter:title" /><meta content="The reasons to use Java and Clojure are the same" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/why-java-why-clojure.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/why-java-why-clojure.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 
@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="/css/main.css" />
    <link rel="stylesheet" href="/css/media-queries.css" />
    <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
 
    <!-- Script
    =================================================== -->
@@ -93,7 +94,7 @@
 
 			<div class="twelve columns">
 
-				<p id="the-title">@DanLebrero<span>.</span></p>
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
 				<p>software, simply</p>
 
 			</div>
@@ -109,7 +110,7 @@
 
    	<div class="row">
 
-	   	<div id="main" class="tab-whole eight columns">
+	   	<div id="main" class="tab-whole nine columns">
 
 	         <article class="entry">
 
@@ -149,12 +150,15 @@
 
 				 
 
+
 				 <p class="tags">
 	  			     	<span>Tagged in </span>:
 	  				  	<a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/Java/index.html">Java </a>
 	  			   </p>
 
-	  			   <div id="pagenav" class="pagenav group">
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <div id="pagenav" class="pagenav group">
 		  			   <span class="prev"><a href="/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/#content" rel="prev">Previous</a></span>
 		  				<span class="next"></span>
 	  				</div>
@@ -163,7 +167,7 @@
 
 	   	</div> <!-- /main -->
 
-	      <div class="tab-whole four columns end" id="secondary">
+	      <div class="tab-whole three columns end" id="secondary">
 
 				<aside id="sidebar">
 
@@ -231,7 +235,18 @@
 	   <script src="/js/waypoints.js"></script>
 	   <script src="/js/main.js"></script>
 	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
 	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
 	   <div id="debug" style="display: none;">
 	   </div>
    </div>

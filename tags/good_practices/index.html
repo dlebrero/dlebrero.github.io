@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="/css/main.css" />
    <link rel="stylesheet" href="/css/media-queries.css" />
    <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
 
    <!-- Script
    =================================================== -->
@@ -95,7 +96,7 @@
 
 			<div class="twelve columns">
 
-				<p id="the-title">@DanLebrero<span>.</span></p>
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
 				<p>software, simply</p>
 
 			</div>
@@ -185,7 +186,18 @@
 	   <script src="/js/waypoints.js"></script>
 	   <script src="/js/main.js"></script>
 	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
 	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
 	   <div id="debug" style="display: none;">
 	   </div>
    </div>
