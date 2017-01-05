@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 14 Dec 2016 00:00:00 +0100
+Thu, 05 Jan 2017 17:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 14 Dec 2016 00:00:00 +0100
+Thu, 05 Jan 2017 17:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,20 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Proof of concept using KafkaStreams and KTables
+</title>
+<link>
+http://danlebrero.com/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/
+</link>
+<pubDate>
+Thu, 05 Jan 2017 17:00:00 +0100
+</pubDate>
+<description>
+Exploring how to use KafkaStreams and KTables for building a stateful stream processing application
+</description>
+</item>
 <item>
 <title>
 Why Java? Why Clojure?

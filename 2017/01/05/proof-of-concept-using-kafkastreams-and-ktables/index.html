@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Proof of concept using KafkaStreams and KTables</title>
+	<meta content="Exploring how to use KafkaStreams and KTables for building a stateful stream processing application" name="description" /><meta content="Kafka Streams KTable KStream Clojure" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Proof of concept using KafkaStreams and KTables" property="og:title" /><meta content="Exploring how to use KafkaStreams and KTables for building a stateful stream processing application" property="og:description" /><meta content="http://danlebrero.com/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/" property="og:url" /><meta content="Proof of concept using KafkaStreams and KTables" name="twitter:title" /><meta content="Exploring how to use KafkaStreams and KTables for building a stateful stream processing application" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/kafka-streams-poc.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/kafka-streams-poc.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+   <div id="preloader">
+	   <div id="status">
+         <img src="/images/loader.gif" height="60" width="60" alt="" />
+         <div class="loader">Loading...</div>
+      </div>
+   </div>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+	            <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+					<header class="entry-header">
+
+						<h1 class="entry-title">Proof of concept using KafkaStreams and KTables</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Thu, 5 Jan 2017</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Exploring how to use KafkaStreams and KTables for building a stateful stream processing application</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/kafka-streams-poc.jpg" />
+						</div>
+					</div>
+
+					<div class="entry-content"><p>If you live in a world of microservices, you are probably aiming to build really small services that have their own database which no other service can peek into, and that publishes events into some messaging infrastructure. </p><p>This gives you a nice loosely coupled architecture where services can come and go, be rewritten or retired, and new functionality can be build without having to touch the working services.</p><p><a href="https://kafka.apache.org">Apache Kafka</a> is often chosen as the messaging infrastructure for microservices, due to its unique scalability, performance and durability characteristics. It supports both queue and topic semantics and clients are able to replay old messages if they want to.</p><p>Last week we started to build one such microservice, whose job was to:</p>
+<blockquote><p>Send a weekly email to clients holding trading positions in any US stock.</p>
+</blockquote><h2>Plain old solution</h2><p>This is the architecture that we would have traditionally use for such a microservice:</p><p><img src="/images/kafka-streams-poc-old-solution.jpg" alt="Architecture diagrams using just Kafka" title="Architecture diagram using just Kafka" /></p>
+<ul>
+  <li>Kafka: the source of the event data. (which are??)</li>
+  <li>Database: to track the US open positions for each client. We will need to keep it updated as we consume new messages from Kafka.</li>
+  <li><a href="http://curator.apache.org/curator-recipes/leader-election.html">Zookeeper’s leader election</a> or <a href="http://www.quartz-scheduler.org/documentation/quartz-2.2.x/tutorials/tutorial-lesson-11.html">Quartz Clustering</a>, so only one of the instances of the service sends the email.</li>
+</ul><p>This is fairly complicated and will require lots of code.</p><h2>Kafka Streams’ solution</h2><p><a href="https://www.confluent.io/product/kafka-streams/">Kafka Streams</a> is a new open source library, part of the Apache Kafka project, that promises to make stream processing simple without losing the power and scalability of other stream processing systems like <a href="https://storm.apache.org">Storm</a> or <a href="https://spark.apache.org/streaming/">Spark Streaming</a></p><p>The major selling points for me are:</p>
+<ul>
+  <li>Simple?</li>
+  <li>Scalable, using the same partition-based model as Kafka.</li>
+  <li>Real time, optional micro-batching.</li>
+  <li>Stateful stream processing.</li>
+  <li>It is a library, not a framework.</li>
+</ul><p>Kafka Streams don’t need any new infrastructure, depending only on the Kafka cluster (and the Kafka’s Zookeeper cluster until <a href="https://cwiki.apache.org/confluence/display/KAFKA/KIP-90+-+Remove+zkClient+dependency+from+Streams">KIP-90 is done</a>).</p><p>Apart from a nice functional API similar to Java 8 streams,  Kafka Streams introduces the concept of a <a href="http://docs.confluent.io/3.1.1/streams/concepts.html#ktable-changelog-stream">KTable</a>.  Let’s try to explain what a KTable given the requirements we have.</p><p>Each time a new trading position is opened or updated, the order booking system sends to a Kafka compacted topic the full state of that position, using the position id as the key. When an position is closed, it will send a <em>null</em> to delete it from Kafka.</p><p>As we are using a compacted topic, Kafka will just remember the latest value sent for each key, which means that we can reconstruct the original table by just replaying all the messages stored in Kafka. </p><p>So conceptually we can think about that Kafka compacted topic as a table like:</p>
+<table>
+  <thead>
+    <tr>
+      <th>PositionId (Key) </th>
+      <th align="center">Client </th>
+      <th align="right">Ticker </th>
+      <th align="right">Amount</th>
+      <th align="right">Exchange</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 </td>
+      <td align="center">client1 </td>
+      <td align="right">AAPL </td>
+      <td align="right">100 </td>
+      <td align="right">NASDAQ </td>
+    </tr>
+    <tr>
+      <td>2 </td>
+      <td align="center">client1 </td>
+      <td align="right">VOD </td>
+      <td align="right">5 </td>
+      <td align="right">LON </td>
+    </tr>
+    <tr>
+      <td>3 </td>
+      <td align="center">client1 </td>
+      <td align="right">FB </td>
+      <td align="right">33 </td>
+      <td align="right">NASDAQ </td>
+    </tr>
+    <tr>
+      <td>4 </td>
+      <td align="center">client2 </td>
+      <td align="right">AAPL </td>
+      <td align="right">25 </td>
+      <td align="right">NASDAQ </td>
+    </tr>
+    <tr>
+      <td>5 </td>
+      <td align="center">client3 </td>
+      <td align="right">VOD </td>
+      <td align="right">33 </td>
+      <td align="right">LON </td>
+    </tr>
+  </tbody>
+</table><p>For our requirements, we need to basically execute the following SQL query:</p>
+<pre><code class="sql ">select distinct(client) from open_positions where exchange = 'NASDAQ'
+</code></pre><p>Which using the KTable API from Kafka Streams, looks like:</p>
+<pre><code class="clojure">  (-&gt;
+    (.table builder "share-holders" "share-holder-store")
+    (.filter (k/pred [key position]
+               (= "NASDAQ" (:exchange position))))
+    (.groupBy (k/kv-mapper [key position]
+                (KeyValue/pair (:client position)
+                               #{(:id position)})))
+    (.reduce (k/reducer [value1 value2]
+               (set/union value1 value2))
+             (k/reducer [value1 value2]
+               (let [result (set/difference value1 value2)]
+                 (when-not (empty? result)
+                    result)))
+             "us-share-holders"))
+</code></pre><p>This will generate a distributed, fault tolerant, highly scalable KTable that will contain:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Client (Key) </th>
+      <th>positions </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>client1 </td>
+      <td>#{1, 3} </td>
+    </tr>
+    <tr>
+      <td>client2 </td>
+      <td>#{4} </td>
+    </tr>
+  </tbody>
+</table><p>Now that we have this KTable, we just need to query it to get our list of clients:</p>
+<pre><code class="clojure">(with-open [all (.all 
+                  (.store kafka-streams 
+                          "us-share-holders" 
+                          (QueryableStoreTypes/keyValueStore)))]
+  (mapv
+    (fn [x] (.key x))
+    (iterator-seq all)))
+</code></pre><p>And there it is! We will look at the details of the implementation in a future blog post.</p><p>If we look at the architecture of this solution, it looks like:</p><p><img src="/images/kafka-streams-poc-kstreams-solution.jpg" alt="Architecture diagram using Kafka Streams" title="Architecture using Kafka Streams" /></p><p>Which is simpler and has less moving parts than the previous one.</p><h2>Conclusion</h2><p>For this particular use case, Kafka Streams and KTables really delivers.</p><p>First, the code is really simple, way simpler than the traditional solution. </p><p>Second, we are avoiding a shared database, so one less component in our architecture, one less thing to maintain, one less thing that can break.</p><p>Third, Kafka Streams take care of sharding the work, each instance able to prepare and send the emails for a subset of the clients. This brings scalability, plus it removes the additional coordination component.</p><p>Lastly, it is a library, so you can mix it with any other libraries that you like and use whatever tools you usually use for your deployments. It doesn’t require anything special.</p><p>If this looks interesting, I recommend reading Jay Kreps <a href="https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple/">excellent intro</a> (plus the Confluent blog is excellent) and the very high quality <a href="http://docs.confluent.io/3.1.1/streams/index.html">Kafka Streams docs</a>.</p><p>Of course, if you look at the SQL statement, you may wonder if the cost of microservices is really worth it, but that is question for another day.</p><p>All in all, Kafka Streams looks very exciting and we will definitely explore it further.</p></div>
+
+				 
+
+
+				 <p class="tags">
+	  			     	<span>Tagged in </span>:
+	  				  	<a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a>
+	  			   </p>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <div id="pagenav" class="pagenav group">
+		  			   <span class="prev"><a href="/2016/12/14/why-java-why-clojure/#content" rel="prev">Previous</a></span>
+		  				<span class="next"></span>
+	  				</div>
+
+				</article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero works as a technical architect at IG on the Big Data team.
+					   With more than 15 years of Java experience and 4 of Clojure,
+					   he is now a big advocate of the functional approach.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero">@danlebrero</a> or by <a href="mailto:dlebrero@gmail.com">email</a>.</p>
+				   </div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (1)</a></li><li><a href="/tags/Clojure/index.html">Clojure (6)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/good_practices/index.html">good practices (5)</a></li><li><a href="/tags/resilience/index.html">resilience (2)</a></li><li><a href="/tags/testing/index.html">testing (5)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
