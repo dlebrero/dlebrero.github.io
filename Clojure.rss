@@ -30,6 +30,9 @@ Proof of concept using KafkaStreams and KTables
 <link>
 http://danlebrero.com/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/
 </link>
+<guid>
+http://danlebrero.com/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/
+</guid>
 <pubDate>
 Thu, 05 Jan 2017 17:00:00 +0100
 </pubDate>
@@ -44,6 +47,9 @@ Why Java? Why Clojure?
 <link>
 http://danlebrero.com/2016/12/14/why-java-why-clojure/
 </link>
+<guid>
+http://danlebrero.com/2016/12/14/why-java-why-clojure/
+</guid>
 <pubDate>
 Wed, 14 Dec 2016 00:00:00 +0100
 </pubDate>
@@ -58,6 +64,9 @@ Automating resilience testing with Clojure and Docker - EuroClojure 2016 video
 <link>
 http://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
 </link>
+<guid>
+http://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
+</guid>
 <pubDate>
 Sat, 26 Nov 2016 00:00:00 +0100
 </pubDate>
@@ -72,6 +81,9 @@ Automating resilience testing with Clojure and Docker - EuroClojure 2016 slides
 <link>
 http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
 </link>
+<guid>
+http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
+</guid>
 <pubDate>
 Mon, 14 Nov 2016 00:00:00 +0100
 </pubDate>
@@ -86,6 +98,9 @@ The broken promise of static typing
 <link>
 http://danlebrero.com/2016/06/19/broken-promise-of-static-typing/
 </link>
+<guid>
+http://danlebrero.com/2016/06/19/broken-promise-of-static-typing/
+</guid>
 <pubDate>
 Sun, 19 Jun 2016 00:00:00 +0200
 </pubDate>
@@ -100,6 +115,9 @@ Lines of code actually matters.
 <link>
 http://danlebrero.com/2016/03/17/lines-of-code/
 </link>
+<guid>
+http://danlebrero.com/2016/03/17/lines-of-code/
+</guid>
 <pubDate>
 Thu, 17 Mar 2016 00:00:00 +0100
 </pubDate>
