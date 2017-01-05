@@ -138,12 +138,11 @@
 <blockquote><p>Send a weekly email to clients holding trading positions in any US stock.</p>
 </blockquote><h2>Plain old solution</h2><p>This is the architecture that we would have traditionally use for such a microservice:</p><p><img src="/images/kafka-streams-poc-old-solution.jpg" alt="Architecture diagrams using just Kafka" title="Architecture diagram using just Kafka" /></p>
 <ul>
-  <li>Kafka: the source of the event data. (which are??)</li>
+  <li>Kafka: the source of the event data.</li>
   <li>Database: to track the US open positions for each client. We will need to keep it updated as we consume new messages from Kafka.</li>
   <li><a href="http://curator.apache.org/curator-recipes/leader-election.html">Zookeeper’s leader election</a> or <a href="http://www.quartz-scheduler.org/documentation/quartz-2.2.x/tutorials/tutorial-lesson-11.html">Quartz Clustering</a>, so only one of the instances of the service sends the email.</li>
 </ul><p>This is fairly complicated and will require lots of code.</p><h2>Kafka Streams’ solution</h2><p><a href="https://www.confluent.io/product/kafka-streams/">Kafka Streams</a> is a new open source library, part of the Apache Kafka project, that promises to make stream processing simple without losing the power and scalability of other stream processing systems like <a href="https://storm.apache.org">Storm</a> or <a href="https://spark.apache.org/streaming/">Spark Streaming</a></p><p>The major selling points for me are:</p>
 <ul>
-  <li>Simple?</li>
   <li>Scalable, using the same partition-based model as Kafka.</li>
   <li>Real time, optional micro-batching.</li>
   <li>Stateful stream processing.</li>
