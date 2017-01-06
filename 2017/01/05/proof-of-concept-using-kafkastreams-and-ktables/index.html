@@ -238,7 +238,8 @@
   (mapv
     (fn [x] (.key x))
     (iterator-seq all)))
-</code></pre><p>And there it is! We will look at the details of the implementation in a future blog post.</p><p>If we look at the architecture of this solution, it looks like:</p><p><img src="/images/kafka-streams-poc-kstreams-solution.jpg" alt="Architecture diagram using Kafka Streams" title="Architecture using Kafka Streams" /></p><p>Which is simpler and has less moving parts than the previous one.</p><h2>Conclusion</h2><p>For this particular use case, Kafka Streams and KTables really delivers.</p><p>First, the code is really simple, way simpler than the traditional solution. </p><p>Second, we are avoiding a shared database, so one less component in our architecture, one less thing to maintain, one less thing that can break.</p><p>Third, Kafka Streams take care of sharding the work, each instance able to prepare and send the emails for a subset of the clients. This brings scalability, plus it removes the additional coordination component.</p><p>Lastly, it is a library, so you can mix it with any other libraries that you like and use whatever tools you usually use for your deployments. It doesn’t require anything special.</p><p>If this looks interesting, I recommend reading Jay Kreps <a href="https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple/">excellent intro</a> (plus the Confluent blog is excellent) and the very high quality <a href="http://docs.confluent.io/3.1.1/streams/index.html">Kafka Streams docs</a>.</p><p>Of course, if you look at the SQL statement, you may wonder if the cost of microservices is really worth it, but that is question for another day.</p><p>All in all, Kafka Streams looks very exciting and we will definitely explore it further.</p></div>
+</code></pre><p>And there it is! </p><p>If we look at the architecture of this solution, it looks like:</p><p><img src="/images/kafka-streams-poc-kstreams-solution.jpg" alt="Architecture diagram using Kafka Streams" title="Architecture using Kafka Streams" /></p><p>Which is simpler and has less moving parts than the previous one.</p><h2>Conclusion</h2><p>For this particular use case, Kafka Streams and KTables really delivers.</p><p>First, the code is really simple, way simpler than the traditional solution. </p><p>Second, we are avoiding a shared database, so one less component in our architecture, one less thing to maintain, one less thing that can break.</p><p>Third, Kafka Streams take care of sharding the work, each instance able to prepare and send the emails for a subset of the clients. This brings scalability, plus it removes the additional coordination component.</p><p>Lastly, it is a library, so you can mix it with any other libraries that you like and use whatever tools you usually use for your deployments. It doesn’t require anything special.</p><p>Of course, if you look at the SQL statement, you may wonder if the cost of microservices is really worth it, but that is a question for another day.</p>
+<hr /><p>If this looks interesting, I recommend reading Jay Kreps <a href="https://www.confluent.io/blog/introducing-kafka-streams-stream-processing-made-simple/">excellent intro</a> (plus the Confluent blog is excellent) and the very high quality <a href="http://docs.confluent.io/3.1.1/streams/index.html">Kafka Streams docs</a>.</p><p>You can read about the implementation details, gotchas and find a full working Docker environment in the <a href="/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/#content">following blog post</a>.</p><p>All in all, Kafka Streams looks very exciting and we will definitely explore it further.</p></div>
 
 				 
 
@@ -252,7 +253,7 @@
 
 				 <div id="pagenav" class="pagenav group">
 		  			   <span class="prev"><a href="/2016/12/14/why-java-why-clojure/#content" rel="prev">Previous</a></span>
-		  				<span class="next"></span>
+		  				<span class="next"><a href="/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/#content" rel="next">Next</a></span>
 	  				</div>
 
 				</article> <!-- /entry -->
@@ -281,7 +282,7 @@
 	            <div class="widget widget_categories">
 
 	               <h5 class="widget-title">Categories</h5>
-	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (1)</a></li><li><a href="/tags/Clojure/index.html">Clojure (6)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/good_practices/index.html">good practices (5)</a></li><li><a href="/tags/resilience/index.html">resilience (2)</a></li><li><a href="/tags/testing/index.html">testing (5)</a></li></ul>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (2)</a></li><li><a href="/tags/Clojure/index.html">Clojure (8)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/good_practices/index.html">good practices (6)</a></li><li><a href="/tags/resilience/index.html">resilience (2)</a></li><li><a href="/tags/testing/index.html">testing (5)</a></li></ul>
 
 	            </div> <!-- /widget_categories -->
 

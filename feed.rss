@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Thu, 05 Jan 2017 17:00:00 +0100
+Fri, 06 Jan 2017 14:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Thu, 05 Jan 2017 17:00:00 +0100
+Fri, 06 Jan 2017 14:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Proof of concept using KafkaStreams and KTables - implementation notes, gotchas and Docker Compose example
+</title>
+<link>
+http://danlebrero.com/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/
+</link>
+<guid>
+http://danlebrero.com/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/
+</guid>
+<pubDate>
+Fri, 06 Jan 2017 14:00:00 +0100
+</pubDate>
+<description>
+Implementation details from a proof of concept using Kafka Streams and KTables using Clojure and Docker
+</description>
+</item>
 <item>
 <title>
 Proof of concept using KafkaStreams and KTables
@@ -127,6 +144,23 @@ Unit testing is just another practice, and as such it has its benefits and its c
 </item>
 <item>
 <title>
+REPL Driven Development - Voxxed Days Belgrade 2016 video
+</title>
+<link>
+http://danlebrero.com/2016/10/22/repl-driven-development-voxxed-days-belgrade-2016-video/
+</link>
+<guid>
+http://danlebrero.com/2016/10/22/repl-driven-development-voxxed-days-belgrade-2016-video/
+</guid>
+<pubDate>
+Sat, 22 Oct 2016 00:00:00 +0200
+</pubDate>
+<description>
+Video from my presentation on Voxxed Days Belgrade 2016 on why and how to do REPL Driven Development
+</description>
+</item>
+<item>
+<title>
 The broken promise of static typing
 </title>
 <link>
@@ -157,40 +191,6 @@ Wed, 18 May 2016 00:00:00 +0200
 </pubDate>
 <description>
 TDD and BDD are very good practices, but what are the costs enforcing them?
-</description>
-</item>
-<item>
-<title>
-Logging levels: the wrong abstraction.
-</title>
-<link>
-http://danlebrero.com/2016/04/05/how-to-choose-the-correct-logging-level/
-</link>
-<guid>
-http://danlebrero.com/2016/04/05/how-to-choose-the-correct-logging-level/
-</guid>
-<pubDate>
-Tue, 05 Apr 2016 00:00:00 +0200
-</pubDate>
-<description>
-No more DEBUG/INFO/WARN/ERROR log level.
-</description>
-</item>
-<item>
-<title>
-Lines of code actually matters.
-</title>
-<link>
-http://danlebrero.com/2016/03/17/lines-of-code/
-</link>
-<guid>
-http://danlebrero.com/2016/03/17/lines-of-code/
-</guid>
-<pubDate>
-Thu, 17 Mar 2016 00:00:00 +0100
-</pubDate>
-<description>
-For a long time I thought lines of code was a bogus metric, but after working in both Java and Clojure, I have changed my mind.  
 </description>
 </item>
 </channel>

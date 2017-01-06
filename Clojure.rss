@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Thu, 05 Jan 2017 17:00:00 +0100
+Fri, 06 Jan 2017 14:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Thu, 05 Jan 2017 17:00:00 +0100
+Fri, 06 Jan 2017 14:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Proof of concept using KafkaStreams and KTables - implementation notes, gotchas and Docker Compose example
+</title>
+<link>
+http://danlebrero.com/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/
+</link>
+<guid>
+http://danlebrero.com/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/
+</guid>
+<pubDate>
+Fri, 06 Jan 2017 14:00:00 +0100
+</pubDate>
+<description>
+Implementation details from a proof of concept using Kafka Streams and KTables using Clojure and Docker
+</description>
+</item>
 <item>
 <title>
 Proof of concept using KafkaStreams and KTables
@@ -89,6 +106,23 @@ Mon, 14 Nov 2016 00:00:00 +0100
 </pubDate>
 <description>
 Slides from my presentation on EuroClojure 2016
+</description>
+</item>
+<item>
+<title>
+REPL Driven Development - Voxxed Days Belgrade 2016 video
+</title>
+<link>
+http://danlebrero.com/2016/10/22/repl-driven-development-voxxed-days-belgrade-2016-video/
+</link>
+<guid>
+http://danlebrero.com/2016/10/22/repl-driven-development-voxxed-days-belgrade-2016-video/
+</guid>
+<pubDate>
+Sat, 22 Oct 2016 00:00:00 +0200
+</pubDate>
+<description>
+Video from my presentation on Voxxed Days Belgrade 2016 on why and how to do REPL Driven Development
 </description>
 </item>
 <item>
