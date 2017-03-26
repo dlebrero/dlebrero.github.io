@@ -639,7 +639,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 .lining dd:before {
 	content: ":";
-	margin-left: -0.2em;
+/*	margin-left: -0.2em; */
 }
 
 /* Dictionary Definition Style Markup

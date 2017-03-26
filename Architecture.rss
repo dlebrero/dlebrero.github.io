@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Fri, 06 Jan 2017 14:00:00 +0100
+Sun, 26 Mar 2017 00:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Fri, 06 Jan 2017 14:00:00 +0100
+Sun, 26 Mar 2017 00:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Kerberos explained in pictures
+</title>
+<link>
+http://danlebrero.com/2017/03/26/Kerberos-explained-in-pictures/
+</link>
+<guid>
+http://danlebrero.com/2017/03/26/Kerberos-explained-in-pictures/
+</guid>
+<pubDate>
+Sun, 26 Mar 2017 00:00:00 +0100
+</pubDate>
+<description>
+Kerberos is an single sign on authentication protocol, we will try to explain how it works with some hopefully simple diagrams.
+</description>
+</item>
 <item>
 <title>
 Proof of concept using KafkaStreams and KTables - implementation notes, gotchas and Docker Compose example
