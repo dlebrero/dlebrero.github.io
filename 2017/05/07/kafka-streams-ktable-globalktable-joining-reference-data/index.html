@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Joins on stateful stream processing using Kafka Streams' KTables and GlobalKTables</title>
+	<meta content="Exploring different options in Kafka Streams to join KTables, both with and without shared keys." name="description" /><meta content="Kafka Streams join KTable KStream Docker Clojure example GlobalKTable isolated enrich reference data" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Joins on stateful stream processing using Kafka Streams' KTables and GlobalKTables" property="og:title" /><meta content="Exploring different options in Kafka Streams to join KTables, both with and without shared keys." property="og:description" /><meta content="http://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/" property="og:url" /><meta content="Joins on stateful stream processing using Kafka Streams' KTables and GlobalKTables" name="twitter:title" /><meta content="Exploring different options in Kafka Streams to join KTables, both with and without shared keys." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/joining-reference-data-in-kafka-streams-ktable.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/joining-reference-data-in-kafka-streams-ktable.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+   <div id="preloader">
+	   <div id="status">
+         <img src="/images/loader.gif" height="60" width="60" alt="" />
+         <div class="loader">Loading...</div>
+      </div>
+   </div>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+	            <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+					<header class="entry-header">
+
+						<h1 class="entry-title">Joins on stateful stream processing using Kafka Streams' KTables and GlobalKTables</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Sun, 7 May 2017</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Exploring different options in Kafka Streams to join KTables, both with and without shared keys.</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/joining-reference-data-in-kafka-streams-ktable.jpg" />
+						</div>
+					</div>
+
+					<div class="entry-content"><p>KafkaStreams comes with a nice set of APIs that allow one to join both KStreams and KTables. </p><p>For example, in the <a href="/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/#content">previous article</a>, we  generated a KTable with a list of clients that we wanted to email. This KTable looked like:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Client (Key) </th>
+      <th>positions </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>client1 </td>
+      <td>#{1, 3} </td>
+    </tr>
+    <tr>
+      <td>client2 </td>
+      <td>#{4} </td>
+    </tr>
+  </tbody>
+</table><p>But we also need some of the client’s personal details, like their name, to be able to address them properly on the email. This data would be in another KTable with the current client details, like:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Client (Key) </th>
+      <th>name </th>
+      <th>surname </th>
+      <th>email </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>client1 </td>
+      <td>Peter </td>
+      <td>Parker </td>
+      <td>peter.parker @ dailybugle.com </td>
+    </tr>
+    <tr>
+      <td>client2 </td>
+      <td>Peter </td>
+      <td>Pan </td>
+      <td>peter.pan @ neverland.com </td>
+    </tr>
+  </tbody>
+</table><p>So we would want to do the equivalent to: </p>
+<pre><code class="sql">select client_data.email from positions, client_data where positions.key = client_data.key
+</code></pre><p>Which using the Kafka Streams API is like:</p>
+<pre><code class="Clojure">(-&gt;
+  (.join us-share-holders client-data
+         (k/val-joiner [positions client-data] (:email client-data)))
+  (.through "final-result" "final-result-store"))
+</code></pre><p>The API is nice and simple, but it has two constraints:</p>
+<ol>
+  <li>Both KTables must have the same key.</li>
+  <li>Both KTables must have the same number of partitions (this is called co-partitioned).</li>
+</ol><p>Fixing the second issue is simple as it is just a matter of copying the Kafka topic to another Kafka topic with the correct number of partitions.</p><h2>Joining KTables on a different key</h2><p>One of the main reasons to join two tables on a different key is to add some kind of reference or lookup data. </p><p>Staying with the example of the <a href="/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/#content">previous article</a>, we had a KTable with positions data such as:</p>
+<table>
+  <thead>
+    <tr>
+      <th>PositionId (Key) </th>
+      <th align="center">Client </th>
+      <th align="right">Ticker </th>
+      <th align="right">Amount</th>
+      <th align="right">Exchange</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 </td>
+      <td align="center">client1 </td>
+      <td align="right">AAPL </td>
+      <td align="right">100 </td>
+      <td align="right">NASDAQ </td>
+    </tr>
+    <tr>
+      <td>2 </td>
+      <td align="center">client1 </td>
+      <td align="right">VOD </td>
+      <td align="right">5 </td>
+      <td align="right">LON </td>
+    </tr>
+    <tr>
+      <td>3 </td>
+      <td align="center">client1 </td>
+      <td align="right">FB </td>
+      <td align="right">33 </td>
+      <td align="right">NASDAQ </td>
+    </tr>
+    <tr>
+      <td>4 </td>
+      <td align="center">client2 </td>
+      <td align="right">AAPL </td>
+      <td align="right">25 </td>
+      <td align="right">NASDAQ </td>
+    </tr>
+    <tr>
+      <td>5 </td>
+      <td align="center">client3 </td>
+      <td align="right">VOD </td>
+      <td align="right">33 </td>
+      <td align="right">LON </td>
+    </tr>
+  </tbody>
+</table><p>To make things simpler, we assumed that the position already had the exchange of the stock, but in reality we would have another KTable with all the data related to the ticker, like the exchange, name, founded date, … </p><p>So the position data would really look like:</p>
+<table>
+  <thead>
+    <tr>
+      <th>PositionId (Key) </th>
+      <th align="center">Client </th>
+      <th align="right">Ticker </th>
+      <th align="right">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 </td>
+      <td align="center">client1 </td>
+      <td align="right">AAPL </td>
+      <td align="right">100 </td>
+    </tr>
+    <tr>
+      <td>2 </td>
+      <td align="center">client1 </td>
+      <td align="right">VOD </td>
+      <td align="right">5 </td>
+    </tr>
+    <tr>
+      <td>3 </td>
+      <td align="center">client1 </td>
+      <td align="right">FB </td>
+      <td align="right">33 </td>
+    </tr>
+    <tr>
+      <td>4 </td>
+      <td align="center">client2 </td>
+      <td align="right">AAPL </td>
+      <td align="right">25 </td>
+    </tr>
+    <tr>
+      <td>5 </td>
+      <td align="center">client3 </td>
+      <td align="right">VOD </td>
+      <td align="right">33 </td>
+    </tr>
+  </tbody>
+</table><p>And the ticker KTable something like:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Ticker (Key) </th>
+      <th align="right">Exchange </th>
+      <th>Name </th>
+      <th>Founded Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AAPL </td>
+      <td align="right">NASDAQ </td>
+      <td>Apple Inc </td>
+      <td>1976 </td>
+    </tr>
+    <tr>
+      <td>VOD </td>
+      <td align="right">LON </td>
+      <td>Vodafone Plc </td>
+      <td>1991 </td>
+    </tr>
+    <tr>
+      <td>FB </td>
+      <td align="right">NASDAQ </td>
+      <td>Facebook Inc </td>
+      <td>2004 </td>
+    </tr>
+  </tbody>
+</table><p>To join both KTables, we would need the equivalent of:</p>
+<pre><code class="sql">select * from positions, tickers where positions.exchange = tickers.key
+</code></pre><p>With Kafka Streams we have two options, depending on how big the smallest of the KTables we want to join is. </p><h3>Option 1: Local join with GlobalKTables</h3><p>Most of the time, the reference data is small enough to fit in memory or disk, so it is more efficient to have a copy of the reference data on each node instead of doing a distributed join, as doing a distributed join  will require shuffling data across the network.</p><p>From Kafka 0.10.2.0, Kafka Streams comes with the concept of a GlobalKTable, which is exactly this, a KTable where each node in the Kafka Stream topology has a complete copy of the reference data, so joins are done locally. </p><p>Before we look at the diagram for this option, let’s explain the legend that we are going to use.</p><p>We are going to represent the ticker reference data as a brush stroke of a particular color. For example, APPL will be <img src="/images/blog/ktable-join/ktable-join-APPL.jpg" alt="APPL" title="APPL is the red stroke" />, while VOD will be <img src="/images/blog/ktable-join/ktable-join-VOD.jpg" alt="VOD" title="VOD is the purple stroke" />.</p><p>We are going to represent each raw position, that is, a position without the ticker reference data, as a colored empty shape. The color of the shape will correspond with the ticker color. For example, position 1 is for APPL, so we will represented it as <img src="/images/blog/ktable-join/ktable-join-pos1-empty.jpg" alt="pos1" />, while position 2 that is for VOD will be represented as <img src="/images/blog/ktable-join/ktable-join-pos2-empty.jpg" alt="pos2" />.</p><p>The results of joining the position with the ticker reference data will be the shape filled. For example position 1 after the join will become <img src="/images/blog/ktable-join/ktable-join-pos1-full.jpg" alt="pos1" /> and position 2 will be <img src="/images/blog/ktable-join/ktable-join-pos2-full.jpg" alt="pos2" />.</p><p>We will also show in the diagram the required Kafka topics. The topics will be either partitioned by shape, so all star-like positions go to one partition while all triangle-like positions go to another one; or by color, so all shades of red will go to one partition while all shades of purple will go to another.</p><p>The diagram shows what was processed from one instant to the next, using a trail to easily follow the flow of positions and ticker reference data through the system.</p><p>So a GlobalKTable diagram will look like:</p><p><img src="/images/blog/ktable-join/ktable-join-global-ktable.jpg" alt="Kafka Streams KTable join global KTable" title="Kafka Streams KTable join GlobalKTable" /></p><p>Note how on T0-&gt;T1, Kafka Streams will take care of reading all the reference data before starting doing any processing. </p><p>On T1-&gt;T2, we have removed the reference data topic from the diagram to make it simpler.</p><p>As both nodes have all colours, there is no need to shuffle data around.</p><p>Unfortunately KTable to GlobalKTable joins are not yet supported, it will come in Kafka 0.11.0.0 (or once <a href="https://issues.apache.org/jira/browse/KAFKA-4628">this ticket</a> is done).</p><h3>Option 2: Distributed left outer join</h3><p>But what if the KTables that you want to join are huge? </p><p>There is already <a href="https://issues.apache.org/jira/browse/KAFKA-3705">some discussion</a> to include this feature in a future Kafka Streams version, but until that is available, lets see how we can implement a distributed, real time, fault tolerant join using the available Kafka Streams API.</p><p>To start with, we will need to repartition one of the KTables so both topics are keyed by the same attribute. This way the rows that we need to join will end up in the same node.</p><p><img src="/images/blog/ktable-join/ktable-join-initial-explanation.jpg" alt="Kafka Streams KTable join initial diagram" title="Kafka Streams KTable join initial diagram" /></p><p>Note how each of the colouring tasks has half of the colours and notice also that we now need an additional Kafka topic to hold the repartitioned data. </p><p>It is worth mentioning that on T0-&gt;T1, we are relying on Kafka Stream’s <a href="http://docs.confluent.io/3.0.0/streams/architecture.html#streams-architecture-flow-control">flow control</a> to initialize the reference data before processing messages. This flow control tries to process older records before new ones, but as noted in the Kafka Stream’s documentation this is on a best-effort basis, which is a weaker guarantee than what the GlobalKTable’s one, but it seems to work pretty well.</p><p>But what if a row is deleted? At first it seems logical that we just want to send that delete straight to the result topic, as we don’t need to join anything. </p><p>The problem with this is option is that we can end up with a race condition, as the delete can outrace the new record to the result topic:</p><p><img src="/images/blog/ktable-join/ktable-join-delete-race-condition.jpg" alt="Kafka Streams KTable join delete race condition" title="Kafka Streams KTable delete race condition" /></p><p>To fix this, we must make sure that we honour the order on which the messages arrive. One way of achieving it is by relying on Kafka’s per partition ordering semantics and send the deletes to the node that is doing the join and for that node to forward the delete to the resulting topic: </p><p><img src="/images/blog/ktable-join/ktable-join-delete-no-race.jpg" alt="Kafka Streams KTable join delete no race condition" title="Kafka Streams KTable delete no race condition" /></p><p>Notice that in the diagram we have added a local storage on the repartitioning task. Remember that in Kafka, delete messages have a null payload, so to be able to send the delete to the correct partition, we need to remember what was the previous value, so that we are able to calculate to which partition we need to send the delete.</p><p>That would fix the race condition when processing deletes, but don’t we have a similar race condition if the join key changes?</p><p><img src="/images/blog/ktable-join/ktable-join-race-key-change.jpg" alt="Kafka Streams KTable join race condition on key change" title="Kafka Streams KTable join race condition on key change" /></p><p>Unfortunately, for this race condition we cannot rely on the order of the processing, as each update is going to a different node.</p><p>A possible solution is to add an additional step after the join where we remember the timestamp of the last processed message for a given key, and we filter out any messages that older than it:</p><p><img src="/images/blog/ktable-join/ktable-join-remove-old.jpg" alt="Kafka Streams KTable join remove old" title="Kafka Streams KTable join remove old" /></p><p>But this bring us again to what happens with deletes, as if we are not careful, we can end up with the following race condition:</p><p><img src="/images/blog/ktable-join/ktable-join-remove-old-race-condition.jpg" alt="Kafka Streams KTable join remove old race condition" title="Kafka Streams KTable join remove old race condition" /></p><p>To fix this issue, we need to remember that we deleted the row, but obviously we don’t want to remember all the rows that  we ever deleted, as it will require an infinite amount of memory/disk, which means that the filtering task will  need some kind of clean up process.</p><h2>Are we done yet?</h2><p>Well, this solution does not cater for changes and deletions on the KTable with the reference data,  but this post is already long enough and it is not a simple problem. </p><p>The code and solution that I present leave me with the same kind of feeling that I have when doing any concurrency work.  That I have forgotten something, that I am not sure it is correct  and that unit testing is not going to prove otherwise. </p><p>Of course, some of the scenarios that we have explored may not apply to your domain. For example, in our case, it is not possible for a position to change the ticker, which simplifies the system.</p><p>So what have we learn?</p><p>Stateful stream processing is a breeze when your tools provide an easy and high level API to work with, but when you have to do it on your own, it is more like a minefield of possible race conditions.</p><p>You can find all the code and a complete Docker environment to play around <a href="https://github.com/dlebrero/kafka-streams-and-ktable-example/tree/joining">here</a>.</p></div>
+
+				 
+
+
+				 <p class="tags">
+	  			     	<span>Tagged in </span>:
+	  				  	<a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a>
+	  			   </p>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <div id="pagenav" class="pagenav group">
+		  			   <span class="prev"><a href="/2017/04/06/documenting-your-architecture-wireshark-plantuml-and-a-repl/#content" rel="prev">Previous</a></span>
+		  				<span class="next"></span>
+	  				</div>
+
+				</article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero works as a technical architect at IG on the Big Data team.
+					   With more than 15 years of Java experience and 4 of Clojure,
+					   he is now a big advocate of the functional approach.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero">@danlebrero</a> or by <a href="mailto:dlebrero@gmail.com">email</a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="http://cfp.devoxx.co.uk/2017/talk/RSJ-9607/Automating_resilience_testing_with_Docker_and_Property_Based_testing"><img class="pull-left" src="/images/devoxx-speaker-banner.jpg" /></a>
+						<a href="http://www.jbcnconf.com/2017/infoSpeaker.html?ref=daniel-lebrero"><img src="/images/logo-jbcnconf.jpg" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (5)</a></li><li><a href="/tags/Clojure/index.html">Clojure (10)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/good_practices/index.html">good practices (6)</a></li><li><a href="/tags/resilience/index.html">resilience (2)</a></li><li><a href="/tags/testing/index.html">testing (5)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>

@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Thu, 06 Apr 2017 10:00:00 +0200
+Sun, 07 May 2017 13:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Thu, 06 Apr 2017 10:00:00 +0200
+Sun, 07 May 2017 13:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Joins on stateful stream processing using Kafka Streams' KTables and GlobalKTables
+</title>
+<link>
+http://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/
+</link>
+<guid>
+http://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/
+</guid>
+<pubDate>
+Sun, 07 May 2017 13:00:00 +0200
+</pubDate>
+<description>
+Exploring different options in Kafka Streams to join KTables, both with and without shared keys.
+</description>
+</item>
 <item>
 <title>
 Documenting your architecture: Wireshark, PlantUML and a REPL to glue them all.
