@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Sat, 20 May 2017 00:00:00 +0200
+Wed, 24 May 2017 20:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Sat, 20 May 2017 00:00:00 +0200
+Wed, 24 May 2017 20:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Clojure's most important lesson
+</title>
+<link>
+http://danlebrero.com/2017/05/24/clojure-most-important-lesson/
+</link>
+<guid>
+http://danlebrero.com/2017/05/24/clojure-most-important-lesson/
+</guid>
+<pubDate>
+Wed, 24 May 2017 20:00:00 +0200
+</pubDate>
+<description>
+Clojure has a lot of important and unique lessons to teach, but which one is the most important?
+</description>
+</item>
 <item>
 <title>
 Automating resilience testing with Docker and Property Based Testing - Devoxx UK 2017
@@ -174,23 +191,6 @@ Sat, 22 Oct 2016 00:00:00 +0200
 </pubDate>
 <description>
 Video from my presentation on Voxxed Days Belgrade 2016 on why and how to do REPL Driven Development
-</description>
-</item>
-<item>
-<title>
-The broken promise of static typing
-</title>
-<link>
-http://danlebrero.com/2016/06/19/broken-promise-of-static-typing/
-</link>
-<guid>
-http://danlebrero.com/2016/06/19/broken-promise-of-static-typing/
-</guid>
-<pubDate>
-Sun, 19 Jun 2016 00:00:00 +0200
-</pubDate>
-<description>
-The more advanced the type system, the less bugs that we should have.
 </description>
 </item>
 </channel>

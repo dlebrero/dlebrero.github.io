@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Sat, 20 May 2017 00:00:00 +0200
+Wed, 24 May 2017 20:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Sat, 20 May 2017 00:00:00 +0200
+Wed, 24 May 2017 20:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Clojure's most important lesson
+</title>
+<link>
+http://danlebrero.com/2017/05/24/clojure-most-important-lesson/
+</link>
+<guid>
+http://danlebrero.com/2017/05/24/clojure-most-important-lesson/
+</guid>
+<pubDate>
+Wed, 24 May 2017 20:00:00 +0200
+</pubDate>
+<description>
+Clojure has a lot of important and unique lessons to teach, but which one is the most important?
+</description>
+</item>
 <item>
 <title>
 Automating resilience testing with Docker and Property Based Testing - Devoxx UK 2017
@@ -174,23 +191,6 @@ Mon, 21 Nov 2016 00:00:00 +0100
 </pubDate>
 <description>
 How can we apply the fable &quot;The boy who cried wolf&quot; to our development?
-</description>
-</item>
-<item>
-<title>
-Automating resilience testing with Clojure and Docker - EuroClojure 2016 slides
-</title>
-<link>
-http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
-</link>
-<guid>
-http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
-</guid>
-<pubDate>
-Mon, 14 Nov 2016 00:00:00 +0100
-</pubDate>
-<description>
-Slides from my presentation on EuroClojure 2016
 </description>
 </item>
 </channel>

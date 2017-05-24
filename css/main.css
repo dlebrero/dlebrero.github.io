@@ -1231,6 +1231,10 @@ hr {
 	margin: 24px 0 18px;
 }
 
+#entry-content-media-attribution {
+    margin-top: -20px;
+}
+
 /* pagenav
 ---------------------------------------------------------------------- */
 .pagenav {
