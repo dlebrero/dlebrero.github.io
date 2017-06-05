@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Sat, 20 May 2017 00:00:00 +0200
+Mon, 05 Jun 2017 18:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Sat, 20 May 2017 00:00:00 +0200
+Mon, 05 Jun 2017 18:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Testing or Monitoring? MTBF or MTTR? Make your choice!
+</title>
+<link>
+http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
+</link>
+<guid>
+http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
+</guid>
+<pubDate>
+Mon, 05 Jun 2017 18:00:00 +0200
+</pubDate>
+<description>
+What is more important testing or monitoring? Should you optimize for mean time between failures (MTBF) or mean time to repair (MTTR)?
+</description>
+</item>
 <item>
 <title>
 Automating resilience testing with Docker and Property Based Testing - Devoxx UK 2017

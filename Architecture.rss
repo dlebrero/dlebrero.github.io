@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Sun, 07 May 2017 13:00:00 +0200
+Mon, 05 Jun 2017 18:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Sun, 07 May 2017 13:00:00 +0200
+Mon, 05 Jun 2017 18:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -25,87 +25,19 @@ clj-rss
 </generator>
 <item>
 <title>
-Joins on stateful stream processing using Kafka Streams' KTables and GlobalKTables
+Testing or Monitoring? MTBF or MTTR? Make your choice!
 </title>
 <link>
-http://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/
+http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
 </link>
 <guid>
-http://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/
+http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
 </guid>
 <pubDate>
-Sun, 07 May 2017 13:00:00 +0200
+Mon, 05 Jun 2017 18:00:00 +0200
 </pubDate>
 <description>
-Exploring different options in Kafka Streams to join KTables, both with and without shared keys.
-</description>
-</item>
-<item>
-<title>
-Documenting your architecture: Wireshark, PlantUML and a REPL to glue them all.
-</title>
-<link>
-http://danlebrero.com/2017/04/06/documenting-your-architecture-wireshark-plantuml-and-a-repl/
-</link>
-<guid>
-http://danlebrero.com/2017/04/06/documenting-your-architecture-wireshark-plantuml-and-a-repl/
-</guid>
-<pubDate>
-Thu, 06 Apr 2017 10:00:00 +0200
-</pubDate>
-<description>
-Instead of drawing UML diagrams, why not generate them from a network traffic capture of the running system?
-</description>
-</item>
-<item>
-<title>
-Kerberos explained in pictures
-</title>
-<link>
-http://danlebrero.com/2017/03/26/Kerberos-explained-in-pictures/
-</link>
-<guid>
-http://danlebrero.com/2017/03/26/Kerberos-explained-in-pictures/
-</guid>
-<pubDate>
-Sun, 26 Mar 2017 00:00:00 +0100
-</pubDate>
-<description>
-Kerberos is a single sign on authentication protocol, we will try to explain how it works with some hopefully simple diagrams.
-</description>
-</item>
-<item>
-<title>
-Proof of concept using KafkaStreams and KTables - implementation notes, gotchas and Docker Compose example
-</title>
-<link>
-http://danlebrero.com/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/
-</link>
-<guid>
-http://danlebrero.com/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/
-</guid>
-<pubDate>
-Fri, 06 Jan 2017 14:00:00 +0100
-</pubDate>
-<description>
-Implementation details from a proof of concept using Kafka Streams and KTables using Clojure and Docker
-</description>
-</item>
-<item>
-<title>
-Proof of concept using KafkaStreams and KTables
-</title>
-<link>
-http://danlebrero.com/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/
-</link>
-<guid>
-http://danlebrero.com/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/
-</guid>
-<pubDate>
-Thu, 05 Jan 2017 17:00:00 +0100
-</pubDate>
-<description>
-Exploring how to use KafkaStreams and KTables for building a stateful stream processing application
+What is more important testing or monitoring? Should you optimize for mean time between failures (MTBF) or mean time to repair (MTTR)?
 </description>
 </item>
 </channel>

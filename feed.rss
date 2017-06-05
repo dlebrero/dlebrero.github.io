@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 24 May 2017 20:00:00 +0200
+Mon, 05 Jun 2017 18:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Wed, 24 May 2017 20:00:00 +0200
+Mon, 05 Jun 2017 18:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Testing or Monitoring? MTBF or MTTR? Make your choice!
+</title>
+<link>
+http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
+</link>
+<guid>
+http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
+</guid>
+<pubDate>
+Mon, 05 Jun 2017 18:00:00 +0200
+</pubDate>
+<description>
+What is more important testing or monitoring? Should you optimize for mean time between failures (MTBF) or mean time to repair (MTTR)?
+</description>
+</item>
 <item>
 <title>
 Clojure's most important lesson
@@ -174,23 +191,6 @@ Sat, 26 Nov 2016 00:00:00 +0100
 </pubDate>
 <description>
 Video from my presentation on EuroClojure 2016
-</description>
-</item>
-<item>
-<title>
-The boy who cried wolf, an IT tale
-</title>
-<link>
-http://danlebrero.com/2016/11/21/the-boy-who-cried-wolf-an-it-tale/
-</link>
-<guid>
-http://danlebrero.com/2016/11/21/the-boy-who-cried-wolf-an-it-tale/
-</guid>
-<pubDate>
-Mon, 21 Nov 2016 00:00:00 +0100
-</pubDate>
-<description>
-How can we apply the fable &quot;The boy who cried wolf&quot; to our development?
 </description>
 </item>
 </channel>

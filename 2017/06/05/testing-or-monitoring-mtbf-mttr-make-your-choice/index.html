@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Testing or Monitoring? MTBF or MTTR? Make your choice!</title>
+	<meta content="What is more important testing or monitoring? Should you optimize for mean time between failures (MTBF) or mean time to repair (MTTR)?" name="description" /><meta content="Testing Monitoring MTBF MTTR availability " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Testing or Monitoring? MTBF or MTTR? Make your choice!" property="og:title" /><meta content="What is more important testing or monitoring? Should you optimize for mean time between failures (MTBF) or mean time to repair (MTTR)?" property="og:description" /><meta content="http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/" property="og:url" /><meta content="Testing or Monitoring? MTBF or MTTR? Make your choice!" name="twitter:title" /><meta content="What is more important testing or monitoring? Should you optimize for mean time between failures (MTBF) or mean time to repair (MTTR)?" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/mtbf-mttr.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/mtbf-mttr.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+   <div id="preloader">
+	   <div id="status">
+         <img src="/images/loader.gif" height="60" width="60" alt="" />
+         <div class="loader">Loading...</div>
+      </div>
+   </div>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+	            <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+					<header class="entry-header">
+
+						<h1 class="entry-title">Testing or Monitoring? MTBF or MTTR? Make your choice!</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Mon, 5 Jun 2017</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">What is more important testing or monitoring? Should you optimize for mean time between failures (MTBF) or mean time to repair (MTTR)?</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/mtbf-mttr.jpg" />
+						</div>
+					</div>
+				 <div id="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small><i><a href="http://familyguy.wikia.com/wiki/Baby,_You_Knock_Me_Out">Baby, You Knock Me Out, Family Guy</a></i></small>
+
+				 </div>
+
+					<div class="entry-content"><p>Let’s imagine a fictitious world where evil and clueless managers are the norm. In such a world, so far removed from our reality, managers devour news aggregation sites, since they only have time to read news headlines, not content.</p><p>The title of a recent trending article "Testing and monitoring: two sides of the same coin”, made it clear (to your manager at least) that developers were again wasting BigCorp money in redundant technical activities. So in your next project kickoff meeting, he picks a card and writes the following story:</p>
+<blockquote><p><strong>As a</strong> Manager<br /> <strong>I want to</strong> have monitoring or automated testing but not both<br /> <strong>So that</strong> we save a ton of money"</p>
+</blockquote><p>As the echo of the manager’s maniacal laugh dies away, you comfort yourself with the thought that,  at least, he filled in the “so that” part.</p><p>Your team is torn by the choice.</p><p>Half of your teammates vote for a fully automated test suite, the other half for having good monitoring in production.</p><p>You have the decisive vote. What will be your choice?</p><p>Give yourself a minute to decide.</p><h2>Test Suite</h2><p>If you choose a test suite, you are aiming to not have any bugs in production. </p><p>You will have your unit and acceptance tests to know that you are building the right thing, your integration and system tests to check that components can talk to each other, your performance and soak tests to know that you have enough capacity and your <a href="/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/#content">resilience tests</a> to make sure your system can cope with failure.</p><p>You will be full of confidence during development. </p><p>But then you deploy to production and what? Did you forgot some test case? Was the test data representative? What is the latency? Did you misunderstood business? <a href="http://www.computerworld.com/article/2552992/it-management/not-so-unique.html">Social security number are not unique</a>?? Did we test the login form in IE6? Did Amazon S3 just disappeared???? Our site is in HackerNews …! </p><p>Too many permutations to test, too many possibilities to take into account, too many assumptions made, too many unknown unknowns.</p><p>A dark room full of terrors.</p><h2>Monitoring</h2><p>If you choose monitoring, you are trying to find any issue in production as soon as possible. Your alerts and dashboards will let you know.</p><p>But without the testing safety net, you know that bugs and issues are going to happen more often. Deploying to production is going to be scary but at least you are going to have the knowledge of its state.</p><p>With testing we hope we haven’t deployed any bug to production, with monitoring we know if we did.</p><p>Also, to reduce the risk, not having tests will encourage you to follow some of the continuous delivery practices: <a href="https://continuousdelivery.com/principles/#work-in-small-batches">small changes</a>, <a href="https://martinfowler.com/articles/feature-toggles.html">feature toggles</a> and <a href="https://martinfowler.com/bliki/CanaryRelease.html">canary releases</a>. </p><p>Basically, you will let your clients do the testing in a safe and controlled way. Your “tests” will run with production data, with production servers, and with production traffic. No assumptions to be made, no permutations not covered.</p><p>Last, once you have this capability available, it will allow you to do something that no automated test suite will ever give you: to test business ideas through A/B testing.</p><p>So monitoring will give you the ability to peek into a room, and if it is full of terrors, close the door. </p><h2>Back to the real world</h2><p>Thankfully, we do not live in such a world of gratuitous requirements, so we do not need to make a hard choice. </p><p>In the real world, we will be doing both testing and monitoring, but as we don’t have an infinite amount of time, we will need to prioritize our work.</p><p>If we prioritize testing, we are trying to increase our MTBF (mean time between failures) while prioritizing monitoring reduces our MTTR (mean time to repair).</p><p>Both <a href="https://youtu.be/YruzQgWdv48?t=36m22s">Chad Fowler</a> and <a href="http://www.kitchensoap.com/2010/11/07/mttr-mtbf-for-most-types-of-f/">John Allspaw</a> think that for most business and failure types, optimizing for MTTR is better than optimizing for MTBF, but where is the balance?</p><p>If we look at the availability formula:</p><p><em>Availability = Uptime / (Uptime + Downtime)</em></p><p>Which can be translated to:</p><p><em>Availability = MTBF / (MTBF + MTTR)</em></p><p>Which allow us to calculate the MTBF or MTTR for a given availability target:</p><p><em>MTBF = Availability * MTTR / (1 - Availability)</em></p><p><em>MTTR = MTBF / Availability - MTBF</em></p><p>If you know how long it usually takes you to <strong>detect</strong> and fix an issue, that is, your know your MTTR, you can see in the following table how often you can have a production issue for your desired SLA (numbers are rounded):</p>
+<table>
+  <thead>
+    <tr>
+      <th>Availability / MTTR </th>
+      <th align="right">1h </th>
+      <th align="right">4h </th>
+      <th align="right">24h </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>90 % </td>
+      <td align="right">9h </td>
+      <td align="right">1d 12h </td>
+      <td align="right">9d </td>
+    </tr>
+    <tr>
+      <td>95 % </td>
+      <td align="right">19h </td>
+      <td align="right">3d 4h </td>
+      <td align="right">19d </td>
+    </tr>
+    <tr>
+      <td>99 % </td>
+      <td align="right">4d 3h </td>
+      <td align="right">2w </td>
+      <td align="right">3.5mo </td>
+    </tr>
+    <tr>
+      <td>99.9 % </td>
+      <td align="right">6w </td>
+      <td align="right">6mo </td>
+      <td align="right">2.8y </td>
+    </tr>
+    <tr>
+      <td>99.99 % </td>
+      <td align="right">1y 10d </td>
+      <td align="right">4.5y </td>
+      <td align="right">28y </td>
+    </tr>
+    <tr>
+      <td>99.999 % </td>
+      <td align="right">11.5y </td>
+      <td align="right">45y </td>
+      <td align="right">280y </td>
+    </tr>
+  </tbody>
+</table><p>So if your MTTR is one hour, the system can break every nine hours and still achieve a 90% availability,  but if you are aiming for 99.99% availability, you cannot have more than one issue a year!</p><p>Similarly, if you know how often you usually deploy bugs into production or things go bad,  you can calculate what should be your MTTR for the target availability:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Availability / MTBF </th>
+      <th align="right">7d </th>
+      <th align="right">1mo</th>
+      <th align="right">3mo</th>
+      <th align="right">6mo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>90 % </td>
+      <td align="right">19h </td>
+      <td align="right">3d</td>
+      <td align="right">1w 2d </td>
+      <td align="right">2w 6d </td>
+    </tr>
+    <tr>
+      <td>95 % </td>
+      <td align="right">9h </td>
+      <td align="right">1d 12h </td>
+      <td align="right">4d 10h </td>
+      <td align="right">1w 2d </td>
+    </tr>
+    <tr>
+      <td>99 % </td>
+      <td align="right">1.5h</td>
+      <td align="right">7h</td>
+      <td align="right">20h</td>
+      <td align="right">1d 20h</td>
+    </tr>
+    <tr>
+      <td>99.9 % </td>
+      <td align="right">10m</td>
+      <td align="right">40m</td>
+      <td align="right">2h</td>
+      <td align="right">4.5h</td>
+    </tr>
+    <tr>
+      <td>99.99 % </td>
+      <td align="right">1m</td>
+      <td align="right">4m</td>
+      <td align="right">12m</td>
+      <td align="right">26m</td>
+    </tr>
+    <tr>
+      <td>99.999 % </td>
+      <td align="right">7s</td>
+      <td align="right">24s</td>
+      <td align="right">1m</td>
+      <td align="right">2m</td>
+    </tr>
+  </tbody>
+</table><p>So if you have one issue per month, you need to be able to detect it and fix it in less than 40 minutes to have an availability of 99.9%.</p><p>From both tables above, you can see that to achieve high availability, a very low MTTR is mandatory.</p><p>Also, low MTTR requires no human intervention, so no time for fixing and deploying a bugfix or jumping to boxes to restart things. Automatic detection is key, hence monitoring is key.</p><p>Note that canary releases will give you more time to detect the issue. If you are just sending 1% of the traffic,  your time to detect increases by ~ x100. Of course, this means that 1% of the traffic is representative of the overall  traffic and able to cause the issue.</p><p>Even if you don’t ever deploy any bugs, your production environment will change as your server will require to  be updated, your network cables will be chew, humans will make mistakes and your users’ behaviours will change overtime.</p><p><a href="https://en.wikipedia.org/wiki/Murphy%27s_law">Murphy’s law</a> will make sure that your systems will fail. And because failure is inevitable, you need to learn to cope with it.</p><h2>Conclusion</h2><p>Hopefully at this point, you agree that monitoring is as important as an automated test suite.</p><p>But if you look back into your recent projects, how much time and energy did you expend thinking,  building and coding your monitoring, versus the time you expend on your tests?</p><p>Is it proportional to its importance?</p><p>Monitoring should not be an afterthought that happens just before we deploy things to production. </p><p>Monitoring should be part of your definition of done, a core part of your development process.</p><p>And of course, don’t forget to have a very good test harness for your monitoring!</p></div>
+
+				 
+
+
+				 <p class="tags">
+	  			     	<span>Tagged in </span>:
+	  				  	<a href="/tags/architecture/index.html">architecture </a><a href="/tags/good_practices/index.html">good practices </a><a href="/tags/testing/index.html">testing </a>
+	  			   </p>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <div id="pagenav" class="pagenav group">
+		  			   <span class="prev"><a href="/2017/05/24/clojure-most-important-lesson/#content" rel="prev">Previous</a></span>
+		  				<span class="next"></span>
+	  				</div>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He works at the fin-tech IG, where he is involved in architecting the web platform, the analytics website and the big data solution.
+					   A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="http://cfp.devoxx.pl/2017/speaker/daniel_lebrero"><img class="pull-left" src="/images/devoxx-pl-2017.jpg" /></a>
+						<a href="http://www.jbcnconf.com/2017/infoSpeaker.html?ref=daniel-lebrero"><img src="/images/logo-jbcnconf.jpg" /></a>
+						<a href="https://jaxlondon.com/speaker/daniel-lebrero/"><img src="/images/logo-jax-2017.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (5)</a></li><li><a href="/tags/Clojure/index.html">Clojure (12)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/architecture/index.html">architecture (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (8)</a></li><li><a href="/tags/resilience/index.html">resilience (3)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
