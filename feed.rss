@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 05 Jun 2017 18:00:00 +0200
+Sun, 11 Jun 2017 18:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Mon, 05 Jun 2017 18:00:00 +0200
+Sun, 11 Jun 2017 18:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Delay: Clojure's forgotten concurrency primitive
+</title>
+<link>
+http://danlebrero.com/2017/06/11/delay-clojure-forgotten-concurrency-primitive/
+</link>
+<guid>
+http://danlebrero.com/2017/06/11/delay-clojure-forgotten-concurrency-primitive/
+</guid>
+<pubDate>
+Sun, 11 Jun 2017 18:00:00 +0200
+</pubDate>
+<description>
+When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us.
+</description>
+</item>
 <item>
 <title>
 Testing or Monitoring? MTBF or MTTR? Make your choice!
@@ -174,23 +191,6 @@ Wed, 14 Dec 2016 00:00:00 +0100
 </pubDate>
 <description>
 The reasons to use Java and Clojure are the same
-</description>
-</item>
-<item>
-<title>
-Automating resilience testing with Clojure and Docker - EuroClojure 2016 video
-</title>
-<link>
-http://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
-</link>
-<guid>
-http://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
-</guid>
-<pubDate>
-Sat, 26 Nov 2016 00:00:00 +0100
-</pubDate>
-<description>
-Video from my presentation on EuroClojure 2016
 </description>
 </item>
 </channel>

@@ -2087,3 +2087,13 @@ article td:last-child {
 .footnotes {
 	font-size: 11px;
 }
+
+.cta {
+	font-family: "raleway-bold", sans-serif;
+	color: #252525;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
