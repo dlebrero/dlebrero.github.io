@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Sun, 11 Jun 2017 18:00:00 +0200
+Mon, 12 Jun 2017 09:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Sun, 11 Jun 2017 18:00:00 +0200
+Mon, 12 Jun 2017 09:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -28,13 +28,13 @@ clj-rss
 Delay: Clojure's forgotten concurrency primitive
 </title>
 <link>
-http://danlebrero.com/2017/06/11/delay-clojure-forgotten-concurrency-primitive/
+http://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/
 </link>
 <guid>
-http://danlebrero.com/2017/06/11/delay-clojure-forgotten-concurrency-primitive/
+http://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/
 </guid>
 <pubDate>
-Sun, 11 Jun 2017 18:00:00 +0200
+Mon, 12 Jun 2017 09:00:00 +0200
 </pubDate>
 <description>
 When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us.
