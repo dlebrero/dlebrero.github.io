@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 12 Jun 2017 09:00:00 +0200
+Wed, 21 Jun 2017 16:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Mon, 12 Jun 2017 09:00:00 +0200
+Wed, 21 Jun 2017 16:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Atoms, delays and side effects: a resource management idiom for Clojure
+</title>
+<link>
+http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
+</link>
+<guid>
+http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
+</guid>
+<pubDate>
+Wed, 21 Jun 2017 16:00:00 +0200
+</pubDate>
+<description>
+Concurrency in Clojure is easy peasy, unless you have to deal with side effects. But atoms and delays can still help us. Let's look at an idiom for resource management.
+</description>
+</item>
 <item>
 <title>
 Delay: Clojure's forgotten concurrency primitive
@@ -174,23 +191,6 @@ Sat, 26 Nov 2016 00:00:00 +0100
 </pubDate>
 <description>
 Video from my presentation on EuroClojure 2016
-</description>
-</item>
-<item>
-<title>
-Automating resilience testing with Clojure and Docker - EuroClojure 2016 slides
-</title>
-<link>
-http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
-</link>
-<guid>
-http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
-</guid>
-<pubDate>
-Mon, 14 Nov 2016 00:00:00 +0100
-</pubDate>
-<description>
-Slides from my presentation on EuroClojure 2016
 </description>
 </item>
 </channel>

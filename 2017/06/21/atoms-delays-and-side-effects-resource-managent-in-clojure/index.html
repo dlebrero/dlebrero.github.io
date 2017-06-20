@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Atoms, delays and side effects: a resource management idiom for Clojure</title>
+	<meta content="Concurrency in Clojure is easy peasy, unless you have to deal with side effects. But atoms and delays can still help us. Let's look at an idiom for resource management." name="description" /><meta content="Clojure delay concurrency idiom initialize multithreading resource management Spark atom " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Atoms, delays and side effects: a resource management idiom for Clojure" property="og:title" /><meta content="Concurrency in Clojure is easy peasy, unless you have to deal with side effects. But atoms and delays can still help us. Let's look at an idiom for resource management." property="og:description" /><meta content="http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/" property="og:url" /><meta content="Atoms, delays and side effects: a resource management idiom for Clojure" name="twitter:title" /><meta content="Concurrency in Clojure is easy peasy, unless you have to deal with side effects. But atoms and delays can still help us. Let's look at an idiom for resource management." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/clojure-atoms-side-effects.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/clojure-atoms-side-effects.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+	            <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+					<header class="entry-header">
+
+						<h1 class="entry-title">Atoms, delays and side effects: a resource management idiom for Clojure</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 21 Jun 2017</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Concurrency in Clojure is easy peasy, unless you have to deal with side effects. But atoms and delays can still help us. Let's look at an idiom for resource management.</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/clojure-atoms-side-effects.jpg" />
+						</div>
+					</div>
+				 <div id="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small><i><a href="http://www.renegadejuggling.com/our-products/juggling-torches/">http://www.renegadejuggling.com</a></i></small>
+
+				 </div>
+
+					<div class="entry-content"><p>In Clojure, if your application needs some stateful component that needs to be initialised just once during application startup and destroyed once during shutdown, you would usually rely on something like <a href="https://github.com/stuartsierra/component">Component</a> or <a href="https://github.com/tolitius/mount">Mount</a>.</p><p>But what if you need to reinitialize that component during the life of the application, while multiple threads are trying to use that component?</p><h2>A practical example</h2><p>In a <a href="/2017/06/12/delay-clojure-forgotten-concurrency-primitive/#content">previous post</a>, I explained how to use <em>delay</em> and how we use it in our Spark jobs to initialize an HBase connection pool. Basically, the code that we needed was:</p>
+<pre><code class="clojure">(def better-global-hbase-connection (delay (create-new-hbase-connection)))
+</code></pre><p>Now, I simplify the problem a little bit. </p><p>This code would be fine if we just needed to create the HBase connection pool once for the whole duration of the Spark job. </p><p>But, in our case of long running Spark Streaming jobs, sometimes, for some unknown reason, the HBase connection pool just stops working. This needed the workaround of recreating the connection pool on error.</p><p>As there are multiple threads reading and writing using that connection pool, several could potentially detect at the same time that the pool had gone bad, and have to coordinate between themselves to ensure that just one thread created the new pool.</p><h2>A not so good solution</h2><p>Recreating the pool means that we have some mutable state, so the most obvious choice is to use an atom to hold a reference to the delayed pool:</p>
+<pre><code class="clojure">(def global-hbase-connection (atom (delay (create-new-hbase-connection))))
+</code></pre><p>And then, when we detect an error, close the old connection and create a new one:</p>
+<pre><code class="clojure">(defn refresh-connection! []
+    (swap! global-hbase-connection
+           (fn [old-connection]
+             ;; should close old connection
+             (log "Closing" @old-connection)
+             (delay (create-new-hbase-connection)))))
+
+(defn run-with-hbase [f]
+   (try
+     (f @@global-hbase-connection)
+     (catch Exception _
+       (log "Retrying")
+       (refresh-connection!)
+       ;; this retry logic is again a simplification
+       (run-with-hbase f))))
+</code></pre><p>This was the first version the we wrote, but it has a subtle issue. Can you see it?</p><p>Let’s give it a try to see what happens, simulating that the threads detect an error:</p>
+<pre><code class="clojure">(dotimes [_ 4]
+  (future (run-with-hbase
+            (let [errored (atom false)]
+              (fn [connection]
+                (if @errored
+                  (log "Using" connection)
+                  (do
+                    (log "Not happy with" connection)
+                    (reset! errored true)
+                    (throw (RuntimeException.)))))))))
+</code></pre><p>The results are a little bit surprising:</p>
+<pre><code class="clojure">11:31:43 - clojure-agent-send-off-pool-202 - Not happy with 1
+11:31:43 - clojure-agent-send-off-pool-200 - Not happy with 1
+11:31:43 - clojure-agent-send-off-pool-199 - Not happy with 1
+11:31:43 - clojure-agent-send-off-pool-201 - Not happy with 1
+11:31:43 - clojure-agent-send-off-pool-201 - Closing 1
+11:31:43 - clojure-agent-send-off-pool-199 - Closing 1
+11:31:43 - clojure-agent-send-off-pool-200 - Closing 1
+11:31:43 - clojure-agent-send-off-pool-202 - Closing 1
+11:31:43 - clojure-agent-send-off-pool-201 - Retrying
+11:31:44 - clojure-agent-send-off-pool-199 - Connection created! 2
+11:31:44 - clojure-agent-send-off-pool-199 - Closing 2
+11:31:44 - clojure-agent-send-off-pool-200 - Closing 2
+11:31:44 - clojure-agent-send-off-pool-201 - Using 2
+11:31:44 - clojure-agent-send-off-pool-202 - Closing 2
+11:31:44 - clojure-agent-send-off-pool-199 - Retrying
+11:31:45 - clojure-agent-send-off-pool-200 - Connection created! 3
+11:31:45 - clojure-agent-send-off-pool-200 - Closing 3
+11:31:45 - clojure-agent-send-off-pool-200 - Retrying
+11:31:45 - clojure-agent-send-off-pool-202 - Closing 3
+11:31:45 - clojure-agent-send-off-pool-199 - Using 3
+11:31:46 - clojure-agent-send-off-pool-200 - Connection created! 4
+11:31:46 - clojure-agent-send-off-pool-200 - Using 4
+11:31:46 - clojure-agent-send-off-pool-202 - Closing 4
+11:31:46 - clojure-agent-send-off-pool-202 - Retrying
+11:31:47 - clojure-agent-send-off-pool-202 - Connection created! 5
+11:31:47 - clojure-agent-send-off-pool-202 - Using 5
+</code></pre><h4>What is wrong here?</h4><p>First, we are creating four new connection pools, instead of the expected one.</p><p>Second, several threads try to close the same connection.</p><p>Last, on 11:31:45, connection 3 is being closed by thread “clojure-agent-send-off-pool-200” and then thread “clojure-agent-send-off-pool-199” tries to use it. It will find the connection closed, which will cause any operation to fail. If thread 199 decided to retry, it will close the existing connection, which could be in use by thread 200, which would decide to retry, which will close the existing connection, which could be in use by thread 199, which would decide to retry, which will close the existing connection, which could be in use by thread 200, which would decide to retry, which …</p><p>Note that even if we are pointlessly creating and closing the connection pool, there are no resource leaks, as all pools are properly closed. </p><h4>What is going on?</h4><p>If you remember how <a href="https://clojuredocs.org/clojure.core/swap!">swap!</a> works, what is happening is that all four threads run the refresh-connection!, each of them creating a new delayed pool. </p><p>One of them will win, and the others will find out that the value on the atom has changed, so Clojure will rerun the function again for the losing threads, closing the newly created connection and create a new bunch of delays.</p><p>We naively used swap because we had to close the previous pool, and needed a reference to the previous value. </p><p>But in this case, the next value of the atom does not depend on the current value.</p><p><a href="https://gist.github.com/dlebrero/529b9bfd4c5a7bd4a56fd42a320f30d6">The full code can be found here</a>.</p><h2>A better solution</h2><p>What we really want to code is: “Recreate the connection pool as long as nobody else has done it yet”.</p><p>In code:</p>
+<pre><code class="clojure ">(defn refresh-connection! [broken-connection]
+   (if (compare-and-set! global-hbase-connection
+                         broken-connection
+                         (delay (create-new-hbase-connection)))
+     (log "closing connection" @broken-connection)))
+
+ (defn run-with-hbase [f]
+   (let [connection @global-hbase-connection]
+     (try
+       (f @connection)
+       (catch Exception _
+         (refresh-connection! connection)
+         (log "Retrying")
+         (run-with-hbase f)))))
+</code></pre><p>Note how the <em>refresh-connection!</em> function now requires the broken pool as a parameter, as we just want to recreate the pool if, and only if, the current pool is still the broken one.</p><p>If another thread has recreated the pool already, the <a href="https://clojuredocs.org/clojure.core/compare-and-set!">compare-and-set!</a> will return false, that is like saying “Hey, somebody already changed the value”, in which case our thread doesn’t want to do anything.</p><p>Running the test again, it outputs:</p>
+<pre><code class="clojure">12:07:09 - clojure-agent-send-off-pool-203 - Not happy with 1
+12:07:09 - clojure-agent-send-off-pool-204 - Not happy with 1
+12:07:09 - clojure-agent-send-off-pool-205 - Not happy with 1
+12:07:09 - clojure-agent-send-off-pool-205 - Retrying
+12:07:09 - clojure-agent-send-off-pool-206 - Not happy with 1
+12:07:09 - clojure-agent-send-off-pool-203 - closing connection 1
+12:07:09 - clojure-agent-send-off-pool-203 - Retrying
+12:07:09 - clojure-agent-send-off-pool-204 - Retrying
+12:07:09 - clojure-agent-send-off-pool-206 - Retrying
+12:07:10 - clojure-agent-send-off-pool-205 - Connection created! 2
+12:07:10 - clojure-agent-send-off-pool-205 - Using 2
+12:07:10 - clojure-agent-send-off-pool-203 - Using 2
+12:07:10 - clojure-agent-send-off-pool-204 - Using 2
+12:07:10 - clojure-agent-send-off-pool-206 - Using 2
+</code></pre><p>Note that just one thread tried to close the broken pool, just one thread created the new pool and  that of them used the newly created pool. All good!</p><p><a href="https://gist.github.com/dlebrero/5b87a36a487d99b1963d5dceaa381085">The full code can be found here</a>.</p><h2>Lesson learned</h2><p>Even if we try to keep our functions pure, for our programs to be useful, we still need side effects. In those cases, even with all the power of Clojure, concurrency, side effects, and mutable state are as hard as ever.</p><p>But the simple semantics of atoms help a lot to reason about them.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoyed it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Clojure/index.html">Clojure </a>
+				 </p>
+
+				 <!--div id="pagenav" class="pagenav group">
+		  			   <span class="prev"><a href="#" rel="prev">Previous</a></span>
+		  				<span class="next"><a href="#" rel="next">Next</a></span>
+	  				</div-->
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He works at the fin-tech IG, where he is involved in architecting the web platform, the analytics website and the big data solution.
+					   A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="http://cfp.devoxx.pl/2017/speaker/daniel_lebrero"><img class="pull-left" src="/images/devoxx-pl-2017.jpg" /></a>
+						<a href="http://www.jbcnconf.com/2017/infoSpeaker.html?ref=daniel-lebrero"><img src="/images/logo-jbcnconf.jpg" /></a>
+						<a href="https://jaxlondon.com/speaker/daniel-lebrero/"><img src="/images/logo-jax-2017.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (5)</a></li><li><a href="/tags/Clojure/index.html">Clojure (14)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/architecture/index.html">architecture (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (8)</a></li><li><a href="/tags/resilience/index.html">resilience (3)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
