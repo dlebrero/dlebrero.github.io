@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 21 Jun 2017 16:00:00 +0200
+Wed, 21 Jun 2017 14:15:00 +0200
 </lastBuildDate>
 <pubDate>
-Wed, 21 Jun 2017 16:00:00 +0200
+Wed, 21 Jun 2017 14:15:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -34,7 +34,7 @@ http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent
 http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
 </guid>
 <pubDate>
-Wed, 21 Jun 2017 16:00:00 +0200
+Wed, 21 Jun 2017 14:15:00 +0200
 </pubDate>
 <description>
 Concurrency in Clojure is easy peasy, unless you have to deal with side effects. But atoms and delays can still help us. Let's look at an idiom for resource management.
