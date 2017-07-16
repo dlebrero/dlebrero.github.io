@@ -5,8 +5,8 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Logging levels: the wrong abstraction.</title>
-	<meta content="No more DEBUG/INFO/WARN/ERROR log level." name="description" /><meta content="good_practices log level abstraction" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Logging levels: the wrong abstraction." property="og:title" /><meta content="No more DEBUG/INFO/WARN/ERROR log level." property="og:description" /><meta content="http://danlebrero.com/2016/04/05/how-to-choose-the-correct-logging-level/" property="og:url" /><meta content="Logging levels: the wrong abstraction." name="twitter:title" /><meta content="No more DEBUG/INFO/WARN/ERROR log level." name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="http://danlebrero.com/img/ez@2x.png" name="twitter:image" /><meta content="http://danlebrero.com/img/ez@2x.png" property="og:image" />
+	<title>Error budget: Google's solution for innovating at a sustainable pace</title>
+	<meta content="New features always trump technical work. Can we objectively measure and decide when they should not?" name="description" /><meta content="technical debt negotiating error budget Google SRE reliability payoff " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Error budget: Google's solution for innovating at a sustainable pace" property="og:title" /><meta content="New features always trump technical work. Can we objectively measure and decide when they should not?" property="og:description" /><meta content="http://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/" property="og:url" /><meta content="Error budget: Google's solution for innovating at a sustainable pace" name="twitter:title" /><meta content="New features always trump technical work. Can we objectively measure and decide when they should not?" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/error-quotas.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/error-quotas.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 
@@ -111,22 +111,39 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Logging levels: the wrong abstraction.</h1>
+						<h1 class="entry-title">Error budget: Google's solution for innovating at a sustainable pace</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Tue, 5 Apr 2016</li>
+								<li id="entry-date">Sun, 16 Jul 2017</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">No more DEBUG/INFO/WARN/ERROR log level.</p>
+				 <p class="lead" id="entry-summary">New features always trump technical work. Can we objectively measure and decide when they should not?</p>
 
-				 
-				 
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/error-quotas.jpg" />
+						</div>
+					</div>
+				 <div class="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small><i><a href="http://www.wallpapervortex.com/wallpaper-33642_nature_balancing_rocks.html">http://www.wallpapervortex.com/</a></i></small>
 
-					<div class="entry-content"><p>TLDR; Deciding what log level to use it is the wrong question.</p><p>See that full blog post at IG’s blog <a href="http://labs.ig.com/logging-level-wrong-abstraction">IG’s blog</a>. </p></div>
+				 </div>
+
+					<div class="entry-content"><p>Wouldn’t it be nice to spend the next sprint or two paying off some of that technical debt that your project had accrued? Wouldn’t it be nice to improve the logging to ease support? Or add some additional integration or end-to-end tests? Or maybe do those first steps to enable blue/green deployments?</p><p>But, when was the last time that your product owner willingly added any of those technical stories to the next sprint? </p><p>There is always a tension between building or improving business features and those technical items - some of them technical debt, some technical improvements - that don’t bring a very obvious business benefit to the product owner. </p><p>Features always seem to trump any technical work. </p><p>There is a minority of technical work that does have some obvious business benefit. For example, if we improve performance by 20%, we could reduce the AWS bill by 20%.</p><p>But most of the time, the benefit of the technical work for the product owner are as obvious as that upgrade from a 286 to a blazing fast 386 was to your parents. I never managed to make that sell.</p><p>So for the vast majority of technical work, what else can we do instead of relying on our poor negotiation skills?</p><p>Google’s <a href="https://landing.google.com/sre/book.html">Site Reliability Engineering (SRE) book</a> comes with a possible answer: <a href="https://landing.google.com/sre/book/chapters/embracing-risk.html">error budgets</a>. </p><h2>What are error budgets?</h2><p>Each service should have some service level objective (SLO), which is like a soft SLA that has no $$$ penalty and no lawyers will be involved if it is missed. </p><p>The SLO of a service will depend on what would be the impact if it becomes unavailable. SLO should be defined by business as they should have an idea of what is the cost on reputation or money of the downtime.</p><p>The usual way of calculating the availability of a service is by looking at its uptime vs the unplanned downtime:</p><p><em>Availability = Uptime / (Uptime + Downtime)</em></p><p>But in the SRE book, they propose a different way of calculating the availability:</p><p><em>Availability = successful requests / (successful request + failed requests)</em></p><p>A failed request can be:</p>
+<ol>
+  <li>A 500 response, due to some bug.</li>
+  <li>No response, due to the service being down.</li>
+  <li>A slow response: if the client gives up before the response is available, it is as good as no response.</li>
+  <li>Incorrect data, due to some bug.</li>
+</ol><p>It is interesting to note that outages in common infrastructure count towards those failures, the idea being that the availability of that common infrastructure is everybody’s responsibility.</p><p>With this definition of availability, we can define the error budget as:</p><p><em>Error budget = (1 - availability) = failed requests / (successful requests + failed requests)</em></p><p>So if a service SLO is 99.9%, it has a 0.01% error budget. If the service is serves one million request per quarter, the error budget tells us that it can fail up to ten thousand times.</p><h2>Google’s use of error budgets</h2><p>The SRE book explains the tension between product teams, which are evaluated on how fast they deliver new features,  and the SRE teams, which are evaluated on the reliability of the systems.</p><p>Now that we know what the error budget of a service is, the premise is that once the product team uses the error budget, they can no longer make any new release without spending time improving the reliability of the service.</p><p>Also, if the product team is close to usin up their error budget, they will naturally be more cautious about what they release and how often they do, as they will want to reduce the risk of breaching the budget.</p><p>So error budgets act as a measurable, objective and self-policing mechanism to balance innovation versus reliability.</p><h2>Negotiating technical work</h2><p>I have never worked in a company with SRE teams, so in my experience, the tension described in the SRE book is really between the development team, who wants the time to do things properly and is accountable for the reliability of their services, and the product owner, who usually just wants to deliver more and more features. </p><p>So why not calculate your own error budget and use it to decide when the team needs to slow down and pay more attention to that technical work that keeps the project in good shape?</p><p>When the team has used or it is close to use the budget, the team must expend their time improving the reliability of the service, by <a href="/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/#content">improving the testing suite and the monitoring capabilities</a> of the system, by implementing some resiliency patterns, by automating more of the deployment pipeline or by increasing the performance of the system.</p><p>But to have a reliable system we also have to have a simple and clean codebase,  and a simple and clean architecture, because as Dijkstra said:</p>
+<blockquote><p>Simplicity is prerequisite for reliability. <cite>Edsger W. Dijkstra, How do we tell truths that might hurt?</cite></p>
+</blockquote><p>So big refactorings and re-architectures will naturally fall into this reliability bucket.</p><p>But we can imagine some product owners pushing for more features even when the error budget has been depleted. </p><p>And that should be fine. The product owner owns the SLO so she may chose to lower it, choosing features over availability, but at least the decision and trade-off are clear.</p><p>So in a way, error budgets also help to determine the actual required availability of a service, makes the trade-off more obvious, the decision clear and the product owner accountable.</p><p>So do your math, look at your logs and find if you have a compelling argument to schedule some technical improvements.</p>
+<hr /><p>Error budgets is just one of the many useful insights on the SRE book. It even details a <a href="https://landing.google.com/sre/book/chapters/automation-at-google.html#xref_automation_diskerase-sidebar">quasi-outage</a> very similar in cause and solution to the <a href="https://aws.amazon.com/message/41926/">Amazon Feb 2017 S3 outage</a>.</p><p>If interested, the book is available for free at <a href="https://landing.google.com/sre/book.html">https://landing.google.com/sre/book.html</a></p></div>
 
 				 
 
@@ -140,7 +157,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/good_practices/index.html">good practices </a>
+					 <a href="/tags/architecture/index.html">architecture </a><a href="/tags/good_practices/index.html">good practices </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>

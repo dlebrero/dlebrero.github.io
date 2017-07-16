@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 05 Jun 2017 18:00:00 +0200
+Sun, 16 Jul 2017 00:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Mon, 05 Jun 2017 18:00:00 +0200
+Sun, 16 Jul 2017 00:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Error budget: Google's solution for innovating at a sustainable pace
+</title>
+<link>
+http://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/
+</link>
+<guid>
+http://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/
+</guid>
+<pubDate>
+Sun, 16 Jul 2017 00:00:00 +0200
+</pubDate>
+<description>
+New features always trump technical work. Can we objectively measure and decide when they should not?
+</description>
+</item>
 <item>
 <title>
 Testing or Monitoring? MTBF or MTTR? Make your choice!

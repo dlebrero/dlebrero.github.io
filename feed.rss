@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 21 Jun 2017 14:15:00 +0200
+Sun, 16 Jul 2017 00:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Wed, 21 Jun 2017 14:15:00 +0200
+Sun, 16 Jul 2017 00:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Error budget: Google's solution for innovating at a sustainable pace
+</title>
+<link>
+http://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/
+</link>
+<guid>
+http://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/
+</guid>
+<pubDate>
+Sun, 16 Jul 2017 00:00:00 +0200
+</pubDate>
+<description>
+New features always trump technical work. Can we objectively measure and decide when they should not?
+</description>
+</item>
 <item>
 <title>
 Atoms, delays and side effects: a resource management idiom for Clojure
@@ -174,23 +191,6 @@ Fri, 06 Jan 2017 14:00:00 +0100
 </pubDate>
 <description>
 Implementation details from a proof of concept using Kafka Streams and KTables using Clojure and Docker
-</description>
-</item>
-<item>
-<title>
-Proof of concept using KafkaStreams and KTables
-</title>
-<link>
-http://danlebrero.com/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/
-</link>
-<guid>
-http://danlebrero.com/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/
-</guid>
-<pubDate>
-Thu, 05 Jan 2017 17:00:00 +0100
-</pubDate>
-<description>
-Exploring how to use KafkaStreams and KTables for building a stateful stream processing application
 </description>
 </item>
 </channel>
