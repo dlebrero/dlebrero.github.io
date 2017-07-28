@@ -25,7 +25,7 @@ jQuery(function($) {
 
     // Track the aticle load
     if (!debugMode) {
-        ga('send', 'event', 'Blog', 'ArticleLoaded', 'url', window.location.href, {
+        ga('send', 'event', 'Blog', 'PostLoaded', {
            nonInteraction: true
         });
     } else {
