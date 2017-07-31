@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Sun, 16 Jul 2017 00:00:00 +0200
+Tue, 01 Aug 2017 00:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Sun, 16 Jul 2017 00:00:00 +0200
+Tue, 01 Aug 2017 00:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+A more efficient developer: disable notifications
+</title>
+<link>
+http://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
+</link>
+<guid>
+http://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
+</guid>
+<pubDate>
+Tue, 01 Aug 2017 00:00:00 +0200
+</pubDate>
+<description>
+How to become X times more efficient in one simple step.
+</description>
+</item>
 <item>
 <title>
 Error budget: Google's solution for innovating at a sustainable pace
