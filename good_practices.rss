@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Tue, 01 Aug 2017 00:00:00 +0200
+Wed, 02 Aug 2017 00:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Tue, 01 Aug 2017 00:00:00 +0200
+Wed, 02 Aug 2017 00:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+A more efficient developer: master your IDE
+</title>
+<link>
+http://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
+</link>
+<guid>
+http://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
+</guid>
+<pubDate>
+Wed, 02 Aug 2017 00:00:00 +0200
+</pubDate>
+<description>
+A professional developer should look professional while using his main tool.
+</description>
+</item>
 <item>
 <title>
 A more efficient developer: disable notifications
@@ -174,23 +191,6 @@ Tue, 05 Apr 2016 00:00:00 +0200
 </pubDate>
 <description>
 No more DEBUG/INFO/WARN/ERROR log level.
-</description>
-</item>
-<item>
-<title>
-Lines of code actually matters.
-</title>
-<link>
-http://danlebrero.com/2016/03/17/lines-of-code/
-</link>
-<guid>
-http://danlebrero.com/2016/03/17/lines-of-code/
-</guid>
-<pubDate>
-Thu, 17 Mar 2016 00:00:00 +0100
-</pubDate>
-<description>
-For a long time I thought lines of code was a bogus metric, but after working in both Java and Clojure, I have changed my mind.  
 </description>
 </item>
 </channel>
