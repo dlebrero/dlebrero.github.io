@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 02 Aug 2017 00:00:00 +0200
+Thu, 03 Aug 2017 00:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Wed, 02 Aug 2017 00:00:00 +0200
+Thu, 03 Aug 2017 00:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+A more efficient developer: write programs for yourself
+</title>
+<link>
+http://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/
+</link>
+<guid>
+http://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/
+</guid>
+<pubDate>
+Thu, 03 Aug 2017 00:00:00 +0200
+</pubDate>
+<description>
+The shoemaker's son always go barefoot.
+</description>
+</item>
 <item>
 <title>
 A more efficient developer: master your IDE
@@ -174,23 +191,6 @@ Wed, 18 May 2016 00:00:00 +0200
 </pubDate>
 <description>
 TDD and BDD are very good practices, but what are the costs enforcing them?
-</description>
-</item>
-<item>
-<title>
-Logging levels: the wrong abstraction.
-</title>
-<link>
-http://danlebrero.com/2016/04/05/how-to-choose-the-correct-logging-level/
-</link>
-<guid>
-http://danlebrero.com/2016/04/05/how-to-choose-the-correct-logging-level/
-</guid>
-<pubDate>
-Tue, 05 Apr 2016 00:00:00 +0200
-</pubDate>
-<description>
-No more DEBUG/INFO/WARN/ERROR log level.
 </description>
 </item>
 </channel>
