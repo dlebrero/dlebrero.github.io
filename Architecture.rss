@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Sun, 16 Jul 2017 00:00:00 +0200
+Thu, 03 Aug 2017 11:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Sun, 16 Jul 2017 00:00:00 +0200
+Thu, 03 Aug 2017 11:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Applying stability patterns: a case study - Devoxx PL 2017
+</title>
+<link>
+http://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
+</link>
+<guid>
+http://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
+</guid>
+<pubDate>
+Thu, 03 Aug 2017 11:00:00 +0200
+</pubDate>
+<description>
+Video from my presentation on Devoxx PL 2017 on stability patterns
+</description>
+</item>
 <item>
 <title>
 Error budget: Google's solution for innovating at a sustainable pace
