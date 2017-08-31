@@ -5,8 +5,8 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>A more efficient developer: master your IDE</title>
-	<meta content="A professional developer should look professional while using his main tool." name="description" /><meta content="efficient effective developer master IDE IDEA" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="A more efficient developer: master your IDE" property="og:title" /><meta content="A professional developer should look professional while using his main tool." property="og:description" /><meta content="http://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/" property="og:url" /><meta content="A more efficient developer: master your IDE" name="twitter:title" /><meta content="A professional developer should look professional while using his main tool." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/efficient-master-ide.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/efficient-master-ide.jpg" property="og:image" />
+	<title>Why to Docker Compose a calm environment</title>
+	<meta content="Setting up or upgrading a developer environment should be an easy and repeatable process. Docker Compose is the tool to achieve it." name="description" /><meta content="docker compose setup development environment why " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Why to Docker Compose a calm environment" property="og:title" /><meta content="Setting up or upgrading a developer environment should be an easy and repeatable process. Docker Compose is the tool to achieve it." property="og:description" /><meta content="http://danlebrero.com/2017/09/01/a-docker-compose-environment/" property="og:url" /><meta content="Why to Docker Compose a calm environment" name="twitter:title" /><meta content="Setting up or upgrading a developer environment should be an easy and repeatable process. Docker Compose is the tool to achieve it." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/docker-compose-dev-env.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/docker-compose-dev-env.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 
@@ -111,40 +111,101 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">A more efficient developer: master your IDE</h1>
+						<h1 class="entry-title">Why to Docker Compose a calm environment</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Wed, 2 Aug 2017</li>
+								<li id="entry-date">Fri, 1 Sep 2017</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">A professional developer should look professional while using his main tool.</p>
+				 <p class="lead" id="entry-summary">Setting up or upgrading a developer environment should be an easy and repeatable process. Docker Compose is the tool to achieve it.</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/efficient-master-ide.jpg" />
+							<img src="/images/blog/docker-compose-dev-env.jpg" />
 						</div>
 					</div>
-				 <div class="entry-content-media-attribution">
-					 <small>Image attribution:</small>
-						 <small><i>Wax on, wax off</i> - Master Miyagi, <a href="https://en.wikipedia.org/wiki/The_Karate_Kid">The Karate Kid</a></small>
+				 
 
-				 </div>
-
-					<div class="entry-content"><p>As a developer, you are going to spend thousands of hours working with your IDE or editor of choice. </p><p>It is your main tool, you need to know how to get the most out of it.</p><p>Using your IDE 8 hours a day is not enough, you need to make a conscious and deliberate effort to master it. </p><p>You must learn:</p>
+					<div class="entry-content"><p>The joys of a new job. </p><p>You get there on your first day and after the introductions, you are given your first task: to get the project up and running on your dev box.</p><p>The task comes with a link to the wiki, which has THE instructions:</p>
 <ol>
-  <li>The shortcuts for all the functionality that you regularly use. You should rarely need to use your mouse.</li>
-  <li>Its features: read the release notes, watch online tutorials or follow some expert that blogs about it.</li>
-</ol><p>If you happen to use Intellij IDEA, the Key Promoter plugin will help to learn the shortcuts and JetBrains provides a ton of online material. Follow their <a href="https://blog.jetbrains.com/idea/">blog</a> and <a href="https://www.youtube.com/user/intellijideavideo">youtube channel</a>. </p><p>But the most effective way of learning your IDE is to do pair programming. As part of your daily job, each of your partners will teach you different features, and you will have the chance to teach them to others, creating a nice cross-pollination effect.</p><p>And you can always ask your partner to slap you every time that you reach for the mouse. A win-win situation.</p>
+  <li>Download X</li>
+  <li>Install Y</li>
+  <li>Run “./build –special-flag”</li>
+  <li>Copy Z to W</li>
+  <li>Make sure foo but not bar</li>
+  <li>…</li>
+</ol><p>You know how it is going to end. And just in case you had any doubts, your new boss just confirms it: </p><p>“It’s probably a bit out of date, so can you please update it if you find any issues?”</p><p>Two days later, you emerge triumphant, proud of your achievement, and with a smile on your face: Your updated instructions are so accurate that the next person joining will be forever thankful.</p><h2>Or maybe not</h2><p>The instructions on the wiki seem like a good enough solution, given that each member of the team needs to pass the ordeal just once … except when:</p>
+<ol>
+  <li>You get a new and shiny dev box.</li>
+  <li>Your dev box dies.</li>
+  <li>You move to another project.</li>
+  <li>Six month latter, you go back to the original project. Nothing works anymore.</li>
+  <li>A new feature requires Zookeeper, and everybody to configure a local Zookeeper cluster!</li>
+  <li>Your operating system is upgraded and “insert-your-fav-database-here” doesn’t want to start anymore. Welcome to DDL hell.</li>
+  <li>That old project that your team still maintains needs Maven 2.1.1 but the current project requires &gt; 3.3, and requires Postgres 7.1 but the new one requires at least 9.5 with PostPic and OpenFTS extensions.</li>
+  <li>Polyglot Microservices company! Install maven, gradle, npm, yarn, node, make, go, ruby, rake, lein, sbt, rebar, cassandra, mongodb, redis, postgresql, couchbase…</li>
+</ol><p>But sometimes, some component, for some unknown reason, somehow stops working, and it won’t ever start again.</p><h2>Enter Docker Compose</h2><p>Docker Compose is a tool which allows one to define a multi-container system using one file, and to run them in Docker, creating a private network to isolate the system.</p><p>A Docker Compose file that will start a Postgres and a Redis is as simple as: </p>
+<pre><code>version: "3"
+services:
+  postgres:
+    image: postgres:9.5
+    volumens: 
+      - ./db-provision:/docker-entrypoint-initdb.d/
+    ports: 
+      - 5432:5432
+  redis:
+    image: redis:3.2.9
+</code></pre><p>You can configure the container for your project and Docker Compose will be able to create a new environment, mapping some of the ports and files between the internal containers and your dev box.</p><p>Something like:</p><p><img src="/images/blog/dev-setup-diagram.jpg" alt="Docker Compose Dev Setup Architecture" title="Docker Compose Dev Setup Architecture" /></p><p>Using Docker Compose to set up and run our local development environment gives us: </p>
+<table>
+  <tbody>
+    <tr>
+      <td>One command to set up and start the system </td>
+      <td><em>docker-compose up</em> </td>
+    </tr>
+    <tr>
+      <td>One command to upgrade or add new components </td>
+      <td><em>docker-compose up --build</em> </td>
+    </tr>
+    <tr>
+      <td>One command to stop the system</td>
+      <td><em>docker-compose stop</em></td>
+    </tr>
+    <tr>
+      <td>One command to clean up any trace of the system</td>
+      <td><em>docker-compose down --remove-orphans --rmi all</em></td>
+    </tr>
+    <tr>
+      <td>A precise and repeatable process</td>
+      <td>The Docker Compose file will be executed by a machine, so there is no room for imprecision. <br />Just make sure that you use an immutable version of the image.</td>
+    </tr>
+    <tr>
+      <td>A process that never gets out of date</td>
+      <td>As the team will use the Docker Compose everyday for their development, and any change in the system must be done within the Docker files, there is no opportunity for the instructions to get stale.</td>
+    </tr>
+    <tr>
+      <td>A process that can be version controlled</td>
+      <td>The Docker files are plain text, they will be collocated with the rest of the project source code, they will be peer reviewed and changes can be rolled back, diffed, …</td>
+    </tr>
+    <tr>
+      <td>A process that allows for experimentation</td>
+      <td>As it is easy to destroy and recreate systems, and as the Docker files can be rolled back, there is no risk on trying new versions of components or fiddling around with the configuration.</td>
+    </tr>
+    <tr>
+      <td>A way of running more than version of the same project or more than one project at the same time</td>
+      <td>Unfortunately, this is probably requires some manual fiddling to remap some of the ports exposed in the Docker Compose file, but at least all the ports are in just one file.<br /> After that is a simple: <em>docker-compose -p my-project-one up -d; docker-compose -p my-project-again up</em></td>
+    </tr>
+  </tbody>
+</table><h2>A production-like environment or not?</h2><p>When talking about Docker, one of the benefits usually mentioned is that it allows one to run a production-like environment anywhere.</p><p>Indeed this is a big benefit. Your CI server should run its tests against a production-like version, and you should be able to run such a version locally, but for the day to day development experience, you want a setup that allows for a fast feedback cycle.</p><p>For example, you don’t want to minimize your JavaScript files for each and every change that you make and you probably want some sort of auto refresh.</p><p>Fast feedback is just more important.</p><p>This development environment should include any build tools that your project requires, so your setup instructions should not have any “install maven/npm” step. Those tools should come within a Docker container. This way, everybody  in the team will be using the same tool version in the same operative system version.</p><h2>Conclusion</h2><p>Even if you don’t use Docker in production, it is well worth using it just to make setting up or upgrading a dev environment an uneventful process. </p><p>This process should be as close to “docker-compose up” as possible. Nothing more.</p><p>Don’t treat your dev box as some big global mutable variable. Use Docker Compose to treat it as a nice immutable one.</p>
 <hr /><p>More about efficiency:</p>
 <ol>
   <li><a href="/2017/08/01/efficient-developer-disable-notifications/#content">Disable notifications</a></li>
-  <li>Master your IDE (you are here)</li>
+  <li><a href="/2017/08/02/efficient-developer-master-your-ide/#content">Master your IDE</a></li>
   <li><a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">Write programs for yourself</a></li>
-  <li><a href="/2017/09/01/a-docker-compose-environment/#content">Why to Docker Compose a calm environment</a></li>
+  <li>Why to Docker Compose a calm environment (you are here)</li>
 </ol></div>
 
 				 
@@ -159,7 +220,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/good_practices/index.html">good practices </a>
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/good_practices/index.html">good practices </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
