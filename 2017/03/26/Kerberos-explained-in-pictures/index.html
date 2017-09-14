@@ -135,7 +135,7 @@
   <li>Chests can only be opened by a key of the same colour.</li>
   <li>Keys can be used to create chests of the same colour.</li>
   <li>Anyone can create a new colour key, as long as the colour doesn’t exist already.</li>
-</ol><p>How would you do it?</p><h3>The setup</h3><p>Here are the actors and the initial game setup:</p><p><img src="/images/kerberos-initial-setup.jpg" alt="Kerberos initial setup" title="Kerberos initial setup" /></p><p>The Dark user, who has a black key.</p><p>The FTP service, who has a blue key.</p><p>The AS, who has a green key, plus he knows that the user has a black key and has a copy of it. Other users would have keys of other colours.</p><p>The TGS has a green key, plus he knows that the FTP server has a blue key and has a copy of it. Other services would have keys of other colours.</p><h3>The play</h3><p><img src="/images/kerberos-for-dummies.jpg" alt="Kerberos in one picture" title="Kerberos solution diagram" /></p><p>Lets explain the initial interactions to make it more clear.</p>
+</ol><p>How would you do it?</p><h3>The setup</h3><p>Here are the actors and the initial game setup:</p><p><img src="/images/kerberos-initial-setup.jpg" alt="Kerberos initial setup" title="Kerberos initial setup" /></p><p>The Dark user, who has a black key.</p><p>The FTP service, who has a blue key.</p><p>The TGS has a green key, plus he knows that the FTP server has a blue key and has a copy of it. Other services would have keys of other colours.</p><p>The AS, who knows and has a copy of TGS’s green key the user’s black key. Other users would have keys of other colours.</p><h3>The play</h3><p><img src="/images/kerberos-for-dummies.jpg" alt="Kerberos in one picture" title="Kerberos solution diagram" /></p><p>Lets explain the initial interactions to make it more clear.</p>
 <ol>
   <li>The user starts by sending his name in plain sight to the AS.</li>
   <li>The AS forges a new red key.</li>
@@ -147,6 +147,7 @@
 <dt>TGS</dt><dd>Ticket Granting Service.</dd>
 <dt>FTP</dt><dd>The service the user wants to access.</dd>
 <dt>Black key</dt><dd>user hashed password.</dd>
+<dt>Green key</dt><dd>TGS Secret Key.</dd>
 <dt>Red key</dt><dd>Client/TGS Session Key.</dd>
 <dt>Green chest</dt><dd>Ticket-Granting-Ticket.</dd>
 <dt>Yellow key</dt><dd>Client/Server Session Key.</dd>
