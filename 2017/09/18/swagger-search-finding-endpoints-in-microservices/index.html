@@ -5,8 +5,8 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>REPL Driven Development - Voxxed Days Belgrade 2016 video</title>
-	<meta content="Video from my presentation on Voxxed Days Belgrade 2016 on why and how to do REPL Driven Development" name="description" /><meta content="Clojure REPL Driven development immediate feedback" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="REPL Driven Development - Voxxed Days Belgrade 2016 video" property="og:title" /><meta content="Video from my presentation on Voxxed Days Belgrade 2016 on why and how to do REPL Driven Development" property="og:description" /><meta content="http://danlebrero.com/2016/10/22/repl-driven-development-voxxed-days-belgrade-2016-video/" property="og:url" /><meta content="REPL Driven Development - Voxxed Days Belgrade 2016 video" name="twitter:title" /><meta content="Video from my presentation on Voxxed Days Belgrade 2016 on why and how to do REPL Driven Development" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/repl-driven-development-voxxed-days-belgrade.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/repl-driven-development-voxxed-days-belgrade.jpg" property="og:image" />
+	<title>Swagger Search: Finding an endpoint in your microservice primordial soup </title>
+	<meta content="An open source tools to find endpoints in a microservice architecture." name="description" /><meta content="swagger search aggregate find endpoint microservice architecture" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Swagger Search: Finding an endpoint in your microservice primordial soup " property="og:title" /><meta content="An open source tools to find endpoints in a microservice architecture." property="og:description" /><meta content="http://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/" property="og:url" /><meta content="Swagger Search: Finding an endpoint in your microservice primordial soup " name="twitter:title" /><meta content="An open source tools to find endpoints in a microservice architecture." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/swagger-search/swagger-search.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/swagger-search/swagger-search.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 
@@ -111,26 +111,75 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">REPL Driven Development - Voxxed Days Belgrade 2016 video</h1>
+						<h1 class="entry-title">Swagger Search: Finding an endpoint in your microservice primordial soup </h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Sat, 22 Oct 2016</li>
+								<li id="entry-date">Mon, 18 Sep 2017</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Video from my presentation on Voxxed Days Belgrade 2016 on why and how to do REPL Driven Development</p>
+				 <p class="lead" id="entry-summary">An open source tools to find endpoints in a microservice architecture.</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/repl-driven-development-voxxed-days-belgrade.jpg" />
+							<img src="/images/blog/swagger-search/swagger-search.jpg" />
 						</div>
 					</div>
 				 
 
-					<div class="entry-content"><p>The video for my Voxxed Days Belgrade 2016 talk is available at <a href="https://www.youtube.com/watch?v=AmP6rW30wjE">REPL Driven Development</a>.</p></div>
+					<div class="entry-content"><p><a href="http://labs.ig.com/">IG</a> started its service-oriented architecture journey back in 2009. </p><p>The first proof of concept consisted of three services, deployed independently from the existing monolith: a big fat J2EE Enterprise Server. </p><p>We loved the freedom from the monolith so much, that during these years the service landscape at IG has been growing organically, boasting now more than 250 services, with tens of hundreds of endpoints.</p><p>Perfect services with clear boundaries were born, but due to time pressures, laziness, or other unfortunate practicalities, these perfect babies grew into bloated teenagers, accruing functionality marginally related to them.</p><p>But then, by virtue of some kind of asexual reproduction, the fat services were split into a new set of perfect services, condemned to repeat the errors of their parents.</p><h2>Do we have …?</h2><p>The evolving nature of a microservice architecture is a strength, but it comes with a lot of different challenges, one of which can be summarized in the following question:</p>
+<blockquote><p>Do we have an endpoint that provides XXX functionality?</p>
+</blockquote><p>To document what was available, we ended up using a service registry, to know which services were available, and Swagger, to know what each service provided.</p><p>So the workflow to find a candidate endpoint would be:</p>
+<ol>
+  <li>Go to the service registry.</li>
+  <li>Grep for a name that seemed logical. Failing that, scan the list of all service names.</li>
+  <li>Find the Swagger doc url for the service.</li>
+  <li>Scan the available endpoints for something suitable.</li>
+</ol><p>If no service or endpoint was found, we would fall back to the “ask around the office” methodology.</p><p>This workflow was at first mildly annoying, but as we distilled our existing services, more and more of them would have suspiciously similar names, making the process more onerous.</p><h2>Swagger Search</h2><p>To ease that pain, IG’s Clojure Club rolled up their sleeves and built Swagger Search: a service that collects all the Swagger documents from all the services and presents a user interface that allows you to find endpoints in your microservice architecture.</p><p>This is what it looks like:</p><p><img src="/images/blog/swagger-search/list-of-services.jpg" alt="List services" title="List all services found by the service discovery" /></p><p><img src="/images/blog/swagger-search/search-endpoints.jpg" alt="Search for endpoints" title="Search results" /></p><p>The service allows searching through the endpoint documentation, URL, HTTP method, its parameters, their types, or any fields in the request or response bodies.</p><p>What do we mean by type and fields? If you have the following endpoint:</p>
+<pre><code class="json">"post": {
+ "description": "Adds a new moderator for the chat.",
+ "parameters": [
+   {
+     "in": "body",
+     "name": "body",
+     "schema": {
+       "$ref": "#/definitions/LiveChatModerator"
+     }
+   }
+ ],
+ }
+...
+"LiveChatModerator": {
+ "properties": {
+   "id": {
+     "description": "...",
+     "type": "string"
+   },
+   "snippet": {
+     "$ref": "#/definitions/LiveChatModeratorSnippet",
+     "description": "...."
+   }
+ },
+ "type": "object"
+},
+"LiveChatModeratorSnippet": {
+ "properties": {
+   "liveChatId": {
+     "description": "...",
+     "type": "string"
+   },
+   "moderatorDetails": {
+     "$ref": "#/definitions/ChannelProfileDetails",
+     "description": "..."
+   }
+ },
+ "type": "object"
+}
+...
+</code></pre><p>The endpoint will show in queries for the types LiveChatModerator, LiveChatModeratorSnippet and ChannelProfileDetails, and in queries for id, snippet, liveChatId or moderatorDetails.</p><p>Swagger Search has built-in support for <a href="https://www.consul.io/">Consul</a> and <a href="https://github.com/coreos/etcd">Etcd</a>, but you can plug your own service discovery mechanism.</p><p>It comes in three different flavors: as a <a href="https://hub.docker.com/r/danlebrero/swagger-search/">docker container</a>, as an <a href="https://github.com/IG-Group/swagger-search/releases">executable jar</a>, or as a <a href="https://clojars.org/ig/swagger-search">library</a>.</p><p>IG has open sourced the project under the Apache 2 license. You can find <a href="https://github.com/IG-Group/swagger-search">the source and instructions at Github</a>.</p><p>Hope you also find it useful.</p><h2>Acknowledgements</h2><p>Thanks a lot to all the member of IG’s Clojure Club and special thanks to all those graduates that were forced by their demonic overlords to contribute to the project. You did a great job and you taught me that Clojure can be learned in less than a month. </p><p>Thanks also to <a href="https://apis.guru/">APIs.guru</a> for providing all those Swagger APIs that helped enormously during testing. </p><p>And of course, thanks to everybody behind <a href="https://swagger.io">Swagger</a>. It is an awesome tool.</p><p>Kudos to everyone, but especially my best friend <a href="https://twitter.com/rmorschel">Robert Morschel</a> who taught me everything, who reviews this blog and who keeps adding random and funny statements with the hope that one will slip through.</p></div>
 
 				 
 
@@ -144,7 +193,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/good_practices/index.html">good practices </a>
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
