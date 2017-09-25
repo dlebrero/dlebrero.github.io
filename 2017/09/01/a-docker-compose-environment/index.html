@@ -145,7 +145,7 @@
   <li>You move to another project.</li>
   <li>Six month latter, you go back to the original project. Nothing works anymore.</li>
   <li>A new feature requires Zookeeper, and everybody to configure a local Zookeeper cluster!</li>
-  <li>Your operating system is upgraded and “insert-your-fav-database-here” doesn’t want to start anymore. Welcome to DDL hell.</li>
+  <li>Your operating system is upgraded and “insert-your-fav-database-here” doesn’t want to start anymore. Welcome to DLL hell.</li>
   <li>That old project that your team still maintains needs Maven 2.1.1 but the current project requires &gt; 3.3, and requires Postgres 7.1 but the new one requires at least 9.5 with PostPic and OpenFTS extensions.</li>
   <li>Polyglot Microservices company! Install maven, gradle, npm, yarn, node, make, go, ruby, rake, lein, sbt, rebar, cassandra, mongodb, redis, postgresql, couchbase…</li>
 </ol><p>But sometimes, some component, for some unknown reason, somehow stops working, and it won’t ever start again.</p><h2>Enter Docker Compose</h2><p>Docker Compose is a tool which allows one to define a multi-container system using one file, and to run them in Docker, creating a private network to isolate the system.</p><p>A Docker Compose file that will start a Postgres and a Redis is as simple as: </p>
