@@ -136,7 +136,11 @@
 
 					<div class="entry-content"><p><a href="https://twitter.com/ericnormand">Eric Normand</a> recently released a very nice <a href="https://purelyfunctional.tv/guide/clojure-concurrency-the-ultimate-guide/">Clojure Concurrency: The Ultimate Guide</a>, where he explains all the usual primitives and libraries that most of us think about when talking about concurrency in Clojure. </p><p>But I see one missing: one that is often forgotten, or perhaps we do not even realize that it is yet another concurrency primitive.</p><p>That is, the humble <a href="https://clojuredocs.org/clojure.core/delay">delay</a>:</p>
 <blockquote><p>Takes a body of expressions and yields a Delay object that will invoke the body only the first time it is forced (with force or deref/@), and will cache the result and return it on all subsequent force calls.</p>
-</blockquote><p>That doesn’t sound like a very obvious concurrency related construct, so let’s look at a practical example of what it is and when to use it.</p><h2>Creating global connection pools, a naive approach</h2><p>For some <a href="https://spark.apache.org">Spark</a> jobs, we use <a href="https://hbase.apache.org">HBase</a> as the database. As usual, when accessing a database, we need some connection pool to make queries efficient.</p><p>But, because of the way the Spark framework works, we are forced to: 1. AOT compile our code, so we need to avoid side effects during compilation. 1. The HBase connection pool must be stored as global state, as Spark does not at the moment provide any <a href="https://issues.apache.org/jira/browse/SPARK-650">“setup hook” in the workers</a></p><p>A naive implementation that tries to initialize the connection pool the first time that it is used could look like:</p>
+</blockquote><p>That doesn’t sound like a very obvious concurrency related construct, so let’s look at a practical example of what it is and when to use it.</p><h2>Creating global connection pools, a naive approach</h2><p>For some <a href="https://spark.apache.org">Spark</a> jobs, we use <a href="https://hbase.apache.org">HBase</a> as the database. As usual, when accessing a database, we need some connection pool to make queries efficient.</p><p>But, because of the way the Spark framework works, we are forced to:</p>
+<ol>
+  <li>AOT compile our code, so we need to avoid side effects during compilation.</li>
+  <li>The HBase connection pool must be stored as global state, as Spark does not at the moment provide any <a href="https://issues.apache.org/jira/browse/SPARK-650">“setup hook” in the workers</a></li>
+</ol><p>A naive implementation that tries to initialize the connection pool the first time that it is used could look like:</p>
 <pre><code class="clojure">(defn create-new-hbase-connection []
   ;;some side effecting code that creates a new socket
   (Thread/sleep 1000)
@@ -232,10 +236,10 @@ s.setAttribute('data-timestamp', +new Date());
 						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
 				   </div>
 
-					<h5 class="widget-title">Next talks</h5>
+					<!--h5 class="widget-title">Next talks</h5>
 					<div class="textwidget">
-						<a href="https://jaxlondon.com/speaker/daniel-lebrero/"><img src="/images/logo-jax-2017.png" /></a>
-					</div>
+						<a href="https://jaxlondon.com/speaker/daniel-lebrero/"><img src="/images/logo-jax-2017.png"/></a>
+					</div-->
 
 					<h5 class="widget-title">Disclaimer</h5>
 					<div class="textwidget">
