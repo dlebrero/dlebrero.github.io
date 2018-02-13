@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Why to Docker Compose a calm environment</title>
-	<meta content="Setting up or upgrading a developer environment should be an easy and repeatable process. Docker Compose is the tool to achieve it." name="description" /><meta content="docker compose setup development environment why " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Why to Docker Compose a calm environment" property="og:title" /><meta content="Setting up or upgrading a developer environment should be an easy and repeatable process. Docker Compose is the tool to achieve it." property="og:description" /><meta content="http://danlebrero.com/2017/09/01/a-docker-compose-environment/" property="og:url" /><meta content="Why to Docker Compose a calm environment" name="twitter:title" /><meta content="Setting up or upgrading a developer environment should be an easy and repeatable process. Docker Compose is the tool to achieve it." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/docker-compose-dev-env.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/docker-compose-dev-env.jpg" property="og:image" />
+	<title>Easing open source contributions with Docker</title>
+	<meta content="Software installation instructions sometimes look like IKEA assembly instructions and are as difficult to follow as those. " name="description" /><meta content="why docker compose setup software development environment " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Easing open source contributions with Docker" property="og:title" /><meta content="Software installation instructions sometimes look like IKEA assembly instructions and are as difficult to follow as those. " property="og:description" /><meta content="http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/" property="og:url" /><meta content="Easing open source contributions with Docker" name="twitter:title" /><meta content="Software installation instructions sometimes look like IKEA assembly instructions and are as difficult to follow as those. " name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/akvo-docker/akvo-open-source-850px.png" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/akvo-docker/akvo-open-source-850px.png" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	
+	<link rel="canonical" href="https://akvo.org/blog/easing-open-source-contributions/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -112,102 +112,59 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Why to Docker Compose a calm environment</h1>
+						<h1 class="entry-title">Easing open source contributions with Docker</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Fri, 1 Sep 2017</li>
+								<li id="entry-date">Tue, 13 Feb 2018</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Setting up or upgrading a developer environment should be an easy and repeatable process. Docker Compose is the tool to achieve it.</p>
+				 <p class="lead" id="entry-summary">Software installation instructions sometimes look like IKEA assembly instructions and are as difficult to follow as those. </p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/docker-compose-dev-env.jpg" />
+							<img src="/images/blog/akvo-docker/akvo-open-source-850px.png" />
 						</div>
 					</div>
-				 
+				 <div class="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small>Akvo’s open source badge, designed by Thomas Bjelkeman-Petterson and Anke van Lenteren</small>
 
-					<div class="entry-content"><p>The joys of a new job. </p><p>You get there on your first day and after the introductions, you are given your first task: to get the project up and running on your dev box.</p><p>The task comes with a link to the wiki, which has THE instructions:</p>
-<ol>
-  <li>Download X</li>
-  <li>Install Y</li>
-  <li>Run “./build –special-flag”</li>
-  <li>Copy Z to W</li>
-  <li>Make sure foo but not bar</li>
-  <li>…</li>
-</ol><p>You know how it is going to end. And just in case you had any doubts, your new boss just confirms it: </p><p>“It’s probably a bit out of date, so can you please update it if you find any issues?”</p><p>Two days later, you emerge triumphant, proud of your achievement, and with a smile on your face: Your updated instructions are so accurate that the next person joining will be forever thankful.</p><h2>Or maybe not</h2><p>The instructions on the wiki seem like a good enough solution, given that each member of the team needs to pass the ordeal just once … except when:</p>
-<ol>
-  <li>You get a new and shiny dev box.</li>
-  <li>Your dev box dies.</li>
-  <li>You move to another project.</li>
-  <li>Six month latter, you go back to the original project. Nothing works anymore.</li>
-  <li>A new feature requires Zookeeper, and everybody to configure a local Zookeeper cluster!</li>
-  <li>Your operating system is upgraded and “insert-your-fav-database-here” doesn’t want to start anymore. Welcome to DLL hell.</li>
-  <li>That old project that your team still maintains needs Maven 2.1.1 but the current project requires &gt; 3.3, and requires Postgres 7.1 but the new one requires at least 9.5 with PostPic and OpenFTS extensions.</li>
-  <li>Polyglot Microservices company! Install maven, gradle, npm, yarn, node, make, go, ruby, rake, lein, sbt, rebar, cassandra, mongodb, redis, postgresql, couchbase…</li>
-</ol><p>But sometimes, some component, for some unknown reason, somehow stops working, and it won’t ever start again.</p><h2>Enter Docker Compose</h2><p>Docker Compose is a tool which allows one to define a multi-container system using one file, and to run them in Docker, creating a private network to isolate the system.</p><p>A Docker Compose file that will start a Postgres and a Redis is as simple as: </p>
-<pre><code>version: "3"
-services:
+				 </div>
+
+					<div class="entry-content"><p><em>This article originally appeared on <a href="https://akvo.org/blog/easing-open-source-contributions/">Akvo’s blog</a></em></p><p>At <a href="https://akvo.org">Akvo</a>, we believe that open source software provides <a href="https://akvo.org/blog/open-data-content-and-software-at-akvo/">substantial benefits</a> for organisations in the international development sector. Nowadays, we expect a high quality and rich feature set from any software that we use. </p><p>Thanks to open source software, relatively small organisations and development teams are able to build sophisticated and feature-rich applications by virtue of gluing together pre-existing open source software components in unique or specific ways. </p><p>To be able to reuse all those pieces is awesome, as it is a lot less complex to assemble existing components than it is to create them from scratch.</p><p>But that assembly can become a beast from your worst IKEA nightmare:</p><p><img src="/images/blog/akvo-docker/ikea-instructions.png" alt="ikea instructions" title="Software is like IKEA" /></p><p>If you had to follow these instructions once in a lifetime, it probably wouldn’t be too bad. But software developers have to follow those instructions regularly, as we need to recreate, rebuild and reassemble our applications whenever we need to add new components, update versions of those components, or build new features.</p><p>Due to the nature of software, the changes that developers need to make (or the pieces that we need to reassemble) are sometimes drastic. An analogy would be like making that basic IKEA desk into a motorised adjustable standing desk. </p><p>Much like any other set of instructions, there is always something that doesn’t work. Maybe you missed a step, lost a component or didn’t have all the tools required. Maybe the instructions were wrong, misleading, ambiguous or you were reading them upside down. </p><p>The result of any of these issues is the same: a <strong>big waste of time</strong>.</p><h2>The problem with instructions</h2><p>For many years, the IT industry has tried to ease this pain by providing more accurate sets of instructions, but those instructions are still written, read and interpreted by humans, and we all know that human communication is messy and far from accurate. </p><p>At Akvo, we want to make it easy for anybody to contribute to our open source software. For that reason, we have decided to invest in making our open source applications as simple as possible to assemble, not by improving on the assembly instructions, but by <strong>completely eliminating them</strong>.</p><h2>Making a fresh start</h2><p>As human communication is imperfect, we had to look for another tool; one that would eliminate any ambiguity. And there is nothing like a computer to follow instructions in a very literal way. </p><p>Even a perfect set of instructions blindly followed by a machine is not enough. Computers have a tendency to accumulate entropy, so even two computers of the same brand, bought at the same shop at the same time, after some weeks of use, can behave differently. Maybe I configured my locale to Klingon while you installed Antivirus-X. That difference is enough to cause the assembly instructions to fail.</p><p>So apart from some machine-readable instructions, we need a way of making sure that we always have a fresh start. If every developer starts from the same point, the instructions will always arrive at exactly the same result. And here is where software virtualisation technology shines, as it has the capability to create virtual computers inside the developer’s computer. In a nutshell, virtualisation provides a very easy way of creating a new empty cosmos that we can use as the starting point for our set of instructions.</p><h2>The Docker Platform</h2><p>We have chosen the <a href="https://www.docker.com">Docker Platform</a> as the virtualisation technology to allow us to achieve our goal of having a repeatable and machine-readable set of instructions, and therefore a consistent starting point.</p><p>The two tools of the Docker Platform that we use are Docker and Docker Compose. Below is an example of a file you’d give to Docker to create a computer:</p>
+<pre><code class="docker">FROM openjdk:8-jre-alpine
+ 
+COPY target/akvo-flow-maps.jar /app/akvo-flow-maps.jar
+COPY maybe-import-and-java-jar.sh /app/maybe-import-and-java-jar.sh
+RUN chmod 777 /app/maybe-import-and-java-jar.sh
+ 
+CMD ./maybe-import-and-java-jar.sh
+</code></pre><p>The most interesting bit here is the first “FROM” line, which tells Docker what our desired starting point is. Thanks again to the open source community, there are thousands of starting points to choose from at DockerHub, which makes it a lot easier to bootstrap our custom virtual computers. The rest of the lines are the set of instructions to follow from that starting point.</p><p>Where Docker allows us to create virtual computers, Docker Compose allows us to create virtual cosmos, where a set of computers will live, isolated from other cosmos. Here’s an example:</p>
+<pre><code>services:
   postgres:
-    image: postgres:9.5
-    volumens: 
-      - ./db-provision:/docker-entrypoint-initdb.d/
-    ports: 
-      - 5432:5432
+   build: 
+     dockerfile: Dockerfile-postgres
+   expose:
+     - 5432
+ 
+  flow-maps:
+    build:
+     dockerfile: Dockerfile-dev
+    ports:
+      - "47480:47480"
+      - "3000:3000"
+ 
   redis:
-    image: redis:3.2.9
-</code></pre><p>You can configure the container for your project and Docker Compose will be able to create a new environment, mapping some of the ports and files between the internal containers and your dev box.</p><p>Something like:</p><p><img src="/images/blog/dev-setup-diagram.jpg" alt="Docker Compose Dev Setup Architecture" title="Docker Compose Dev Setup Architecture" /></p><p>Using Docker Compose to set up and run our local development environment gives us: </p>
-<table>
-  <tbody>
-    <tr>
-      <td>One command to set up and start the system </td>
-      <td><em>docker-compose up</em> </td>
-    </tr>
-    <tr>
-      <td>One command to upgrade or add new components </td>
-      <td><em>docker-compose up --build</em> </td>
-    </tr>
-    <tr>
-      <td>One command to stop the system</td>
-      <td><em>docker-compose stop</em></td>
-    </tr>
-    <tr>
-      <td>One command to clean up any trace of the system</td>
-      <td><em>docker-compose down --remove-orphans --rmi all</em></td>
-    </tr>
-    <tr>
-      <td>A precise and repeatable process</td>
-      <td>The Docker Compose file will be executed by a machine, so there is no room for imprecision. <br />Just make sure that you use an immutable version of the image.</td>
-    </tr>
-    <tr>
-      <td>A process that never gets out of date</td>
-      <td>As the team will use the Docker Compose everyday for their development, and any change in the system must be done within the Docker files, there is no opportunity for the instructions to get stale.</td>
-    </tr>
-    <tr>
-      <td>A process that can be version controlled</td>
-      <td>The Docker files are plain text, they will be collocated with the rest of the project source code, they will be peer reviewed and changes can be rolled back, diffed, …</td>
-    </tr>
-    <tr>
-      <td>A process that allows for experimentation</td>
-      <td>As it is easy to destroy and recreate systems, and as the Docker files can be rolled back, there is no risk on trying new versions of components or fiddling around with the configuration.</td>
-    </tr>
-    <tr>
-      <td>A way of running more than version of the same project or more than one project at the same time</td>
-      <td>Unfortunately, this is probably requires some manual fiddling to remap some of the ports exposed in the Docker Compose file, but at least all the ports are in just one file.<br /> After that is a simple: <em>docker-compose -p my-project-one up -d; docker-compose -p my-project-again up</em></td>
-    </tr>
-  </tbody>
-</table><h2>A production-like environment or not?</h2><p>When talking about Docker, one of the benefits usually mentioned is that it allows one to run a production-like environment anywhere.</p><p>Indeed this is a big benefit. Your CI server should run its tests against a production-like version, and you should be able to run such a version locally, but for the day to day development experience, you want a setup that allows for a fast feedback cycle.</p><p>For example, you don’t want to minimize your JavaScript files for each and every change that you make and you probably want some sort of auto refresh.</p><p>Fast feedback is just more important.</p><p>This development environment should include any build tools that your project requires, so your setup instructions should not have any “install maven/npm” step. Those tools should come within a Docker container. This way, everybody  in the team will be using the same tool version in the same operative system version.</p><h2>Conclusion</h2><p>Even if you don’t use Docker in production, it is well worth using it just to make setting up or upgrading a dev environment an uneventful process. </p><p>This process should be as close to “docker-compose up” as possible. Nothing more.</p><p>Don’t treat your dev box as some big global mutable variable. Use Docker Compose to treat it as a nice immutable one.</p><p>You have <a href="/2017/09/25/how-do-docker-compose-development-environement/#content">here a detailed example</a> of how to Docker Compose a local developer environment.</p>
-<hr /><p>More about efficiency:</p>
+     image: redis:3.2.9
+</code></pre><p>The first thing to notice is that the starting point for Docker Compose is always the void, the nothing, la nada. After that, we specify which computers should exist in that universe, in this case, a Postgres database, a Redis database and the Akvo Flow Maps application. Those computers are created using the Docker files that we just explained.</p><h2>Results</h2><p>So what is the result of applying this technology to <a href="https://akvo.org/products/akvo-lumen/#overview">Akvo Lumen</a>, Akvo’s data visualisation and analysis tool? By applying this technology, contributing to Lumen goes from this… to this:</p><p><img src="/images/blog/akvo-docker/lumen-open-source.gif" alt="The results" title="from to results" /></p><p>Two tools, git and docker, and two commands, make it extremely easy to build and assemble a working Akvo Lumen development environment. Besides easing the open source contribution process, by removing the onerous task of setting up a working environment, we find two additional benefits of using this technology:</p>
 <ol>
-  <li><a href="/2017/08/01/efficient-developer-disable-notifications/#content">Disable notifications</a></li>
-  <li><a href="/2017/08/02/efficient-developer-master-your-ide/#content">Master your IDE</a></li>
-  <li><a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">Write programs for yourself</a></li>
-  <li>Why to Docker Compose a calm environment (you are here)</li>
-</ol></div>
+  <li><strong>It encourages innovation</strong>. As it is extremely easy to “start from scratch”, we are free to experiment with new components, without fear of breaking things or ending up in an unrecoverable situation.</li>
+  <li><strong>It reduces wasted time</strong>. Whenever we have a new team member, new components are added to the project, switching between different projects or just something stops working, we have two commands to get back to a known and valid starting point.</li>
+</ol><p>Want better instructions? <strong>Strive for no instructions</strong>.</p></div>
 
 				 
 

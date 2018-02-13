@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 25 Sep 2017 13:35:00 +0200
+Tue, 13 Feb 2018 00:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Mon, 25 Sep 2017 13:35:00 +0200
+Tue, 13 Feb 2018 00:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Easing open source contributions with Docker
+</title>
+<link>
+http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
+</link>
+<guid>
+http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
+</guid>
+<pubDate>
+Tue, 13 Feb 2018 00:00:00 +0100
+</pubDate>
+<description>
+Software installation instructions sometimes look like IKEA assembly instructions and are as difficult to follow as those. 
+</description>
+</item>
 <item>
 <title>
 How to Docker Compose a developer environment: an open source example
@@ -174,23 +191,6 @@ Mon, 21 Nov 2016 00:00:00 +0100
 </pubDate>
 <description>
 How can we apply the fable &quot;The boy who cried wolf&quot; to our development?
-</description>
-</item>
-<item>
-<title>
-Good tests, Bad tests
-</title>
-<link>
-http://danlebrero.com/2016/11/06/good-test-vs-bad-tests/
-</link>
-<guid>
-http://danlebrero.com/2016/11/06/good-test-vs-bad-tests/
-</guid>
-<pubDate>
-Sun, 06 Nov 2016 00:00:00 +0100
-</pubDate>
-<description>
-Unit testing is just another practice, and as such it has its benefits and its costs. How do you know that your test suite is paying off? 
 </description>
 </item>
 </channel>

@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 25 Sep 2017 13:35:00 +0200
+Tue, 13 Feb 2018 00:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Mon, 25 Sep 2017 13:35:00 +0200
+Tue, 13 Feb 2018 00:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Easing open source contributions with Docker
+</title>
+<link>
+http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
+</link>
+<guid>
+http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
+</guid>
+<pubDate>
+Tue, 13 Feb 2018 00:00:00 +0100
+</pubDate>
+<description>
+Software installation instructions sometimes look like IKEA assembly instructions and are as difficult to follow as those. 
+</description>
+</item>
 <item>
 <title>
 How to Docker Compose a developer environment: an open source example
@@ -174,23 +191,6 @@ Wed, 21 Jun 2017 14:15:00 +0200
 </pubDate>
 <description>
 Concurrency in Clojure is easy peasy, unless you have to deal with side effects. But atoms and delays can still help us. Let's look at an idiom for resource management.
-</description>
-</item>
-<item>
-<title>
-Delay: Clojure's forgotten concurrency primitive
-</title>
-<link>
-http://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/
-</link>
-<guid>
-http://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/
-</guid>
-<pubDate>
-Mon, 12 Jun 2017 09:00:00 +0200
-</pubDate>
-<description>
-When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us.
 </description>
 </item>
 </channel>
