@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Tue, 13 Feb 2018 00:00:00 +0100
+Tue, 20 Mar 2018 00:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Tue, 13 Feb 2018 00:00:00 +0100
+Tue, 20 Mar 2018 00:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Production data never lies
+</title>
+<link>
+http://danlebrero.com/2018/03/20/production-data-never-lies/
+</link>
+<guid>
+http://danlebrero.com/2018/03/20/production-data-never-lies/
+</guid>
+<pubDate>
+Tue, 20 Mar 2018 00:00:00 +0100
+</pubDate>
+<description>
+Using production data to automatically generate Avro schemas, using Spec-Provider. 
+</description>
+</item>
 <item>
 <title>
 Easing open source contributions with Docker
@@ -174,23 +191,6 @@ Sun, 16 Jul 2017 00:00:00 +0200
 </pubDate>
 <description>
 New features always trump technical work. Can we objectively measure and decide when they should not?
-</description>
-</item>
-<item>
-<title>
-Atoms, delays and side effects: a resource management idiom for Clojure
-</title>
-<link>
-http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
-</link>
-<guid>
-http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
-</guid>
-<pubDate>
-Wed, 21 Jun 2017 14:15:00 +0200
-</pubDate>
-<description>
-Concurrency in Clojure is easy peasy, unless you have to deal with side effects. But atoms and delays can still help us. Let's look at an idiom for resource management.
 </description>
 </item>
 </channel>
