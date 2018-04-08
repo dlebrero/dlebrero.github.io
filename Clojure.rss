@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Tue, 20 Mar 2018 00:00:00 +0100
+Mon, 09 Apr 2018 10:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Tue, 20 Mar 2018 00:00:00 +0100
+Mon, 09 Apr 2018 10:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Kafka, distributed coordination and the actor model
+</title>
+<link>
+http://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
+</link>
+<guid>
+http://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
+</guid>
+<pubDate>
+Mon, 09 Apr 2018 10:00:00 +0200
+</pubDate>
+<description>
+On how to design KafkaStream applications in terms of the actor model. 
+</description>
+</item>
 <item>
 <title>
 Production data never lies
@@ -174,23 +191,6 @@ Thu, 06 Apr 2017 10:00:00 +0200
 </pubDate>
 <description>
 Instead of drawing UML diagrams, why not generate them from a network traffic capture of the running system?
-</description>
-</item>
-<item>
-<title>
-Proof of concept using KafkaStreams and KTables - implementation notes, gotchas and Docker Compose example
-</title>
-<link>
-http://danlebrero.com/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/
-</link>
-<guid>
-http://danlebrero.com/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/
-</guid>
-<pubDate>
-Fri, 06 Jan 2017 14:00:00 +0100
-</pubDate>
-<description>
-Implementation details from a proof of concept using Kafka Streams and KTables using Clojure and Docker
 </description>
 </item>
 </channel>

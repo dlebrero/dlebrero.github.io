@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Tue, 20 Mar 2018 00:00:00 +0100
+Mon, 09 Apr 2018 10:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Tue, 20 Mar 2018 00:00:00 +0100
+Mon, 09 Apr 2018 10:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Kafka, distributed coordination and the actor model
+</title>
+<link>
+http://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
+</link>
+<guid>
+http://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
+</guid>
+<pubDate>
+Mon, 09 Apr 2018 10:00:00 +0200
+</pubDate>
+<description>
+On how to design KafkaStream applications in terms of the actor model. 
+</description>
+</item>
 <item>
 <title>
 Production data never lies
@@ -174,23 +191,6 @@ Sun, 07 May 2017 13:00:00 +0200
 </pubDate>
 <description>
 Exploring different options in Kafka Streams to join KTables, both with and without shared keys.
-</description>
-</item>
-<item>
-<title>
-Documenting your architecture: Wireshark, PlantUML and a REPL to glue them all.
-</title>
-<link>
-http://danlebrero.com/2017/04/06/documenting-your-architecture-wireshark-plantuml-and-a-repl/
-</link>
-<guid>
-http://danlebrero.com/2017/04/06/documenting-your-architecture-wireshark-plantuml-and-a-repl/
-</guid>
-<pubDate>
-Thu, 06 Apr 2017 10:00:00 +0200
-</pubDate>
-<description>
-Instead of drawing UML diagrams, why not generate them from a network traffic capture of the running system?
 </description>
 </item>
 </channel>
