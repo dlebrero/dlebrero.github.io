@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 09 Apr 2018 10:00:00 +0200
+Wed, 11 Apr 2018 09:35:00 +0200
 </lastBuildDate>
 <pubDate>
-Mon, 09 Apr 2018 10:00:00 +0200
+Wed, 11 Apr 2018 09:35:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,40 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Kafka, GDPR and Event Sourcing
+</title>
+<link>
+http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing/
+</link>
+<guid>
+http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing/
+</guid>
+<pubDate>
+Wed, 11 Apr 2018 09:35:00 +0200
+</pubDate>
+<description>
+Proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka.
+</description>
+</item>
+<item>
+<title>
+Kafka, GDPR and Event Sourcing - Implementation details
+</title>
+<link>
+http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
+</link>
+<guid>
+http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
+</guid>
+<pubDate>
+Wed, 11 Apr 2018 09:45:00 +0200
+</pubDate>
+<description>
+Implementation details for a proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka.
+</description>
+</item>
 <item>
 <title>
 Kafka, distributed coordination and the actor model
@@ -157,40 +191,6 @@ Thu, 03 Aug 2017 00:00:00 +0200
 </pubDate>
 <description>
 The shoemaker's son always go barefoot.
-</description>
-</item>
-<item>
-<title>
-A more efficient developer: master your IDE
-</title>
-<link>
-http://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
-</link>
-<guid>
-http://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
-</guid>
-<pubDate>
-Wed, 02 Aug 2017 00:00:00 +0200
-</pubDate>
-<description>
-A professional developer should look professional while using his main tool.
-</description>
-</item>
-<item>
-<title>
-A more efficient developer: disable notifications
-</title>
-<link>
-http://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
-</link>
-<guid>
-http://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
-</guid>
-<pubDate>
-Tue, 01 Aug 2017 00:00:00 +0200
-</pubDate>
-<description>
-How to become X times more efficient in one simple step.
 </description>
 </item>
 </channel>

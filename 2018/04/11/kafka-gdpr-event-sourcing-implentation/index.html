@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Kafka, GDPR and Event Sourcing - Implementation details</title>
+	<meta content="Implementation details for a proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka." name="description" /><meta content="Kafka KafkaStreams GDPR Event Sourcing Clojure partitions design architecture encryption" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Kafka, GDPR and Event Sourcing - Implementation details" property="og:title" /><meta content="Implementation details for a proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka." property="og:description" /><meta content="http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/" property="og:url" /><meta content="Kafka, GDPR and Event Sourcing - Implementation details" name="twitter:title" /><meta content="Implementation details for a proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/kafka-gdpr/kafka-gdpr-implementation.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/kafka-gdpr/kafka-gdpr-implementation.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Kafka, GDPR and Event Sourcing - Implementation details</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 11 Apr 2018</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Implementation details for a proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka.</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/kafka-gdpr/kafka-gdpr-implementation.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>This post contains the implementation details of <a href="/2018/04/11/kafka-gdpr-event-sourcing#content">this other post</a> about a possible architecture for Kafka, GDPR and Event Sourcing. Please read that other post for context and conclusions.</p><p>The proof of concept (PoC) uses Kafka Streams API and all code, including a docker-compose environment to test it, is <a href="https://github.com/dlebrero/kafka-gdpr-event-sourcing">here</a>. </p><h2>Event producer</h2><p>Nothing interesting.</p><h2>Encryptor</h2><p>The encryptor job is pretty easy: the first time that it sees a key, it needs to generate a new encryption key, store it and push it to the <code>encryption-keys</code> topic for other consumer. In code:</p>
+<pre><code class="clojure">(defn get-or-create-encryption-key [^KeyValueStore store ^ProcessorContext ctx k]
+ (if-let [encryption-key (.get store k)]
+   encryption-key
+   (let [new-encryption-key (generate-encryption-key)]
+     (.put store k new-encryption-key)
+     (.forward ctx k new-encryption-key "encryption-keys")
+     new-encryption-key)))
+</code></pre><p>This means that we are storing the key twice: once in the store changelog and once in the <code>encryption-keys</code> topic. This is ok as we dont want to couple the implementation details of the encryptor (what we store in the changelog) with what the consumers need. For example, if we decided to use an asymmetric algorithm, the store will have the private key while the <code>encryption-keys</code> topic would have the public one.</p><p>After we have the encryption key, in the PoC we just encrypt the whole value of the message and forward it to the encrypted Kafka topic, but during the implementation it raised the question about whether it would be more appropriate to encrypt just the PII data within the message. Some possible options:</p>
+<ol>
+  <li>The value to have two fields: PII and non-PII. If the encryption key is deleted, the PII field will be deserialized to null.</li>
+  <li>Have PII events and non-PII events, in the same or different topics, depending if ordering between them is important or not.</li>
+  <li>When the user exercises the right of erasure, before deleting the encryption key, push a event with the non-PII data that we want to retain.</li>
+</ol><p>The second option seems the simplest one.</p><p>The Encryptor also listen to the GDPR messages and when the user exercises the right to erasure, we store a tombstone both in the local store and in the <code>encryption-keys</code> topic: </p>
+<pre><code>(defn handle-gdpr [^KeyValueStore store ^ProcessorContext ctx k _]
+ (.put store k common/tombstone)
+ (.forward ctx k common/tombstone))
+</code></pre><p>We will explain in the Event Consumer why a tombstone and not just delete the record.</p><p>Another decision that we need to make is what to do if the encryptor gets a message after the user has exercised the right to erase: </p>
+<ol>
+  <li>Create a new key for all the new messages, so new messages will be readable. In this case, we don’t need to store a tombstone in the local store.</li>
+  <li>Ignore the message, basically deleting it.</li>
+  <li>Create a new key just for the event, and never store the key, effectively creating an unreadable event.</li>
+</ol><p>It will depend on a business decision, but either the first or last options seem like the most sensible ones.</p><h3>Reusable Encryptor</h3><p>Ideally, we don’t want to change the Encryptor every time there is a new topic that needs to be encrypted.</p><p>While KafkaStreams allows to subscribe to a set of topics based on a regular expression, and it will subscribe to newly created topics that match that expression, there is no obvious way to publish a message to an arbitrary topic. </p><p>Maybe the correct way is to provide a <a href="https://github.com/apache/kafka/blob/b8f8ce4146af4fbc7ae40380f1ff251b05bd8773/streams/src/main/java/org/apache/kafka/streams/KafkaClientSupplier.java#L27">KafkaClientSupplier</a> to the <a href="https://github.com/apache/kafka/blob/b8f8ce4146af4fbc7ae40380f1ff251b05bd8773/streams/src/main/java/org/apache/kafka/streams/KafkaStreams.java#L546">KafkaStreams</a>, so that both our code and the KafkaStreams code use the same Kafka producer, but we decided to do what a <a href="https://github.com/apache/kafka/blob/3bedcce01b9d3e8ba0516fa33eb59d57817ce27e/streams/src/main/java/org/apache/kafka/streams/processor/internals/SinkNode.java#L79">SinkNode</a> does:</p>
+<pre><code class="clojure">(defn send [^ProcessorContext ctx k v]
+ (let [rc ^RecordCollector (.recordCollector ^RecordCollector$Supplier ctx)]
+        (.send rc
+            (encrypted-topic-name (.topic ctx))
+            k v (.timestamp ctx)
+            (-&gt; ctx .keySerde .serializer)
+            (-&gt; ctx .valueSerde .serializer)
+            nil))))
+</code></pre><p>Never a good idea to use an internal api, but good enough for the PoC.</p><p>But even if this solves the problem of sending messages to an arbitrary topic, there is a bigger problem: to be able to reuse the Encryptor, all input topics must be copartition (aka. must have the same number of partitions). </p><p>If the topics do not have the same number of partitions, then two messages for the same user in different topics can end up in different instances of the Encryptor service, which means that each instance will generate an encryption key and push it to the <code>encryption-keys</code> topic, one overwriting the other, making some messages unreadable.</p><p>If the topics have the same number of partitions, then the <a href="https://github.com/apache/kafka/blob/4a274bc9fd2ac3714788af0429fde8945a48636f/clients/src/main/java/org/apache/kafka/clients/consumer/RangeAssignor.java#L29">default partition assignor</a> will distribute the partitions between the Encryptor instances so that partition 1 for <strong>all topics</strong> is consumed by one consumer, partition 2 for all topics is consumed by another consumer, etc… This way all message for a given user end up in the same instance, even from different topics. </p><p>As copartitioning all topics is unlikely to be desirable, we probably need to split the Encryptor in two: one app to generate the encryption keys and another one to do the actual encryption. Something like:</p><p><img src="/images/blog/kafka-gdpr/kafka-gdpr-split.png" alt="Kafka GDPR encryption architecture reuse" title="Kafka GDPR encryption architecture - reuse" /></p><p>This way, the encryption app can repartition the encryption keys if required.</p><h2>Event Consumer</h2><p>The event consumer has to join the events from the <code>encrypted-data</code> topic (a KStream) with the <code>encryption-keys</code> (a KTable). </p><p>Unfortunately, even if Kafka Streams tries to give you <a href="https://docs.confluent.io/3.0.0/streams/architecture.html#streams-architecture-flow-control">some control</a> over the order on which messages are processed, some testing showed that if there are a lot of events in the <code>encrypted-data</code> topic, the first batch of events will all come from this topic and none from the <code>encryption-keys</code> topic, which means that none of the events was decrypted because none of the encryption keys was known at that time.</p><p>So we ended up building our own join-like topology, that will remember which events are missing the encryption key and will process those events once the encryption key shows up. </p><p>For this topology, processing the encrypted data is pretty simple:</p>
+<pre><code>(defn encrypted-data-msg [^KeyValueStore missing-store
+                         ^KeyValueStore encryption-keys-store
+                         ^ProcessorContext ctx
+                         k
+                         encrypted-item]
+ (if-let [encryption-key (.get encryption-keys-store k)]
+   (.forward ctx k [encryption-key encrypted-item])
+   (.put missing-store (lexicographic-ordered-key k (.partition ctx) (.offset ctx)) encrypted-item))
+</code></pre><p>So if the encryption key is known, we forward the encryption key and the encrypted value pair to the next step, the actual decryption.</p><p>If the encryption key is not known yet, we store the event. But when the encryption key arrives, we will want the order of events to remain intact, hence we need to somehow remember the arrival order. There are two possible options:</p>
+<ol>
+  <li>Store as key the user, and as value a list of events.</li>
+  <li>Store as key the user + event offset, and as value the event. When retrieving the events,</li>
+</ol><p>In the PoC we chose the second option, as there could be an unbounded amount of events for a user, so we would need an unbounded amount of memory to deserialize them for processing or updating.</p><p>Lets see how we use it when the encryption key arrives:</p>
+<pre><code>(defn encryption-key-msg [^KeyValueStore missing-store
+                         ^KeyValueStore encryption-keys-store
+                         ^ProcessorContext ctx
+                         k
+                         encryption-key]
+ (.put encryption-keys-store k encryption-key)
+ (with-open [encrypted-items (.range missing-store
+                                 (lexicographic-ordered-key k 0 0)
+                                 (lexicographic-ordered-key k Integer/MAX_VALUE Integer/MAX_VALUE))]
+   (doseq [^KeyValue encrypted-item (iterator-seq encrypted-items)]
+     (.delete missing-store (.key encrypted-item))
+     (when-not (common/tombstone? encryption-key)
+       (.forward ctx k [encryption-key (.value encrypted-item)])))
+   (when (common/tombstone? encryption-key)
+     (.forward ctx k [encryption-key nil]))))
+</code></pre><p>Notice that we are using the <a href="https://github.com/apache/kafka/blob/39d5cdcccfc0f7d7893188bb22580da0c842a993/streams/src/main/java/org/apache/kafka/streams/state/ReadOnlyKeyValueStore.java#L51">range method</a>, that even if it doesn’t guarantee an order, the actual RocksDB implementation does. Another implementation detail that we should not depend on.</p><p>Even if this implementation guarantees the order of events for a given user, notice that it doesn’t guarantee any order between users, so it is possible that during decryption there is some reordering of some messages. To guarantee the order of all messages, we would need to store every message after the first one missing the encryption key, even for those that we already know the encryption key.</p><p>Last, we prefer a tombstone in the <code>encrypted-keys</code> topic, over just deleting the encryption key, so that the consumer can clean up any events for that user. If we did not store a tombstone, the consumers could store events in their local store forever.</p><p>Back to <a href="/2018/04/11/kafka-gdpr-event-sourcing#conclusions">Kafka, GDPR and Event Sourcing</a>.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoyed it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/Kafka/index.html">Kafka </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/speakers/"><img src="/images/logo-wearedevelopers-2018.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (16)</a></li><li><a href="/tags/Clojure/index.html">Clojure (19)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/Kafka/index.html">Kafka (6)</a></li><li><a href="/tags/good_practices/index.html">good practices (15)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>

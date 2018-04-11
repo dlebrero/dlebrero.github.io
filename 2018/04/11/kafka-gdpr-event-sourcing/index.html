@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Kafka, GDPR and Event Sourcing</title>
+	<meta content="Proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka." name="description" /><meta content="Kafka KafkaStreams GDPR Event Sourcing partitions design architecture encryption" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Kafka, GDPR and Event Sourcing" property="og:title" /><meta content="Proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka." property="og:description" /><meta content="http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing/" property="og:url" /><meta content="Kafka, GDPR and Event Sourcing" name="twitter:title" /><meta content="Proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/kafka-gdpr/kafka-gdpr-event-sourcing.png" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/kafka-gdpr/kafka-gdpr-event-sourcing.png" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Kafka, GDPR and Event Sourcing</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 11 Apr 2018</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Proof of concept for compliance with GDPR on an Event Sourcing architecture built with Apache Kafka.</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/kafka-gdpr/kafka-gdpr-event-sourcing.png" />
+						</div>
+					</div>
+				 <div class="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small>Modified from <a title="He Wasn't This Angry" href="https://flickr.com/photos/17193322@N03/22835450305">"He Wasn't This Angry"</a> by <a href="https://flickr.com/people/17193322@N03">Allison Mickel</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA</a></small>
+
+				 </div>
+
+					<div class="entry-content"><p>You probably already know that the EU has approved this nice piece of legislation called GDPR (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>) that gives us back some control over our personal data.</p><p>From a technical point of view, if you have bought into Event Sourcing and Kafka, it is of special interest GDPR’s “right to erasure” (aka. forget everything that you know about me), as it is at odds with the idea of an immutable event log that does not forget anything. </p><p>To handle GDPR in an event sourced architecture, here are the most interesting options:</p>
+<ol>
+  <li><p>Removing data from projections might be good enough. A suggestion from <a href="https://twitter.com/michieltcs">Michiel Rook’s</a> <a href="https://www.michielrook.nl/2017/11/event-sourcing-gdpr-follow-up/">blog</a> is that maybe is enough to remove the data from the projections/read models, and there is no need to touch the data in the event store. If this option is within the law, the “right to erasure” becomes just another event that projections need to handle. A perfect fit for Event Sourcing.</p></li>
+  <li><p>Deleting/updating Kafka messages: <a href="https://twitter.com/benstopford">Ben Stopford</a> <a href="https://www.confluent.io/blog/handling-gdpr-log-forget/">reminds us</a> that in Kafka you can “delete” and “update” messages if you are using a compacted topic, which means that to comply with the “right to erasure”, we need to find all the events for a user and for each send a new message with the same key (the event id) and a null (or updated) payload. </p><p>The main concern with this approach is that the event store is no longer immutable, so it will be very tempting to use the same loophole in other non-GDPR situations. </p></li>
+  <li><p>Encryption: Another suggestion from <a href="https://www.michielrook.nl/2017/11/forget-me-please-event-sourcing-gdpr/">Michiel’s blog</a> is to encrypt all the messages for a particular user with a key, and when the user want to exercise its “right to erasure”, we just need to forget the encryption key.</p><p>The issue with this approach in the key management. In Michiel’s words: “storing, finding and retrieving the right encryption key … becomes especially interesting at scale”. And because it is interesting, let’s dive into a possible solution.</p></li>
+</ol><h2>Highly available, highly scalable RESTful KeyManagement service</h2><p>Synchronous HTTPS? Seriously?</p><h2>The Kafka way</h2><p>Assuming that you are already storing your data in Kafka, and given that Kafka is able to handle data at scale, why not use Kafka itself to store and retrieve the encryption keys?</p><p>Let’s start with a picture of how our architecture could look like:</p><p><img src="/images/blog/kafka-gdpr/kakfa-gdpr-encryption-architecture.png" alt="Kafka GDPR encryption architecture" title="Kafka GDPR encryption architecture" /></p><p>Your <code>Event Producer</code> is your regular service that pushes unencrypted data to some <code>To-Encrypt</code> topic.</p><p>To comply with GDPR, this topic will have some reasonably short time-based retention policy, so that Kafka deletes the data after that time, but remember that the retention period should be longer than your expected downtime of the <code>Encryptor</code> service, as if the <code>Encryptor</code> service is down for longer, Kafka may delete the data before it is encrypted and safely stored in the <code>Encrypted-Data</code> topic.</p><p>The <code>Encryptor</code> service will take care of encrypting any message and generating new encryption keys for new users. It leverages Kafka Streams state management to keep a local copy of the encryption keys for the partitions that each instance owns, so that looking up an encryption key will be at most a disk seek.</p><p>This application also has to react to the user exercising his right to be forgotten by deleting the local copy of the encryption key from its state, and by deleting the encryption key from the <code>Encryption-keys</code> topic.</p><p>The <code>Encrypted-Data</code> topic will be where the events are stored forever, with no retention policies. This is your event log.</p><p>The <code>Encryption-Keys</code> topic will be a compacted topic. When it is time to forget the user, the <code>Encryptor</code> service will just send a tombstone to override the user’s encryption key, so it is lost forever and nobody will be able to decrypt its data again.</p><p>To decrypt the data, the <code>Event Consumer</code> will basically will need to do a join of the <code>Encrypted-data</code> topic with the <code>Encryption-Keys</code> topic. Again, we will rely on Kafka Streams state management to keep a local copy of the encryption keys. </p><p>Similar to the <code>Encryptor</code>, the <code>Event Consumer</code> will need to react appropriately when the user request to be forgotten, both by deleting the local encryption key and any other state associated with that user. </p><p>This architecture looks fabulous from this ivory tower. </p><p><a href="https://www.pedabe-concept.de" title="The Ivory Tower"><img src="/images/blog/kafka-gdpr/kafka-ivory-tower.jpg" alt="ivory tower" /></a><br /><span style="background-color: #ecf0f1"><small>Image attribution: <a href="https://www.pedabe-concept.de" title="The Ivory Tower">The Ivory Tower</a> by <a href="https://www.pedabe-concept.de">Peter Bartels</a>.</small></span></p><h3>Implementation details</h3><p>If you want to get your hands dirty, the implementation details are <a href="/2018/04/11/kafka-gdpr-event-sourcing-implentation/#content">here</a>. </p><h2><a name="conclusions"></a>Conclusions</h2><p>In summary, we comply with GDPR because our <code>to-encrypt</code> topic has a short time-based retention policy, our encryption keys are in a compacted topic and our event log is encrypted with a per-user encryption key. </p><p>Also, our applications have to handle a new “forget me” event type and erase any PII data that they may store.</p><p>As we saw, the implementation is not rocket science, but it raises some more challenges:</p>
+<ol>
+  <li>Do we encrypt the whole message or just a subset? If it is just a subset, how do we handle schemas? If not a subset, we lose all the data, even the non-PII one.</li>
+  <li>Can we reuse the same encryptor for multiple topics? If so, topics must be copartition. If not, we will need to separate the key generation from the encryptors, so the encryption keys can be repartition.</li>
+  <li>Even if the decryption is transparent to the consumer, it still needs to handle the “forget me” special case.</li>
+  <li>You will need to choose an encryption algorithm that is fast enough and secure enough. Can you afford an additional 1 or 10 milliseconds processing time to each message? In theory, if the consumer is up to date, it can always consume directly from the to-encrypt topic.</li>
+  <li>A comment in <a href="https://www.michielrook.nl/2017/11/event-sourcing-gdpr-follow-up/#comment-16405">Michiel blog</a> points out that forgetting the key is not enough. Every few years, we also need to <a href="https://www.keylength.com/en/">update encryption algorithms</a>, which means we need to encrypt everything again.</li>
+</ol><p>So it seems possible to use encryption to handle event sourcing data in Kafka, but is it better than the other options? For sure it is worse than removing data from projections, if this is an option at all. But, is it better than just using a compacted topic to store the event log as Ben Stopford suggests? </p><p>Well, how much do you value immutability? That much?!?! That little?!?!</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoyed it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Kafka/index.html">Kafka </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/speakers/"><img src="/images/logo-wearedevelopers-2018.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (16)</a></li><li><a href="/tags/Clojure/index.html">Clojure (19)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/Kafka/index.html">Kafka (6)</a></li><li><a href="/tags/good_practices/index.html">good practices (15)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
