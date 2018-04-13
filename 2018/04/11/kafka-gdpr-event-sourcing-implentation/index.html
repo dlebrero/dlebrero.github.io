@@ -176,7 +176,7 @@
 </code></pre><p>So if the encryption key is known, we forward the encryption key and the encrypted value pair to the next step, the actual decryption.</p><p>If the encryption key is not known yet, we store the event. But when the encryption key arrives, we will want the order of events to remain intact, hence we need to somehow remember the arrival order. There are two possible options:</p>
 <ol>
   <li>Store as key the user, and as value a list of events.</li>
-  <li>Store as key the user + event offset, and as value the event. When retrieving the events,</li>
+  <li>Store as key the user + event offset, and as value the event.</li>
 </ol><p>In the PoC we chose the second option, as there could be an unbounded amount of events for a user, so we would need an unbounded amount of memory to deserialize them for processing or updating.</p><p>Lets see how we use it when the encryption key arrives:</p>
 <pre><code>(defn encryption-key-msg [^KeyValueStore missing-store
                          ^KeyValueStore encryption-keys-store
