@@ -621,3 +621,9 @@ different heights to align properly. */
 	margin-right: auto;
 	text-align: center;
 }
+
+.entry-content-media-main-page {
+	float: right;
+    padding: 0px 0px 10px 10px;
+    width: 250px;
+}
