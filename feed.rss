@@ -12,10 +12,10 @@ http://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 11 Apr 2018 09:35:00 +0200
+Mon, 30 Apr 2018 00:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Wed, 11 Apr 2018 09:35:00 +0200
+Mon, 30 Apr 2018 00:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Did you read my email?
+</title>
+<link>
+http://danlebrero.com/2018/04/30/did-you-read-my-email/
+</link>
+<guid>
+http://danlebrero.com/2018/04/30/did-you-read-my-email/
+</guid>
+<pubDate>
+Mon, 30 Apr 2018 00:00:00 +0200
+</pubDate>
+<description>
+Is it urgent?
+</description>
+</item>
 <item>
 <title>
 Kafka, GDPR and Event Sourcing
@@ -174,23 +191,6 @@ Thu, 03 Aug 2017 11:00:00 +0200
 </pubDate>
 <description>
 Video from my presentation on Devoxx PL 2017 on stability patterns
-</description>
-</item>
-<item>
-<title>
-A more efficient developer: write programs for yourself
-</title>
-<link>
-http://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/
-</link>
-<guid>
-http://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/
-</guid>
-<pubDate>
-Thu, 03 Aug 2017 00:00:00 +0200
-</pubDate>
-<description>
-The shoemaker's son always go barefoot.
 </description>
 </item>
 </channel>

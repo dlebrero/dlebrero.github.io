@@ -5,8 +5,8 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Delay: Clojure's forgotten concurrency primitive</title>
-	<meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." name="description" /><meta content="Clojure delay concurrency primitive initialize multithreading resource management Spark" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Delay: Clojure's forgotten concurrency primitive" property="og:title" /><meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." property="og:description" /><meta content="http://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/" property="og:url" /><meta content="Delay: Clojure's forgotten concurrency primitive" name="twitter:title" /><meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/clojure-expect-delays.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/clojure-expect-delays.jpg" property="og:image" />
+	<title>Did you read my email?</title>
+	<meta content="Is it urgent?" name="description" /><meta content="Did you ream my email productivity funny humour" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Did you read my email?" property="og:title" /><meta content="Is it urgent?" property="og:description" /><meta content="http://danlebrero.com/2018/04/30/did-you-read-my-email/" property="og:url" /><meta content="Did you read my email?" name="twitter:title" /><meta content="Is it urgent?" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/did-you-read-my-email.png" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/did-you-read-my-email.png" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 	
@@ -114,83 +114,34 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Delay: Clojure's forgotten concurrency primitive</h1>
+						<h1 class="entry-title">Did you read my email?</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Mon, 12 Jun 2017</li>
+								<li id="entry-date">Mon, 30 Apr 2018</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">When talking about Clojure's concurrency primitives, we often forget "delay". Let's see how it can help us.</p>
+				 <p class="lead" id="entry-summary">Is it urgent?</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/clojure-expect-delays.jpg" />
+							<img src="/images/blog/did-you-read-my-email.png" />
 						</div>
 					</div>
-				 <div class="entry-content-media-attribution">
-					 <small>Image attribution:</small>
-						 <small><i><a href="http://blog.zlien.com/construction-payment/delaying-mechanics-lien-claim-bad-idea/">Scott Wolfe Jr</a></i></small>
+				 
 
-				 </div>
-
-					<div class="entry-content"><p><a href="https://twitter.com/ericnormand">Eric Normand</a> recently released a very nice <a href="https://purelyfunctional.tv/guide/clojure-concurrency-the-ultimate-guide/">Clojure Concurrency: The Ultimate Guide</a>, where he explains all the usual primitives and libraries that most of us think about when talking about concurrency in Clojure. </p><p>But I see one missing: one that is often forgotten, or perhaps we do not even realize that it is yet another concurrency primitive.</p><p>That is, the humble <a href="https://clojuredocs.org/clojure.core/delay">delay</a>:</p>
-<blockquote><p>Takes a body of expressions and yields a Delay object that will invoke the body only the first time it is forced (with force or deref/@), and will cache the result and return it on all subsequent force calls.</p>
-</blockquote><p>That doesn’t sound like a very obvious concurrency related construct, so let’s look at a practical example of what it is and when to use it.</p><h2>Creating global connection pools, a naive approach</h2><p>For some <a href="https://spark.apache.org">Spark</a> jobs, we use <a href="https://hbase.apache.org">HBase</a> as the database. As usual, when accessing a database, we need some connection pool to make queries efficient.</p><p>But, because of the way the Spark framework works, we are forced to:</p>
+					<div class="entry-content"><p>Dedicated with all my fondness to that good friend at <a href="https://www.ig.com">IG</a> that used to do this and never realized how extremely annoying it was.</p><p>Part of my upcoming conference talk “Habits of efficient developers” at <a href="https://www.wearedevelopers.com/congress/">WeAreDevelopers 2018</a>.</p>
+<hr /><p>More about efficiency:</p>
 <ol>
-  <li>AOT compile our code, so we need to avoid side effects during compilation.</li>
-  <li>The HBase connection pool must be stored as global state, as Spark does not at the moment provide any <a href="https://issues.apache.org/jira/browse/SPARK-650">“setup hook” in the workers</a></li>
-</ol><p>A naive implementation that tries to initialize the connection pool the first time that it is used could look like:</p>
-<pre><code class="clojure">(defn create-new-hbase-connection []
-  ;;some side effecting code that creates a new socket
-  (Thread/sleep 1000)
-  (println "Connection created!")
-  ::done)
-
-;; Old good demonized global state
-(def global-hbase-connection (atom nil))
-
-(defn get-or-create-connection []
-  (if-let [connection @global-hbase-connection]
-    connection
-    (swap! global-hbase-connection
-           (fn [current-connection]
-             (or current-connection (create-new-hbase-connection))))))
-</code></pre><p>Any side effect in a function used with <em>swap</em> should immediately raise alarm bells, as the function can be called multiple times by competing threads. </p><p>Let’s see it in action:</p>
-<pre><code class="clojure">(dotimes [_ 5]
-  (future (get-or-create-connection)))
-
-Connection created!
-Connection created!
-Connection created!
-Connection created!
-Connection created!
-</code></pre><p>So each thread created a new connection pool, but only one would be stored in the atom, while the others are lost in the JVM’s ether. </p><p>This is a typical resource leak.</p><h2>Creating global connection pools, a delay approach</h2><p>Delay is a perfect match for our requirements. </p><p>First, the code inside delay will not be run until it is used, which covers the first requirement.</p><p>Second, it will make sure that if several threads try to access the delay at the same time, only one will run the code, while the others will block and reuse the result. This is why delay is a concurrency primitive.</p><p>With delay, the code will look like:</p>
-<pre><code class="clojure">(defn create-new-hbase-connection []
-  ;;same as before
-)
-(def better-global-hbase-connection (delay (create-new-hbase-connection)))
-</code></pre><p>If we test it:</p>
-<pre><code class="clojure">(dotimes [_ 100]
-  (future @better-global-hbase-connection))
-  
-Connection created!
-</code></pre><p>That is simpler and correct. Win win!</p><h2>A note on exceptions</h2><p>If an exception is thrown in the delay body, the exception will cached:</p>
-<pre><code class="clojure ">(def exceptional-delay
-  (delay
-    (println "I am exceptional")
-    (throw (RuntimeException.))))
-</code></pre><p>If you deref exceptional-delay twice, it will print “I am exceptional” only once and it will throw the same exception twice:</p>
-<pre><code class="clojure">@exceptional-delay
-I am exceptional
-CompilerException java.lang.RuntimeException, 
-@exceptional-delay
-CompilerException java.lang.RuntimeException, 
-</code></pre><p>This may or may not be your required behaviour. <a href="https://github.com/clojure/core.memoize">core.memoize</a> has a <a href="https://github.com/clojure/core.memoize/blob/master/src/main/clojure/clojure/core/memoize.clj#L52">RetryingDelay</a> that will not cache exceptions if you need it.</p><h2>Other use cases</h2><p>As hinted above, delay (or its equivalent in other languages) is used to build read-through caches, were multiple threads can be requesting the same missing value for a given key, and you want to make sure that just one of the threads do the work. </p><p>Another use case is when parallelising some heterogeneous set of tasks. Some of the tasks may need to access some expensive to fetch data, but it is also possible that none of the tasks would need the data. Wrapping the access to the data in a delay will be a perfect fit: no cost if no task uses the data, at most once if several tasks need the data.</p><p>So keep delay in mind if you need to guarantee only once execution between multiple threads.</p>
-<hr /><p>You may be also interested on <a href="http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/#content">Atoms, delays and side effects: a resource management idiom for Clojure</a>.</p></div>
+  <li><a href="/2017/08/01/efficient-developer-disable-notifications/#content">Disable notifications</a></li>
+  <li><a href="/2017/08/02/efficient-developer-master-your-ide/#content">Master your IDE</a></li>
+  <li><a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">Write programs for yourself</a></li>
+  <li><a href="/2017/09/01/a-docker-compose-environment/#content">Why to Docker Compose a calm environment</a></li>
+  <li>Did you read my email? (you are here)</li>
+</ol></div>
 
 				 
 
@@ -204,7 +155,7 @@ CompilerException java.lang.RuntimeException,
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Clojure/index.html">Clojure </a>
+					 <a href="/tags/Humour/index.html">Humour </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
