@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Per user rate limiting with OpenID connect and Istio in Kubernetes</title>
+	<meta content="How to do rate limiting with Istio on Kubernetes a per user basis, using OpenID Connect to identify it. " name="description" /><meta content="istio openid oidc kubernetes k8s rate limit " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Per user rate limiting with OpenID connect and Istio in Kubernetes" property="og:title" /><meta content="How to do rate limiting with Istio on Kubernetes a per user basis, using OpenID Connect to identify it. " property="og:description" /><meta content="http://danlebrero.com/2018/05/31/per-user-rate-limiting-with-istio-openid-connect-in-kubernetes/" property="og:url" /><meta content="Per user rate limiting with OpenID connect and Istio in Kubernetes" name="twitter:title" /><meta content="How to do rate limiting with Istio on Kubernetes a per user basis, using OpenID Connect to identify it. " name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/istio-rate-limit.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/istio-rate-limit.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://akvo.org/blog/per-user-rate-limiting-with-openid-connect-and-istio-in-kubernetes/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Per user rate limiting with OpenID connect and Istio in Kubernetes</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Thu, 31 May 2018</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">How to do rate limiting with Istio on Kubernetes a per user basis, using OpenID Connect to identify it. </p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/istio-rate-limit.jpg" />
+						</div>
+					</div>
+				 <div class="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small>Photo of <a href="https://flic.kr/p/3fnpoX">The Queues</a> by <a href="https://www.flickr.com/photos/sparticus/">Mark Walley</a>.</small>
+
+				 </div>
+
+					<div class="entry-content"><p><em>This article originally appeared on <a href="https://akvo.org/blog/per-user-rate-limiting-with-openid-connect-and-istio-in-kubernetes/">Akvo’s blog</a></em></p><p>To make sure that each of our partners is able to use <a href="https://github.com/akvo/akvo-flow-api/wiki/Akvo-Flow-REST-API">Akvo’s API</a>, we need to ensure that nobody is able to abuse it. We want to ensure that each partner has access to a fair share of the servers’ resources.</p><p>In the case of HTTP APIs, this usually means limiting the rate at which partners can make requests. A system that performs rate limiting needs to:</p>
+<ul>
+  <li>Identify who is making the HTTP request.</li>
+  <li>Count how many requests each user has made.</li>
+  <li>Reject any user request once that user has depleted their allotment.</li>
+</ul><p>There are plenty of open source products and libraries out there that you can choose from, but we decided to give <a href="https://istio.io/">Istio</a> a try.</p><p>For such a task, Istio is a little bit heavy-handed. However, since Istio is a <a href="http://philcalcado.com/2017/08/03/pattern_service_mesh.html">service mesh</a>, it also provides routing, load balancing, blue/green deployment, canary releases, traffic forking, circuit breakers, timeouts, network fault injection and telemetry. What’s more, it also offers <a href="https://istio.io/docs/concepts/security/mutual-tls.html">internal TLS encryption</a> and <a href="https://istio.io/docs/concepts/security/rbac.html">Role-Based access control</a>, which is very important for us given our commitment to the <a href="https://akvo.org/blog/gdpr-becoming-compliant/">upcoming GDPR legislation</a>.</p><h2>Identifying the user</h2><p>Akvo’s API already uses the <a href="https://github.com/akvo/akvo-flow-api/wiki/Authentication">OpenID connect standard</a> and Istio comes with a handy <a href="https://github.com/istio/proxy/tree/master/src/envoy/http/jwt_auth">JWT-auth filter</a>, so we just need to configure the filter to point to our OpenID provider:</p>
+<pre><code class="yaml">apiVersion: config.istio.io/v1alpha2
+kind: EndUserAuthenticationPolicySpec
+metadata:
+  name: flow-api-auth-policy
+  namespace: default
+spec:
+  jwts:
+    - issuer: https://kc.akvotest.org/auth/realms/akvo
+      jwks_uri: https://kc.akvotest.org/auth/realms/akvo/protocol/openid-connect/certs
+</code></pre><p>And then we need to tell Istio to apply the authentication spec to our backend service:</p>
+<pre><code class="yaml">apiVersion: config.istio.io/v1alpha2
+kind: EndUserAuthenticationPolicySpecBinding
+metadata:
+  name: flow-api-auth-policy-binding
+  namespace: default
+spec:
+  policies:
+    - name: flow-api-auth-policy
+      namespace: default
+  services:
+    - name: flow-api
+      namespace: default
+</code></pre><p>With this, if there is a JWT access token present in the request, Istio will validate it and will add the principal to the request, but if there is no token, the requests will still go through.</p><h2>Enforcing a user</h2><p>Given that any access to the API must be done with an access token, we can add a policy rule to enforce it. To configure a policy we will need:</p><p>A handler, which in this particular case is a <a href="https://archive.istio.io/v0.6/docs/reference/config/adapters/denier">Denier adapter</a> that will return a 401:</p>
+<pre><code class="yaml">apiVersion: "config.istio.io/v1alpha2"
+kind: denier
+metadata:
+  name: flow-api-handler
+  namespace: default
+spec:
+  status:
+    code: 16
+    message: You are not authorized to access the service
+</code></pre><p>An instance, which in this case is a <a href="https://archive.istio.io/v0.6/docs/reference/config/template/checknothing">Check Nothing</a> template as the handler requires no data:</p>
+<pre><code class="yaml">apiVersion: "config.istio.io/v1alpha2"
+kind: rule
+metadata:
+  name: flow-api-deny
+  namespace: default
+spec:
+  match: destination.labels["run"] == "flow-api" &amp;&amp; (request.auth.principal|"unauthorized") == "unauthorized"
+  actions:
+  - handler: flow-api-handler.denier.default
+    instances: [flow-api-denyrequest.checknothing.default]
+</code></pre><p>See the <a href="https://archive.istio.io/v0.6/docs/concepts/policy-and-control/mixer-config">Istio documentation</a> if you are not familiar with the handler, instance or rule concepts.</p><h2>Counting usage</h2><p>First, we need to define what we want to count:</p>
+<pre><code class="yaml">apiVersion: config.istio.io/v1alpha2
+kind: quota
+metadata:
+  name: requestcount
+  namespace: istio-system
+spec:
+  dimensions:
+    destination: destination.labels["run"] | destination.service | "unknown"
+    user: request.auth.principal|"unauthorized"
+</code></pre><p>We are using two dimensions, the user and the destination service so that we can have different limits for different backend services.</p><p>To do the actual counting:</p>
+<pre><code class="yaml">apiVersion: config.istio.io/v1alpha2
+kind: QuotaSpec
+metadata:
+  name: flow-api-quota
+  namespace: default
+spec:
+  rules:
+    - quotas:
+        - quota: requestcount.quota.istio-system
+          charge: 1
+</code></pre><p>Istio rate limiting gives you the flexibility to “charge” more for requests that could be more expensive to execute, but in our case, we’ve decided to treat all the requests the same.</p><p>And last, we need to wire the counting with the backend service:</p>
+<pre><code class="yaml">apiVersion: config.istio.io/v1alpha2
+kind: QuotaSpecBinding
+metadata:
+  name: flow-api-quota-binding
+  namespace: default
+spec:
+  quotaSpecs:
+    - name: flow-api-quota
+      namespace: default
+  services:
+    - name: flow-api
+      namespace: default
+</code></pre><h2>Enforcing usage quotas</h2><p>Now that we know who you are and how to count, we need to define what is a reasonable usage. We do this through a <a href="https://archive.istio.io/v0.6/docs/reference/config/adapters/memquota">Memory Quota adapter</a>:</p>
+<pre><code class="yaml">apiVersion: config.istio.io/v1alpha2
+kind: memquota
+metadata:
+  name: handler
+  namespace: istio-system
+spec:
+  quotas:
+  - name: requestcount.quota.istio-system
+    maxAmount: 60
+    validDuration: 10s
+    overrides:
+    - dimensions:
+        destination: flow-api
+      maxAmount: 20
+      validDuration: 10s
+</code></pre><p>So we allow up to ten requests per second for each user, except if the requests go to the Flow API, in which case we allow up to two requests per second.</p><p>Note that in production you will want to use a <a href="https://archive.istio.io/v0.6/docs/reference/config/adapters/redisquota">Redis Quota</a> instead of a Memory Quota, as the Memory Quota is ephemeral and local to the Mixer instance.</p><p>Finally, we create a policy rule to wire up the quota with the counters: </p>
+<pre><code class="yaml">apiVersion: config.istio.io/v1alpha2
+kind: rule
+metadata:
+  name: quota
+  namespace: istio-system
+spec:
+  actions:
+  - handler: handler.memquota
+    instances:
+    - requestcount.quota
+</code></pre><h2>Testing</h2><p>Now, we can check that everything is working as expected and that no user is able to abuse the system. For the testing, we changed the quota to one request every three seconds. Here is the result:</p><p><iframe src="https://player.vimeo.com/video/260455239?title=0&amp;byline=0&amp;portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe></p><p>You can find a version of the test script <a href="https://github.com/akvo/akvo-platform/blob/issue-57/rate-limit-istio/istio/simple-check.sh">here</a> and all the code above <a href="https://github.com/akvo/akvo-platform/tree/b17ed526fa48d22e7ef7a2f37195302119309dca/istio/k8s">here</a>. </p><h2>Are we done?</h2><p>Istio allows us to ensure that all of our partners get a fair share of the resources, with a little bit of configuration and without having to modify or change any of our existing code, which is a big plus.</p><p>But rate limiting is just one part of making Akvo’s platforms more stable. Istio also comes with a lot more goodies to add to that stability, and to make it more secure, which for sure we will investigate in the near future.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoyed it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="http://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/speakers/"><img src="/images/logo-wearedevelopers-2018.png" /></a>
+						<a href="https://www.jbcnconf.com/2018/infoSpeaker.html?ref=RGFuaWVsTGVicmVyb2RsZWJyZXJvQGdtYWlsLmNvbQ=="><img src="/images/logo-jbcnconf.jpg" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (17)</a></li><li><a href="/tags/Clojure/index.html">Clojure (19)</a></li><li><a href="/tags/Humour/index.html">Humour (1)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/Kafka/index.html">Kafka (6)</a></li><li><a href="/tags/good_practices/index.html">good practices (16)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
