@@ -142,15 +142,15 @@
 <pre><code class="sh">sudo sh -c 'echo "127.0.0.1 t1.lumen.localhost t2.lumen.localhost auth.lumen.localhost" &gt;&gt; /etc/hosts'
 docker-compose up -d &amp;&amp; docker-compose logs -f --tail=10
 </code></pre><p>The first step is required because Lumen is a multi tenant product and the tenant is based on the host.</p><p>The second step is basically the same as <em>docker-compose up</em>, but without docker-compose holding your console hostage.</p><p>Interestingly, note the absence of any <em>npm install</em> or <em>mvn install</em> from the instructions.</p><p>After that, we will be running:</p><p><img src="/images/blog/docker-compose/dev-docker-compose.jpg" alt="Akvo Lumen developer docker compose setup" title="Developer environment setup with Docker Compose" /></p><h2>The docker compose file</h2><p>The whole docker compose file can be found at <a href="https://github.com/akvo/akvo-lumen/blob/develop/docker-compose.yml">here</a>.</p><h3>Postgres and Keycloak</h3><p>Let’s start by looking at the Postgres image: </p>
-<pre><code>postgres:
+<pre><code class="yaml">postgres:
   build: postgres
   ports:
    - "5432:5432"
 </code></pre><p>Strictly speaking, we do not need to expose the Postgres port, but it is useful during development to be able to inspect the DB tables with some UI tool.</p><p>The <a href="https://github.com/akvo/akvo-lumen/blob/f72db9d8efe4900f8f8b3a42d5d89f4eded4b50e/postgres/Dockerfile">Dockerfile</a> is extremely simple:</p>
-<pre><code>FROM postgres:9.5
+<pre><code class="dockerfile">FROM postgres:9.5
 ADD ./provision  /docker-entrypoint-initdb.d/
 </code></pre><p>Following the instructions of the <a href="https://hub.docker.com/_/postgres/">Postgres official image</a>, we copy our <a href="https://github.com/akvo/akvo-lumen/blob/f72db9d8efe4900f8f8b3a42d5d89f4eded4b50e/postgres/provision/setup.sh">initial setup scripts</a> and they will be run the first time the container starts.</p><p>The scripts just creates a bunch of empty databases. It will be the Lumen Backend the one that creates the required tables and reference data as part of the DB migration logic.</p><p>The <a href="https://github.com/akvo/akvo-lumen/blob/f72db9d8efe4900f8f8b3a42d5d89f4eded4b50e/keycloak/Dockerfile">Keycloak image</a> is very similar, but setups the initial set of users, passwords and credentials in a <a href="https://github.com/akvo/akvo-lumen/blob/f72db9d8efe4900f8f8b3a42d5d89f4eded4b50e/keycloak/akvo.json">Keycloaky way</a>.</p><h3>Lumen Backend</h3><p>The Lumen Backend is a Clojure service. Its docker compose configuration looks like:</p>
-<pre><code>backend:
+<pre><code class="yaml">backend:
  build:
    context: ./backend
    dockerfile: Dockerfile-dev
@@ -163,7 +163,7 @@ ADD ./provision  /docker-entrypoint-initdb.d/
  ports:
     - "47480:47480"
 </code></pre><p>The first interesting point is that it uses a <a href="https://github.com/akvo/akvo-lumen/blob/e0881e38cc1c4bf77692cbaa611427af3db288ab/backend/Dockerfile-dev">different Dockerfile</a> than <a href="https://github.com/akvo/akvo-lumen/blob/e0881e38cc1c4bf77692cbaa611427af3db288ab/backend/Dockerfile">the production one</a>. </p><p>During development, we need our build tools, <a href="https://leiningen.org/">Lein</a> in our case, plus we want the fast feedback cycle that a <a href="http://vvvvalvalval.github.io/posts/what-makes-a-good-repl.html">good REPL provides</a>, while in production we just want a fast start up time.</p><p>Note that because our build tools come as part of the Docker image, everybody in the team will be running exactly the same version of Lein, on exactly the same JVM and OS. Other projects could use different Lein versions, or different tools, but containers isolate one project from the others.</p><p>We do not want to be rebuilding and restarting our Backend Docker image every time we make a change in our source files, so the first line of “volumes” <em>(- ./backend:/app)</em> makes the source code available to the Docker container: any change in the source files will be immediately visible inside the container. </p><p>The second volume that we mount is the local maven repository <em>(- ~/.m2:/root/.m2)</em>. This somehow pollutes your developer box, as deleting the Docker container will not get rid of the downloaded dependencies, but in theory your local maven repository is just a cache, so you can delete it without repercussions whenever it gets too big.</p><p>If you don’t want to pollute your developer box at all, you can make <a href="http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/">use of layers</a> and download the dependencies just when there is a change in the project file.</p><p>The last volume <em>(- ~/.lein:/root/.lein)</em> makes the <a href="https://jakemccrary.com/blog/2015/01/11/overview-of-my-leiningen-profiles-dot-clj/">Lein global profiles</a> available to the container. Use with care as you want to avoid any “it works on my machine” issues.</p><p>Even if the Keycloak container is accessible by the Backend using the hostname “keycloak”, we need the link <em>(- keycloak:auth.lumen.localhost)</em> due to JWT validation requiring the single sign-on host to be the same one for the client (the browser) and the backend. </p><p>Last, we make the REPL port available so you can connect to it with your favourite IDE. You will need to explicitly configure the lein <em>:repl-options</em> to listen to that port and to allow connections from <a href="https://github.com/akvo/akvo-lumen/blob/e0881e38cc1c4bf77692cbaa611427af3db288ab/backend/project.clj#L74">any host</a></p><h3>Lumen Client</h3><p>The Lumen Client image is a Nginx that servers the SPA and proxies other requests to the backend.</p>
-<pre><code>client:
+<pre><code class="yaml">client:
  build:
    context: ./client
    dockerfile: Dockerfile-dev
@@ -172,9 +172,9 @@ ADD ./provision  /docker-entrypoint-initdb.d/
  ports:
     - "3030:3030"
 </code></pre><p>Again, for development we prioritize a fast feedback cycle, so the Docker images between <a href="https://github.com/akvo/akvo-lumen/blob/e0881e38cc1c4bf77692cbaa611427af3db288ab/client/Dockerfile">production</a> and <a href="https://github.com/akvo/akvo-lumen/blob/e0881e38cc1c4bf77692cbaa611427af3db288ab/client/Dockerfile-dev">development</a> are different.</p><p>In this case, we have replaced Nginx with a <a href="https://github.com/webpack/webpack-dev-server">webpack Dev Server</a> which will recompile the SPA and do a <a href="https://github.com/akvo/akvo-lumen/blob/e0881e38cc1c4bf77692cbaa611427af3db288ab/client/webpack.config.js">hot code reload</a> on your browser whenever we make a change on our source code. The mounted volume is to make the source code accessible inside the container.</p><p>The exposed port is just the main application entrypoint.</p><h2>Running tests and other build tasks</h2><p>As you don’t need to install any npm, lein or maven in your local box, to run any tasks provided by those tools, you just need to run them from within the Docker container.</p><p>For example, to run the Backend tests:</p>
-<pre><code>docker-compose exec backend lein test
+<pre><code class="sh">docker-compose exec backend lein test
 </code></pre><p>Or if you are going to run several commands, you can always start a bash shell:</p>
-<pre><code>docker-compose exec backend bash
+<pre><code class="sh">docker-compose exec backend bash
 </code></pre><p><em>Tip:</em> if you want to preserve the bash history, just add another volume to the Docker Compose file that mounts the home directory.</p><h2>A note on startup dependencies</h2><p>Docker Compose provides very <a href="https://docs.docker.com/compose/startup-order/">little help</a> to ensure the startup order of the containers. </p><p>It is up to you to make sure that the dependant container waits long enough for the dependency to be ready, usually by polling with some maximum time limit.</p><p>For this project, the Backend depends both on Keycloak and Postgres, but the Backend consistently takes longer than both to startup, so we are ignoring the issue for now.</p><p>Examples in other projects on how to deal with the startup dependency issue:</p>
 <ol>
   <li>Checking that a <a href="https://github.com/akvo/akvo-maps/blob/4aaaea55230b3eb7f704ecee73d89db115ccc3fa/end-to-end-tests/test/windshaft_test/core_test.clj#L11">DB is ready by querying the last table created for some data</a></li>
@@ -273,7 +273,7 @@ s.setAttribute('data-timestamp', +new Date());
 	            <div class="widget widget_categories">
 
 	               <h5 class="widget-title">Categories</h5>
-	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (16)</a></li><li><a href="/tags/Clojure/index.html">Clojure (19)</a></li><li><a href="/tags/Humour/index.html">Humour (1)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/Kafka/index.html">Kafka (6)</a></li><li><a href="/tags/good_practices/index.html">good practices (16)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (17)</a></li><li><a href="/tags/Clojure/index.html">Clojure (19)</a></li><li><a href="/tags/Humour/index.html">Humour (1)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/Kafka/index.html">Kafka (6)</a></li><li><a href="/tags/good_practices/index.html">good practices (16)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
 
 	            </div> <!-- /widget_categories -->
 

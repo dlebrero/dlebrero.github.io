@@ -147,7 +147,7 @@
   <li>Have PII events and non-PII events, in the same or different topics, depending if ordering between them is important or not.</li>
   <li>When the user exercises the right of erasure, before deleting the encryption key, push a event with the non-PII data that we want to retain.</li>
 </ol><p>The second option seems the simplest one.</p><p>The Encryptor also listen to the GDPR messages and when the user exercises the right to erasure, we store a tombstone both in the local store and in the <code>encryption-keys</code> topic: </p>
-<pre><code>(defn handle-gdpr [^KeyValueStore store ^ProcessorContext ctx k _]
+<pre><code class="clojure">(defn handle-gdpr [^KeyValueStore store ^ProcessorContext ctx k _]
  (.put store k common/tombstone)
  (.forward ctx k common/tombstone))
 </code></pre><p>We will explain in the Event Consumer why a tombstone and not just delete the record.</p><p>Another decision that we need to make is what to do if the encryptor gets a message after the user has exercised the right to erase: </p>
@@ -165,7 +165,7 @@
             (-&gt; ctx .valueSerde .serializer)
             nil))))
 </code></pre><p>Never a good idea to use an internal api, but good enough for the PoC.</p><p>But even if this solves the problem of sending messages to an arbitrary topic, there is a bigger problem: to be able to reuse the Encryptor, all input topics must be copartition (aka. must have the same number of partitions). </p><p>If the topics do not have the same number of partitions, then two messages for the same user in different topics can end up in different instances of the Encryptor service, which means that each instance will generate an encryption key and push it to the <code>encryption-keys</code> topic, one overwriting the other, making some messages unreadable.</p><p>If the topics have the same number of partitions, then the <a href="https://github.com/apache/kafka/blob/4a274bc9fd2ac3714788af0429fde8945a48636f/clients/src/main/java/org/apache/kafka/clients/consumer/RangeAssignor.java#L29">default partition assignor</a> will distribute the partitions between the Encryptor instances so that partition 1 for <strong>all topics</strong> is consumed by one consumer, partition 2 for all topics is consumed by another consumer, etc… This way all message for a given user end up in the same instance, even from different topics. </p><p>As copartitioning all topics is unlikely to be desirable, we probably need to split the Encryptor in two: one app to generate the encryption keys and another one to do the actual encryption. Something like:</p><p><img src="/images/blog/kafka-gdpr/kafka-gdpr-split.png" alt="Kafka GDPR encryption architecture reuse" title="Kafka GDPR encryption architecture - reuse" /></p><p>This way, the encryption app can repartition the encryption keys if required.</p><h2>Event Consumer</h2><p>The event consumer has to join the events from the <code>encrypted-data</code> topic (a KStream) with the <code>encryption-keys</code> (a KTable). </p><p>Unfortunately, even if Kafka Streams tries to give you <a href="https://docs.confluent.io/3.0.0/streams/architecture.html#streams-architecture-flow-control">some control</a> over the order on which messages are processed, some testing showed that if there are a lot of events in the <code>encrypted-data</code> topic, the first batch of events will all come from this topic and none from the <code>encryption-keys</code> topic, which means that none of the events was decrypted because none of the encryption keys was known at that time.</p><p>So we ended up building our own join-like topology, that will remember which events are missing the encryption key and will process those events once the encryption key shows up. </p><p>For this topology, processing the encrypted data is pretty simple:</p>
-<pre><code>(defn encrypted-data-msg [^KeyValueStore missing-store
+<pre><code class="clojure">(defn encrypted-data-msg [^KeyValueStore missing-store
                          ^KeyValueStore encryption-keys-store
                          ^ProcessorContext ctx
                          k
@@ -178,7 +178,7 @@
   <li>Store as key the user, and as value a list of events.</li>
   <li>Store as key the user + event offset, and as value the event.</li>
 </ol><p>In the PoC we chose the second option, as there could be an unbounded amount of events for a user, so we would need an unbounded amount of memory to deserialize them for processing or updating.</p><p>Lets see how we use it when the encryption key arrives:</p>
-<pre><code>(defn encryption-key-msg [^KeyValueStore missing-store
+<pre><code class="clojure">(defn encryption-key-msg [^KeyValueStore missing-store
                          ^KeyValueStore encryption-keys-store
                          ^ProcessorContext ctx
                          k
@@ -262,7 +262,7 @@ s.setAttribute('data-timestamp', +new Date());
 	            <div class="widget widget_categories">
 
 	               <h5 class="widget-title">Categories</h5>
-	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (16)</a></li><li><a href="/tags/Clojure/index.html">Clojure (19)</a></li><li><a href="/tags/Humour/index.html">Humour (1)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/Kafka/index.html">Kafka (6)</a></li><li><a href="/tags/good_practices/index.html">good practices (16)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (17)</a></li><li><a href="/tags/Clojure/index.html">Clojure (19)</a></li><li><a href="/tags/Humour/index.html">Humour (1)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/Kafka/index.html">Kafka (6)</a></li><li><a href="/tags/good_practices/index.html">good practices (16)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
 
 	            </div> <!-- /widget_categories -->
 
