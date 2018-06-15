@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<atom:link href='https://danlebrero.com' rel='self' type='application/rss+xml'/>
 <title>
 Daniel Lebrero Berna Blog
 </title>
 <link>
-http://danlebrero.com
+https://danlebrero.com
 </link>
 <language>
 en
@@ -28,10 +28,10 @@ clj-rss
 Per user rate limiting with OpenID connect and Istio in Kubernetes
 </title>
 <link>
-http://danlebrero.com/2018/05/31/per-user-rate-limiting-with-istio-openid-connect-in-kubernetes/
+https://danlebrero.com/2018/05/31/per-user-rate-limiting-with-istio-openid-connect-in-kubernetes/
 </link>
 <guid>
-http://danlebrero.com/2018/05/31/per-user-rate-limiting-with-istio-openid-connect-in-kubernetes/
+https://danlebrero.com/2018/05/31/per-user-rate-limiting-with-istio-openid-connect-in-kubernetes/
 </guid>
 <pubDate>
 Thu, 31 May 2018 00:00:00 +0200
@@ -45,10 +45,10 @@ How to do rate limiting with Istio on Kubernetes a per user basis, using OpenID 
 Kafka, GDPR and Event Sourcing
 </title>
 <link>
-http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing/
+https://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing/
 </link>
 <guid>
-http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing/
+https://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing/
 </guid>
 <pubDate>
 Wed, 11 Apr 2018 09:35:00 +0200
@@ -62,10 +62,10 @@ Proof of concept for compliance with GDPR on an Event Sourcing architecture buil
 Kafka, GDPR and Event Sourcing - Implementation details
 </title>
 <link>
-http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
+https://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
 </link>
 <guid>
-http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
+https://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
 </guid>
 <pubDate>
 Wed, 11 Apr 2018 09:45:00 +0200
@@ -79,10 +79,10 @@ Implementation details for a proof of concept for compliance with GDPR on an Eve
 Kafka, distributed coordination and the actor model
 </title>
 <link>
-http://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
+https://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
 </link>
 <guid>
-http://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
+https://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
 </guid>
 <pubDate>
 Mon, 09 Apr 2018 10:00:00 +0200
@@ -96,10 +96,10 @@ On how to design KafkaStream applications in terms of the actor model.
 Production data never lies
 </title>
 <link>
-http://danlebrero.com/2018/03/20/production-data-never-lies/
+https://danlebrero.com/2018/03/20/production-data-never-lies/
 </link>
 <guid>
-http://danlebrero.com/2018/03/20/production-data-never-lies/
+https://danlebrero.com/2018/03/20/production-data-never-lies/
 </guid>
 <pubDate>
 Tue, 20 Mar 2018 00:00:00 +0100
@@ -113,10 +113,10 @@ Using production data to automatically generate Avro schemas, using Spec-Provide
 Easing open source contributions with Docker
 </title>
 <link>
-http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
+https://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
 </link>
 <guid>
-http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
+https://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
 </guid>
 <pubDate>
 Tue, 13 Feb 2018 00:00:00 +0100
@@ -130,10 +130,10 @@ Software installation instructions sometimes look like IKEA assembly instruction
 How to Docker Compose a developer environment: an open source example
 </title>
 <link>
-http://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
+https://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
 </link>
 <guid>
-http://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
+https://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
 </guid>
 <pubDate>
 Mon, 25 Sep 2017 13:35:00 +0200
@@ -147,10 +147,10 @@ An efficient team needs to have an easy way of setting up a development environm
 Swagger Search: Finding an endpoint in your microservice primordial soup 
 </title>
 <link>
-http://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/
+https://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/
 </link>
 <guid>
-http://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/
+https://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/
 </guid>
 <pubDate>
 Mon, 18 Sep 2017 13:35:00 +0200
@@ -164,10 +164,10 @@ An open source tools to find endpoints in a microservice architecture.
 Why to Docker Compose a calm environment
 </title>
 <link>
-http://danlebrero.com/2017/09/01/a-docker-compose-environment/
+https://danlebrero.com/2017/09/01/a-docker-compose-environment/
 </link>
 <guid>
-http://danlebrero.com/2017/09/01/a-docker-compose-environment/
+https://danlebrero.com/2017/09/01/a-docker-compose-environment/
 </guid>
 <pubDate>
 Fri, 01 Sep 2017 00:00:00 +0200
@@ -181,10 +181,10 @@ Setting up or upgrading a developer environment should be an easy and repeatable
 Applying stability patterns: a case study - Devoxx PL 2017
 </title>
 <link>
-http://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
+https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
 </link>
 <guid>
-http://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
+https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
 </guid>
 <pubDate>
 Thu, 03 Aug 2017 11:00:00 +0200

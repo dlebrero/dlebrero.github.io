@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<atom:link href='https://danlebrero.com' rel='self' type='application/rss+xml'/>
 <title>
 Daniel Lebrero Berna Blog
 </title>
 <link>
-http://danlebrero.com
+https://danlebrero.com
 </link>
 <language>
 en
@@ -28,10 +28,10 @@ clj-rss
 Why Java? Why Clojure?
 </title>
 <link>
-http://danlebrero.com/2016/12/14/why-java-why-clojure/
+https://danlebrero.com/2016/12/14/why-java-why-clojure/
 </link>
 <guid>
-http://danlebrero.com/2016/12/14/why-java-why-clojure/
+https://danlebrero.com/2016/12/14/why-java-why-clojure/
 </guid>
 <pubDate>
 Wed, 14 Dec 2016 00:00:00 +0100
@@ -45,10 +45,10 @@ The reasons to use Java and Clojure are the same
 Lines of code actually matters.
 </title>
 <link>
-http://danlebrero.com/2016/03/17/lines-of-code/
+https://danlebrero.com/2016/03/17/lines-of-code/
 </link>
 <guid>
-http://danlebrero.com/2016/03/17/lines-of-code/
+https://danlebrero.com/2016/03/17/lines-of-code/
 </guid>
 <pubDate>
 Thu, 17 Mar 2016 00:00:00 +0100

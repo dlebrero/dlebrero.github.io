@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<atom:link href='https://danlebrero.com' rel='self' type='application/rss+xml'/>
 <title>
 Daniel Lebrero Berna Blog
 </title>
 <link>
-http://danlebrero.com
+https://danlebrero.com
 </link>
 <language>
 en
@@ -28,10 +28,10 @@ clj-rss
 Applying stability patterns: a case study - Devoxx PL 2017
 </title>
 <link>
-http://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
+https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
 </link>
 <guid>
-http://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
+https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/
 </guid>
 <pubDate>
 Thu, 03 Aug 2017 11:00:00 +0200
@@ -45,10 +45,10 @@ Video from my presentation on Devoxx PL 2017 on stability patterns
 Automating resilience testing with Docker and Property Based Testing - Devoxx UK 2017
 </title>
 <link>
-http://danlebrero.com/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/
+https://danlebrero.com/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/
 </link>
 <guid>
-http://danlebrero.com/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/
+https://danlebrero.com/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/
 </guid>
 <pubDate>
 Sat, 20 May 2017 00:00:00 +0200
@@ -62,10 +62,10 @@ Video from my presentation on Devoxx UK 2017 on Docker, resilience and property 
 Automating resilience testing with Clojure and Docker - EuroClojure 2016 video
 </title>
 <link>
-http://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
+https://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
 </link>
 <guid>
-http://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
+https://danlebrero.com/2016/11/26/automating-resilience-testing-with-clojure-and-docker-euroclojure-2016-video/
 </guid>
 <pubDate>
 Sat, 26 Nov 2016 00:00:00 +0100
@@ -79,10 +79,10 @@ Video from my presentation on EuroClojure 2016
 Automating resilience testing with Clojure and Docker - EuroClojure 2016 slides
 </title>
 <link>
-http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
+https://danlebrero.com/2016/11/14/euroclojure-2016-slides/
 </link>
 <guid>
-http://danlebrero.com/2016/11/14/euroclojure-2016-slides/
+https://danlebrero.com/2016/11/14/euroclojure-2016-slides/
 </guid>
 <pubDate>
 Mon, 14 Nov 2016 00:00:00 +0100

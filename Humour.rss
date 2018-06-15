@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<atom:link href='https://danlebrero.com' rel='self' type='application/rss+xml'/>
 <title>
 Daniel Lebrero Berna Blog
 </title>
 <link>
-http://danlebrero.com
+https://danlebrero.com
 </link>
 <language>
 en
@@ -28,10 +28,10 @@ clj-rss
 Did you read my email?
 </title>
 <link>
-http://danlebrero.com/2018/04/30/did-you-read-my-email/
+https://danlebrero.com/2018/04/30/did-you-read-my-email/
 </link>
 <guid>
-http://danlebrero.com/2018/04/30/did-you-read-my-email/
+https://danlebrero.com/2018/04/30/did-you-read-my-email/
 </guid>
 <pubDate>
 Mon, 30 Apr 2018 00:00:00 +0200

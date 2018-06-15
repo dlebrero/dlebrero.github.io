@@ -6,10 +6,10 @@
    ================================================== -->
    <meta charset="utf-8" />
 	<title>Delay: Clojure's forgotten concurrency primitive</title>
-	<meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." name="description" /><meta content="Clojure delay concurrency primitive initialize multithreading resource management Spark" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Delay: Clojure's forgotten concurrency primitive" property="og:title" /><meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." property="og:description" /><meta content="http://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/" property="og:url" /><meta content="Delay: Clojure's forgotten concurrency primitive" name="twitter:title" /><meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="http://danlebrero.com/images/blog/clojure-expect-delays.jpg" name="twitter:image" /><meta content="http://danlebrero.com/images/blog/clojure-expect-delays.jpg" property="og:image" />
+	<meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." name="description" /><meta content="Clojure delay concurrency primitive initialize multithreading resource management Spark" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Delay: Clojure's forgotten concurrency primitive" property="og:title" /><meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." property="og:description" /><meta content="https://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/" property="og:url" /><meta content="Delay: Clojure's forgotten concurrency primitive" name="twitter:title" /><meta content="When talking about Clojure's concurrency primitives, we often forget &quot;delay&quot;. Let's see how it can help us." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/clojure-expect-delays.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/clojure-expect-delays.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	
+	<link rel="canonical" href="https://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -190,7 +190,7 @@ CompilerException java.lang.RuntimeException,
 @exceptional-delay
 CompilerException java.lang.RuntimeException, 
 </code></pre><p>This may or may not be your required behaviour. <a href="https://github.com/clojure/core.memoize">core.memoize</a> has a <a href="https://github.com/clojure/core.memoize/blob/master/src/main/clojure/clojure/core/memoize.clj#L52">RetryingDelay</a> that will not cache exceptions if you need it.</p><h2>Other use cases</h2><p>As hinted above, delay (or its equivalent in other languages) is used to build read-through caches, were multiple threads can be requesting the same missing value for a given key, and you want to make sure that just one of the threads do the work. </p><p>Another use case is when parallelising some heterogeneous set of tasks. Some of the tasks may need to access some expensive to fetch data, but it is also possible that none of the tasks would need the data. Wrapping the access to the data in a delay will be a perfect fit: no cost if no task uses the data, at most once if several tasks need the data.</p><p>So keep delay in mind if you need to guarantee only once execution between multiple threads.</p>
-<hr /><p>You may be also interested on <a href="http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/#content">Atoms, delays and side effects: a resource management idiom for Clojure</a>.</p></div>
+<hr /><p>You may be also interested on <a href="https://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/#content">Atoms, delays and side effects: a resource management idiom for Clojure</a>.</p></div>
 
 				 
 
@@ -241,8 +241,7 @@ s.setAttribute('data-timestamp', +new Date());
 
 					<h5 class="widget-title">Next talks</h5>
 					<div class="textwidget">
-						<a href="https://www.wearedevelopers.com/speakers/"><img src="/images/logo-wearedevelopers-2018.png" /></a>
-						<a href="https://www.jbcnconf.com/2018/infoSpeaker.html?ref=RGFuaWVsTGVicmVyb2RsZWJyZXJvQGdtYWlsLmNvbQ=="><img src="/images/logo-jbcnconf.jpg" /></a>
+						<a href="http://oredev.org/2018/sessions/java-with-a-clojure-mindset"><img src="/images/logo-oredev-2018.png" /></a>
 					</div>
 
 					<h5 class="widget-title">Disclaimer</h5>
@@ -297,7 +296,7 @@ s.setAttribute('data-timestamp', +new Date());
    <!-- Java Script
    ================================================== -->
 	<div id="scripts" style="display:none;">
-	   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	   <script src="/js/jquery-1.10.2.min.js"></script>
 	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
 	   <script src="/js/jquery.flexslider.js"></script>

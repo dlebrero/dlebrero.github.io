@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<atom:link href='https://danlebrero.com' rel='self' type='application/rss+xml'/>
 <title>
 Daniel Lebrero Berna Blog
 </title>
 <link>
-http://danlebrero.com
+https://danlebrero.com
 </link>
 <language>
 en
@@ -28,10 +28,10 @@ clj-rss
 Habits of efficient developers - slides
 </title>
 <link>
-http://danlebrero.com/2018/05/17/habits-of-efficient-developers/
+https://danlebrero.com/2018/05/17/habits-of-efficient-developers/
 </link>
 <guid>
-http://danlebrero.com/2018/05/17/habits-of-efficient-developers/
+https://danlebrero.com/2018/05/17/habits-of-efficient-developers/
 </guid>
 <pubDate>
 Thu, 17 May 2018 00:00:00 +0200
@@ -45,10 +45,10 @@ Slides for the &quot;Habits of efficient developers&quot; talk at WeAreDeveloper
 Easing open source contributions with Docker
 </title>
 <link>
-http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
+https://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
 </link>
 <guid>
-http://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
+https://danlebrero.com/2018/02/13/easing-open-source-software-development-with-docker/
 </guid>
 <pubDate>
 Tue, 13 Feb 2018 00:00:00 +0100
@@ -62,10 +62,10 @@ Software installation instructions sometimes look like IKEA assembly instruction
 How to Docker Compose a developer environment: an open source example
 </title>
 <link>
-http://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
+https://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
 </link>
 <guid>
-http://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
+https://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
 </guid>
 <pubDate>
 Mon, 25 Sep 2017 13:35:00 +0200
@@ -79,10 +79,10 @@ An efficient team needs to have an easy way of setting up a development environm
 Why to Docker Compose a calm environment
 </title>
 <link>
-http://danlebrero.com/2017/09/01/a-docker-compose-environment/
+https://danlebrero.com/2017/09/01/a-docker-compose-environment/
 </link>
 <guid>
-http://danlebrero.com/2017/09/01/a-docker-compose-environment/
+https://danlebrero.com/2017/09/01/a-docker-compose-environment/
 </guid>
 <pubDate>
 Fri, 01 Sep 2017 00:00:00 +0200
@@ -96,10 +96,10 @@ Setting up or upgrading a developer environment should be an easy and repeatable
 A more efficient developer: write programs for yourself
 </title>
 <link>
-http://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/
+https://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/
 </link>
 <guid>
-http://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/
+https://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/
 </guid>
 <pubDate>
 Thu, 03 Aug 2017 00:00:00 +0200
@@ -113,10 +113,10 @@ The shoemaker's son always go barefoot.
 A more efficient developer: master your IDE
 </title>
 <link>
-http://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
+https://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
 </link>
 <guid>
-http://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
+https://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
 </guid>
 <pubDate>
 Wed, 02 Aug 2017 00:00:00 +0200
@@ -130,10 +130,10 @@ A professional developer should look professional while using his main tool.
 A more efficient developer: disable notifications
 </title>
 <link>
-http://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
+https://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
 </link>
 <guid>
-http://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
+https://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
 </guid>
 <pubDate>
 Tue, 01 Aug 2017 00:00:00 +0200
@@ -147,10 +147,10 @@ How to become X times more efficient in one simple step.
 Error budget: Google's solution for innovating at a sustainable pace
 </title>
 <link>
-http://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/
+https://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/
 </link>
 <guid>
-http://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/
+https://danlebrero.com/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/
 </guid>
 <pubDate>
 Sun, 16 Jul 2017 00:00:00 +0200
@@ -164,10 +164,10 @@ New features always trump technical work. Can we objectively measure and decide 
 Testing or Monitoring? MTBF or MTTR? Make your choice!
 </title>
 <link>
-http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
+https://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
 </link>
 <guid>
-http://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
+https://danlebrero.com/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/
 </guid>
 <pubDate>
 Mon, 05 Jun 2017 18:00:00 +0200
@@ -181,10 +181,10 @@ What is more important testing or monitoring? Should you optimize for mean time 
 Clojure's most important lesson
 </title>
 <link>
-http://danlebrero.com/2017/05/24/clojure-most-important-lesson/
+https://danlebrero.com/2017/05/24/clojure-most-important-lesson/
 </link>
 <guid>
-http://danlebrero.com/2017/05/24/clojure-most-important-lesson/
+https://danlebrero.com/2017/05/24/clojure-most-important-lesson/
 </guid>
 <pubDate>
 Wed, 24 May 2017 20:00:00 +0200

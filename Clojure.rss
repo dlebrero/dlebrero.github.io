@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
-<atom:link href='http://danlebrero.com' rel='self' type='application/rss+xml'/>
+<atom:link href='https://danlebrero.com' rel='self' type='application/rss+xml'/>
 <title>
 Daniel Lebrero Berna Blog
 </title>
 <link>
-http://danlebrero.com
+https://danlebrero.com
 </link>
 <language>
 en
@@ -28,10 +28,10 @@ clj-rss
 Kafka, GDPR and Event Sourcing - Implementation details
 </title>
 <link>
-http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
+https://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
 </link>
 <guid>
-http://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
+https://danlebrero.com/2018/04/11/kafka-gdpr-event-sourcing-implentation/
 </guid>
 <pubDate>
 Wed, 11 Apr 2018 09:45:00 +0200
@@ -45,10 +45,10 @@ Implementation details for a proof of concept for compliance with GDPR on an Eve
 Kafka, distributed coordination and the actor model
 </title>
 <link>
-http://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
+https://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
 </link>
 <guid>
-http://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
+https://danlebrero.com/2018/04/09/kafka-distributed-coordination-actor-model/
 </guid>
 <pubDate>
 Mon, 09 Apr 2018 10:00:00 +0200
@@ -62,10 +62,10 @@ On how to design KafkaStream applications in terms of the actor model.
 Production data never lies
 </title>
 <link>
-http://danlebrero.com/2018/03/20/production-data-never-lies/
+https://danlebrero.com/2018/03/20/production-data-never-lies/
 </link>
 <guid>
-http://danlebrero.com/2018/03/20/production-data-never-lies/
+https://danlebrero.com/2018/03/20/production-data-never-lies/
 </guid>
 <pubDate>
 Tue, 20 Mar 2018 00:00:00 +0100
@@ -79,10 +79,10 @@ Using production data to automatically generate Avro schemas, using Spec-Provide
 How to Docker Compose a developer environment: an open source example
 </title>
 <link>
-http://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
+https://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
 </link>
 <guid>
-http://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
+https://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
 </guid>
 <pubDate>
 Mon, 25 Sep 2017 13:35:00 +0200
@@ -96,10 +96,10 @@ An efficient team needs to have an easy way of setting up a development environm
 Swagger Search: Finding an endpoint in your microservice primordial soup 
 </title>
 <link>
-http://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/
+https://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/
 </link>
 <guid>
-http://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/
+https://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/
 </guid>
 <pubDate>
 Mon, 18 Sep 2017 13:35:00 +0200
@@ -113,10 +113,10 @@ An open source tools to find endpoints in a microservice architecture.
 Atoms, delays and side effects: a resource management idiom for Clojure
 </title>
 <link>
-http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
+https://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
 </link>
 <guid>
-http://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
+https://danlebrero.com/2017/06/21/atoms-delays-and-side-effects-resource-managent-in-clojure/
 </guid>
 <pubDate>
 Wed, 21 Jun 2017 14:15:00 +0200
@@ -130,10 +130,10 @@ Concurrency in Clojure is easy peasy, unless you have to deal with side effects.
 Delay: Clojure's forgotten concurrency primitive
 </title>
 <link>
-http://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/
+https://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/
 </link>
 <guid>
-http://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/
+https://danlebrero.com/2017/06/12/delay-clojure-forgotten-concurrency-primitive/
 </guid>
 <pubDate>
 Mon, 12 Jun 2017 09:00:00 +0200
@@ -147,10 +147,10 @@ When talking about Clojure's concurrency primitives, we often forget &quot;delay
 Clojure's most important lesson
 </title>
 <link>
-http://danlebrero.com/2017/05/24/clojure-most-important-lesson/
+https://danlebrero.com/2017/05/24/clojure-most-important-lesson/
 </link>
 <guid>
-http://danlebrero.com/2017/05/24/clojure-most-important-lesson/
+https://danlebrero.com/2017/05/24/clojure-most-important-lesson/
 </guid>
 <pubDate>
 Wed, 24 May 2017 20:00:00 +0200
@@ -164,10 +164,10 @@ Clojure has a lot of important and unique lessons to teach, but which one is the
 Automating resilience testing with Docker and Property Based Testing - Devoxx UK 2017
 </title>
 <link>
-http://danlebrero.com/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/
+https://danlebrero.com/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/
 </link>
 <guid>
-http://danlebrero.com/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/
+https://danlebrero.com/2017/05/20/automating-resilience-testing-with-docker-and-property-based-testing-devoxx-uk-2017-video/
 </guid>
 <pubDate>
 Sat, 20 May 2017 00:00:00 +0200
@@ -181,10 +181,10 @@ Video from my presentation on Devoxx UK 2017 on Docker, resilience and property 
 Joins on stateful stream processing using Kafka Streams' KTables and GlobalKTables
 </title>
 <link>
-http://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/
+https://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/
 </link>
 <guid>
-http://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/
+https://danlebrero.com/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/
 </guid>
 <pubDate>
 Sun, 07 May 2017 13:00:00 +0200
