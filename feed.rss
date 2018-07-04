@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 02 Jul 2018 00:00:00 +0200
+Wed, 04 Jul 2018 00:00:00 +0200
 </lastBuildDate>
 <pubDate>
-Mon, 02 Jul 2018 00:00:00 +0200
+Wed, 04 Jul 2018 00:00:00 +0200
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Habits of efficient developers - WeAreDevelopers 2018
+</title>
+<link>
+https://danlebrero.com/2018/07/04/habits-of-efficient-developers-wearedevelopers-2018-video/
+</link>
+<guid>
+https://danlebrero.com/2018/07/04/habits-of-efficient-developers-wearedevelopers-2018-video/
+</guid>
+<pubDate>
+Wed, 04 Jul 2018 00:00:00 +0200
+</pubDate>
+<description>
+Video from my presentation on WeAreDevelopers 2018 on habits of efficient developers
+</description>
+</item>
 <item>
 <title>
 A more efficient developer: Go and have a rest
@@ -174,23 +191,6 @@ Tue, 13 Feb 2018 00:00:00 +0100
 </pubDate>
 <description>
 Software installation instructions sometimes look like IKEA assembly instructions and are as difficult to follow as those. 
-</description>
-</item>
-<item>
-<title>
-How to Docker Compose a developer environment: an open source example
-</title>
-<link>
-https://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
-</link>
-<guid>
-https://danlebrero.com/2017/09/25/how-do-docker-compose-development-environement/
-</guid>
-<pubDate>
-Mon, 25 Sep 2017 13:35:00 +0200
-</pubDate>
-<description>
-An efficient team needs to have an easy way of setting up a development environment. This is a detailed example of how to do it. 
 </description>
 </item>
 </channel>
