@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<atom:link href='https://danlebrero.com' rel='self' type='application/rss+xml'/>
+<title>
+Daniel Lebrero Berna Blog
+</title>
+<link>
+https://danlebrero.com
+</link>
+<language>
+en
+</language>
+<lastBuildDate>
+Mon, 16 Jul 2018 00:00:00 +0200
+</lastBuildDate>
+<pubDate>
+Mon, 16 Jul 2018 00:00:00 +0200
+</pubDate>
+<description>
+Daniel Lebrero blog
+</description>
+<generator>
+clj-rss
+</generator>
+<item>
+<title>
+Kubernetes explained: the theme park analogy: auto scaling, taints and affinities
+</title>
+<link>
+https://danlebrero.com/2018/07/16/kubernetes-explained-in-pictures-the-theme-park-analogy/
+</link>
+<guid>
+https://danlebrero.com/2018/07/16/kubernetes-explained-in-pictures-the-theme-park-analogy/
+</guid>
+<pubDate>
+Mon, 16 Jul 2018 00:00:00 +0200
+</pubDate>
+<description>
+More on explaining Kubernetes and theme parks: scaling, taints and affinities.
+</description>
+</item>
+<item>
+<title>
+Kubernetes explained in pictures: the theme park analogy
+</title>
+<link>
+https://danlebrero.com/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/
+</link>
+<guid>
+https://danlebrero.com/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/
+</guid>
+<pubDate>
+Mon, 09 Jul 2018 00:00:00 +0200
+</pubDate>
+<description>
+This is an attempt to explain Kubernetes core concepts (pods, nodes, services, resources, ...) with an theme park analogy.
+</description>
+</item>
+<item>
+<title>
+Per user rate limiting with OpenID connect and Istio in Kubernetes
+</title>
+<link>
+https://danlebrero.com/2018/05/31/per-user-rate-limiting-with-istio-openid-connect-in-kubernetes/
+</link>
+<guid>
+https://danlebrero.com/2018/05/31/per-user-rate-limiting-with-istio-openid-connect-in-kubernetes/
+</guid>
+<pubDate>
+Thu, 31 May 2018 00:00:00 +0200
+</pubDate>
+<description>
+How to do rate limiting with Istio on Kubernetes a per user basis, using OpenID Connect to identify it. 
+</description>
+</item>
+</channel>
+</rss>

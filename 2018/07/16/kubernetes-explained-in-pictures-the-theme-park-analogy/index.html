@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Swagger Search: Finding an endpoint in your microservice primordial soup </title>
-	<meta content="An open source tools to find endpoints in a microservice architecture." name="description" /><meta content="swagger search aggregate find endpoint microservice architecture" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Swagger Search: Finding an endpoint in your microservice primordial soup " property="og:title" /><meta content="An open source tools to find endpoints in a microservice architecture." property="og:description" /><meta content="https://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/" property="og:url" /><meta content="Swagger Search: Finding an endpoint in your microservice primordial soup " name="twitter:title" /><meta content="An open source tools to find endpoints in a microservice architecture." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/swagger-search/swagger-search.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/swagger-search/swagger-search.jpg" property="og:image" />
+	<title>Kubernetes explained: the theme park analogy: auto scaling, taints and affinities</title>
+	<meta content="More on explaining Kubernetes and theme parks: scaling, taints and affinities." name="description" /><meta content="Kubernetes explain simply pictures example dummies like I am five k8s cronjobs jobs daemon sets scaling autoscaling taints affinities" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Kubernetes explained: the theme park analogy: auto scaling, taints and affinities" property="og:title" /><meta content="More on explaining Kubernetes and theme parks: scaling, taints and affinities." property="og:description" /><meta content="https://danlebrero.com/2018/07/16/kubernetes-explained-in-pictures-the-theme-park-analogy/" property="og:url" /><meta content="Kubernetes explained: the theme park analogy: auto scaling, taints and affinities" name="twitter:title" /><meta content="More on explaining Kubernetes and theme parks: scaling, taints and affinities." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/kubernetes-explained/kubernetes-explained-part-2.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/kubernetes-explained/kubernetes-explained-part-2.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2017/09/18/swagger-search-finding-endpoints-in-microservices/" />
+	<link rel="canonical" href="https://danlebrero.com/2018/07/16/kubernetes-explained-in-pictures-the-theme-park-analogy/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -114,75 +114,26 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Swagger Search: Finding an endpoint in your microservice primordial soup </h1>
+						<h1 class="entry-title">Kubernetes explained: the theme park analogy: auto scaling, taints and affinities</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Mon, 18 Sep 2017</li>
+								<li id="entry-date">Mon, 16 Jul 2018</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">An open source tools to find endpoints in a microservice architecture.</p>
+				 <p class="lead" id="entry-summary">More on explaining Kubernetes and theme parks: scaling, taints and affinities.</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/swagger-search/swagger-search.jpg" />
+							<img src="/images/blog/kubernetes-explained/kubernetes-explained-part-2.jpg" />
 						</div>
 					</div>
 				 
 
-					<div class="entry-content"><p><a href="http://labs.ig.com/">IG</a> started its service-oriented architecture journey back in 2009. </p><p>The first proof of concept consisted of three services, deployed independently from the existing monolith: a big fat J2EE Enterprise Server. </p><p>We loved the freedom from the monolith so much, that during these years the service landscape at IG has been growing organically, boasting now more than 250 services, with tens of hundreds of endpoints.</p><p>Perfect services with clear boundaries were born, but due to time pressures, laziness, or other unfortunate practicalities, these perfect babies grew into bloated teenagers, accruing functionality marginally related to them.</p><p>But then, by virtue of some kind of asexual reproduction, the fat services were split into a new set of perfect services, condemned to repeat the errors of their parents.</p><h2>Do we have …?</h2><p>The evolving nature of a microservice architecture is a strength, but it comes with a lot of different challenges, one of which can be summarized in the following question:</p>
-<blockquote><p>Do we have an endpoint that provides XXX functionality?</p>
-</blockquote><p>To document what was available, we ended up using a service registry, to know which services were available, and Swagger, to know what each service provided.</p><p>So the workflow to find a candidate endpoint would be:</p>
-<ol>
-  <li>Go to the service registry.</li>
-  <li>Grep for a name that seemed logical. Failing that, scan the list of all service names.</li>
-  <li>Find the Swagger doc url for the service.</li>
-  <li>Scan the available endpoints for something suitable.</li>
-</ol><p>If no service or endpoint was found, we would fall back to the “ask around the office” methodology.</p><p>This workflow was at first mildly annoying, but as we distilled our existing services, more and more of them would have suspiciously similar names, making the process more onerous.</p><h2>Swagger Search</h2><p>To ease that pain, IG’s Clojure Club rolled up their sleeves and built Swagger Search: a service that collects all the Swagger documents from all the services and presents a user interface that allows you to find endpoints in your microservice architecture.</p><p>This is what it looks like:</p><p><img src="/images/blog/swagger-search/list-of-services.jpg" alt="List services" title="List all services found by the service discovery" /></p><p><img src="/images/blog/swagger-search/search-endpoints.jpg" alt="Search for endpoints" title="Search results" /></p><p>The service allows searching through the endpoint documentation, URL, HTTP method, its parameters, their types, or any fields in the request or response bodies.</p><p>What do we mean by type and fields? If you have the following endpoint:</p>
-<pre><code class="json">"post": {
- "description": "Adds a new moderator for the chat.",
- "parameters": [
-   {
-     "in": "body",
-     "name": "body",
-     "schema": {
-       "$ref": "#/definitions/LiveChatModerator"
-     }
-   }
- ],
- }
-...
-"LiveChatModerator": {
- "properties": {
-   "id": {
-     "description": "...",
-     "type": "string"
-   },
-   "snippet": {
-     "$ref": "#/definitions/LiveChatModeratorSnippet",
-     "description": "...."
-   }
- },
- "type": "object"
-},
-"LiveChatModeratorSnippet": {
- "properties": {
-   "liveChatId": {
-     "description": "...",
-     "type": "string"
-   },
-   "moderatorDetails": {
-     "$ref": "#/definitions/ChannelProfileDetails",
-     "description": "..."
-   }
- },
- "type": "object"
-}
-...
-</code></pre><p>The endpoint will show in queries for the types LiveChatModerator, LiveChatModeratorSnippet and ChannelProfileDetails, and in queries for id, snippet, liveChatId or moderatorDetails.</p><p>Swagger Search has built-in support for <a href="https://www.consul.io/">Consul</a> and <a href="https://github.com/coreos/etcd">Etcd</a>, but you can plug your own service discovery mechanism.</p><p>It comes in three different flavors: as a <a href="https://hub.docker.com/r/danlebrero/swagger-search/">docker container</a>, as an <a href="https://github.com/IG-Group/swagger-search/releases">executable jar</a>, or as a <a href="https://clojars.org/ig/swagger-search">library</a>.</p><p>IG has open sourced the project under the Apache 2 license. You can find <a href="https://github.com/IG-Group/swagger-search">the source and instructions at Github</a>.</p><p>Hope you also find it useful.</p><h2>Acknowledgements</h2><p>Thanks a lot to all the member of IG’s Clojure Club and special thanks to all those graduates that were forced by their demonic overlords to contribute to the project. You did a great job and you taught me that Clojure can be learned in less than a month. </p><p>Thanks also to <a href="https://apis.guru/">APIs.guru</a> for providing all those Swagger APIs that helped enormously during testing. </p><p>And of course, thanks to everybody behind <a href="https://swagger.io">Swagger</a>. It is an awesome tool.</p><p>Kudos to everyone, but especially my best friend <a href="https://twitter.com/rmorschel">Robert Morschel</a> who taught me everything, who reviews this blog and who keeps adding random and funny statements with the hope that one will slip through.</p></div>
+					<div class="entry-content"><p>In the <a href="/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/#content">previous post</a> we covered quite a bit of ground explaining the Kubernetes concepts using a theme park analogy: containers, pods, deployments, containerPorts, cpu and memory resources, probes, services, ingresses, labels, nodes and node pool. </p><p>On this post, we will continue with the theme park analogy talking about auto scaling, taints and affinities. </p><h2>Success!</h2><p>As it couldn’t be otherwise, KubePark is a big success. People flood to the gates, eager to enjoy the KubePark experience, but there are just too many people: queues start to grow and grumpy visitors leave ugly reviews in popular websites.</p><p><img src="/images/blog/kubernetes-explained/queues-to-the-parks-main-roller-coaster-big.jpg" alt="big queues" title="Big queues ahead" /></p><p><span style="background-color: #ecf0f1"><small>Image attribution: <a href="http://www.thethemeparkguy.com/">http://www.thethemeparkguy.com/</a>.</small></span></p><p>You keep the queues in check by first increasing the number of attractions in your fun ride plans, and then by also increasing the number of rented parcels when the parcels become full.</p><p>If having to fiddle everyday with the fun ride plans and parcel contracts was not bad enough, you very soon notice that the 1909 Carousel is extremely popular in the mornings but hardly used in the evenings, while the Roller Coaster is the opposite, and let’s not talk about those wild 4am Conga Lines! Also, the number of visitor on the weekends is orders of magnitude bigger than on workdays. </p><p>You are just wasting a ton of money and time.</p><p>To solve the issue, you devise an additional set of instructions (one per attraction) for your control crew, so that if the average usage of all clones of an attraction is high, the control crew will install more of those attractions, removing them when the usage is low <strong>(k8s <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">pod horizontal autoscaling</a>)</strong>. The usage can be measured in different ways, but you decide that the power consumption <strong>(k8s, CPU usage)</strong> is a good enough proxy to know how busy an attraction is.</p><p>On top of that, a new clause is added to the rental agreement with your landlord that will allow your control crew to rent additional parcels without your consent (up to a maximum). This way, during the weekends the park can grow, and shrink on workdays <strong>(k8s <a href="https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler">cluster autoscaler</a>)</strong>.</p><p>From now on, KubePark will always run with the minimum required resources, and with little additional effort on your side.</p><h2>More attractions!</h2><p>Now that KubePark is running smoothly, it is time to offer a wider range of attractions. </p><p>A market study suggests that an ice rink and a ski slope will be the next big things. </p><p>As they require snow and cold weather, you sign a new rental contract <strong>(k8s <a href="/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/#node-pool">node pool</a>)</strong> to provide you with parcels in the arctic, of size 500x200 with 250kW power, and you tag them as “plains” and “arctic weather”.</p><p>On the fun ride template, you add a new optional section: <em>Must-have and nice-to-have parcel tags</em>, and both the ice rink and ski slope fun ride plans include the “must-have arctic weather”. The control crew will make sure that those attractions are always installed on parcels with arctic weather <strong>(k8s <a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node">node affinity</a>)</strong>.</p><p>Note attractions with no parcel requirements could be installed in the arctic parcels. Most of the time you are ok with this, the 1909 carousel looks even more beautiful with the snow. But some some special cases, like those extremely expensive zero-gravity parcels, you want to keep all attractions out, except for the ones designed explicitly for them <strong>(k8s <a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/">taints and tolerances</a>)</strong>.</p><h2>Trouble ahead</h2><p>With the snowy parcels in mind, you start to spring new attractions: Igloo Overnights, The Penguin Race, Polar Bear Sightseeing, Naked-Man Ice Fishing Competition… but on the rush to have all these new attractions, you neglect a very important detail and calamity strikes, badly hurting KubePark’s reputation. </p><p>The following picture goes viral, but be warned, you mind find it very disturbing:</p><p><img src="/images/blog/kubernetes-explained/kubernetes-explained-pod-affinity.jpg" alt="kubernetes affinities" title="Kubernetes node affinities" /></p><p><span style="background-color: #ecf0f1"><small>Image attribution: <a href="http://26anibestiario.kukuxumusu.com/resultados-animals/#" title="Lick">Lick</a> by <a href="http://www.kukuxumusu.com/">Kukuxumusu</a>.</small></span></p><p>By chance, a Polar Bear Sightseeing attraction was installed next to a Penguin Race. Not a nice spectacle. </p><p>To ensure that it doesn’t happen again, the Penguin Race is tagged as <em>yummy snacks</em> and a new option is added to the attraction’s template so that you can specify that the Polar Bear Sightseeing must not be in the same parcel as attractions with the tag <em>yummy snacks</em>.</p><p>Foreseeing possible future uses, you decide to also add the options to specify <em>must-have-attraction-with-tag-X-in-the-same-parcel</em>, <em>nice-to-have-attraction-with-tag-X-in-the-same-parcel</em> and <em>nice-to-NOT-have-attraction-with-tag-X-in-the-same-parcel</em> <strong>(k8s <a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#inter-pod-affinity-and-anti-affinity-beta-feature">pod affinity and anti-affinity</a>)</strong>. </p><p>Your control crew will need to hire, at the very least, a <a href="https://en.wikipedia.org/wiki/Classic_Tetris_World_Championship">Tetris World Champion</a>. </p><h2>Is that all?</h2><p>You wish again! </p><p>We still have to talk about Replication, Daemon and Stateful sets, Persistent Volumes, Jobs and Cron Jobs, Secrets, Config Maps … but those are for next week.</p></div>
 
 				 
 
@@ -196,7 +147,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a>
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Kubernetes/index.html">Kubernetes </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
