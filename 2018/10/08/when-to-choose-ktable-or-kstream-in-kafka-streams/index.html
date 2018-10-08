@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>In KafkaStreams, when to choose between a KTable or a KStream?</title>
+	<meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" name="description" /><meta content="Kafka KafkaStreams partitions design architecture Clojure example KTable KStream stateful streaming transformation " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="In KafkaStreams, when to choose between a KTable or a KStream?" property="og:title" /><meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" property="og:description" /><meta content="https://danlebrero.com/2018/10/08/when-to-choose-ktable-or-kstream-in-kafka-streams/" property="og:url" /><meta content="In KafkaStreams, when to choose between a KTable or a KStream?" name="twitter:title" /><meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/ktable-or-kstream-in-kafkastreams.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/ktable-or-kstream-in-kafkastreams.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2018/10/08/when-to-choose-ktable-or-kstream-in-kafka-streams/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">In KafkaStreams, when to choose between a KTable or a KStream?</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Mon, 8 Oct 2018</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/ktable-or-kstream-in-kafkastreams.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>If you are starting with KafkaStreams, or with streaming applications in general, sometimes is hard to come up with appropriate solutions to applications that you would previously consider trivial to implement. But it is just a matter of getting used to the new APIs and concepts, and seeing a bunch of examples. </p><p>I recently got this email inquiry (feel free to send me others!) about how KafkaStreams could be used:</p><p><em>I’ve a sensor data coming out of device and it has latitude/longitude along with other information. The device serial number is the key.</em></p><p><em>My requirement is to calculate distance between 2 consecutive messages for the device.</em></p><p><em>I’ve a kafka topic and each message in the topic has lat/lon and event timestamp. For example:</em></p>
+<table>
+  <thead>
+    <tr>
+      <th>Device </th>
+      <th>GpsDateTime </th>
+      <th>Latitude </th>
+      <th>Longitude </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>xyz </td>
+      <td>2016-11-30 22:38:36 </td>
+      <td>32.685757 </td>
+      <td>-96.735942</td>
+    </tr>
+    <tr>
+      <td>xyz </td>
+      <td>2016-11-30 22:39:07 </td>
+      <td>32.687347 </td>
+      <td>-96.732841</td>
+    </tr>
+    <tr>
+      <td>xyz </td>
+      <td>2016-11-30 22:39:37 </td>
+      <td>32.68805 </td>
+      <td>-96.729726</td>
+    </tr>
+  </tbody>
+</table><p><em>I would like to create a new KStream on the above topic and enrich it with distance.</em></p>
+<table>
+  <thead>
+    <tr>
+      <th>Device </th>
+      <th>GpsDateTime </th>
+      <th>Latitude </th>
+      <th>Longitude </th>
+      <th>Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>xyz </td>
+      <td>2016-11-30 22:38:36 </td>
+      <td>32.685757 </td>
+      <td>-96.735942 </td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>xyz </td>
+      <td>2016-11-30 22:39:07 </td>
+      <td>32.687347 </td>
+      <td>-96.732841 </td>
+      <td>0.340</td>
+    </tr>
+    <tr>
+      <td>xyz </td>
+      <td>2016-11-30 22:39:37 </td>
+      <td>32.68805 </td>
+      <td>-96.729726 </td>
+      <td>0.302</td>
+    </tr>
+  </tbody>
+</table><p><em>What would be the best approach to refer the previous message lat/lon for a device?</em></p><p>As we are talking about keeping some state, the first thing that pops in our minds is that we must use a KTable, because we have drilled in our heads that state requires a DB. As we have always read that a KafkaStreams KTable is the streaming equivalent to a DB table, it seems natural to reach for a KTable for any problem in our streaming applications that requires some state to be maintained.</p><p>A possible solution for the above application would be:</p>
+<pre><code class="clojure">(defn create-kafka-stream-topology-ktable []
+  (let [^StreamsBuilder builder (StreamsBuilder.)
+        _ (-&gt; builder
+              (.stream device-data-topic)
+              (.groupByKey)
+              (.aggregate (initializer [])
+                          (aggregator [k new-point [previous _]]
+                            [new-point previous]))
+              (.toStream)
+              (.mapValues (value-mapper [current previous]
+                            (if previous
+                              (assoc current :dist (distance current previous))
+                              (assoc current :dist 0))))
+              (.to "points-with-distance"))]
+    builder))
+</code></pre><p>So we use a KTable to generate pairs of &lt;current-value,previous-value&gt; and then we just transform those two values into one, adding the distance between both values to the current-value.</p><p>Running this streaming application seems to work:</p>
+<pre><code class="clojure">device-gsp-coords    : xyz , {:lat 32.685757, :lon -96.735942, :time 2016-11-30 22:38:36 }
+points-with-distance : xyz , {:lat 32.685757, :lon -96.735942, :time 2016-11-30 22:38:36, :dist 0}
+device-gsp-coords    : xyz , {:lat 32.687347, :lon -96.732841, :time 2016-11-30 22:39:07 }
+points-with-distance : xyz , {:lat 32.687347, :lon -96.732841, :time 2016-11-30 22:39:07, :dist 0.340}
+device-gsp-coords    : xyz , {:lat 32.68805,  :lon -96.729726, :time 2016-11-30 22:39:37 }
+points-with-distance : xyz , {:lat 32.68805,  :lon -96.729726, :time 2016-11-30 22:39:37, :dist 0.302}
+</code></pre><p>But what happens if we get a lot of messages for a given device in a short period of time?</p>
+<pre><code class="clojure">device-gsp-coords    : xyz1 , {:lat 32.685757, :lon -96.735942, :time 2016-11-30 22:38:36, :ts 1538755525616}
+device-gsp-coords    : xyz1 , {:lat 32.687347, :lon -96.732841, :time 2016-11-30 22:39:07, :ts 1538755525618}
+device-gsp-coords    : xyz1 , {:lat 32.68805,  :lon -96.729726, :time 2016-11-30 22:39:37, :ts 1538755525620}
+points-with-distance : xyz1 , {:lat 32.685757, :lon -96.735942, :time 2016-11-30 22:38:36, :ts 1538755525616, :dist 0}
+points-with-distance : xyz1 , {:lat 32.68805,  :lon -96.729726, :time 2016-11-30 22:39:37, :ts 1538755525620, :dist 0.302}
+</code></pre><p>It looks like that the middle value (the one with distance 0.340) has disappeared, but notice that the distance calculation of the last message is exactly the same previously.</p><p>Reading the documentation of the <a href="https://docs.confluent.io/current/streams/javadocs/org/apache/kafka/streams/kstream/KGroupedStream.html#aggregate-org.apache.kafka.streams.kstream.Initializer-org.apache.kafka.streams.kstream.Aggregator-">KStream#aggregate method</a> it becomes clear what happens:</p>
+<blockquote><p>Not all updates might get sent downstream, as an internal cache is used to deduplicate consecutive updates to the same key. The rate of propagated updates depends on your input data rate, the number of distinct keys, the number of parallel running Kafka Streams instances, and the configuration parameters for cache size, and commit interval. </p>
+</blockquote><p>Note that this scenario can happen not just then device sends a lot of information in a short time, but will also happen if your application has a lot of catch up work to do, like when starting for the very first time.</p><h2>But Why?</h2><p>If you were to query a row in a traditional DB table at two different times, would you know how many times the row had changed between those two times? Would you be able to retrieve all those intermediate values? No. </p><p>KTables are again equivalent to DB tables, and as in these, using a KTable means that you just care about the latest state of the row/entity, which means that any previous states can be safely thrown away. Not in vain a KTable is backed up by a compacted topic.</p><p>So this becomes an excellent test to know if it is appropriate to use a KTable:</p>
+<blockquote><p>If you deleted all states but the last, would your application still be correct?</p>
+</blockquote><p>In the above example, we see that we actually care about each position. If the requirement was to know the total distance traveled since the start of time, then a KTable would be appropriate.</p><p>It is important to note that being able to throw away intermediate state is also an optimization, as thousands of input messages can end up producing just a handful of output messages, improving the processing time, and avoiding a lot of IO and compaction work.</p><h2>A stateful KStream solution</h2><p>In KafkaStreams, stateful transformations are not exclusive of KTables, we also found them in KStreams and in the Processor API (remember that KTables and KStreams are build on top of the Processor API).</p><p>Using the <a href="https://docs.confluent.io/current/streams/javadocs/org/apache/kafka/streams/kstream/KStream.html#transformValues-org.apache.kafka.streams.kstream.ValueTransformerWithKeySupplier-java.lang.String...-">KStream#transformValues method</a> we end up with:</p>
+<pre><code class="clojure">(defn create-kafka-stream-topology-kstream []
+  (let [^StreamsBuilder builder (StreamsBuilder.)
+        state-name "last-device-state"
+        store (Stores/keyValueStoreBuilder
+                (Stores/persistentKeyValueStore state-name)
+                (EdnSerde.)
+                (EdnSerde.))
+        _ (-&gt; builder
+              (.addStateStore store)
+              (.stream device-data-topic)
+              (.transformValues (value-transformer-with-store
+                                  state-name
+                                  (fn [store key current]
+                                    (let [previous (.get store key)]
+                                      (.put store key current)
+                                      (if-not previous
+                                        (assoc current :dist 0)
+                                        (assoc current :dist (distance current previous))))))
+                                (into-array [state-name]))
+              (.to "points-with-distance"))]
+    builder))
+</code></pre><p>So we manually create a state store and then we use it to store/retrieve the previous value when doing the computation. </p><p>Pretty simple and neat.</p><p>All the code can be found <a href="https://github.com/dlebrero/kafka-consecutive-values">here</a>, including a Docker Compose file that will run Kafka, Zookeeper plus three instances of this service, so you can play around with it. The details of how to build and run it are in the repository.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoyed it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Kafka/index.html">Kafka </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="http://oredev.org/2018/sessions/java-with-a-clojure-mindset"><img src="/images/logo-oredev-2018.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (21)</a></li><li><a href="/tags/Clojure/index.html">Clojure (20)</a></li><li><a href="/tags/Humour/index.html">Humour (2)</a></li><li><a href="/tags/Java/index.html">Java (2)</a></li><li><a href="/tags/Kafka/index.html">Kafka (7)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (4)</a></li><li><a href="/tags/good_practices/index.html">good practices (18)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
