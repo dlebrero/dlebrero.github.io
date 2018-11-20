@@ -152,14 +152,14 @@ spec:
       containers:
       - name: a-jvm-container
         image: openjdk:11.0.1-jdk-slim-sid
-        command: ["java", "-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/dumps", "-jar", "yourapp.jar"]
+        command: ["java", "-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/dumps/oom.bin", "-jar", "yourapp.jar"]
         volumeMounts:
         - name: heap-dumps
           mountPath: /dumps
       volumes:
       - name: heap-dumps
         emptyDir: {}
-</code></pre><p>So what we are doing is adding an <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">empty dir</a> volume to the container, and configuring the JVM to do the heap dumps to that directory.</p><p>The first part of the puzzle is that, when Kubernetes is killing your container because it is not responding to the health check, Kubernetes will just restart the container, but will <strong>not</strong> reschedule the pod, so it will not move it to another node.</p><p>The other part of the puzzle is that an <em>empty dir</em> volume is not deleted until the pod is moved to another node.</p><p>Putting both things together means that, after the container is restarted, the new container will mount the same <em>empty dir</em>, which will contain the heap dump from the previous run. So you can <code>kubectl cp</code> those files at any time after the event.</p><h4>OOM on startup</h4><p>If the OutOfMemory error is happening during start up, you probably are not going to be able to copy the dump before the container is restarted.</p><p>In this case, the little trick is to add a very simple and tiny sidecar to your pod, and mount in that sidecar the same <em>empty dir</em>, so you can access the heap dumps through the sidecar container, instead of the main container.</p><h4>Shipping the heap dump out of Kubernetes</h4><p>If you don’t want to, or cannot, access the Kubernetes pod directly, you can always ship the heap dumps out of Kubernetes. </p><p>In our case, credits to <a href="https://perdomo.me">Ivan Perdomo</a> for the work, we did it by adding a sidecar that will also mount that <em>empty dir</em> volume, and it will listen with <code>inotify</code> to changes in that directory. On closing of the heap dump file, it will start the process of copying the file to a Google Storage bucket:</p>
+</code></pre><p>So what we are doing is adding an <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">empty dir</a> volume to the container, and configuring the JVM to do the heap dumps to that directory.</p><p>The first part of the puzzle is that, when Kubernetes is killing your container because it is not responding to the health check, Kubernetes will just restart the container, but will <strong>not</strong> reschedule the pod, so it will not move it to another node.</p><p>The other part of the puzzle is that an <em>empty dir</em> volume is not deleted until the pod is moved to another node.</p><p>Putting both things together means that, after the container is restarted, the new container will mount the same <em>empty dir</em>, which will contain the heap dump from the previous run. So you can <code>kubectl cp</code> those files at any time after the event.</p><h4>OOM on startup</h4><p>If the OutOfMemory error is happening during start up, you probably are not going to be able to copy the dump before the container is restarted.</p><p>In this case, the little trick is to add a very simple and tiny sidecar to your pod, and mount in that sidecar the same <em>empty dir</em>, so you can access the heap dumps through the sidecar container, instead of the main container.</p><p>Remember in this case to set the <code>-XX:HeapDumpPath</code> option to generate an unique file name.</p><h4>Shipping the heap dump out of Kubernetes</h4><p>If you don’t want to, or cannot, access the Kubernetes pod directly, you can always ship the heap dumps out of Kubernetes. </p><p>In our case, credits to <a href="https://perdomo.me">Ivan Perdomo</a> for the work, we did it by adding a sidecar that will also mount that <em>empty dir</em> volume, and it will listen with <code>inotify</code> to changes in that directory. On closing of the heap dump file, it will start the process of copying the file to a Google Storage bucket:</p>
 <pre><code>apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -174,7 +174,7 @@ spec:
       containers:
       - name: a-jvm-container
         image: openjdk:11.0.1-jdk-slim-sid
-        command: ["java", "-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/dumps", "-jar", "yourapp.jar"]
+        command: ["java", "-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/dumps/oom.bin", "-jar", "yourapp.jar"]
         volumeMounts:
         - name: heap-dumps
           mountPath: /dumps
