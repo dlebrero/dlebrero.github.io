@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Applying stability patterns: a case study - Devoxx PL 2017</title>
-	<meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" name="description" /><meta content="stability patterns circuit breaker bulkhead timeout devoxx poland case study " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Applying stability patterns: a case study - Devoxx PL 2017" property="og:title" /><meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" property="og:description" /><meta content="https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/" property="og:url" /><meta content="Applying stability patterns: a case study - Devoxx PL 2017" name="twitter:title" /><meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/devoxx-pl-2017.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/devoxx-pl-2017.jpg" property="og:image" />
+	<title>How to do a Java/JVM heap dump in Kubernetes</title>
+	<meta content="A simple task that is a little bit of a headache on Kubernetes" name="description" /><meta content="JVM Java heapdump Kubernetes oom outofmemory heap dump k8s" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="How to do a Java/JVM heap dump in Kubernetes" property="og:title" /><meta content="A simple task that is a little bit of a headache on Kubernetes" property="og:description" /><meta content="https://danlebrero.com/2018/11/20/how-to-do-java-jvm-heapdump-in-kubernetes/" property="og:url" /><meta content="How to do a Java/JVM heap dump in Kubernetes" name="twitter:title" /><meta content="A simple task that is a little bit of a headache on Kubernetes" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/heapdump.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/heapdump.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/" />
+	<link rel="canonical" href="https://danlebrero.com/2018/11/20/how-to-do-java-jvm-heapdump-in-kubernetes/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -114,26 +114,85 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Applying stability patterns: a case study - Devoxx PL 2017</h1>
+						<h1 class="entry-title">How to do a Java/JVM heap dump in Kubernetes</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Thu, 3 Aug 2017</li>
+								<li id="entry-date">Tue, 20 Nov 2018</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Video from my presentation on Devoxx PL 2017 on stability patterns</p>
+				 <p class="lead" id="entry-summary">A simple task that is a little bit of a headache on Kubernetes</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/devoxx-pl-2017.jpg" />
+							<img src="/images/blog/heapdump.jpg" />
 						</div>
 					</div>
-				 
+				 <div class="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small><a href="https://www.flickr.com/photos/stevensnodgrass/2317197132/">Brown Station Road Sanitary Landfill</a> (<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>) by <a href="https://www.flickr.com/people/stevensnodgrass/">Steve Snodgrass</a></small>
 
-					<div class="entry-content"><p>The video of my Devoxx PL 2017 talk on “Applying stability patterns: a case study” is online.</p><p>In the talk I explain how we applied, or did not, each of the stability patterns described in the <em>Release It!</em> book by Michael Nygard, plus I explain which outages we had after applying, or misapplying, the patterns. </p><p>Slides in <a href="/slides/stability_patterns_devoxx_pl_2017.key">Keynote format</a></p><p>Feedback and questions welcomed!</p><p><iframe width="560" height="315" src="https://www.youtube.com/embed/dSgls1cn1io" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p></div>
+				 </div>
+
+					<div class="entry-content"><p>Kubernetes is so awesome that one of our JVM containers has been periodically running out of memory for more than a year, and we just recently realized about it.</p><p>Once we realized about the issue, we obviously wanted to find out what was going on, but we could not replicate it locally. </p><p>Also, the issue happened so sporadically, that we could not just jump to the ill container and perform a <code>jmap</code>. Before we had any time, Kubernetes had already killed and restarted the container, which also meant that it had wiped out any heap dump that the JVM could have done with the <code>-XX:+HeapDumpOnOutOfMemoryError</code> flag.</p><p>After a lot of head scratching, we found that the solution was quite simple, but not obvious, if you are just starting with Kubernetes:</p>
+<pre><code class="yaml      ">apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: your-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        test: heapdump
+    spec:
+      containers:
+      - name: a-jvm-container
+        image: openjdk:11.0.1-jdk-slim-sid
+        command: ["java", "-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/dumps", "-jar", "yourapp.jar"]
+        volumeMounts:
+        - name: heap-dumps
+          mountPath: /dumps
+      volumes:
+      - name: heap-dumps
+        emptyDir: {}
+</code></pre><p>So what we are doing is adding an <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">empty dir</a> volume to the container, and configuring the JVM to do the heap dumps to that directory.</p><p>The first part of the puzzle is that, when Kubernetes is killing your container because it is not responding to the health check, Kubernetes will just restart the container, but will <strong>not</strong> reschedule the pod, so it will not move it to another node.</p><p>The other part of the puzzle is that an <em>empty dir</em> volume is not deleted until the pod is moved to another node.</p><p>Putting both things together means that, after the container is restarted, the new container will mount the same <em>empty dir</em>, which will contain the heap dump from the previous run. So you can <code>kubectl cp</code> those files at any time after the event.</p><h4>OOM on startup</h4><p>If the OutOfMemory error is happening during start up, you probably are not going to be able to copy the dump before the container is restarted.</p><p>In this case, the little trick is to add a very simple and tiny sidecar to your pod, and mount in that sidecar the same <em>empty dir</em>, so you can access the heap dumps through the sidecar container, instead of the main container.</p><h4>Shipping the heap dump out of Kubernetes</h4><p>If you don’t want to, or cannot, access the Kubernetes pod directly, you can always ship the heap dumps out of Kubernetes. </p><p>In our case, credits to <a href="https://perdomo.me">Ivan Perdomo</a> for the work, we did it by adding a sidecar that will also mount that <em>empty dir</em> volume, and it will listen with <code>inotify</code> to changes in that directory. On closing of the heap dump file, it will start the process of copying the file to a Google Storage bucket:</p>
+<pre><code>apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: your-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        test: heapdump
+    spec:
+      containers:
+      - name: a-jvm-container
+        image: openjdk:11.0.1-jdk-slim-sid
+        command: ["java", "-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/dumps", "-jar", "yourapp.jar"]
+        volumeMounts:
+        - name: heap-dumps
+          mountPath: /dumps
+      - name: ship-heap-dump
+        image: google/cloud-sdk:206.0.0-alpine
+        command: ["/bin/sh", "-c"]
+        args:
+        - |
+          apk add --no-cache inotify-tools &amp;&amp;
+          gcloud auth activate-service-account --key-file=/secrets/jvm-debug.json &amp;&amp;
+          inotifywait -m /dumps -e close_write | while read path action file; do gsutil cp "$path$file" "gs://heap-dump/$file"; done;
+        volumeMounts:
+        - name: heap-dumps
+          mountPath: /dumps
+      volumes:
+      - name: heap-dumps
+        emptyDir: {}
+</code></pre><p>As it trip us in our happy Kubernetes journey, maybe it will makes yours easier.</p></div>
 
 				 
 
@@ -147,7 +206,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Talks/index.html">Talks </a><a href="/tags/resilience/index.html">resilience </a>
+					 <a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/Java/index.html">Java </a><a href="/tags/Kubernetes/index.html">Kubernetes </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
