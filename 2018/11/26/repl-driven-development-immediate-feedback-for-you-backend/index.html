@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>REPL driven development: immediate feedback for you backend code</title>
+	<meta content="Video, transcript and slides from the GeeCon 2018 talk" name="description" /><meta content="Clojure Java REPL good practices immediate feedback agile productivity tips" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="REPL driven development: immediate feedback for you backend code" property="og:title" /><meta content="Video, transcript and slides from the GeeCon 2018 talk" property="og:description" /><meta content="https://danlebrero.com/2018/11/26/repl-driven-development-immediate-feedback-for-you-backend/" property="og:url" /><meta content="REPL driven development: immediate feedback for you backend code" name="twitter:title" /><meta content="Video, transcript and slides from the GeeCon 2018 talk" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/repl-driven-development/005-the-flow.jpeg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/repl-driven-development/005-the-flow.jpeg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2018/11/26/repl-driven-development-immediate-feedback-for-you-backend/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">REPL driven development: immediate feedback for you backend code</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Mon, 26 Nov 2018</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Video, transcript and slides from the GeeCon 2018 talk</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/repl-driven-development/005-the-flow.jpeg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>In this talk I explain the motivations for using a REPL, and where and how it can be used. The talk is mostly a live demo.</p><p>Here are the slides in <a href="/slides/repl-driven-development-geecon-2018.key">keynote format</a>, <a href="/slides/repl-driven-development-geecon-2018.pptx">ppt format (untested!)</a> and <a href="https://www.slideshare.net/DanielLebrero2/habits-ofefficientdevelopers">SlideShare (somehow broken!)</a>.</p><p>And the video:</p><p><iframe width="560" height="315" src="https://www.youtube.com/embed/ZkJX9ciI5aM" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p><p>Feedback and questions welcomed!</p>
+<hr /><h1>Transcript</h1><p>Hello everybody I am Daniel Lebrero, thanks for coming and we are here today to talk about REPL driven development. </p><p>But before we get started I have a confession to make. </p><p><img src="/images/blog/repl-driven-development/001-confession.jpeg" alt="Confession" title="Consession" /></p><p>On my very very first job as a developer, I got to work with three technologies that made a profound and lasting impact on my career as a developer. </p><p>Those three technologies were Netscape, Internet Explorer 4 and Internet Explorer 5. </p><p>Thanks to those three technologies I decided to become back-end developer avoiding in any kind of front-end work for a lot of years. And I have been very happy Java developer, living in a world of XML and JSON.</p><p>But on a recent project, I got to work again with a front-end team, and I have to confess that since that day, since that project, I’m actually very very jealous of the front-end developers, up to the point that I’m contemplating the possibility of becoming one of them.</p><p>You may wonder, wow isn’t that crazy? </p><p>Maybe the JavaScript that these developers were using was somehow different from the JavaScript I that I have to learn and suffer 20 years ago?</p><p><img src="/images/blog/repl-driven-development/002-js-the-good-parts.jpeg" alt="Javacript the good parts" title="Javascript the good parts" /></p><p>You know, Javascript is evolving, but that is heart it’s still the same JavaScript.</p><p>Maybe they have fixed all those incompatibilities between browsers that used to drive me crazy? </p><p>Doesn’t seem so, seems that they are there, and now with all the phones and tablets is even worse.</p><p>To really understand why I’m so jealous of the front-end developers let’s look at a picture of myself doing some front-end work.</p><p><img src="/images/blog/repl-driven-development/004-css.gif" alt="CSS" title="CSS" /></p><p>That’s me trying to get a two column layout working on Internet Explorer and Opera; and, as you can see, I’m not very good at it, and as much as I try and I try and I try, the result is always the same: it’s just a big pile of crap.</p><p>But even if CSS doesn’t make any sense at all, there is something really nice, there’s something really powerful, on that picture. So let’s look at it again.</p><p>Focus on Mr. Griffin’s workflow. </p><p>See how he pulls the string in one direction and he sees straight away, without any kind of delay what’s the result on the blind. And he doesn’t like it, he just pulls the string in a different direction. And he keeps doing that until he’s done.</p><p>Is this immediate feedback what I’m really missing on my day-to-day job as a back-end developer.</p><h1>Immediate feedback</h1><p>We know from agile, scrum and lean that feedback loops are very important, but why is this immediate feedback so important for us?</p><p>Because without this immediate feedback it’s very difficult to get into the flow or the zone.</p><p><img src="/images/blog/repl-driven-development/005-the-flow.jpeg" alt="The Flow" title="the flow" /></p><p>The Flow is that state where you feel like Neo when he comes to realize that he’s the Chosen One. </p><p>When you are in the flow, you are so focused, that the real world disappears and is replaced with your code, it’s design, and the data flowing through it.</p><p>When you are in the flow no problem is difficult enough, no bug can hide from you, and your solutions are clean, simple and elegant.</p><p><img src="/images/blog/repl-driven-development/006-productivity.jpeg" alt="productivity" title="productivity" /></p><p>When you are in the flow is when you are your most productive, and it’s not that you just produce more, what you produce is of better quality.</p><p><img src="/images/blog/repl-driven-development/007-joy.jpeg" alt="joy" title="joy" /></p><p>But this productivity is just a nice side effect of being in the flow. What we are really looking for is that feeling of joy, that feeling of achievement, that feeling of creating something beautiful. </p><p>And is this feeling why I am, after 20 years, still a software developer.</p><p>But we all know it, you are there in the flow completely focus doing all your tips and tricks, and then</p><p><img src="/images/blog/repl-driven-development/008-losing-focus.gif" alt="losing focus" title="losing focus" /></p><p>sounds familiar? That’s how little it takes to push you out of the flow.</p><p>And we backend developers, we are experts at these kinds of interruptions.</p><p><img src="/images/blog/repl-driven-development/009-compiling.jpeg" alt="compiling" title="compiling" /> <span style="background-color: #ecf0f1"><small>Image attribution: <a href="https://www.xkcd.com/303/">https://www.xkcd.com/303/</a>.</small></span></p><p>We do them all the time, and we think they’re unavoidable, we even have comics about it. </p><p>But probably we have a laugh at it because we, maybe, don’t know what’s the cost of one interruption, of getting out of the flow.</p><p>There are a couple of studies that they tried to quantify what’s that cost is</p><p><img src="/images/blog/repl-driven-development/010-interruption-cost.jpeg" alt="interruption cost" title="interruption cost" /></p><p>it seems that, every time that you are interrupted, you waste between ten and fifteen minutes to get back the context of the tasks that you were doing. </p><p>So it takes you 15 minutes to start coding again, and the worrying thing is that if you look at what usability expert say </p><p><img src="/images/blog/repl-driven-development/011-interrumption-limit.jpeg" alt="interruption limit" title="interruption limit" /></p><p>if you want to keep your train of thought, interruptions cannot be longer than one second. And if your interruptions are longer than 10 seconds it’s quite probable that you will end up playing with your phone, or checking the news, or looking at your social media.</p><p>And who here is able to build, compile, start the runtime in in one second or less?</p><p>While preparing this presentation, as a test, I created a new Tomcat application using the company’s archetype, completely new, and I just timed how long it took the project to build, and start. The project had one controller with nothing, and one test doing nothing. </p><p>Who wants to give a guess of how long it took for the Tomcat to start an empty application? In my case it was 30 seconds, so it’s 30 seconds a long time or is 30 seconds at reasonable amount of time? </p><p>So let’s think for 30 seconds about 30 seconds. Okay, are you ready?</p><p>(30 seconds pause)</p><p>Those were 30 seconds, and I don’t know how I felt for you, but for me, standing up here in front of all of you, those were very long 30 seconds, and we do this all the time. </p><p>And this is not going to get any better, right? As we add more tests, more code, this is just going to get worse and worse and worse.</p><p>But we know this, so probably, if you want to keep yourself productive, you are already following the advice of that very wise man: </p>
+<blockquote><p>Do not run Tomcat. Embrace TDD <cite>Dan Lebrero</cite></p>
+</blockquote><p>so what you do is: you don’t run your application. What you do instead, you rely on a good unit test suite to know if you are making progress and to know if you didn’t break anything. </p><p>And remember that a good test suit it has to run in 10 seconds or less, if you don’t want to lose focus.</p><p>If you have been doing TDD long enough, you probably know that TDD has some shortcomings, so let’s look at them.</p><p>Who can tell me what mocks, stubs, fakes and spies have in common? </p><p>What are mocks? Mocks are just lies.</p><p>What are fakes? They are all just lies, right? </p><p><img src="/images/blog/repl-driven-development/012-lies.jpeg" alt="mocks are lies" title="mocks are lies" /></p><p>They are lies that we create to keep our test suite really fast, to keep our workflow sane, but they’re just lies.</p><p>They’re not the real thing. Now, I think we cannot avoid them, but what we really want is credible lies.</p><p><img src="/images/blog/repl-driven-development/013-credible-lies.jpeg" alt="credible lies" title="credible lies" /></p><p>We want to create our mocks that they behave as the real thing. But how can you do that? </p><p>To be able to mock the real thing, you really really need to understand how the real world works. And how do you do that? </p><p>Well, if you are talking with the database the only way that I know is going and poking at the database, looking which tables are there, which columns, what are the possible range of ranges of values in those columns.</p><p>If you need to integrate with a third-party HTTP restful endpoint, the only way that I know is going there and poking at that thing. </p><p>And TDD doesn’t give us any kind of tool to be able to go and understand how the real world works, so we can go and do our mocking.</p><p>I have been doing TDD for 16-17 years now, and one thing that I’m learned is that, no matter how many tests you have, what’s your code coverage is</p><p><img src="/images/blog/repl-driven-development/014-dancing-bugs.gif" alt="dancing bugs" title="dancing bugs" /></p><p>they are always, always, some bugs. </p><p>You start the thing, maybe your configuration is not there or is not correct. Maybe your Spring wiring is not exactly the same as your unit testing. </p><p>So it’s always a situation that you’re going to have, and TDD again doesn’t give you anything when it breaks. </p><h1>So what do we want for our workflow?</h1>
+<ol>
+  <li>We want to write code and get immediate feedback.</li>
+  <li>We don’t want to be sitting there waiting for the builds and the deploy to happen.</li>
+  <li>We want tools to understand the real world,</li>
+  <li>So we can have an easy way of creating faithful lies.</li>
+  <li>And we don’t want any surprises when the application is started.</li>
+</ol><p>And what kind of tool we can use to get all of those things? You’re not going to be surprised, a REPL it’s a possible tool.</p><p>REPL stands for read, eval, print loop, and we have all probably used a REPL, usually in the form of a command-line interface. </p><p><img src="/images/blog/repl-driven-development/015-terminal.gif" alt="terminal" title="terminal" /></p><p>So the console what is doing here? Is reading your command, then it evaluates, it runs it and then, it prints the result and then it loops so it goes back to reading to allow you to put another command.</p><p>Basically, a REPL is the same thing, with the only difference that, instead of writing Unix commands, what we are going to be doing is writing small pieces of code, that are going to be run in our program.</p><p>So, we’re going to do a demo, and what the demo is going to do is:</p><p><img src="/images/blog/repl-driven-development/016-repl-setup.gif" alt="repl setup" title="repl setup" /></p><p>We are going to use Maven to start Tomcat, the Tomcat is going to start our application, our war, and inside the war what we are going to do is start a REPL inside our application. </p><p>Now because typing things in that really small screen is really cumbersome, the REPL, instead of reading from the standard input, what is going to do is going to be listening to a socket, and then from our favorite IDE, we’re just going to connect to that socket, and we’re going to be writing code where we always write code in your IDE. We’ll use a shortcut to send code to the application. The code will run inside the application, and then we will get back the results, that will be printed on the bottom window. </p><p>Okay, I’m going to do the demo in Clojure. </p><p><img src="/images/blog/repl-driven-development/017-clojure-lisp.jpeg" alt="Clojure" title="Clojure" /></p><p>Clojure is, right now, my favorite language. Clojure is a lisp for the JVM and the point of the presentation is not about Clojure, so I don’t expect anybody to understand any of the code, and I’m not going to explain any of the code, so the only thing that I want you to do is focus on the workflow, on how, with a REPL, we do all the task and I want for you to compare it with how would you do it at work. </p><p>Now, one of the reasons to have a REPL, it’s to be able to learn the language. A REPL is a tool that it makes it a lot easier to learn a language, because it’s easier to play with it, so I’m going to add another item tp the list that is to learn a language.</p><h1>Demo</h1><p>(Demo start min 12:25, <a href="#enddemo">skip it</a>)</p><p>So the very first thing that we are going to do, is to start the application. So this is the first thing that if you have a good REPL, before even writing or thinking about what you’re going to write, the very very first thing that you do is start the application. </p><p>This is usually the slowest bit of all the workflow and usually takes around 30 seconds or so. Now, this is something that you will do once a day, or maybe once a week, or once a month. It dependents on how often you need to change projects. You will try to keep it running all the time.</p><p>So what we are going to build is a small restful application that what it’s going go to the database, is going to get some transactions for a user, and it’s going to do some kind of summary, and it’s going to expose that on an HTTP endpoint.</p><h4>Basic workflow with REPL</h4><p>So we’re going to learn just a tiny tiny bit of Clojure, but this is so you get used to what I’m going to be doing all the time. </p><p>So in Clojure everything is a list, it’s a Lisp. </p><p>So the first thing on the list is the function that you want to call, and then zero or more parameters. </p><p><img src="/images/blog/repl-driven-development/repl-001.gif" alt="repl basic" title="repl basic" /></p><p>I’m going to hit the magic shortcut and I’m going to send this particular piece of code, to the Tomcat, and the Tomcat is going to return me the response. So you see down here what I sent and got a three back. </p><p>Questions? Clear? Because I’m going to be doing it all the time.</p><p>So let’s say that you want to learn a little bit more about the plus function: what happens if you pass three parameters to the plus function? You just write the code, you run it, and you see that the Clojure allows you to do that. What happens if you just pass one parameter to the plus function? It also works. What happens if you pass no parameters? It returns zero. What happens if you pass a very long value? Seems to work. Let’s go for a longer value: it throws an arithmetic exception.</p><p>So what we are doing here is just trying to understand how the plus function works. And how we are doing it? We make small changes, we write small programs, and we run each of them, and we see straightaway what’s the result. </p><p>The same way we are doing it with the plus function, that is part of the core language, you could be doing it with absolutely any library that you want to explore. </p><p>This is enough Clojure. </p><h4>Testing configuration at REPL</h4><p>So now we are going to build the application for real. Again, we are going to go to database, and for a given client, we are going to get a list of all his transactions, and we are going to do something very simple to summarize all those transactions.</p><p>The first thing that I want to do it’s just connect to database, just check that our configuration to the database is correct. And to do that, we just try to run <code>select one from dual</code>. </p><p><img src="/images/blog/repl-driven-development/repl-002.gif" alt="repl jdbc" title="repl jdbc" /></p><p>And if you know Java, this is telling you there is no suitable driver for Postgres, so if I go to my pom, we see here that I forgot to uncomment it. And the usual thing that you will do is uncomment the dependencies and restart the JVM to see if works.</p><p>But instead of that, the JVM is able to load code from anywhere and it’s able to do it at runtime, so we just tell the JVM to please go to Maven, download all dependencies for the Postgres driver and just install it. And then we just try it again.</p><p>It seems that we get another exception, but this one is different, the database does not exist. And this is because I make a little typo, we fix it, give it another try, and now we are connected to the database.</p><p>So what are we doing? we’re basically testing our configuration. I don’t know how you do it, but for me is usually very painful because when you have to test things like configuration, you have to be constantly restarting the JVM, to see if it works, if it find the configuration files, if it doesn’t find them, if you put the credentials correctly or not, but here we are able to do it in an interactive way. </p><h4>Exploring a database</h4><p>Now we are going to explore the real world. Lets say that we know the database that the data, but we don’t know what’s inside the database, so what I usually will do it open something like Oracle SQLDeveloper, and then I would put the credentials, and then I will start navigating, and look in the UI to see what is in there.</p><p>But instead of that, what we are going to do is, using the JDBC metadata API, from the Tomcat, we are just going to query the database, searching for all the tables that start with “transac”. We see here that Postgres is returning us three objects, three maps. Instead of printing it like this, because its a little bit difficult to read, and because we are on the JVM, we are just going to write a function so we print it in a more tablely way, so it is a little bit easier to read.</p><p>So we have here a table called transaction, probably the table that we want to use, and what we are going to do is to query the database, it returns a bunch of results, and here we’ll see there is a currency, there is an amount, there’s some timestamp, an ID, client ID, so we get an example of the data that is in it.</p><p>Now we realize that there are two currencies, so probably if you want to summarize this thing properly, we need some kind of foreign exchange. So we go to our architect, and we ask him to we have this problem, I have euros in one side, pounds in the another one, what do we do? He say, well, we have a restful endpoint somewhere that you can hit, and it will give you the forex exchange. So he give us the URL, and we are just going to poke a this restful.</p><h4>HTTP client code, one bit at a time</h4><p>So if I run this, I’m making now the HTTP request. This is failing somehow, so what we’re going to do, we need have a look at what’s the error. It is a 400 and if we look at the body it says something like the date is missing. </p><p>So lets add it to our request parameters, try it again, we see now at the body contains some JSON. We are in the good path, so let’s just extract the body, that looks good, and let’s parse the JSON, and that’s it. </p><p>Look at what we are doing, look at the flow, we write one little piece of code, and we run it immediately, and we see the result, and we do it for each and every small step. </p><p>Now we probably want to check, do we have data that is old? Seems that we have data. What about data that is very very old? Since that we don’t have data before 1970. What happens if for some reason we ask for data in the future? We have data in the future, that’s very interesting feature. And what happens if we pass a string? We get an error saying that the date should be a long.</p><p>So we’re exploring how the thing works, and now, for example, we know how errors look like, so now we can go and build our logic around handling errors. </p><h4>Generating code for Stored Procs</h4><p>Now when you are building this, your team lead comes in and says: well, there is already some Stored Proc in the database that is going to do all this logic for you so don’t pay attention to architects. They don’t know anything. </p><p>So what are you going to do, is exactly the same thing as before, we’re going to ask the database through the JDBC API, which stored procs we have, that contains the word “trans”. And we see that we have a “transcations_in_gbp”. So lets have a look again at what that stored proc is about. So we see that it returns a cursor and it requires the client ID.</p><p>So now that we know what they stored proc expects and what it requires, what we could do is write our code, but you know that JDBC client code is just hell, but what we are doing here at the end of the day is just printing this thing as a table, but why do we need to print it as a table? We can also print it as a piece of code.</p>
+<pre><code class="clojure">(def-proc transactions-in-gbp
+ "transactions_in_gbp"
+ [:return Types/OTHER :return-value]
+ [:in Types/BIGINT :clientid])
+</code></pre><p>So I printed it as a piece of code, copied it, paste it in our file, and now we can give it a try. Does it work? Seems to work. What happens if I pass a client that doesn’t exist? No value. What happens if I pass nil value? What happens if I pass a string? Exception.</p><h4>Why not SQL developer or Postman? Why a REPL for exploration?</h4><p>So we’re just poking around to understand how things work, but you maybe wonder, well why is this any better than using oracle SQL developer, right? This is a SQL specific tool. </p><p>What is this piece of code that we just generated? This is our first piece of production code. This is production code. If you were using SQL Developer, we would know what to do, but now we’ll have to go on type the code to be able to call the database, and that code you will need to test it, because you don’t really know if it works or not. </p><p>But how likely it is that this stored proc, when we deploy it, when we run it in the application, it fails? That it doesn’t work? If you think about it, every time that we evaluate, every time that we send a piece of code to the REPL, we are sending it inside the Tomcat, so basically what we are doing is deploying the piece of code into the Tomcat, so it’s very very unlikely that this code doesn’t work. </p><p>I haven’t explained it but, where are we making these changes? The file we are editing is not a special place, this is a project file. Once we are finished with the work, what we will do is just commit this file as it is. We do not have to copy this code into another place. This is production code, this is in the correct place.</p><p>Another reason what you would want to use a REPL instead of SQL Developer or Postman, is … How many people know how to do a for loop? Everybody knows how to do a for loop. How many people know how to do a for loop in Postman? I have been told that it is possible. We do for loops all day long, right? If you have a REPL you have a whole language, your production language, it is not that different language, is your production language, to do everything. </p><p>The same way, because we are in the JVM, what happens if, for some reason, for your investigation, you needed to get data from the database and somehow correlated it the HTTP service? Well, if you are using Postman and SQL Developer, you need to export the resulting to CSV in both tools, and maybe create some Bash script … but again, we are on the JVM, so you could just write in a little piece of code to do that for us, because the JVM has libraries for absolutely everything.</p><p>We can get more fancy, and if we really really need it, we can also do graphs. We got plenty of graphing libraries in the JVM, so again, we have all the tools of the JVM at our disposal to understand how the real world works.</p><p><img src="/images/blog/repl-driven-development/repl-004.gif" alt="repl graph" title="repl graph" /></p><h4>TDD and a REPL</h4><p>So let’s say that we have finished this exploration phase to understand how the real world works, and now we want to switch to our TDD workflow. So the first thing that we’ll do is to write a test, this is a test, and if you see, it’s saying that it’s failing, but that’s because we didn’t provide it with any data, any mock data. </p><p>We could go here and type of all the mock data, but if you think about it, we are already calling DB, so one option is just to copy the results from that DB call into our test setup. </p><p>How likely is that this data that we are using in our tests it has a typo? Or it’s not the right type? That came from the database, so out of our exploration work, we are able to get pieces of data and use them straight away in our tests.</p><p>Ok, so lets say that your business manager says that we don’t want for our summary function to take into account records with type 101. So, if you are doing TDD, the first thing that you will do is change the expectation. You write the test, you see it fail, now you want to make it green, so we’ll go to the code, we’ll remove the types 101, run it again, and it’s green. Cool, so we have implemented what we were asked for.</p><p>Now the business manager changes his mind: well, you know, we don’t want to count numbers, because they look very bad, so the summary should be 23. You run your test again, and now you go to your production file, and you make a change… But this switching between files is a little bit annoying. </p><p>So we can tell the REPL to keep track of all the changes that we’re making in the project, and run the test as soon as we save the file. So we save the file now, it’s running the test automatically without me having to do anything. </p><p>And the nice thing about it is that, it’s not just running all the tests. If I go to a file that has no tests, see what he says here? Well it didn’t run any tests because this file doesn’t have any tests at all. So it’s not just going to run all the tests, all your test suite, it is just going to run the test that could be affected by the change that you made. </p><h4>Wiring your controllers</h4><p>Now that we’re happy with our business logic, the only bit that we are missing is to create a REST endpoint to expose this function to the external world. </p><p>This particular service is using Swagger. Everybody familiar with Swagger? Swagger is a standard way of defining your endpoints as JSON, so then you consume that defition with out tools. In this case, the one that consumes that JSON definition is a Swagger UI, which just draws the API endpoints, and it allows you to easily make HTTP calls, and play with the endpoints. </p><p>Lets add our new endpoint, and we’re going to just copy the previous one, we call it total, and let’s see if that works. Refresh the browser, and we see now the total is here, this is our new endpoint. Instead of “who”, we will require a client of type long, and we need to wire our dependencies, lets call the database, and let’s give it a try. Total twenty three.</p><p><img src="/images/blog/repl-driven-development/repl-005.gif" alt="repl wiring" title="repl wiring" /></p><p>Okay, I personally don’t put or try to put any kind of logic on my controllers so I usually don’t test them, and what we have done here is just test that the wiring actually works. </p><p>Let’s say that apart from the total, you want to return the client. We could go and check it here, but this, again, changing from one tool to another to do your testing is getting annoying. And the JVM, I’m pretty sure, that’s able to do HTTP calls, so we write a little piece of code that is going to make an HTTP call straight away, so now if we change the client to account, see, it changed automatically. And we don’t need to change to another tool, and we see that the changes appear, and we can check it. </p><p>This feedback loop it’s immediate.</p><h4>State</h4><p>Now that we have all this automatic refreshing of code, what happens with the application state? Here we have a piece of state that we’re going to use to count how many HTTP requests this service has done. </p><p>In our new endpoint we’re just going to return that counter with the number of requests: 1, 2, 3, … we have now 12. Now we are going to change this so what happens when it refresh my changes? The counter, that piece of state, has gone back to 0.</p><p>What’s happening? When the code is refresh, we are losing that state. That may be something that you want to, but sometimes it’s a little bit annoying, for example, when you have some caching and you’re testing the caching. Loading the caching from database takes forever, losing the state of the cache is really really annoying. It just slows you down, so what we can tell the REPL is, for this particular piece of state, I don’t want you to destroy it when there’s a change. </p><p>So we can selectively decide which piece of states we want to keep, but it’s not just that. </p><p>Because we are really inside the JVM, we can go and we can inspect the state, any state that you have in your application, you can go and poke at it. This is like having a debugger connected to the JVM. </p><p>And the same way that you can inspect it, you could go and just change it.</p><p>But sometimes, even state that you think that you don’t want to get rid of, you may want to get rid of it. So there is a way of telling the REPL to get rid of everything, even the things that you told it not to get rid of.</p><p>And the same way we’re inspecting the state, we can also pick up any state that is going through your application and capture it, and inspect it later.</p><p><a name="enddemo"></a></p><h2>Some REPL benefits</h2><p>So what do we got from our REPL?</p>
+<ol>
+  <li>Perfect tool to learn a programming language and its libraries.</li>
+  <li>Write code with immediate feedback.</li>
+  <li>No build or deploy. Live change our running application without restarting it.</li>
+  <li>Tools to understand the real world: all the JVM libraries.</li>
+  <li>Easy way of creating faithful lies for our tests.</li>
+  <li>Fewer surprises when starting the application.</li>
+  <li>Add new libraries to a running application.</li>
+  <li>Run automatically unit test affected by a change.</li>
+  <li>Inspect and manage state.</li>
+  <li>Stay on the comfort of your favourite IDE.</li>
+</ol><h2>A REPL in staging and production?</h2><p>If you think about it, the REPL is listening to a socket, and things that are listening to a socket means that you don’t really need to run a them locally. </p><p>So what will happen if we leave this REPL with the socket open in our staging and production environments? And then, from our IDE, we connect it to the staging or production environments? </p><p>How many times you have had a bug reported and you think: “If I could just look the state of this particular object in staging, I will know straightaway what was the issue, and I will be able to fix it straightaway”.</p><p>Or how you many times you have thought: “If I could just add one log line here, I will know what’s happening”, and then you make that change to your logging, you deploy again and you realize: “oh, it wasn’t exactly this the log line that I wanted, I really need a different log line”. </p><p>With a REPL we are able to make all these changes immediately, in whatever environment you want.</p><p>But who would be so crazy to want to have this kind of power in production? It’s just too dangerous right? </p>
+<blockquote><p>In May of 1999, we were able to debug and fix a race condition that had not shown up during ground testing. Debugging a program running on a $100M piece of hardware that is 100 million km away is an interesting experience. Having a read-eval-print-loop running on the spacecraft proved invaluable in finding and fixing the problem. <cite>Ron Garret NASA Jet Propulsion Lab Engineer</cite></p>
+</blockquote><p>So I’m going to state that if the NASA have this power in production, probably we can also use it. You have to be extremely careful, but why not?</p><p>So to do all the things that we said a REPL gives your, I’m going to add two more:</p>
+<ol>
+  <li>Debug staging and production environments</li>
+  <li>Control spacecrafts</li>
+</ol><h2>More REPLs</h2><p>(yet another 30 seconds pause) oh sorry, its just 30 seconds. Don’t worry, just the second time in one hour … </p><p>Remember why we want a REPL: you do it for your joy, and you do it for the company’s productivity.</p><p>As I said, this is not exclusive to Clojure, here are other videos for similar things in different languages and environments. But each REPL is going to have different capabilities, they’re not all equal.</p>
+<ul>
+  <li>Javascript: <a href="https://vimeo.com/123513496">https://vimeo.com/123513496</a></li>
+  <li>ClojureScript: <a href="https://www.youtube.com/watch?v=KZjFVdU8VLI">https://www.youtube.com/watch?v=KZjFVdU8VLI</a></li>
+  <li>Elm: <a href="http://debug.elm-lang.org/">http://debug.elm-lang.org/</a></li>
+  <li>Groovy: <a href="https://www.youtube.com/watch?v=bTRUC78X87g">https://www.youtube.com/watch?v=bTRUC78X87g</a></li>
+  <li>Python: <a href="https://www.youtube.com/watch?v=EwI-e3WlTew">https://www.youtube.com/watch?v=EwI-e3WlTew</a></li>
+  <li>iOS: <a href="https://www.youtube.com/watch?v=Ci4uviG8S0o">https://www.youtube.com/watch?v=Ci4uviG8S0o</a></li>
+  <li>Android: <a href="https://www.youtube.com/watch?v=mVXTcAEKgF8">https://www.youtube.com/watch?v=mVXTcAEKgF8</a></li>
+  <li>Unity: <a href="https://www.youtube.com/watch?v=tJr_TD1BtF0">https://www.youtube.com/watch?v=tJr_TD1BtF0</a></li>
+  <li>Music: <a href="https://www.youtube.com/watch?v=yY1FSsUV-8c">https://www.youtube.com/watch?v=yY1FSsUV-8c</a></li>
+</ul><p>What about the JAVA REPL? </p><p><img src="/images/blog/repl-driven-development/018-java9repl.gif" alt="Java 9 REPL" title="Java 9 REPL" /></p><p>This is me when I read that Java was going to get a REPL, and then what that REPL was going to get. </p><p>Of all the list of things that you saw that a REPL can give you, the aim of the Java REPL is to make easy to learn the language, nothing more, but even this, it’s funny because the language is not exactly the same in the REPL as in Java as it has different semantics, different syntax, while in more powerful REPLs you get the whole language, there is no difference.</p><h2>References</h2>
+<ul>
+  <li>The code: <a href="https://github.com/dlebrero/repl-driven-development-talk">https://github.com/dlebrero/repl-driven-development-talk</a></li>
+  <li>Bret Victor: Inventing by principle <a href="https://vimeo.com/36579366">https://vimeo.com/36579366</a></li>
+  <li>Ron Garret: The Remote Agent Experiment: Debugging Code from 60 Million Miles Away <a href="https://www.youtube.com/watch?v=_gZK0tW8EhQ">https://www.youtube.com/watch?v=_gZK0tW8EhQ</a></li>
+  <li>Jakob Nielsen – Usability Engineering: <a href="https://www.nngroup.com/books/usability-engineering/">https://www.nngroup.com/books/usability-engineering/</a></li>
+</ul><p>Thank you!</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoyed it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/Java/index.html">Java </a><a href="/tags/Talks/index.html">Talks </a><a href="/tags/good_practices/index.html">good practices </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://2018.java2days.com/speaker/dan-lebrero/"><img src="/images/java2days-2018.jpg" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (21)</a></li><li><a href="/tags/Clojure/index.html">Clojure (24)</a></li><li><a href="/tags/Humour/index.html">Humour (3)</a></li><li><a href="/tags/Java/index.html">Java (4)</a></li><li><a href="/tags/Kafka/index.html">Kafka (7)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (8)</a></li><li><a href="/tags/good_practices/index.html">good practices (19)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
