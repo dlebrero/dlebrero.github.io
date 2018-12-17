@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>RocksDB range queries in KafkaStream: dealing with big results </title>
+	<meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" name="description" /><meta content="Kafka KafkaStreams rocksdb range query design architecture Clojure example KStream stateful streaming big results" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="RocksDB range queries in KafkaStream: dealing with big results " property="og:title" /><meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" property="og:description" /><meta content="https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocksdb/" property="og:url" /><meta content="RocksDB range queries in KafkaStream: dealing with big results " name="twitter:title" /><meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/kafka-big-results-rocksdb-range-query.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/kafka-big-results-rocksdb-range-query.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocksdb/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">RocksDB range queries in KafkaStream: dealing with big results </h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Mon, 17 Dec 2018</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/kafka-big-results-rocksdb-range-query.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>There was an interesting question on the <a href="https://confluentcommunity.slack.com/archives/C48AHTCUQ/p1538999729000100">Confluence Slack channel</a>, paraphrasing:</p><p><em>Hi,</em></p><p><em>I created a Kafka Streams app … where external processes put a command message on an “input.cmd” topic with a pending status, the app process it and put an updated command message on the same “input.cmd” topic with a new status indicating if it was processed with or without errors.</em></p><p><em>Now I need to create a stream app that will receive a file containing <strong>lots of commands</strong> (~100k), send each command to the existing process, read the result of the processing (the updated command) and produce a new file with the result of each line.</em></p><p><em>Is there a good way to do this without incurring in saving very big objects in the DataStore?</em></p><p><em>My problem is that I am collecting the completed messages and keeping them in the Store, but am struggling to make an efficient algorithm that would not use too much memory since the messages can come back in any order and from many files (lots of files might be still under processing).</em></p><p>Note that the issue here is not that the Kafka messages are too big (<a href="https://stackoverflow.com/questions/21020347/how-can-i-send-large-messages-with-kafka-over-15mb">&gt;1mb</a>), but that the consuming application has to collect hundreds of thousands of small messages to produce the result.</p><p>A naive approach would mean storing in our KafkaStreams application an state object like:</p>
+<pre><code class="clojure">{:file "a file"
+ :partial-results [{:line 1      :result "result1"}
+                   {:line 110202 :result "result21"}
+                   {:line 329323 :result "result32"}
+                   {:line 132423 :result "result412"}
+                   {:line 62     :result "result14234"}
+                   {:line 33     :result "result1121132321"}
+                   ,,, ;; Hundred of thousands more here
+                   ]}
+</code></pre><p>You can imagine how expensive would be to deserialize, update and serialize back the state once we have 100k lines in that array, every time a new line is processed. The object could even end up not fitting in the JVM heap.</p><h2>External storage</h2><p>The developer that asked the question has a very reasonable solution:</p><p><em>The solution I am implementing is to use Cassandra (we already use it) to keep the file ordered. Every completed message that arrive, I put the corresponding result line in this table.</em></p><p>So we use the capabilities of another storage database to store and later retrieve the results in the correct order. </p><p>This is probably fine, if you have Cassandra running, but what if you do not, or if you prefer to have less moving parts in your application?</p><h1>RocksDB range queries</h1><p>It happens that KafkaStream’s state store provides a <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html#range-K-K-">range query</a>, that returns all the objects stored in a StateStore between two keys. </p><p>Let’s see how we can use this API to implement an efficient way to store and retrieve big results. </p><h2>The architecture</h2><p><img src="/images/blog/kafka-big-results-rocksdb-range-query.jpg" alt="kafka rocksdb big result" title="kafka rocksdb big result" /></p><p>The <a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/Sequencer.html">splitter process</a> reads the very big file with those 100k of commands and puts each command in some <code>pending</code> topic. Once the splitter has finished pushing all the pending commands, it will know how many lines/commands the file had, and it will push this total lines to our <a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/Aggregator.html">aggregator’s</a> input topic. The aggregator will use this number to know when it has received all the processed commands.</p><p>Note that the splitter will use no key when pushing to the <code>pending</code> topic so that the commands are evenly distributed to all partitions (<a href="https://cwiki.apache.org/confluence/display/KAFKA/FAQ#FAQ-Whyisdatanotevenlydistributedamongpartitionswhenapartitioningkeyisnotspecified?">more or less</a>), but then, all the processed commands for a given file must end up in the same <code>to.aggregate</code> partition so that they end up being consumed by the same aggregator process. We will use the name of the file as the key, assuming is unique enough.</p><p>Given that the splitter does not know before hand the number of lines in the file, and that the commands will be processed in a semi-random order, our aggregator input could look like:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Key </th>
+      <th>Line Number </th>
+      <th>Partial Result </th>
+      <th>Total Lines </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>file1 </td>
+      <td>2 </td>
+      <td>SecondLine </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>file1 </td>
+      <td>3 </td>
+      <td>LastLine </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>file1 </td>
+      <td> </td>
+      <td> </td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>file1 </td>
+      <td>1 </td>
+      <td>FirstLine </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table><p>Notice that in this case, our aggregator receives two lines before it knows that there should be a total of three, and that it receives line 1 the last.</p><h2>The state</h2><p>Instead of just storing one piece of state on the aggregator with all the partial results on it, what we are going to do is move the partial results out of it. </p><p>To do that, we will store each partial result with a key like:</p>
+<pre><code class="clojure">(defn line-key [file-name line-number]
+  (format "%s-part-%019d" file-name line-number))
+</code></pre><p>So the result for the first line will be stored with a key like <code>thefilename-part-00000000001</code>. </p><p>This way, once we know that our aggregator app has received all the partial results for a file, we can use the StateStore <code>range</code> query to retrieve all partial results by using the range <code>thefilename-part-00000000001</code> to <code>thefilename-part-00000xxxxxxx</code>, being <code>xxxxxx</code> the total number of lines. In code:</p>
+<pre><code class="clojure">(defn all-results-received [store file-id total-lines]
+  (log/info "Writing file " file-id "total records" total-lines)
+  (with-open [all-records (.range store (line-key file-id 0) (line-key file-id total-lines))
+              writer (io/writer file-id)]
+    (doseq [^KeyValue record (iterator-seq all-records)]
+      (.write writer (str (.key record) "-&gt;" (.value record) "\n"))))
+  (log/info "Deleting")
+  (let [all-keys (map
+                   (fn [i] (KeyValue. (line-key file-id i) nil))
+                   (range 1 (inc total-lines)))]
+    (doseq [keys-batch (partition-all 1000 all-keys)]
+      (.putAll store keys-batch)))
+  (.delete store file-id))
+</code></pre><p>Remember that the iterator returned by RocksDB is lazy, so we do not need to realize the whole result in memory.</p><p>To know if we have received all the partial results, we just need to keep a count of how many we have seen so far, and compare that number with the total number of lines in the file:</p>
+<pre><code class="clojure">(defn check-if-all-results-received [store file-id records-so-far total-lines]
+  (when (= records-so-far total-lines)
+    (all-results-received store file-id total-lines)
+    {:finish file-id}))
+  
+(defn get-so-far [store file-id]
+  (or (.get store file-id) {:so-far 0}))
+  
+(defn line-processed [store file-id {:keys [line-number partial-result]}]
+  (let [{:keys [total-lines so-far]} (get-so-far store file-id)
+        records-so-far (inc so-far)] ;; Increment counter
+    (.put store (line-key file-id line-number) partial-result) ;; store partial result
+    (.put store file-id {:total-lines total-lines :so-far records-so-far}) ;; store counter so far
+    (check-if-all-results-received store file-id records-so-far total-lines)))
+
+(defn total-lines-msg-arrived [store file-id total-lines]
+  (let [{:keys [so-far]} (get-so-far store file-id)]
+    (.put store file-id {:total-lines total-lines :so-far so-far}) ;; store total results
+    (check-if-all-results-received store file-id so-far total-lines)))
+</code></pre><p>Note that this counter must be exact, so KafkaStream’s default <code>at-least-once</code> semantics is not good enough in this case, we will need to configure the <code>exactly-once</code> semantics. </p><p>If this becomes a performance bottleneck, we can go back to <code>at-least-once</code> semantics and deal with any possible double count by doing a read-repair: when writing the final result file, if the number of records returned by the <code>range</code> is different from the expected total, discard the generated file and set the <code>so-far</code> counter to the correct number (the number of results returned by the <code>range</code> query).</p><h2>A big but</h2><p>Unfortunately, there is a major <em>but</em> on the <a href="https://kafka.apache.org/20/javadoc/org/apache/kafka/streams/state/ReadOnlyKeyValueStore.html#range-K-K-">range query</a> documentation:</p>
+<blockquote><p>Get an iterator over a given range of keys. … <strong>No ordering guarantees are provided</strong>.</p>
+</blockquote><p>With no ordering guarantees, it means that we would need to sort the results in memory, which maybe ok, depending if the whole result fits in memory or not.</p><h4>Angering your architect</h4><p>If we dig a little bit on the source code of the <a href="https://github.com/apache/kafka/blob/2.0/streams/src/main/java/org/apache/kafka/streams/state/internals/RocksDBStore.java#L512">RocksDB range implementation</a> we find the following comment: </p>
+<blockquote><p>RocksDB’s JNI interface does not expose getters/setters that allow the comparator to be pluggable, and the default is lexicographic, so it’s safe to just force lexicographic comparator here for now.</p>
+</blockquote><p>So the actual implementation returns the results in lexicographical order, which means that it will return the partial results already ordered by line number, which is what we are looking for. </p><p>This means that, if we accept the trade-off of depending on some implementation detail, we can avoid the restriction that the result must be ordered in memory.</p><h4>Pissing off your architect</h4><p>But probably we are not using just a plain <a href="https://github.com/apache/kafka/blob/2.0/streams/src/main/java/org/apache/kafka/streams/state/internals/RocksDBStore.java#L67">RocksDbStore</a>, but one wrapped by a <a href="https://github.com/apache/kafka/blob/2.0/streams/src/main/java/org/apache/kafka/streams/state/internals/CachingKeyValueStore.java#L38">CachingKeyValueStore</a>.</p><p>We could configure KafkaStreams to not use the cache, but given that we are already relying on some implementation detail … we see that the CachingKeyValueStore <a href="https://github.com/apache/kafka/blob/2.0/streams/src/main/java/org/apache/kafka/streams/state/internals/CachingKeyValueStore.java#L193">range implementation</a> returns a <a href="https://github.com/apache/kafka/blob/2.0/streams/src/main/java/org/apache/kafka/streams/state/internals/MergedSortedCacheKeyValueBytesStoreIterator.java#27">MergedSortedCacheKeyValueBytesStoreIterator</a>, which its <a href="https://github.com/apache/kafka/blob/2.0/streams/src/main/java/org/apache/kafka/streams/state/internals/AbstractMergedSortedCacheStoreIterator.java#L73">next() implementation</a> looks like:</p>
+<pre><code class="Java">    public KeyValue&lt;K, V&gt; next() {
+        // Simplified code
+        final Bytes nextCacheKey = cacheIterator.peekNextKey();
+        final KS nextStoreKey = storeIterator.peekNextKey();
+        //
+        final int comparison = compare(nextCacheKey, nextStoreKey);
+        if (comparison &gt; 0) {
+            return nextStoreValue(nextStoreKey);
+        } else if (comparison &lt; 0) {
+            return nextCacheValue(nextCacheKey);
+        } else {
+            storeIterator.next();
+            return nextCacheValue(nextCacheKey);
+        }
+    }
+</code></pre><p>So the merge expects the keys of both the cache and the actual store (the RocksDB one) to be ordered in the same way, as it is comparing them and advancing either of the iterators depending on an order. </p><p>We could conclude that, given that the RocksDB iterator uses a lexicographical order, the cache must use the same order, but, just in case, let’s looks at the MergedSortedCacheKeyValueBytesStoreIterator <a href="https://github.com/apache/kafka/blob/2.0/streams/src/main/java/org/apache/kafka/streams/state/internals/MergedSortedCacheKeyValueBytesStoreIterator.java#L57">compare method</a>:</p>
+<pre><code class="Java">    public int compare(final Bytes cacheKey, final Bytes storeKey) {
+        return cacheKey.compareTo(storeKey);
+    }
+</code></pre><p>The cacheKey and the storeKey are <a href="https://github.com/apache/kafka/blob/2.0/clients/src/main/java/org/apache/kafka/common/utils/Bytes.java#L26">org.apache.kafka.common.utils.Bytes</a>, which have a <a href="https://github.com/apache/kafka/blob/2.0/clients/src/main/java/org/apache/kafka/common/utils/Bytes.java#L94">compareTo implementation</a> like:</p>
+<pre><code class="Java">public int compareTo(Bytes that) {
+        return BYTES_LEXICO_COMPARATOR.compare(this.bytes, that.bytes);
+    }
+</code></pre><p>So the CachingKeyValueStore also takes care of returning the range results in the order that we need! </p><p>If we do not mind relying on these <em>little</em> implementation details, we can rely on KafkaStreams state stores <code>range</code> queries to be able to work in an efficient way with any huge results, even those that do not fit in memory, plus we remove the the need to use any external storage, with the consequent improvement on the simplicity and availability of our application.</p><p>We all good! (Your architect may disagree about this statement and with any enthusiasm associated with it)</p>
+<hr /><p>All the code can be found <a href="https://github.com/dlebrero/kafka-streams-big-results">here</a>, including a Docker Compose file that will run Kafka, Zookeeper plus three instances of this service, so you can play around with it. The details of how to build and run it are in the repository.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoyed it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/Java/index.html">Java </a><a href="/tags/Kafka/index.html">Kafka </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://2018.java2days.com/speaker/dan-lebrero/"><img src="/images/java2days-2018.jpg"/></a>
+					</div-->
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (22)</a></li><li><a href="/tags/Clojure/index.html">Clojure (25)</a></li><li><a href="/tags/Humour/index.html">Humour (3)</a></li><li><a href="/tags/Java/index.html">Java (5)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (8)</a></li><li><a href="/tags/good_practices/index.html">good practices (19)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
