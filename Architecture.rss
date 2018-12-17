@@ -37,7 +37,7 @@ https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocks
 Mon, 17 Dec 2018 09:25:00 +0100
 </pubDate>
 <description>
-An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations
+An example of when to use the RocksDB range query in KafkaStreams.
 </description>
 </item>
 <item>

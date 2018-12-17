@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Kerberos explained in pictures</title>
-	<meta content="Kerberos is a single sign on authentication protocol, we will try to explain how it works with some hopefully simple diagrams." name="description" /><meta content="Kerberos example explain pictures dummies sso single sign on" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Kerberos explained in pictures" property="og:title" /><meta content="Kerberos is a single sign on authentication protocol, we will try to explain how it works with some hopefully simple diagrams." property="og:description" /><meta content="https://danlebrero.com/2017/03/26/Kerberos-explained-in-pictures/" property="og:url" /><meta content="Kerberos explained in pictures" name="twitter:title" /><meta content="Kerberos is a single sign on authentication protocol, we will try to explain how it works with some hopefully simple diagrams." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/cerberus.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/cerberus.jpg" property="og:image" />
+	<title>If I ever write a book ...</title>
+	<meta content="Programming like a Spaniard" name="description" /><meta content="if I ever write a book " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="If I ever write a book ..." property="og:title" /><meta content="Programming like a Spaniard" property="og:description" /><meta content="https://danlebrero.com/2018/12/17/if-i-ever-write-a-book/" property="og:url" /><meta content="If I ever write a book ..." name="twitter:title" /><meta content="Programming like a Spaniard" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/book.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/book.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2017/03/26/Kerberos-explained-in-pictures/" />
+	<link rel="canonical" href="https://danlebrero.com/2018/12/17/if-i-ever-write-a-book/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -114,50 +114,26 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Kerberos explained in pictures</h1>
+						<h1 class="entry-title">If I ever write a book ...</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Sun, 26 Mar 2017</li>
+								<li id="entry-date">Mon, 17 Dec 2018</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Kerberos is a single sign on authentication protocol, we will try to explain how it works with some hopefully simple diagrams.</p>
+				 <p class="lead" id="entry-summary">Programming like a Spaniard</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/cerberus.jpg" />
+							<img src="/images/blog/book.jpg" />
 						</div>
 					</div>
 				 
 
-					<div class="entry-content"><p><a href="https://en.wikipedia.org/wiki/Kerberos_protocol">Kerberos</a> is an authentication protocol that can be used for  <a href="https://en.wikipedia.org/wiki/Single_sign-on">single sign-on (SSO)</a>.  The idea behind SSO is simple, we want to login just once and be able to use any service that we are entitled to,  without having to login on each of those services.</p><p>The Wikipedia <a href="https://en.wikipedia.org/wiki/Kerberos_protocol">page</a> is pretty good, but even after reading the <a href="http://www.roguelynn.com/words/explain-like-im-5-kerberos/">Explain like I’m 5: Kerberos</a>, I ended up having to draw myself some diagrams.</p><h2>The puzzle</h2><p>So imagine the objective is for a user to talk to an FTP service and for the FTP service to be sure that the user is who they claim to be, given that there are wrongdoers who will try to to intercept any message sent between actors and attempt to make use of it.</p><p>To solve this puzzle, imagine the actors are allowed to make use of coloured keys and chests, as many as are needed, subject to the following rules:</p>
-<ol>
-  <li>Chests can only be opened by a key of the same colour.</li>
-  <li>Keys can be used to create chests of the same colour.</li>
-  <li>Anyone can create a new colour key, as long as the colour doesn’t exist already.</li>
-</ol><p>How would you do it?</p><h3>The setup</h3><p>Here are the actors and the initial game setup:</p><p><img src="/images/kerberos-initial-setup-2.jpg" alt="Kerberos initial setup" title="Kerberos initial setup" /></p><p>The Dark user, who has a black key.</p><p>The FTP service, who has a blue key.</p><p>The TGS has a green key, plus he knows that the FTP server has a blue key and has a copy of it. Other services would have keys of other colours.</p><p>The AS, who knows and has a copy of TGS’s green key the user’s black key. Other users would have keys of other colours.</p><h3>The play</h3><p><img src="/images/kerberos-for-dummies-2.jpg" alt="Kerberos in one picture" title="Kerberos solution diagram" /></p><p>Lets explain the initial interactions to make it more clear.</p>
-<ol>
-  <li>The user starts by sending his name in plain sight to the AS.</li>
-  <li>The AS forges a new red key.</li>
-  <li>The AS sends a black chest (created with AS’s copy of the black key). It contains a copy of red key.</li>
-  <li>The AS also sends a green chest with another copy of the red key plus the name of the user.</li>
-</ol><p>The user cannot open the green chest as he just has the black key, but he can open the black one, from which he obtains the red key. From now on he can create red chests.</p><p>And so on… You hopefully get the gist of it.</p><h3>Eavesdropping wrongdoers</h3><p>With the diagram is easy to check some scenarios when some of the actors are impersonated or the messages are captured or modified. </p><p>For example, lets see what happens when an evil guy tries to impersonate the user:</p><p><img src="/images/kerberos-evil-guy-2.jpg" alt="Kerberos evil user" title="Kerberos evil user" /></p><p>As the evil guy doesn’t have the black key, he cannot obtain the red key, so the best he can do is to forge a new key, purple in this case, and use it to create a purple chest. </p><p>Note that even if the green chest is a good and valid one, and the TGS is able to open the green chest as before, the TGS is not able to open the purple chest as he just has the red key.</p><p>Of course the evil guy cannot just send the name of the user in plain as the TGS expects a chest (ClassCastException!).</p><p>I would recommend trying other scenarios, like impersonating the TGS or the evil guy capturing some chests. It is fun!</p><h2>But what does this have to do with Kerberos?</h2><p>Unsurprisingly, the diagram above represents how the Kerberos protocol works.</p><p>In Kerberos parlance, AS is the Authentication Service and TGS is the Ticket Granting Service. In practice, both services are usually the same server.</p><p>Chests are either tickets or authenticators. See the legend at the end of the post for the translation.</p><p>The first interesting thing in the protocol is that the user password (the black key) is never sent over the wire, which avoids a whole bunch of possible security issues. </p><p>One security issue found is that anybody can obtain the black chest and do an offline brute force or dictionary attack, so Kerberos 5 comes with optional <a href="http://superuser.com/questions/200010/how-does-kerberos-preauthentication-increase-security">pre-authentication</a> and it can use <a href="https://tools.ietf.org/html/rfc4556">asymmetric keys</a> for it, so the initial message from the user is slightly different from the one shown in the diagram.</p><p>It is also interesting to note that the FTP server never talks with the AS or TGS services to verify the identity of the user, which should have the benefit of a more scalable system.</p><p>Not shown in the diagram, but all chests are timestamped and such timestamp is checked by the servers. This helps to avoid replay attacks and with session invalidation.</p><p>The last empty yellow chest is used by the user to validate that is talking with the correct server and it actually contains a timestamp.</p><p>The first two rules of the puzzle comes from the fact that Kerberos uses symmetric key cryptography.</p><p>I hope this has helped you to understand Kerberos. Drop me an email/tweet if something is not clear (or wrong!).</p><h2>Legend</h2><p>In Kerberos parlance (and you have the diagram below for easier referral):</p>
-<dl class="lining">
-<dt>AS</dt><dd>Authentication Server.</dd>
-<dt>TGS</dt><dd>Ticket Granting Service.</dd>
-<dt>FTP</dt><dd>The service the user wants to access.</dd>
-<dt>Black key</dt><dd>user hashed password.</dd>
-<dt>Green key</dt><dd>TGS Secret Key.</dd>
-<dt>Red key</dt><dd>Client/TGS Session Key.</dd>
-<dt>Green chest</dt><dd>Ticket-Granting-Ticket.</dd>
-<dt>Yellow key</dt><dd>Client/Server Session Key.</dd>
-<dt>Blue chest</dt><dd>Client-to-server ticket.</dd>
-<dt>Create a chest</dt><dd>Encrypt a message.</dd>
-<dt>Open a chest</dt><dd>Decrypt a message.</dd>
-</dl><p><img src="/images/kerberos-for-dummies-2.jpg" alt="Kerberos in one picture" title="Kerberos solution diagram" /></p></div>
+					<div class="entry-content"><p>Autobiography. No other Spaniards will be harmed during its production, maybe.</p></div>
 
 				 
 
@@ -171,7 +147,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a>
+					 <a href="/tags/Humour/index.html">Humour </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>

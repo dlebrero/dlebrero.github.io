@@ -6,7 +6,7 @@
    ================================================== -->
    <meta charset="utf-8" />
 	<title>RocksDB range queries in KafkaStream: dealing with big results </title>
-	<meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" name="description" /><meta content="Kafka KafkaStreams rocksdb range query design architecture Clojure example KStream stateful streaming big results" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="RocksDB range queries in KafkaStream: dealing with big results " property="og:title" /><meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" property="og:description" /><meta content="https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocksdb/" property="og:url" /><meta content="RocksDB range queries in KafkaStream: dealing with big results " name="twitter:title" /><meta content="An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/kafka-big-results-rocksdb-range-query.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/kafka-big-results-rocksdb-range-query.jpg" property="og:image" />
+	<meta content="An example of when to use the RocksDB range query in KafkaStreams." name="description" /><meta content="Kafka KafkaStreams rocksdb range query design architecture Clojure example KStream stateful streaming big results" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="RocksDB range queries in KafkaStream: dealing with big results " property="og:title" /><meta content="An example of when to use the RocksDB range query in KafkaStreams." property="og:description" /><meta content="https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocksdb/" property="og:url" /><meta content="RocksDB range queries in KafkaStream: dealing with big results " name="twitter:title" /><meta content="An example of when to use the RocksDB range query in KafkaStreams." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/kafka-big-results-rocksdb-range-query.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/kafka-big-results-rocksdb-range-query.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
 	<link rel="canonical" href="https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocksdb/" />
@@ -124,7 +124,7 @@
 
 					</header>
 
-				 <p class="lead" id="entry-summary">An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations</p>
+				 <p class="lead" id="entry-summary">An example of when to use the RocksDB range query in KafkaStreams.</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
@@ -313,7 +313,7 @@ s.setAttribute('data-timestamp', +new Date());
 	            <div class="widget widget_categories">
 
 	               <h5 class="widget-title">Categories</h5>
-	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (22)</a></li><li><a href="/tags/Clojure/index.html">Clojure (25)</a></li><li><a href="/tags/Humour/index.html">Humour (3)</a></li><li><a href="/tags/Java/index.html">Java (5)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (8)</a></li><li><a href="/tags/good_practices/index.html">good practices (19)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (22)</a></li><li><a href="/tags/Clojure/index.html">Clojure (25)</a></li><li><a href="/tags/Humour/index.html">Humour (4)</a></li><li><a href="/tags/Java/index.html">Java (5)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (8)</a></li><li><a href="/tags/good_practices/index.html">good practices (19)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (7)</a></li></ul>
 
 	            </div> <!-- /widget_categories -->
 

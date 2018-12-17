@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 17 Dec 2018 09:25:00 +0100
+Mon, 17 Dec 2018 00:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Mon, 17 Dec 2018 09:25:00 +0100
+Mon, 17 Dec 2018 00:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+If I ever write a book ...
+</title>
+<link>
+https://danlebrero.com/2018/12/17/if-i-ever-write-a-book/
+</link>
+<guid>
+https://danlebrero.com/2018/12/17/if-i-ever-write-a-book/
+</guid>
+<pubDate>
+Mon, 17 Dec 2018 00:00:00 +0100
+</pubDate>
+<description>
+Programming like a Spaniard
+</description>
+</item>
 <item>
 <title>
 RocksDB range queries in KafkaStream: dealing with big results 
@@ -37,7 +54,7 @@ https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocks
 Mon, 17 Dec 2018 09:25:00 +0100
 </pubDate>
 <description>
-An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations
+An example of when to use the RocksDB range query in KafkaStreams.
 </description>
 </item>
 <item>
@@ -174,23 +191,6 @@ Wed, 04 Jul 2018 00:00:00 +0200
 </pubDate>
 <description>
 Video from my presentation on WeAreDevelopers 2018 on habits of efficient developers
-</description>
-</item>
-<item>
-<title>
-A more efficient developer: Go and have a rest
-</title>
-<link>
-https://danlebrero.com/2018/07/02/efficient-developer-rest-and-sleep/
-</link>
-<guid>
-https://danlebrero.com/2018/07/02/efficient-developer-rest-and-sleep/
-</guid>
-<pubDate>
-Mon, 02 Jul 2018 00:00:00 +0200
-</pubDate>
-<description>
-Coffee is good. Sleeping is great.   
 </description>
 </item>
 </channel>
