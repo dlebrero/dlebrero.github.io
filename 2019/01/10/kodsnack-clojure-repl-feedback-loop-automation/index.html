@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Daniel Lebrero Berna Blog - Tag Kafka</title>
-	<meta content="Daniel Lebrero blog" name="description" /><meta content="api, bigdata, clojure, java, training, webapp" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Daniel Lebrero Berna Blog - Tag Kafka" property="og:title" /><meta content="Daniel Lebrero blog" property="og:description" /><meta content="https://danlebrero.com" property="og:url" /><meta content="Daniel Lebrero Berna Blog - Tag Kafka" name="twitter:title" /><meta content="Daniel Lebrero blog" name="twitter:description" /><meta content="summary" name="twitter:card" /><meta content="https://danlebrero.com/img/ez@2x.png" name="twitter:image" /><meta content="https://danlebrero.com/img/ez@2x.png" property="og:image" />
+	<title>Kodsnack podcast: The immediate feedback loop </title>
+	<meta content="Talking about Clojure, feedback loops and automation. " name="description" /><meta content="Clojure REPL immediate feedback productivity automation" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Kodsnack podcast: The immediate feedback loop " property="og:title" /><meta content="Talking about Clojure, feedback loops and automation. " property="og:description" /><meta content="https://danlebrero.com/2019/01/10/kodsnack-clojure-repl-feedback-loop-automation/" property="og:url" /><meta content="Kodsnack podcast: The immediate feedback loop " name="twitter:title" /><meta content="Talking about Clojure, feedback loops and automation. " name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/kodsnack.png" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/kodsnack.png" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	
+	<link rel="canonical" href="https://danlebrero.com/2019/01/10/kodsnack-clojure-repl-feedback-loop-automation/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -47,8 +47,6 @@
 
 <body>
 
-	<div id="top"></div>
-
    <!-- Header
    =================================================== -->
    <header id="main-header">
@@ -71,9 +69,9 @@
          	</a>         
 
 	         <ul id="nav" class="nav">
-	            <li><a href="/">Home.</a></li>
+	            <li class="current"><a href="/">Home.</a></li>
 				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
-				 <li id="menu-archives" class="current"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
 				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
 	         </ul>
 
@@ -81,7 +79,7 @@
 
 	   </div> <!-- /header-inner -->
 
-   </header> 
+   </header>
 
 
    <!-- Page Title
@@ -108,43 +106,97 @@
 
    	<div class="row">
 
-	   	<div id="main" class="tab-whole eight columns entries">
+	   	<div id="main" class="tab-whole nine columns">
 
-            <article id="section">
-                <h1 id="section-title">Kafka</h1>
-                <h5>
-                    <a title="" href="/2018/12/17/big-results-in-kafka-streams-range-query-rocksdb/#content">RocksDB range queries in KafkaStream: dealing with big results </a>
-                    <small id="entry-date">Mon, 17 Dec 2018</small>
-                </h5><h5>
-                    <a title="" href="/2018/10/08/when-to-choose-ktable-or-kstream-in-kafka-streams/#content">In KafkaStreams, when to choose between a KTable or a KStream?</a>
-                    <small id="entry-date">Mon, 8 Oct 2018</small>
-                </h5><h5>
-                    <a title="" href="/2018/04/11/kafka-gdpr-event-sourcing/#content">Kafka, GDPR and Event Sourcing</a>
-                    <small id="entry-date">Wed, 11 Apr 2018</small>
-                </h5><h5>
-                    <a title="" href="/2018/04/11/kafka-gdpr-event-sourcing-implentation/#content">Kafka, GDPR and Event Sourcing - Implementation details</a>
-                    <small id="entry-date">Wed, 11 Apr 2018</small>
-                </h5><h5>
-                    <a title="" href="/2018/04/09/kafka-distributed-coordination-actor-model/#content">Kafka, distributed coordination and the actor model</a>
-                    <small id="entry-date">Mon, 9 Apr 2018</small>
-                </h5><h5>
-                    <a title="" href="/2017/05/07/kafka-streams-ktable-globalktable-joining-reference-data/#content">Joins on stateful stream processing using Kafka Streams' KTables and GlobalKTables</a>
-                    <small id="entry-date">Sun, 7 May 2017</small>
-                </h5><h5>
-                    <a title="" href="/2017/01/06/proof-of-concept-using-kafkastreams-and-ktables-implementation-notes-gotchas-and-docker-compose/#content">Proof of concept using KafkaStreams and KTables - implementation notes, gotchas and Docker Compose example</a>
-                    <small id="entry-date">Fri, 6 Jan 2017</small>
-                </h5><h5>
-                    <a title="" href="/2017/01/05/proof-of-concept-using-kafkastreams-and-ktables/#content">Proof of concept using KafkaStreams and KTables</a>
-                    <small id="entry-date">Thu, 5 Jan 2017</small>
-                </h5>
-            </article>
-	      </div> <!-- /main -->
+	         <article class="entry">
 
-	      <div class="tab-whole four columns end" id="secondary">
+				 
 
-	         <aside id="sidebar">
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Kodsnack podcast: The immediate feedback loop </h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Thu, 10 Jan 2019</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Talking about Clojure, feedback loops and automation. </p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/kodsnack.png" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>I was at the KodSnack podcast talking about how I got into Clojure, feedback loops, the REPL and building your own tools: <a href="https://kodsnack.se/294/">https://kodsnack.se/294/</a></p><p>Enjoy!</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoyed it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/Talks/index.html">Talks </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
 
 	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 15 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://2018.java2days.com/speaker/dan-lebrero/"><img src="/images/java2days-2018.jpg"/></a>
+					</div-->
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
 
 	            <div class="widget widget_categories">
 
@@ -153,11 +205,14 @@
 
 	            </div> <!-- /widget_categories -->
 
-                 <div class="widget">
-                     <h5 class="widget-title"><a href="/archives/">Archives</a></h5>
-                     <h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
-                     <a href="/feed.rss"><img src="/images/feed.png" /></a>
-                 </div>
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
 	         </aside> <!-- /sidebar -->
 
 	      </div> <!-- /secondary -->
@@ -183,7 +238,7 @@
 
    <!-- Java Script
    ================================================== -->
-    <div id="scripts" style="display:none;">
+	<div id="scripts" style="display:none;">
 	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	   <script src="/js/jquery-1.10.2.min.js"></script>
 	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
@@ -208,6 +263,7 @@ $(document).ready(function() {
 	   <div id="debug" style="display: none;">
 	   </div>
    </div>
+
 
 </body>
 
