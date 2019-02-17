@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>A more efficient developer: write programs for yourself</title>
-	<meta content="The shoemaker's son always go barefoot." name="description" /><meta content="efficient effective developer write programs" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="A more efficient developer: write programs for yourself" property="og:title" /><meta content="The shoemaker's son always go barefoot." property="og:description" /><meta content="https://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/" property="og:url" /><meta content="A more efficient developer: write programs for yourself" name="twitter:title" /><meta content="The shoemaker's son always go barefoot." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/efficient-write-programs.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/efficient-write-programs.jpg" property="og:image" />
+	<title>Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen</title>
+	<meta content="Describing some reasons to do Test Driven Development that are rarely mentioned." name="description" /><meta content="Test Driven Development TDD efficient developer reasons " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen" property="og:title" /><meta content="Describing some reasons to do Test Driven Development that are rarely mentioned." property="og:description" /><meta content="https://danlebrero.com/2019/02/18/other-reasons-for-test-driven-development-baby-steps-roi-evil-manager-watching-the-watchmen/" property="og:url" /><meta content="Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen" name="twitter:title" /><meta content="Describing some reasons to do Test Driven Development that are rarely mentioned." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/why-tdd/meerkat.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/why-tdd/meerkat.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2017/08/03/efficient-developer-write-programs-for-yourself/" />
+	<link rel="canonical" href="https://danlebrero.com/2019/02/18/other-reasons-for-test-driven-development-baby-steps-roi-evil-manager-watching-the-watchmen/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -114,40 +114,67 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">A more efficient developer: write programs for yourself</h1>
+						<h1 class="entry-title">Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Thu, 3 Aug 2017</li>
+								<li id="entry-date">Mon, 18 Feb 2019</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">The shoemaker's son always go barefoot.</p>
+				 <p class="lead" id="entry-summary">Describing some reasons to do Test Driven Development that are rarely mentioned.</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/efficient-write-programs.jpg" />
+							<img src="/images/blog/why-tdd/meerkat.jpg" />
 						</div>
 					</div>
 				 <div class="entry-content-media-attribution">
 					 <small>Image attribution:</small>
-						 <small><a href="http://english.proverbs.center/the-shoemaker-s-son-always-goes-barefoot">English proverbs center</a></small>
+						 <small><a href="https://www.flickr.com/photos/thewaspfactory74/27674241655/">The Summiteer</a> (<a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA 2.0</a>) by <a href="https://www.flickr.com/photos/thewaspfactory74/">The Wasp Factory</a></small>
 
 				 </div>
 
-					<div class="entry-content"><p>It saddens, and surprises me the amount of manual work that we developers put up with. It is paradoxical that we are paid to automate other people’s work, yet fail do so the same with our own.</p><p>I am not just talking about automating tasks that can take you hours or days to do. A five second task that is repeated often enough may well be worth automating. </p><p>Automation saves time, enables repeatability, avoids mental overhead, and <a href="/2017/04/06/documenting-your-architecture-wireshark-plantuml-and-a-repl/#content">can be rewarding</a>.</p><h2>One off tasks</h2><p>Your attitude before starting any task, no matter how small, should be: can I write a program to do this? </p><p>A word of caution, though: set a time limit for the task, as you can really get lost down the rabbit hole. Once that time limit has elapsed, you have to be willing to let it go and do the task manually. This requires a surprising amount of discipline.</p><h2>Beware the GUI</h2><p>GUIs, like the Sirens, lure you with an easy first time experience, but then enslave you in their own isolated world, away from other programs.</p><p>You want to use tools that compose. You want to use programs that you can glue together with other programs. Programs that can be inside a for loop. </p><p>GUIs do not compose. Free yourself.</p><h2>Automation Tools</h2><p>For quick and easy things, there is nothing like a good old Bash shell. It is the only tool that has remained constantly useful in my 17 years of working experience.</p><p>For more complex tasks, just use whatever your production programming language is. It probably has tons of libraries available which you are already very proficient with.</p><p>Or maybe you could use that “forbidden” language, the one that you actually love, thus making the task doubly enjoyable.</p><p>Remember that <strong>you are a developer</strong>. So develop. Write programs. Free yourself.</p>
+					<div class="entry-content"><p>Perhaps the world does not need another “X reasons for TDD”, but I find most people miss these four very important reasons for following a test-first approach:</p>
+<ol>
+  <li>Baby steps</li>
+  <li>ROI</li>
+  <li>Evil Manager Syndrome</li>
+  <li>Watching the watchmen</li>
+</ol><h2>Baby steps</h2><p>The TDD (Test-driven Development) workflow encourages you to make progress in small baby steps. With this workflow, you feel like a small meerkat that every few steps stands up to check its environment.</p><p>Maybe not the fastest way to reach your destination but, without a doubt, the safest. But as we do not run the risk of being eaten, what does it mean for us to be safer? </p><p>After each small change, we check that no bug was introduced. And if a bug is introduced, it is obvious when and where the bug was introduced: in the last tiny step. </p><p>Finding the bug becomes trivial. And bugs are the second worst time wasters in software development:</p>
+<ol>
+  <li>First, you spend time writing it.</li>
+  <li>Then somebody has to review the bug.</li>
+  <li>Then you have to release it to production.</li>
+  <li>Your client has to report it.</li>
+  <li>You triage the impact.</li>
+  <li>Your manager has to prioritize it.</li>
+  <li>You have to fill up some JIRA issue.</li>
+  <li>You explain it to your QA.</li>
+  <li>You have to debug the code, code that by now is probably completely alien to you as probably it has been days or weeks since you wrote it.</li>
+  <li>Then you fix it.</li>
+  <li>Somebody reviews the fix.</li>
+  <li>And at last, you release the fix to production.</li>
+</ol><p>So, paradoxically, doing baby steps and being safer can also mean going faster, depending on how many bugs you write.</p><p>This principle is in fact exactly the same as the <a href="https://continuousdelivery.com/principles/#work-in-small-batches">“Small batches” principle</a> in Continuous Delivery.</p><p><em>Moral:</em> if you don’t write bugs, do not waste your time writing tests.</p><h3>How small should the baby steps be?</h3><p>As small as possible, but its lower limit it going to depend on how fast your test suite is:</p><p><img src="/images/blog/why-tdd/changes-between-runs.jpg" alt="Changes between runs" title="Changes between runs" /></p><p>Even if you try to be very disciplined about running your tests after every small change, if your test suite is slow, you will end up making your change batch size bigger, just to avoid the pain of waiting. </p><p>Hence, if you want to influence how often the tests are run, you need to make sure that they run very fast.</p><h2>Return on Investment (ROI)</h2><p>A test suite is an investment and, as with any investment, you want to have a high positive return on investment (ROI). ROI can be calculated as:</p><p><em>ROI = (Gain from Investment - Cost of Investment) / Cost of Investment</em></p><p>The costs of a test suite are pretty obvious: time to build and maintain it. There is also the ongoing cost of running it (another reason why faster test suites are better).</p><p>There are several benefits to a test suite, but we can sum them all up as time saved while making changes.</p><p>So the ROI of a test suite can be calculated as:</p><p><em>ROI = (time saved - time spent) / time spent</em></p><p>If we plot the ROI (in red) with a test-last approach when building a new feature, we can imagine something like:</p><p><img src="/images/blog/why-tdd/roi-test-last.jpg" alt="ROI test last" title="ROI test last" /></p><p>If you never ever touch that part of the codebase again, the tests are the worst of your investments, as it will not start to pay off until you start making changes again in that particular area of the codebase. </p><p>Let’s compare it with a test-first approach:</p><p><img src="/images/blog/why-tdd/roi-test-first.jpg" alt="ROI test first" title="ROI test first" /></p><p>Tests start to pay off immediately, as you are actively changing the codebase covered by those tests. </p><p><em>Moral:</em> <strong>if</strong> you write a test, write it first. Note the highlighted <strong>if</strong> in the previous statement.</p><h2>Evil Manager Syndrome</h2><p>“I’m not given time to write tests” is probably one of our favorites excuses when we are questioned about why our code coverage is less than ideal. It is not your fault, it is your evil manager’s fault:</p><p>   Manager: “We have to deliver yesterday!”<br />    Team: “But we haven’t finished yet!!”<br />    Manager: “Let cut some corners!!!”<br />    Team: “Let’s skip writing the tests until we have time!!!!”<br />    Manager: “Awesome! You are a fantastic team!!!!!”<br /></p><p>And this is how typically the spiral to the crying rewrite starts:</p><p><img src="/images/blog/why-tdd/spiral-to-crying-rewrite.jpg" alt="Spiral to the crying rewrite" title="Spiral to the crying rewrite" /></p>
+<ol>
+  <li>As you have little tests, you cannot refactor.</li>
+  <li>As you cannot refactor, your codebase starts to accumulate garbage.</li>
+  <li>The more garbage in your codebase, the longer features take to be implemented.</li>
+  <li>The longer features take to be implemented, the more time pressure there is.</li>
+  <li>The more time pressure, the fewer tests.</li>
+</ol><p>And this completes the downward spiral that always ends up with us, developers, crying for a complete rewrite.</p><p>Let’s see the same situation but when doing test-first:</p><p>   Manager: “We have to deliver yesterday!”<br />    Team: “But we haven’t finished yet!!”<br />    Manager: “Let cut some corners!!!”<br />    Team: “What features can we cut?!?!?!”<br />    Manager: “Cutting features??? Do not write any tests!!!!!”<br />    Team: “We already wrote them!!!!!!”<br />    Manager: “Bastards!!!!!!!”<br /></p><p>And then follows a long conversation about what features to trim, which your manager hates. Welcome to agile.</p><h2>Watching the watchman</h2><p>Seeing a test fail is the test that tests if the test tests what is supposed to test.</p><p>Or in simpler words, how do you know that your test doesn’t have any bugs? Who watches your watchmen?</p><p>If you write a test first and you see it fail, there is a strong indication that there is some piece of production code, some logic, that is not there.</p><p>If you write the test and you never see it fail, you don’t know if it is because you’ve ready implemented a feature, or because you forgot on an assert in your test or the setup code is not correct.</p><p><img src="/images/blog/why-tdd/watchmen.jpg" alt="watchmen" title="Watching your tests" /></p><p>Moral: Writing your tests first keeps the watchmen honest.</p><h2>Test-first all the things?</h2><p>But no matter how many reasons you have, when you present this test-first approach, most of the time you get the ominous answer: “How can I write the tests first if I don’t know what I am going to build?”</p><p>And as any experienced TDD developer will tell you, that is BS … but not always. We will see next time when is and when is not TDD the best approach.</p>
 <hr /><p>More about efficiency:</p>
 <ol>
   <li><a href="/2017/08/01/efficient-developer-disable-notifications/#content">Disable notifications</a></li>
   <li><a href="/2017/08/02/efficient-developer-master-your-ide/#content">Master your IDE</a></li>
-  <li>Write programs for yourself (you are here)</li>
+  <li><a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">Write programs for yourself</a></li>
   <li><a href="/2017/09/01/a-docker-compose-environment/#content">Why to Docker Compose a calm environment</a></li>
   <li><a href="/2018/04/30/did-you-read-my-email/#content">Did you read my email?</a></li>
   <li><a href="/2018/07/02/efficient-developer-rest-and-sleep/#content">Go and have a rest</a></li>
   <li><a href="/2018/07/04/habits-of-efficient-developers-wearedevelopers-2018-video/#content">The conference talk</a></li>
-  <li><a href="/2019/02/18/other-reasons-for-test-driven-development-baby-steps-roi-evil-manager-watching-the-watchmen/#content">Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen</a></li>
+  <li>Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen (you are here)</li>
 </ol></div>
 
 				 
@@ -162,7 +189,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/good_practices/index.html">good practices </a>
+					 <a href="/tags/good_practices/index.html">good practices </a><a href="/tags/testing/index.html">testing </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
