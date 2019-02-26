@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Applying stability patterns: a case study - Devoxx PL 2017</title>
-	<meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" name="description" /><meta content="stability patterns circuit breaker bulkhead timeout devoxx poland case study " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Applying stability patterns: a case study - Devoxx PL 2017" property="og:title" /><meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" property="og:description" /><meta content="https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/" property="og:url" /><meta content="Applying stability patterns: a case study - Devoxx PL 2017" name="twitter:title" /><meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/devoxx-pl-2017.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/devoxx-pl-2017.jpg" property="og:image" />
+	<title>Architecture decisions: the belligerent contrarian and the rule of three</title>
+	<meta content="A couple of simple rules that have helped me on my years as a software architect." name="description" /><meta content="software architecture making decision rule of three disagree brainstorming" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Architecture decisions: the belligerent contrarian and the rule of three" property="og:title" /><meta content="A couple of simple rules that have helped me on my years as a software architect." property="og:description" /><meta content="https://danlebrero.com/2019/02/27/architecture-decisions-beligerent-contrarian-rule-of-three/" property="og:url" /><meta content="Architecture decisions: the belligerent contrarian and the rule of three" name="twitter:title" /><meta content="A couple of simple rules that have helped me on my years as a software architect." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/belligerent-contrarian.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/belligerent-contrarian.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/" />
+	<link rel="canonical" href="https://danlebrero.com/2019/02/27/architecture-decisions-beligerent-contrarian-rule-of-three/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -114,26 +114,31 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Applying stability patterns: a case study - Devoxx PL 2017</h1>
+						<h1 class="entry-title">Architecture decisions: the belligerent contrarian and the rule of three</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Thu, 3 Aug 2017</li>
+								<li id="entry-date">Wed, 27 Feb 2019</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Video from my presentation on Devoxx PL 2017 on stability patterns</p>
+				 <p class="lead" id="entry-summary">A couple of simple rules that have helped me on my years as a software architect.</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/devoxx-pl-2017.jpg" />
+							<img src="/images/blog/belligerent-contrarian.jpg" />
 						</div>
 					</div>
-				 
+				 <div class="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small><a href="https://pixabay.com/illustrations/stairs-silhouettes-human-upward-70509/">Image by geralt on Pixabay</a></small>
 
-					<div class="entry-content"><p>The video of my Devoxx PL 2017 talk on “Applying stability patterns: a case study” is online.</p><p>In the talk I explain how we applied, or did not, each of the stability patterns described in the <em>Release It!</em> book by Michael Nygard, plus I explain which outages we had after applying, or misapplying, the patterns. </p><p>Slides in <a href="/slides/stability_patterns_devoxx_pl_2017.key">Keynote format</a></p><p>Feedback and questions welcomed!</p><p><iframe width="560" height="315" src="https://www.youtube.com/embed/dSgls1cn1io" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p></div>
+				 </div>
+
+					<div class="entry-content"><p>Here are a couple of simple rules that have helped me a great deal on my years as a software architect.</p><h1>The rule of three</h1><p>The first rule is that, when you have to make any decision, there must always be at least three possible alternatives in consideration. </p><p>To find this third option, we will need to look at the problem from unusual and novel angles, or bring back options that were discarded because we thought they were obviously wrong.</p><p>This is basically a way of enforcing brainstorming, but using a clear rule and not calling it brainstorming, which in my experience somehow helps.</p><h1>The rule of three</h1><p>The second rule of three is that there must be at least three people involved in the decision.</p><p>It is very unlikely that all three people will have the same background and bias, so the alternatives will be looking at from more diverse points of view.</p><h1>The belligerent contrarian</h1><p>Having three options and three people in the room is useless if everybody has the same preferred option. There must be at least one person that disagreed with the group and have a good reason to prefer a different option.</p><p>If there is no such person, then there is not going to be a real debate about which option is the most adequate, as we all will be biased to make sure that our preferred option looks the best. Having to defend our position will make it very obvious if we have solid reasons to make that choice.</p><p>Unfortunately, a lot of times there is no such person, which means that you must be willing to defend one other option, even if you think is not the best one. </p><p>This means that you have to make sure that you are the last one on expressing your opinion, so that is the rest of the group all choose an option, you can pick another one.</p><p>But it also means that you have to have a deep understanding of the weaknesses and shortcomings of the preferred option, plus the benefits or possible benefits of the other options. This is an excellent exercise to look with honesty at your own choices and to make sure that the group understands the trade-offs.</p><p>Being the belligerent contrarian is not a comfortable position as a lot of times you are going to be defending a position that looks silly or that is obviously wrong, which means that you have to be comfortable with your status within the company and the people in the meeting. This role is not suitable for junior architects or if your ego doesn’t allow you to be wrong.</p><p>If you decide to play this role, it is important to not say <a href="https://en.wikipedia.org/wiki/Devil's_advocate">“I am playing Devil’s advocate”</a> as if you do so, people will not take your position seriously. If it makes you feel more comfortable, you can say so after the decision has been made.</p><h1>The rule of three</h1><p>And as we are talking about the rule of three, I cannot pass the opportunity to mention a design level rule of three: there is no duplication until you have three copies of the same code or logic.</p><p>The third time that you write the same piece of logic is when you can evaluate if it is worth moving that piece of code to a common library or class. </p><p>Until you have three samples, you cannot be sure that the common code will actually be common enough.</p>
+<hr /><p>It is surprising how many times the new third option turns up to be the one implemented, either because we find a better alternative or because we get over our biases.</p><p>Playing the belligerent contrarian, or devil’s advocate, is sometimes fun, sometimes annoying, sometimes distressing, but at the end, having a good debate about the options means that the team ends up moving with more confidence on the decision made, and it is more aware of the possible pitfalls.</p></div>
 
 				 
 
@@ -147,7 +152,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Talks/index.html">Talks </a><a href="/tags/resilience/index.html">resilience </a>
+					 <a href="/tags/Architecture/index.html">Architecture </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
