@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 27 Feb 2019 00:00:00 +0100
+Wed, 06 Mar 2019 09:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 27 Feb 2019 00:00:00 +0100
+Wed, 06 Mar 2019 09:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Java with a Clojure mindset
+</title>
+<link>
+https://danlebrero.com/2019/03/06/java-with-a-clojure-mindset/
+</link>
+<guid>
+https://danlebrero.com/2019/03/06/java-with-a-clojure-mindset/
+</guid>
+<pubDate>
+Wed, 06 Mar 2019 09:00:00 +0100
+</pubDate>
+<description>
+Video, transcript and slides from the Java2Days and Oredev 2018 talk
+</description>
+</item>
 <item>
 <title>
 Architecture decisions: the belligerent contrarian and the rule of three
@@ -174,23 +191,6 @@ Mon, 08 Oct 2018 20:25:00 +0200
 </pubDate>
 <description>
 An example of how to choose between a KafkaStreams' KTable or KStream when doing stateful streaming transformations
-</description>
-</item>
-<item>
-<title>
-Kubernetes explained in pictures: StatefulSets, Persistent Volumes and Headless Services
-</title>
-<link>
-https://danlebrero.com/2018/07/22/kubernetes-explained-in-pictures-stateful-sets-persistent-volume-headless-service/
-</link>
-<guid>
-https://danlebrero.com/2018/07/22/kubernetes-explained-in-pictures-stateful-sets-persistent-volume-headless-service/
-</guid>
-<pubDate>
-Sun, 22 Jul 2018 00:00:00 +0200
-</pubDate>
-<description>
-Explaining Kubernetes StatefulSets, Persistent Volume and Headless Services using KubePark's cloakroom service.
 </description>
 </item>
 </channel>
