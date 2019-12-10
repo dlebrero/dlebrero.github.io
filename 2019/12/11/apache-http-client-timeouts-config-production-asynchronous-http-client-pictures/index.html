@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Apache Http Client and Asynchronous HTTP client timeouts explained in pictures</title>
+	<meta content="Explaining with pictures what connection timeout, read timeout and connection pool timeout are, and how Apache HTTP Client compares to Asynchronous HTTP client when handling them " name="description" /><meta content="Clojure Java apache http client timeout connection pool asynchronous explain simply pictures example dummies like I am five pictures " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Apache Http Client and Asynchronous HTTP client timeouts explained in pictures" property="og:title" /><meta content="Explaining with pictures what connection timeout, read timeout and connection pool timeout are, and how Apache HTTP Client compares to Asynchronous HTTP client when handling them " property="og:description" /><meta content="https://danlebrero.com/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures/" property="og:url" /><meta content="Apache Http Client and Asynchronous HTTP client timeouts explained in pictures" name="twitter:title" /><meta content="Explaining with pictures what connection timeout, read timeout and connection pool timeout are, and how Apache HTTP Client compares to Asynchronous HTTP client when handling them " name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/http-client-timeout-configuration/http-client-timeouts.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/http-client-timeout-configuration/http-client-timeouts.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Apache Http Client and Asynchronous HTTP client timeouts explained in pictures</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 11 Dec 2019</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Explaining with pictures what connection timeout, read timeout and connection pool timeout are, and how Apache HTTP Client compares to Asynchronous HTTP client when handling them </p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/http-client-timeout-configuration/http-client-timeouts.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>I recently had to introduce a colleague to the wonderful and exciting world of timeouts in <a href="http://hc.apache.org">Apache HttpClient</a>. As the usual explanation that “the connection timeout is the maximum time to establish a connection to the server” is not the most descriptive one, let’s try to explain with a couple of pictures what each timeout actually means.</p><p>Even if we will be talking about Apache’s HttpClient, the following explanation is useful for any TCP based communication, which includes most of the JDBC drivers.</p><p>As a reference, here are all the timeouts that you <strong>must</strong> configure if you want a healthy production service:</p>
+<ul>
+  <li>Connection Timeout</li>
+  <li>Read Timeout</li>
+</ul><p>If you are using microservices, you will also need to configure a connection pool and the following timeouts:</p>
+<ul>
+  <li>Connection Pool Timeout</li>
+  <li>Connection Pool Time To Live (TTL)</li>
+</ul><p>You will find <a href="https://www.baeldung.com/httpclient-timeout">here</a> how to configure these timeout outs in Java. In our examples we will use <a href="https://github.com/dakrone/clj-http">clj-http</a> which is a simple wrapper over Apache’s HttpClient. We will also compare how timeouts work in <a href="https://github.com/AsyncHttpClient/async-http-client">Asynchronous HTTP Client</a>.</p><p>All the code, including a docker compose environment to test the settings can be found at <a href="https://github.com/dlebrero/apache-httpclient-timeouts">https://github.com/dlebrero/apache-httpclient-timeouts</a>.</p><h2>Connection timeout</h2><p>Before your http client can start interchanging information with the server, a communication path (or road or pipe) between the two must be established.</p><p>This is done with a handshake:</p><p><img src="/images/blog/http-client-timeout-configuration/hello-hi.jpg" alt="phone handshake" title="Handshake, hello, hi!" /></p><p>After this interchange you and your partner can start a conversation, that is, exchange data.</p><p>In TCP terms, this is called the 3 way handshake:</p><p><img src="/images/blog/http-client-timeout-configuration/tcp-handshake.jpg" alt="TCP handshake" title="TCP Handshake" /></p><p>The connection timeout controls how long are you willing for this handshake to take.</p><p>Let’s test it using a non-routable IP address:</p>
+<pre><code class="clojure">;; Without connection timeout
+(time
+    (try
+      (client/get "http://10.255.255.1:22220/")
+      (catch Exception e)))
+"Elapsed time: 75194.7148 msecs"
+
+;; With connection timeout
+(time
+    (try
+      (client/get "http://10.255.255.1:22220/"
+        {:connection-timeout 2000})
+      (catch Exception e
+        (log/info (.getClass e) ":" (.getMessage e)))))
+"Elapsed time: 2021.1883 msecs"
+INFO  a.http-client - java.net.SocketTimeoutException : connect timed out
+</code></pre><p>Notice the different elapsed time, the exception printed and the message within the exception.</p><h2>Read timeout</h2><p>Once the connection is established, and you are happily talking with the server, you can specify how long you are willing to wait to hear back from the server, using the read timeout:</p><p><img src="/images/blog/http-client-timeout-configuration/read-timeout.jpg" alt="Apache Http Client read timeout" title="Apache Http Client Read timeout" /></p><p>Let’s test it, using this time around an Nginx server, with a <a href="https://github.com/Shopify/toxiproxy">Toxiproxy</a> in the middle to mess around with the response times:</p>
+<pre><code class="clojure"><br />;; With no socket timeout
+(time
+  (try
+    (client/get "http://local.toxiproxy:22220/")
+    (catch Exception e (.printStackTrace e))))
+"Elapsed time: 240146.6273 msecs"
+
+;; Same url, with socket timeout
+(time
+    (try
+      (client/get "http://local.toxiproxy:22220/"
+        {:socket-timeout 2000})
+      (catch Exception e
+        (log/info (.getClass e) ":" (.getMessage e)))))
+"Elapsed time: 2017.7835 msecs"
+INFO  a.http-client - java.net.SocketTimeoutException : Read timed out
+</code></pre><p>Note that the default socket timeout is system dependant. Notice the different elapsed time, the exception printed and the message within the exception.</p><p>The ToxiProxy configuration can be found <a href="https://github.com/dlebrero/apache-httpclient-timeouts/blob/master/src/apache_httpclient_timeouts/http_client.clj#L39">here</a>.</p><h2>Pub quiz</h2><p>With these two timeouts, you should easily score one point for your team on your next IT Pub Quiz Championship:</p>
+<blockquote><p>If you configure your HTTP client with a 10 seconds connection timeout and a 1 second read timeout, how long is a thread going to get stuck after issuing an HTTP request, in the worst case scenario?</p>
+</blockquote><p>You guess it right! Infinite! One point for your team!</p><p>Whoot? You did not answer infinite? It is soooo obvious (sarcasm).</p><p>Let’s again call one of your friends and ask him about Pi, but this time we are going to call one of those high precision smartass friends:</p><p><img src="/images/blog/http-client-timeout-configuration/read-timeout-forever.jpg" alt="Apache http client read timeout retry" title="Apache http client read timeout retry" /></p><p>What is going on? </p><p>If you read carefully the previous explanation about the read timeout or even better, the <a href="http://hc.apache.org/httpcomponents-client-4.5.x/httpclient/apidocs/org/apache/http/client/config/RequestConfig.html#getSocketTimeout()">javadoc about it</a> you will notice that the read timeout is reset each time we hear from the server, so if the response is too big, the connection is too slow, the server is choking, or anything between the client and the server is having trouble, your client thread will be there hanging for a very long time.</p><p>Let’s see it in action. First we configure Toxiproxy to be very very slow while proxying the Nginx response (~ 2 bytes per second):</p>
+<pre><code class="clojure">(client/post "http://local.toxiproxy:8474/proxies/proxied.nginx/toxics"
+    {:form-params {:attributes {:delay 1000000
+                                :size_variation 1
+                                :average_size 2}
+                   :toxicity 1.0
+                   :stream "downstream"
+                   :type "slicer"}
+     :content-type :json})
+</code></pre><p>And now we make exactly the same request as before, with a <strong>two seconds</strong> timeout:</p>
+<pre><code class="clojure">(time
+    (try
+      (client/get "http://local.toxiproxy:22220/"
+        {:socket-timeout 2000})
+      (catch Exception e
+        (log/info (.getClass e) ":" (.getMessage e)))))
+"Elapsed time: 310611.8366 msecs"
+</code></pre><p>That is more than five minutes! And thankfully it is just 600 bytes. </p><p>Here is how the HttpClient logs look like, for just reading the first bytes of the header:</p><p><img src="/images/blog/http-client-timeout-configuration/slowww.gif" alt="Apache http client slow logs" title="Apache http client slow logs" /></p><p>That looks pretty slow. Of course, this will never ever happen to you (more sarcasm here).</p><p>We will see at the bottom how to avoid this issue.</p><h1>Connection Pool</h1><p>Before talking about what the connection pool timeout is, let’s see what is the point about having a connection pool with an example.</p><p>Let’s say that there are two Stock Market traders with a special interest in Mordor Stocks (Symbol: M$). Both are watching the same news channel, but one is using a connection pool (the one on the right) while the other is not:</p><p><img src="/images/blog/http-client-timeout-configuration/connection-pool.jpg" alt="Why use a http client connection pool" title="Why use a http client connection pool" /></p><p>As you can see, the trader with the connection pool leaves the phone off the hook and the broker waiting for more orders. </p><p>When, quite unexpectedly, a one metre humanoid manages to travel <a href="http://lotrproject.com/timedistance/">2900 km</a> across several war zones and inhospitable areas, and deliver the only existing nuke to the only existing weak spot of Sauron, the trader can very quickly sell all of his Mordor Stocks, while the trader without the connection pool is doomed.</p><p>So if you are going to call the same server a lot, which is typical for microservices architectures, you will want to avoid the overhead of creating new connections to the server, as it can be quite an expensive operation (from a few millis to hundreds of millis).</p><p>This is especially true if you are using HTTPS. See <a href="https://hpbn.co/transport-layer-security-tls/#tls-handshake">the TLS handshake</a>.</p><h2>Connection pool timeout and TTL</h2><p>As much as connection pools are awesome, as with any other resource, you need to limit the maximum number of open connections that you want to maintain, which means that there are three possible scenarios when fetching a connection from the pool.</p><p><em>Side note: for a very good talk about how to size your connection pool see <a href="https://www.youtube.com/watch?v=m64SWl9bfvk">“Stop Rate Limiting! Capacity Management Done Right”</a> by <a href="https://twitter.com/jon_moore">Jon Moore</a>.</em></p><h3>Scenario 1. Free connections.</h3><p>Assuming a max connection pool of three, the first scenario is:</p><p><img src="/images/blog/http-client-timeout-configuration/connection-pool-new-connection.jpg" alt="HTTP Connection pool new connection" title="HTTP Connection pool new connection" /></p><p>So there is some phone available but on the hook. You will need to suffer the extra connection setup delay.</p><h3>Scenario 2. Connection pooled.</h3><p>The second scenario:</p><p><img src="/images/blog/http-client-timeout-configuration/connection-pool-connection-available.jpg" alt="HTTP Connection pool connection available" title="HTTP Connection pool connection available" /></p><p>There is a phone off the hook, ready to be used. In this scenario, there are another two cases:</p>
+<ol>
+  <li>The connection is fresh, created less than the configured TTL. You will NOT need to suffer the extra connection setup delay.</li>
+  <li>The connection is stale, created more than the configured TTL. You will need to suffer the extra connection setup delay.</li>
+</ol><p>Let’s test it:</p>
+<pre><code class="clojure">;; Create a new connection pool, with a TTL of one second:
+(def cp (conn-manager/make-reusable-conn-manager
+        {:timeout 1 ; in seconds. This is called TimeToLive in PoolingHttpClientConnectionManager
+         }))
+;; Make ten calls, two per second:
+(dotimes [_ 10]
+  (log/info "Send Http request")
+  (client/get "http://local.nginx/" {:connection-manager cp})
+  (Thread/sleep 500))
+</code></pre><p>Looking at the logs:</p>
+<pre><code>16:56:24.905 INFO  - Send Http request
+16:56:24.914 DEBUG - Connection established 172.24.0.4:51984&lt;-&gt;172.24.0.2:80
+16:56:25.416 INFO  - Send Http request
+16:56:25.926 INFO  - Send Http request
+16:56:25.933 DEBUG - Connection established 172.24.0.4:51986&lt;-&gt;172.24.0.2:80
+16:56:26.434 INFO  - Send Http request
+16:56:26.942 INFO  - Send Http request
+16:56:26.950 DEBUG - Connection established 172.24.0.4:51988&lt;-&gt;172.24.0.2:80
+16:56:27.452 INFO  - Send Http request
+16:56:27.960 INFO  - Send Http request
+16:56:27.967 DEBUG - Connection established 172.24.0.4:51990&lt;-&gt;172.24.0.2:80
+16:56:28.468 INFO  - Send Http request
+</code></pre><p>As expected, we can make two requests before recreating the connection.</p><p>Same scenario but with a 20 seconds TTL:</p>
+<pre><code>16:59:19.562 INFO  - Send Http request
+16:59:19.570 DEBUG - Connection established 172.24.0.4:51998&lt;-&gt;172.24.0.2:80
+16:59:20.073 INFO  - Send Http request
+16:59:20.580 INFO  - Send Http request
+16:59:21.086 INFO  - Send Http request
+16:59:21.593 INFO  - Send Http request
+16:59:22.100 INFO  - Send Http request
+16:59:22.607 INFO  - Send Http request
+16:59:23.114 INFO  - Send Http request
+16:59:23.623 INFO  - Send Http request
+16:59:24.134 INFO  - Send Http request
+</code></pre><p>So the same connection is used for all requests.</p><p>But why do we need the TTL? Mostly because firewalls have this tendency on dropping long live connections (especially idle ones) without telling any of the involved parts, which causes the client to take a while to realize that the connection is no longer usable. </p><h3>Scenario 3. All connections in use.</h3><p>The last scenario:</p><p><img src="/images/blog/http-client-timeout-configuration/connection-pool-full.jpg" alt="HTTP Connection pool full" title="HTTP Connection pool full" /></p><p>All the phones are busy, so you will have to wait. How much you are willing to wait for a phone to become free is the connection pool timeout.</p><p>Note if a phone becomes available before the connection pool timeout, you are back to the second scenario. With some unlucky timing, you will also need to establish a new fresh connection.</p><p>Let’s look at an example. First we make the Nginx very slow, taking up to <a href="https://github.com/dlebrero/apache-httpclient-timeouts/blob/master/src/apache_httpclient_timeouts/http_client.clj#L114">20 seconds to respond</a>.</p><p>Then we create a connection pool with a maximum of three connections and we send four HTTP requests:</p>
+<pre><code class="clojure">  (def cp-3 (conn-manager/make-reusable-conn-manager
+              {:timeout 100
+               :threads 3           ;; Max connections in the pool.
+               :default-per-route 3 ;; Max connections per route (~ max connection to a server)
+               }))
+
+  (dotimes [_ 4]
+    (future
+      (time
+        (client/get "http://local.toxiproxy:22220/" {:connection-manager cp-3}))))
+
+"Elapsed time: 20017.1325 msecs"
+"Elapsed time: 20016.9246 msecs"
+"Elapsed time: 20020.9474 msecs"
+"Elapsed time: 40024.5604 msecs"
+</code></pre><p>As you can see, the last request takes 40 seconds, 20 of which are spent waiting for a connection to be available.</p><p>Adding a one second connection pool timeout:</p>
+<pre><code class="clojure">(dotimes [_ 4]
+  (future
+    (time
+      (try
+        (client/get "http://local.toxiproxy:22220/"
+          {:connection-manager cp-3
+           :connection-request-timeout 1000 ;; Connection pool timeout in millis
+           })
+        (catch Exception e
+          (log/info (.getClass e) ":" (.getMessage e)))))))
+
+"Elapsed time: 1012.2696 msecs"
+"2019-12-08 08:59:04.073 INFO  - org.apache.http.conn.ConnectionPoolTimeoutException : Timeout waiting for connection from pool"
+"Elapsed time: 20014.1366 msecs"
+"Elapsed time: 20015.3828 msecs"
+"Elapsed time: 20015.962 msecs"
+</code></pre><p>The thread that is not able to get a connection from the pool gives up after one second, throwing a ConnectionPoolTimeoutException.</p><h1>Are we done yet?</h1><p>Unfortunately, even if connection timeout, read timeout, connection pool timeout and connection pool TTL are the most common things to tweak, you should also be aware of: </p>
+<ul>
+  <li>DNS resolution: it cannot be <a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6450279">explicitly configure</a> it in Java, system dependant. Good to also know how it is <a href="https://cr.openjdk.java.net/~iris/se/11/latestSpec/api/java.base/java/net/doc-files/net-properties.html">cached</a>.</li>
+  <li>Hosts with multiple IPs: In case of a connection timeout, HTTP client will try to <a href="https://www.baeldung.com/httpclient-timeout#timeout-and-dns-round-robin---something-to-be-aware-of">each of them</a>.</li>
+  <li><a href="https://stackoverflow.com/a/13088864">TIME_WAIT and SO_LINGER</a>: closing a connection is not immediate and under very high load it can cause issues.</li>
+</ul><h1>All together!</h1><p>Putting all the timeouts together, we have:</p><p><img src="/images/blog/http-client-timeout-configuration/summary-all-timeouts.jpg" alt="All Apache HTTP client timeouts" title="All Apache HTTP client timeouts" /></p><p>With all these timeouts, it is quite a challenge to know how long a HTTP request is actually going to take, so if you have any SLA or are worried about the stability of your application, you cannot solely rely on setting the timeouts correctly. </p><p>If you want to setup just some simple timeout for the whole request, you should be using <a href="https://github.com/Netflix/Hystrix/wiki/How-it-Works#Isolation">Hystrix Thread Isolation</a>, Apache HTTP Client’s <a href="https://hc.apache.org/httpcomponents-client-4.5.x/tutorial/html/advanced.html">FutureRequestExecutionService</a> (never used this one myself) or maybe use a different HTTP client. </p><h1>Asynchronous HTTP Client</h1><p>A possible solution to all these timeouts juggling is to use <a href="https://github.com/AsyncHttpClient/async-http-client">Asynchronous HTTP Client</a>, which is based on Netty. You can see <a href="https://github.com/dlebrero/apache-httpclient-timeouts/blob/master/src/apache_httpclient_timeouts/async_http_client.clj">here</a> all the above scenarios but using the Asynchronous HTTP Client.</p><p>Some notable differences between both HTTP clients:</p>
+<ol>
+  <li>Asynchronous HTTP clients have their own thread pool to handle the response once it arrives.</li>
+  <li>No connection pool timeout: if the pool is completely used, an exception is thrown. There is no waiting for a connection to be available. Interestedly, I usually configure my Apache HTTP connection pools to behave the same, as a full connection pool usually means that something is not going working and it is better to bail out early.</li>
+  <li><a href="https://github.com/dlebrero/apache-httpclient-timeouts/blob/master/src/apache_httpclient_timeouts/async_http_client.clj#L122">Connection pool idle timeout</a>: as we mentioned before, we wanted a connection pool TTL mostly because idle connections. Asynchronous HTTP Client comes with an explicit idle timeout, on top of a TTL timeout.</li>
+  <li>A new request timeout: a timeout to bound the amount of time it takes to do the DNS lookup, the connection and read the whole response. One single timeout that states how long you are willing to wait for the whole HTTP conversation to be done. Sweet.</li>
+</ol><p>So the timeouts for the Asynchronous HTTP client look like:</p><p><img src="/images/blog/http-client-timeout-configuration/asynchronous-http-client.jpg" alt="Asynchronous HTTP client timeouts" title="Asynchronous HTTP client timeouts" /></p><p>You can see again all the same scenarios but using this new request timeout <a href="https://github.com/dlebrero/apache-httpclient-timeouts/blob/master/src/apache_httpclient_timeouts/async_http_client.clj#L177">here</a>, including the Pub Quiz one.</p><p>Reasoning about the worst case is a lot easier.</p><h1>Summary</h1><p>In summary, timeouts are annoyingly difficult to configure, if you want to have some control over the maximum time allocated for an HTTP request/response. Unless, you are using an Asynchronous HTTP Client (or probably other async clients). </p><p>Am I suggesting that you should not use Apache HTTP Client?</p><p>Well, it depends what functionality you are using. Apache HTTP Client is a very mature project with plenty of build-in functionality and hooks to customize it. It even has an <a href="https://hc.apache.org/httpcomponents-asyncclient-4.1.x/index.html">async module</a> and the newer 5.0 (beta) version comes with <a href="https://hc.apache.org/httpcomponents-client-5.0.x/examples-async.html">build-in async functionality</a>.</p><p>In our case, after this long explanation to my colleague, given our use cases, moving to Asynchronous HTTP Client was my suggestion.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/Java/index.html">Java </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 19 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://2019.geecon.org/speakers/info.html?id=471"><img src="/images/logo-geecon-2018.png"/></a>
+					</div-->
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (23)</a></li><li><a href="/tags/Clojure/index.html">Clojure (28)</a></li><li><a href="/tags/Humour/index.html">Humour (4)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (10)</a></li><li><a href="/tags/book_notes/index.html">book notes (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (20)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>

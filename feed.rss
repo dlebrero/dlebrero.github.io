@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 27 Nov 2019 00:00:00 +0100
+Wed, 11 Dec 2019 09:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 27 Nov 2019 00:00:00 +0100
+Wed, 11 Dec 2019 09:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Apache Http Client and Asynchronous HTTP client timeouts explained in pictures
+</title>
+<link>
+https://danlebrero.com/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures/
+</link>
+<guid>
+https://danlebrero.com/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures/
+</guid>
+<pubDate>
+Wed, 11 Dec 2019 09:00:00 +0100
+</pubDate>
+<description>
+Explaining with pictures what connection timeout, read timeout and connection pool timeout are, and how Apache HTTP Client compares to Asynchronous HTTP client when handling them 
+</description>
+</item>
 <item>
 <title>
 Book notes: Becoming a Technical Leader
@@ -174,23 +191,6 @@ Tue, 20 Nov 2018 00:30:00 +0100
 </pubDate>
 <description>
 A simple task that is a little bit of a headache on Kubernetes
-</description>
-</item>
-<item>
-<title>
-How to convince your company to use Clojure
-</title>
-<link>
-https://danlebrero.com/2018/10/16/how-to-convince-your-company-to-use-clojure/
-</link>
-<guid>
-https://danlebrero.com/2018/10/16/how-to-convince-your-company-to-use-clojure/
-</guid>
-<pubDate>
-Tue, 16 Oct 2018 00:30:00 +0200
-</pubDate>
-<description>
-The definitive video that will convert anybody to Clojure
 </description>
 </item>
 </channel>
