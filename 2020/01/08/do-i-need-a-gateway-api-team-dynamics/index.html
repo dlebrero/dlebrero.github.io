@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Should I introduce an API Gateway in my workplace?</title>
+	<meta content="Considerations on when adding an API Gateway to your system architecture" name="description" /><meta content="GW gateway api gatewayapi team dynamics software architecture microservices  " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Should I introduce an API Gateway in my workplace?" property="og:title" /><meta content="Considerations on when adding an API Gateway to your system architecture" property="og:description" /><meta content="https://danlebrero.com/2020/01/08/do-i-need-a-gateway-api-team-dynamics/" property="og:url" /><meta content="Should I introduce an API Gateway in my workplace?" name="twitter:title" /><meta content="Considerations on when adding an API Gateway to your system architecture" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/do-i-need-an-api-gw/should-i-introduce-a-gw-api.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/do-i-need-an-api-gw/should-i-introduce-a-gw-api.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2020/01/08/do-i-need-a-gateway-api-team-dynamics/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Should I introduce an API Gateway in my workplace?</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 8 Jan 2020</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Considerations on when adding an API Gateway to your system architecture</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/do-i-need-an-api-gw/should-i-introduce-a-gw-api.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>A while long ago, a friend asked for some advice regarding introducing an API gateway (API GW) into his company. </p><p>As I was a little bit surprised about my own answer, I want to share it here.</p><h2>Context</h2><p>Paraphrasing the question:</p>
+<blockquote><p>I am working in a company that has three different development teams. Each team is building their own services, which are exposed directly to our customers. There are lots of inconsistencies between the APIs exposed by the three services, which our customers have to deal with. Would you recommend us to introduce an API gateway?</p>
+</blockquote><p>As we both have worked together, we had a shared understanding about what we meant by an API gateway. Given the broad and generic term that it has become, the main functionalities of our API gateway were:</p>
+<ol>
+  <li>One place to have all the common functionality required when exposing APIs externally: authentication, authorization, rate limiting, A/B testing and other routing requirements. Also it can take care of some caching, downstream service error handling and i18n.</li>
+  <li>Make the heterogeneous internal services look homogeneous to external clients: naming conventions, concepts, url structure, versioning, timestamps, pagination, …</li>
+  <li>Provide a more coarse-grained API.</li>
+  <li>Keep backwards compatibility on external facing APIs, while internal services can evolve.</li>
+</ol><p>And from an architecture point of view, the change would be from this:</p><p><img src="/images/blog/do-i-need-an-api-gw/before-gw-api.jpg" alt="Before API GW" title="Before API GW" /></p><p>To this:</p><p><img src="/images/blog/do-i-need-an-api-gw/after-gw-api.jpg" alt="After API GW" title="After API GW" /></p><h2>Pure technical answer</h2><p>Nobody would argue that having a homogeneous, coherent API that shields clients from possible internal API changes is very valuable. </p><p>Our clients will love it.</p><p>Our developer will love it.</p><p>But you need to think about the cost. </p><h2>What the cost is</h2><p>When we talk about cost, we usually put too much emphasis on the initial investment. </p><p>As I told my friend:</p>
+<blockquote><p>I think the initial cost of building the API GW is not huge. You can build it over a weekend, or a team of four can do it over a couple of months.</p>
+</blockquote><p>Jokes aside, that last sentence has a kernel of truth, which gives us a clue about the kind of cost we should be more wary of.</p><p>Keeping with the conversation:</p>
+<blockquote><p>The issue that I see is the maintenance: who is going to own the API gateway? </p>
+</blockquote><p>Because the most important thing on the architecture change is the change on team dynamics, from:</p><p><img src="/images/blog/do-i-need-an-api-gw/team-before-gw-api.jpg" alt="Before API GW team structure" title="Before API GW Team structure" /></p><p>To:</p><p><img src="/images/blog/do-i-need-an-api-gw/team-after-gw-api.jpg" alt="After API GW team structure" title="After API GW Team structure" /></p><p>With this new team setup, you have to start thinking about how the different teams will interact between each other: </p>
+<ul>
+  <li>How internal service changes will need to be implemented and rolled out?</li>
+  <li>What information needs to be shared between the API team and the other teams?</li>
+  <li>What meetings will be required?</li>
+  <li>Who will decide on priorities?</li>
+  <li>Where will some of the functionality will be implemented: API GW or internal services?</li>
+  <li>Who can veto an API change?</li>
+  <li>Who can veto an internal service change?</li>
+  <li>How will support be handled?</li>
+  <li>…</li>
+</ul><p>This is not to say that the new architecture is worse, but that all these questions should be taken into consideration when deciding if an API Gateway should be introduced or not.</p><p>Of course, this new team setup is just one of the possible ones. There are plenty of others (none of which is wrong) that will give different answers to the questions above, like: </p><h4>Shared responsibility, no accountability</h4><p>Where all teams own the API gateway, but nobody takes accountability.</p><p><img src="/images/blog/do-i-need-an-api-gw/everybody-responsible-gw-api.jpg" alt="Everybody responsible for API GW team structure" title="Everybody is responsible" /></p><h4>The API Council</h4><p>Where all teams agree to meet monthly to agree on API rules, and that is the only agreement that is ever reached.</p><p><img src="/images/blog/do-i-need-an-api-gw/gw-api-council.jpg" alt="The API gateway council" title="The API gateway council" /></p><h4>The Architects Overlords</h4><p>Where all powerful beings dictate the API rules for mortals to implement.</p><p><img src="/images/blog/do-i-need-an-api-gw/architects-ivory-tower.jpg" alt="Architects overloads on their ivory tower" title="Architects overloads on their ivory tower" /></p><h4>The Ignored Embedded Architects</h4><p>Where architects work along side the development teams, and meet monthly to whine about how their wise advise is completely ignored.</p><p><img src="/images/blog/do-i-need-an-api-gw/embedded-architect.jpg" alt="Embedded Architects ignored by the team" title="Embedded Architects ignored by the team" /></p><h4>The All Powerful API Framework</h4><p>Where the Platforms team provides a mandatory API framework so that teams can run their own API-rules-compliant gateways, and where all teams do their best to avoid, circumvent and replace with battle tested Open Source alternatives. </p><p><img src="/images/blog/do-i-need-an-api-gw/shared-platform-framework.jpg" alt="Shared Platform API framework" title="Shared platform API framework" /></p><h2>A Team oriented answer</h2><p>So to answer the question <em>“Should I introduce an API Gateway in my workplace?”</em> the main concern, and what you should focus on, is not the technical aspect of it.</p><p>The important question to answer is:</p>
+<blockquote><p>What are the team dynamics that you want for you company, given its current context?</p>
+</blockquote><p>Conway’s law at its best.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a technical architect with more than 19 years of software development experience.
+					   He has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>. A long time Java practitioner, he now also loves ().
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://2019.geecon.org/speakers/info.html?id=471"><img src="/images/logo-geecon-2018.png"/></a>
+					</div-->
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (24)</a></li><li><a href="/tags/Clojure/index.html">Clojure (28)</a></li><li><a href="/tags/Humour/index.html">Humour (4)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (10)</a></li><li><a href="/tags/book_notes/index.html">book notes (1)</a></li><li><a href="/tags/good_practices/index.html">good practices (20)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
