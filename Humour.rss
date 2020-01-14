@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Mon, 17 Dec 2018 00:00:00 +0100
+Wed, 15 Jan 2020 08:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Mon, 17 Dec 2018 00:00:00 +0100
+Wed, 15 Jan 2020 08:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,40 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Software development and LEGO blocks
+</title>
+<link>
+https://danlebrero.com/2020/01/15/software-dev-and-lego-blocks/
+</link>
+<guid>
+https://danlebrero.com/2020/01/15/software-dev-and-lego-blocks/
+</guid>
+<pubDate>
+Wed, 15 Jan 2020 08:00:00 +0100
+</pubDate>
+<description>
+As easy as assembling LEGO blocks
+</description>
+</item>
+<item>
+<title>
+Should I introduce an API Gateway in my workplace?
+</title>
+<link>
+https://danlebrero.com/2020/01/08/do-i-need-a-gateway-api-team-dynamics/
+</link>
+<guid>
+https://danlebrero.com/2020/01/08/do-i-need-a-gateway-api-team-dynamics/
+</guid>
+<pubDate>
+Wed, 08 Jan 2020 09:00:00 +0100
+</pubDate>
+<description>
+Considerations on when adding an API Gateway to your system architecture
+</description>
+</item>
 <item>
 <title>
 If I ever write a book ...
