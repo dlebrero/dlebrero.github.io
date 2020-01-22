@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Accelerate, building and scaling high performing technology organizations</title>
+	<meta content="Book notes on &quot;Accelerate, building and scaling high performing technology organizations&quot;" name="description" /><meta content="Book review Accelerate building and scaling high performing technology organizations devops summary" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Accelerate, building and scaling high performing technology organizations" property="og:title" /><meta content="Book notes on &quot;Accelerate, building and scaling high performing technology organizations&quot;" property="og:description" /><meta content="https://danlebrero.com/2020/01/22/accelerate-high-performing-technology-orgs-summary/" property="og:url" /><meta content="Book notes: Accelerate, building and scaling high performing technology organizations" name="twitter:title" /><meta content="Book notes on &quot;Accelerate, building and scaling high performing technology organizations&quot;" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/accelerate.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/accelerate.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2020/01/22/accelerate-high-performing-technology-orgs-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Accelerate, building and scaling high performing technology organizations</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 22 Jan 2020</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Accelerate, building and scaling high performing technology organizations"</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/accelerate.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://twitter.com/nicolefv">Nicole Forsgren</a>, <a href="https://twitter.com/jezhumble">Jez Humble</a> and <a href="https://twitter.com/RealGeneKim">Gene Kim</a>’s <a href="https://itrevolution.com/book/accelerate/">Accelerate, building and scaling high performing technology organizations</a>. Note that there is an additional chapter on the <a href="https://itrevolution.com/book/accelerate/">book website</a>, under the “BONUS MATERIAL” section.</p><p>The findings of this book are based on the research done using the data from the <a href="https://cloud.google.com/devops/">State of DevOps survey</a> from 2014 to 2017. </p><p>It has been a great read, and a lot of the leadership advice is in line with <a href="/2019/11/27/becoming-a-technical-leader-book-notes/#content">Gerald Weinberg’s “Becoming a technical leader”</a>.</p><p>In fact it has been such a nice read that my life as a CTO is going to start by trying to implement all the practices outlined in it.</p><h1>Key Insights</h1>
+<ul>
+  <li><strong>Quality == Speed</strong>. Throughput and stability move together.</li>
+  <li>Software delivery performance impacts organization performance, including non commercial.</li>
+  <li>Measure:
+  <ul>
+    <li>Performance:
+    <ul>
+      <li>Delivery lead time.</li>
+      <li>Deployment frequency.</li>
+    </ul></li>
+    <li>Stability:
+    <ul>
+      <li>Time to restore service.</li>
+      <li>Change fail rate.</li>
+    </ul></li>
+  </ul></li>
+  <li>Deming: <em>Fear invites wrong figures</em>.</li>
+  <li><a href="#westrum">Ron Westrum generative culture</a>.</li>
+  <li>Good information: Answers what and when needs to be answered, in a way that can be effectively used.</li>
+  <li>Change culture by first changing what people do, not how people think.</li>
+  <li>Technical practices are vital. Not optional, not secondary.</li>
+  <li>Gerald Weinberg: Quality is value to some person.</li>
+  <li>Architecture’s most important characteristic: <strong>loosely coupled</strong>, which means:
+  <ul>
+    <li>Most testing can be done without an integrated environment.</li>
+    <li>Release independently of other apps it depends on.</li>
+  </ul></li>
+  <li>Architects should focus on engineers and outcomes, not tools or technology.</li>
+  <li><a href="https://ruggedsoftware.org">The Rugged Manifesto</a>.</li>
+  <li>Transformational Leaders:
+  <ul>
+    <li>Should change environment, not “fix” the person.</li>
+    <li>People are an organization’s greatest asset.</li>
+    <li>Focus on followers identifying with the organization.</li>
+  </ul></li>
+  <li>Common causes for transformation program to fail:
+  <ul>
+    <li>Treat the transformation program as a project with an end date.</li>
+    <li>Implement it top-down, without input from those affected.</li>
+    <li>Not setting measurable business and organizational outcome for the transformation effort.</li>
+  </ul></li>
+</ul><h1>The capabilities</h1><p>Highly recommend to download the <a href="https://bit.ly/high-perf-behaviors-practices">OVERALL RESEARCH PROGRAM AND HIGH PERFORMANCE BEHAVIORS AND PRACTICES</a> as it contains all the practices and what their impact is, plus the table “High-Performance Team, Management, and Leadership Behaviors and Practices” by <a href="https://twitter.com/leanitcoach">Steve Bell</a> and Karen Whitley Bell.</p>
+<ul>
+  <li>Continuous Delivery capabilities:
+  <ul>
+    <li>Test Automation.</li>
+    <li>Deployment Automation.</li>
+    <li>Trunk-Based Development.</li>
+    <li>Shift Left on Security.</li>
+    <li>Continuous Integration.</li>
+    <li>Continuous Delivery.</li>
+    <li>Version Control.</li>
+    <li>Test Data Management.</li>
+  </ul></li>
+  <li>Architecture Capabilities:
+  <ul>
+    <li>Loosely Coupled Architecture.</li>
+    <li>Empowered Teams.</li>
+  </ul></li>
+  <li>Product and Process capabilities:
+  <ul>
+    <li>Small Batches.</li>
+    <li>Make Flow of Work Visible.</li>
+    <li>Customer Feedback.</li>
+    <li>Team Experimentation.</li>
+  </ul></li>
+  <li>Lean Management and Monitoring capabilities:
+  <ul>
+    <li>Limit Work in Progress.</li>
+    <li>Production Monitoring (to inform business decisions).</li>
+    <li>Visualizing Work.</li>
+    <li>Lightweight Change Approval.</li>
+    <li>Proactive Notifications.</li>
+  </ul></li>
+  <li>Cultural capabilities:
+  <ul>
+    <li>Foster generative culture.</li>
+    <li>Encourage learning.</li>
+    <li>Collaboration amongst teams.</li>
+    <li>Job Satisfaction.</li>
+    <li>Support Transformational leadership.</li>
+  </ul></li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#preface">Preface</a></li>
+  <li><a href="#part-one">Part I: What We Found</a>
+  <ul>
+    <li><a href="#ch-1">1 - Accelerate</a></li>
+    <li><a href="#ch-2">2 - Measuring Performance</a></li>
+    <li><a href="#ch-3">3 - Measuring and Changing Culture</a></li>
+    <li><a href="#ch-4">4 - Technical practices</a></li>
+    <li><a href="#ch-5">5 - Architecture</a></li>
+    <li><a href="#ch-6">6 - Integrating InfoSec into the Delivery Lifecycle</a></li>
+    <li><a href="#ch-7">7 - Management practices</a></li>
+    <li><a href="#ch-8">8 - Product Development</a></li>
+    <li><a href="#ch-9">9 - Making Work Sustainable</a></li>
+    <li><a href="#ch-10">10 - Employee Satisfaction, Identity and Engagement</a></li>
+    <li><a href="#ch-11">11 - Leaders and Managers</a></li>
+  </ul></li>
+  <li><a href="#part-two">Part II: The Research</a></li>
+  <li><a href="#part-three">Part III: Transformation</a>
+  <ul>
+    <li><a href="#ch-16">16 - High-Performance Leadership and Management</a></li>
+  </ul></li>
+  <li><a href="#bonus">Bonus Material - How to transform</a></li>
+</ul><h1><a name="preface"></a>Preface</h1>
+<ul>
+  <li>24 capabilities to drive improvement.</li>
+  <li>Research based on 23k Surveys, 2k organizations.</li>
+  <li>Applicable to:
+  <ul>
+    <li>Orgs of any size (&lt; 5 to &gt; 10k).</li>
+    <li>Greenfield and legacy.</li>
+    <li>Any industry.</li>
+  </ul></li>
+  <li>Throughput and stability move together.</li>
+  <li>Software development and delivery can be measured in a statistically meaningful way.</li>
+  <li>Organization ability to make software positively impacts profitability and market share.</li>
+  <li>Culture and technical practices matter. And they can be measured.</li>
+</ul><h1><a name="part-one"></a>Part I: What We Found</h1><h2><a name="ch-1"></a>Chapter 1 - Accelerate</h2>
+<ul>
+  <li>Maturity models are not the appropriate tool to use or mindset to have.</li>
+  <li>Capabilities model of measurement is essential</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Maturity </th>
+      <th>Capability </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>There is a fixed goal. <br />You “arrive” </td>
+      <td>You can always improve. <br />Never done </td>
+    </tr>
+    <tr>
+      <td>Lock-step. <br />All orgs and all teams are treated the same </td>
+      <td>Multidimensional.<br /> Dynamic.<br /> Team and Org context important</td>
+    </tr>
+    <tr>
+      <td>Vanity metrics </td>
+      <td>Outcome based metrics</td>
+    </tr>
+    <tr>
+      <td>Static Levels </td>
+      <td>Dynamic levels</td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Focus on right capabilities.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Measuring Performance</h2>
+<ul>
+  <li>Measuring performance in SW is hard:
+  <ul>
+    <li>Inventory is invisible</li>
+    <li>Breakdown of work arbitrary</li>
+    <li>Design and delivery done simultaneously</li>
+    <li>Design will change as we implement</li>
+  </ul></li>
+  <li>Flaw on previous attempts:
+  <ul>
+    <li>Focus on <a href="https://medium.com/@kentbeck_7670/outcome-over-output-also-impact-and-effort-8f9eb0ce0dbb">outputs rather than outcomes</a>.</li>
+    <li>Focus on individuals/local, rather than team/global.</li>
+    <li>Examples: LoC, velocity, utilization</li>
+  </ul></li>
+  <li>Proposed:
+  <ul>
+    <li>Delivery lead time:
+    <ul>
+      <li>From code committed to running in production.</li>
+    </ul></li>
+    <li>Deployment frequency:
+    <ul>
+      <li>Proxy metric for batch size. More deploys, smaller batch size.</li>
+    </ul></li>
+    <li>Time to restore service.</li>
+    <li>Change fail rate, changes that cause:
+    <ul>
+      <li>Outages.</li>
+      <li>Hot fixes.</li>
+      <li>Rollback.</li>
+      <li>Fix-forward.</li>
+      <li>Patches.</li>
+    </ul></li>
+  </ul></li>
+  <li>Delivery lead time and deployment frequency measure Tempo/Performance/Throughput.</li>
+  <li>MTTR and Change fail rate measure Stability/Reliability.</li>
+  <li><a href="/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/#content">MTTR better than MTBF</a> to measure reliability as <a href="/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/#content">“Failure is inevitable”</a>.</li>
+  <li>No trade off between improving performance and achieving stability/quality.</li>
+  <li>SW delivery performance impacts organization performance, including non commercial.</li>
+  <li>Learning culture must exist before starting measuring.</li>
+  <li>Deming: <em>Fear invites wrong figures</em>.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Measuring and Changing Culture</h2>
+<ul>
+  <li>Organization culture, three levels of culture:
+  <ul>
+    <li>Basic assumptions: Invisible, things that we just “know”.</li>
+    <li>Values: more “visible”.</li>
+    <li>Artifacts:
+    <ul>
+      <li>Mission statements.</li>
+      <li>Technology.</li>
+      <li>Formal procedures.</li>
+      <li>Heroes.</li>
+      <li>Rituals.</li>
+    </ul></li>
+  </ul></li>
+  <li>Focus on second level.</li>
+  <li><a name="westrum"></a>Ron Westrum, three types:</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Pathological </th>
+      <th>Bureaucratic</th>
+      <th>Generative</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Power oriented </td>
+      <td>Rule oriented </td>
+      <td>Performance oriented</td>
+    </tr>
+    <tr>
+      <td>Low cooperation </td>
+      <td>Modest cooperation </td>
+      <td>High cooperation</td>
+    </tr>
+    <tr>
+      <td>Messengers “shot”</td>
+      <td>Messengers neglected</td>
+      <td>Messengers trained</td>
+    </tr>
+    <tr>
+      <td>Responsibilities shirked</td>
+      <td>Narrow responsibilities </td>
+      <td>Risks are shared</td>
+    </tr>
+    <tr>
+      <td>Bridging discouraged</td>
+      <td>Bridging tolerated</td>
+      <td>Bridging encouraged</td>
+    </tr>
+    <tr>
+      <td>Failure leads to scapegoating </td>
+      <td>Failure leads to justice</td>
+      <td>Failure leads to inquiry</td>
+    </tr>
+    <tr>
+      <td>Novelty crushed </td>
+      <td>Novelty leads to problems</td>
+      <td>Novelty implemented</td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Good information flow is critical:
+  <ul>
+    <li>Answers what and when needs to be answered, in a way that can be effectively used.</li>
+  </ul></li>
+  <li>Org culture predicts performance outcomes.</li>
+  <li>Bureaucracy is not bad. Ensures fairness.</li>
+  <li>Good culture:
+  <ul>
+    <li>Trust and cooperation.</li>
+    <li>Higher quality decision making.</li>
+    <li>Easy to reverse bad decisions.</li>
+    <li>Higher job satisfaction.</li>
+  </ul></li>
+  <li>Change culture by first changing what people do, not try to first change how people think (John Shook).</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Technical practices</h2>
+<ul>
+  <li>Technical practices are vital. Not optional, not secondary.</li>
+  <li>Key principles of Continuous Delivery (CD):
+  <ul>
+    <li>Build quality in.</li>
+    <li>Small batches.</li>
+    <li>People solve problems, computers do repetitive tasks.</li>
+    <li>Continuous improvement.</li>
+    <li>Everyone is responsible.</li>
+  </ul></li>
+  <li>Foundations of Continuous Delivery:
+  <ul>
+    <li>Comprehensive configuration management: everything in VCS.</li>
+    <li>Continuous Integration.</li>
+    <li>Continuous testing.</li>
+  </ul></li>
+  <li>Jerry Weinberg: Quality is value to some person.</li>
+  <li>CD brings higher quality:
+  <ul>
+    <li>Less rework or unplanned work.</li>
+    <li>Less bugs</li>
+  </ul></li>
+  <li>Practices:
+  <ul>
+    <li>Version control: including system and app config.</li>
+    <li>Test Automation:
+    <ul>
+      <li>Reliable tests.</li>
+      <li>Writen by devs.</li>
+      <li>TDD is important, but not mandatory.</li>
+    </ul></li>
+    <li>Test Data management.</li>
+    <li>Trunk-Based development:
+    <ul>
+      <li>No branches older than one day.</li>
+    </ul></li>
+    <li>Shift left on Security.</li>
+  </ul></li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Architecture</h2>
+<ul>
+  <li>Most important characteristic: <strong>loosely coupled</strong>, which means:
+  <ul>
+    <li>Most testing can be done without an integrated environment.</li>
+    <li>Release independently of other apps it depends on.</li>
+  </ul></li>
+  <li>Lower performers more likely to be integrating with custom SW developed by another company (or outsourced) or working on mainframe systems.</li>
+  <li>Biggest contributor to CD:
+  <ul>
+    <li>Be able to do work without needing to talk with anybody outside the team. Aka, proper cross-functional teams.</li>
+  </ul></li>
+  <li>Read Steve Yegge’s <a href="https://gist.github.com/kislayverma/d48b84db1ac5d737715e8319bd4dd368">“Platform rant”</a>.</li>
+  <li>Additionally, loosely coupled architectures enable engineering organizations scaling.</li>
+  <li>Teams that can chose their own tools are more performant, but standardize around architecture and configuration of infrastructure.</li>
+  <li>Architects should focus on engineers and outcomes, not tools or technology.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Integrating InfoSec into the Delivery Lifecycle</h2>
+<ul>
+  <li>Typical InfoSec ratio: 1 per 10 infra per 100 devs.</li>
+  <li><a href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP Top 10</a>.</li>
+  <li>Building security into SW improves delivery performance and security quality.</li>
+  <li>Shift left on security:
+  <ul>
+    <li>Security experts involved earlier and through the whole dev/ops process.</li>
+    <li>Security provides tools/libraries/processes that are secure.</li>
+    <li>Security provides devs the means to build security in.</li>
+  </ul></li>
+  <li><a href="https://ruggedsoftware.org">The Rugged Manifesto</a>.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Management practices</h2>
+<ul>
+  <li>Derived from the Lean movement</li>
+  <li>Practices:
+  <ul>
+    <li>Limit WIP - not enough on its own.</li>
+    <li>Visual management: Key quality and productivity metrics.</li>
+    <li>Feedback from production: to make business decisions.</li>
+    <li>Intrateam code reviews (which includes pair programming) are the best way of change approval.</li>
+  </ul></li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Product Development</h2>
+<ul>
+  <li>Eric Ries - The Lean Startup: Lightweight approach to explore new business models and product ideas.</li>
+  <li>Lead Product Development:
+  <ul>
+    <li>Small batches:
+    <ul>
+      <li>Less than a week.</li>
+      <li>MVP.</li>
+    </ul></li>
+    <li>Make Flow of work visible:
+    <ul>
+      <li>From Business to customers.</li>
+      <li>Status of products and features.</li>
+    </ul></li>
+    <li>Customer feedback:
+    <ul>
+      <li>Satisfaction metrics.</li>
+      <li>Actively seeking the feedback.</li>
+      <li>Implementing the feedback.</li>
+    </ul></li>
+    <li>Team experimentation:
+    <ul>
+      <li>Without external approval.</li>
+      <li>Team can change requirements as they learn.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Making Work Sustainable</h2>
+<ul>
+  <li>Where code deployments are more painful, you will find the poorest organization performance.</li>
+  <li>To reduce deployment pain, use same technical practices as to improve delivery speed and stability.</li>
+  <li>Reduce burnout:
+  <ul>
+    <li>Environment emphasizes learning over blaming.</li>
+    <li>Strong sense of purpose.</li>
+    <li>Invest on employment development: time, space, resources.</li>
+    <li>Remove obstacles.</li>
+    <li>Authority to make decisions that they are affected by.</li>
+  </ul></li>
+  <li>Burnout risks:
+  <ul>
+    <li>Overwork.</li>
+    <li>Lack of control.</li>
+    <li>Insufficient rewards.</li>
+    <li>Breakdown of community.</li>
+    <li>Absence of fairness.</li>
+    <li>Value conflicts.</li>
+  </ul></li>
+  <li>Leaders should change environment, not “fix” the person.</li>
+  <li>Official vs Real organization values.</li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Employee Satisfaction, Identity and Engagement</h2>
+<ul>
+  <li>Better employee Net Promoter Score (eNPS) == better business outcomes.</li>
+  <li>eNPS:
+  <ul>
+    <li>“How likely is it that you would recommend our org/team to a friend or colleague?”</li>
+    <li>9-10 -&gt; Promoter.</li>
+    <li>7-8 -&gt; Passive.</li>
+    <li>0-6 -&gt; Detractors.</li>
+  </ul></li>
+  <li>People are an organization’s greatest asset.</li>
+  <li>Diversity in gender/minorities achieve better outcomes.</li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Leaders and Managers</h2>
+<ul>
+  <li>Leadership: inspiring and motivating those around you</li>
+  <li>Essential for:
+  <ul>
+    <li>Establishing high-trust cultural norms.</li>
+    <li>Support dev productivity.</li>
+    <li>Support team experimentation and innovation.</li>
+    <li>Work across org silos to achieve strategic aligment.</li>
+  </ul></li>
+  <li>Transformational Leaders:
+  <ul>
+    <li>Vision: where the org is going and where it should be in 5 years.</li>
+    <li>Inspirational communication.</li>
+    <li>Intellectual stimulation.</li>
+    <li>Supportive leadership: cares about followers’ personal feelings and needs.</li>
+    <li>Personal recognition.</li>
+  </ul></li>
+  <li>Transformational Leadership:
+  <ul>
+    <li>Appeal to followers’ values and sense of purpose.</li>
+    <li>Focus on followers identifying with the organization.</li>
+  </ul></li>
+  <li>Culture of Learning:
+  <ul>
+    <li>Create a training budget and advocate to use it.</li>
+    <li>Google 20% time.</li>
+    <li>Safe to fail.</li>
+    <li>Weekly lightning talks.</li>
+    <li>Brown bag sessions.</li>
+    <li>Demo days.</li>
+    <li>Mini-conferences.</li>
+  </ul></li>
+</ul><h1><a name="part-two"></a>Part II: The Research</h1><p>Skipped this part.</p><h1><a name="part-three"></a>Part III: Transformation</h1><h2><a name="ch-16"></a>Chapter 16 - High-Performance Leadership and Management</h2>
+<ul>
+  <li>Spotify Model.</li>
+  <li>External coaches to challenge assumptions.</li>
+  <li>Squad stand-up -&gt; Tribe stand-up -&gt; Senior Leadership stand-up.</li>
+  <li>Technical problems shared with Chapter, business problems with Tribe.</li>
+  <li>“Help me better understand the problems you’re encountering”, instead of “Why isn’t this getting done?”</li>
+  <li>Teams own their job. They can decide not to release.</li>
+</ul><h2><a name="bonus"></a>Bonus Material - How to Transform</h2>
+<ul>
+  <li>Common causes for transformation to fail:
+  <ul>
+    <li>Treat the transformation program as a project with an end date.</li>
+    <li>Implement it top-down, without feedback from those affected.</li>
+    <li>Not setting measurable business and organizational outcome for the transformation effort.</li>
+  </ul></li>
+  <li>Executing Continuous Improvement:
+  <ul>
+    <li>From the <a href="https://www.amazon.com/Lean-Enterprise-Performance-Organizations-Innovate/dp/1449368425">Lean Enterprise book</a>.</li>
+    <li>Four steps:
+    <ul>
+      <li>Three Planning steps:
+      <ul>
+        <li>Understand the direction or challenge.
+        <ul>
+          <li>Inspirational goal that seems impossible.</li>
+        </ul></li>
+        <li>Gasp current condition.</li>
+        <li>Establish next target condition.</li>
+      </ul></li>
+      <li>One Execute:
+      <ul>
+        <li><strong>Iterate</strong> towards target condition:
+        <ul>
+          <li>Scientific approach: Plan, Do, Check, Act.</li>
+          <li>Improvement Kata 5 daily questions:
+          <ol>
+            <li>What is the target condition?</li>
+            <li>What is the actual condition now?</li>
+            <li>What obstacles do you think are preventing you from reaching the target condition? Which one are you addressing now?</li>
+            <li>What is your next step? What do you expect?</li>
+            <li>When can we go and see what we have learnt from taking that step?</li>
+          </ol></li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Principles of Effective Org Change Management:
+  <ol>
+    <li>You are never done with improvement work.</li>
+    <li>Leaders and team agree on measurable outcome. Teams discover how to achieve it.</li>
+    <li>Achieve Large-Scale Change Iteratively and Incrementally.</li>
+  </ol>
+  <ul>
+    <li>What works in an org does not need to work in others.</li>
+  </ul></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;googleplus&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fa fa-twitter" aria-hidden="true"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>.</p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://goto-oslo.com/2020/speakers/1298/daniel-lebrero-berna"><img src="/images/logo-goto.jpg" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (24)</a></li><li><a href="/tags/Clojure/index.html">Clojure (28)</a></li><li><a href="/tags/Humour/index.html">Humour (6)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (10)</a></li><li><a href="/tags/book_notes/index.html">book notes (2)</a></li><li><a href="/tags/good_practices/index.html">good practices (20)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fa fa-long-arrow-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>

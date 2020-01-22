@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 15 Jan 2020 08:00:00 +0100
+Wed, 22 Jan 2020 09:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 15 Jan 2020 08:00:00 +0100
+Wed, 22 Jan 2020 09:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Book notes: Accelerate, building and scaling high performing technology organizations
+</title>
+<link>
+https://danlebrero.com/2020/01/22/accelerate-high-performing-technology-orgs-summary/
+</link>
+<guid>
+https://danlebrero.com/2020/01/22/accelerate-high-performing-technology-orgs-summary/
+</guid>
+<pubDate>
+Wed, 22 Jan 2020 09:00:00 +0100
+</pubDate>
+<description>
+Book notes on &quot;Accelerate, building and scaling high performing technology organizations&quot;
+</description>
+</item>
 <item>
 <title>
 Software development and LEGO blocks
@@ -174,23 +191,6 @@ Mon, 17 Dec 2018 00:00:00 +0100
 </pubDate>
 <description>
 Programming like a Spaniard
-</description>
-</item>
-<item>
-<title>
-RocksDB range queries in KafkaStream: dealing with big results 
-</title>
-<link>
-https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocksdb/
-</link>
-<guid>
-https://danlebrero.com/2018/12/17/big-results-in-kafka-streams-range-query-rocksdb/
-</guid>
-<pubDate>
-Mon, 17 Dec 2018 09:25:00 +0100
-</pubDate>
-<description>
-An example of when to use the RocksDB range query in KafkaStreams.
 </description>
 </item>
 </channel>
