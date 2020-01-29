@@ -32,7 +32,7 @@
 /* a. Webfonts and Iconfonts
 /* =================================================================== */
 @import url("fonts.css");
-@import url("font-awesome/css/font-awesome.min.css");
+@import url("font-awesome/css/all.min.css");
 @import url("simple-line-icons/simple-line-icons.css");
 
 /* 
