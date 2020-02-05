@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: The Unicorn Project</title>
+	<meta content="Book notes on Gene Kim's &quot;The Unicorn Project&quot;" name="description" /><meta content="Book review the unicorn project organizations devops summary" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: The Unicorn Project" property="og:title" /><meta content="Book notes on Gene Kim's &quot;The Unicorn Project&quot;" property="og:description" /><meta content="https://danlebrero.com/2020/02/05/the-unicorn-project-summary/" property="og:url" /><meta content="Book notes: The Unicorn Project" name="twitter:title" /><meta content="Book notes on Gene Kim's &quot;The Unicorn Project&quot;" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/the-unicorn-project/the-unicorn-project.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/the-unicorn-project/the-unicorn-project.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2020/02/05/the-unicorn-project-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: The Unicorn Project</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 5 Feb 2020</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on Gene Kim's "The Unicorn Project"</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/the-unicorn-project/the-unicorn-project.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://twitter.com/RealGeneKim">Gene Kim</a>’s <a href="https://itrevolution.com/the-unicorn-project/">The Unicorn Project</a>. </p><p>Note that this is not your usual IT book, but a novel about it (or IT). Nonetheless there is a lot of practical advice, as Gene Kim is one of the authors of <a href="https://itrevolution.com/book/accelerate/">Accelerate</a> and <a href="https://itrevolution.com/book/the-devops-handbook/">The DevOps Handbook</a>. </p><p>Being a novel makes it a more enjoyable and easy read, one that even your pointy-haired boss could enjoy!</p><p>The Unicorn Project is a self-contained book, but related to <a href="https://itrevolution.com/book/the-phoenix-project/">The Phoenix Project</a>, which I would also be happy to recommend.</p><p><em>Tip</em>: Each chapter has a bunch of very interesting references!</p><p><em>Tip 2</em>: Gene Kim did three “Ask Me Anything” on the IT Revolution Book Club. You can watch them <a href="https://www.youtube.com/watch?v=ReROx9-68V8">here</a>, <a href="https://www.youtube.com/watch?v=wQktlXp_Y3g">here</a> and <a href="https://www.youtube.com/watch?v=vmzFLhapI2o">here</a>.</p><h1>Key Insights</h1><p>As Gene Kim is also the author of Accelerate, a lot of the key insights from Accelerate can be found in The Unicorn Project. See <a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">my Accelerate notes</a> for completeness.</p>
+<ul>
+  <li>Is not small vs big, but fast vs slow.</li>
+  <li>Developer productivity should be the concern of the most senior developers.</li>
+  <li>To speak clearly, you have to think clearly. To think clearly, you have to write clearly.</li>
+  <li>Employer engagement and customer satisfaction are the only things that matter. The rest will take care of itself.</li>
+  <li>Five ideals:
+  <ul>
+    <li>Locality and simplicity.</li>
+    <li>Focus, Flow and Joy.</li>
+    <li>Improvement of Daily Work:
+    <ul>
+      <li>Elevate improvement of daily work over daily work itself.</li>
+    </ul></li>
+    <li>Psychological Safety:
+    <ul>
+      <li>Safety is a precondition of work.</li>
+    </ul></li>
+    <li>Customer Focus.</li>
+  </ul></li>
+  <li>People are trying to help. It is the process that is helpless. Reminds me of <a href="/2019/11/27/becoming-a-technical-leader-book-notes/#content">Gerry Weiberg’s Becoming a technical leader</a>.</li>
+  <li>When engineers think of “the customer” in the abstract instead as a real person, you rarely set the right outcomes.</li>
+  <li>CEO keeps reminding of who the customers are and the vision/mission.</li>
+  <li>Architecture is about enabling Focus, Flow, Joy and Fast feedback.</li>
+  <li>Transformational Leader:
+  <ul>
+    <li>Expects excellence.</li>
+    <li>Pursuit of perfection.</li>
+    <li>Urgency to achieve mission.</li>
+    <li>Dissatisfaction with status quo.</li>
+    <li>Zeal for customers.</li>
+  </ul></li>
+  <li>Geoffrey Moore’s <a href="#ch-16">Three Horizons</a>:
+  <ul>
+    <li>Horizon 1 - Cash-cows. Needs bureaucracy.</li>
+    <li>Horizon 3 - Future growth ideas. Needs speed.</li>
+  </ul></li>
+  <li>Geoffrey Moore’s <a href="#ch-17">Four Zones</a>:
+  <ul>
+    <li>Invest in Core, outsource Context.</li>
+    <li>Rack funerals:</li>
+  </ul></li>
+</ul><p><img src="/images/blog/the-unicorn-project/rack-funerals.jpg" alt="Rack funerals" title="Rack funerals" /></p><p><span style="background-color: #ecf0f1"><small>Image from Gene Kim’s presentation <a href="https://youtu.be/M6JGdF9XC7g?t=1846">The Unicorn Project And The Five Ideals</a>.</small></span></p><h1>TOC</h1>
+<ul>
+  <li><a href="#part-one">Part One: September 3-September 18</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1</a></li>
+    <li><a href="#ch-2">Chapter 2</a></li>
+    <li><a href="#ch-3">Chapter 3</a></li>
+    <li><a href="#ch-4">Chapter 4</a></li>
+    <li><a href="#ch-6">Chapter 6</a></li>
+    <li><a href="#ch-7">Chapter 7</a></li>
+  </ul></li>
+  <li><a href="#part-two">Part Two: September 23-November 9</a>
+  <ul>
+    <li><a href="#ch-8">Chapter 8</a></li>
+    <li><a href="#ch-11">Chapter 11</a></li>
+    <li><a href="#ch-12">Chapter 12</a></li>
+    <li><a href="#ch-13">Chapter 13</a></li>
+  </ul></li>
+  <li><a href="#part-three">Part Three: November 10-Present</a>
+  <ul>
+    <li><a href="#ch-15">Chapter 15</a></li>
+    <li><a href="#ch-16">Chapter 16</a></li>
+    <li><a href="#ch-17">Chapter 17</a></li>
+    <li><a href="#ch-18">Chapter 18</a></li>
+    <li><a href="#ch-19">Chapter 19</a></li>
+    <li><a href="#epilogue">Epilogue</a></li>
+  </ul></li>
+</ul><h1><a name="part-one"></a>Part One: September 3-September 18</h1><h2><a name="ch-1"></a>Chapter 1</h2>
+<ul>
+  <li>Mistakes and entropy are a fact of live.</li>
+  <li>Culture of fear (reference to Westrum org):
+  <ul>
+    <li>Kills innovation.</li>
+    <li>People are careful on how they phrase things.</li>
+    <li>Avoid “forbidden words”.</li>
+  </ul></li>
+  <li>The Phoenix Project building is silent. Immediate sign that there is something wrong with the development teams.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2</h2>
+<ul>
+  <li>Maxine, the hero, keeps a daily work diary:
+  <ul>
+    <li>What and how long work takes, and lessons learned.</li>
+  </ul></li>
+  <li>Time tracking systems are useless.</li>
+  <li>When engineers think of “the customer” in the abstract instead as a real person, you rarely set the right outcomes.</li>
+  <li>CEO keeps reminding of who the customers are and the vision/mission.</li>
+  <li>Safety is a precondition of work.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3</h2>
+<ul>
+  <li>Busy != productive != effective.</li>
+  <li>People are trying to help. It is the process that is helpless. Reminds me of <a href="/2019/11/27/becoming-a-technical-leader-book-notes/#content">Gerry Weiberg’s Becoming a technical leader</a>.</li>
+  <li>Small changes == more productive.</li>
+  <li>Program state is the enemy.</li>
+  <li>Change is a fact of live.</li>
+  <li>Changes should be done easily, quickly, safely.</li>
+  <li>Agility is never free.</li>
+  <li>Focus, flow, joy. Fast feedback. Thanks to architecture.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4</h2>
+<ul>
+  <li>How can you create anything of value if you don’t have feedback on how it is used?</li>
+</ul><h2><a name="ch-6"></a>Chapter 6</h2>
+<ul>
+  <li>Too much information makes every thing slow down.</li>
+  <li>Coordination, communication, approvals maybe more expensive than redundancy and duplication.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7</h2>
+<ul>
+  <li>Dev productivity as a main theme of the book.</li>
+  <li>Complected. Sensei Rick Hickey.</li>
+  <li>Dev productivity should be the concern of the most senior devs.</li>
+  <li>Pay down technical debt as part of daily work.</li>
+  <li>First ideal: Locality and simplicity.</li>
+  <li>Second Ideal: Focus, Flow and Joy.</li>
+  <li>Third Ideal: Improvement of Daily Work:
+  <ul>
+    <li>Elevate improvement of daily work over daily work itself.</li>
+  </ul></li>
+  <li>Forth Ideal: Psychological Safety:
+  <ul>
+    <li>Safe to talk about problems.</li>
+    <li>Solving problems requires prevention, which requires honesty, which requires lack of fear.</li>
+    <li>Ask “what caused a problem” instead of “who”.</li>
+  </ul></li>
+  <li>Fifth Ideal: Customer Focus</li>
+  <li>Technology is too often a caste system ( Arch &gt; Dev &gt; QA &gt; Ops)</li>
+</ul><h2><a name="ch-8"></a>Chapter 8</h2>
+<ul>
+  <li>Before: Leader roles was to design and decompose work and verify it was done by armies of interchangeable workers, who were paid to user their hands, not their heads.</li>
+  <li>Now: Leaders should be guiding, enabling and removing obstacles.</li>
+  <li>Toyota Andon cord: people are thanked for raising problems, so they can be solved and daily work improved.</li>
+  <li>Servant Leadership != Transformational Leadership.</li>
+  <li>Transformational Leadership:
+  <ul>
+    <li>Understand the org vision.</li>
+    <li>Question how work is performed.</li>
+    <li>Inspirational communication.</li>
+    <li>Personal recognition.</li>
+    <li>Supportive leadership.</li>
+    <li>Characteristics:
+    <ul>
+      <li>Expects excellence.</li>
+      <li>Pursuit of perfection.</li>
+      <li>Urgency to achieve mission.</li>
+      <li>Dissatisfaction with status quo.</li>
+      <li>Zeal for customers.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-11"></a>Chapter 11</h2>
+<ul>
+  <li>You build it, you run it</li>
+</ul><h2><a name="ch-12"></a>Chapter 12</h2>
+<ul>
+  <li>Lead time of ideas: 2 years
+  <ul>
+    <li>Small features, rolled up to larger ones than then need to be approved and specced</li>
+  </ul></li>
+</ul><h2><a name="ch-13"></a>Chapter 13</h2>
+<ul>
+  <li>Blameless postmortems:
+  <ul>
+    <li>Rule: you cannot say “I should have done” or “If I have known about that, I would have done Y”.</li>
+  </ul></li>
+  <li>Disconnect between Product Development and front-line users.</li>
+  <li>To speak clearly, you have to think clearly.</li>
+  <li>To think clearly, you have to write clearly.</li>
+</ul><h2><a name="ch-15"></a>Chapter 15</h2>
+<ul>
+  <li>Monitoring FTW!</li>
+  <li>Graceful degradation is hard.</li>
+  <li>Synthetic traffic for Load testing is very hard.</li>
+  <li>Customer focus:
+  <ul>
+    <li>Improve customer’s live.</li>
+    <li>Create value for them.</li>
+    <li>Whether they will pay for it
+    <ul>
+      <li>If not, we shouldn’t be building it.</li>
+    </ul></li>
+  </ul></li>
+  <li>Trust.</li>
+</ul><h2><a name="ch-16"></a>Chapter 16</h2>
+<ul>
+  <li>Employer engagement and customer satisfaction are the only things that matter. The rest will take care of itself.</li>
+  <li>Only one in three strategic ideas have a positive outcome. And only a third of those have a big enough impact.</li>
+  <li>Goofrey Moore - <a href="https://medium.com/@frankdiana/competing-in-the-age-of-disruption-e2187d2ad9d8">Four Zones</a> and <a href="https://www.infoq.com/articles/visual-portfolio-management/">Three Horizons</a>:
+  <ul>
+    <li>Horizon 1 - Company’s cash-cow.</li>
+    <li>Horizon 2 - High growth. Next cash-cows.</li>
+    <li>Horizon 3 - Pool of ideas to explore. Need to find asap:
+    <ul>
+      <li>Market risks: does the idea solve a real customer need?</li>
+      <li>Technical risk: Is it technically feasible?</li>
+      <li>Business model risk: Is there a financially feasible engine of growth?</li>
+    </ul></li>
+  </ul></li>
+  <li>Horizon 1 needs:
+  <ul>
+    <li>Consistency.</li>
+    <li>Compliance.</li>
+    <li>Bureaucracy.</li>
+    <li>Rules.</li>
+  </ul></li>
+  <li>Horizon 3 needs:
+  <ul>
+    <li>Speed.</li>
+    <li>Experimentation.</li>
+    <li>Fast feedback.</li>
+  </ul></li>
+</ul><h2><a name="ch-17"></a>Chapter 17</h2>
+<ul>
+  <li>Moore’s <a href="https://medium.com/@frankdiana/competing-in-the-age-of-disruption-e2187d2ad9d8">Four Zones</a>. Core vs Context:
+  <ul>
+    <li>Core: what the customer is paying for.</li>
+    <li>Context: everything else. What is needed for operate (cafeteria, HR, email, …).</li>
+    <li>Context is a burden.</li>
+    <li>Invest in Core, outsource Context.</li>
+  </ul></li>
+</ul><h2><a name="ch-18"></a>Chapter 18</h2>
+<ul>
+  <li>Blameless post-mortem even without an outage: they are the best opportunity to learn.</li>
+</ul><h2><a name="ch-19"></a>Chapter 19</h2>
+<ul>
+  <li>Teaching Thursdays is 2 hours.</li>
+  <li>Leaders must model the behaviours that they want.</li>
+  <li>Adults hide the fact they are learning because they don’t want to be seen as incompetents.</li>
+  <li>Event sourcing FTW!</li>
+  <li><a href="https://youtu.be/M6JGdF9XC7g?t=1846">“Rack funerals”</a></li>
+</ul><h2><a name="epilogue"></a>Epilogue</h2>
+<ul>
+  <li>Technology needs to be embedded in the business, not merely “aligned with it.”</li>
+  <li>Small does not beat big. Fast beats slow. Fast and big win almost every time.</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://goto-oslo.com/2020/speakers/1298/daniel-lebrero-berna"><img src="/images/goto-oslo.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (24)</a></li><li><a href="/tags/Clojure/index.html">Clojure (29)</a></li><li><a href="/tags/Humour/index.html">Humour (7)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (11)</a></li><li><a href="/tags/book_notes/index.html">book notes (3)</a></li><li><a href="/tags/good_practices/index.html">good practices (20)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
