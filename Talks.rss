@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 29 Jan 2020 10:00:00 +0100
+Wed, 19 Feb 2020 09:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 29 Jan 2020 10:00:00 +0100
+Wed, 19 Feb 2020 09:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Authorization service handover talk  
+</title>
+<link>
+https://danlebrero.com/2020/02/19/handover-clojure-authorization-service/
+</link>
+<guid>
+https://danlebrero.com/2020/02/19/handover-clojure-authorization-service/
+</guid>
+<pubDate>
+Wed, 19 Feb 2020 09:00:00 +0100
+</pubDate>
+<description>
+A handover talk about a new internal authorization-related service.
+</description>
+</item>
 <item>
 <title>
 Expectations for GOTO Oslo conference 
@@ -174,23 +191,6 @@ Sat, 26 Nov 2016 00:00:00 +0100
 </pubDate>
 <description>
 Video from my presentation on EuroClojure 2016
-</description>
-</item>
-<item>
-<title>
-Automating resilience testing with Clojure and Docker - EuroClojure 2016 slides
-</title>
-<link>
-https://danlebrero.com/2016/11/14/euroclojure-2016-slides/
-</link>
-<guid>
-https://danlebrero.com/2016/11/14/euroclojure-2016-slides/
-</guid>
-<pubDate>
-Mon, 14 Nov 2016 00:00:00 +0100
-</pubDate>
-<description>
-Slides from my presentation on EuroClojure 2016
 </description>
 </item>
 </channel>
