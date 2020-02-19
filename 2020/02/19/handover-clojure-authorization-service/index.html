@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Authorization service handover talk  </title>
+	<meta content="A handover talk about a new internal authorization-related service." name="description" /><meta content="Clojure event sourcing bad data handover real example duct multiprofiles architecture ltree" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Authorization service handover talk  " property="og:title" /><meta content="A handover talk about a new internal authorization-related service." property="og:description" /><meta content="https://danlebrero.com/2020/02/19/handover-clojure-authorization-service/" property="og:url" /><meta content="Authorization service handover talk  " name="twitter:title" /><meta content="A handover talk about a new internal authorization-related service." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/handover-authorisation-service.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/handover-authorisation-service.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2020/02/19/handover-clojure-authorization-service/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Authorization service handover talk  </h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 19 Feb 2020</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">A handover talk about a new internal authorization-related service.</p>
+
+				 
+				 
+
+					<div class="entry-content"><p>This talk goes over the why, when, what and how of a new internal authorization service that we have built at Akvo.</p><p>It also contains some bits and pieces that I found interesting about the implementation: event sourcing, bad data, Postgres ltree, SpecMonstah, more bad data, dark launches, testing DSL, DB parallel tests, … Did I mention bad data already?</p><p>As all the code is <a href="https://github.com/akvo/akvo-authorization">open sourced</a>, I though that may find it useful as a real world examples of the above.</p><p>For a little bit of context, in the talk we mention:</p>
+<ol>
+  <li><a href="https://github.com/akvo/akvo-flow">“Flow”</a>: this is a Java/JS application for survey design and data collection. Runs on <a href="https://cloud.google.com/appengine">Google App Engine</a>, which uses <a href="https://cloud.google.com/datastore/">Google Datastore</a>. The “legacy” app.</li>
+  <li><a href="https://github.com/akvo/akvo-unified-log">“Unilog”</a>: long story short a <a href="https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying">log</a> implementation of top of Postgres. And “old” Clojure app.</li>
+  <li><a href="https://github.com/akvo/akvo-lumen">“Lumen”</a>: this is a Clojure/JS application to analyze and visualize data. Runs on Kubernetes + Postgres. The “new” kid.</li>
+</ol><p>We are in the process of merging Lumen and Flow together. Maybe one of these years ….</p><p>You can find the slides <a href="https://docs.google.com/presentation/d/1zPgOhDhaTwY7qv2SxaYovG6NUs2EQOuLhm1swsQrPZM/edit#slide=id.p">here</a> and a table of content after the video that allows to jump to any of the bits that you may find interesting.</p><p>This is not a conference talk, do not expect it to be as polished. In fact I say “cool” like two hundred times. </p><p><em>Cool</em>! Let’s get started!</p>
+<style>
+div#toc {
+    height:200px;
+    width:560px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+div#toc ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}    
+</style><p><iframe id="thevideo" width="560" height="315" src="https://www.youtube.com/embed/N7sTkmBEpnM?enablejsapi=1&amp;rel=0" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<div id="toc">
+<ul>
+<li><a data-seek="0:11" href="#nowhere">What?</a>
+<ul>
+<li><a data-seek="0:25" href="#nowhere">Authorization business logic</a></li>
+</ul></li>
+<li><a data-seek="3:06" href="#nowhere">Why?</a>
+<ul>
+<li><a data-seek="5:29" href="#nowhere">Why a new service?</a>
+<ul>
+<li><a data-seek="5:37" href="#nowhere">Performance</a></li>
+<li><a data-seek="6:36" href="#nowhere">Why not Keycloak?</a></li>
+<li><a data-seek="7:56" href="#nowhere">Move away from Google Datastore</a></li>
+</ul></li>
+</ul></li>
+<li><a data-seek="8:35" href="#nowhere">How?</a>
+<ul>
+<li><a data-seek="8:38" href="#nowhere">Unilog and high level architecture</a></li>
+<li><a data-seek="10:21" href="#nowhere">Deployment architecture</a></li>
+<li><a data-seek="14:23" href="#nowhere">PostgreSQL ltree</a></li>
+</ul></li>
+<li><a data-seek="15:37" href="#nowhere">Implementation</a>
+<ul>
+<li><a data-seek="15:44" href="#nowhere">Dealing with out of order messages</a></li>
+<li><a data-seek="19:30" href="#nowhere">Huge database result sets, JDBC reducibles</a></li>
+<li><a data-seek="20:08" href="#nowhere">Duct profiles: multiple process in one for development</a></li>
+<li><a data-seek="21:05" href="#nowhere">Private Github to store secrets</a></li>
+<li><a data-seek="22:27" href="#nowhere">Metrics dashboards</a></li>
+</ul></li>
+<li><a data-seek="22:50" href="#nowhere">Testing</a>
+<ul>
+<li><a data-seek="22:55" href="#nowhere">DSL</a></li>
+<li><a data-seek="24:27" href="#nowhere">SpecMonstah: ease building DB test harness</a></li>
+<li><a data-seek="27:53" href="#nowhere">eftest: parallel tests</a>
+<ul>
+<li><a data-seek="28:17" href="#nowhere">DB test data isolation</a></li>
+</ul></li>
+<li><a data-seek="30:47" href="#nowhere">Compare with slow implementation. Event Sourcing FTW!</a></li>
+</ul></li>
+<li><a data-seek="32:49" href="#nowhere">When?</a>
+<ul>
+<li><a data-seek="32:53" href="#nowhere">Dark Launch</a></li>
+<li><a data-seek="33:58" href="#nowhere">Bad data</a></li>
+</ul></li>
+<li><a data-seek="41:00" href="#nowhere">Future</a>
+<ul>
+<li><a data-seek="41:00" href="#nowhere">MVP</a></li>
+<li><a data-seek="42:27" href="#nowhere">Unilog lag</a></li>
+</ul></li>
+<li><a data-seek="43:15" href="#nowhere">Q&amp;A</a>
+<ul>
+<li><a data-seek="45:47" href="#nowhere">Data model difference between Flow and Authorization</a></li>
+<li><a data-seek="48:20" href="#nowhere">How ltree helps with tree structure manipulation</a></li>
+<li><a data-seek="51:32" href="#nowhere">How ltree helps with Authorization logic</a></li>
+<li><a data-seek="55:29" href="#nowhere">Google Datastore, orphan data, referential integrity</a></li>
+<li><a data-seek="56:00" href="#nowhere">Initial import to move to Event Sourcing</a></li>
+<li><a data-seek="60:38" href="#nowhere">More about out of order messages</a></li>
+</ul></li>
+</ul>
+</div><p><br /> <br /><br />Let me know if you find it useful, if it is too specific or not specific enough.</p>
+<script>
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('thevideo', {});
+  }
+  
+  window.onload = function() {
+    var all = document.querySelectorAll('[data-seek]');
+    all.forEach(function(l){
+        l.onclick = function() {
+            seekPoint = l.dataset.seek.split(':');
+            console.log(seekPoint);
+            secs = Number(seekPoint[0]) * 60 + Number(seekPoint[1]);
+            console.log(secs);
+            player.seekTo(secs);
+            player.playVideo();
+            return false;
+        }
+    });    
+  }
+</script></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/Talks/index.html">Talks </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://goto-oslo.com/2020/speakers/1298/daniel-lebrero-berna"><img src="/images/goto-oslo.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (25)</a></li><li><a href="/tags/Clojure/index.html">Clojure (30)</a></li><li><a href="/tags/Humour/index.html">Humour (7)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (3)</a></li><li><a href="/tags/good_practices/index.html">good practices (20)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
