@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 04 Mar 2020 09:15:00 +0100
+Mon, 16 Mar 2020 13:15:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 04 Mar 2020 09:15:00 +0100
+Mon, 16 Mar 2020 13:15:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Virtual backgrounds for remote Software Developers
+</title>
+<link>
+https://danlebrero.com/2020/03/16/backgrounds-for-software-developers-zoom-virtual-backgrounds/
+</link>
+<guid>
+https://danlebrero.com/2020/03/16/backgrounds-for-software-developers-zoom-virtual-backgrounds/
+</guid>
+<pubDate>
+Mon, 16 Mar 2020 13:15:00 +0100
+</pubDate>
+<description>
+Must have backgrounds for all your remote meetings
+</description>
+</item>
 <item>
 <title>
 Book notes: The Lean Mindset
@@ -174,23 +191,6 @@ Wed, 27 Nov 2019 00:00:00 +0100
 </pubDate>
 <description>
 Book notes on Gerald Weinberg's &quot;Becoming a technical leader&quot;
-</description>
-</item>
-<item>
-<title>
-Java with a Clojure mindset
-</title>
-<link>
-https://danlebrero.com/2019/03/06/java-with-a-clojure-mindset/
-</link>
-<guid>
-https://danlebrero.com/2019/03/06/java-with-a-clojure-mindset/
-</guid>
-<pubDate>
-Wed, 06 Mar 2019 09:00:00 +0100
-</pubDate>
-<description>
-Video, transcript and slides from the Java2Days and Oredev 2018 talk
 </description>
 </item>
 </channel>
