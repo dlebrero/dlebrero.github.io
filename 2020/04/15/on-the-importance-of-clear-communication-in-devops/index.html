@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Applying stability patterns: a case study - Devoxx PL 2017</title>
-	<meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" name="description" /><meta content="stability patterns circuit breaker bulkhead timeout devoxx poland case study " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Applying stability patterns: a case study - Devoxx PL 2017" property="og:title" /><meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" property="og:description" /><meta content="https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/" property="og:url" /><meta content="Applying stability patterns: a case study - Devoxx PL 2017" name="twitter:title" /><meta content="Video from my presentation on Devoxx PL 2017 on stability patterns" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/devoxx-pl-2017.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/devoxx-pl-2017.jpg" property="og:image" />
+	<title>In case of doubt, ask for clarification</title>
+	<meta content="Your yearly reminder of why to use a clear and precise language and to ask to clarification when your teammates do not." name="description" /><meta content="clear precise communication doubt clarification question devops  " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="In case of doubt, ask for clarification" property="og:title" /><meta content="Your yearly reminder of why to use a clear and precise language and to ask to clarification when your teammates do not." property="og:description" /><meta content="https://danlebrero.com/2020/04/15/on-the-importance-of-clear-communication-in-devops/" property="og:url" /><meta content="In case of doubt, ask for clarification" name="twitter:title" /><meta content="Your yearly reminder of why to use a clear and precise language and to ask to clarification when your teammates do not." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/importance-of-clear-communication.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/importance-of-clear-communication.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/" />
+	<link rel="canonical" href="https://danlebrero.com/2020/04/15/on-the-importance-of-clear-communication-in-devops/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -114,26 +114,26 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Applying stability patterns: a case study - Devoxx PL 2017</h1>
+						<h1 class="entry-title">In case of doubt, ask for clarification</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Thu, 3 Aug 2017</li>
+								<li id="entry-date">Wed, 15 Apr 2020</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Video from my presentation on Devoxx PL 2017 on stability patterns</p>
+				 <p class="lead" id="entry-summary">Your yearly reminder of why to use a clear and precise language and to ask to clarification when your teammates do not.</p>
 
-				 <div class="entry-content-media">
-						<div class="post-thumb">
-							<img src="/images/blog/devoxx-pl-2017.jpg" />
-						</div>
-					</div>
+				 
 				 
 
-					<div class="entry-content"><p>The video of my Devoxx PL 2017 talk on “Applying stability patterns: a case study” is online.</p><p>In the talk I explain how we applied, or did not, each of the stability patterns described in the <em>Release It!</em> book by Michael Nygard, plus I explain which outages we had after applying, or misapplying, the patterns. </p><p>Slides in <a href="/slides/stability_patterns_devoxx_pl_2017.key">Keynote format</a></p><p>Feedback and questions welcomed!</p><p><iframe width="560" height="315" src="https://www.youtube.com/embed/dSgls1cn1io" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p></div>
+					<div class="entry-content"><p>As an example of what not to do, here I am earlier this year with a teammate, doing some Ops work (<a href="https://github.com/akvo/akvo-unified-log">Unilog</a> is a backend service, <a href="https://github.com/akvo/akvo-flow/">akvoflow-87</a> is a tenant of another backend service that depends on the Unilog):</p><p><img src="/images/blog/importance-of-communication/importance-of-clear-communication.jpg" alt="Not so clear communication" title="Not so clear communication" /></p><p>I hope it is not obvious to you, as it was not for me, but what my teammate was actually asking was:</p>
+<blockquote><p>Can I completely decommission Unilog forever?</p>
+</blockquote><p>But what I understood was:</p>
+<blockquote><p>Can I stop Unilog for a minute?</p>
+</blockquote><p>Result: a massive slowdown of the whole system for a few hours.</p><p>We have been talking about decommissioning that Unilog service the whole week, so it even crossed my mind that maybe it was related to it, I thought <em>he surely cannot be asking about decommissioning it</em>.</p><p>Silly me for not asking.</p></div>
 
 				 
 
@@ -147,7 +147,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Talks/index.html">Talks </a><a href="/tags/resilience/index.html">resilience </a>
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Humour/index.html">Humour </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
