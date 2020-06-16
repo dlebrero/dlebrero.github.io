@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Implementing Lean Software Development</title>
+	<meta content="Book notes on &quot;Implementing Lean Software Development&quot;" name="description" /><meta content="Book review implementing lean software development summary " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Implementing Lean Software Development" property="og:title" /><meta content="Book notes on &quot;Implementing Lean Software Development&quot;" property="og:description" /><meta content="https://danlebrero.com/2020/06/24/implementing-lean-software-development-book-summary/" property="og:url" /><meta content="Book notes: Implementing Lean Software Development" name="twitter:title" /><meta content="Book notes on &quot;Implementing Lean Software Development&quot;" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/implementing-lean-software-development.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/implementing-lean-software-development.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2020/06/24/implementing-lean-software-development-book-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Implementing Lean Software Development</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 24 Jun 2020</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Implementing Lean Software Development"</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/implementing-lean-software-development.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://twitter.com/mpoppendieck">Mary Poppendieck</a> and Tom Poppendieck’s <a href="https://www.amazon.com/Implementing-Lean-Software-Development-Concept/dp/0321437381">Implementing Lean Software Development</a>. </p><p>After reading <a href="/2020/03/04/the-lean-mindset-summary/#content">The Lean Mindset</a>, I decided to reread my old (13 years!) “Implementing Lean Software Development” copy. Unsurprisingly, most of the content still applies today.</p><h1>Key Insights</h1>
+<ul>
+  <li>Software development is a knowledge-creating process.</li>
+  <li>Process should be improved by the team doing the work.</li>
+  <li>Instead of predicting the future, aim to reduce response time so we can respond correctly as the future unfolds.</li>
+  <li>Product quality is determined by quality of information flow.</li>
+  <li>The cost of complexity is exponential.</li>
+  <li>Dont automate complexity. Simplify before automating.</li>
+  <li>Synergy between parts of any system is the key to the success of the system.</li>
+  <li>When things go wrong, the cause is inherent to the system, and therefore is a management problem.</li>
+  <li>Build cause of low quality and productivity is inherent to the system, hence must change the system to address those.</li>
+  <li>The thing that turns a group into a team is the mutual commitment of the members to pool their various skills and work together for a common purpose.</li>
+  <li>Teamwork is essential, but someone always needs to be responsible.</li>
+  <li>You get what you reward:
+  <ul>
+    <li>Find effective ways to reward collaboration.</li>
+  </ul></li>
+  <li>Decisions: First decide when the decision must be made.</li>
+  <li>IT Contracts: focus on how parties will work together to determine what to deliver, instead of an specification of what to build.</li>
+  <li>Measure a few key indicators:
+  <ul>
+    <li>cycle time.</li>
+    <li>financial results.</li>
+    <li>customer satisfaction (NPS).</li>
+  </ul></li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-1">1 - History</a></li>
+  <li><a href="#ch-2">2 - Principles</a></li>
+  <li><a href="#ch-3">3 - Value</a></li>
+  <li><a href="#ch-4">4 - Waste</a></li>
+  <li><a href="#ch-5">5 - Speed</a></li>
+  <li><a href="#ch-6">6 - People</a></li>
+  <li><a href="#ch-7">7 - Knowledge</a></li>
+  <li><a href="#ch-8">8 - Quality</a></li>
+  <li><a href="#ch-9">9 - Partners</a></li>
+  <li><a href="#ch-10">10 - Journey</a></li>
+</ul><h1><a name="ch-1"></a>Chapter 1 - History</h1><p>Main point repeated in other chapters.</p><h2><a name="ch-2"></a>Chapter 2 - Principles</h2>
+<ul>
+  <li>Software development should be an empirical process.</li>
+  <li>7 Principles:
+  <ol>
+    <li>Eliminate waste.</li>
+    <li>Build Quality in:
+    <ul>
+      <li>Target is to not need a defect tracking system.</li>
+      <li>Job of testing is to prevent defects.</li>
+      <li>If final verification routinely triggers test-and-fix cycles, then the development process is defective.</li>
+    </ul></li>
+    <li>Create Knowledge:
+    <ul>
+      <li>Codify knowledge for use in future products is essential.</li>
+      <li>Instead of predicting the future, aim to reduce response time so we can respond correctly as the future unfolds.</li>
+    </ul></li>
+    <li>Defer commitment:
+    <ul>
+      <li>Make decisions reversible.</li>
+      <li>Last responsible moment.</li>
+      <li>Plans are useless, planning is indispensable – Eisenhower.</li>
+    </ul></li>
+    <li>Deliver fast:
+    <ul>
+      <li>Repeatable and reliable speed is impossible without superior quality.</li>
+      <li>Deep customer understanding.</li>
+    </ul></li>
+    <li>Respect people:
+    <ul>
+      <li>Give people goals.</li>
+      <li>Process should be improved by the team doing the work.</li>
+    </ul></li>
+    <li>Optimize the whole (value stream):
+    <ul>
+      <li>From order to real need is addressed.</li>
+      <li>Crossing organizational boundaries is expensive.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Value</h2>
+<ul>
+  <li>Product development performance (Clack and Fujimoto, 1991):
+  <ul>
+    <li>Product quality is determined by quality of information flow.</li>
+    <li>Customer quality: flow between marketplace and development team.</li>
+    <li>Technical quality: flow between technical team members.</li>
+  </ul></li>
+  <li>To facilitate information flow:
+  <ol>
+    <li>Leadership:
+    <ul>
+      <li>Champion:
+      <ul>
+        <li>Understands the customer’s job.</li>
+        <li>Understands the technology that surprise them.</li>
+        <li>Makes key product decisions.</li>
+        <li>Accountable.</li>
+        <li>Possible models:
+        <ol>
+          <li>Chief engineer:
+          <ul>
+            <li>Learn what the customer wants.</li>
+            <li>With senior management direction.</li>
+            <li>Role: Integrate knowledge.</li>
+          </ul></li>
+          <li>Leadership team:
+          <ul>
+            <li>Market expert + Technical expert (+ manufacturing expert)</li>
+          </ul></li>
+          <li>Shared leadership.</li>
+        </ol></li>
+      </ul></li>
+    </ul></li>
+    <li>Complete teams: Marketing + customer support + ops.</li>
+  </ol></li>
+  <li>Delight customers:
+  <ul>
+    <li>Discover needs that customer is not aware of.</li>
+    <li>Exponential increase in satisfaction (<a href="https://en.wikipedia.org/wiki/Kano_model">Kano model</a>).</li>
+  </ul></li>
+  <li>Internal IT should be run as a software company:
+  <ul>
+    <li>Research what the market wants. Do not expect other to do it.</li>
+    <li>Perform cost/benefit analysis. Do not implement everything that business asks for.</li>
+    <li>Products are successful. Do not leave all responsibility to the business unit.</li>
+    <li>Accountability rests on the business funding the effort.</li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Waste</h2>
+<ul>
+  <li>Waste: Anything that does not add customer value or delays it.</li>
+  <li>Write less code:
+  <ul>
+    <li>The cost of complexity is exponential.</li>
+    <li>Justify every feature.</li>
+    <li>Less bugs.</li>
+    <li>Minimum useful feature set.</li>
+    <li>Dont automate complexity. Simplify before automating.</li>
+  </ul></li>
+  <li>Seven wastes:
+  <ul>
+    <li>Partially done work:
+    <ul>
+      <li>Avoid with small batches.</li>
+      <li>Too early requirements.</li>
+      <li>Long live branches.</li>
+      <li>Untested code.</li>
+      <li>Undocumented features.</li>
+      <li>Undeployed code.</li>
+    </ul></li>
+    <li>Extra features.</li>
+    <li>Relearning:
+    <ul>
+      <li>Retrying something that did not work in the past.</li>
+      <li>Not leveraging on existing knowledge.</li>
+    </ul></li>
+    <li>Hand-offs: tacit knowledge is lost.</li>
+    <li>Task switching.</li>
+    <li>Delays.</li>
+    <li>Defects.</li>
+  </ul></li>
+  <li>Mapping the value stream:
+  <ul>
+    <li>Find the delays (queues) and loop-backs (churn).</li>
+    <li>Map the process, not an event.</li>
+    <li>Concept to cash.</li>
+    <li>Preparation:
+    <ul>
+      <li>What to map.</li>
+      <li>When to start/stop the timeline.</li>
+      <li>Approval process should be included.</li>
+    </ul></li>
+    <li>Value from the point of view of the customer.</li>
+    <li>Identify value stream owner.
+    <ul>
+      <li>Someone that cares about organization cross-boundary issues.</li>
+    </ul></li>
+    <li>Keep it simple:
+    <ul>
+      <li>About 10 steps.</li>
+      <li>Value stream maps have no value by themselves.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Speed</h2>
+<ul>
+  <li>Speed is the absence of waste.</li>
+  <li>Cycle time is the measurement that alert us when anything is going wrong.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Little%27s_law">Little’s Law</a>: in a stable system cycle time = things in process / average completion time.</li>
+  <li>Reduce cycle time by:
+  <ul>
+    <li>Reduce WIP. (&lt;– cheaper)</li>
+    <li>Increase speed.</li>
+    <li>Event out the arrival of work.</li>
+    <li>Establish regular cadence:
+    <ul>
+      <li>If big flurry of activity at the end of iteration, then iteration is too long.</li>
+    </ul></li>
+    <li>Limit work to capacity.</li>
+    <li>Use pull schedule:
+    <ul>
+      <li>Queuing at the edges of the organization.</li>
+      <li>Keep queues short: two cycles of work.</li>
+      <li>Changes in queues are ok, but not once the work is being done.</li>
+      <li>Team pulls works.</li>
+      <li>Queue must have a max size.</li>
+    </ul></li>
+  </ul></li>
+  <li>Unstable systems:
+  <ul>
+    <li>High variation: Fix by small batches.</li>
+    <li>High utilization: Above 80%, things start to slow down.</li>
+  </ul></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - People</h2>
+<ul>
+  <li><a href="https://medium.com/10x-curiosity/system-of-profound-knowledge-ce8cd368ca62">System of profound knowledge</a> (Edwards Deming):
+  <ol>
+    <li>Appreciation for a system:
+    <ul>
+      <li>Synergy between parts of any system is the key to the success of the system.</li>
+    </ul></li>
+    <li>Knowledge about variation:
+    <ul>
+      <li>Build cause of low quality and productivity is inherent to the system, hence must change the system to address those.</li>
+    </ul></li>
+    <li>Theory of knowledge:
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/PDCA">Deming cycle</a>: plan, do, check, act.</li>
+    </ul></li>
+    <li>Psychology:
+    <ul>
+      <li>When it comes to people, things that make a difference are skills, pride, expertise, confidence and cooperation.</li>
+    </ul></li>
+  </ol></li>
+  <li>Deming’s 14 points on quality for management (page 122):
+  <ul>
+    <li>(1) Dont focus on short-term profitability.</li>
+    <li>(3) Quit depending on inspection to find defects.</li>
+    <li>(6) Institute training.</li>
+    <li>(8) Drive out fear.</li>
+    <li>(9) Break down barriers between departments. Do not undermine team cooperation by rewarding individual performance.</li>
+    <li>(11) Eliminate arbitrary deadlines. This is management by fear.</li>
+  </ul></li>
+  <li>When things go wrong, the cause is inherent to the system, and therefore is a management problem.</li>
+  <li>Toyota’s real innovation is its ability to harness the intellect of “ordinary” employees.</li>
+  <li>Do you talk about trust with suppliers but insist on fixed price contracts?</li>
+  <li>The thing that turns a group into a team is the mutual commitment of the members to pool their various skills and work together for a common purpose.</li>
+  <li>Teamwork is essential, but someone always needs to be responsible.</li>
+  <li>Process leadership != product leadership != technical leadership.</li>
+  <li>Responsibility based planning and control:
+  <ul>
+    <li>Chief engineer sets synchronization events. Teams figure themselves how to meet them.</li>
+    <li>Remember to:
+    <ul>
+      <li>Give people the time to do the job.</li>
+      <li>Details will/can change.</li>
+      <li>Limit work to capacity.</li>
+    </ul></li>
+    <li>The job of managing dependencies should fall to the system design, not the schedule.</li>
+  </ul></li>
+  <li>Self-directing work: everybody can figure out what is the most important thing they can do without being told.
+  <ul>
+    <li>Three levels of info:
+    <ol>
+      <li>Kanban:
+      <ul>
+        <li>Challenges:
+        <ul>
+          <li>Right size.</li>
+          <li>Enough detail.</li>
+          <li>Correct priority</li>
+        </ul></li>
+        <li>The card is not a specification.</li>
+        <li>The card is a signal to bring together the right people to create the detailed design, verifications and implementations.</li>
+      </ul></li>
+      <li>Anden: Board with any abnormalities that requires attention.</li>
+      <li>Dashboard:
+      <ul>
+        <li>How do people know their progress towards meeting the overall goal of their work?</li>
+        <li>How well the team is doing.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>Two types of companies:
+  <ul>
+    <li>Economic company: exchange your skills for remuneration.</li>
+    <li>River company: exchange your care and commitment for the fact that the company will try to develop you to your maximum potential.</li>
+  </ul></li>
+  <li>Eliminate annual performance ratings: They kill cooperation and pride.</li>
+  <li>You get what you reward: Find effective ways to reward collaboration.</li>
+  <li>Performance evaluation: time set aside to reflect on where your potential lies and next steps to develop that potential.</li>
+  <li>When an employee is not performing, the first question a manager should ask is: What am I doing wrong?</li>
+  <li>Compensation:
+  <ol>
+    <li>Make sure the promotion system is unassailable.</li>
+    <li>De-empathize annual raises.</li>
+    <li>Reward based on span of influence, not span of control.</li>
+    <li>Find better motivators than money.</li>
+  </ol></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Knowledge</h2>
+<ul>
+  <li>First step in any improvement effort should be to ask two basic questions (Art Smalley):
+  <ul>
+    <li>How do you intend to make a profit and satisfy your customers?</li>
+    <li>What exactly is your main problem?</li>
+  </ul></li>
+  <li>Disciplined problem-solving method. Train everybody on this.</li>
+  <li>Piles of documentation are useless as a learning tool:
+  <ul>
+    <li>Condense knowledge in a A3.</li>
+    <li>If it does not fit an A3, use an A4.</li>
+  </ul></li>
+  <li>Decisions:
+  <ul>
+    <li>First decide when the decision must be made.</li>
+  </ul></li>
+  <li>The work of any SW development process is to create knowledge that gets embedded in the software.</li>
+  <li>Set-Based design:
+  <ul>
+    <li>Implement several options at the same time.</li>
+    <li>Each option is better but less likely to hit the deadline.</li>
+    <li>When to use:
+    <ul>
+      <li>Unmovable deadline.</li>
+      <li>Failure is not an option.</li>
+    </ul></li>
+    <li>Best method to meet deadlines and to learn the most.</li>
+  </ul></li>
+  <li>Refactoring is the fundamental enabler of limiting code complexity, increase change tolerance, value and longevity of the code.</li>
+  <li>Kaizen Events:
+  <ul>
+    <li>Representatives from different functional areas to work intensely for a few days to solve a well defined critical problem.</li>
+  </ul></li>
+  <li>For longer improvements, see GE Workout.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Quality</h2>
+<ul>
+  <li>Prioritize:
+  <ol>
+    <li>High value before lower value.</li>
+    <li>High risk before lower risk.</li>
+    <li>Features that create new knowledge before those well understood.</li>
+    <li>Lower cost before higher cost.</li>
+  </ol></li>
+  <li>Standards: follow them, but also challenge them.</li>
+  <li>Pair programming, automation, TDD, CI.</li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Partners</h2>
+<ul>
+  <li>The fundamental reason for partnership is synergy: achieve better results through cooperation.</li>
+  <li>Fuelled by trust and paid with applause.</li>
+  <li>How to build global teams:
+  <ul>
+    <li>Frequent integration.</li>
+    <li>Exchange people.</li>
+    <li>Exchange tests.</li>
+    <li>Proxy: one person acting as a proxy of a full remote team.</li>
+    <li>Traveling team leader.</li>
+    <li>No second-hand citizens.</li>
+  </ul></li>
+  <li>Outsourcing: avoid conflict of interest of employees and companies involved.</li>
+  <li>Contracts’ purpose, either:
+  <ol>
+    <li>Protects each party from opportunistic behaviour.</li>
+    <li>Setup appropriate incentives to work together in a synergistic way.</li>
+  </ol></li>
+  <li><a href="https://en.wikipedia.org/wiki/Relational_contract">Relational contracts</a></li>
+  <li>IT Contracts: focus on how parties will work together to determine what to deliver, instead of an specification of what to build.</li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Journey</h2>
+<ul>
+  <li>Start lean initiative by answering:
+  <ol>
+    <li>How do you create value for customers and make a profit?</li>
+    <li>What is your main problem right now?</li>
+    <li>What threatens your continued existence?</li>
+    <li>What do you really believe about people?</li>
+  </ol></li>
+  <li>Effective way to start lean development:
+  <ol>
+    <li>Train team leaders and supervisors.</li>
+    <li>Emphasize on-the-job thinking.</li>
+    <li>Measure a few key indicators:
+    <ul>
+      <li>cycle time.</li>
+      <li>financial results.</li>
+      <li>customer satisfaction (NPS).</li>
+    </ul></li>
+  </ol></li>
+  <li>Automation should aim to “upskill” workers, not “deskill” the process.</li>
+  <li>Theory of Constraints:
+  <ul>
+    <li>New technology is useful if it removes a limitation.</li>
+    <li>We must deal with the existing accommodations: existing rules/mechanisms to cope with the limitation.</li>
+  </ul></li>
+  <li>Critical chain:
+  <ul>
+    <li>Theory of constraints applied to projects.</li>
+    <li>Product development is a project.</li>
+    <li>Key constraint: estimates regarded as commitments.</li>
+    <li>Because of this, people over-estimate, and then <a href="https://en.wikipedia.org/wiki/Parkinson%27s_law">Parkinson’s law</a>.</li>
+  </ul></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://jaxlondon.com/speaker/daniel-lebrero/"><img src="/images/jax_london.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (27)</a></li><li><a href="/tags/Clojure/index.html">Clojure (30)</a></li><li><a href="/tags/Humour/index.html">Humour (9)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (5)</a></li><li><a href="/tags/good_practices/index.html">good practices (21)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
