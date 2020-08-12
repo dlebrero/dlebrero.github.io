@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Elements of Clojure</title>
+	<meta content="Book notes on &quot;Elements of Clojure&quot;" name="description" /><meta content="Book review managers elements of clojure book summary " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Elements of Clojure" property="og:title" /><meta content="Book notes on &quot;Elements of Clojure&quot;" property="og:description" /><meta content="https://danlebrero.com/2020/08/12/elements-of-clojure-book-summary/" property="og:url" /><meta content="Book notes: Elements of Clojure" name="twitter:title" /><meta content="Book notes on &quot;Elements of Clojure&quot;" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/elements-of-clojure/elements-of-clojure.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/elements-of-clojure/elements-of-clojure.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2020/08/12/elements-of-clojure-book-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Elements of Clojure</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 12 Aug 2020</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Elements of Clojure"</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/elements-of-clojure/elements-of-clojure.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://twitter.com/ztellman">Zachary Tellman</a>’s <a href="https://leanpub.com/elementsofclojure">Elements of Clojure</a>. </p><p>There are some elements of Clojure on the book, but most of the content covered is universal to any language. </p><p>Zach has several talks were he covers the subjects of the book: <a href="https://www.youtube.com/watch?v=JaKLSH4csqE">names</a>, <a href="https://www.youtube.com/watch?v=x9pxbnFC4aQ">abstraction</a> and <a href="https://clojuresync.com/zach-tellman/">composition</a>.</p><h1>Key Insights</h1>
+<ul>
+  <li>Good software is built through effective indirection.</li>
+  <li>Names are the most common way of creating indirection.</li>
+  <li>The act of writing software is the act of naming repeated over and over again.</li>
+  <li>Any project involving multiple people exists in a continuous state of low-level confusion.</li>
+  <li>We are constantly drawn to software we don’t know well enough to dislike.</li>
+  <li>The models of SW are build atop inductive analogies and aspire only to satisfice.</li>
+  <li>Broad assumptions means smaller models which means simpler code.
+  <ul>
+    <li>Over-engineered code == too few assumptions.</li>
+  </ul></li>
+  <li>If a model cant fit in our head, it has little value.</li>
+  <li>Build SW from principled components (build to be discarded), separated by interfaces where necessary (build to last).</li>
+  <li>City planning is a better metaphor for SW development than civil engineering.</li>
+  <li>The ultimate goal of composition is to define processes.</li>
+  <li>Any system that exceeds our understanding will inevitably grow a bit slow and flaky.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Introduction</a></li>
+  <li><a href="#ch-1">1 - Names</a></li>
+  <li><a href="#ch-2">2 - Idioms</a></li>
+  <li><a href="#ch-3">3 - Indirection</a></li>
+  <li><a href="#ch-4">4 - Composition</a></li>
+</ul><h1><a name="ch-0"></a>Introduction</h1>
+<ul>
+  <li>To write software we must learn to draw boundaries.</li>
+  <li>Good software is built through effective indirection.</li>
+  <li>Finding good names is difficult, so we should try to avoid.</li>
+  <li>Any project involving multiple people exists in a continuous state of low-level confusion.</li>
+</ul><h1><a name="ch-1"></a>Names</h1>
+<ul>
+  <li>Names are the most common way of creating indirection.</li>
+  <li>The act of writing software is the act of naming repeated over and over again.</li>
+  <li>Names are composed of:</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+      <th>In SW terms </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sign </td>
+      <td>Textual representation </td>
+      <td>Textual representation </td>
+    </tr>
+    <tr>
+      <td>Referent </td>
+      <td>What it references </td>
+      <td>Current implementation </td>
+    </tr>
+    <tr>
+      <td>Sense </td>
+      <td>How it is referenced </td>
+      <td>Set of fundamental properties we ascribe to it </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>When finding a new name, we only need to understand its sense.</li>
+  <li>Sense can be communicated through:
+  <ul>
+    <li>Sign.</li>
+    <li>Context.</li>
+    <li>Documentation.</li>
+    <li>Everyday conversation.</li>
+  </ul></li>
+  <li>Names should be:
+  <ul>
+    <li>Narrow:
+    <ul>
+      <li>Exclude things it cannot represent.</li>
+      <li>Reveals its sense:
+      <ul>
+        <li>Too specific leaks implementation details.</li>
+        <li>Too general misses fundamental properties, inviting breaking changes.</li>
+      </ul></li>
+    </ul></li>
+    <li>Consistent: easily understood in its context.</li>
+  </ul></li>
+  <li>Any project involving multiple people exists in a continuous state of low-level confusion.</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Natural Names </th>
+      <th>Synthetic Names </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Multiple senses </td>
+      <td>One sense </td>
+    </tr>
+    <tr>
+      <td>Ambiguous </td>
+      <td>Fully consistent with sign </td>
+    </tr>
+    <tr>
+      <td>Reason by analogy</td>
+      <td>Sense must be learn </td>
+    </tr>
+    <tr>
+      <td>Lower entry barrier</td>
+      <td>High entry barrier </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>The threshold for self-evidency depends on the reader.</li>
+  <li>Finding good names is difficult, so we should try to avoid.</li>
+  <li>Functions can do three things:
+  <ul>
+    <li>Pull data into scope: Name should describe the data type it returns.</li>
+    <li>Transform data in scope: Avoid verbs.</li>
+    <li>Push data to another scope: Name should be the effect it has.</li>
+  </ul></li>
+  <li>At least one function in every process must do all three. This functions are difficult to reuse.</li>
+  <li>All functions in a namespace should operate on a common data type and/or data scope.</li>
+  <li>As few namespaces as possible.</li>
+  <li>Macros are poor means of indirection.</li>
+</ul><h2><a name="ch-2"></a>Idioms</h2>
+<ul>
+  <li>Prefer <code>&lt;</code> or <code>&lt;=</code>. Always use the same.</li>
+  <li>Avoid named parameters.</li>
+  <li>Only use <code>letfn</code> when mutual recursion is required.</li>
+  <li>Use <code>for</code> for cartesian products.</li>
+  <li>Check for <code>nil</code> at regular intervals.</li>
+</ul><h2><a name="ch-3"></a>Indirection</h2>
+<ul>
+  <li>Two indirection tools:
+  <ul>
+    <li>References:
+    <ul>
+      <li>Conveys values.</li>
+      <li>Open.</li>
+    </ul></li>
+    <li>Conditionals:
+    <ul>
+      <li>Decides based upon values.</li>
+      <li>Closed: to change them, we need to change code.</li>
+    </ul></li>
+  </ul></li>
+  <li><code>nil</code> has been know to cause runtime errors.</li>
+  <li>For a decision mechanism to be open it must be unordered: table with unique keys.</li>
+  <li>Indirection is a mechanism for creating abstractions.</li>
+  <li>Indirection allow us to work with a codebase without completely understand it.</li>
+  <li>Proofs lack context: they are only concern with being self-consistent.</li>
+  <li>In SW, we don’t have the luxury of ignoring context. Our models must be self-consistent and useful within our context.</li>
+  <li>Self-consistency is objective, usefulness is subjective.</li>
+  <li>Model for modules:
+  <ul>
+    <li>Model: data and functions.</li>
+    <li>Interface: means by which model and environment interact.</li>
+    <li>Environment: everything else.</li>
+    <li>Assumption: everything that the model does not represent.</li>
+    <li>Invariants: to avoid model’s invalid states.</li>
+    <li>Invalid states: those which cannot be found in the environment.</li>
+  </ul></li>
+</ul><p><img src="/images/blog/elements-of-clojure/modules-model.jpg" alt="Module model" title="A model for modules" /></p>
+<ul>
+  <li>Better models: those with less exceptions.</li>
+  <li>Reasoning:
+  <ul>
+    <li>Deductive:
+    <ul>
+      <li>Conclusions are necessary: if they are wrong is because the initial assumptions were wrong.</li>
+      <li>Tries to predict.</li>
+    </ul></li>
+    <li>Inductive:
+    <ul>
+      <li>By analogy, only compares.</li>
+      <li>Conclusions are contingent: they are allowed to be wrong.</li>
+    </ul></li>
+  </ul></li>
+  <li>Inductive is more resilient than deductive at the cost of not being optimal.</li>
+  <li>Model satisfices if it is good enough given the environment.</li>
+  <li>The models of SW are build atop inductive analogies and aspire only to satisfice.</li>
+  <li>Broad assumptions means smaller models which means simpler code.</li>
+  <li>Group models with similar assumptions, wrap them in a single layer that enforces those assumptions.</li>
+  <li>Abstractions that fail together should stay together.</li>
+  <li>Better modules == more useful.</li>
+  <li>Models reflect our perception of their environment.
+  <ul>
+    <li>There is no objective measure of the importance of a given facet.</li>
+  </ul></li>
+  <li>A module is useful only if its assumptions are sound now and in the near future.</li>
+  <li>Over-engineered code == too few assumptions.</li>
+  <li>Every conversation about SW can be more productive by describing, up front, our subjective understanding of its environment.</li>
+  <li>We are constantly drawn to software we don’t know well enough to dislike.</li>
+  <li>Confidence requires understanding: I disagree! <a href="https://en.wikipedia.org/wiki/Four_stages_of_competence">Unconscious incompetence</a></li>
+  <li>A module cannot prevent itself to be misused.</li>
+  <li>Convention: how we enforce assumptions that are not hidden away by an abstraction layer (because abstraction layer is too expensive to build or execute)
+  <ul>
+    <li>Are a useful tool but not a solution.</li>
+  </ul></li>
+  <li>The “seniority” of an engineer derives more from their ability to predict adverse environments than from mastery of any particular technology.</li>
+  <li>The easiest way to know that a failure mode exists is to see it happen.</li>
+  <li>If a model cant fit in our head, it has little value.
+  <ul>
+    <li>As growing a model is not a problem if our understanding grows with it. Still a problem for new people.</li>
+    <li>As we internalize a model, individual faces coalesce into larger, more manageable concepts.</li>
+  </ul></li>
+  <li>If we dont solve a user’s problem, someone else will.</li>
+  <li>City planning is a better metaphor for SW development than civil engineering.</li>
+  <li>SW would be easy if thing never changed.</li>
+  <li>Build SW from principled components (build to be discarded), separated by interfaces where necessary (build to last).</li>
+  <li>Principled systems:
+  <ul>
+    <li>Minimal indirection.</li>
+    <li>Hierarchical: each layer smaller, faster and with broader assumptions.</li>
+    <li>Fragile.</li>
+    <li>Easier to understand (per layer).</li>
+  </ul></li>
+  <li>Adaptable system:
+  <ul>
+    <li>Loads of indirection.</li>
+    <li>Larger component, less efficient, redundant.</li>
+    <li>More flexible.</li>
+  </ul></li>
+  <li>Clojure promote the creation of adaptable software.</li>
+</ul><h2><a name="ch-4"></a>Composition</h2>
+<ul>
+  <li>The ultimate goal of composition is to define processes.</li>
+  <li>Process always:
+  <ul>
+    <li>Pull data from environment.</li>
+    <li>Transform data.</li>
+    <li>Push data to environment.</li>
+    <li>Keep them separated until the last possible moment.</li>
+  </ul></li>
+  <li>Communication between processes is only possible via shared references.</li>
+  <li>(side) effect: any change to shared references.</li>
+  <li>We can consider a process in isolation if:
+  <ul>
+    <li>Performance isnt a primary concern.</li>
+    <li>Some (timeout) failures are acceptable.</li>
+  </ul></li>
+  <li>Any system that exceeds our understanding will inevitably grow a bit slow and flaky.</li>
+  <li>Execution model: strategies describing what our process will do when its environment provides too much or too little.</li>
+  <li>Push and pull phases:
+  <ul>
+    <li>Enforce invariants.</li>
+    <li>Context dependant.</li>
+  </ul></li>
+  <li>Transform:
+  <ul>
+    <li>Functional.</li>
+    <li>Either accrete, reduce or reshape.</li>
+    <li>Return a descriptor of the effects to be performed.</li>
+  </ul></li>
+  <li>Keep transform code in a different namespace than push/pull code.</li>
+  <li>In a robust process, pull phase invokes transform phase so handling errors is a pull phase concern.
+  <ul>
+    <li>Using lazy-seqs with side effects breaks this rule.</li>
+  </ul></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://jaxlondon.com/speaker/daniel-lebrero/"><img src="/images/jax_london.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (27)</a></li><li><a href="/tags/Clojure/index.html">Clojure (31)</a></li><li><a href="/tags/Humour/index.html">Humour (9)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (9)</a></li><li><a href="/tags/good_practices/index.html">good practices (21)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
