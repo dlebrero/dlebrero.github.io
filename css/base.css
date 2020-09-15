@@ -481,7 +481,7 @@ different heights to align properly. */
 }
 
 /* smaller screens */
-@media screen and (max-width:900px) {
+@media screen and (max-width:1200px) {
 	/* block grids for small screens */
 	.s-bgrid-sixth .bgrid {
 		width: 16.66667%;
@@ -627,3 +627,16 @@ different heights to align properly. */
     padding: 0px 0px 10px 10px;
     width: 250px;
 }
+
+.sidenote {
+	border: 1px dashed #000;
+	margin-left: 20px;
+	font-size: 90%;
+	padding: 0px 6px 0px 6px;
+	background-color: #fff9ee;
+}
+.sidenote:before {
+    content: "Side note: "; font-weight:900;
+}
+
+
