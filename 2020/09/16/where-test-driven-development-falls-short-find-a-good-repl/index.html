@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Where TDD falls short, find yourself a good REPL</title>
+	<meta content="TDD is an awesome workflow, but not for everything. " name="description" /><meta content="clojure repl driven development tdd test driven development shortcomings  " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Where TDD falls short, find yourself a good REPL" property="og:title" /><meta content="TDD is an awesome workflow, but not for everything. " property="og:description" /><meta content="https://danlebrero.com/2020/09/16/where-test-driven-development-falls-short-find-a-good-repl/" property="og:url" /><meta content="Where TDD falls short, find yourself a good REPL" name="twitter:title" /><meta content="TDD is an awesome workflow, but not for everything. " name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/tdd-repl/learning-exploration-doing.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/tdd-repl/learning-exploration-doing.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2020/09/16/where-test-driven-development-falls-short-find-a-good-repl/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/tomorrow-night.min.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Where TDD falls short, find yourself a good REPL</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 16 Sep 2020</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">TDD is an awesome workflow, but not for everything. </p>
+
+				 
+				 
+
+					<div class="entry-content"><p>Test-Driven Development (TDD) is by far the <a href="/2019/02/18/other-reasons-for-test-driven-development-baby-steps-roi-evil-manager-watching-the-watchmen/#content">best workflow</a> to get things done. </p><p>It has but one little problem: before you start doing, you need to understand and learn what must be done.</p><p><img src="/images/blog/tdd-repl/learning-doing.jpg" alt="learning before doing" /> </p><p>The TDD workflow by itself does not help with the learning, but as most of our work is about changing existing code, the byproduct of TDD – tests –, can help us to learn how things are working now.</p>
+<p class="sidenote">Unfortunately tests usually do not help to understand why things are the way they are.</p><p>For novel work, neither the TDD workflow nor the existing test suite is of any use. For novel work, we need to use other sources and tools to acquire that knowledge.</p><p>We can split novel work into:</p>
+<ol>
+  <li>New business logic.</li>
+  <li>Unfamiliar libraries and frameworks.</li>
+  <li>Side effects.</li>
+</ol><h2>New business logic</h2><p>To learn about the new business logic to implement, you cannot start by writing tests, but neither can you start writing production code. </p><p>You will need to sit down with your business expert counterpart. </p><p>As you implement the new logic, you will need clarification, you will find edge cases, you will discover contradictions with the existing logic, … all of which will require again of the business expert input, creating a loop between <em>doing</em> and <em>learning</em>:</p><p><img src="/images/blog/tdd-repl/learning-doing-loop.jpg" alt="learning doing loop" /> </p><p>To make this feedback loop fast, the <a href="http://www.extremeprogramming.org/rules/customer.html">on-site customer practice</a> may help you.</p><p>But your business expert will not have all the answers, and as part of the learning, you will together explore what is possible, what data would be required, what third parties should we integrate, what edge cases we will need to cover, …</p><p><img src="/images/blog/tdd-repl/learning-exploration.jpg" alt="exploration" /> </p><p>This exploration phase requires you to read loads of documentation, dig into databases, investigate third-party APIs, mix and match internal services, and sniff into your event queues.</p><p>And a REPL is the best tool for this.</p><h2>Unfamiliar libraries and frameworks</h2><p>Another area where you cannot jump into TDD is when you are using some library for the first time, or when using some part of a library that you are not exactly sure how it behaves.</p><p>For a long time, I used to write “assertion-less tests” with little pieces of code to exercise the library that I wanted to learn about and then set debugging breakpoints to inspect the data that was coming in and out or peak into the state of the system.</p><p>I would write dozens and dozens of those “exploratory” examples until I was confident enough to start <em>doing</em>. But as I was <em>doing</em>, I would need to go back to this technique when my knowledge of the library would falter again, moving from <em>doing</em> to exploring several times per day:</p><p><img src="/images/blog/tdd-repl/learning-exploration-doing.jpg" alt="learning, doing, exploration loop" /> </p><p>I wrote that exploratory code in the form of tests for no other reason than the IDE made it very easy to run them.</p><p>And a REPL is the best tool for this.</p><h2>Side effects</h2><p>Side effects make it very obvious all of our testing efforts are based on lies. </p><p>Mocks, stubs, fakes, spies: all lies to make our testing feedback loop <a href="/2016/11/06/good-test-vs-bad-tests/#content">robust and fast</a>. </p>
+<p class="sidenote">All types of testing are based on lies. Some lies are more truthful than others, but your unit tests are a lie, your TEST environment is a big lie, your performance tests are a lie. The only real testing is actual users bashing your production system, but we call this [monitoring](/2017/06/05/testing-or-monitoring-mtbf-mttr-make-your-choice/#content).</p><p>The best thing is to avoid lies altogether. Why mock a database if running a local database can be robust and fast enough for your testing?</p><p>A lot of times this is not practical so we are forced to write those lies to keep our sanity. </p><p>To make our lies truthful, you need to understand pretty well the behavior of both the external system and the libraries that we will use to interact with them.</p><p>For this, we need to go back to the exploration phase, where we write lots of little programs to exercise the external system, to understand its behavior and misbehavior so that we fill up our knowledge and convert those <strong>unknown</strong> side effects into <strong>known</strong> side effects that we are confident enough to mock, fake or stub. </p><p>And a REPL is the best tool for this.</p>
+<p class="sidenote">This is why testing the frontend is so damn difficult. The side effect of the frontend is painting pixels on a screen and, no matter how many years of experience you have, this is a side effect that will never become a known side effect with so many screen sizes, browsers, and all their quirks.</p><h1>What is a REPL?</h1><p>Is like a command-line shell but using your production language. </p><p>It is like a Google DevTools console but within your IDE. </p><p>It is like an all-powerful debugger in your production environment.</p><p>It is like having a fluid conversation with your application, without any interruptions.</p><h2>Not any REPL but a good REPL.</h2><p>As not all REPL are born the same, you can read what to makes a <a href="https://vvvvalvalval.github.io/posts/what-makes-a-good-repl.html">good REPL good</a>, but I have a very simple test: </p>
+<blockquote><p>You have a good REPL if you write all your code (exploratory, proof of concepts, one-off scripts, tests, and production) using a REPL. </p>
+</blockquote><p>Note that I said “using” a REPL and not “in” the REPL, which is an important distinction and what sets good REPLs apart.</p><h2>A REPL for exploring new business logic.</h2><p>A REPL allows for your exploration to be done in the most efficient way: by <a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">writing little programs</a> using a Turing complete language. </p><p>And not any language, but your production language, the one you are the most familiar with, that makes you the most efficient, that you can use from your awesome IDE, and has all those libraries to connect to, dig into and inspect any data source.</p><h2>A REPL for exploring unfamiliar libraries.</h2><p>To learn about unfamiliar libraries, you need to read their docs and write loads and loads of experiments.</p><p>As <a href="https://twitter.com/_JamesWard/status/1303530732615348224">James Ward</a> puts it:</p>
+<blockquote><p>Programming, no matter what level, is mostly trial &amp; error. So before anything else, optimize for the shortest feedback loop possible.</p>
+</blockquote><p>With a REPL the feedback loop is immediate: there is no build, compilation, deploy, or start-up delay. </p><p>Compared with a script, a REPL allows you just chose which bits of the application or experiment you want to re-run, which makes it easier focus, instead of having to run a whole script all the time.</p><p>Once you get used to this feedback loop, even delays of a couple of seconds feel like <a href="https://www.youtube.com/watch?v=_fNp37zFn9Q">“living with lag”</a>. You want to have a conversation with your application, not one of those <a href="https://www.youtube.com/watch?v=j-WUJs0HYtI">Skype conversations</a>.</p><h2>A REPL for exploring side effects.</h2><p>It is quite usual to use specific tools to explore databases and other external systems, but those tools do not compose.</p><p>By using a REPL, you can again use a full Turing complete language and mix and max data from any system.</p><p>As a big plus, the side effect of exploring side effects with a REPL is <em>production code</em> ready to be used, and data samples for your TDD workflow.</p><h2>A REPL for doing.</h2><p>The immediate feedback loop is not only extremely useful during the exploration phase, but also for <em>doing</em>. </p><p>And the most important, with a REPL you are carving your application from inside it, building it from zero without ever having to stop it, adding functionality in baby steps.</p><p>As we are constantly moving between <em>doing</em> and <em>learning</em>, using the same tool for both doing and learning removes the friction of switching between tools and makes the feedback loop way faster.</p><p>If you want to learn more about the REPL, maybe you want to watch <a href="/2018/11/26/repl-driven-development-immediate-feedback-for-you-backend/#content">my talk about it</a> or Stuart Halloway’s <a href="https://vimeo.com/223309989">REPL Driven Development</a>.</p>
+<hr /><p>More about efficiency:</p>
+<ol>
+  <li><a href="/2017/08/01/efficient-developer-disable-notifications/#content">Disable notifications</a></li>
+  <li><a href="/2017/08/02/efficient-developer-master-your-ide/#content">Master your IDE</a></li>
+  <li><a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">Write programs for yourself</a></li>
+  <li><a href="/2017/09/01/a-docker-compose-environment/#content">Why to Docker Compose a calm environment</a></li>
+  <li><a href="/2018/04/30/did-you-read-my-email/#content">Did you read my email?</a></li>
+  <li><a href="/2018/07/02/efficient-developer-rest-and-sleep/#content">Go and have a rest</a></li>
+  <li><a href="/2018/07/04/habits-of-efficient-developers-wearedevelopers-2018-video/#content">The conference talk</a></li>
+  <li><a href="/2019/02/18/other-reasons-for-test-driven-development-baby-steps-roi-evil-manager-watching-the-watchmen/#content">Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen</a></li>
+  <li>Where TDD falls short, find yourself a good REPL (you are here)</li>
+</ol></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="false">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/good_practices/index.html">good practices </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>.
+					   <p>Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://jaxlondon.com/speaker/daniel-lebrero/"><img src="/images/jax_london.png" /></a>
+					</div>
+
+					<h5 class="widget-title">Disclaimer</h5>
+					<div class="textwidget">
+						<p></p>
+						When I say <i>"most of the time"</i> it actually means <i>"most of the time for my experience, context and background"</i>.
+						Yours will be different.
+						<p></p>
+						Most of the time, what we think is common, usual and the norm is uncommon, strange, surprising or crazy to a lot of people.
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (27)</a></li><li><a href="/tags/Clojure/index.html">Clojure (32)</a></li><li><a href="/tags/Humour/index.html">Humour (9)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (10)</a></li><li><a href="/tags/good_practices/index.html">good practices (22)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+				<div class="widget">
+					<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+					<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+					<a href="/feed.rss"><img src="/images/feed.png" /></a>
+				</div>
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+
+</body>
+
+</html>
