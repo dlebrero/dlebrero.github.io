@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 11 Nov 2020 00:00:00 +0100
+Wed, 25 Nov 2020 00:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 11 Nov 2020 00:00:00 +0100
+Wed, 25 Nov 2020 00:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,23 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Course notes: Time Management for Technical Leaders
+</title>
+<link>
+https://danlebrero.com/2020/11/25/time-management-for-technical-leaders-summary/
+</link>
+<guid>
+https://danlebrero.com/2020/11/25/time-management-for-technical-leaders-summary/
+</guid>
+<pubDate>
+Wed, 25 Nov 2020 00:00:00 +0100
+</pubDate>
+<description>
+Course notes on Patrick Kua's &quot;Time Management for Technical Leaders&quot;
+</description>
+</item>
 <item>
 <title>
 CTO day 1: first steps and hiring framework
@@ -174,23 +191,6 @@ Wed, 15 Apr 2020 09:00:00 +0200
 </pubDate>
 <description>
 Your yearly reminder of why to use a clear and precise language and to ask to clarification when your teammates do not.
-</description>
-</item>
-<item>
-<title>
-Book notes: No-Nonsense Leadership
-</title>
-<link>
-https://danlebrero.com/2020/04/01/no-nonsense-leadership-summary/
-</link>
-<guid>
-https://danlebrero.com/2020/04/01/no-nonsense-leadership-summary/
-</guid>
-<pubDate>
-Wed, 01 Apr 2020 09:00:00 +0200
-</pubDate>
-<description>
-Book notes on &quot;No-Nonsense Leadership&quot;
 </description>
 </item>
 </channel>

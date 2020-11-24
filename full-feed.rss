@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 11 Nov 2020 00:00:00 +0100
+Wed, 25 Nov 2020 00:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 11 Nov 2020 00:00:00 +0100
+Wed, 25 Nov 2020 00:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,97 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+Course notes: Time Management for Technical Leaders
+</title>
+<link>
+https://danlebrero.com/2020/11/25/time-management-for-technical-leaders-summary/
+</link>
+<guid>
+https://danlebrero.com/2020/11/25/time-management-for-technical-leaders-summary/
+</guid>
+<pubDate>
+Wed, 25 Nov 2020 00:00:00 +0100
+</pubDate>
+<description>
+<![CDATA[<p>These are my notes on <a href="https://www.patkua.com/">Patrick Kua</a>&rsquo;s <a href="https://techlead.academy/p/time-management">Time Management for Technical Leaders</a>. </p><p>Main insight: plan, split scary tasks, time box and rest. Aim for a WIP of 1.</p><h2>Notes</h2>
+<ul>
+  <li>Focus on how you can have the biggest impact with the time you have.</li>
+  <li><a href="https://www.eisenhower.me/eisenhower-matrix/">Eisenhower Matrix</a>:<br/> <img src="/images/blog/time-management-for-technical-leaders/eisenhower-matrix.jpg" alt="organization before" />
+  <ul>
+    <li>Do: emergencies, major outages, crisis, someone quitting.</li>
+    <li>Decide:
+    <ul>
+      <li>Manage technical debt.</li>
+      <li>Building relationships.</li>
+      <li>Schedule time.</li>
+      <li>Research.</li>
+    </ul></li>
+    <li>Delegate: See Camille Fournier&rsquo;s <a href="/2020/07/22/the-managers-path-book-summary/#ch-6">delegation matrix</a>.</li>
+  </ul></li>
+  <li>Biorhythm: Keep track for a week on how is your energy level on each task.</li>
+  <li>Defrag your calendar: group together similar nature tasks.</li>
+  <li>2 minutes rule: Do now anything that takes less than two minutes.</li>
+  <li>Parkinson&rsquo;s Law:
+  <ul>
+    <li>&ldquo;Work expands to fill the time available for its completion&rdquo;.</li>
+    <li>Time box.</li>
+    <li>Spit into smaller tasks.</li>
+  </ul></li>
+  <li>Pareto&rsquo;s Law.</li>
+  <li>Carlson&rsquo;s Law: Multitasking is bad.</li>
+  <li>Law of Diminishing Returns (Illich&rsquo;s Law): You need to rest.</li>
+  <li>Hofstadter&rsquo;s Law:
+  <ul>
+    <li>&ldquo;It always takes longer than you expect, even when you take into account Hofstadter&rsquo;s Law&rdquo;.</li>
+    <li>Prepare plan B.</li>
+    <li>Early feedback.</li>
+    <li>On planning, think about all possible bad scenarios.</li>
+  </ul></li>
+  <li>Law of The Least Effort (Laborit&rsquo;s Law):
+  <ul>
+    <li>&ldquo;Human behaviour drives us to do what makes us happy first&rdquo;.</li>
+    <li>It is human nature to avoid stress.</li>
+    <li>Eat the frog first.</li>
+    <li>Give yourself a reward.</li>
+    <li>Get started by baby steps.</li>
+  </ul></li>
+  <li>How to kill dead time:
+  <ul>
+    <li>Meditation.</li>
+    <li>Make notes.</li>
+    <li>Call someone.</li>
+    <li>Do nothing.</li>
+  </ul></li>
+  <li><a href="https://www.amazon.com/Slack-Getting-Burnout-Busywork-Efficiency/dp/0767907698">Slack</a>. Great book.</li>
+  <li>Productivity Systems:
+  <ol>
+    <li><a href="https://www.goodreads.com/book/show/1633.Getting_Things_Done">Get Things Done</a>:
+    <ul>
+      <li>Open Loops:
+      <ul>
+        <li>When you worry about when and if something is going to get done.</li>
+        <li>Source of stress.</li>
+      </ul></li>
+      <li>Three steps:
+      <ul>
+        <li>What is the outcome.</li>
+        <li>What is the next step.</li>
+        <li>Reminder.</li>
+      </ul></li>
+      <li>Bucked things per timeframe.</li>
+    </ul></li>
+    <li><a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Pomodoro Technique</a>.</li>
+    <li>Personal Kanban:
+    <ul>
+      <li>Visualize your work.</li>
+      <li>Limit WIP to 1.</li>
+    </ul></li>
+  </ol></li>
+</ul>]]>
+</description>
+</item>
 <item>
 <title>
 CTO day 1: first steps and hiring framework
@@ -110,7 +201,7 @@ Wed, 11 Nov 2020 00:00:00 +0100
     <li>Tech capability must be green and at least two other yellow, or</li>
     <li>If tech capability is yellow, at least three others must be green.</li>
   </ul></li>
-</ul><p>The expectation is that the hiring framework will make the hiring faster, consistent and remove biases.</p><p>To give clarity to the team, I worked in parallel on a career path for Akvo’s technical staff. </p><p>I would recommend <a href="https://twitter.com/polotek">Marco Rogers</a>&rsquo; <a href="https://www.youtube.com/watch?v=jA1Q94d2z10">Creating a career ladder for engineers</a> talk, <a href="https://twitter.com/skamille">Camille Fournier</a>&rsquo;s <a href="/2020/07/22/the-managers-path-book-summary/#content">The Manager&rsquo;s Path</a>, and <a href="https://www.progression.fyi">https://www.progression.fyi</a> has plenty of examples from well known companies.</p><p>But all this work went into shambles as my next task was not precisely hiring&hellip;</p>]]>
+</ul><p>The expectation is that the hiring framework will make the hiring faster, consistent and remove biases.</p><p>To give clarity to the team, I worked in parallel on a career path for Akvo’s technical staff. </p><p>I would recommend <a href="https://twitter.com/polotek">Marco Rogers</a>&rsquo; <a href="https://www.youtube.com/watch?v=jA1Q94d2z10">Creating a career ladder for engineers</a> talk, <a href="https://twitter.com/skamille">Camille Fournier</a>&rsquo;s <a href="/2020/07/22/the-managers-path-book-summary/#content">The Manager&rsquo;s Path</a>, and <a href="https://www.progression.fyi">https://www.progression.fyi</a> has plenty of examples from well known companies.</p><p>But all this work went into shambles as my next task was <a href="/2020/11/25/cto-diary-downsizing-team-firing/#content">not precisely hiring&hellip;</a></p>]]>
 </description>
 </item>
 <item>
@@ -6193,35 +6284,6 @@ Wed, 02 Aug 2017 00:00:00 +0200
 <ol>
   <li><a href="/2017/08/01/efficient-developer-disable-notifications/#content">Disable notifications</a></li>
   <li>Master your IDE (you are here)</li>
-  <li><a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">Write programs for yourself</a></li>
-  <li><a href="/2017/09/01/a-docker-compose-environment/#content">Why to Docker Compose a calm environment</a></li>
-  <li><a href="/2018/04/30/did-you-read-my-email/#content">Did you read my email?</a></li>
-  <li><a href="/2018/07/02/efficient-developer-rest-and-sleep/#content">Go and have a rest</a></li>
-  <li><a href="/2018/07/04/habits-of-efficient-developers-wearedevelopers-2018-video/#content">The conference talk</a></li>
-  <li><a href="/2019/02/18/other-reasons-for-test-driven-development-baby-steps-roi-evil-manager-watching-the-watchmen/#content">Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen</a></li>
-  <li><a href="/2020/09/16/where-test-driven-development-falls-short-find-a-good-repl/#content">Where TDD falls short, find yourself a good REPL</a></li>
-</ol>]]>
-</description>
-</item>
-<item>
-<title>
-A more efficient developer: disable notifications
-</title>
-<link>
-https://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
-</link>
-<guid>
-https://danlebrero.com/2017/08/01/efficient-developer-disable-notifications/
-</guid>
-<pubDate>
-Tue, 01 Aug 2017 00:00:00 +0200
-</pubDate>
-<description>
-<![CDATA[<p>As part of my job as a reluctant architect, I have the privilege of teaching a “developer productivity” course, where I outline basic points that have helped me become a more <a href="http://codingwithempathy.com/2017/01/24/efficiency-effectiveness-teams/">efficient</a> developer during my career.</p><p>I want to share one of those points today, one that will have a huge productivity impact with minimal effort:</p><h3>Disable the email pop up notifications.</h3><p>You don&rsquo;t even want to see the number of unread emails in your taskbar. </p><p>In fact, you don’t need to see any notifications. Disable them all.</p><p>Don’t let them break your concentration.</p>
-<hr/><p>More about efficiency:</p>
-<ol>
-  <li>Disable notifications (you are here)</li>
-  <li><a href="/2017/08/02/efficient-developer-master-your-ide/#content">Master your IDE</a></li>
   <li><a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">Write programs for yourself</a></li>
   <li><a href="/2017/09/01/a-docker-compose-environment/#content">Why to Docker Compose a calm environment</a></li>
   <li><a href="/2018/04/30/did-you-read-my-email/#content">Did you read my email?</a></li>
