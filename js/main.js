@@ -250,6 +250,6 @@
     ];
 
    var bbanner = bottombanner[Math.floor(Math.random() * (bottombanner.length))];
-   $(bbanner).appendTo($('#bottombanner'));
+   $(bbanner).prependTo($('#bottombanner'));
 
 })(jQuery);
