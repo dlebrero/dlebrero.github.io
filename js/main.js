@@ -225,4 +225,31 @@
 	}); 
 
 
+   var rightbanner = [
+   '<a href="https://www.tkqlhce.com/click-100274552-14052108" target="_top" ><img src="https://www.tqlkg.com/image-100274552-14052108" width="160" height="600" alt="Free resources" border="0"/></a>',
+'<a href="https://www.kqzyfj.com/click-100274552-14049881" target="_top"><img src="https://www.tqlkg.com/image-100274552-14049881" width="160" height="600" alt="Navigate the Change" border="0"/></a>',
+'<a href="https://www.kqzyfj.com/click-100274552-14045082" target="_top"><img src="https://www.awltovhc.com/image-100274552-14045082" width="160" height="600" alt="Stay Ahead of the Curve!" border="0"/></a>',
+ '<a href="https://www.tkqlhce.com/click-100274552-14045054" target="_top"><img src="https://www.ftjcfx.com/image-100274552-14045054" width="160" height="600" alt="Stay Ahead of the Curve!" border="0"/></a>',
+'<a href="https://www.jdoqocy.com/click-100274552-14045032" target="_top"><img src="https://www.tqlkg.com/image-100274552-14045032" width="160" height="600" alt="Stay Ahead of the Curve!" border="0"/></a>',
+'<a href="https://www.anrdoezrs.net/click-100274552-13722489" target="_top"><img src="https://www.tqlkg.com/image-100274552-13722489" width="160" height="600" alt="Start Learning Today!" border="0"/></a>'
+   ];
+
+   var banneridx=Math.floor(Math.random() * (rightbanner.length));
+   console.log(banneridx);
+   var rbanner = rightbanner[banneridx];
+   console.log(rbanner);
+   $(rbanner).appendTo($('#rightbanner'));
+
+    var bottombanner = [
+    '<a href="https://www.anrdoezrs.net/click-100274552-14049886" target="_top"><img src="https://www.awltovhc.com/image-100274552-14049886" width="728" height="90" alt="Navigate the Change" border="0"/></a>',
+    '<a href="https://www.kqzyfj.com/click-100274552-14052112" target="_top"><img src="https://www.ftjcfx.com/image-100274552-14052112" width="728" height="90" alt="Free resources" border="0"/></a>',
+    '<a href="https://www.jdoqocy.com/click-100274552-14045086" target="_top"><img src="https://www.lduhtrp.net/image-100274552-14045086" width="728" height="90" alt="Stay Ahead of the Curve!" border="0"/></a>',
+    '<a href="https://www.tkqlhce.com/click-100274552-14045064" target="_top"><img src="https://www.tqlkg.com/image-100274552-14045064" width="728" height="90" alt="Stay Ahead of the Curve!" border="0"/></a>',
+    '<a href="https://www.dpbolvw.net/click-100274552-14045038" target="_top"><img src="https://www.lduhtrp.net/image-100274552-14045038" width="728" height="90" alt="Stay Ahead of the Curve!" border="0"/></a>',
+    '<a href="https://www.jdoqocy.com/click-100274552-13722494" target="_top"><img src="https://www.ftjcfx.com/image-100274552-13722494" width="728" height="90" alt="Start Learning Today!" border="0"/></a>'
+    ];
+
+   var bbanner = bottombanner[Math.floor(Math.random() * (bottombanner.length))];
+   $(bbanner).appendTo($('#bottombanner'));
+
 })(jQuery);
