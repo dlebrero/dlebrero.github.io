@@ -12,10 +12,10 @@ https://danlebrero.com
 en
 </language>
 <lastBuildDate>
-Wed, 25 Nov 2020 00:00:00 +0100
+Wed, 02 Dec 2020 09:00:00 +0100
 </lastBuildDate>
 <pubDate>
-Wed, 25 Nov 2020 00:00:00 +0100
+Wed, 02 Dec 2020 09:00:00 +0100
 </pubDate>
 <description>
 Daniel Lebrero blog
@@ -23,6 +23,112 @@ Daniel Lebrero blog
 <generator>
 clj-rss
 </generator>
+<item>
+<title>
+CTO day 2: downsizing the team
+</title>
+<link>
+https://danlebrero.com/2020/12/02/cto-diary-downsizing-team-firing/
+</link>
+<guid>
+https://danlebrero.com/2020/12/02/cto-diary-downsizing-team-firing/
+</guid>
+<pubDate>
+Wed, 02 Dec 2020 09:00:00 +0100
+</pubDate>
+<description>
+<![CDATA[<p>A very important project that was a done deal, and that will secure the organization’s future for the next five years, failed to happen.</p><p>Not winning this project meant that the organization was forced to <em>&ldquo;focus&rdquo;</em> and reduce costs.</p><p>It never crossed my mind that one of the first things that I would be asked to do as an inexperienced CTO would be to fire part of the team.</p>
+<p class="sidenote">when such bad news becomes public, host an open door day where the team can openly talk about the situation, share their feelings, see each other, feel connected, and be listened to. It would not stop the gossiping but it will help.</p><h2>Cuts and team principles</h2><p>The Dev team slice of the <em>&ldquo;focus&rdquo;</em> meant cutting cost by 10 to 15%. In human terms, firing two to four people (out of 17).</p><p>After some failed attempts to approach this task, this is what worked for me.</p><p>I started by listing some principles: </p>
+<ul>
+  <li>For each product, we need to cover the following disciplines: Frontend, Backend, Architecture, Operations, Mobile, UX, Design, QA, Leadership, and Product Management.</li>
+  <li>There are broadly 3 experience levels:
+  <ul>
+    <li>Senior: creates the plan.</li>
+    <li>Mid-level: follows the plan.</li>
+    <li>Junior: needs to be taught to follow the plan.</li>
+  </ul></li>
+  <li>No number of junior people can do some work a senior person can do.</li>
+  <li>Not having a senior person in a discipline will mean that the product quality will suffer:
+  <ul>
+    <li>If a senior creates a plan, a team of mid-level+juniors can follow the plan for some time (2-3 years?) before the product becomes a big mess.</li>
+    <li>To get out of a big mess, we need senior people.
+    <ul>
+      <li>We are already in a big mess with Product A and Product B.</li>
+      <li>With the current team, it feels Product A is getting out of the mess.</li>
+    </ul></li>
+  </ul></li>
+  <li>Independent (cross-functional) teams are more efficient:
+  <ul>
+    <li>More focus.</li>
+    <li>No handoffs, faster feedback.</li>
+    <li>No shared “resource” contention.</li>
+  </ul></li>
+  <li>People working in multiple products/teams are less efficient.</li>
+  <li>Multidisciplinary (generalist) people:
+  <ul>
+    <li>Can cover the need for several of the disciplines.</li>
+    <li>They can be junior in one discipline and senior in another.</li>
+    <li>Allow focusing on any priority, without creating artificially important work for single-disciplined members.</li>
+  </ul></li>
+  <li>Max team size: 2 pizza teams 6-8.</li>
+</ul><p>The ideal team would be one that has all disciplines covered at a senior level with multidisciplinary people working in just one team, and with enough overlap to avoid a <a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a> of one. Additional people will bring additional capacity.</p><h2>Inverse Conway’s maneuver</h2><p>We have been working on bringing three of the products together for some time. They were already under the same product manager, but they were still three teams working on their own priorities. Merging them into one team, in a classic <a href="/2020/01/08/do-i-need-a-gateway-api-team-dynamics/#content">inverse Conway’s maneuver</a> would hopefully accelerate the integration between the products.</p><p>One of the other products was small enough that for this task I decided to temporarily ignore it.</p><p>Following the principles above and the product considerations, the plan was to move the previous team setup from:</p><p><img src="/images/blog/cto/day2/old-team-structure.jpg" alt="old team structure" /> </p><p>To something like (boxes represent skills, not people):</p><p><img src="/images/blog/cto/day2/new-team-structure.jpg" alt="new team structure" /> </p><p>So two products, two cross-functional teams. Platforms and design teams will be reshuffled inside those two teams.</p><h2>Which parent do you love most? A computer will tell</h2><p>With a clear plan for the team, the next step was to <em>&ldquo;just&rdquo;</em> pick up who will work on each team, and who we will need to let go. The most painful decision in my career. </p>
+<blockquote><p>People with a strong technical background can convert any task into a technical task, thus avoiding work they don’t want to do. <cite>Jerry Weinberg, <a href="https://danlebrero.com/2019/11/27/becoming-a-technical-leader-book-notes/#content">Becoming a Technical Leader</a></cite></p>
+</blockquote><p>And I didn&rsquo;t want to do the task so, consciously ignoring Mr. Weinberg, I transformed the ordeal into an optimization problem, for which I wrote an application to help me with.</p><h3>The app</h3><p>The application took as input the amount of $$$ to cut, the list of people, their salary, and the skill level on each discipline mentioned above, and outputted the possible two teams that would be within budget and match the minimum requirements, sorted by a scoring system.</p><p>The minimum requirements and scoring system configuration looked like:</p>
+<pre><code class="Clojure">{
+&quot;FE&quot; [at-least-senior sum-skills]
+&quot;PM&quot; [senior-plus-somebody-else (fix-points 5)]
+&quot;Design&quot; [two-mid-or-senior (senior-better 6 2)]
+...
+}
+</code></pre><p>The first function filters out invalid teams while the second scores the valid ones.</p><p>In the example we say that the team has to have:</p>
+<ul>
+  <li>At least one senior FE developer. The more FE developers, the better team score.</li>
+  <li>At least one senior product manager and one mid or junior one. Only one senior is not enough. No matter how many PMs the team has, the score for this discipline is 5. A team with loads of FE devs will score higher than one with loads of PMs.</li>
+  <li>At least a senior designer or two mid-level designers, but we prefer one senior designer (6 points) instead of two mid-level ones (2 points).</li>
+</ul><h3>The result</h3><p>As heartless as this may seem:</p>
+<ul>
+  <li>It removed some bias. There is still bias on the skill level evaluation and in the team scoring system.</li>
+  <li>I was part of the people on that list. To be honest, little consolation here. Big bias.</li>
+  <li>It forced me to be very very precise on what a “functioning team” meant.</li>
+  <li>It allowed me to see what different scoring systems would output.</li>
+  <li>I noticed some people would never show in the output, and had to dig into why. It was enlightening.</li>
+  <li>It allowed me to analyze tens of thousands of different team combinations, with different scoring systems.</li>
+  <li>Programming gave me a respite from the task. This was the first time, but now I embrace more regularly &ldquo;keep my sanity&rdquo; programming days.</li>
+</ul><p>Most important, the application gave me a few starting points. Of those, I still had to consider the team dynamics, existing teams, personalities, seniority, potential, personal situation, future needs, &hellip;</p>
+<p class="sidenote">yes, I still have the code. No, I am not going to share it publicly. It would kill me to find there is a bug.</p><h2>Delivering the bad news</h2><p>Once the decision was made, it was time to swallow the last bitter pill.</p><p>Some tips:</p>
+<ul>
+  <li>Ensure that the people affected are the first ones to know.</li>
+  <li>Warn beforehand:
+  <ul>
+    <li>Do not use your regular one-to-one meeting slot.</li>
+    <li>In your message, give a strong hint: &ldquo;HR person will be in the meeting&rdquo;, &ldquo;Really bad news&rdquo;.</li>
+    <li>Give them time to get ready for the meeting.</li>
+  </ul></li>
+  <li>You don&rsquo;t need to do it alone. Our HR manager was present and was a huge support for both of us.</li>
+  <li>Treat people like adults.</li>
+  <li>At the meeting, follow Nadia van der Vlies’ <a href="https://danlebrero.com/2020/04/01/no-nonsense-leadership-summary/#bad-news">advice</a>:
+  <ul>
+    <li>Deliver the blow:
+    <ul>
+      <li>Go straight to the bad news.</li>
+      <li>Give one or two reasons.</li>
+    </ul></li>
+    <li>Manage the reaction:
+    <ul>
+      <li>Be understanding. Do not justify yourself.</li>
+      <li>Give space. Do not fill silences.</li>
+    </ul></li>
+    <li>Solution, explanation, follow-up appointment:
+    <ul>
+      <li>Wait for the employee to be ready. When she starts asking &ldquo;why&rdquo; or &ldquo;what now&rdquo;.</li>
+      <li>Reiterate reasons.</li>
+    </ul></li>
+  </ul></li>
+  <li>In a couple of days follow up with another more informal meeting. The news would have sunk, and the conversation would be more forward-thinking and productive.</li>
+</ul>
+<hr/><p>A slap in the face to awaken me from the dream that a CTO role is mostly about technology.</p>]]>
+</description>
+</item>
 <item>
 <title>
 Course notes: Time Management for Technical Leaders
@@ -259,7 +365,7 @@ https://danlebrero.com/2020/08/31/good-strategy-bad-strategy-summary/
 Mon, 31 Aug 2020 00:00:00 +0200
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on Professor Richard Rumelt&rsquo;s <a href="http://goodbadstrategy.com/">Good Strategy / Bad Strategy</a>. </p><p>The book is an excellent introduction about what strategy is and what is not.</p><p>You can see Rumelt talking about the content of the book in <a href="https://www.youtube.com/watch?v=UZrTl16hZdk">this video</a>.</p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on Professor Richard Rumelt&rsquo;s <a href="http://goodbadstrategy.com/">Good Strategy / Bad Strategy</a>. </p><p>The book is an excellent introduction about what strategy is and what is not.</p><p>You can see Rumelt talking about the content of the book in <a href="https://www.youtube.com/watch?v=UZrTl16hZdk">this video</a>.</p><p>See <a href="https://lethain.com/good-engineering-strategy-is-boring/">Write five, then synthesize: good engineering strategy is boring</a> for a practical process to write about vision and strategy.</p><h1>Key Insights</h1>
 <ul>
   <li>Basic idea of strategy: apply strength to opportunity.</li>
   <li>Subtle shifts in viewpoints is a huge source of strength.</li>
@@ -3762,12 +3868,12 @@ Wed, 08 Jan 2020 09:00:00 +0100
   <li>What information needs to be shared between the API team and the other teams?</li>
   <li>What meetings will be required?</li>
   <li>Who will decide on priorities?</li>
-  <li>Where will some of the functionality will be implemented: API GW or internal services?</li>
+  <li>Where will some functionality be implemented: API GW or internal services?</li>
   <li>Who can veto an API change?</li>
   <li>Who can veto an internal service change?</li>
   <li>How will support be handled?</li>
   <li>&hellip;</li>
-</ul><p>This is not to say that the new architecture is worse, but that all these questions should be taken into consideration when deciding if an API Gateway should be introduced or not.</p><p>Of course, this new team setup is just one of the possible ones. There are plenty of others (none of which is wrong) that will give different answers to the questions above, like: </p><h4>Shared responsibility, no accountability</h4><p>Where all teams own the API gateway, but nobody takes accountability.</p><p><img src="/images/blog/do-i-need-an-api-gw/everybody-responsible-gw-api.jpg" alt="Everybody responsible for API GW team structure" title="Everybody is responsible" /></p><h4>The API Council</h4><p>Where all teams agree to meet monthly to agree on API rules, and that is the only agreement that is ever reached.</p><p><img src="/images/blog/do-i-need-an-api-gw/gw-api-council.jpg" alt="The API gateway council" title="The API gateway council" /></p><h4>The Architects Overlords</h4><p>Where all powerful beings dictate the API rules for mortals to implement.</p><p><img src="/images/blog/do-i-need-an-api-gw/architects-ivory-tower.jpg" alt="Architects overloads on their ivory tower" title="Architects overloads on their ivory tower" /></p><h4>The Ignored Embedded Architects</h4><p>Where architects work along side the development teams, and meet monthly to whine about how their wise advise is completely ignored.</p><p><img src="/images/blog/do-i-need-an-api-gw/embedded-architect.jpg" alt="Embedded Architects ignored by the team" title="Embedded Architects ignored by the team" /></p><h4>The All Powerful API Framework</h4><p>Where the Platforms team provides a mandatory API framework so that teams can run their own API-rules-compliant gateways, and where all teams do their best to avoid, circumvent and replace with battle tested Open Source alternatives. </p><p><img src="/images/blog/do-i-need-an-api-gw/shared-platform-framework.jpg" alt="Shared Platform API framework" title="Shared platform API framework" /></p><h2>A Team oriented answer</h2><p>So to answer the question <em>&ldquo;Should I introduce an API Gateway in my workplace?&rdquo;</em> the main concern, and what you should focus on, is not the technical aspect of it.</p><p>The important question to answer is:</p>
+</ul><p>This is not to say that the new architecture is worse, but that all these questions should be taken into consideration when deciding if an API Gateway should be introduced or not.</p><p>Of course, this new team setup is just one of the possible ones. There are plenty of others (none of which is wrong) that will give different answers to the questions above, like: </p><h4>Shared responsibility, no accountability</h4><p>Where all teams own the API gateway, but nobody takes accountability.</p><p><img src="/images/blog/do-i-need-an-api-gw/everybody-responsible-gw-api.jpg" alt="Everybody responsible for API GW team structure" title="Everybody is responsible" /></p><h4>The API Council</h4><p>Where all teams agree to meet monthly to agree on API rules, and that is the only agreement that is ever reached.</p><p><img src="/images/blog/do-i-need-an-api-gw/gw-api-council.jpg" alt="The API gateway council" title="The API gateway council" /></p><h4>The Architects Overlords</h4><p>Where all powerful beings dictate the API rules for mortals to implement.</p><p><img src="/images/blog/do-i-need-an-api-gw/architects-ivory-tower.jpg" alt="Architects overloads on their ivory tower" title="Architects overloads on their ivory tower" /></p><h4>The Ignored Embedded Architects</h4><p>Where architects work along side the development teams, and meet monthly to whine about how their wise advise is completely ignored.</p><p><img src="/images/blog/do-i-need-an-api-gw/embedded-architect.jpg" alt="Embedded Architects ignored by the team" title="Embedded Architects ignored by the team" /></p><h4>The All Powerful API Framework</h4><p>Where the Platforms team provides a mandatory API framework so that teams can run their own API-rules-compliant gateways, and where all teams do their best to avoid, circumvent and replace it with battle tested Open Source alternatives. </p><p><img src="/images/blog/do-i-need-an-api-gw/shared-platform-framework.jpg" alt="Shared Platform API framework" title="Shared platform API framework" /></p><h2>A Team oriented answer</h2><p>So to answer the question <em>&ldquo;Should I introduce an API Gateway in my workplace?&rdquo;</em> the main concern, and what you should focus on, is not the technical aspect.</p><p>The important question to answer is:</p>
 <blockquote><p>What are the team dynamics that you want for you company, given its current context?</p>
 </blockquote><p>Conway&rsquo;s law at its best.</p>]]>
 </description>
@@ -6250,41 +6356,6 @@ Thu, 03 Aug 2017 00:00:00 +0200
   <li><a href="/2017/08/01/efficient-developer-disable-notifications/#content">Disable notifications</a></li>
   <li><a href="/2017/08/02/efficient-developer-master-your-ide/#content">Master your IDE</a></li>
   <li>Write programs for yourself (you are here)</li>
-  <li><a href="/2017/09/01/a-docker-compose-environment/#content">Why to Docker Compose a calm environment</a></li>
-  <li><a href="/2018/04/30/did-you-read-my-email/#content">Did you read my email?</a></li>
-  <li><a href="/2018/07/02/efficient-developer-rest-and-sleep/#content">Go and have a rest</a></li>
-  <li><a href="/2018/07/04/habits-of-efficient-developers-wearedevelopers-2018-video/#content">The conference talk</a></li>
-  <li><a href="/2019/02/18/other-reasons-for-test-driven-development-baby-steps-roi-evil-manager-watching-the-watchmen/#content">Other reasons for TDD: Baby steps, ROI, Evil Manager Syndrome and Watching the watchmen</a></li>
-  <li><a href="/2020/09/16/where-test-driven-development-falls-short-find-a-good-repl/#content">Where TDD falls short, find yourself a good REPL</a></li>
-</ol>]]>
-</description>
-</item>
-<item>
-<title>
-A more efficient developer: master your IDE
-</title>
-<link>
-https://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
-</link>
-<guid>
-https://danlebrero.com/2017/08/02/efficient-developer-master-your-ide/
-</guid>
-<pubDate>
-Wed, 02 Aug 2017 00:00:00 +0200
-</pubDate>
-<description>
-<![CDATA[<p>As a developer, you are going to spend thousands of hours working with your IDE or editor of choice. It is your main tool, you need to know how to get the most out of it.</p><p>Using your IDE 8 hours a day is not enough, you need to make a conscious and deliberate effort to master it. As a wise man once said:</p>
-<blockquote><p><a href="https://youtu.be/SMCsXl9SGgY?t=1m17s">Wax on, Wax off</a> <cite>Master Miyagi, The Karate Kid.</cite></p>
-</blockquote><p>You must learn:</p>
-<ol>
-  <li>The shortcuts for all the functionality that you regularly use. You should rarely need to use your mouse.</li>
-  <li>Its features: read the release notes, watch online tutorials or follow some expert that blogs about it.</li>
-</ol><p>If you happen to use Intellij IDEA, the Key Promoter plugin will help to learn the shortcuts and JetBrains provides a ton of online material. Follow their <a href="https://blog.jetbrains.com/idea/">blog</a> and <a href="https://www.youtube.com/user/intellijideavideo">youtube channel</a>. </p><p>But the most effective way of learning your IDE is to do pair programming. As part of your daily job, each of your partners will teach you different features, and you will have the chance to teach them to others, creating a nice cross-pollination effect.</p><p>And you can always ask your partner to slap you every time that you reach for the mouse. A win-win situation.</p>
-<hr/><p>More about efficiency:</p>
-<ol>
-  <li><a href="/2017/08/01/efficient-developer-disable-notifications/#content">Disable notifications</a></li>
-  <li>Master your IDE (you are here)</li>
-  <li><a href="/2017/08/03/efficient-developer-write-programs-for-yourself/#content">Write programs for yourself</a></li>
   <li><a href="/2017/09/01/a-docker-compose-environment/#content">Why to Docker Compose a calm environment</a></li>
   <li><a href="/2018/04/30/did-you-read-my-email/#content">Did you read my email?</a></li>
   <li><a href="/2018/07/02/efficient-developer-rest-and-sleep/#content">Go and have a rest</a></li>

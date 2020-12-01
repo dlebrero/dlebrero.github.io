@@ -235,9 +235,7 @@
    ];
 
    var banneridx=Math.floor(Math.random() * (rightbanner.length));
-   console.log(banneridx);
    var rbanner = rightbanner[banneridx];
-   console.log(rbanner);
    $(rbanner).appendTo($('#rightbanner'));
 
     var bottombanner = [
