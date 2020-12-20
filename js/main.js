@@ -226,28 +226,22 @@
 
 
    var rightbanner = [
-   '<a href="https://www.tkqlhce.com/click-100274552-14052108" target="_top" ><img src="https://www.tqlkg.com/image-100274552-14052108" width="160" height="600" alt="Free resources" border="0"/></a>',
-'<a href="https://www.kqzyfj.com/click-100274552-14049881" target="_top"><img src="https://www.tqlkg.com/image-100274552-14049881" width="160" height="600" alt="Navigate the Change" border="0"/></a>',
-'<a href="https://www.kqzyfj.com/click-100274552-14045082" target="_top"><img src="https://www.awltovhc.com/image-100274552-14045082" width="160" height="600" alt="Stay Ahead of the Curve!" border="0"/></a>',
  '<a href="https://www.tkqlhce.com/click-100274552-14045054" target="_top"><img src="https://www.ftjcfx.com/image-100274552-14045054" width="160" height="600" alt="Stay Ahead of the Curve!" border="0"/></a>',
 '<a href="https://www.jdoqocy.com/click-100274552-14045032" target="_top"><img src="https://www.tqlkg.com/image-100274552-14045032" width="160" height="600" alt="Stay Ahead of the Curve!" border="0"/></a>',
 '<a href="https://www.anrdoezrs.net/click-100274552-13722489" target="_top"><img src="https://www.tqlkg.com/image-100274552-13722489" width="160" height="600" alt="Start Learning Today!" border="0"/></a>',
 '<a href="https://www.dpbolvw.net/click-100274552-14300499" target="_top"><img src="https://www.lduhtrp.net/image-100274552-14300499" width="160" height="600" alt="" border="0"/></a>',
-'<a href="https://www.anrdoezrs.net/click-100274552-14367022" target="_top"><img src="https://www.lduhtrp.net/image-100274552-14367022" width="160" height="600" alt="" border="0"/></a>'
-   ];
+   '<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=14&l=ez&f=ifr&linkID=dae712bc814fadb573bf81b82b4292a0&t=danlebrero-20&tracking_id=danlebrero-20" width="160" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>',
+   '<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=audibleplus&banner=0MG2XKQ7PYPP84NBNFR2&f=ifr&lc=pf4&linkID=46b9a1063149e991af5bb4d262553b09&t=danlebrero-20&tracking_id=danlebrero-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>'];
 
    var banneridx=Math.floor(Math.random() * (rightbanner.length));
    var rbanner = rightbanner[banneridx];
    $(rbanner).appendTo($('#rightbanner'));
 
     var bottombanner = [
-    '<a href="https://www.anrdoezrs.net/click-100274552-14049886" target="_top"><img src="https://www.awltovhc.com/image-100274552-14049886" width="728" height="90" alt="Navigate the Change" border="0"/></a>',
-    '<a href="https://www.kqzyfj.com/click-100274552-14052112" target="_top"><img src="https://www.ftjcfx.com/image-100274552-14052112" width="728" height="90" alt="Free resources" border="0"/></a>',
-    '<a href="https://www.jdoqocy.com/click-100274552-14045086" target="_top"><img src="https://www.lduhtrp.net/image-100274552-14045086" width="728" height="90" alt="Stay Ahead of the Curve!" border="0"/></a>',
-    '<a href="https://www.tkqlhce.com/click-100274552-14045064" target="_top"><img src="https://www.tqlkg.com/image-100274552-14045064" width="728" height="90" alt="Stay Ahead of the Curve!" border="0"/></a>',
     '<a href="https://www.dpbolvw.net/click-100274552-14045038" target="_top"><img src="https://www.lduhtrp.net/image-100274552-14045038" width="728" height="90" alt="Stay Ahead of the Curve!" border="0"/></a>',
     '<a href="https://www.jdoqocy.com/click-100274552-13722494" target="_top"><img src="https://www.ftjcfx.com/image-100274552-13722494" width="728" height="90" alt="Start Learning Today!" border="0"/></a>',
-    '<a href="https://www.anrdoezrs.net/click-100274552-14367020" target="_top"><img src="https://www.awltovhc.com/image-100274552-14367020" width="728" height="90" alt="" border="0"/></a>'
+    '<a href="https://www.anrdoezrs.net/click-100274552-14367020" target="_top"><img src="https://www.awltovhc.com/image-100274552-14367020" width="728" height="90" alt="" border="0"/></a>',
+    '<iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=13&l=ez&f=ifr&linkID=37fc150b40a07a29cca6d23f601b8bd8&t=danlebrero-20&tracking_id=danlebrero-20" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>'
     ];
 
    var bbanner = bottombanner[Math.floor(Math.random() * (bottombanner.length))];

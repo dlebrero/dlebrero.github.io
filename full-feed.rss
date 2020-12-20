@@ -417,7 +417,7 @@ https://danlebrero.com/2020/08/31/good-strategy-bad-strategy-summary/
 Mon, 31 Aug 2020 00:00:00 +0200
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on Professor Richard Rumelt&rsquo;s <a href="http://goodbadstrategy.com/">Good Strategy / Bad Strategy</a>. </p><p>The book is an excellent introduction about what strategy is and what is not.</p><p>You can see Rumelt talking about the content of the book in <a href="https://www.youtube.com/watch?v=UZrTl16hZdk">this video</a>.</p><p>See <a href="https://lethain.com/good-engineering-strategy-is-boring/">Write five, then synthesize: good engineering strategy is boring</a> for a practical process to write about vision and strategy.</p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on Professor Richard Rumelt&rsquo;s <a href="https://amzn.to/3nBVUO1">Good Strategy / Bad Strategy</a>. </p><p>The book is an excellent introduction about what strategy is and what is not.</p><p>You can see Rumelt talking about the content of the book in <a href="https://www.youtube.com/watch?v=UZrTl16hZdk">this video</a>.</p><p>See <a href="https://lethain.com/good-engineering-strategy-is-boring/">Write five, then synthesize: good engineering strategy is boring</a> for a practical process to write about vision and strategy.</p><h1>Key Insights</h1>
 <ul>
   <li>Basic idea of strategy: apply strength to opportunity.</li>
   <li>Subtle shifts in viewpoints is a huge source of strength.</li>
@@ -855,7 +855,7 @@ https://danlebrero.com/2020/08/12/elements-of-clojure-book-summary/
 Wed, 12 Aug 2020 10:00:00 +0200
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on <a href="https://twitter.com/ztellman">Zachary Tellman</a>&rsquo;s <a href="https://leanpub.com/elementsofclojure">Elements of Clojure</a>. </p><p>There are some elements of Clojure on the book, but most of the content covered is universal to any language. </p><p>Zach has several talks were he covers the subjects of the book: <a href="https://www.youtube.com/watch?v=JaKLSH4csqE">names</a>, <a href="https://www.youtube.com/watch?v=x9pxbnFC4aQ">abstraction</a> and <a href="https://clojuresync.com/zach-tellman/">composition</a>.</p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on <a href="https://twitter.com/ztellman">Zachary Tellman</a>&rsquo;s <a href="https://amzn.to/3auJMuQ">Elements of Clojure</a>. </p><p>There are some elements of Clojure on the book, but most of the content covered is universal to any language. </p><p>Zach has several talks were he covers the subjects of the book: <a href="https://www.youtube.com/watch?v=JaKLSH4csqE">names</a>, <a href="https://www.youtube.com/watch?v=x9pxbnFC4aQ">abstraction</a> and <a href="https://clojuresync.com/zach-tellman/">composition</a>.</p><h1>Key Insights</h1>
 <ul>
   <li>Good software is built through effective indirection.</li>
   <li>Names are the most common way of creating indirection.</li>
@@ -1132,7 +1132,7 @@ https://danlebrero.com/2020/07/22/the-managers-path-book-summary/
 Wed, 22 Jul 2020 10:00:00 +0200
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on <a href="https://twitter.com/skamille">Camille Fournier</a>&rsquo;s <a href="https://www.amazon.com/Managers-Path-Leaders-Navigating-Growth-ebook/dp/B06XP3GJ7F">The Manager&rsquo;s Path</a>. </p><p>I specially liked that the book is IT specific and that it lays down all the different levels on the management ladder, so you can get a feeling of what you will be expected to do at each level and decide which level is the one that you would like to aspire to.</p><p>Excellent read. </p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on <a href="https://twitter.com/skamille">Camille Fournier</a>&rsquo;s <a href="https://amzn.to/3nGzPy0">The Manager&rsquo;s Path</a>. </p><p>I specially liked that the book is IT specific and that it lays down all the different levels on the management ladder, so you can get a feeling of what you will be expected to do at each level and decide which level is the one that you would like to aspire to.</p><p>Excellent read. </p><h1>Key Insights</h1>
 <ul>
   <li>The only person you can change is yourself.</li>
   <li>Asking for advice is a way of showing trust and respect.</li>
@@ -1579,7 +1579,7 @@ https://danlebrero.com/2020/07/08/the-pragmatic-programmer-20th-anniversary-edit
 Wed, 08 Jul 2020 10:00:00 +0200
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on <a href="https://twitter.com/pragdave">David Thomas</a> and <a href="https://twitter.com/PragmaticAndy">Andrew Hunt</a>&rsquo;s <a href="https://pragprog.com/titles/tpp20/">The Pragmatic Programmer, 20th anniversary edition</a>. </p><p>The original version was in my &ldquo;must read&rdquo; list for any software developer, and this update version one is no different.</p><p>Key insight: After reading the new edition, I have come to realize of how huge an impact the first edition made on my career. I can see that most of <a href="/2018/07/04/habits-of-efficient-developers-wearedevelopers-2018-video/#content">my advice</a> is rooted in this book.</p><p>It is also nice to see how the authors have come to the same conclusions regarding functional programming (Clojure style) and OO that I have. From the &ldquo;transforming programming&rdquo; section:</p>
+<![CDATA[<p>These are my notes on <a href="https://twitter.com/pragdave">David Thomas</a> and <a href="https://twitter.com/PragmaticAndy">Andrew Hunt</a>&rsquo;s <a href="https://amzn.to/37CIv30">The Pragmatic Programmer, 20th anniversary edition</a>. </p><p>The original version was in my &ldquo;must read&rdquo; list for any software developer, and this update version one is no different.</p><p>Key insight: After reading the new edition, I have come to realize of how huge an impact the first edition made on my career. I can see that most of <a href="/2018/07/04/habits-of-efficient-developers-wearedevelopers-2018-video/#content">my advice</a> is rooted in this book.</p><p>It is also nice to see how the authors have come to the same conclusions regarding functional programming (Clojure style) and OO that I have. From the &ldquo;transforming programming&rdquo; section:</p>
 <ul>
   <li>All programs transform data, converting input into an output.</li>
   <li>When we think of programs as something that transforms input into output, many of the details we previously worry about just evaporate. The structure becomes clearer, the error handling consistent and coupling drops way down.</li>
@@ -1715,7 +1715,7 @@ https://danlebrero.com/2020/06/24/implementing-lean-software-development-book-su
 Wed, 24 Jun 2020 10:00:00 +0200
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on <a href="https://twitter.com/mpoppendieck">Mary Poppendieck</a> and Tom Poppendieck&rsquo;s <a href="https://www.amazon.com/Implementing-Lean-Software-Development-Concept/dp/0321437381">Implementing Lean Software Development</a>. </p><p>After reading <a href="/2020/03/04/the-lean-mindset-summary/#content">The Lean Mindset</a>, I decided to reread my old (13 years!) &ldquo;Implementing Lean Software Development&rdquo; copy. Unsurprisingly, most of the content still applies today.</p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on <a href="https://twitter.com/mpoppendieck">Mary Poppendieck</a> and Tom Poppendieck&rsquo;s <a href="https://amzn.to/3mBauEn">Implementing Lean Software Development</a>. </p><p>After reading <a href="/2020/03/04/the-lean-mindset-summary/#content">The Lean Mindset</a>, I decided to reread my old (13 years!) &ldquo;Implementing Lean Software Development&rdquo; copy. Unsurprisingly, most of the content still applies today.</p><h1>Key Insights</h1>
 <ul>
   <li>Software development is a knowledge-creating process.</li>
   <li>Process should be improved by the team doing the work.</li>
@@ -2176,7 +2176,7 @@ https://danlebrero.com/2020/04/01/no-nonsense-leadership-summary/
 Wed, 01 Apr 2020 09:00:00 +0200
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on <a href="https://twitter.com/NadiavdVlies">Nadia van der Vlies</a>&rsquo;s <a href="https://www.amazon.com/No-Nonsense-Leadership-Become-Effective-Manager-ebook/dp/B07S8CYNNT">No-nonsense Leadership</a>.</p><p>It contains quite practical advice, but it is not software/engineering specific. </p><p>Keeps the trend on other leadership books: Empower people by letting them find their own solutions.</p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on <a href="https://twitter.com/NadiavdVlies">Nadia van der Vlies</a>&rsquo;s <a href="https://amzn.to/3nCqGXg">No-nonsense Leadership</a>.</p><p>It contains quite practical advice, but it is not software/engineering specific. </p><p>Keeps the trend on other leadership books: Empower people by letting them find their own solutions.</p><h1>Key Insights</h1>
 <ul>
   <li>Mature leadership:
   <ul>
@@ -2584,7 +2584,7 @@ https://danlebrero.com/2020/03/04/the-lean-mindset-summary/
 Wed, 04 Mar 2020 09:15:00 +0100
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on <a href="https://twitter.com/mpoppendieck">Mary Poppendieck</a> and Tom Poppendieck&rsquo;s <a href="https://www.amazon.com/Lean-Mindset-Ask-Right-Questions/dp/0321896904">The Lean Mindset</a>. </p><p>This book is not an intro the Lean, but contains plenty of examples of how real world companies applied Lean principles.</p><p>As the authors mention on the introduction: Do not copy the practices. Develop a Lean Mindset.</p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on <a href="https://twitter.com/mpoppendieck">Mary Poppendieck</a> and Tom Poppendieck&rsquo;s <a href="https://amzn.to/3p7a0Yc">The Lean Mindset</a>. </p><p>This book is not an intro the Lean, but contains plenty of examples of how real world companies applied Lean principles.</p><p>As the authors mention on the introduction: Do not copy the practices. Develop a Lean Mindset.</p><h1>Key Insights</h1>
 <ul>
   <li>Stop thinking about software development as a delivery process and start thinking of it as a problem solving process.</li>
   <li>Wrong questions: &ldquo;How will Lean or Agile increase productivity?&rdquo;
@@ -3098,7 +3098,7 @@ https://danlebrero.com/2020/02/05/the-unicorn-project-summary/
 Wed, 05 Feb 2020 09:15:00 +0100
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on <a href="https://twitter.com/RealGeneKim">Gene Kim</a>&rsquo;s <a href="https://itrevolution.com/the-unicorn-project/">The Unicorn Project</a>. </p><p>Note that this is not your usual IT book, but a novel about it (or IT). Nonetheless there is a lot of practical advice, as Gene Kim is one of the authors of <a href="https://itrevolution.com/book/accelerate/">Accelerate</a> and <a href="https://itrevolution.com/book/the-devops-handbook/">The DevOps Handbook</a>. </p><p>Being a novel makes it a more enjoyable and easy read, one that even your pointy-haired boss could enjoy!</p><p>The Unicorn Project is a self-contained book, but related to <a href="https://itrevolution.com/book/the-phoenix-project/">The Phoenix Project</a>, which I would also be happy to recommend.</p><p><em>Tip</em>: Each chapter has a bunch of very interesting references!</p><p><em>Tip 2</em>: Gene Kim did three &ldquo;Ask Me Anything&rdquo; on the IT Revolution Book Club. You can watch them <a href="https://www.youtube.com/watch?v=ReROx9-68V8">here</a>, <a href="https://www.youtube.com/watch?v=wQktlXp_Y3g">here</a> and <a href="https://www.youtube.com/watch?v=vmzFLhapI2o">here</a>.</p><h1>Key Insights</h1><p>As Gene Kim is also the author of Accelerate, a lot of the key insights from Accelerate can be found in The Unicorn Project. See <a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">my Accelerate notes</a> for completeness.</p>
+<![CDATA[<p>These are my notes on <a href="https://twitter.com/RealGeneKim">Gene Kim</a>&rsquo;s <a href="https://amzn.to/34uAP0I">The Unicorn Project</a>. </p><p>Note that this is not your usual IT book, but a novel about it (or IT). Nonetheless there is a lot of practical advice, as Gene Kim is one of the authors of <a href="https://amzn.to/3mHZ0iA">Accelerate</a> and <a href="https://amzn.to/2WuheJy">The DevOps Handbook</a>. </p><p>Being a novel makes it a more enjoyable and easy read, one that even your pointy-haired boss could enjoy!</p><p>The Unicorn Project is a self-contained book, but related to <a href="https://amzn.to/3nDvzPI">The Phoenix Project</a>, which I would also be happy to recommend.</p><p><em>Tip</em>: Each chapter has a bunch of very interesting references!</p><p><em>Tip 2</em>: Gene Kim did three &ldquo;Ask Me Anything&rdquo; on the IT Revolution Book Club. You can watch them <a href="https://www.youtube.com/watch?v=ReROx9-68V8">here</a>, <a href="https://www.youtube.com/watch?v=wQktlXp_Y3g">here</a> and <a href="https://www.youtube.com/watch?v=vmzFLhapI2o">here</a>.</p><h1>Key Insights</h1><p>As Gene Kim is also the author of Accelerate, a lot of the key insights from Accelerate can be found in The Unicorn Project. See <a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">my Accelerate notes</a> for completeness.</p>
 <ul>
   <li>Is not small vs big, but fast vs slow.</li>
   <li>Developer productivity should be the concern of the most senior developers.</li>
@@ -3364,7 +3364,7 @@ https://danlebrero.com/2020/01/22/accelerate-high-performing-technology-orgs-sum
 Wed, 22 Jan 2020 09:00:00 +0100
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on <a href="https://twitter.com/nicolefv">Nicole Forsgren</a>, <a href="https://twitter.com/jezhumble">Jez Humble</a> and <a href="https://twitter.com/RealGeneKim">Gene Kim</a>&rsquo;s <a href="https://itrevolution.com/book/accelerate/">Accelerate, building and scaling high performing technology organizations</a>. Note that there is an additional chapter on the <a href="https://itrevolution.com/book/accelerate/">book website</a>, under the &ldquo;BONUS MATERIAL&rdquo; section.</p><p>The findings of this book are based on the research done using the data from the <a href="https://cloud.google.com/devops/">State of DevOps survey</a> from 2014 to 2017. </p><p>It has been a great read, and a lot of the leadership advice is in line with <a href="/2019/11/27/becoming-a-technical-leader-book-notes/#content">Jerry Weinberg&rsquo;s &ldquo;Becoming a technical leader&rdquo;</a>.</p><p>In fact it has been such a nice read that my life as a CTO is going to start by trying to implement all the practices outlined in it.</p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on <a href="https://twitter.com/nicolefv">Nicole Forsgren</a>, <a href="https://twitter.com/jezhumble">Jez Humble</a> and <a href="https://twitter.com/RealGeneKim">Gene Kim</a>&rsquo;s <a href="https://amzn.to/3mHZ0iA">Accelerate, building and scaling high performing technology organizations</a>. Note that there is an additional chapter on the <a href="https://itrevolution.com/book/accelerate/">book website</a>, under the &ldquo;BONUS MATERIAL&rdquo; section.</p><p>The findings of this book are based on the research done using the data from the <a href="https://cloud.google.com/devops/">State of DevOps survey</a> from 2014 to 2017. </p><p>It has been a great read, and a lot of the leadership advice is in line with <a href="/2019/11/27/becoming-a-technical-leader-book-notes/#content">Jerry Weinberg&rsquo;s &ldquo;Becoming a technical leader&rdquo;</a>.</p><p>In fact it has been such a nice read that my life as a CTO is going to start by trying to implement all the practices outlined in it.</p><h1>Key Insights</h1>
 <ul>
   <li><strong>Quality == Speed</strong>. Throughput and stability move together.</li>
   <li>Software delivery performance impacts organization performance, including non commercial.</li>
@@ -4105,7 +4105,7 @@ https://danlebrero.com/2019/11/27/becoming-a-technical-leader-book-notes/
 Wed, 27 Nov 2019 00:00:00 +0100
 </pubDate>
 <description>
-<![CDATA[<p>These are my notes on Jerry Weinberg&rsquo;s <a href="https://www.goodreads.com/book/show/714344.Becoming_a_Technical_Leader">Becoming a technical leader</a>. </p><p>This is the first book that I read about leadership, so even if I found it insightful, I do not have any other reference to compare against. </p><h1>Key Insights</h1>
+<![CDATA[<p>These are my notes on Jerry Weinberg&rsquo;s <a href="https://amzn.to/3axWJ6X">Becoming a technical leader</a>. </p><p>This is the first book that I read about leadership, so even if I found it insightful, I do not have any other reference to compare against. </p><h1>Key Insights</h1>
 <ul>
   <li>Leadership is a skill and as with any skill it can be learn.</li>
   <li>Leadership is not an instinct.</li>
