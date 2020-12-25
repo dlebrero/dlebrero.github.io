@@ -153,16 +153,17 @@ blockquote p {
 }
 blockquote cite {
 	display: block;
-	font-size: 12px;
+	font-size: 16px;
 	font-style: normal;
 	line-height: 18px;
 }
 blockquote cite:before {
 	content: "\2014 \0020";
 }
-blockquote cite a, blockquote cite a:visited {
-	color: #707273;
-	border: none;
+a[href*="https://amzn.to/"]:after {
+	font-size: 10px;
+	vertical-align: super;
+    content: " (affiliate link)";
 }
 abbr {
 	font-family: "merriweather-bold", serif;
