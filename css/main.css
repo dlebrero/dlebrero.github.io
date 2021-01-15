@@ -172,8 +172,11 @@ abbr {
 	letter-spacing: .5px;
 	color: #7d7e80;
 }
-pre, code {
+pre {
 	font-family: Consolas, "Andale Mono", Courier, "Courier New", monospace;
+}
+code {
+	font-family: Consolas, Monaco, monospace;
 }
 pre {
 /*	white-space: pre;
