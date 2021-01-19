@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Project to Products</title>
+	<meta content="Book notes on Mik Kersten &quot;Project to Product&quot;" name="description" /><meta content="Book review notes project to product value stream network flow framework summary" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Project to Products" property="og:title" /><meta content="Book notes on Mik Kersten &quot;Project to Product&quot;" property="og:description" /><meta content="https://danlebrero.com/2021/01/21/project-to-product-flow-framework-summary/" property="og:url" /><meta content="Book notes: Project to Products" name="twitter:title" /><meta content="Book notes on Mik Kersten &quot;Project to Product&quot;" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/project-to-product/project-to-product.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/project-to-product/project-to-product.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2021/01/21/project-to-product-flow-framework-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Project to Products</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Thu, 21 Jan 2021</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on Mik Kersten "Project to Product"</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/project-to-product/project-to-product.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://twitter.com/mik_kersten">Mik Kersten</a>’s <a href="https://amzn.to/38yQ5La">Project to Product</a>.</p><p>The book explains the <a href="https://flowframework.org">Flow Framework</a>, which tries to address the disconnect between Enterprise IT and Business.</p><p>The premise is that Enterprise Architecture is not aligned to product value streams, and that Enterprise IT in order to scale requires specialized tools which cause the value streams to be fragmented.</p><p>The Flow Framework basically provides two things:</p>
+<ol>
+  <li>The Flow and Business metrics that you want to track per product value stream.</li>
+  <li>A way of mapping the IT work (stored in the IT tooling) to the product value streams.</li>
+</ol><p>You can watch Mik Kersten <a href="https://www.youtube.com/watch?v=JF1WNjeqKs0">presenting the Flow Framework</a>.</p><h1>Key Insights</h1>
+<ul>
+  <li>We are at the turning point of the Age of Software (the current technical revolution).
+  <ul>
+    <li>SW is the new means of production.</li>
+  </ul></li>
+  <li>The main problem is that orgs are using management frameworks and infrastructure models from past revolutions.</li>
+  <li>The common approach to enterprise architecture is wrong, as it focus on the needs of technologists and not the flow of business value.</li>
+  <li>Product vs Projects (<a href="#product-vs-project">Full list</a>):</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Project </th>
+      <th>Product </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Success </td>
+      <td>On time, on budget. </td>
+      <td>Business Outcomes. </td>
+    </tr>
+    <tr>
+      <td>Teams </td>
+      <td>Resources allocated to projects. </td>
+      <td>Allocate work to teams. </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Flow Framework:
+  <ul>
+    <li>Align IT investment with value streams.</li>
+    <li>Scales the Three Ways of DevOps (flow, feedback and continuous learning) to the entire business.</li>
+    <li>Measurable business result.</li>
+    <li>At top level, it provides two things:
+    <ul>
+      <li>Value stream metrics to track each value stream, so you can correlate production metrics to business outcomes.</li>
+      <li>Value Stream Network: Infrastructure to measure the results delivered by each product.</li>
+    </ul></li>
+  </ul></li>
+  <li>Flow items in SW development:
+  <ul>
+    <li>Features: New business value.</li>
+    <li>Defects: Quality.</li>
+    <li>Risks: Compliance and security.</li>
+    <li>Technical Debts.</li>
+  </ul></li>
+  <li>Flow Metrics:
+  <ul>
+    <li>Result oriented metrics, like revenue and cost, not proxy metrics for value creation like deploys per day.
+    <ul>
+      <li>Agile and DevOps metrics lie a layer down below the Flow FW.</li>
+    </ul></li>
+  </ul>
+  <ol>
+    <li>Flow Distribution:
+    <ul>
+      <li>Distribution of the four flow items is the critical metrics for aligning value streams to business strategy.</li>
+      <li>Flow Distribution trade-off are understandable to business stakeholders that have no IT background.</li>
+    </ul></li>
+    <li>Flow Velocity:
+    <ul>
+      <li><a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">Accelerate metrics</a> not as important if your bottleneck is not deployment automation.</li>
+    </ul></li>
+    <li>Flow Time:
+    <ul>
+      <li>Starts when a flow item is accepted into the value stream until is delivered.</li>
+      <li>4 flow item states: new, waiting, active, done
+      <ul>
+        <li>Flow time: active –&gt; done.</li>
+      </ul></li>
+    </ul></li>
+    <li>Flow Load: WIP.</li>
+    <li>Flow Efficiency.</li>
+  </ol></li>
+  <li>Business needs for flow velocity and flow time should drive the architecture of a value stream.</li>
+  <li>Business Outcome metrics: Value, Cost, Quality and Employee Happiness.
+  <ul>
+    <li>How to measure them is org specific.</li>
+  </ul></li>
+  <li>Enterprise IT has tons of specialized tools and they are disconnected, which causes the flow of a value stream to be fragmented.</li>
+  <li>Specialization is required to scale, but creates information silos.</li>
+  <li>SW is fundamentally different from physical production, so attempting to emulate a model that worked for physical production is the wrong approach.
+  <ul>
+    <li>Network-based model is more representative for SW dev than a linear manufacturing flow.</li>
+    <li>In network management, bottlenecks are constraints that you simply reroute around.
+    <ul>
+      <li>Flow does not need to stop as it does in a linear process.</li>
+    </ul></li>
+  </ul></li>
+  <li>See <a href="https://flowframework.org/wp-content/uploads/2020/10/Flow-Framework-poster.pdf">Flow Framework poster</a> from the <a href="https://flowframework.org">Flow Framework website</a>.
+  <ul>
+    <li>An important detail about the Value Stream Network that is not in the diagram or book but that is in <a href="https://youtu.be/JF1WNjeqKs0?t=2572">Mik Kersten talks</a>: <img src="/images/blog/books/project-to-product/value-stream-network.png" alt="Value Stream Network detail" /></li>
+    <li>My very simplified version:<br /> <img src="/images/blog/books/project-to-product/flow-framework-layers-abstraction.png" alt="Flow framework layers of abstraction" /></li>
+  </ul></li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#part-0">Introduction: The Turning Point</a></li>
+  <li><a href="#part-one">Part I: The Flow Framework</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - The Age of Software</a></li>
+    <li><a href="#ch-2">Chapter 2 - From Project to Product</a></li>
+    <li><a href="#ch-3">Chapter 3 - Introducing the Flow Framework</a></li>
+  </ul></li>
+  <li><a href="#part-two">Part II: Value Stream Metrics</a>
+  <ul>
+    <li><a href="#ch-4">Chapter 4 - Capturing Flow Metrics </a></li>
+    <li><a href="#ch-5">Chapter 5 - Connecting to Business Results</a></li>
+    <li><a href="#ch-6">Chapter 6 - Tracking Disruption</a></li>
+  </ul></li>
+  <li><a href="#part-three">Part III: Value Stream Networks</a>
+  <ul>
+    <li><a href="#ch-7">Chapter 7 - The Ground Truth of Enterprise Tool Networks</a></li>
+    <li><a href="#ch-8">Chapter 8 - Specialized Tools and the Value Stream</a></li>
+    <li><a href="#ch-9">Chapter 9 - Value Stream Management</a></li>
+  </ul></li>
+</ul><h1><a name="part-0"></a>Introduction: The Turning Point</h1>
+<ul>
+  <li>Each Tech revolution has 3 periods:
+  <ol>
+    <li>Installation period: loads of start-ups that disrupt entire industries from previous age.</li>
+    <li>Turning point: Business masters the new means of production or it will become obsolete.</li>
+    <li>Deployment period: product capital from new industry giants start taking over.</li>
+  </ol></li>
+  <li>We are at the turning point of the Age of Software.
+  <ul>
+    <li>SW is the new means of production.</li>
+  </ul></li>
+  <li>The main problem is that orgs are using management frameworks and infrastructure models from past revolutions.</li>
+  <li>Flow Framework:
+  <ul>
+    <li>align IT investment with value streams.</li>
+    <li>Scales the Three Ways of DevOps (flow, feedback and continuous learning) to the entire business.</li>
+    <li>Measurable business result.</li>
+  </ul></li>
+</ul><h1><a name="part-one"></a>Part I: The Flow Framework</h1><h2><a name="ch-1"></a>Chapter 1 - The Age of Software</h2>
+<ul>
+  <li>BMW Group forecast that all innovation at the company will be powered by SW, and that half of their staff will be SW devs.</li>
+  <li>Types of disruption (<a href="https://twitter.com/geoffreyamoore">Geoffrey Moore</a>, <a href="https://amzn.to/38AUmxO">Zone to Win</a>):
+  <ul>
+    <li>Infrastructure model: how customer access a given product.</li>
+    <li>Operating model: change the relationship of the customer with the business.</li>
+    <li>Business model: more fundamental.</li>
+  </ul></li>
+  <li>The type of disruption determines the shape of your IT investment and value streams.</li>
+  <li>Moore: established enterprises are not capable of disrupting themselves and, as such, must establish an innovation engine that will allow them to catch the next wave of disruption emerging in another market category.</li>
+  <li>Summary of <a href="https://twitter.com/carlotaprzperez">Carlota Perez</a> <a href="https://amzn.to/34Px5qF">“Technological Revolutions and Financial Capital”</a>:
+  <ul>
+    <li><a href="https://reactionwheel.net/2015/10/the-deployment-age.html">The Deployment Age</a> by <a href="https://twitter.com/ganeumann">Jerry Neumann</a></li>
+  </ul></li>
+  <li>Technology improvements are incremental, yielding less than 10% of productivity gains.</li>
+  <li>The common approach to enterprise architecture is wrong, as it focus on the needs of technologists and not the flow of business value.</li>
+  <li>Mik’s three epiphanies:
+  <ol>
+    <li>Productivity declines and waste increases as SW scales due to disconnects between architecture and the value stream.</li>
+    <li>Value stream disconnects are caused by the misapplication of the project management model.</li>
+    <li>SW value streams are not linear manufacturing processes but complex collaboration networks that need to be aligned to products.</li>
+  </ol></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - From Project to Product</h2>
+<ul>
+  <li>Nokia IT transformation failure:
+  <ul>
+    <li>Measure activities not outcomes.</li>
+    <li>Disconnect of IT and Business.</li>
+    <li>Local optimizations, not end-to-end value stream.</li>
+  </ul></li>
+  <li>Large Bank failure:
+  <ul>
+    <li>IT as a cost center, under the CFO.
+    <ul>
+      <li>Reduced productivity.</li>
+    </ul></li>
+    <li>Disconnect of IT and Business.</li>
+    <li>Sticking to the plan.</li>
+    <li>Project mentality.</li>
+  </ul></li>
+  <li>Boeing 777: all SW leads in the test flight.</li>
+  <li>Profitability and product/market fit should drive the architecture of the value stream.</li>
+  <li>Moore’s 4 horizons:
+  <ul>
+    <li>Productivity zone: bottom line.</li>
+    <li>Performance zone: top line, main revenue.</li>
+    <li>Incubation zone: new products and services.</li>
+    <li>Transformation zone:
+    <ul>
+      <li>Disruption offence/defense.</li>
+      <li>Products/Services from the incubation zone.</li>
+    </ul></li>
+  </ul></li>
+  <li>Success metrics on those zones are different.</li>
+  <li>Project mentality: people are interchangeable resources.</li>
+  <li><a name="product-vs-project"></a>Product vs Project:</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Project </th>
+      <th>Product </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Budgeting </td>
+      <td>Pre-funded. <br />Encourages hoarding and large batches. <br />No incentive for feedback loop. </td>
+      <td>Based on business results.<br /> Based on demand.<br />Feedback loop encouraged. </td>
+    </tr>
+    <tr>
+      <td>Time Frames </td>
+      <td>There is an end date.<br />Maintenance not highly important. </td>
+      <td>No predefined end of life.<br /> Maintenance is core. </td>
+    </tr>
+    <tr>
+      <td>Success </td>
+      <td>On time, on budget. </td>
+      <td>Business Outcomes. </td>
+    </tr>
+    <tr>
+      <td>Risk </td>
+      <td>Optimized for obvious and complicated (cynefin) context. <br />Identify and offset all risk at inception. </td>
+      <td>Chaotic and complex.<br />Incremental.<br />More managerial overhead as requires frequent reviews and checkpoints. </td>
+    </tr>
+    <tr>
+      <td>Teams </td>
+      <td>Resources allocated to projects. </td>
+      <td>Allocate work to teams. </td>
+    </tr>
+    <tr>
+      <td>Prioritization </td>
+      <td>Changes in plan are expensive, hence minimized. </td>
+      <td>Continuous reevaluation based on feedback loops. </td>
+    </tr>
+    <tr>
+      <td>Visibility </td>
+      <td>IT is a black box. </td>
+      <td>Transparency through direct mapping ot business outcomes. </td>
+    </tr>
+  </tbody>
+</table><h2><a name="ch-3"></a>Chapter 3 - Introducing the Flow Framework</h2>
+<ul>
+  <li>Flow Framework assumes that the best suited practices for your business are already underway.</li>
+  <li>The role of the Flow FW is to ensure that the business level framework and transformation initiatives are connected to the technical ones.</li>
+  <li>Questions fundamental to production:
+  <ul>
+    <li>Who is the customer?</li>
+    <li>What value is the customer pulling?</li>
+    <li>What are the value streams?</li>
+    <li>Where is the bottleneck?</li>
+  </ul></li>
+  <li>Flow FW will allow you to:
+  <ul>
+    <li>See end-to-end flow of business value in real time.</li>
+    <li>Instantly spot bottlenecks and use them to prioritize investment.</li>
+    <li>Test hypothesis based on real time date from every value stream.</li>
+    <li>Rearchitect your organization around maximizing flow.</li>
+  </ul></li>
+  <li>Result oriented metrics, like revenue and cost, not proxy metrics for value creation like deploys per day.</li>
+  <li>Requires Lean thinking (from <a href="https://amzn.to/2L2pqye">Lean Thinking</a> by James P. Womack and Daniel T. Jones):
+  <ol>
+    <li>Precisely specify value by specific product.</li>
+    <li>Identify the value stream for each product.</li>
+    <li>Make value flow without interruptions.</li>
+    <li>Let the customer pull value from producer.</li>
+    <li>Pursue perfection.</li>
+  </ol></li>
+  <li>Value stream: the end-to-end set of activities performed to deliver value to a customer through a product or service.</li>
+  <li>Agile and DevOps metrics lie a layer down below the Flow FW.</li>
+  <li>At top level, Flow FW provides two things:
+  <ul>
+    <li>Value stream metrics to track each value stream, so you can correlate production metrics to business outcomes.</li>
+    <li>Value Stream Network:
+    <ul>
+      <li>To measure the results delivered by each product.</li>
+    </ul></li>
+  </ul></li>
+  <li>Flow items in SW development (What value the customer pulls?):</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Flow Item </th>
+      <th>Delivers </th>
+      <th>Example artifact </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Features </td>
+      <td>New business value </td>
+      <td>Epic, user story </td>
+    </tr>
+    <tr>
+      <td>Defects </td>
+      <td>Quality </td>
+      <td>Bug, incident, outage </td>
+    </tr>
+    <tr>
+      <td>Risks </td>
+      <td>Security, Compliance </td>
+      <td>Vulnerability, regulatory requirement </td>
+    </tr>
+    <tr>
+      <td>Debts </td>
+      <td>Removal of impediments to future delivery </td>
+      <td>API addition, refactoring, automation </td>
+    </tr>
+  </tbody>
+</table><p><br /></p><h1><a name="part-two"></a>Part II: Value Stream Metrics</h1>
+<ul>
+  <li>Value stream metrics: measure both the flow metrics and business results for each product’s value stream.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Capturing Flow Metrics</h2>
+<ul>
+  <li>Decide which lead time is suitable fo reach value stream.</li>
+  <li>Flow Metrics:
+  <ol>
+    <li>Flow Distribution:
+    <ul>
+      <li>Distribution of the four flow items is the critical metrics for aligning value streams to business strategy.</li>
+      <li>The proportion of each flow item within a value stream, adjusted depending on the needs of each stream to maximize business value.</li>
+      <li>Example: New products should have a high % of features, while legacy should have a high % of risk and defects.</li>
+      <li>Should be tuned depending on Moore’s Zone Management.</li>
+      <li>Has far-reaching implications for how a product’s value stream is structured and managed.</li>
+      <li>Flow Distribution trade-off are understandable to business stakeholders that have no IT background.</li>
+      <li>Flow items should be of similar size to be able to compare/balance.</li>
+      <li>Is a zero-sum game.</li>
+    </ul></li>
+    <li>Flow Velocity:
+    <ul>
+      <li>Number of flow items delivered per period.</li>
+      <li>The value estimation and prioritization of the items is done using Agile FW and product management processes.</li>
+      <li><a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">Accelerate metrics</a> not as important if your bottleneck is not deployment automation.</li>
+      <li>Flow FW ignores item sizes (Law of big numbers):
+      <ul>
+        <li>As such, is suited to track productivity within a value stream, not across value streams.</li>
+      </ul></li>
+    </ul></li>
+    <li>Flow Time:
+    <ul>
+      <li>Starts when a flow item is accepted into the value stream until is delivered.</li>
+      <li>Wall clock time.</li>
+      <li>4 flow item states: new, waiting, active, done
+      <ul>
+        <li>Lead time: new –&gt; done.</li>
+        <li>Flow time: active –&gt; done.</li>
+      </ul></li>
+      <li>So flow time does not include waiting time in the backlog.</li>
+    </ul></li>
+    <li>Flow Load:
+    <ul>
+      <li>Leading indicator of any problems that will affect flow velocity and flow time.</li>
+      <li>WIP.</li>
+      <li>Total number of flow items being worked on (active or waiting state) within a particular value stream.</li>
+    </ul></li>
+    <li>Flow Efficiency:
+    <ul>
+      <li>Total active time / Flow Time.</li>
+      <li>Flow time == total active time + total waiting time.</li>
+    </ul></li>
+  </ol></li>
+  <li>Business needs for flow velocity and flow time should drive the architecture of a value stream.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Connecting to Business Results</h2>
+<ul>
+  <li>Feedback at the right level of granularity is essential to support decision-making.</li>
+  <li>Business Outcome metrics:
+  <ul>
+    <li>How to measure them is org specific.</li>
+  </ul>
+  <ol>
+    <li>Value:
+    <ul>
+      <li>Most important metric.</li>
+      <li>Revenue.</li>
+      <li>If not monetized directly, then use indirect value of the other value streams it supports.
+      <ul>
+        <li>Value Stream Network will make this explicit and visible.</li>
+      </ul></li>
+    </ul></li>
+    <li>Cost:
+    <ul>
+      <li>Only delivery cost + proportion of shared costs.</li>
+    </ul></li>
+    <li>Quality:
+    <ul>
+      <li>Escaped defects, incidents, NPS, renewal rate.</li>
+    </ul></li>
+    <li>Happiness:
+    <ul>
+      <li>eNPS.</li>
+      <li>“On a scale of zero to ten, how likely is it you would recommend this company as a place to work?”</li>
+      <li>“How likely would you be to recommend this company’s products or services to a friend or colleague?”</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Tracking Disruption</h2>
+<ul>
+  <li>Examples of Nokia, Equifax, Automotive SW and Microsoft.</li>
+</ul><h1><a name="part-three"></a>Part III: Value Stream Networks</h1><h2><a name="ch-7"></a>Chapter 7 - The Ground Truth of Enterprise Tool Networks</h2>
+<ul>
+  <li>Longer explanation of first two epiphanies.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Specialized Tools and the Value Stream</h2>
+<ul>
+  <li>As complexity of work scales, so it is the pressure on the tools to specialize.</li>
+  <li>For each different type of work , there should be at most one tool in the value stream providing the support for that function.</li>
+  <li>Fundamental complexity instances:
+  <ul>
+    <li>Stakeholder specialization.</li>
+    <li>Scale specialization.</li>
+    <li>Platform specialization.</li>
+    <li>Moore’s Zone specialization.</li>
+    <li>Legacy.</li>
+    <li>Supplier diversity.</li>
+  </ul></li>
+  <li>Disconnect between tools used by different types of work cause work to be lost, delays and errors.</li>
+  <li>Enterprise IT has tons of specialized tools, and they are disconnected, which causes the flow of a value stream to be fragmented.</li>
+  <li>Expect more specialized tools in the future.</li>
+  <li>Having all those tools connected creates a strategy advantage.</li>
+  <li>Specialization is required to scale, but creates information silos.</li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Value Stream Management</h2>
+<ul>
+  <li>SW is fundamentally different from physical production, so attempting to emulate a model that worked for physical production is the wrong approach.</li>
+  <li>To transition a company from project to product, start with the tool network, then the artifact and last the Value Stream Network.</li>
+  <li>In network management, bottlenecks are constraints that you simply reroute around.
+  <ul>
+    <li>Flow does not need to stop as it does in a linear process.</li>
+  </ul></li>
+  <li>Network-based model is more representative for SW dev than a linear manufacturing flow.</li>
+  <li>Key differences:</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Manufacturing </th>
+      <th>SW dev </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Variability </td>
+      <td>Fixed well-defined set of variations.<br />Aim to minimize it </td>
+      <td>Open ended. <br /> Embrace it. </td>
+    </tr>
+    <tr>
+      <td>Repeatability </td>
+      <td>Maximize throughput of same widget. </td>
+      <td>Maximize iteration and feedback loop to continuously reshape the widget </td>
+    </tr>
+    <tr>
+      <td>Design Frequency. </td>
+      <td>Up-front in project-like process. <br />Changes infrequent and require changes in the production line. </td>
+      <td>Design happens inside the production system. <br />For each flow item </td>
+    </tr>
+    <tr>
+      <td>Design Frequency. </td>
+      <td>Removed. <br />Aim for full automation. </td>
+      <td>Focus on enabling creativity.<br />Automation support it.</td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Flow FW has identified 3 layers of abstraction:
+  <ul>
+    <li>End goal is enabling product-oriented Value Stream Management.</li>
+    <li>The layers connect the implementation details of the tool layer to business value-oriented views.</li>
+  </ul></li>
+</ul><p><img src="/images/blog/books/project-to-product/flow-framework-layers-abstraction.png" alt="Flow framework layers of abstraction" /></p>
+<ul>
+  <li>Tool network:
+  <ul>
+    <li>Connectivity index: % tools integrated.
+    <ul>
+      <li>Measures confidence on flow metrics.</li>
+    </ul></li>
+  </ul></li>
+  <li>Integration Model:
+  <ul>
+    <li>Map tool specific items to one of the four flow items.</li>
+    <li>Allows to track one flow item across all tools, which allows measuring flow metrics.</li>
+  </ul></li>
+  <li>Artifact Network:
+  <ul>
+    <li>If a company has 100 value streams, a single integration model will be instantiated 100 times into 100 different artifact networks.</li>
+    <li>Traceability index:
+    <ul>
+      <li>The measure of artifact connection breath and depth relative to artifact type.</li>
+      <li>Reflects business visibility and degree of automation.</li>
+    </ul></li>
+  </ul></li>
+  <li>Activity model:
+  <ul>
+    <li>Identifies each of the specific activities performed in the value stream and maps those to the concrete workflow states defined by the Integration Model.</li>
+    <li>Also, maps these activities to the flow states, enabling a consistent way of measuring flow across all artifacts.</li>
+  </ul></li>
+  <li>Value Stream Network:
+  <ul>
+    <li>Shows how much business value each value stream is delivering and where its bottlenecks and opportunities may lie.</li>
+  </ul></li>
+  <li>Product Model:
+  <ul>
+    <li>Map artifacts stored in the tool network to the product-oriented value streams.</li>
+    <li>Alignment index: the % of artifacts containers connected to a product value stream.</li>
+  </ul></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>.
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png" /></a>
+					</div>
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1942788398&amp;asins=1942788398&amp;linkId=63ee709f25942d3a711c8a31613f6df0&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (28)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (3)</a></li><li><a href="/tags/Clojure/index.html">Clojure (32)</a></li><li><a href="/tags/Humour/index.html">Humour (9)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (13)</a></li><li><a href="/tags/good_practices/index.html">good practices (23)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492050903&amp;asins=1492050903&amp;linkId=19e085ea5e3f5a666bd581dc966e63b9&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>

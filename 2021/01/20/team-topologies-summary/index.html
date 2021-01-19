@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Team Topologies</title>
+	<meta content="Book notes on Matthew Skelton and Manuel Pais &quot;Team Topologies&quot;" name="description" /><meta content="Book review notes team topologies fast flow value stream summary" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Team Topologies" property="og:title" /><meta content="Book notes on Matthew Skelton and Manuel Pais &quot;Team Topologies&quot;" property="og:description" /><meta content="https://danlebrero.com/2021/01/20/team-topologies-summary/" property="og:url" /><meta content="Book notes: Team Topologies" name="twitter:title" /><meta content="Book notes on Matthew Skelton and Manuel Pais &quot;Team Topologies&quot;" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/team-topologies/team-topologies.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/team-topologies/team-topologies.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2021/01/20/team-topologies-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Team Topologies</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 20 Jan 2021</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on Matthew Skelton and Manuel Pais "Team Topologies"</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/team-topologies/team-topologies.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://twitter.com/matthewpskelton">Matthew Skelton</a> and <a href="https://twitter.com/manupaisable">Manuel Pais</a>’s <a href="https://amzn.to/3haTofv">Team Topologies</a>.</p><p>The shortest summary: this book is like learning about Conway’s law for the first time, but on steroids. Really enjoyed it.</p><h1>Key Insights</h1>
+<ul>
+  <li>Teams are always work in progress.</li>
+  <li>An org chart is always out of sync with reality.</li>
+  <li>Empowering is the way of moving from group of people to a team.</li>
+  <li>There are 3 org structures within each org: formal, informal and value creation
+  <ul>
+    <li>Key to success in knowledge work is in the interactions between the informal and value creation.</li>
+  </ul></li>
+  <li><p>Team Topologies == 4 fundamental team types + 3 core interactions + Conway’s law + Team Cognitive Load + Sensing Organisation + evolution </p>
+  <blockquote>If the architecture of the system and the architecture of the org are at odds, the architecture of the org wins. <cite><a href="https://twitter.com/ruthmalan">Ruth Malan</a></cite>
+  </blockquote></li>
+  <li>Implication of Conway’s law:
+  <ol>
+    <li>Technical leaders must have a say on the organisation design.</li>
+    <li>Not all collaboration/communication is good.</li>
+  </ol></li>
+  <li>Who is on the team matters less than the team dynamics.</li>
+  <li>Stable teams, not static.</li>
+  <li>Forming a team takes from 2 weeks to 3 months.</li>
+  <li>Each part owned exactly by one team.</li>
+  <li>Put the needs of your team above your own.</li>
+  <li>Minimise intrinsic cognitive load, eliminate extraneous cognitive load to leave room to germane cognitive load.</li>
+  <li><a href="https://web.devopstopologies.com">DevOps Topologies</a></li>
+  <li>Emphasize flow of change from concept to working SW.</li>
+  <li>Types of dependencies: knowledge, task, resource.</li>
+  <li>Four types of teams:
+  <ul>
+    <li>Stream-aligned: deliver values with minimal hands-offs.</li>
+    <li>Enabling: Grow capabilities of stream-aligned teams.</li>
+    <li>Complicated-subsystem: reduce cognitive load of stream-aligned teams.</li>
+    <li>Platform: make stream-aligned teams autonomous.</li>
+  </ul></li>
+  <li>The purpose of the other types is to reduce the burden of stream-aligned teams.</li>
+  <li>Ratio stream-aligned vs others: 6:1 to 9:1.</li>
+  <li>Cross-functional teams build simpler solutions because solutions that require deep expertise in one area are likely to lose against easier-to-comprehend solutions that work for all team members.</li>
+  <li>Test for breaking a monolith: Does the resulting architecture support more autonomous teams with reduced cognitive load?</li>
+  <li>Intermittent collaboration gives better results than constant interaction.</li>
+  <li>Existing SW architecture will initially “push back” against the new team structures.</li>
+  <li>The most important thing is not the shape of the org, but the decision rules used to adapt and change it.</li>
+  <li>Collaboration is expensive, so it must be planned and justified.</li>
+  <li>Operations is not the output of design, but an input.</li>
+  <li>Team owning a product needs to have some responsibility for its commercial viability.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#part-0">Preface</a></li>
+  <li><a href="#part-one">Part I: Teams As the Means of Delivery</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - The Problem with Org Charts</a></li>
+    <li><a href="#ch-2">Chapter 2 - Conway’s Law and Why It Matters</a></li>
+    <li><a href="#ch-3">Chapter 3 - Team-First Thinking</a></li>
+  </ul></li>
+  <li><a href="#part-two">Part II: Team Topologies that Work for Flow</a>
+  <ul>
+    <li><a href="#ch-4">Chapter 4 - Static Team Topologies</a></li>
+    <li><a href="#ch-5">Chapter 5 - The Four Fundamental Team Topologies</a></li>
+    <li><a href="#ch-6">Chapter 6 - Choose Team-First Boundaries</a></li>
+  </ul></li>
+  <li><a href="#part-three">Part III: Evolving Team Interactions for Innovation and Rapid Delivery</a>
+  <ul>
+    <li><a href="#ch-7">Chapter 7 - Team Interaction Modes</a></li>
+    <li><a href="#ch-8">Chapter 8 - Evolve Team Structures with Organizational Sensing</a></li>
+    <li><a href="#ch-9">Chapter 9 - Conclusion</a></li>
+  </ul></li>
+</ul><h1><a name="part-0"></a>Preface</h1>
+<ul>
+  <li>Teams are always work in progress.</li>
+  <li>Ideally teams should be:
+  <ul>
+    <li>Long-lived.</li>
+    <li>Autonomous.
+    <ul>
+      <li>Not isolated.</li>
+    </ul></li>
+    <li>With engaged team members.</li>
+  </ul></li>
+</ul><h1><a name="part-one"></a>Part I: Teams As the Means of Delivery</h1><h2><a name="ch-1"></a>Chapter 1 - The Problem with Org Charts</h2>
+<ul>
+  <li>Team Topologies focuses on how to set up dynamic team structures and interaction modes that can help teams adapt quickly to new conditions, and achieve fast and safe software delivery.</li>
+  <li>An org chart is always out of sync with reality.</li>
+  <li>3 organizational structures in each org (<a href="https://twitter.com/NielsPflaeging">Niels Pflaeging</a>):
+  <ol>
+    <li>Formal:
+    <ul>
+      <li>The org chart.</li>
+      <li>Facilitates compliance.</li>
+    </ul></li>
+    <li>Informal:
+    <ul>
+      <li>“Real of influence” between individuals.</li>
+    </ul></li>
+    <li>Value creation:
+    <ul>
+      <li>How work actually gets done based on inter-personal and inter-team reputation.</li>
+    </ul></li>
+  </ol></li>
+  <li>Pflaeging: Key to success in knowledge work is in the interactions between the informal and value creation structures.</li>
+  <li>2 key concepts:
+  <ol>
+    <li>Empowered teams as fundamental building block:
+    <ul>
+      <li>Empowering is the way of moving from group of people to a team.</li>
+    </ul></li>
+    <li>Interaction modes: build trust between teams.</li>
+  </ol></li>
+  <li><a href="https://naomistanford.com">Naomi Stanford</a> five rules for designing org:
+  <ol>
+    <li>Design when there is a compelling reason.</li>
+    <li>Develop options for deciding on design.</li>
+    <li>Chose the right time for design.</li>
+    <li>Look for clues that things are out of alignment.</li>
+    <li>Stay alert to the future.</li>
+  </ol></li>
+  <li>Team Topologies == 4 fundamental team types + 3 core interactions + Conway’s law + Team Cognitive Load + Sensing Organisation + evolution.</li>
+  <li>Teams are indivisible elements of SW delivery.</li>
+  <li><a href="https://www.danpink.com">Dan Pink</a>’s three elements of intrinsic motivation:
+  <ol>
+    <li>Autonomy.</li>
+    <li>Mastery.</li>
+    <li>Purpose.</li>
+  </ol></li>
+  <li>Teams have finite cognitive capacity:
+  <ul>
+    <li>If exceeded, team struggles to achieve mastery.
+    <ul>
+      <li>Delays, quality issues, decrease in motivation.</li>
+    </ul></li>
+  </ul></li>
+  <li><a href="https://en.wikipedia.org/wiki/Conway's_law">Conway’s law</a>.</li>
+  <li>SW consultancy:
+  <ul>
+    <li>No autonomy: constant juggling of requests from customers.</li>
+    <li>No mastery: “jack of all trades, master of none”.</li>
+    <li>No purpose: too many domains of responsibility.</li>
+  </ul></li>
+  <li>Obstacles to flow:
+  <ul>
+    <li>Disengaged teams.</li>
+    <li>Pushing against Conway’s law.</li>
+    <li>SW too big for team.</li>
+    <li>Confusing org design.</li>
+    <li>Team pulled in many directions.</li>
+    <li>Painful re-org every few years.</li>
+    <li>Flow is blocked.</li>
+    <li>Too many surprised.</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Conway’s Law and Why It Matters</h2>
+<ul>
+  <li>Communication paths within an org effectively restrict the kinds of solutions that the organization can devise.</li>
+</ul>
+<blockquote><p>If the architecture of the system and the architecture of the org are at odds, the architecture of the org wins. <cite><a href="https://twitter.com/ruthmalan">Ruth Malan</a></cite></p>
+</blockquote>
+<ul>
+  <li>We should be designing flows on top of an underlying platform.</li>
+  <li>Implication of Conway’s law:
+  <ol>
+    <li>Technical leaders must have a say on the organisation design.</li>
+    <li>Not all collaboration/communication is good.</li>
+  </ol></li>
+  <li>Communication tools have a strong influence on communication patterns.</li>
+</ul>
+<blockquote><p>Team assignments are the first draft of the architecture <cite><a href="https://twitter.com/mtnygard">Michael Nygard</a></cite></p>
+</blockquote><h2><a name="ch-3"></a>Chapter 3 - Team-First Thinking</h2>
+<blockquote><p>Disbanding high-performing teams is worse than vandalism: it is corporate psychopathy. <cite><a href="https://twitter.com/allankellynet">Allan Kelly</a></cite></p>
+</blockquote>
+<ul>
+  <li><a href="https://journals.sagepub.com/doi/10.1177/001872089203400303">Driskell and Salas</a>:
+  <ul>
+    <li>Teams working as a cohesive unit perform far better than a collection of individuals for knowledge-rich, problem-solving tasks that require high amounts of information.</li>
+  </ul></li>
+  <li>Google found that: Who is in the team matters less than the team dynamics.
+  <ul>
+    <li>When measuring performance, teams matter more than individuals.</li>
+  </ul></li>
+  <li>Team = stable group of 5-9 who work towards a shared goals as a unit.</li>
+  <li><a href="https://danlebrero.com/2020/03/04/the-lean-mindset-summary/">Dunbar numbers</a>.
+  <ul>
+    <li>Scaling by Dunbar.</li>
+  </ul></li>
+  <li>Forming a team takes from 2 weeks to 3 months.</li>
+  <li>Stable teams, not static.</li>
+  <li>In high trust orgs, it is ok to change teams once a year.
+  <ul>
+    <li>In a typical org, 2 years.</li>
+  </ul></li>
+  <li>Every part of the SW system needs to be owned by exactly one team.</li>
+  <li>Team members need a team first mindset:
+  <ul>
+    <li>Put the needs of the team above your own.</li>
+  </ul></li>
+  <li>Embrace diversity.</li>
+  <li>Reward the whole team, not individuals.</li>
+  <li>Assign training budgets to the whole team and let them decide.</li>
+  <li>Cognitive load is the total amount of mental effort being used in the working memory (<a href="https://en.wikipedia.org/wiki/John_Sweller">John Sweller</a>).</li>
+  <li>3 Types of cognitive load:
+  <ol>
+    <li>Intrinsic:
+    <ul>
+      <li>Fundamentals of the problem space.</li>
+      <li>Example: programming language.</li>
+    </ul></li>
+    <li>Extraneous:
+    <ul>
+      <li>Environment related.</li>
+      <li>Example: how to deploy.</li>
+    </ul></li>
+    <li>Germane:
+    <ul>
+      <li>Special attention is required.</li>
+      <li>Value adding.</li>
+      <li>Example: business domain.</li>
+    </ul></li>
+  </ol></li>
+  <li>Minimize intrinsic, eliminate extraneous to leave room for germane.</li>
+  <li>To measure cognitive load, ask the team: Do you feel like you are effective and able to respond in a timely fashion to the work you are asked to do?</li>
+  <li>Heuristics:
+  <ul>
+    <li><a href="https://en.m.wikipedia.org/wiki/Cynefin_framework">3 types of domain</a>:
+    <ul>
+      <li>Simple.</li>
+      <li>Complicated.</li>
+      <li>Complex.</li>
+    </ul></li>
+  </ul>
+  <ol>
+    <li>Each domain to one team
+    <ul>
+      <li>If domain is too big, split into subdomains.</li>
+    </ul></li>
+    <li>One team, either:
+    <ul>
+      <li>2-3 simple domains.</li>
+      <li>1 complex domain.</li>
+      <li>Avoid 2 complicated domains, better split the team.</li>
+    </ul></li>
+  </ol></li>
+  <li>Define a Team API:
+  <ul>
+    <li>Code: endpoints, libraries, clients, …</li>
+    <li>Versioning.</li>
+    <li>Documentation.</li>
+    <li>Practices and principles.</li>
+    <li>Communication tools.</li>
+    <li>Work information: what is working on now, next and future.</li>
+    <li>Consider the TEam API for usability point of other teams.</li>
+  </ul></li>
+  <li>Provide team, space, and money for guilds and communities of practice.</li>
+  <li>Design Physical and Virtual environment for:
+  <ul>
+    <li>Focused individual work.</li>
+    <li>Collaborative intra-team.</li>
+    <li>Collaborative inter-team.</li>
+  </ul></li>
+</ul><h1><a name="part-two"></a>Part II: Team Topologies that Work for Flow</h1><h2><a name="ch-4"></a>Chapter 4 - Static Team Topologies</h2>
+<ul>
+  <li>Instead of structuring teams according to know-how or activities, organize teams according to business domain areas. (<a href="https://twitter.com/JuttaEckstein">Jutta Eckstein</a>)</li>
+  <li>Most common team anti-patterns:
+  <ul>
+    <li>Adhoc team design.</li>
+    <li>Shuffling team members.</li>
+  </ul></li>
+  <li>Emphasize the flow of change from concept to working software.</li>
+  <li><a href="https://web.devopstopologies.com">DevOps Topologies</a>.</li>
+  <li>Success of topology depends both on team members and surrounding environment, teams and interactions.
+  <ul>
+    <li>Examples:
+    <ul>
+      <li>Feature teams require high engineering maturity and trust.</li>
+      <li>Product teams require a support system.</li>
+      <li>Cloud teams provide self-service tools.</li>
+      <li>SRE makes sense at scale.</li>
+    </ul></li>
+  </ul></li>
+  <li>Good team topology depends on org size/SW scale and engineering maturity:</li>
+</ul><p><img src="/images/blog/books/team-topologies/org-size-vs-engineering-maturity.jpg" alt="org-size-vs-engineering-maturity" /></p>
+<ul>
+  <li>Split responsibilities to breakdown silos.</li>
+  <li>Types of dependencies (<a href="https://link.springer.com/article/10.1007/s10796-015-9574-1">Diana Strode and Sid Huff</a>):
+  <ul>
+    <li>Knowledge.</li>
+    <li>Task.</li>
+    <li>Resource.</li>
+  </ul></li>
+  <li>Track dependencies and establish thresholds for alerts.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - The Four Fundamental Team Topologies</h2>
+<ul>
+  <li>Four types of teams:
+  <ol>
+    <li>Stream-aligned (SA):
+    <ul>
+      <li>Requires clarity of purpose and responsibility.</li>
+      <li>Single value stream.</li>
+      <li>Ideal: deliver values with 0 hands-offs.</li>
+      <li>Primary type: the purpose of the other types is to reduce the burden of SA teams.</li>
+      <li>Expected behaviours:
+      <ul>
+        <li>Steady flow of features.
+        <ul>
+          <li>Team measured by this.</li>
+        </ul></li>
+        <li>Course correct based on feedback.</li>
+        <li>Proactive reaches supporting teams.</li>
+      </ul></li>
+    </ul></li>
+    <li>Enabling:
+    <ul>
+      <li>Goal: grow capabilities of SA teams.</li>
+      <li>Research, suggest tooling and practices to SA teams.</li>
+      <li>Expected behaviours:
+      <ul>
+        <li>Proactively seek to understand the needs of SA teams.</li>
+        <li>Stay ahead of the curve.</li>
+        <li>Management of technology lifecycle.</li>
+        <li>Knowledge sharing across SA teams.</li>
+      </ul></li>
+    </ul></li>
+    <li>Complicated-subsystem:
+    <ul>
+      <li>Goal: reduce cognitive load of SA teams.</li>
+      <li>Most team members require specialist knowledge on the subsystem their work on that is very hard to acquired.
+      <ul>
+        <li>Main difference with typical component teams.</li>
+      </ul></li>
+      <li>Expected behaviours:
+      <ul>
+        <li>Delivery and quality higher than if SA team was developing the subsystem.</li>
+        <li>Prioritizes work according to all SA teams.</li>
+      </ul></li>
+    </ul></li>
+    <li>Platform:
+    <ul>
+      <li>Goal: make stream-aligned teams autonomous.</li>
+      <li>Digital platform: Self-service APIs, tools, services, knowledge and support.</li>
+      <li>Use internal pricing to regulate demand.</li>
+      <li>Thinnest Viable Platform.</li>
+      <li>Expected behaviours:
+      <ul>
+        <li>Platform as a product for SA teams.</li>
+        <li>Uses its own platform.</li>
+        <li>Builds on top of other platform teams.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+  <li>Traditional work allocation:
+  <ul>
+    <li>Large request by a single customer is translated into a project, then several teams are involved and be required to fit the new work into their existing backlog.</li>
+  </ul></li>
+  <li>Capabilities within a SA team (non-exhaustive):
+  <ul>
+    <li>App security.</li>
+    <li>Commercial and operational visibility.</li>
+    <li>Design and architecture.</li>
+    <li>Development and coding.</li>
+    <li>Infrastructure and operability.</li>
+    <li>Metrics and monitoring.</li>
+    <li>Product management and ownership.</li>
+    <li>Testing and QA.</li>
+    <li>UX.</li>
+  </ul></li>
+  <li>Value stream examples:
+  <ul>
+    <li>Single product.</li>
+    <li>Single set of features.</li>
+    <li>Single user journey.</li>
+    <li>Single user persona.</li>
+    <li>Geography.</li>
+    <li>Compliance stream.</li>
+    <li>Business area.</li>
+  </ul></li>
+  <li>Ratio stream-aligned vs others: 6:1 to 9:1.</li>
+  <li>Nested or “fractal” teams: In a big enough Platform, the Platform itself will contain several of the fundamental types of teams, incluing a platform team.</li>
+  <li>Cross-functional teams build simpler solutions because solutions that require deep expertise in one area are likely to lose against easier-to-comprehend solutions that work for all members.</li>
+  <li>Mapping existing teams to the fundamental types will clarify purpose and expected behaviours.
+  <ul>
+    <li>Examples in page 104.</li>
+  </ul></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Choose Team-First Boundaries</h2>
+<ul>
+  <li>Align most teams with the streams of change in the org.</li>
+  <li>When considering a new architecture, take into account how it affects the teams:
+  <ul>
+    <li>Cognitive load.</li>
+    <li>Their location.</li>
+    <li>Their interest in the new service.</li>
+  </ul></li>
+  <li>Types of monoliths:
+  <ul>
+    <li>Application monoliths.</li>
+    <li>Shared DB monolith.</li>
+    <li>Monolithic builds.</li>
+    <li>Couple releases.</li>
+    <li>Monolithic model - Shared domain.</li>
+    <li>Monolithic thinking - Standardization.</li>
+    <li>Monolithic workplace - Open-plan office.</li>
+  </ul></li>
+  <li>Fracture plan is a natural seam in the SW system that allows the system to be split easily into two or more parts. Examples:
+  <ul>
+    <li>Business Domain Bounded Context.
+    <ul>
+      <li>Preferred fracture plane.</li>
+      <li>Expect iteration as you understand the context better.</li>
+    </ul></li>
+    <li>Regulatory compliance.</li>
+    <li>Change cadence.</li>
+    <li>Team location:
+    <ul>
+      <li>Different time zone.</li>
+      <li>Either:
+      <ul>
+        <li>Full collocation.</li>
+        <li>Remote first.</li>
+        <li>Split team.</li>
+      </ul></li>
+    </ul></li>
+    <li>Risk
+    <ul>
+      <li>Depending on appetite for failure.</li>
+    </ul></li>
+    <li>Performance isolation.</li>
+    <li>Technology.
+    <ul>
+      <li>Particularly old or less automatable tech.</li>
+    </ul></li>
+    <li>User personas.</li>
+    <li>Org specific.</li>
+  </ul></li>
+  <li>Test for breaking a monolith: Does the resulting architecture support more autonomous teams with reduced cognitive load?</li>
+</ul><h1><a name="part-three"></a>Part III: Evolving Team Interactions for Innovation and Rapid Delivery</h1><h2><a name="ch-7"></a>Chapter 7 - Team Interaction Modes</h2>
+<ul>
+  <li>Team interactions as the sensing mechanism for innovation and self-steering.</li>
+  <li>Intermittent collaboration gives better results/solutions than constant interaction (Bernstein)</li>
+  <li>3 essential Team Interaction modes:
+  <ol>
+    <li>Collaboration:
+    <ul>
+      <li>Work closely between teams with different skill sets.
+      <ul>
+        <li>Insights should be shared with other teams.</li>
+      </ul></li>
+      <li>When a high degree of adaptability or discovery is needed.
+      <ul>
+        <li>Example: early phases of new system.</li>
+      </ul></li>
+      <li>Joint responsibility.</li>
+      <li>Need of ongoing collaboration suggest incorrect:
+      <ul>
+        <li>Domain boundaries, or</li>
+        <li>Team responsibilities, or</li>
+        <li>Mix of skills within a team.</li>
+      </ul></li>
+      <li>Expect reduced output:
+      <ul>
+        <li>Higher cognitive load.</li>
+        <li>Extra coordination.</li>
+      </ul></li>
+      <li>Can collaborate with at most one team.</li>
+    </ul></li>
+    <li>X-as-a-Service:
+    <ul>
+      <li>Natural interaction model after collaboration.</li>
+      <li>Clearer ownership, smaller cognitive load.</li>
+      <li>Slower innovation across boundaries.</li>
+      <li>Must provide good Developer Experience.</li>
+      <li>Manage it as a product.</li>
+    </ul></li>
+    <li>Facilitation:
+    <ul>
+      <li>Helping to clear impediments.</li>
+      <li>Main operating model of enabling teams.</li>
+      <li>Facilitators also help to discover gaps or inconsistencies in existing components and services used by other teams.</li>
+      <li>Focus on quality of interaction between other teams.</li>
+    </ul></li>
+  </ol></li>
+  <li>Interaction modes should become team habits:
+  <ul>
+    <li>Increase clarity of purpose.</li>
+    <li>Improve team engagement.</li>
+    <li>Reduce frustration with other teams.</li>
+  </ul></li>
+  <li>Typical interaction modes:</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th align="center">Collaboration </th>
+      <th align="right">X-as-a-Service </th>
+      <th align="right">Facilitation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Stream-aligned </td>
+      <td align="center">Typical </td>
+      <td align="right">Typical </td>
+      <td align="right">Occasional </td>
+    </tr>
+    <tr>
+      <td>Enabling </td>
+      <td align="center">Occasional </td>
+      <td align="right"> </td>
+      <td align="right">Typical </td>
+    </tr>
+    <tr>
+      <td>Complicated-subsystem </td>
+      <td align="center">Occasional </td>
+      <td align="right">Typical </td>
+      <td align="right"> </td>
+    </tr>
+    <tr>
+      <td>Platform </td>
+      <td align="center">Occasional </td>
+      <td align="right">Typical </td>
+      <td align="right"> </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Existing SW architecture will initially push back against the new team structures.</li>
+  <li>A small group of architects can be hugely effective when the remit of architecture is to discover, adjust, and reshape the interactions between teams, and therefore, the architecture of the system.</li>
+  <li>Collaborate on ambiguous interfaces until they are stable and functional.</li>
+  <li>Consider deliberate temporal re-teaming to revitalize interaction between teams, refresh and grow experience and build empathy.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Evolve Team Structures with Organizational Sensing</h2>
+<ul>
+  <li>The most important thing is not the shape of the org, but the decision rules used to adapt and change it.</li>
+  <li>Collaboration is expensive, so it must be planned and justified.</li>
+  <li>Collaboration for:
+  <ul>
+    <li>Rapid learning.</li>
+    <li>Adoption of new practices.</li>
+  </ul></li>
+  <li>Evolve different team topologies for different parts of the org at different times to match the team purpose and context.</li>
+  <li>Triggers for evolutions of Team Topologies:
+  <ul>
+    <li>SW has grown too large for one team.</li>
+    <li>Work queued in a team.</li>
+    <li>Specialization in components with in the team.</li>
+    <li>Complains about lack of documentation.</li>
+    <li>Delivery cadence is becoming slower.</li>
+    <li>Multiple Business services rely on a large set of underlying services.</li>
+  </ul></li>
+</ul>
+<blockquote><p>Operations is not the output of design, but an input. <cite><a href="https://twitter.com/jeffsussna">Jeff Sussna</a></cite></p>
+</blockquote>
+<ul>
+  <li>Team owning a product needs to have some responsibility for its commercial viability.</li>
+  <li>IT-ops service desk should be staffed with some of the most experienced engineers in the org.</li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Conclusion</h2>
+<ul>
+  <li>Team Topologies is not enough:
+  <ul>
+    <li>Healthy org culture.</li>
+    <li>Good engineering practices.</li>
+    <li>Healthy funding and financial practices:
+    <ul>
+      <li>Avoid CapEx/OpEx split in IT.</li>
+      <li>Project driven deadlines.</li>
+      <li>Large-batch budgeting.</li>
+    </ul></li>
+    <li>Clarity of business vision.</li>
+  </ul></li>
+  <li>How to get started:
+  <ol>
+    <li>Start with the team:
+    <ul>
+      <li>Answer: what does the need in order to:
+      <ul>
+        <li>Act and operate as an effective team?</li>
+        <li>Own part of the SW effectively?</li>
+        <li>Focus on user needs?</li>
+        <li>Reduce unnecessary cognitive load?</li>
+        <li>Consume and provide SW and information to other teams?</li>
+      </ul></li>
+    </ul></li>
+    <li>Identify suitable streams of change.</li>
+    <li>Identify the Thinnest Viable Platform.</li>
+    <li>Identify capability gaps in team coaching, mentoring, service management and documentation.</li>
+    <li>Share and practice different interaction modes and explain principles behind new ways of working.</li>
+  </ol></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   He now creates open source software at <a href="http://akvo.org/">Akvo</a>.
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png" /></a>
+					</div>
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1942788819&amp;asins=1942788819&amp;linkId=1d9bed742dcaae815ffbac5483224f52&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (28)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (3)</a></li><li><a href="/tags/Clojure/index.html">Clojure (32)</a></li><li><a href="/tags/Humour/index.html">Humour (9)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (13)</a></li><li><a href="/tags/good_practices/index.html">good practices (23)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492050903&amp;asins=1492050903&amp;linkId=19e085ea5e3f5a666bd581dc966e63b9&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
