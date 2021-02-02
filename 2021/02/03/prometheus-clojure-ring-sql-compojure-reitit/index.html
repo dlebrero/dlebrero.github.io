@@ -6,10 +6,10 @@
    ================================================== -->
    <meta charset="utf-8" />
 	<title>Prometheus in a Clojure stack: Duct, Jetty, Compojure/Reitit and Hugsql</title>
-	<meta content="How to integrate a Clojure HTTP server with Prometheus" name="description" /><meta content="Clojure Prometheus Compojure Ring Reitit SQL hugsql jdbc Duct Jetty HikariCP" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Prometheus in a Clojure stack: Duct, Jetty, Compojure/Reitit and Hugsql" property="og:title" /><meta content="How to integrate a Clojure HTTP server with Prometheus" property="og:description" /><meta content="https://danlebrero.com/2021/01/14/prometheus-clojure-ring-sql-compojure-reitit/" property="og:url" /><meta content="Prometheus in a Clojure stack: Duct, Jetty, Compojure/Reitit and Hugsql" name="twitter:title" /><meta content="How to integrate a Clojure HTTP server with Prometheus" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/prometheus-clojure.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/prometheus-clojure.jpg" property="og:image" />
+	<meta content="How to integrate a Clojure HTTP service with Prometheus" name="description" /><meta content="Clojure Prometheus Compojure Ring Reitit SQL hugsql jdbc Duct Jetty HikariCP" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Prometheus in a Clojure stack: Duct, Jetty, Compojure/Reitit and Hugsql" property="og:title" /><meta content="How to integrate a Clojure HTTP service with Prometheus" property="og:description" /><meta content="https://danlebrero.com/2021/02/03/prometheus-clojure-ring-sql-compojure-reitit/" property="og:url" /><meta content="Prometheus in a Clojure stack: Duct, Jetty, Compojure/Reitit and Hugsql" name="twitter:title" /><meta content="How to integrate a Clojure HTTP service with Prometheus" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/prometheus-clojure.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/prometheus-clojure.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2021/01/14/prometheus-clojure-ring-sql-compojure-reitit/" />
+	<link rel="canonical" href="https://danlebrero.com/2021/02/03/prometheus-clojure-ring-sql-compojure-reitit/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -119,13 +119,13 @@
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Thu, 14 Jan 2021</li>
+								<li id="entry-date">Wed, 3 Feb 2021</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">How to integrate a Clojure HTTP server with Prometheus</p>
+				 <p class="lead" id="entry-summary">How to integrate a Clojure HTTP service with Prometheus</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
@@ -138,7 +138,7 @@
 <ol>
   <li><a href="https://github.com/duct-framework/duct">Duct</a> for dependency injection.</li>
   <li><a href="https://www.eclipse.org/jetty/">Jetty</a> as the HTTP server.</li>
-  <li><a href="https://github.com/weavejester/compojure">Compojure</a> or <a href="https://github.com/metosin/reitit">Reitit</a> for HTTP server routing.</li>
+  <li><a href="https://github.com/metosin/reitit">Reitit</a> for HTTP server routing. We will also see <a href="https://github.com/weavejester/compojure">Compojure</a> due to its popularity.</li>
   <li><a href="https://github.com/brettwooldridge/HikariCP">HikariCP</a> for DB connection pooling.</li>
   <li><a href="https://www.hugsql.org">HugSQL</a> for SQL access.</li>
 </ol><p>We will use the <a href="https://github.com/clj-commons/iapetos">iapetos</a> Prometheus client library.</p><p>All the code is available at <a href="https://github.com/dlebrero/clojure-prometheus-example">https://github.com/dlebrero/clojure-prometheus-example</a>.</p><h1>The basics</h1><p>For starters, we will collect the monitoring information for the JVM plus some basic Ring stats.</p><p>The dependencies:</p>
@@ -149,25 +149,25 @@
 [org.eclipse.jetty/jetty-server "9.4.31.v20200723"] ;; See Gotcha section at bottom 
 [org.eclipse.jetty/jetty-servlet "9.4.31.v20200723"]
 </code></pre><p>The Duct configuration required is:</p>
-<pre><code class="Clojure">:prometheus-example.handler.monitoring-basic/collector {}
-:prometheus-example.handler.monitoring-basic/middleware 
+<pre><code class="Clojure">:prometheus-example.handler.monitoring-basic/collector {} ;; (1)
+:prometheus-example.handler.monitoring-basic/middleware ;; (2) 
 {:collector #ig/ref :prometheus-example.handler.monitoring-basic/collector}
 
 :duct.handler/root
 {:middleware ^:distinct
            [#ig/ref :prometheus-example.handler.monitoring-basic/middleware]}
-</code></pre><p>The <a href="https://github.com/prometheus/client_java">Prometheus Client</a> requires you to register all the metrics that you are going to collect beforehand, which is what we are doing in <code>:prometheus-example.handler.monitoring-basic/collector</code>:</p>
-<pre><code class="Clojure">(defmethod ig/init-key :prometheus-example.handler.monitoring-basic/collector [_ config]
+</code></pre><p>The <a href="https://github.com/prometheus/client_java">Prometheus Client</a> requires you to register all the metrics that you are going to collect beforehand, which is what we are doing at <code>(1)</code> in <code>:prometheus-example.handler.monitoring-basic/collector</code>:</p>
+<pre><code class="Clojure">(defmethod ig/init-key :prometheus-example.handler.monitoring-basic/collector [_ config] ;; This is (1)
   (-&gt;
     (iapetos.core/collector-registry)
     (iapetos.collector.jvm/initialize)
     (iapetos.collector.ring/initialize)))
-</code></pre><p>Last bit, we need to add the Ring middleware that:</p>
+</code></pre><p>At <code>(2)</code>, we add the Ring middleware that:</p>
 <ol>
   <li>Collects the actual timing and errors for the HTTP requests.</li>
   <li>Exposes a “/metrics” endpoint for Prometheus to collect the data.</li>
 </ol>
-<pre><code class="Clojure">(defmethod ig/init-key :prometheus-example.handler.monitoring-basic/middleware [_ {:keys [collector]}]
+<pre><code class="Clojure">(defmethod ig/init-key :prometheus-example.handler.monitoring-basic/middleware [_ {:keys [collector]}] ;; This is (2)
   #(-&gt; %
      (iapetos.collector.ring/wrap-metrics collector {:path "/metrics"})))
 </code></pre><p>After this, we have in our <code>/metrics</code> endpoint the following stats:</p>
@@ -184,12 +184,12 @@
 <pre><code class="Clojure">[io.prometheus/simpleclient_jetty "0.9.0"]
 [io.prometheus/simpleclient_jetty_jdk8 "0.9.0"]
 </code></pre><p>And the Duct configuration:</p>
-<pre><code class="Clojure">:prometheus-example.handler.monitoring-basic/jetty-configurator
+<pre><code class="Clojure">:prometheus-example.handler.monitoring-basic/jetty-configurator ;; (3)
 {:collector #ig/ref :prometheus-example.handler.monitoring-basic/collector}
 
-:duct.server.http/jetty
+:duct.server.http/jetty ;; (4)
 {:configurator #ig/ref :prometheus-example.handler.monitoring-basic/jetty-configurator}
-</code></pre><p>The <code>:prometheus-example.handler.monitoring-basic/jetty-configurator</code> will add the <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/main/src/prometheus_example/handler/monitoring_basic.clj#L16">required Jetty configuration</a> plus register the metrics.</p><p>Then we have to configure the default Jetty server provided by <a href="https://github.com/duct-framework/module.web">Duct Web module</a> to use this configurator.</p><h1>REST routes</h1><p>The basic Ring configuration that we have seen so far has the problem that if you use path parameters in your routes then you are going to end up with one metric for every and each different value of that path parameter.</p><p>For example, if you have the following Compojure route:</p>
+</code></pre><p>At <code>(3)</code>, the <code>:prometheus-example.handler.monitoring-basic/jetty-configurator</code> will add the <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/main/src/prometheus_example/handler/monitoring_basic.clj#L16">required Jetty configuration</a> plus register the metrics.</p><p>Then at <code>(4)</code> we have to configure the default Jetty server provided by <a href="https://github.com/duct-framework/module.web">Duct Web module</a> to use this configurator.</p><h1>REST routes</h1><p>The basic Ring configuration that we have seen so far has the problem that if you use path parameters in your routes then you are going to end up with one metric for every and each different value of that path parameter.</p><p>For example, if you have the following Compojure route:</p>
 <pre><code class="clojure">(GET "/some-path/:path-param/before" [path-param]
   {:body {:example "data" :param path-param}})
 </code></pre><p>Two HTTP call to <code>/user/some-path/dan/before</code> and <code>/user/some-path/lebrero/before</code>, then your metrics are going to have:</p>
@@ -226,25 +226,25 @@ http_requests_total{method="GET",status="200",statusClass="2XX",path="/some-path
   <li>If you have nested Compojure contexts like <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/8756e5245379f4574830f02c6cb19118cf9a1dc2/src/prometheus_example/handler/example.clj#L10">this example</a>, then you end up with basically the same path parameters issue as in the basic configuration, but for context. To fix it, you need:
   <ul>
     <li>Write a Compojure context-like macro that preserves all the contexts matched, like <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/8756e5245379f4574830f02c6cb19118cf9a1dc2/src/prometheus_example/handler/example.clj#L26">this one</a>.</li>
-    <li>Adjust the metrics collector to something like <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/33eb28318d33a79e2a99f69774fe55c3d050d54a/src/prometheus_example/handler/monitoring_compojure.clj#L20-L19">this</a></li>
+    <li>Adjust the metrics collector to something like <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/33eb28318d33a79e2a99f69774fe55c3d050d54a/src/prometheus_example/handler/monitoring_compojure.clj#L20-L19">this</a>.</li>
   </ul></li>
 </ol><p>You also have the option to do the metrics instrumentation inside the <code>wrap-routes</code> code as in <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/5434866008acd549babdada57e090ab94119b9ee/src/prometheus_example/handler/monitoring_compojure.clj#L6">here</a> but then you are not measuring any middleware or code in a Compojure <code>context</code>, plus you will still need to deal with both quirks above. </p><h2>Reitit</h2><p>All the quirks with Compojure show us that, at least for this particular problem, a data-driven library ends up allowing a simpler and more elegant solution.</p><p>Apart from adding the Reitit dependency, you will need the following Duct configuration:</p>
-<pre><code class="Clojure">  :prometheus-example.handler.example-reitit/router
+<pre><code class="Clojure">  :prometheus-example.handler.example-reitit/router ;; (5)
   {:collector #ig/ref :prometheus-example.handler.monitoring-basic/collector
    :db #ig/ref :duct.database/sql}
 
   :duct.router/cascading
   [#ig/ref [:prometheus-example.handler.example-reitit/router]]
 </code></pre><p>So we are integrating Reitit as a simple middleware, which has a very simple implementation:</p>
-<pre><code>(defmethod ig/init-key :prometheus-example.handler.example-reitit/router [_ {:keys [collector db]}]
+<pre><code>(defmethod ig/init-key :prometheus-example.handler.example-reitit/router [_ {:keys [collector db]}] ;; this is (5)
   (let [router (reitit.ring/router (routes db)
-                 {:data {:middleware [(fn [handler]
-                                        (iapetos.collector.ring/wrap-instrumentation handler collector
-                                          {:path-fn (fn [req] (:template (reitit.ring/get-match req)))}))]}})]
+                 {:data {:middleware [(fn [handler] ;; (6)
+                                        (iapetos.collector.ring/wrap-instrumentation handler collector 
+                                          {:path-fn (fn [req] (:template (reitit.ring/get-match req)))}))]}})] ;; (7)
     (reitit.ring/ring-handler router nil
       {:middleware [(fn [handler]
                       (iapetos.collector.ring/wrap-metrics-expose handler collector {:path "/metrics"}))]})))
-</code></pre><p>So to our <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/62c05af8ec481e9ce71571ac9fd45d343e94796e/src/prometheus_example/handler/example_reitit.clj#L9">Reitit routes</a> to we are injecting the wrap-instrumentation middleware, that simply extracts the matched path from the request. </p><p>Neither of the issues mention with Compojure exist, and the code ends up being simpler.</p><h1>Database</h1><p>For the database we need to instrument two things: the database connection pool and the execution of the SQL queries.</p><h2>HikariCP</h2><p>Duct by default comes with dependencies for HikariCP that is an excellent database connection pool.</p><p>As HikariCP comes with support for Prometheus, we just need to initialize it properly:</p>
+</code></pre><p>So to our <a href="https://github.com/dlebrero/clojure-prometheus-example/blob/62c05af8ec481e9ce71571ac9fd45d343e94796e/src/prometheus_example/handler/example_reitit.clj#L9">Reitit routes</a> to we are injecting at <code>(6)</code> the wrap-instrumentation middleware, that at <code>(7)</code> simply extracts the matched path from the request. </p><p>Neither of the issues mention with Compojure exist, and the code ends up being simpler.</p><h1>Database</h1><p>For the database we need to instrument two things: the database connection pool and the execution of the SQL queries.</p><h2>HikariCP</h2><p>Duct by default comes with dependencies for HikariCP that is an excellent database connection pool.</p><p>As HikariCP comes with support for Prometheus, we just need to initialize it properly:</p>
 <pre><code class="clojure">  :prometheus-example.handler.monitoring-database/hikaricp
   {:hikari-cp #ig/ref :duct.database.sql/hikaricp
    :metrics-collector #ig/ref :prometheus-example.handler.monitoring-basic/collector}
@@ -304,7 +304,7 @@ http_requests_total{method="GET",status="200",statusClass="2XX",path="/some-path
 </code></pre><p>In the <a href="https://github.com/dlebrero/clojure-prometheus-example">example project</a> we do this as part of the <code>:prometheus-example.handler.monitoring-database/hikaricp</code> init key.</p><p>The SQL metrics will be collected per HugSQL function name as per:</p>
 <pre><code>sql_run_duration_count{query="upsert-user!",} 4.0
 sql_run_duration_count{query="get-user-by-email",} 2.0
-</code></pre><h1>All together</h1><p>Putting it all together, you will have an endpoint to expose all the Prometheus metrics to know the health of your service:</p>
+</code></pre><p><br /> <br /></p><h1>All together</h1><p>Putting it all together, you will have an endpoint to expose all the Prometheus metrics to know the health of your service:</p>
 <ul>
   <li>JVM threads and their state.</li>
   <li>JVM GC and memory stats.</li>
@@ -314,9 +314,11 @@ sql_run_duration_count{query="get-user-by-email",} 2.0
   <li>Health metrics about the Jetty thread pool.</li>
   <li>Health and some performance metrics for the HickariCP connection pool.</li>
   <li>Performance and error metrics per SQL call.</li>
-</ul><p>Collecting is just the first step on the road. Now you need to visualize the data and create alerts to know when something requires your attention, which require their own blog posts. </p><h1>Gotchas</h1><p>Here is a list of bumps on the road while building the example application.</p><h3>ClassNotFoundException (org.eclipse.jetty.util.ssl.SslContextFactory$Server)</h3><p><em>Symptom</em>: Application not starting because:</p>
-<pre><code class="Syntax error (ClassNotFoundException) compiling at (ring/adapter/jetty.clj:1:1).">org.eclipse.jetty.util.ssl.SslContextFactory$Server
-</code></pre><p><em>Cause</em>: Latest Version of <code>[io.prometheus/simpleclient_jetty_jdk8 "0.9.0"]</code> brings <code>[org.eclipse.jetty/jetty-server "9.4.4.v20170414"]</code> which does not come with that class and that <code>ring-jetty-adapter</code> depends on.</p><p><em>Fix</em>: explicitly depend on [org.eclipse.jetty/jetty-server “9.4.31.v20200723”] and [org.eclipse.jetty/jetty-servlet “9.4.31.v20200723”], or exclude those dependencies from <code>simpleclient_jetty_jdk8</code></p><h3>ClassCastException when starting Duct</h3><p><em>Symptom</em>: Application not starting because:</p>
+</ul><p>Collecting is just the first step on the road. Now you need to visualize the data and create alerts to know when something requires your attention, which require their own blog posts. </p>
+<hr /><h1>Gotchas</h1><p>Here is a list of bumps on the road while building the example application.</p><h3>ClassNotFoundException (org.eclipse.jetty.util.ssl.SslContextFactory$Server)</h3><p><em>Symptom</em>: Application not starting because:</p>
+<pre><code>Syntax error (ClassNotFoundException) compiling at (ring/adapter/jetty.clj:1:1).
+org.eclipse.jetty.util.ssl.SslContextFactory$Server
+</code></pre><p><em>Cause</em>: Latest Version of <code>[io.prometheus/simpleclient_jetty_jdk8 "0.9.0"]</code> brings <code>[org.eclipse.jetty/jetty-server "9.4.4.v20170414"]</code> which does not come with that class and that <code>ring-jetty-adapter</code> depends on.</p><p><em>Fix</em>: explicitly depend on <code>[org.eclipse.jetty/jetty-server "9.4.31.v20200723"]</code> and <code>[org.eclipse.jetty/jetty-servlet "9.4.31.v20200723"]</code>, or exclude those dependencies from <code>simpleclient_jetty_jdk8</code></p><h3>ClassCastException when starting Duct</h3><p><em>Symptom</em>: Application not starting because:</p>
 <pre><code>Execution error (ClassCastException) at duct.core/eval4586$fn (core.clj:258).
 class clojure.lang.PersistentList cannot be cast to class clojure.lang.Associative (clojure.lang.PersistentList and clojure.lang.Associative are in unnamed module of loader 'app')
 </code></pre><p><em>Cause</em>: I had deleted the dev/resources/dev.edn as it was empty. This caused the <code>:duct.profile/dev #duct/include "dev"</code> in the <code>resources/prometheus_example/config.edn</code> file to include the <code>dev/src/dev.clj</code> file in the Duct config.</p><p>Fix: Add empty <code>dev/resources/dev.edn</code> or delete <code>#duc/include "dev"</code> from the <code>resources/prometheus_example/config.edn</code></p><h3>No implementation of method: :increment* of protocol: #’iapetos.operations/IncrementableCollector found for class: nil</h3><p><em>Symptom</em>: Any call to <code>iapetos.core/inc</code> or similar functions fail with:</p><p><code>No implementation of method: :increment* of protocol: #'iapetos.operations/IncrementableCollector found for class: nil</code></p><p><em>Cause</em>: <code>iapetos</code> wraps the <strong>mutable</strong> Prometheus <a href="https://prometheus.github.io/client_java/io/prometheus/client/CollectorRegistry.html">CollectorRegistry</a> with its own <strong>immutable</strong> <a href="https://github.com/clj-commons/iapetos/blob/master/src/iapetos/registry.clj#L36">abstraction</a>, which will create “phantom” metrics: a metric that exists in the Prometheus CollectorRegistry but not in the iapetos one. </p><p>This confused me as the <code>/metrics</code> endpoint uses <a href="https://github.com/clj-commons/iapetos/blob/master/src/iapetos/export.clj#L11">the underlying Prometheus registry</a>, so “phantom” metrics will be shown.</p><p><em>Fix</em>: Have one place to register all the metrics in the iapetos registry, or be aware of the fact when registering the metrics.</p></div>
@@ -404,7 +406,7 @@ s.setAttribute('data-timestamp', +new Date());
 	            <div class="widget widget_categories">
 
 	               <h5 class="widget-title">Categories</h5>
-	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (28)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (3)</a></li><li><a href="/tags/Clojure/index.html">Clojure (32)</a></li><li><a href="/tags/Humour/index.html">Humour (9)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (13)</a></li><li><a href="/tags/good_practices/index.html">good practices (23)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (29)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (3)</a></li><li><a href="/tags/Clojure/index.html">Clojure (33)</a></li><li><a href="/tags/Humour/index.html">Humour (9)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (13)</a></li><li><a href="/tags/good_practices/index.html">good practices (23)</a></li><li><a href="/tags/resilience/index.html">resilience (4)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
 
 	            </div> <!-- /widget_categories -->
 
