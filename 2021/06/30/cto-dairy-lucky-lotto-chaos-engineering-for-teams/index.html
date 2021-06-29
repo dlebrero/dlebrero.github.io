@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>CTO day 7: Lucky Lotto, chaos engineering but for teams</title>
+	<meta content="Building resilience teams with chaos engineering principles." name="description" /><meta content="CTO team building experiment chaos engineering learning " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="CTO day 7: Lucky Lotto, chaos engineering but for teams" property="og:title" /><meta content="Building resilience teams with chaos engineering principles." property="og:description" /><meta content="https://danlebrero.com/2021/06/30/cto-dairy-lucky-lotto-chaos-engineering-for-teams/" property="og:url" /><meta content="CTO day 7: Lucky Lotto, chaos engineering but for teams" name="twitter:title" /><meta content="Building resilience teams with chaos engineering principles." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/cto/day7/lucky-lotto.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/cto/day7/lucky-lotto.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2021/06/30/cto-dairy-lucky-lotto-chaos-engineering-for-teams/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">CTO day 7: Lucky Lotto, chaos engineering but for teams</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 30 Jun 2021</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Building resilience teams with chaos engineering principles.</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/cto/day7/lucky-lotto.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>Last year’s team size reduction was the third in a row that we had to do.</p><p>One of the side effects of such a continuous reduction was that the knowledge about the systems was thinly spread: less people but the same number of systems.</p><p>As reducing the number of systems was not palatable to Business, we had to mitigate the risk of having a lot of knowledge held in just one person’s head.</p><p>Limiting our <a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">work in progress</a> has somehow helped spread some of that knowledge, but very slowly and not in all areas.</p><p>After watching some <a href="https://principlesofchaos.org">chaos engineering</a> video, the idea of applying its principles to build more resilient teams was born in the shape of the Lucky Lotto.</p><h2>Lucky Lotto!</h2><p>Here is the email to introduce the Lucky Lotto initiative:</p>
+<blockquote><p>Sunday evening. </p><p>With very little faith, as every Sunday, you check the number of the Lucky Lotto.</p><p>Your heart starts to race, and you sweat like a little piggy.</p><p>You check the numbers not twice, but a dozen times.</p><p>It has happened. You won the Lucky Lotto!</p><p>As you start making plans for those 100.000.000 dollars, one thing is for sure: you will not wake up tomorrow morning to work, neither the rest of your life.</p><p>Congratulation! A life of luxury and emptiness awaits you!</p><p>Wait, what happened to your Akvo’s team?</p><h3>Welcome to Akvo’s Lucky Lotto!</h3><p>Starting last week of September, we are going to start running our own Akvo’s Lucky Lotto.</p><p>All of you will have a chance to win, and your team to enjoy the results of your disappearance.</p><p>Rules:</p>
+  <ol>
+    <li>Every Monday a random person will win the Lucky Lotto.</li>
+    <li>The winner will work on some side project.</li>
+    <li>The winner will be completely unavailable to colleagues and to the rest of Akvo for the week.</li>
+    <li>Everybody, including product managers, gets one ticket every week, even if you don’t want it.</li>
+    <li>Every time that rule 3 must be broken, the winner must make a note (I will share some doc to do this).</li>
+  </ol><p><strong>This is nonsense. I would invest all the Lotto money in Akvo and come Monday 9am sharp to work.</strong></p><p>So would I! But “You won the Lotto” sounds better than <a href="https://en.wikipedia.org/wiki/Bus_factor">“You were run over by a bus”</a>.</p><p><strong>What are those side projects?</strong></p><p>Will depend on the skills of the lucky winner, but it could include:</p>
+  <ol>
+    <li>Platforms work.</li>
+    <li>Workflow Improvement work.</li>
+    <li>Research.</li>
+    <li>Learning.</li>
+    <li>Brown-bag session preparation.</li>
+    <li>Important but non-urgent work.</li>
+    <li>Little side projects for other Akvo departments.</li>
+    <li>Collaboration with Hubs.</li>
+    <li>Do some <a href="/2021/06/10/cto-dairy-building-bridges-week-little-things/#content">“Week of little things”</a> items.</li>
+  </ol><p><strong>Can I win twice in a row?</strong></p><p>And thrice!</p><p><strong>Do I have to isolate myself completely?</strong></p><p>No. If you are the winner you can still socialise and attend meetings/stand-ups, but you are not allowed to provide input.</p><p><strong>I have a very important thing to do that only myself can do and if it is not done the world will be destroyed.</strong></p><p>This is basically the point of the exercise. To find those things and ensure that there is somebody else is able to handle them.</p><p>Obviously we are not going to jeopardise (completely) our work, but if you find yourself with one of these tasks:</p>
+  <ol>
+    <li>Make a note.</li>
+    <li>Try to bring one of your colleagues to do the task with your supervision.</li>
+  </ol><p>This is going to force us to become more <a href="https://medium.com/@jchyip/why-t-shaped-people-e8706198e437">T-shaped</a> which in the longer run should make the team run smoother and be more adaptable.</p><p><strong>If the winner is announced on Monday morning, how can we plan around it?</strong></p><p>MUAHAHAhahaha</p><p><img src="/images/blog/cto/day7/muahahaha.gif" alt="muahahaha" /></p><p>Let me know if there are any questions, suggestions or comments.</p><p>Cheers,</p><p>Dan</p><p>PS: I wonder if this email will pass your email filters.</p>
+</blockquote><p>We will get two learning opportunities:</p>
+<ol>
+  <li>The team will need to fill up for the skills and work that the winner of the Lucky Lotto.</li>
+  <li>The winner will have a week to do something different.</li>
+</ol><h2>The process</h2><p>Every Monday 9am we will roll a dice and inform the lucky team.</p><p>The winner and myself will meet (but everybody was welcomed), and agree on what will be the objective of the week, which will depend on my TODO list, the winner’s interests, and other teammates’ suggestions.</p><p>The teammates’ suggestions proved to be the most interesting.</p><h2>Results</h2><p>Three months running the Lucky Lotto showed several instances of a bus factor of one, and gave the teams the opportunity to step up, learn and cover for the missing person’s skills.</p><p>As an example, our and only Android developer won the Lotto the same week that the team was going to fix some major performance issue on the communications between the app and the server. It was a great learning experience for the team.</p><p>For the Lucky Lotto winner, it was a very enjoyable week, to either learn something new (Kubernetes, backend development, our deployment pipeline, Cypress, Clojure, …), work on those long desired dev improvements that we never had time for, or to do something different from the usual churn.</p>
+<blockquote><p>These days were a great mirror into where I actually spend my time and if that is the best way to handle the tasks. <cite>One of our Product Managers</cite></p>
+</blockquote><p>In addition to the knowledge sharing, we got some cross-pollination and broader-team building as some winners decided to work with the other product team as their Lotto week.</p><p>As the ex-platform team lead, it gave me the opportunity to schedule some platform work that was no longer happening, giving the winner the “luxury” of learning some about our platform.</p><p>For the rest of the organization, we did some <a href="/2021/06/10/cto-dairy-building-bridges-week-little-things/#content">week of little things</a> items, and automated another Finance process (pro-tip: ensure you are on good terms with the people that have the money <i class="far fa-smile" aria-hidden="true"></i>).</p><p>All looked amazing until the “proper week” …</p><h2>A proper Lucky Lotto week</h2><p>Panic ensued on the day that <em>THE</em> backend developer of one of the teams won the Lucky Lotto <em>THE</em> week of tight deadlines and unavoidable client promises.</p><p>The developer (and his product manager) asked to reroll the Lucky Lotto so that the developer could have a “proper Lucky Lotto” in a <em>quieter</em> week and for another developer to enjoy it this week.</p>
+<p class="sidenote">How many weeks happen to be THE week for THE developer?</p><p>A proper Lucky Lotto week? </p><p>I realized that the Lotto’s emphasis has been drifting in the wrong direction:</p>
+<blockquote><p>As I have seen some confusion about what is the objective of the Lucky Lotto and its priority, lets review its objective:</p><p><strong>Build resilient teams.</strong></p><p>That it is.</p><h4>Why?</h4><p>So we are less stressed in the future, as we will have a more flexible team.</p><p>Working on the most important thing requires this flexibility. Consulting requires this flexibility.</p><p>As a generic statement, we are all specialist but not that generalists. We need specialised generalists.</p><p>Note that most of us have already done the difficult bit: to become a specialist. Now we just need to do the easy bit: to learn enough of other disciplines. Just enough.</p><h4>How?</h4><p>By applying <a href="https://en.wikipedia.org/wiki/Eustress">eustress</a> to the team’s week.</p><p>In our case, the antifragile practice that we are trying is making one team member “disappear” for a week, and the rest of the team to pick up the missing person’s work.</p><h4>“Proper” Lucky Lotto week</h4><p>Reflecting on the past weeks of Lucky Lotto, I think I got wrong what a “proper” Lucky Lotto week would look like. I think I emphasised that the important thing is to not be bothered by anyone, for the team to really to not need you at all.</p><p>This was wrong.</p><p>A proper and successful Lucky Lotto week is one that, in order of importance:</p>
+  <ol>
+    <li>You spent a significant amount of time teaching others some of your skills.
+    <ol>
+      <li>Teaching is more efficient that the team self-learning.</li>
+    </ol></li>
+    <li>Some not-easy-to-transfer knowledge gaps are identified.</li>
+    <li>Winner gets to do something different.</li>
+  </ol><p>Again, point 1 is more important than point 3.</p><h4>Rules (expanded):</h4>
+  <ol>
+    <li>Every Monday a random person will win the Lucky Lotto.</li>
+    <li>The winner will work on some side project. Still work.</li>
+    <li>The winner will be completely unavailable to colleagues and to the rest of Akvo for the week.</li>
+    <li>Everybody, including product managers, gets one ticket every week, even if you don’t want it.</li>
+    <li>Every time that rule 3 must be broken, the winner must make a note (I will share some doc to do this):
+    <ol>
+      <li>Note that this means that rule 3 is a soft-rule.</li>
+      <li>There is no “punishment” for breaking rule 3. It is not good neither is bad. It is a fact, and we want to know about it.</li>
+      <li>Try to bring one of your colleagues to do the task with you or under your supervision.</li>
+    </ol></li>
+    <li>Team should avoid delaying the work for a week.
+    <ol>
+      <li>Is the winner not working on the most important thing?</li>
+    </ol></li>
+    <li>This is a “best effort” initiative:
+    <ol>
+      <li>Real deadlines have more priority.</li>
+    </ol></li>
+    <li>Be practical. It is better to break rule 3 than:
+    <ol>
+      <li>To waste 5 days of your team’s work.</li>
+      <li>To waste 5 days of one team member.</li>
+      <li>Miss a partnership related deadline.</li>
+      <li>Let one teammate struggling with your task for a week.</li>
+    </ol></li>
+  </ol>
+</blockquote><p>The winner’s objective should be helping the team learn and to transfer her knowledge. </p>
+<p class="sidenote">I actually don't think specialization is more difficult than generalization, but I thought it will raise the team's spirit.</p><h2>Next</h2><p>Lucky Lotto worked pretty well as a fun way to create <strong>safe</strong> opportunities for the team to learn, spread the knowledge and increase our bus factor, while giving the winner room to break from routine.</p><p>An initiative well worth keeping.</p><p>But … my efforts to translate the newish business strategy to a technology strategy were bearing fruit, and with the new financial year looming, it was time to start rolling it, which meant a radical change on the Dev team that will absorb all energy and leave little room for experimentation.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/CTO_diary/index.html">CTO diary </a><a href="/tags/resilience/index.html">resilience </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>I am now enjoying a nice sabbatical but happy to talk about job opportunities for 2022.</p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492043869&amp;asins=1492043869&amp;linkId=b368e934bc79913cda8218551aecf743&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner2" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1617297755&amp;asins=1617297755&amp;linkId=e709857c20860e1fa829532d86fc5954&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (29)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Clojure/index.html">Clojure (33)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (19)</a></li><li><a href="/tags/good_practices/index.html">good practices (24)</a></li><li><a href="/tags/resilience/index.html">resilience (5)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1449373321&amp;asins=1449373321&amp;linkId=f5cccf745014d7b19ba896179d62349c&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
