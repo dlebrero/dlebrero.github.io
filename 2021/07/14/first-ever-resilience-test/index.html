@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>First ever resilience test</title>
+	<meta content="Building confidence on the resilience of a home automation system." name="description" /><meta content="resilience testing chaos engineering " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="First ever resilience test" property="og:title" /><meta content="Building confidence on the resilience of a home automation system." property="og:description" /><meta content="https://danlebrero.com/2021/07/14/first-ever-resilience-test/" property="og:url" /><meta content="First ever resilience test" name="twitter:title" /><meta content="Building confidence on the resilience of a home automation system." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/domotica/short-circuit.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/domotica/short-circuit.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2021/07/14/first-ever-resilience-test/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">First ever resilience test</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 14 Jul 2021</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Building confidence on the resilience of a home automation system.</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/domotica/short-circuit.jpg" />
+						</div>
+					</div>
+				 <div class="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small><i><a href="https://es.wikipedia.org/wiki/Archivo:Kurzschluss_12V20A.jpg" title="via Wikimedia Commons">Kurzschluss 12V20A</a> / <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0</a>.</i></small>
+
+				 </div>
+
+					<div class="entry-content"><p>Last week’s talk about <a href="/2021/06/30/cto-dairy-lucky-lotto-chaos-engineering-for-teams/#content">team resilience</a> brought back memories of my first ever automated resilience test.</p><p>Brace yourself for an old dev’s story from when lemons were the sweetest fruit available.</p><p><img src="/images/blog/domotica/lemons.jpg" alt="lemons" /></p><h2>The scene</h2><p>In 2002 to 2006 I helped develop a pretty amazing piece of technology, internally codenamed TheBox:</p><p><img src="/images/blog/domotica/thebox.jpg" alt="TheBox" /></p><p><span style="background-color: #ecf0f1"><small>TheBox in all its glory.</small></span></p><p>TheBox was designed to be the heart and brain of the house: </p>
+<ul>
+  <li>A wifi modem-router.</li>
+  <li>A firewall with parental control.</li>
+  <li>A multimedia player.</li>
+  <li>A TV internet browser.</li>
+  <li>A home surveillance system.</li>
+  <li>A home automation system, controlling the lights, blinds, thermostat and locks.</li>
+</ul><h2>First production deployment</h2><p>The first production deployment happened around 2005 in 100 houses as part of a new residential development somewhere in the south of Spain. </p>
+<p class="sidenote">deployment here means driving 800km (500 miles), flashing 100 drives, unscrewing 100 x 8 screws, slotting 100 flash drives, screwing 100 x 8 screws, carrying and plugging each box to its house, configuring the network, modem and home automation system, and driving back those 800km.</p><p>The new home owners were thrilled with their “futuristic” houses, our finance department (one person) was ecstatic with the first proper sales, and we – the dev team– were amazed that things actually worked.</p><p>All was happiness until …</p><p><img src="/images/blog/domotica/storm.jpg" alt="storm" /></p><p>An electrical storm near the residential development caused a power outage in the area. </p><p>When the power was restored, the heart and brain of most houses (aka TheBox) failed to boot.</p><p><img src="/images/blog/domotica/ahhhh.gif" alt="ahhh" /></p><p>To “quickly” restore service, we did a redeployment.</p>
+<p class="sidenote">see previous side note.</p><p>We brought back a box to debug the issue and unfortunately the fix required yet another redeploy.</p><p>As the bug has demonstrated my lack of knowledge, a fix and some manual testing did not give me enough confidence to do yet another 1600km (1000 miles) trip.</p><p>Back then I was already a test automation zealot, but how could I test that TheBox could survive a power outage?</p><h2>The first automated resilience test</h2><p>The solution had been sitting on my desk for two years:</p><p><img src="/images/blog/domotica/x10-am12.jpg" alt="x10 switch" /></p><p>An X-10 switch that is able to turn on/off the power using an X-10 command.</p><p><a href="https://en.wikipedia.org/wiki/X10_(industry_standard)">X-10</a> is an ancient home automation system that uses the existing household electrical wiring to communicate between devices. </p><p>And we were building software for home automation! So I had all the pieces to write my first ever resilience test:</p><p><img src="/images/blog/domotica/setup.jpg" alt="setup" /></p><p>And the pseudocode:</p>
+<pre><code>forever {
+    send_command(X10.power_on)
+    sleep(random(2 to 4 mins))
+    send_command(X10.power_off)
+    sleep(10 secs)
+}
+</code></pre><p>To give me a little bit more confidence, the power outage would happen while TheBox was trying to update its software, so it would be more likely that the power outage would happen as TheBox was writing to disk, simulating a more risky scenario.</p><p>The test spent four days doing:</p><p><img src="/images/blog/domotica/on-off.gif" alt="on-off" /></p><p>2000 power outages later, TheBox was still happily booting with no trouble so we decided to do one last redeployment. </p><h2>The end</h2><p>And no new outages <strong>ever</strong> happened again. Hurray!</p>
+<p class="sidenote">ever == while I worked for that company =~ 12 months</p><p>And snip, snap, snout, this tale’s told out.</p><h4>But, why TheBox was not booting after an outage?</h4><p>If you are curious, the issue was that we were using the <a href="https://en.wikipedia.org/wiki/Ext2">ext2</a> filesystem, a similar issue to <a href="https://superuser.com/questions/611752/can-unexpected-power-loss-harm-a-linux-install">this</a>. Moving the ext3 with journaling fixed the issue.</p><p>Or maybe <a href="https://superuser.com/questions/611752/can-unexpected-power-loss-harm-a-linux-install">it did not</a> and we never found out.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/resilience/index.html">resilience </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>I am now enjoying a nice sabbatical but happy to talk about job opportunities for 2022.</p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492043869&amp;asins=1492043869&amp;linkId=b368e934bc79913cda8218551aecf743&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner2" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1617297755&amp;asins=1617297755&amp;linkId=e709857c20860e1fa829532d86fc5954&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (29)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Clojure/index.html">Clojure (33)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (19)</a></li><li><a href="/tags/good_practices/index.html">good practices (24)</a></li><li><a href="/tags/resilience/index.html">resilience (6)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1449373321&amp;asins=1449373321&amp;linkId=f5cccf745014d7b19ba896179d62349c&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
