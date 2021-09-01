@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Designing Data-Intensive Applications</title>
+	<meta content="Book notes on &quot;Designing Data-Intensive Applications&quot; by Martin Kleppmann" name="description" /><meta content="Book review notes summary designing data-intensive applications. " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Designing Data-Intensive Applications" property="og:title" /><meta content="Book notes on &quot;Designing Data-Intensive Applications&quot; by Martin Kleppmann" property="og:description" /><meta content="https://danlebrero.com/2021/09/01/designing-data-intensive-applications-summary/" property="og:url" /><meta content="Book notes: Designing Data-Intensive Applications" name="twitter:title" /><meta content="Book notes on &quot;Designing Data-Intensive Applications&quot; by Martin Kleppmann" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/designing-data-intensive-applications/designing-data-intensive-applications.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/designing-data-intensive-applications/designing-data-intensive-applications.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2021/09/01/designing-data-intensive-applications-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Designing Data-Intensive Applications</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 1 Sep 2021</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Designing Data-Intensive Applications" by Martin Kleppmann</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/designing-data-intensive-applications/designing-data-intensive-applications.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/2VmRv8P">Designing Data-Intensive Applications</a> by <a href="https://twitter.com/martinkl">Martin Kleppmann</a>.</p><p>A very data intense book.</p><p>It made me smile that there is one chapter dedicated to the perils of distributed programming, when the fact is that the whole book is a warning after another of all the possible things that can go wrong.</p><p>We are doomed.</p><h1>Key Insights</h1>
+<ul>
+  <li>Reliability: Systems should work correctly even in the face of adversity, including <em>human error</em>.</li>
+  <li>Every legacy system is unpleasant on its own way.</li>
+  <li>Data models affect how we think about the problem that we are solving.<br /> <img src="/images/blog/books/designing-data-intensive-applications/document-vs-relational-vs-graph.png" alt="document-vs-relational-vs-graph.png" /></li>
+  <li>Graph model:
+  <ul>
+    <li>Good for evolvability, ease to add new relations and properties.</li>
+    <li>Datalog, declarative query language:
+    <ul>
+      <li>Better for complex data.</li>
+      <li>Less convenient for simple one-off queries.</li>
+      <li><a href="http://www.learndatalogtoday.org">http://www.learndatalogtoday.org</a>.</li>
+    </ul></li>
+  </ul></li>
+  <li><a href="#columnstorage">Column oriented storage and bitmap</a>.</li>
+  <li>Base64 encoding increases data size by 33%.</li>
+  <li>RPC/location transparency: there is no point to make a remote service look too much like a local object, because it is a fundamentally different thing.</li>
+  <li>Two operations are concurrent if neither “happens-before” the other.</li>
+  <li>Replication:
+  <ol>
+    <li>Single-leader replication:
+    <ul>
+      <li>Scalability of read-only replicas requires async replication.</li>
+    </ul></li>
+    <li>Multi-leader replication:
+    <ul>
+      <li>Multi datacenter, offline clients, collaborative editing.</li>
+      <li><a href="#conflictresolution">Conflict resolution</a>.</li>
+    </ul></li>
+    <li>Leaderless replication:
+    <ul>
+      <li>Quorum writes and reads.</li>
+      <li>High availability, low latency, occasional stale read.</li>
+    </ul></li>
+  </ol></li>
+  <li>ACID:
+  <ul>
+    <li>Consistency is a property of the application, not the database.</li>
+  </ul></li>
+  <li>SQL standard definition of isolation levels is flawed.</li>
+  <li>In a system with thousands of nodes, something is always broken.</li>
+  <li>If you send a request to another node and don’t receive a response, it is impossible to tell why.
+  <ul>
+    <li>When a timeout occurs, you still don’t know whether the remote node got your request or not, or if is still queued.</li>
+  </ul></li>
+  <li>Human error is the major cause of network outages.</li>
+  <li><a href="https://medium.com/@arpitbhayani/phi-φ-accrual-failure-detection-79c21ce53a7a">Phi Accrual failure detector</a></li>
+  <li>Google assumes 6ms drift for clock synchronized with NTP every 30 secs, 17 secs if synchronized once a day.
+  <ul>
+    <li>Clock reading should return a range of time + confidence level, instead of point in time.</li>
+  </ul></li>
+  <li>Fencing token:
+  <ul>
+    <li>Monotonically increasing id.</li>
+    <li>Server can check if the client still holds a lock/lease by remembering the last writer fencing token.</li>
+  </ul></li>
+  <li>Linearizability:
+  <ul>
+    <li>Make a system appear as if there were only one copy of the data and all operations on it are atomic.</li>
+    <li>Due to network delays, quorums do not guarantee linearizability.</li>
+    <li>Linearizability is slow, and this is true all the time.</li>
+  </ul></li>
+  <li><a href="#ch-9">Consistency and consensus</a>:
+  <ul>
+    <li>Need to reread this chapter 10 more times.</li>
+    <li>Causal consistency is the strongest possible consistency model that does not slow down due to network delays, and remains available in the face of network failures.</li>
+    <li>Two-Phase Commit (2PC) blocks if coordinator crashes.
+    <ul>
+      <li>XA transactions: “Just” a C API for interfacing with the 2PC coordinator.</li>
+    </ul></li>
+  </ul></li>
+  <li>In practice, making data available quickly - even in a quirky, difficult to use format - is more valuable than trying to decide on the ideal data model up front.</li>
+  <li>Messaging systems:
+  <ul>
+    <li>Key design questions:
+    <ol>
+      <li>What happens if producer is faster than consumer?</li>
+      <li>What happens if nodes crash or temporarily go offline? Are messages lost?</li>
+    </ol></li>
+  </ul></li>
+  <li><a href="https://www.youtube.com/watch?v=fU9hR3kiOK0">Turning the DB inside-out</a>.</li>
+  <li>Transactions are not enough.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#p-1">Foundations of Data Systems</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1: Reliable, Scalable, and Maintainable Applications</a></li>
+    <li><a href="#ch-2">Chapter 2: Data Models and Query Languages</a></li>
+    <li><a href="#ch-3">Chapter 3: Storage and Retrieval</a></li>
+    <li><a href="#ch-4">Chapter 4: Encoding and Evolution</a></li>
+  </ul></li>
+  <li><a href="#p-2">Distributed Data</a>
+  <ul>
+    <li><a href="#ch-5">Chapter 5: Replication</a></li>
+    <li><a href="#ch-6">Chapter 6: Partitioning</a></li>
+    <li><a href="#ch-7">Chapter 7: Transactions</a></li>
+    <li><a href="#ch-8">Chapter 8: The Trouble with Distributed Systems</a></li>
+    <li><a href="#ch-9">Chapter 9: Consistency and Consensus</a></li>
+  </ul></li>
+  <li><a href="#p-3">Derived Data</a>
+  <ul>
+    <li><a href="#ch-10">Chapter 10: Batch Processing</a></li>
+    <li><a href="#ch-11">Chapter 11: Stream Processing</a></li>
+    <li><a href="#ch-12">Chapter 12: The Future of Data Systems</a></li>
+  </ul></li>
+</ul><h1><a name="p-1"></a>Foundations of Data Systems</h1><h2><a name="ch-1"></a>Chapter 1: Reliable, Scalable, and Maintainable Applications</h2>
+<ul>
+  <li>Reliability:
+  <ul>
+    <li>Systems should work correctly even in the face of adversity, including human error.</li>
+    <li>Fault: component deviating from its spec.</li>
+    <li>Failure: System as a whole stops providing service.</li>
+  </ul></li>
+  <li>Scalability:
+  <ul>
+    <li>As a system grows (including complexity) there should be reasonable ways of dealing with that growth.</li>
+    <li>Latency: duration that a request is waiting to be handled - during which is latent.</li>
+    <li>Response time: what the client sees.</li>
+    <li>Head-of-line blocking:
+    <ul>
+      <li>Typically, fast request being slow because they are queued due to concurrent request being slow and using all resources.</li>
+      <li>This is the reason to measure response time from client side.</li>
+    </ul></li>
+    <li>Tail latency amplification: in a fan-out service, response time is the slowest of the called services, hence high percentiles become very important.</li>
+  </ul></li>
+  <li>Maintainability:
+  <ul>
+    <li>Over time, people should be able to work productively.</li>
+    <li>Every legacy system is unpleasant on its own way.</li>
+    <li>Operability, simplicity, evolvability.</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2: Data Models and Query Languages</h2>
+<ul>
+  <li>Data models affect how we think about the problem that we are solving.</li>
+  <li>Models:
+  <ol>
+    <li>Relational.</li>
+    <li>Document: weak join support (many-to-many), great hierarchical (one-to-many).</li>
+    <li>Graph.</li>
+  </ol></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Document </th>
+      <th>Relational </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Schema flexibility </td>
+      <td>Better joins </td>
+    </tr>
+    <tr>
+      <td>Better performance due to locality </td>
+      <td>Better many-to-one and many-to-many relationships </td>
+    </tr>
+    <tr>
+      <td>Schema on read </td>
+      <td>Schema on write </td>
+    </tr>
+    <tr>
+      <td>Updates require rewrite of whole document </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Read always the whole doc </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Relational and document databases are becoming more similar:
+  <ul>
+    <li>Relational DB support JSON/XML.</li>
+    <li>RethinkDB support joins.</li>
+  </ul></li>
+</ul><p><img src="/images/blog/books/designing-data-intensive-applications/document-vs-relational-vs-graph.png" alt="document-vs-relational-vs-graph.png" /></p>
+<ul>
+  <li>Graph model:
+  <ul>
+    <li>Property graphs (Neo4j).<br /> <img src="/images/blog/books/designing-data-intensive-applications/graph-node.png" alt="graph node" /></li>
+    <li>Triple-store (Datomic):
+    <ul>
+      <li>RDF: &lt;subject, predicate, object&gt;: equivalent to vertex–&gt; prop –&gt;vertex.</li>
+    </ul></li>
+    <li>Query languages:</li>
+    <li>Declarative:
+    <ul>
+      <li>Cypher, SPARQL.</li>
+      <li>Datalog:
+      <ul>
+        <li><a href="http://www.learndatalogtoday.org">http://www.learndatalogtoday.org</a></li>
+        <li>Rules can be reused and combined.</li>
+        <li>Better for complex data.</li>
+        <li>Less convenient for simple one-off queries.</li>
+      </ul></li>
+    </ul></li>
+    <li>Imperative: Gremlin.</li>
+    <li>Graph processing framework: Pregel.</li>
+    <li>Good for evolvability, ease to add new relations and properties.</li>
+    <li>SQL recursive common table expressions (WITH RECURSIVE syntax) can express graph queries.</li>
+  </ul></li>
+</ul><h2><a name="ch-3"></a>Chapter 3: Storage and Retrieval</h2>
+<ul>
+  <li>Storage engines: OLTP or OLAP.</li>
+  <li>Transactional optimized (OLTP):
+  <ol>
+    <li>Log structured:
+    <ul>
+      <li>Hash indexes:
+      <ul>
+        <li>Like HashMaps.</li>
+        <li>All keys must fit in memory.</li>
+        <li>Bitcask storage in Riak.</li>
+        <li>Write-only file segments, compaction, tombstones like Kafka.</li>
+        <li>Range queries are not efficient.</li>
+      </ul></li>
+      <li>SSTables (Stored String Table):<br />  <img src="/images/blog/books/designing-data-intensive-applications/sstable.png" alt="sstable" />
+      <ul>
+        <li>As Hash indexes but segment files sorted by key.
+        <ul>
+          <li>Merging segments simple and efficient.</li>
+        </ul></li>
+        <li>In-memory index sparse:
+        <ul>
+          <li>Less memory.</li>
+          <li>Find value by scanning between two other keys.</li>
+          <li>Block read compressed to save IO/disk space.</li>
+        </ul></li>
+        <li>LSM-Tree (Log-Structured Merge-Tree), parts:
+        <ol>
+          <li>Memtable for current segment (Read-back tree or AVL tree).
+          <ul>
+            <li>Writen to disk as a SSTable when reaches some threshold.</li>
+          </ul></li>
+          <li>Periodic compaction (leveled or size-tiered).</li>
+          <li>Unordered log for recovery.</li>
+        </ol>
+        <ul>
+          <li>LevelDB, RocksDB, Cassandra, InfluxDB, HBase, ScyllaDB, BigTable, Lucene for the term dictionary.</li>
+        </ul></li>
+        <li>Bloom filters to speed up reading unknown keys.</li>
+      </ul></li>
+    </ul></li>
+    <li>Page-oriented (B-Trees):
+    <ul>
+      <li>Most common type of index.</li>
+      <li>Key-value pairs sorted by key.</li>
+      <li>Break DB in fixed size blocks (or pages).
+      <ul>
+        <li>4k typically.</li>
+      </ul></li>
+      <li>Branching factor:
+      <ul>
+        <li>Depth O(log n) ~= 3-4 levels typically.</li>
+      </ul></li>
+      <li>Update in place of pages.</li>
+      <li>Write-ahead log for resilience.</li>
+      <li>Multiple optimizations.</li>
+    </ul></li>
+    <li>Clustered index:
+    <ul>
+      <li>Store the value with the key.</li>
+      <li>MySQL InnoDB primary key.</li>
+      <li>SQL Server can specify one clustered index per table.</li>
+    </ul></li>
+    <li>Covering index:
+    <ul>
+      <li>Store some columns with the index.</li>
+    </ul></li>
+    <li>Multidimensional index:
+    <ul>
+      <li>PostGIS R-trees.</li>
+    </ul></li>
+    <li>Lucene, for similar words:
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Levenshtein_automaton">Levenshtein automation</a>.</li>
+      <li>Similar to <a href="https://en.wikipedia.org/wiki/Trie">trie</a>.</li>
+    </ul></li>
+    <li>In-memory DBs:
+    <ul>
+      <li>Non-durable: Memcached.</li>
+      <li>Durable:
+      <ul>
+        <li>Either append-only log or replication or periodic snapshot.</li>
+        <li>Relational: VoltDB, MemSQL, Oracle TimesTen.</li>
+        <li>Key-value: RAMCloud.</li>
+        <li>Redis, Couchbase: weak durability due to async writes to disk.</li>
+      </ul></li>
+      <li>Faster.</li>
+      <li>May support more data structures (like sets or queues).</li>
+      <li>Anti-caching:
+      <ul>
+        <li>To support bigger than memory datasets.</li>
+        <li>Evict to disk based on LRU.</li>
+      </ul></li>
+      <li>Future: <a href="https://en.wikipedia.org/wiki/Non-volatile_memory">Non-volatile memory</a>.</li>
+    </ul></li>
+  </ol></li>
+  <li>Analytics optimized (OLAP):
+  <ul>
+    <li>Star schema (aka dimensional modeling).
+    <ul>
+      <li>Fact tables: events that reference to dimension tables.</li>
+      <li>Dimension tables: the who, what, when, how, why of the event.</li>
+    </ul></li>
+    <li>Snowflake schema: when dimensions are broken down in subdimensions:
+    <ul>
+      <li>More normalized but harder to work with.</li>
+    </ul></li>
+    <li>Very wide tables, over 100 columns typically.
+    <ul>
+      <li>Column-oriented storage:<a name="columnstorage"></a>
+      <ul>
+        <li>Each column file contains the rows in the same order.</li>
+        <li>Less work.</li>
+        <li>Better compression:
+        <ul>
+          <li>Bitmap encoding:
+          <ul>
+            <li>Good when distinct values is small compared with number of rows.</li>
+            <li>If sparse, also run-length encoded.</li>
+            <li>Very efficient bitwise AND/OR for filtering.
+            <ul>
+              <li>Vectorized processing.</li>
+            </ul></li>
+          </ul></li>
+        </ul></li>
+        <li>Indices, except for primary, require an entire copy of the data.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>LSM-tree vs B-Trees:
+  <ul>
+    <li>All the following are “typical” and depend a lot on the workload.</li>
+    <li>LSM-trees are faster for write.</li>
+    <li>LSM-trees compress better.</li>
+    <li>B-Trees faster for reads.</li>
+    <li>B-Trees have higher write amplification.</li>
+    <li>LSM-trees compaction process can cause operational issues.</li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4: Encoding and Evolution</h2>
+<ul>
+  <li>Base64 encoding increases data size by 33%.</li>
+  <li>Avro:
+  <ul>
+    <li>More compact than Thrift/Protocol buffers but reader needs the writer schema.</li>
+    <li>Friendlier to dynamic generated schemas.</li>
+    <li>Friendlier to dynamic languages.</li>
+    <li>In schema evolution, fields are matched by name (weaker connascense than position).</li>
+  </ul></li>
+  <li>RPC/location transparency: there is no point to make a remote service look too much like a local object, because it is a fundamentally different thing.</li>
+  <li>RPC/REST: assuming servers are updated before clients:
+  <ul>
+    <li>Backward compatible on request.</li>
+    <li>Forward compatible on responses.</li>
+  </ul></li>
+</ul><h1><a name="p-2"></a>Distributed Data</h1><h2><a name="ch-5"></a>Chapter 5: Replication</h2>
+<ul>
+  <li>Reasons:
+  <ul>
+    <li>Increase read throughput.</li>
+    <li>Increase availability.</li>
+    <li>Reduce latency.</li>
+  </ul></li>
+  <li>Algorithms for replicating changes:
+  <ol>
+    <li>Single-leader:
+    <ul>
+      <li>Writes always go to the leader.</li>
+      <li>Replication:
+      <ul>
+        <li>Synchronous.</li>
+        <li>Asynchronous.</li>
+        <li>Semi-synchronous: 1 follower sync, others async.</li>
+        <li><a href="https://medium.com/coinmonks/chain-replication-how-to-build-an-effective-kv-storage-part-1-2-b0ce10d5afc3">Chain-replication</a> (Microsoft Azure Storage).</li>
+      </ul></li>
+      <li>Failover issues:
+      <ul>
+        <li>In async replication, latest writes maybe lost.
+        <ul>
+          <li>Further issues if other storage systems have seen the lost write.
+          <ul>
+            <li><a href="https://github.blog/2012-09-14-github-availability-this-week/">Github outage</a>.</li>
+          </ul></li>
+        </ul></li>
+        <li>Split brain.</li>
+        <li>What is the right timeout before a leader is declared dead?</li>
+      </ul></li>
+      <li>Replication implementations:
+      <ol>
+        <li>Statement-based:
+        <ul>
+          <li>Ship the insert/update/delete statements.</li>
+          <li>Issues:
+          <ul>
+            <li>Non-deterministic functions, like rand().</li>
+            <li>Autoincrement columns.</li>
+            <li>Side-effect functions.</li>
+          </ul></li>
+        </ul></li>
+        <li>Write-ahead log shipping:
+        <ul>
+          <li>Issue: Tightly coupled to storage format.
+          <ul>
+            <li>Operational concerns if the storage format changes between versions.</li>
+          </ul></li>
+          <li>PostgreSQL, Oracle.</li>
+        </ul></li>
+        <li>Local (row-based) log:
+        <ul>
+          <li>Specific log format for replication.</li>
+          <li>MySQL binlog.</li>
+          <li>Allow easier change-data-capture.</li>
+        </ul></li>
+        <li>Trigger-based replication:
+        <ul>
+          <li>Custom logic, flexible.</li>
+          <li>Issues:
+          <ul>
+            <li>Bigger overhead.</li>
+            <li>Bug prone.</li>
+          </ul></li>
+        </ul></li>
+      </ol></li>
+      <li>Scalability of read-only replicas requires async replication.</li>
+      <li>Replication lag issues:
+      <ol>
+        <li>Read-your-own-writes:
+        <ul>
+          <li>Fixes:
+          <ul>
+            <li>Read from the leader:
+            <ul>
+              <li>For you own data.</li>
+              <li>For some time after a write.</li>
+            </ul></li>
+            <li>Timestamp last write and ensure replica is up to date at least up to that timestamp.</li>
+          </ul></li>
+        </ul></li>
+        <li>Monotonic reads:
+        <ul>
+          <li>When second requests goes to a replica with more replication lag than the first request.</li>
+          <li>Fix: always read from the same replica.</li>
+        </ul></li>
+        <li>Consistent prefix reads:
+        <ul>
+          <li>In partitioned DBs, event1 happens-before event2, but if events are in different partitions, a client can see event2 before event1.</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+    <li>Multi-leader replication:
+    <ul>
+      <li>Use cases:
+      <ul>
+        <li>Multi datacenter:
+        <ul>
+          <li>GoldenGate for Oracle, BDR for PostgreSQL.</li>
+          <li>In general, considered dangerous.</li>
+        </ul></li>
+        <li>Offline clients:
+        <ul>
+          <li>CouchDB.</li>
+        </ul></li>
+        <li>Collaborative editing:
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Operational_transformation">Operational Transformation</a>.</li>
+          <li>Google Docs.</li>
+        </ul></li>
+      </ul></li>
+      <li>Conflict resolution:<a name="conflictresolution"></a>
+      <ol>
+        <li>Somewhat fix: All writes to a key always go to the same datacenter.</li>
+        <li>Convergent conflict resolution:
+        <ul>
+          <li>All replicas arrive to the same final result.</li>
+        </ul>
+        <ol>
+          <li>Last write wins (data loss).</li>
+          <li>Higher numbered replica wins (data loss).</li>
+          <li>Concatenate values.</li>
+          <li>Preserve all values and let the user resolve.</li>
+        </ol></li>
+        <li>Custom conflict resolution logic:
+        <ul>
+          <li>On write (Burcardo).</li>
+          <li>On read (CouchDB).</li>
+          <li>Usually at the row level , not the transaction level.</li>
+        </ul></li>
+        <li>Automatic conflict resolution:
+        <ul>
+          <li>CRDTs. Riak.</li>
+          <li>Mergeable persistent data structures.</li>
+          <li><a href="https://en.wikipedia.org/wiki/Operational_transformation">Operational Transformation</a>.</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+    <li>Leaderless replication:
+    <ul>
+      <li>Dynamo, Riak, Cassandra, Voldemort.</li>
+      <li>Quorum writes and reads.</li>
+      <li>Read repair, anti-entropy process.</li>
+      <li>Strict quorum: write replicas + read replicas &gt; # replicas.</li>
+      <li>Hard to monitor staleness.</li>
+      <li>High availability, low latency, occasional stale read.</li>
+      <li>Sloppy quorums:
+      <ul>
+        <li>Accept writes in nodes that are not the owners of the key.</li>
+        <li>Hinted handoff.</li>
+      </ul></li>
+      <li>Issues:
+      <ul>
+        <li>Sloppy quorums can return old data.</li>
+        <li>Concurrent writes.</li>
+        <li>Concurrent write and read.</li>
+        <li>Partial write failure in quorum.</li>
+        <li>Node failure can bring writers down.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+  <li>Two operations are concurrent if neither “happens-before” the other.
+  <ul>
+    <li>Version Vectors:
+    <ul>
+      <li>To keep track of “happens-before”:</li>
+      <li>Version number of key for each replica.</li>
+      <li>Client must send the version vector when writing.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-6"></a>Chapter 6: Partitioning</h2>
+<ul>
+  <li>AKA:
+  <ul>
+    <li>shard in MongoDB, ElasticSearch, SolrCloud.</li>
+    <li>region in HBase.</li>
+    <li>Tablet in BigTable.</li>
+    <li>vnode in Cassandra, Riak.</li>
+    <li>vBucket in Couchbase.</li>
+  </ul></li>
+  <li>Skewed partitions and hot spots.</li>
+  <li>Partition by:
+  <ul>
+    <li>Key range.</li>
+    <li>Hash of key:
+    <ul>
+      <li>Range queries not efficient (MongoDB) or not possible (Riak, CouchBase, Voldemort).</li>
+    </ul></li>
+  </ul></li>
+  <li>Secondary index:
+  <ol>
+    <li>Partition by Document (aka local index):
+    <ul>
+      <li>Query requires scatter/gather all partitions.
+      <ul>
+        <li>Tail latency amplification.</li>
+      </ul></li>
+      <li>MongoDB, Riak, Cassandra, ElasticSearch, SolrCloud, VoltDB.</li>
+    </ul></li>
+    <li>Partition by Term (aka global index):
+    <ul>
+      <li>Writes require talking with multiple partitions.</li>
+      <li>Usually updated asynchronously.</li>
+    </ul></li>
+  </ol></li>
+  <li>Rebalancing:
+  <ul>
+    <li>Fixed number of partitions:
+    <ul>
+      <li># partitions way bigger than #nodes.</li>
+      <li>Riak, ElasticSearch, Couchbase, Voldemort.</li>
+    </ul></li>
+    <li>Dynamic partitioning:
+    <ul>
+      <li>Split partition when becomes too big, merge when too small.</li>
+      <li>HBase, MongoDB, RethinkDB.</li>
+    </ul></li>
+    <li>Proportional to # nodes:
+    <ul>
+      <li>Fixed # partitions per node.</li>
+      <li>Cassandra.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-7"></a>Chapter 7: Transactions</h2>
+<ul>
+  <li>ACID:
+  <ul>
+    <li>Atomic: All or nothing.</li>
+    <li>Consistency:
+    <ul>
+      <li>Invariants are always true.</li>
+      <li>Property of the application, not the DB.</li>
+    </ul></li>
+    <li>Isolation:
+    <ul>
+      <li>Pretend that only one transaction is running at a time.</li>
+      <li>Serializability:
+      <ul>
+        <li>Oracle does not implement serializable but snapshot isolation.</li>
+      </ul></li>
+    </ul></li>
+    <li>Durability.</li>
+  </ul></li>
+  <li>Weak transaction isolation levels:
+  <ol>
+    <li>Read uncommited:
+    <ul>
+      <li>Avoid dirty writes: mixing writes from several transactions.</li>
+    </ul></li>
+    <li>Read commited:
+    <ul>
+      <li>Avoid dirty reads: read uncommited data.</li>
+    </ul></li>
+    <li>Snapshot isolation:
+    <ul>
+      <li>Aka serializable in Oracle, repeateable read in MySQL, PostgreSQL.</li>
+      <li>Avoids nonrepeable reads (aka. read skew):
+      <ul>
+        <li>Reading twice in a transaction and getting different results.</li>
+        <li>Transaction can only see values commited before it started.</li>
+      </ul></li>
+      <li>Multi-version concurrency control (MVCC).</li>
+    </ul></li>
+  </ol></li>
+  <li>SQL standard definition of isolation levels is flawed.</li>
+  <li>Write conflicts:
+  <ul>
+    <li>Dirty writes.</li>
+    <li>Read-modify-write (aka. lost update):
+    <ol>
+      <li>Atomic writes:
+      <ul>
+        <li>“set value = value + 1”.</li>
+        <li>Cursor stability.</li>
+      </ul></li>
+      <li>Explicit locking.</li>
+      <li>Automatic detection by DB:
+      <ul>
+        <li>Snapshot isolation.</li>
+      </ul></li>
+      <li>Compare-and-set.</li>
+    </ol></li>
+    <li>Write skew and phantoms:
+    <ul>
+      <li>Constraint depends on object A and B, and one transaction update A but no B, and the other B but not A.</li>
+      <li>Phantom: a write in one transaction changes the result of a search query in another transaction.</li>
+      <li>Fix:
+      <ol>
+        <li>Serializability.</li>
+        <li>Materializing conflicts: create a table with rows to be able to lock the rows.</li>
+      </ol></li>
+    </ul></li>
+  </ul></li>
+  <li>Serializability:
+  <ul>
+    <li>3 implementation options:
+    <ol>
+      <li>Actual serial execution:
+      <ul>
+        <li>VoltDB, Redis, Datomic.</li>
+        <li>Through stored procs: send action to data.</li>
+        <li>Single CPU throughput.</li>
+        <li>Scalability through partitioning.</li>
+      </ul></li>
+      <li>Two-Phase Locking (2PL):
+      <ul>
+        <li>2PL != 2 phase commit.</li>
+        <li>Readers block writes and writers block readers.</li>
+        <li>Implemented with shared lock + exclusive lock.</li>
+        <li>Predicate locks:
+        <ul>
+          <li>Phantoms avoided.</li>
+          <li>Queries are stored as predicates and any row changes are matched against them.</li>
+          <li>Index-range locking:
+          <ul>
+            <li>Simplify predicate lock to match a greater set: less locks, more course grained.</li>
+          </ul></li>
+        </ul></li>
+      </ul></li>
+      <li>Serializable Snapshot Isolation (SSI):
+      <ul>
+        <li>Optimistic: keep track of read/write rows by a transaction and check no concurrency issues on commit.</li>
+        <li>Used also in distributed DB (FoundationDB).</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+</ul><h2><a name="ch-8"></a>Chapter 8: The Trouble with Distributed Systems</h2>
+<ul>
+  <li>Pessimistic and depressing overview of things that may go wrong in distributed systems.</li>
+  <li>In a system with thousands of nodes, something is always broken.</li>
+  <li>If you send a request to another node and don’t receive a response, it is impossible to tell why.
+  <ul>
+    <li>When a timeout occurs, you still don’t know whether the remote node got your request or not, or if is still queued.</li>
+  </ul></li>
+  <li>Human error is the major cause of network outages.</li>
+  <li>Delays and queues everywhere.</li>
+  <li><a href="https://medium.com/@arpitbhayani/phi-φ-accrual-failure-detection-79c21ce53a7a">Phi Accrual failure detector</a></li>
+  <li>Unreliable networks:
+  <ul>
+    <li>Telephone networks guarantee a fixed bandwidth for the call, hence there is no queueing, and a maximum end-to-end latency.</li>
+    <li>TCP network are designed for bursty traffic.</li>
+    <li>Variable delays are a consequence of dynamic resource partitioning.</li>
+  </ul></li>
+  <li>Unreliable clocks:
+  <ul>
+    <li>Google assumes 6ms drift for clock synchronized with NTP every 30 secs, 17 secs if synchronized once a day.</li>
+    <li>Time-of-day clock:
+    <ul>
+      <li><code>System.currentTimeMillis()</code>.</li>
+      <li>Can go backwards.</li>
+    </ul></li>
+    <li>Monotonic clock:
+    <ul>
+      <li><code>System.nanoTime()</code>.</li>
+      <li>Always move forward.</li>
+      <li>Useless across computers.</li>
+    </ul></li>
+    <li><a href="https://www.webopedia.com/definitions/leap-smear/">Leap seconds and smearing</a>.</li>
+    <li><a href="https://en.wikipedia.org/wiki/Precision_Time_Protocol">Precision Time Protocol</a>.</li>
+    <li>Clock reading should return a range of time + confidence level, instead of point in time.
+    <ul>
+      <li>Google TrueTime API is Spanner returns (earliest, latest).</li>
+    </ul></li>
+  </ul></li>
+  <li>Process pauses:
+  <ul>
+    <li>Example: GC.</li>
+    <li>A node in a distributed system must assume that its execution can be paused for a significant length of time at any point, even in the middle of a function.</li>
+    <li>Treat GC pauses as outages:
+    <ol>
+      <li>Notify others that a GC is about to happen.</li>
+      <li>Restart process when full GC is required.</li>
+    </ol></li>
+  </ul></li>
+  <li>A node in the network cannot know anything for sure.</li>
+  <li>Fencing token:
+  <ul>
+    <li>Monotonically increasing id.</li>
+    <li>Server can check if the client still holds a lock/lease by remembering the last writer fencing token.</li>
+  </ul></li>
+  <li>Byzantine fault: a node is maliciously behaving:
+  <ul>
+    <li>Untrusted networks like Bitcoin.</li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9: Consistency and Consensus</h2>
+<ul>
+  <li>Linearizability:
+  <ul>
+    <li>Aka. atomic consistency, strong consistency, immediate consistency or external consistency.</li>
+    <li>Make a system appear as if there were only one copy of the data and all operations on it are atomic.</li>
+    <li>Once a new value has been written or <em>read</em>, all subsequent reads see the value that was written.</li>
+    <li>Two-Phase locking and actual serial execution are typically linearizable. SSI is not.</li>
+    <li>Usages:
+    <ul>
+      <li>Distributed locks and leader election.</li>
+      <li>Constraints and uniqueness guarantees.</li>
+      <li>Cross-channel timing dependencies:
+      <ul>
+        <li>Example: store a image in a DFS and then send a message to a queue for the image to be rescaled. No linearizability could mean that the rescaling process does not find the image.</li>
+      </ul></li>
+    </ul></li>
+    <li>Due to network delays, quorums do not guarantee linearizability.</li>
+    <li>Linearizability is slow, and this is true all the time.</li>
+  </ul></li>
+  <li>Ordering helps preserve causality.</li>
+  <li>Linearizable systems have total order of operations: there are no concurrent operations.</li>
+  <li>Causal consistency is the strongest possible consistency model that does not slow down due to network delays, and remains available in the face of network failures.</li>
+  <li>Lamport timestamps:
+  <ul>
+    <li>Causal consistency.</li>
+    <li>Tuple (counter, nodeID).</li>
+    <li>Timestamp is sent to/by clients, and server always returns a counter + 1.</li>
+    <li>Timestamp ordering is not enough for uniqueness constraints as checks is done after the fact.
+    <ul>
+      <li>Total order only emerges after collecting all operations.</li>
+      <li>When do you know you have collected all operations?</li>
+    </ul></li>
+  </ul></li>
+  <li>Total order broadcast (aka atomic broadcast):
+  <ul>
+    <li>Requires:
+    <ul>
+      <li>Reliable delivery.</li>
+      <li>Totally ordered delivery.</li>
+    </ul></li>
+    <li>Used by:
+    <ul>
+      <li>Consensus: Zookeeper and etcd.</li>
+      <li>DB replication (state machine replication).</li>
+      <li>Serializable transactions.</li>
+      <li>Log.</li>
+      <li>Lock services.</li>
+    </ul></li>
+  </ul></li>
+  <li>Linearizable compare-and-set registry and total order broadcast are both equivalent to consensus.</li>
+  <li>Two-Phase Commit (2PC) blocks if coordinator crashes.
+  <ul>
+    <li>If coordinator cannot recover, manual intervention is required.</li>
+    <li>Three Phase commit assumes a network with bounded delays and nodes with bounded response times.</li>
+    <li>In MySQL, distributed transactions are ten times slower than single node transactions.</li>
+    <li>XA transactions:
+    <ul>
+      <li>“Just” a C API for interfacing with the 2PC coordinator.</li>
+      <li>2PC coordinator usually implemented as a library in the app issuing the transaction.</li>
+    </ul></li>
+  </ul></li>
+  <li>Fault-tolerant consensus:
+  <ul>
+    <li>Leader is unique within an epoch.</li>
+    <li>On leader dead, an election is hold with a higher epoch number.</li>
+    <li>Before leader decides anything, a quorum of nodes approve the proposed leader:
+    <ul>
+      <li>This way the leader checks that there has not been an election, an it is still the leader.</li>
+    </ul></li>
+    <li>Most consensus algorithms assume a fixed number of nodes.</li>
+    <li>Uses:
+    <ul>
+      <li>Linearizable compare-and-set registers.</li>
+      <li>Atomic transaction commit.</li>
+      <li>Total order broadcast.</li>
+      <li>Locks and leases.</li>
+      <li>Membership/coordinator service.</li>
+      <li>Uniqueness constraints.</li>
+    </ul></li>
+  </ul></li>
+</ul><h1><a name="p-3"></a>Derived Data</h1><h2><a name="ch-10"></a>Chapter 10: Batch Processing</h2>
+<ul>
+  <li>The importance of MapReduce is now (2017) declining.</li>
+  <li>Map Reduce:
+  <ul>
+    <li>Putting the computation near the data.</li>
+    <li>Mappers “send messages” to the reducers, the key being the address.
+    <ul>
+      <li><a href="/2018/04/09/kafka-distributed-coordination-actor-model/#content">Actor model!</a>.</li>
+    </ul></li>
+    <li>Joins:
+    <ul>
+      <li>Reduce-side joins:
+      <ul>
+        <li>Mappers emit records to join with the same key.</li>
+        <li>Reducer merges the records.</li>
+        <li>Skew/hot keys workaround:
+        <ul>
+          <li><a href="https://pig.apache.org">Pig</a>:
+          <ol>
+            <li>Run sample to find hot keys.</li>
+            <li>Send hot keys records to random reducer (usually is deterministic).</li>
+            <li>Other side of the join must be sent to all reducers.</li>
+          </ol></li>
+        </ul></li>
+      </ul></li>
+      <li>Map-side joins:
+      <ul>
+        <li>Faster than reduce-side joins but input must oblige some conditions.</li>
+        <li>Broadcast hash join:
+        <ul>
+          <li>When joining small table with big one: all mappers read the small table in memory.</li>
+        </ul></li>
+        <li>Partitioned hash joins:
+        <ul>
+          <li>Join input have same number of partitions, with same key and same hash function.</li>
+          <li>Mapper has all the data.</li>
+        </ul></li>
+        <li>Map-side merge joins:
+        <ul>
+          <li>Same as partitioned hash joins, but also sorted by same key.</li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>In practice, making data available quickly - even in a quirky, difficult to use format - is more valuable than trying to decide on the ideal data model up front.</li>
+  <li>Alternatives to MapReduce:
+  <ol>
+    <li>Dataflow engines:
+    <ul>
+      <li>Spark, Tez, Flink.</li>
+      <li>Explicitly model the flow of data between processing steps.</li>
+      <li>Advantages:
+      <ul>
+        <li>Sorting and other expensive operations only when necessary.</li>
+        <li>Not unnecessary map tasks.</li>
+        <li>More locality optimizations possible as the scheduler knows about all steps.</li>
+        <li>Immediate state stored in-memory or local disk.</li>
+        <li>A processing step can start as soon as some input is available.</li>
+        <li>Reuse of JVM.</li>
+      </ul></li>
+      <li>Fault tolerance:
+      <ul>
+        <li>Snapshotting.</li>
+        <li>Recompute (Spark RDD).</li>
+      </ul></li>
+    </ul></li>
+    <li>Pregel processing mode:
+    <ul>
+      <li>For graph data.</li>
+      <li>Iterative processing:
+      <ol>
+        <li>Calculate one step.</li>
+        <li>Check completion condition:
+        <ol>
+          <li>Yes: done.</li>
+          <li>No: Go back to “calculate one step”.</li>
+        </ol></li>
+      </ol></li>
+      <li>One vertex “sends” a message to other vertex along the edges in the graph.</li>
+      <li>Vertex contains state, are fault tolerant and durable.</li>
+      <li>Fault tolerance:
+      <ul>
+        <li>Snapshotting vertex states after iteration.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-11"></a>Chapter 11: Stream Processing</h2>
+<ul>
+  <li>Messaging systems:
+  <ul>
+    <li>Key design questions:
+    <ol>
+      <li>What happens if producer is faster than consumer?
+      <ol>
+        <li>Drop messages.</li>
+        <li>Buffer (max size? durable?).</li>
+        <li>Backpressure.</li>
+      </ol></li>
+      <li>What happens if nodes crash or temporarily go offline? Are messages lost?</li>
+    </ol></li>
+    <li>Types:
+    <ol>
+      <li>Direct messaging from producers to consumers:
+      <ul>
+        <li>UDP multicast.</li>
+        <li>ZeroMQ.</li>
+        <li>UDP messaging (StatsD for example).</li>
+        <li>WebHooks.</li>
+      </ul></li>
+      <li>Message brokers:
+      <ul>
+        <li>JMS/ AMQP.</li>
+        <li>Load balancing + redelivery == messages processed out of order.</li>
+      </ul></li>
+      <li>Log-based message brokers:
+      <ul>
+        <li>Kafka/Kinesis.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>Keeping systems in sync with dual write has 2 issues:
+  <ol>
+    <li>Race condition if two clients write at the same time, and the second writer is faster writing to the seconds system.</li>
+    <li>Fault tolerance if second write fails.</li>
+  </ol></li>
+  <li>Change-Data-Capture (CDC):
+  <ul>
+    <li>Starting point is an initial snapshot + offset of that snapshot.
+    <ul>
+      <li>Kafka log compaction make snapshot not required.</li>
+    </ul></li>
+    <li>Some CDC tools integrate the snapshot creation.</li>
+  </ul></li>
+  <li>Event sourcing:
+  <ul>
+    <li>Easier to evolve apps.</li>
+    <li>Easier to debug.</li>
+    <li>Guard against app bugs.</li>
+  </ul></li>
+  <li>Dealing with delayed (straggler) events:
+  <ul>
+    <li>Ignore them.</li>
+    <li>Publish a correction.</li>
+  </ul></li>
+  <li>Event timestamp for client events, when offline specially:
+  <ol>
+    <li>Event timestamp using device clock.</li>
+    <li>Timestamp when event is sent to server using device clock.</li>
+    <li>Timestamp when received by server, according to server clock.</li>
+  </ol>
+  <ul>
+    <li>(3) - (2) is offset between server and client.</li>
+    <li>Apply offset to all events.</li>
+  </ul></li>
+  <li>Types of windows:
+  <ol>
+    <li>Tumbling: fixed length, no overlap.</li>
+    <li>Hopping: fixed length, fixed overlap.</li>
+    <li>Sliding: fixed length, “continuous” overlap.</li>
+    <li>Session: no fixed duration, triggered by inactivity.</li>
+  </ol></li>
+  <li>Time dependant joins:
+  <ul>
+    <li>Ordering of events is not deterministic across partitions.</li>
+  </ul></li>
+  <li>Fault tolerances:
+  <ol>
+    <li>Micro-batching:
+    <ul>
+      <li>1 second batches, using processing time.</li>
+      <li>Spark Streaming.</li>
+    </ul></li>
+    <li>Checkpointing:
+    <ul>
+      <li>Triggered by barriers in message streams.</li>
+      <li>Apache Flink.</li>
+    </ul></li>
+    <li>Atomic commit:
+    <ul>
+      <li>Efficient enough if restricted just to the internal event stream.</li>
+      <li>Google Dataflow, VoltDB, Kafka.</li>
+    </ul></li>
+    <li>Idempotence:
+    <ul>
+      <li>Store message offset in DB.</li>
+    </ul></li>
+    <li>Rebuild state:
+    <ul>
+      <li>Flink -&gt; store in HDFS.</li>
+      <li>Samza/KafkaStreams -&gt; store in Kafka.</li>
+      <li>Or just rebuild from scratch.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-12"></a>Chapter 12: The Future of Data Systems</h2>
+<ul>
+  <li>Author opinions.</li>
+  <li>XA has poor fault tolerance and performance characteristics, which severely limit its usefulness.
+  <ul>
+    <li>Better protocol is possible.</li>
+  </ul></li>
+  <li>Unification of batch and streaming to simplify lambda architecture.</li>
+  <li>Unix-esque approach of low-level abstractions to the domain of distributed OLTP data storage.</li>
+  <li>Dataflow across an entire organization looks like one huge DB:
+  <ul>
+    <li>Instead of implementing all features in a single integrated DB, implement them in different services administered by different teams.
+    <ul>
+      <li>Two possible routes:
+      <ol>
+        <li>Federated DBs:
+        <ul>
+          <li>Unify reads.</li>
+          <li>Route of single integrated DB.</li>
+          <li>Example: PostgreSQL foreign data wrapper.</li>
+        </ul></li>
+        <li>Unbundled DB:
+        <ul>
+          <li>Unify writes.</li>
+          <li>Follow Unix philosophy.</li>
+          <li><a href="https://www.youtube.com/watch?v=fU9hR3kiOK0">Turning the DB inside-out</a>.</li>
+          <li>Async event log with idempotent writes is more robust and practical the distributed transactions across heterogeneous systems.</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+    <li>Desired: equivalent of <code>mysql | elasticsearch</code>.</li>
+    <li><a href="https://blog.acolyer.org/2015/06/17/differential-dataflow/">Differential dataflow</a>.</li>
+    <li>Dataflow == spreadsheet-like.</li>
+    <li>Dataflow to the web browser or mobile app.</li>
+    <li>Desired: fault tolerant abstractions that make it easy to provide application-specific end-to-end correctness properties.
+    <ul>
+      <li>Transactions are not enough.</li>
+    </ul></li>
+    <li>Desired: more self-validating or self-auditing systems that continually check their own integrity, rather than relying on blind trust on DBs, HW or app code.</li>
+  </ul></li>
+  <li>Event-based systems provide better auditability.</li>
+  <li>Maybe certificate transparency or distributed ledgers.</li>
+  <li>Ethics!</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/architecture/index.html">architecture </a><a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>I am now enjoying a nice sabbatical but happy to talk about job opportunities for 2022.</p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=es_US&amp;marketplace=amazon&amp;region=US&amp;placement=1449373321&amp;asins=1449373321&amp;linkId=64e4983279f061b00670942a8cdb9e10&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (29)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Clojure/index.html">Clojure (33)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/architecture/index.html">architecture (1)</a></li><li><a href="/tags/book_notes/index.html">book notes (22)</a></li><li><a href="/tags/good_practices/index.html">good practices (24)</a></li><li><a href="/tags/resilience/index.html">resilience (6)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1591846404&amp;asins=1591846404&amp;linkId=124dad524461aa83b31ae8074145f163&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
