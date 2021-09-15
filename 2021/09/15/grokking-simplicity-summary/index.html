@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Grokking Simplicity</title>
+	<meta content="Book notes on &quot;Grokking Simplicity&quot; by Eric Normand" name="description" /><meta content="Book review notes summary grokking simplicity functional programming design" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Grokking Simplicity" property="og:title" /><meta content="Book notes on &quot;Grokking Simplicity&quot; by Eric Normand" property="og:description" /><meta content="https://danlebrero.com/2021/09/15/grokking-simplicity-summary/" property="og:url" /><meta content="Book notes: Grokking Simplicity" name="twitter:title" /><meta content="Book notes on &quot;Grokking Simplicity&quot; by Eric Normand" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/grokking-simplicity/grokking-simplicity.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/grokking-simplicity/grokking-simplicity.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2021/09/15/grokking-simplicity-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Grokking Simplicity</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 15 Sep 2021</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Grokking Simplicity" by Eric Normand</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/grokking-simplicity/grokking-simplicity.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3DJJ0pQ">Grokking Simplicity</a> by <a href="https://twitter.com/ericnormand">Eric Normand</a>.</p><p>Excellent introduction to functional programming, or at least how I understand it.</p><h1>Key Insights</h1>
+<ul>
+  <li>World is divided in actions, calculations, and data.</li>
+  <li>Actions: anything that depend on when they are called or how many times they are called.</li>
+  <li>Data is useful mostly because of what it can’t do: it cannot be run.</li>
+  <li>Reads to mutable data are actions.</li>
+  <li>Reads to immutable data are calculations.</li>
+  <li>Groups actions by layers of meaning.</li>
+  <li>Principle: design is about pulling things apart.</li>
+  <li>Code within a function should have the same level of detail.</li>
+  <li>Being able to ignore the same details is one clue that the code is at similar level of abstraction.</li>
+  <li>Don’t move unclear code to another layer, make it straightforward.</li>
+  <li>Design discussions run the risk of getting too abstract.</li>
+  <li>We often write a lot of code just in case something might change in the future.</li>
+  <li>There is constant tension between design and the need for new features. Let comfort guide you when to stop.</li>
+  <li>A function cannot call other functions in its same layer.</li>
+  <li>Simplify collection processing:</li>
+  <li>Transform code into data so that you can name and inspect.</li>
+  <li>Prefer small simple step to big complex ones.</li>
+  <li>Use abstraction barrier on deeply nested data to reduce cognitive load.</li>
+</ul><p><img src="/images/blog/books/grokking-simplicity/onion-layers.jpg" alt="onion layers architecture" /></p><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-1">Chapter 1: Welcome to Grokking Simplicity</a></li>
+  <li><a href="#ch-2">Chapter 2: Functional Thinking in Action</a></li>
+  <li><a href="#part-1">Part 1: Actions, calculations, and data.</a>
+  <ul>
+    <li><a href="#ch-3">Chapter 3: Distinguishing actions, calculations, and data</a></li>
+    <li><a href="#ch-5">Chapter 5: Improving the design of actions</a></li>
+    <li><a href="#ch-6">Chapter 6: Staying immutable in a mutable language</a></li>
+    <li><a href="#ch-8">Chapter 8: Stratified design: Part 1</a></li>
+    <li><a href="#ch-9">Chapter 9: Stratified design: Part 2</a></li>
+  </ul></li>
+  <li><a href="#part-2">Part 2: First-class abstractions</a>
+  <ul>
+    <li><a href="#ch-10">Chapter 10: First-class functions: Part 1</a></li>
+    <li><a href="#ch-13">Chapter 13: Chaining functional tools</a></li>
+    <li><a href="#ch-14">Functional tools for nested data</a></li>
+    <li><a href="#ch-15">Isolating timelines</a></li>
+    <li><a href="#ch-16">Sharing resources between parallel execution</a></li>
+    <li><a href="#ch-18">Reactive and onion architecture</a></li>
+  </ul></li>
+</ul><h2><a name="ch-1"></a>Chapter 1: Welcome to Grokking Simplicity</h2>
+<ul>
+  <li>Book explains the two main functional programming (FP) skills:
+  <ol>
+    <li>Distinguish actions, calculations, and data.
+    <ul>
+      <li>Actions: anything that depend on when they are called or how many times they are called.</li>
+    </ul></li>
+    <li>Using first-class abstractions.</li>
+  </ol></li>
+</ul><h2><a name="ch-2"></a>Chapter 2: Functional Thinking in Action</h2>
+<ul>
+  <li>Stratified design:
+  <ol>
+    <li>Business layer: Least stable.</li>
+    <li>Domain layer.</li>
+    <li>Tech stack layer: Most stable.</li>
+  </ol></li>
+</ul><h1><a name="part-1"></a>Part 1: Actions, calculations, and data.</h1><h2><a name="ch-3"></a>Chapter 3: Distinguishing actions, calculations, and data</h2>
+<ul>
+  <li>Data:
+  <ul>
+    <li>Facts about <em>events</em>.</li>
+    <li>Is useful mostly because of what it can’t do: it cannot be run.</li>
+    <li>Must be interpreted to be useful.</li>
+  </ul></li>
+</ul><h2><a name="ch-5"></a>Chapter 5: Improving the design of actions</h2>
+<ul>
+  <li>Principle: minimize implicit inputs and outputs.
+  <ul>
+    <li>Code is more reusable.</li>
+  </ul></li>
+  <li>Choose better level of abstraction: closer function/parameters names to business language (ubiquitous language from DDD).</li>
+  <li>Groups actions by layers of meaning.</li>
+  <li>Principle: design is about pulling things apart.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6: Staying immutable in a mutable language</h2>
+<ul>
+  <li>Reads to mutable data are actions.</li>
+  <li>Reads to immutable data are calculations.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8: Stratified design: Part 1</h2>
+<ul>
+  <li>Software design: using one’s aesthetic sense to guide programming choices to improve the ease of coding, testing, and maintaining software.</li>
+  <li>Stratified design:
+  <ul>
+    <li>Pattern 1: straightforward implementation.
+    <ul>
+      <li>Code within a function should have the same level of detail. This is the <a href="http://c2.com/ppr/wiki/WikiPagesAboutRefactoring/ComposedMethod.html">Composed Method</a> in <a href="https://www.amazon.com/Implementation-Patterns-Kent-Beck/dp/0321413091/">Implementation Patterns</a>.</li>
+      <li>Being able to ignore the same details is one clue that the code is at similar level of abstraction.</li>
+      <li>If a layer is using for its implementation several other layers, then it is not straightforward implementation.</li>
+      <li>Don’t move unclear code to another layer, make it straightforward.</li>
+    </ul></li>
+  </ul></li>
+  <li>Design discussions run the risk of getting too abstract.</li>
+</ul><h2><a name="ch-9"></a>Chapter 9: Stratified design: Part 2</h2>
+<ul>
+  <li>Stratified design:
+  <ul>
+    <li>Pattern 2: Abstraction barrier.
+    <ul>
+      <li>A layer that let us ignore the same thing when working above that layer.</li>
+      <li>Most important benefit: they let you think more easily about the problem you are trying to solve.</li>
+    </ul></li>
+  </ul></li>
+  <li>Warn: we often write a lot of code just in case something might change in the future.
+  <ul>
+    <li>Pattern 3: Minimal interface.
+    <ul>
+      <li>It ask us to consider where code for new features belong.</li>
+      <li>A function cannot call other functions in its same layer (really??).</li>
+    </ul></li>
+    <li>Pattern 4: Comfortable layers.
+    <ul>
+      <li>No codebase is ideal.</li>
+      <li>There is constant tension between design and the need for new features. Let comfort guide you when to stop.</li>
+    </ul></li>
+  </ul></li>
+  <li>“Ilities”:
+  <ul>
+    <li>Maintainability: code at the top layers is easier to test.</li>
+    <li>Testability: code at the bottom layers is more important to test.
+    <ul>
+      <li>Because it changes less frequently and all other code depends on it.
+      <ul>
+        <li>Do I strongly disagree???</li>
+      </ul></li>
+    </ul></li>
+    <li>Reusability: code at the bottom layers is more reusable.</li>
+  </ul></li>
+</ul><h1><a name="part-2"></a>Part 2: First-class abstractions</h1><h2><a name="ch-10"></a>Chapter 10: First-class functions: Part 1</h2>
+<ul>
+  <li>Code smell: implicit argument in function name:
+  <ul>
+    <li>Similar function implementation.</li>
+    <li>Name of function indicates the difference in implementation.</li>
+    <li>Refactoring: express implicit argument:
+    <ul>
+      <li>Argument becomes first-class and part of the API.</li>
+    </ul></li>
+    <li>Treat data as data (data orientation):
+    <ul>
+      <li>Bespoke interfaces allow one interpretation of data while prohibiting others == less reusable.</li>
+      <li>Entities at the bottom layers should be reusable/generic.</li>
+    </ul></li>
+    <li>Refactoring: replace body with callback.</li>
+  </ul></li>
+</ul><h2><a name="ch-13"></a>Chapter 13: Chaining functional tools</h2>
+<ul>
+  <li>Simplify collection processing:
+  <ol>
+    <li>Make data:
+    <ul>
+      <li>Transform code into data so that you can name and inspect.</li>
+    </ul></li>
+    <li>Operate on the whole array:
+    <ul>
+      <li>Try to process uniformly.</li>
+    </ul></li>
+    <li>Many small steps:
+    <ul>
+      <li>Prefer small simple step to big complex ones.</li>
+    </ul></li>
+    <li>Replace conditionals with <code>filter()</code>.</li>
+  </ol></li>
+</ul><h2><a name="ch-14"></a>Functional tools for nested data</h2>
+<ul>
+  <li>Use abstraction barrier on deeply nested data to reduce cognitive load.</li>
+</ul><h2><a name="ch-15"></a>Isolating timelines</h2>
+<ul>
+  <li>Timeline diagram:
+  <ul>
+    <li>Sequence of actions.</li>
+    <li>Show sequential or parallel execution.</li>
+    <li>From <a href="https://livebook.manning.com/book/grokking-simplicity/chapter-2/58">Manning site</a>:</li>
+  </ul></li>
+</ul><p><img src="https://drek4537l1klr.cloudfront.net/normand/Figures/f0025-02.jpg" alt="timeline diagram example" /></p><h2><a name="ch-16"></a>Sharing resources between parallel execution</h2>
+<ul>
+  <li>Queue to guarantee order.</li>
+</ul><h2><a name="ch-18"></a>Reactive and onion architecture</h2>
+<ul>
+  <li>Reactive architecture:
+  <ul>
+    <li>Instead of “Do X then do Y”, it says “Do Y when X happens”.</li>
+    <li>Atom watchers: when atom value changes, do Y.</li>
+    <li><a href="https://ReactiveManifesto.org">ReactiveManifesto.org</a></li>
+  </ul></li>
+  <li>Onion architecture:
+  <ul>
+    <li>Layers can only call/know about inner layers. <img src="/images/blog/books/grokking-simplicity/onion-architecture.jpg" alt="onion architecture" /> <img src="/images/blog/books/grokking-simplicity/onion-layers.jpg" alt="onion layers architecture" /></li>
+  </ul></li>
+  <li><p>Do domain rules need actions?</p>
+  <ul>
+    <li>No. You can always implement it as calculations.</li>
+    <li>In truth, it depends on:
+    <ol>
+      <li>The terms used to place the rule in a layer.
+      <ul>
+        <li>Domain language in DDD sense.</li>
+      </ul></li>
+      <li>Readability and awkwardness:
+      <ul>
+        <li>Some programming languages makes a non-functional implementation many times clearer.</li>
+        <li>Take technical debt.</li>
+        <li>System performance.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Clojure/index.html">Clojure </a><a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>I am now enjoying a nice sabbatical but happy to talk about job opportunities for 2022.</p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=es_US&amp;marketplace=amazon&amp;region=US&amp;placement=1617296201&amp;asins=1617296201&amp;linkId=9365fc1a9af9ede8776d7d4e3258c27f&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (29)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Clojure/index.html">Clojure (34)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/architecture/index.html">architecture (1)</a></li><li><a href="/tags/book_notes/index.html">book notes (24)</a></li><li><a href="/tags/good_practices/index.html">good practices (24)</a></li><li><a href="/tags/resilience/index.html">resilience (6)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1591846404&amp;asins=1591846404&amp;linkId=124dad524461aa83b31ae8074145f163&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
