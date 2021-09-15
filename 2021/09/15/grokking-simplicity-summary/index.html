@@ -138,21 +138,27 @@
 <ul>
   <li>World is divided in actions, calculations, and data.</li>
   <li>Actions: anything that depend on when they are called or how many times they are called.</li>
-  <li>Data is useful mostly because of what it can’t do: it cannot be run.</li>
-  <li>Reads to mutable data are actions.</li>
-  <li>Reads to immutable data are calculations.</li>
+  <li>Data is useful mostly because of what it can’t do: it cannot be run.
+  <ul>
+    <li>Reads to mutable data are actions.</li>
+    <li>Reads to immutable data are calculations.</li>
+  </ul></li>
   <li>Groups actions by layers of meaning.</li>
   <li>Principle: design is about pulling things apart.</li>
-  <li>Code within a function should have the same level of detail.</li>
-  <li>Being able to ignore the same details is one clue that the code is at similar level of abstraction.</li>
-  <li>Don’t move unclear code to another layer, make it straightforward.</li>
+  <li>Code within a function should have the same level of detail.
+  <ul>
+    <li>Being able to ignore the same details is one clue that the code is at similar level of abstraction.</li>
+    <li>Don’t move unclear code to another layer, make it straightforward.</li>
+  </ul></li>
   <li>Design discussions run the risk of getting too abstract.</li>
   <li>We often write a lot of code just in case something might change in the future.</li>
   <li>There is constant tension between design and the need for new features. Let comfort guide you when to stop.</li>
   <li>A function cannot call other functions in its same layer.</li>
-  <li>Simplify collection processing:</li>
-  <li>Transform code into data so that you can name and inspect.</li>
-  <li>Prefer small simple step to big complex ones.</li>
+  <li>Simplify collection processing:
+  <ul>
+    <li>Transform code into data so that you can name and inspect.</li>
+    <li>Prefer small simple step to big complex ones.</li>
+  </ul></li>
   <li>Use abstraction barrier on deeply nested data to reduce cognitive load.</li>
 </ul><p><img src="/images/blog/books/grokking-simplicity/onion-layers.jpg" alt="onion layers architecture" /></p><h1>TOC</h1>
 <ul>
