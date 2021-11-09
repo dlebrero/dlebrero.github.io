@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Implementing DORA key software delivery metrics</title>
+	<meta content="Deep dive on how to implement the four key software delivery metrics." name="description" /><meta content="implementing dora accelerate software delivery metrics details github key metrics   " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Implementing DORA key software delivery metrics" property="og:title" /><meta content="Deep dive on how to implement the four key software delivery metrics." property="og:description" /><meta content="https://danlebrero.com/2021/11/10/implementing-dora-software-delivery-metrics-accelerate-performance/" property="og:url" /><meta content="Implementing DORA key software delivery metrics" name="twitter:title" /><meta content="Deep dive on how to implement the four key software delivery metrics." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/dora-implementation/commit-branches.png" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/dora-implementation/commit-branches.png" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2021/11/10/implementing-dora-software-delivery-metrics-accelerate-performance/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Implementing DORA key software delivery metrics</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 10 Nov 2021</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Deep dive on how to implement the four key software delivery metrics.</p>
+
+				 
+				 
+
+					<div class="entry-content"><p>To ensure that your software <a href="/2021/01/06/toyota-kata-in-software-development-continuous-improvement/#content">process improvement process</a> is having the desired results, you need to measure the before and after of any change.</p><p>Following the research in <a href="https://www.devops-research.com/research.html">DORA</a>, summarized in the <a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">Accelerate book</a>, the key metrics to use are:</p>
+<ul>
+  <li>For performance: delivery lead time and deployment frequency.</li>
+  <li>For stability: time to restore service and change fail rate.</li>
+</ul><p>If you are not familiar with them, you can find their definition <a href="https://itrevolution.com/measure-software-delivery-performance-four-key-metrics/">here</a>.</p><p>This post is a deep dive on how we implemented them at <a href="https://www.akvo.org">Akvo</a> both for regular applications and <a href="https://martinfowler.com/bliki/BlueGreenDeployment.html">blue/green ones</a>.</p><h1>Regular applications</h1><p>Let’s start explaining what is our development process:</p>
+<ol>
+  <li>Any commit to trunk/main is deployed to the Test environment.</li>
+  <li>Sometimes, after some manual QA, the Test environment is <em>promoted</em> to Production.
+  <ul>
+    <li>Promotion == take whatever is running right now in Test and deploy it to Production.</li>
+    <li>The promotion script looks at the git SHA in Test and tags it with <code>promote-$datetime</code> which will trigger a CI build that will do the production deploy.</li>
+  </ul></li>
+  <li>On promotion, no new binaries/containers are created, hence no build or test is required, only the deployment is needed.</li>
+</ol><h2>1. Deployment frequency</h2><p>For regular applications, calculating the deployment frequency is almost straightforward: look at the git tags with the pattern <code>promote-$datetime</code>, or look at the CI builds for such tags.</p><p>The caveat is that the CI deploy may fail, and if it fails, it may fail before or after the deployment step, so it starts to get tricky to decide if the deployment happened or not.</p><p>Ideally you want to look at the system itself to find out what has been deployed, something like Google App Engine’s <a href="https://cloud.google.com/sdk/gcloud/reference/app/versions/list"><code>gcloud app versions list</code></a> or Kubernetes’ <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#checking-rollout-history-of-a-deployment"><code>kubectl rollout history</code></a>. </p><p>At Akvo, we chose the simple git tag count, as the most likely case for the CI build to fail was that the application failed to start, which we will still want to count as a deployment.</p><p><a href="https://github.com/dlebrero/dora-metrics/blob/eb6527dd6d9179b448ead8fe8785673f9569f2d6/backend/src/akvo_devops_stats/promotions.clj#L20">Here</a> is the code to get all the tags using GitHub’s GraphQL api, <a href="https://github.com/dlebrero/dora-metrics/blob/eb6527dd6d9179b448ead8fe8785673f9569f2d6/backend/src/akvo_devops_stats/util/travis.clj#L53-L52">here</a> for getting all the <a href="https://www.travis-ci.com">TravisCI</a> builds and <a href="https://github.com/dlebrero/dora-metrics/blob/eb6527dd6d9179b448ead8fe8785673f9569f2d6/backend/src/akvo_devops_stats/util/semaphoreci.clj#L47-L46">here</a> all the <a href="https://semaphoreci.com">Semaphore</a>’s ones.</p><h2>2. Delivery lead time</h2><p>We need to calculate <a href="https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance">the amount of time it takes a commit to get into production</a>, so we just need to know on which deployment a commit was deployed in, when a commit was committed, and when a deployment was deployed. </p><h4>Commit deployment</h4><p>“Just” a matter at looking at the closest <code>promote-</code> tag that it is in the future:</p><p><img src="/images/blog/dora-implementation/commit-deployments.png" alt="commit deployment logic" /></p><p>The only thing to be careful with is that the commits must be sorted in topological order, not chronological order:</p><p><img src="/images/blog/dora-implementation/commit-history-topological-vs-cronological.jpg" alt="topological vs cronological" /></p><p>The Git command <code>git log --graph --pretty=oneline --abbrev-commit</code> draws the commits in topological order.</p><h4>Commit timestamp</h4><p>Easy peasy lemon squeezy: Git contains the commit’s authored timestamp … except:</p>
+<ol>
+  <li>When your team has the <strike>bad</strike> habit of <a href="https://docs.github.com/en/github/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-pull-request-commits">squash merging</a> their pull requests, then we just have the merge commit timestamp.</li>
+  <li>We should ignore the merge commits, as those commits have no code review time, so it is not “fair” to count them as they will skew the results towards a better (lower) lead time.</li>
+</ol><p>GitHub keeps a link between a commit and the PR in the <a href="https://docs.github.com/en/graphql/reference/objects#commit">Commit’s</a> associatedPullRequests field (for any kind of PR), and from the PR object we can find the original commits. </p><p>We could replace the merge commit with all the commits done in the PR, plus we should also ignore any merge commits from regular PR, but instead we decided that for <em>all kinds</em> of branches we will just take into account the authored date of the first commit and ignore all other commits.</p><p>This means that if you have been working for 10 days in a branch committing once a day, then your median delivery lead time will be 10 days, instead of 5 days if we were counting all the commits. This is more in accordance with the practices of small batches and trunk-based development encouraged in the DORA report.</p><p>Continuing the previous example:</p><p><img src="/images/blog/dora-implementation/commit-branches.png" alt="just one commit" /></p><p>So we keep the merge commit for the topological order, but we will use the first commit’s authored date when calculating the delivery lead time.</p><h4>Deployment timestamp</h4><p>The actual easy peasy lemon squeezy: we have the timestamp in the tag (careful to not use <a href="https://stackoverflow.com/a/6270112">the commit timestamp the tag points to</a>), in the name of the tag itself and in the CI build. </p><p>We opted for the CI build finish time as one of our application’s deployment pipeline took a significant amount of time to run, and the speed of the pipeline impacts the MTTR, so including the CI pipeline time is important.</p><h2>3. Change fail rate</h2><p>First instinct to implement the change fail rate is to have a way, maybe a UI, for developers to mark a deployment as failed. </p><p>But adding extra bureaucracy and another place to click around when trying to restore service, can only end up with people forgetting and managers complaining about developers not being “disciplined” enough to follow the process.</p><p>Instead, we assumed that a failed deployment will be followed by a deployment to fix whatever the issue was, so the deployment script will ask:</p>
+<pre><code class="text">Does this deployment contain a hotfix for a previous deployment? [Y/n]
+</code></pre><p>This reduces the friction to record a failure, as the developer knows why the new deployment is happening and is already running the deployment script, plus is just a Yes/No question.</p><p>The answer be stored as part of the <code>promote-</code> annotated tag, which we will be able to read from Git. </p><h4>What is a failure?</h4><p>A failure is any deployment that <em>result in degraded service (for example, lead to service impairment or service outage) and subsequently require remediation (for example, require a hotfix, rollback, fix forward, patch)</em>. </p><p>As this definition didn’t seem clear enough for the team, we defined a failure as an issue that both:</p>
+<ol>
+  <li>Some user has noticed or suffered it.</li>
+  <li>You think (or say) “Oh, shit” when you learn about it.</li>
+</ol><p><img src="https://media.giphy.com/media/27EhcDHnlkw1O/giphy.gif" alt="oh shit" /></p><p>Much more clear :).</p><h2>4. Mean time to restore (MTTR) service</h2><p>In theory, we were recording any incident in <a href="https://www.atlassian.com/software/statuspage">Atlassian’s StatusPage</a>, from we can easily extract the timing information needed. </p><p>In practice, we opted for complaining about developers not being “disciplined” enough to follow the process of filling up StatusPage.</p><p>A possible automated way to calculate the MTTR is to look at the deployment history and use the time from a fix deployment to the previous failed deployment. This will still miss some outages, but it will require no additional bureaucracy.</p><h1>Blue/Green applications</h1><p>For applications with blue/green deployments, the release process requires one additional <em>flip</em> step:</p>
+<ul>
+  <li>Flips in Test happen automatically after a successful automated smoke test run.</li>
+  <li>Promotion happens from Live Test to Dark Production.</li>
+  <li>Flips in Production are triggered manually after some QA the dark production cluster.</li>
+</ul><h2>Deployment frequency</h2><p>For blue/green applications, you have to decide what a deployment is. From the <a href="https://itrevolution.com/measure-software-delivery-performance-four-key-metrics/">Accelerate’s site</a>:</p>
+<blockquote><p>By “deployment” we mean a software deployment to production or to an app store. A release (the changes that get deployed) will typically consist of multiple version control commits.</p>
+</blockquote>
+<p class="sidenote">I personally prefer <a href="https://beyond-agility.com/deployment-vs-release/">this deployment and release</a> definitions.</p><p>But should deploying to the production dark cluster count towards the deployment frequency?</p><p>We argued that no: if a change is not receiving production traffic, it cannot (or it is very unlikely to) cause a failure, hence it would not count towards the change fail rate, hence it should not count towards the deployment frequency.</p><p>So for blue/green applications, we want to look at the flips between dark/live.</p><p>Similar to the promotion script, the flip script just tags a commit with <code>flip-$datetime</code> which will trigger a CI build that will do the flip.</p><h2>Delivery lead time</h2><p>Same as regular applications, except that you want to compare commit timestamps against the flips.</p><h2>Change fail rate</h2><p>As the information will be more fresh in the developer’s mind at the time of promotion, we decided to keep the failure question in the promote script.</p><p>Then, to know if a flip should be counted towards the failure rate, we will aggregate all the promotions for the flip, and mark the flip as failure if any of the promotions was marked as failure.</p><h2>Mean time to restore (MTTR) service</h2><p>Same as regular applications :(.</p>
+<hr /><p>There are still some scenarios to think about: feature flags, dark launches and canary releases.</p><p>But for us, this was a good enough starting point.</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>I am now enjoying a nice sabbatical but happy to talk about job opportunities for 2022.</p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1942788339&amp;asins=1942788339&amp;linkId=2c50bb5cffee4d22b35dd57e27db6e2e&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner2" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1950508404&amp;asins=1950508404&amp;linkId=0100be1f1e0dd32c571480bad4ef25d6&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (30)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Clojure/index.html">Clojure (34)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/architecture/index.html">architecture (1)</a></li><li><a href="/tags/book_notes/index.html">book notes (24)</a></li><li><a href="/tags/good_practices/index.html">good practices (24)</a></li><li><a href="/tags/resilience/index.html">resilience (6)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1732265186&amp;asins=1732265186&amp;linkId=d8ec35f65daf9d16fca775cc78506631&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
