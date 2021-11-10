@@ -162,7 +162,8 @@
 <blockquote><p>By “deployment” we mean a software deployment to production or to an app store. A release (the changes that get deployed) will typically consist of multiple version control commits.</p>
 </blockquote>
 <p class="sidenote">I personally prefer <a href="https://beyond-agility.com/deployment-vs-release/">this deployment and release</a> definitions.</p><p>But should deploying to the production dark cluster count towards the deployment frequency?</p><p>We argued that no: if a change is not receiving production traffic, it cannot (or it is very unlikely to) cause a failure, hence it would not count towards the change fail rate, hence it should not count towards the deployment frequency.</p><p>So for blue/green applications, we want to look at the flips between dark/live.</p><p>Similar to the promotion script, the flip script just tags a commit with <code>flip-$datetime</code> which will trigger a CI build that will do the flip.</p><h2>Delivery lead time</h2><p>Same as regular applications, except that you want to compare commit timestamps against the flips.</p><h2>Change fail rate</h2><p>As the information will be more fresh in the developer’s mind at the time of promotion, we decided to keep the failure question in the promote script.</p><p>Then, to know if a flip should be counted towards the failure rate, we will aggregate all the promotions for the flip, and mark the flip as failure if any of the promotions was marked as failure.</p><h2>Mean time to restore (MTTR) service</h2><p>Same as regular applications :(.</p>
-<hr /><p>There are still some scenarios to think about: feature flags, dark launches and canary releases.</p><p>But for us, this was a good enough starting point.</p></div>
+<hr /><p>There are still some scenarios to think about: feature flags, dark launches and canary releases.</p><p>But for us, this was a good enough starting point.</p>
+<hr /><p>You can find all the (Clojure) code for the service that collected these metrics at <a href="https://github.com/dlebrero/dora-metrics/">GitHub</a>.</p></div>
 
 				 
 
@@ -176,7 +177,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a>
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
@@ -247,7 +248,7 @@ s.setAttribute('data-timestamp', +new Date());
 	            <div class="widget widget_categories">
 
 	               <h5 class="widget-title">Categories</h5>
-	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (30)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Clojure/index.html">Clojure (34)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/architecture/index.html">architecture (1)</a></li><li><a href="/tags/book_notes/index.html">book notes (24)</a></li><li><a href="/tags/good_practices/index.html">good practices (24)</a></li><li><a href="/tags/resilience/index.html">resilience (6)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (30)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Clojure/index.html">Clojure (35)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/architecture/index.html">architecture (1)</a></li><li><a href="/tags/book_notes/index.html">book notes (24)</a></li><li><a href="/tags/good_practices/index.html">good practices (24)</a></li><li><a href="/tags/resilience/index.html">resilience (6)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
 
 	            </div> <!-- /widget_categories -->
 
