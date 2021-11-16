@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Fundamentals of Software Architecture</title>
+	<meta content="Book notes on &quot;Fundamentals of Software Architecture&quot; by Mark Richards and Neal Ford" name="description" /><meta content="Book review notes summary fundamentals software architecture " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Fundamentals of Software Architecture" property="og:title" /><meta content="Book notes on &quot;Fundamentals of Software Architecture&quot; by Mark Richards and Neal Ford" property="og:description" /><meta content="https://danlebrero.com/2021/11/17/fundamentals-of-software-architecture-summary/" property="og:url" /><meta content="Book notes: Fundamentals of Software Architecture" name="twitter:title" /><meta content="Book notes on &quot;Fundamentals of Software Architecture&quot; by Mark Richards and Neal Ford" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/fundamentals-of-software-architecture/fundamentals-of-software-architecture.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/fundamentals-of-software-architecture/fundamentals-of-software-architecture.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2021/11/17/fundamentals-of-software-architecture-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Fundamentals of Software Architecture</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 17 Nov 2021</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Fundamentals of Software Architecture" by Mark Richards and Neal Ford</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/fundamentals-of-software-architecture/fundamentals-of-software-architecture.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/38G1nh3">Fundamentals of Software Architecture</a> by <a href="https://twitter.com/markrichardssa">Mark Richards</a> and <a href="https://twitter.com/neal4d">Neal Ford</a></p><p>A solid introduction to software architecture. </p><p>Key learning: “it is really easy to fake it as an architect” <i class="far fa-smile" aria-hidden="true"></i>.</p><h1>Key Insights</h1>
+<ul>
+  <li>Architecture of the system is the sum of:
+  <ol>
+    <li>Structure.</li>
+    <li>Architecture characteristics (- ilities):
+    <ul>
+      <li>Define the success criteria of a system.</li>
+    </ul></li>
+    <li>Architecture decisions.</li>
+    <li>Design principles:
+    <ul>
+      <li>Guidelines, not rules.</li>
+    </ul></li>
+  </ol></li>
+  <li>Architect: Breath instead of depth.</li>
+  <li>Almost every decision an architect makes will be challenged.</li>
+</ul>
+<blockquote><p>Everything is a trade-off. <cite>First law of software architecture.</cite></p><p>Why is more important than how. <cite>Second law of software architecture.</cite></p>
+</blockquote>
+<ul>
+  <li>Architecture Thinking:
+  <ol>
+    <li>Collaboration with teams to do architectural work.</li>
+    <li>Technical breadth.</li>
+    <li>Analysis trade-off.</li>
+    <li>Understanding business drivers.</li>
+  </ol></li>
+  <li>Architecture is the stuff you can’t Google.</li>
+  <li>Never shoot for the best architecture, but rather for the least worst one.</li>
+  <li><a href="http://fundamentalsofsoftwarearchitecture.com/katas/list.html">Architecture Katas</a>.</li>
+  <li>Once you have identified the architectural characteristics try to drop one (or two).</li>
+  <li>Layered Architecture Style:
+  <ul>
+    <li>Sinkhole anti-pattern:
+    <ul>
+      <li>If most (&gt; 50%) of the layers is a simple pass-through without logic.</li>
+    </ul></li>
+  </ul></li>
+  <li>Service-based Architecture Style:
+  <ul>
+    <li>Typically, shared DB and UI.</li>
+    <li>One of the most pragmatic architecture styles.</li>
+  </ul></li>
+  <li>Event-Driven Architecture Style:
+  <ul>
+    <li>Two topologies:
+    <ol>
+      <li>Broker topology:
+      <ul>
+        <li>No central event mediator, but a chain of events.</li>
+      </ul></li>
+      <li>Mediator topology:
+      <ul>
+        <li>Mediator manages and controls workflow.</li>
+      </ul></li>
+    </ol>
+    <ul>
+      <li><a href="#topoly-table">Trade-off table</a>.</li>
+      <li>Choice between topologies comes down to workflow control/error handling vs performance/scalability.</li>
+    </ul></li>
+  </ul></li>
+  <li>Orchestration-Driven Service-Oriented Architecture Style:
+  <ul>
+    <li>Doomed to irrelevance.</li>
+  </ul></li>
+  <li>Making an architecture decision involves:
+  <ol>
+    <li>Gather enough relevant information.</li>
+    <li>Justify the decision.</li>
+    <li>Documenting the decision.</li>
+    <li>Communicating if effectively to the right stakeholders.</li>
+  </ol>
+  <ul>
+    <li><a href="#antipatterns">Anti-patterns</a>:
+    <ol>
+      <li>Covering your assets.</li>
+      <li>Groundhog day.</li>
+      <li>Email-Driven architecture.</li>
+    </ol></li>
+  </ul></li>
+  <li>Asses risk per architecture characteristic per quanta.</li>
+  <li>Unknown or unproven technologies are always high risk.</li>
+  <li>Presentations: Insert blank slide to focus attention on speaker.</li>
+  <li>Signs dev team is too big:
+  <ul>
+    <li>High process loss.</li>
+    <li>Pluralistic ignorance.</li>
+    <li>Diffusion of responsibility.</li>
+  </ul></li>
+  <li>Leverage on checklists.</li>
+  <li>Demonstration defeats discussion.</li>
+  <li>Negotiating with developers:
+  <ul>
+    <li>Always provide a justification, state it first.</li>
+    <li>Once a person hears something they disagree with, they stop listening.</li>
+    <li>If a dev disagrees with a decision, have them arrive at the solution on their own.</li>
+  </ul></li>
+  <li>Spend 20 mins first things in the morning (before reading work email) on learning.</li>
+</ul><h1>Architecture Style score cards</h1><p>The authors score all architecture styles by architecture capabilities. Here there are all together:</p>
+<div id="styles-table"></div><p><link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet" /> <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script></p>
+<script>
+var tabledata = [
+    {id:1, name:"Layered", type: "Technical", quanta:"1", deploy:1, elastic:1, evo:1, fault:1, modular: 1, cost: 5, perf: 2, reliable: 3, scale: 1, simple: 5, test: 2},
+    {id:2, name:"Pipeline", type: "Technical", quanta:"1", deploy:2, elastic:1, evo:3, fault:1, modular: 3, cost: 5, perf: 2, reliable: 3, scale: 1, simple: 5, test: 3},
+    {id:3, name:"MicroKernel", type: "Both", quanta:"1", deploy:3, elastic:1, evo:3, fault:1, modular: 3, cost: 5, perf: 3, reliable: 3, scale: 1, simple: 4, test: 3},
+    {id:4, name:"SOA", type: "Domain", quanta:"many", deploy:4, elastic:2, evo:3, fault:4, modular: 4, cost: 4, perf: 3, reliable: 4, scale: 3, simple: 3, test: 4},
+    {id:5, name:"Event-Driven", type: "Technical", quanta:"many", deploy:3, elastic:3, evo:5, fault:5, modular: 4, cost: 3, perf: 5, reliable: 3, scale: 5, simple: 1, test: 2},
+    {id:6, name:"Space-based", type: "Both", quanta:"many", deploy:3, elastic:5, evo:3, fault:3, modular: 3, cost: 2, perf: 5, reliable: 4, scale: 5, simple: 1, test: 1},
+    {id:7, name:"ESB", type: "Technical", quanta:"1", deploy:1, elastic:3, evo:1, fault:3, modular: 3, cost: 1, perf: 2, reliable: 2, scale: 4, simple: 1, test: 1},
+    {id:8, name:"Microsevices", type: "Domain", quanta:"many", deploy:4, elastic:5, evo:5, fault:4, modular: 5, cost: 1, perf: 2, reliable: 4, scale: 5, simple: 1, test: 4}
+];
+
+var table = new Tabulator("#styles-table", {
+    data:tabledata,           
+    layout:"fitColumns",      
+    responsiveLayout:false,  
+    tooltips:true,            
+    history:false,            
+    pagination:false,       
+    movableColumns:true,      
+    movableRows:true,      
+    resizableRows:false,      
+    columns:[                 
+        {title:"", field:"name"},
+        {title:"Partition Type", field:"type"},
+        {title:"Quanta", field:"quanta"},
+        {title:"Deployability", field:"deploy", formatter:"star", hozAlign:"center"},
+        {title:"Elasticity", field:"elastic", formatter:"star", hozAlign:"center"},
+        {title:"Evolutionary", field:"evo", formatter:"star", hozAlign:"center"},
+        {title:"Fault Tolerance", field:"fault", formatter:"star", hozAlign:"center"},
+        {title:"Modularity", field:"modular", formatter:"star", hozAlign:"center"},
+        {title:"Overall cost ", field:"cost", formatter:"star", hozAlign:"center"},
+        {title:"Performance", field:"perf", formatter:"star", hozAlign:"center"},
+        {title:"Reliability", field:"reliable", formatter:"star", hozAlign:"center"},
+        {title:"Scalability", field:"scale", formatter:"star", hozAlign:"center"},
+        {title:"Simplicity", field:"simple", formatter:"star", hozAlign:"center"},
+        {title:"Testability", field:"test", formatter:"star", hozAlign:"center"}
+    ],
+});</script><p>Best architecture style is Microservices with 40 stars, worst is Orchestration-Driven Service-Oriented (aka ESB) with 22 stars. </p><p>Just joking! Context is king!</p><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-1">Chapter 1: Introduction</a></li>
+  <li><a href="#part-1">Part I - Foundations</a>
+  <ul>
+    <li><a href="#ch-2">Chapter 2: Architectural Thinking</a></li>
+    <li><a href="#ch-3">Chapter 3: Modularity</a></li>
+    <li><a href="#ch-4">Chapter 4: Architecture Characteristics Defined</a></li>
+    <li><a href="#ch-5">Chapter 5: Identifying Architectural Characteristics.</a></li>
+    <li><a href="#ch-6">Chapter 6: Measuring and Governing Architecture Characteristics</a></li>
+    <li><a href="#ch-7">Chapter 7: Scope of Architecture Characteristics</a></li>
+    <li><a href="#ch-8">Chapter 8: Component Based Thinking</a></li>
+  </ul></li>
+  <li><a href="#part-2">Part II - Architecture Styles</a>
+  <ul>
+    <li><a href="#ch-9">Chapter 9: Foundations</a></li>
+    <li><a href="#ch-10">Chapter 10 - Layered Architecture Style</a></li>
+    <li><a href="#ch-11">Chapter 11 - Pipeline Architecture Style</a></li>
+    <li><a href="#ch-12">Chapter 12 - Microkernel Architecture Style</a></li>
+    <li><a href="#ch-13">Chapter 13 - Service-based Architecture Style</a></li>
+    <li><a href="#ch-14">Chapter 14 - Event-Driven Architecture Style</a></li>
+    <li><a href="#ch-15">Chapter 15 - Space-Based Architecture Style</a></li>
+    <li><a href="#ch-16">Chapter 16 - Orchestration-Driven Service-Oriented Architecture Style</a></li>
+    <li><a href="#ch-17">Chapter 17 - Microservices Architecture</a></li>
+    <li><a href="#ch-18">Chapter 18 - Choosing the Appropriate Architecture Style</a></li>
+  </ul></li>
+  <li><a href="#part-3">Part III - Techniques and Soft Skills</a>
+  <ul>
+    <li><a href="#ch-19">Chapter 19 - Architecture Decisions</a></li>
+    <li><a href="#ch-20">Chapter 20 - Analyzing Architecture Risk</a></li>
+    <li><a href="#ch-21">Chapter 21 - Diagramming and Presenting Architecture</a></li>
+    <li><a href="#ch-22">Chapter 22 - Making Teams Effective</a></li>
+    <li><a href="#ch-23">Chapter 23 - Negotiation and Leadership Skills</a></li>
+    <li><a href="#ch-24">Chapter 24 - Developing a Career Path</a></li>
+  </ul></li>
+</ul><h1><a name="ch-1"></a>Chapter 1: Introduction</h1>
+<ul>
+  <li>Architecture of the system is the sum of:
+  <ol>
+    <li>Structure:
+    <ul>
+      <li>Refers to the type of architecture style.</li>
+    </ul></li>
+    <li>Architecture characteristics (- ilities):
+    <ul>
+      <li>Define the success criteria of a system.</li>
+    </ul></li>
+    <li>Architecture decisions:
+    <ul>
+      <li>Rules of how the system should be constructed.</li>
+      <li>Variance == break rule. Reviewed/approved by architecture review board or chief architect.</li>
+    </ul></li>
+    <li>Design principles:
+    <ul>
+      <li>Guidelines, not rules.</li>
+    </ul></li>
+  </ol></li>
+  <li>Core responsibilities of an architect:
+  <ol>
+    <li>Make architecture decisions:
+    <ul>
+      <li>To guide, rather than specific technology choices.</li>
+    </ul></li>
+    <li>Continually analyze the architecture:
+    <ul>
+      <li>Viability of current architecture, specially if older than 3 years.</li>
+    </ul></li>
+    <li>Keep current with the latest trends.</li>
+    <li>Ensure compliance with decisions.</li>
+    <li>Diverse exposure and experience.
+    <ul>
+      <li>Breath instead of depth.</li>
+    </ul></li>
+    <li>Have business domain knowledge.</li>
+    <li>Possess interpersonal skills.</li>
+    <li>Understand and navigate politics.
+    <ul>
+      <li>Almost every decision an architect makes will be challenged.</li>
+    </ul></li>
+  </ol></li>
+</ul>
+<blockquote><p>Everything is a trade-off. <cite>First law of software architecture.</cite> </p><p>Why is more important than how. <cite>Second law of software architecture.</cite> </p>
+</blockquote><h1><a name="part-1"></a>Part I - Foundations</h1><h2><a name="ch-2"></a>Chapter 2: Architectural Thinking</h2>
+<ul>
+  <li>Seeing from an architectural point of view.</li>
+  <li>4 aspects:
+  <ol>
+    <li>Collaboration with teams to do architectural work.</li>
+    <li>Technical breadth.</li>
+    <li>Analysis trade-off.</li>
+    <li>Understanding business drivers.</li>
+  </ol></li>
+  <li>Architect must be part of the dev team to:
+  <ol>
+    <li>Mentor/coach.</li>
+    <li>Keep architecture and design in sync.</li>
+  </ol></li>
+  <li>Architecture is the stuff you can’t Google.</li>
+  <li>The answer to every architecture question is “it depends”.</li>
+  <li>Every architect should code:
+  <ul>
+    <li>Not in the critical path.</li>
+    <li>Proof of concepts.</li>
+    <li>Tooling.</li>
+  </ul></li>
+</ul><h1><a name="ch-3"></a>Chapter 3: Modularity</h1>
+<ul>
+  <li>Module:
+  <ul>
+    <li>Standardized or independent units that can be used to construct a more complex structure.</li>
+  </ul></li>
+  <li>Measuring modularity:
+  <ul>
+    <li>Cohesion:
+    <ul>
+      <li>Attempting to divide a cohesive module would only result in increased coupling and decreased readability.</li>
+      <li>LCOM: Lack of Cohesion in Methods:
+      <ul>
+        <li>Methods not using the same fields.</li>
+        <li>The sum of sets of methods not shared via sharing fields.</li>
+      </ul></li>
+    </ul></li>
+    <li>Coupling:
+    <ul>
+      <li>Afferent or efferent.</li>
+    </ul></li>
+    <li>Distance from the main sequence:
+    <ul>
+      <li>D = | A + I - 1 |</li>
+      <li>A = abstractness = sum(abstract elements) / sum(concrete elements)</li>
+      <li>I = instability = efferent coupling / (efferent + afferent)<br /> <img src="/images/blog/books/fundamentals-of-software-architecture/main-sequence.jpg" alt="main sequence" /></li>
+    </ul></li>
+    <li>Connascence:
+    <ul>
+      <li>Two components are connascent if a change in one requires a change in the other.</li>
+      <li>From more desirable (weaker connascense) to less desirable (stronger connascense):
+      <ol>
+        <li>Name: agree on name.</li>
+        <li>Type.</li>
+        <li>Meaning or Convention: meaning of particular values.</li>
+        <li>Position: order of values.</li>
+        <li>Execution: order of execution.</li>
+        <li>Timing: timing of threads.</li>
+        <li>Values: several values must change together.
+        <ul>
+          <li>Distributed transaction.</li>
+        </ul></li>
+        <li>Identity: reference same entity.</li>
+      </ol></li>
+      <li><a href="https://twitter.com/jimweirich">Jim Weirich</a>:
+      <ul>
+        <li>Rule of Degree: convert strong forms into weaker forms of connascense.</li>
+        <li>Rule of Locality: as the distance between software elements increase, use weaker forms of connascense.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4: Architecture Characteristics Defined</h2>
+<ul>
+  <li>Architecture characteristic == non functional requirements:
+  <ul>
+    <li>Implicit or explicit.</li>
+    <li>Architect should choose the fewest architecture requirements.</li>
+    <li>Criteria:
+    <ul>
+      <li>Influences design.</li>
+      <li>Is critical for success.</li>
+    </ul></li>
+    <li>List in page 58.</li>
+  </ul></li>
+  <li>Never shoot for the best architecture, but rather for the least worst one.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5: Identifying Architectural Characteristics.</h2>
+<ul>
+  <li>Translate domain stakeholders concerns:
+  <ul>
+    <li>Examples:
+    <ul>
+      <li>Time and budget -&gt; Simplicity, feasibility.</li>
+      <li>User satisfaction -&gt; Performance, availability, fault tolerance, testability.</li>
+      <li>Time to market -&gt; Agility, testability, deployability.</li>
+      <li>Merger and acquisitions -&gt; Interoperability, scalability, adaptability, extensibility.</li>
+    </ul></li>
+  </ul></li>
+  <li>From requirements and inherent domain knowledge.</li>
+  <li><a href="http://fundamentalsofsoftwarearchitecture.com/katas/list.html">Architecture Katas</a>.</li>
+  <li>Once you have identified the architectural characteristics try to drop one (or two).</li>
+</ul><h2><a name="ch-6"></a>Chapter 6: Measuring and Governing Architecture Characteristics</h2>
+<ul>
+  <li>Governance:
+  <ul>
+    <li>Evolutionary architectures and fitness functions.</li>
+    <li>Conformity, Janitor and Security monkeys.</li>
+  </ul></li>
+</ul><h2><a name="ch-7"></a>Chapter 7: Scope of Architecture Characteristics</h2>
+<ul>
+  <li>Scope is per architecture quantum, not the whole system.
+  <ul>
+    <li>Architecture quantum:
+    <ul>
+      <li>An independently deployable artifact with high functional cohesion and synchronous connascense.</li>
+      <li>DB is part of the quantum.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-8"></a>Chapter 8: Component Based Thinking</h2>
+<ul>
+  <li>Component:
+  <ul>
+    <li>Physical manifestation of a module.</li>
+    <li>Lowest level than an architect interacts directly with.</li>
+  </ul></li>
+  <li>Top level partitioning; either
+  <ul>
+    <li>Technical partitioning: layered architecture.</li>
+    <li>Domain partitioning: modular monolith, microservices.
+    <ul>
+      <li>By workflow or domain.</li>
+    </ul></li>
+  </ul></li>
+  <li>Component identification flow:<br /> <img src="/images/blog/books/fundamentals-of-software-architecture/component-identification-flow.png" alt="Component identification flow" /></li>
+  <li>Entity trap anti-pattern:
+  <ul>
+    <li>Entity manager == components.</li>
+  </ul></li>
+  <li>Discovering components:
+  <ol>
+    <li>Actor/Actions: use case diagrams.</li>
+    <li>Event storming.</li>
+    <li>Workflow approach.</li>
+  </ol></li>
+</ul><h1><a name="part-2"></a>Part II - Architecture Styles</h1>
+<ul>
+  <li>Architecture style: overall structure of how the code is organized.</li>
+  <li>Architecture pattern: specific solutions within an architecture style.</li>
+</ul><h2><a name="ch-9"></a>Chapter 9: Foundations</h2>
+<ul>
+  <li>Fallacies of distributed programming:
+  <ol>
+    <li>The network is reliable.</li>
+    <li>Latency is zero.</li>
+    <li>Bandwidth is infinite:
+    <ul>
+      <li>Stamp coupling:
+      <ul>
+        <li>Returning more data than required in a REST endpoint.</li>
+        <li>Fixes:
+        <ul>
+          <li>More specific endpoints.</li>
+          <li>Field selectors in contract.</li>
+          <li>GraphQL.</li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+    <li>Network is secure.</li>
+    <li>Network topology never changes.</li>
+    <li>There is only one administrator.</li>
+    <li>Transport cost is zero.</li>
+    <li>The network is homogeneous.</li>
+  </ol></li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Layered Architecture Style</h2>
+<ul>
+  <li>Typical layers:
+  <ul>
+    <li>Presentation, business, persistence, database.</li>
+  </ul></li>
+  <li>Leverage technical expertise.</li>
+  <li>Lack of overall agility.</li>
+  <li>Business domain is spread through all layers.</li>
+  <li>Does not work well with DDD.</li>
+  <li>Architecture sinkhole anti-pattern:
+  <ul>
+    <li>If most (&gt; 50%) of the layers is a simple pass-through without logic.</li>
+    <li>Move to another architecture style.</li>
+  </ul></li>
+  <li>Good for small apps.</li>
+  <li>Layered are == monolith.</li>
+  <li>Cost and simplicity degrade quickly when app gets bigger/more complex.</li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Pipeline Architecture Style</h2>
+<ul>
+  <li>Encourages compositional reuse.</li>
+  <li>Usually deployed as a monolith.</li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Microkernel Architecture Style</h2>
+<ul>
+  <li>Aka plug-in architecture.</li>
+  <li>Core can be layered or modular monolith or another process.</li>
+  <li>Typically, point-to-point communication between core and plugins.</li>
+  <li>Compile time or runtime (OSGi) plugins.</li>
+  <li>Eclipse, Jenkins, Jira, Chrome/Firefox.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Service-based Architecture Style</h2>
+<ul>
+  <li>Coarse-grained services with typically a shared DB and UI:
+  <ul>
+    <li>Split by domain.</li>
+    <li>Services do not talk to each other.</li>
+    <li>Maybe an API gateway.<br /> <img src="/images/blog/books/fundamentals-of-software-architecture/service-based-architecture-style.jpg" alt="Service-based Architecture Style" /></li>
+  </ul></li>
+  <li>DB can be split logically by providing domain specific libraries, so it is easier to find out which service is going to be impacted by a DB schema change.</li>
+  <li>One of the most pragmatic architecture styles:
+  <ul>
+    <li>Good modularity.</li>
+    <li>No distributed orchestration/choreography.</li>
+  </ul></li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Event-Driven Architecture Style</h2>
+<ul>
+  <li>Two topologies:
+  <ol>
+    <li>Broker topology:
+    <ul>
+      <li>No central event mediator, but a chain of events.</li>
+      <li>Usually broadcast of events.</li>
+      <li>Good practice: event processors to advertise what they did, even if no other event processor cares right now. (Really?)</li>
+    </ul></li>
+    <li>Mediator topology:
+    <ul>
+      <li>Mediator manages and controls workflow.<br /> <img src="/images/blog/books/fundamentals-of-software-architecture/mediator-topology.jpg" alt="Mediator topology" /></li>
+      <li>Communication between Event Mediator and processors is sending commands point-to-pint with queues.</li>
+      <li>Processors do not broadcast their actions.</li>
+    </ul></li>
+  </ol></li>
+  <li>For simple processing: Apache Camel, Spring Integration.</li>
+  <li>For hard: BPEL product (Apache ODE).</li>
+  <li>For complex, long running transactions that require manual intervention: BPM.</li>
+  <li>Recommendation: initial processing by simple mediator that can forward the event to complex/hard depending on event complexity classification.</li>
+  <li><a name="topoly-table"></a>Trade-off table: <table> <thead>  <tr>  <th></th>  <th>Advantages</th>  <th>Disadvantages</th>  </tr> </thead> <tbody>  <tr>  <td rowspan="5">Broker</td>  <td>Highly decoupled event processor</td>  <td>Workflow control</td>  </tr>  <tr>  <td>Highly scalability</td>  <td>Error handling</td>  </tr>  <tr>  <td>High responsiveness</td>  <td>Recoverability</td>  </tr>  <tr>  <td>High performance</td>  <td>Restart capabilities</td>  </tr>  <tr>  <td>High fault tolerance</td>  <td>Data inconsistency</td>  </tr> <tr>  <td rowspan="5">Mediator</td>  <td>Workflow control</td>  <td>More coupling</td>  </tr>  <tr>  <td>Error handling</td>  <td>Lower scalability</td>  </tr>  <tr>  <td>Recoverability</td>  <td>Lower performance</td>  </tr>  <tr>  <td>Restart capabilities</td>  <td>Lower fault tolerance</td>  </tr>  <tr>  <td>Better data consistency</td>  <td>Modeling complex workflows</td>  </tr></tbody></table><br /> </li>
+  <li><p>Choice between topologies comes down to workflow control/error handling vs performance/scalability.</p></li>
+  <li>Workflow event pattern for error handling:
+  <ol>
+    <li>Event consumer forwards bogus event to the workflow processor and continues with next event.</li>
+    <li>Workflow processor tries to repair event and forwards it to the event consumer’s original queue.</li>
+    <li>From event consumer point of view is a new event.</li>
+    <li>If event cannot be repaired, workflow processor forwards it to some dashboard for manual intervention.</li>
+  </ol></li>
+  <li>Preventing data loss:
+  <ol>
+    <li>Producer: synchronous sent + persistent queue.</li>
+    <li>Consumer: client acknowledge mode.</li>
+  </ol></li>
+  <li>Request-reply implementations:
+  <ol>
+    <li>Correlation ID.</li>
+    <li>Temporary queue for the response.</li>
+  </ol></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Request-based model </th>
+      <th>Event-Based model </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Certainty and control over workflow is needed </td>
+      <td>Flexibility </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Responsiveness, scalability</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Complex and dynamic processing </td>
+    </tr>
+  </tbody>
+</table><h2><a name="ch-15"></a>Chapter 15 - Space-Based Architecture Style</h2>
+<ul>
+  <li>Usage of data grids to avoid DB bottlenecks.</li>
+  <li>Highly scalable, elastic, performant.</li>
+  <li>Async writes to DB through persistent queues.</li>
+  <li>Hazelcast, Apache Ignite, Oracle Coherence.<br /> <img src="/images/blog/books/fundamentals-of-software-architecture/space-based-architecture-style.jpg" alt="Space-Based Architecture Style" /></li>
+  <li>Message grid:
+  <ul>
+    <li>Nginx or HA proxy.</li>
+    <li>Routing of request.</li>
+  </ul></li>
+  <li>Data Grid:
+  <ul>
+    <li>Nowadays implemented within the processing unit.</li>
+    <li>It is essential that each processing unit contains exactly the same data.</li>
+  </ul></li>
+  <li>Processing grid:
+  <ul>
+    <li>If orchestration is needed between different processing unit types.</li>
+  </ul></li>
+  <li>Deployment manager:
+  <ul>
+    <li>Manages number of processing units depending on load.</li>
+  </ul></li>
+  <li>Data collision due to replication lag:
+  <ul>
+    <li>Collision rate formula: N * (UR<sup>2</sup> / S) * RL
+    <ul>
+      <li>N = number of instance.</li>
+      <li>UR = update rate in milliseconds.</li>
+      <li>S = cache size.</li>
+      <li>RL = replication latency.</li>
+    </ul></li>
+  </ul></li>
+  <li>Can deploy processing units, virtualized middleware and data pumps to cloud, and reader/write and DB on-premise.</li>
+  <li>Distributed cache:
+  <ul>
+    <li>When:
+    <ol>
+      <li>Data to be cached is big (&gt; 100 Mb).</li>
+      <li>High write rates.</li>
+      <li>Collisions are not acceptable.</li>
+    </ol></li>
+  </ul></li>
+  <li>Recommended with very spiky apps and high number of concurrent users (&gt; 10k).</li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - Orchestration-Driven Service-Oriented Architecture Style</h2>
+<ul>
+  <li>Doomed to irrelevance.</li>
+  <li>Aim is reuse by technical partitioning:<br /> <img src="/images/blog/books/fundamentals-of-software-architecture/esb-architecture-style.jpg" alt="Orchestration-Driven Service-Oriented Architecture Style" /></li>
+  <li>Enterprise Service Bus (ESB).</li>
+  <li>Business services:
+  <ul>
+    <li>No code.</li>
+    <li>Defined by business users.</li>
+  </ul></li>
+  <li>Enterprise services: Reusable.</li>
+  <li>App Services:
+  <ul>
+    <li>App specific logic.</li>
+    <li>Not reusable.</li>
+  </ul></li>
+  <li>Infrastructure Services: Monitoring, logging, …</li>
+  <li>ESB:
+  <ul>
+    <li>Bureaucratic bottleneck.</li>
+  </ul></li>
+  <li>Distributed monolith.</li>
+</ul><h2><a name="ch-17"></a>Chapter 17 - Microservices Architecture</h2>
+<ul>
+  <li>Primary goal is high decoupling.
+  <ul>
+    <li>At the cost of duplication and distributed architecture.</li>
+  </ul></li>
+  <li>Size, consider:
+  <ul>
+    <li>Purpose.</li>
+    <li>Transaction boundaries.</li>
+    <li>Choreography.</li>
+    <li>Data isolation.</li>
+  </ul></li>
+  <li>Sidecar pattern.</li>
+  <li>Service mesh.</li>
+  <li>Microfrontends, either:
+  <ul>
+    <li>Choreography: service call other services as needed.</li>
+    <li>Mediator: new service that pulls data from several other services.</li>
+  </ul></li>
+  <li>Don’t do distributed transactions, fix granularity instead.
+  <ul>
+    <li>Saga pattern:
+    <ul>
+      <li>Mediator to coordinate.</li>
+      <li>Compensating transactions to rollback.</li>
+      <li>More than double the complexity.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-18"></a>Chapter 18 - Choosing the Appropriate Architecture Style</h2>
+<ul>
+  <li>Design criteria:
+  <ul>
+    <li>Domain.</li>
+    <li>Architecture characteristics that impact structure.</li>
+    <li>Data architecture.</li>
+    <li>Organizational factors.</li>
+    <li>Processes, teams, and operational concerns.</li>
+    <li>Domain/architecture isomorphism:
+    <ul>
+      <li>Some domains match the topology of the architecture.</li>
+    </ul></li>
+  </ul></li>
+  <li>Decide on:
+  <ol>
+    <li>Monolith vs distributed.</li>
+    <li>Where should data live?</li>
+    <li>Async vs sync communication:
+    <ul>
+      <li>Use sync by default, async when necessary.</li>
+    </ul></li>
+  </ol></li>
+</ul><h1><a name="part-3"></a>Part III - Techniques and Soft Skills</h1><h2><a name="ch-19"></a>Chapter 19 - Architecture Decisions</h2>
+<ul>
+  <li>Making an architecture decision involves:
+  <ol>
+    <li>Gather enough relevant information.</li>
+    <li>Justify the decision.</li>
+    <li>Documenting the decision.</li>
+    <li>Communicating if effectively to the right stakeholders.</li>
+  </ol></li>
+  <li><a name="antipatterns"></a>Anti-patterns:
+  <ol>
+    <li>Covering your assets:
+    <ul>
+      <li>Avoid or delay making a decision out of fear of making the wrong one.</li>
+      <li>Overcome by:
+      <ol>
+        <li>Waiting until the last responsible moment.</li>
+        <li>Continually collaborate with dev teams to avoid blind spots and ensure feasibility of implementation.</li>
+      </ol></li>
+    </ul></li>
+    <li>Groundhog day:
+    <ul>
+      <li>Decision is discussed over and over because people do not know why of the decision.</li>
+      <li>Both technical and business justification is required.</li>
+    </ul></li>
+    <li>Email-Driven architecture:
+    <ul>
+      <li>People lose, forget, or don’t even know an architecture decision due to poor communication.</li>
+      <li>Improve effectiveness of comms:
+      <ol>
+        <li>Email should not contain any details of decision, only a link to the system of record.</li>
+        <li>Only email people that care about the decision.</li>
+      </ol></li>
+    </ul></li>
+  </ol></li>
+  <li>Architecture Decision Records (<a href="adr.github.io">ADRs</a>):
+  <ul>
+    <li>Allows to place more emphasis on the why rather than the how.</li>
+    <li>Consequences section: add trade-off analysis.</li>
+    <li>Authors suggest two more sections:
+    <ol>
+      <li>Compliance:
+      <ul>
+        <li>How the decision will be checked.</li>
+      </ul></li>
+      <li>Notes:
+      <ul>
+        <li>Metadata: author, approval date, …</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+</ul><h2><a name="ch-20"></a>Chapter 20 - Analyzing Architecture Risk</h2>
+<ul>
+  <li>Risk = impact (1 to 3) * likelihood (1 to 3):
+  <ul>
+    <li>High risk &gt;= 6, medium &gt;= 3.</li>
+  </ul></li>
+  <li>Asses risk per architecture characteristic per quanta.</li>
+  <li>Risk storming:
+  <ul>
+    <li>Architects + some devs.</li>
+    <li>Ideally one storming session per architecture characteristic.</li>
+  </ul>
+  <ol>
+    <li>Identification:
+    <ul>
+      <li>Individual activity.</li>
+    </ul></li>
+    <li>Consensus.</li>
+    <li>Mitigation.</li>
+  </ol></li>
+  <li>Unknown or unproven technologies are always high risk.</li>
+</ul><h2><a name="ch-21"></a>Chapter 21 - Diagramming and Presenting Architecture</h2>
+<ul>
+  <li>Representational consistency: always show relationship between parts of an architecture before changing views/drilling down.</li>
+  <li>Solid lines indicate synchronous communication, dotted lines async.</li>
+  <li>Insert blank slide to focus attention on speaker.</li>
+</ul><h2><a name="ch-22"></a>Chapter 22 - Making Teams Effective</h2>
+<ul>
+  <li>It is really easy to fake it as an architect.</li>
+  <li>Architect personalities:
+  <ol>
+    <li>Control freak:
+    <ul>
+      <li>Tight boundaries that causes frustration in the dev teams.</li>
+    </ul></li>
+    <li>Armchair architect:
+    <ul>
+      <li>Loose boundaries that cause confusion in the dev team.</li>
+    </ul></li>
+    <li>Effective architect: not too hot, not too cold, but just right.</li>
+  </ol></li>
+  <li><a href="ElasticLeadership.com">Elastic leadership</a>.</li>
+  <li>How much control depends on:
+  <ul>
+    <li>How long/well the team members know each other.</li>
+    <li>Team size.</li>
+    <li>Overall experience.</li>
+    <li>Project complexity.</li>
+    <li>Project duration.</li>
+  </ul></li>
+  <li>Signs dev team is too big:
+  <ul>
+    <li>High process loss:
+    <ul>
+      <li>Potential productivity - process loss == actual productivity.</li>
+      <li>Example: merge conflicts.</li>
+    </ul></li>
+    <li>Pluralistic ignorance:
+    <ul>
+      <li>When everybody agrees to a norm, but privately rejects it because they think they are missing something obvious.</li>
+      <li>Fear to speak up.</li>
+    </ul></li>
+    <li>Diffusion of responsibility:
+    <ul>
+      <li>As team increases, communication gets harder.</li>
+      <li>Example:
+      <ul>
+        <li>Confusion about responsibilities.</li>
+        <li>Things getting dropped.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Leverage on checklists:
+  <ul>
+    <li><a href="https://amzn.to/3h9xNoZ">The Checklist Manifesto</a>.</li>
+    <li>Don’t worry about stating the obvious in a checklist. It is the obvious stuff that is usually skipped or missed.</li>
+    <li>3 typical checklists:
+    <ol>
+      <li>Developer code completion list:
+      <ul>
+        <li>“Definition of done”.</li>
+      </ul></li>
+      <li>Unit and functional testing checklist:
+      <ul>
+        <li>More unusual and edge cases.</li>
+        <li>Not automated stuff.</li>
+      </ul></li>
+      <li>SW release checklist.</li>
+    </ol></li>
+    <li>To make devs use checklists:
+    <ol>
+      <li>Explain importance, show effectiveness, ask devs to read The Checklist Manifesto.</li>
+      <li>Hawthorne effect:
+      <ul>
+        <li>If people believe they are observed or monitored, they will change their behaviour.</li>
+        <li>Tell devs that checklist compliance will be monitored.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+</ul><h2><a name="ch-23"></a>Chapter 23 - Negotiation and Leadership Skills</h2>
+<ul>
+  <li>Negotiation with business stakeholders:
+  <ul>
+    <li>When all else fails, state things in terms of cost and time.</li>
+    <li>Leverage the “divide and conquer” rule to qualify demands or requirements.</li>
+  </ul></li>
+  <li>Negotiation with other architects:
+  <ul>
+    <li>Demonstration defeats discussion.</li>
+    <li>Avoid being too argumentative.</li>
+    <li>Calm leadership.</li>
+  </ul></li>
+  <li>Negotiating with developers:
+  <ul>
+    <li>Always provide a justification, state it first.</li>
+    <li>Once a person hears something they disagree with, they stop listening.</li>
+    <li>If a dev disagrees with a decision, have them arrive at the solution on their own.</li>
+  </ul></li>
+</ul><h2><a name="ch-24"></a>Chapter 24 - Developing a Career Path</h2>
+<ul>
+  <li>Spend 20 mins first things in the morning (before reading work email) on learning.</li>
+  <li>Personal Technology radar.</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>I am now enjoying a nice sabbatical but happy to talk about job opportunities for 2022.</p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492043451&amp;asins=1492043451&amp;linkId=c60bf9166a29a4ef75a1348aaaee30d6&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (31)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Clojure/index.html">Clojure (35)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/architecture/index.html">architecture (1)</a></li><li><a href="/tags/book_notes/index.html">book notes (25)</a></li><li><a href="/tags/good_practices/index.html">good practices (24)</a></li><li><a href="/tags/resilience/index.html">resilience (6)</a></li><li><a href="/tags/testing/index.html">testing (8)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1732265186&amp;asins=1732265186&amp;linkId=d8ec35f65daf9d16fca775cc78506631&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
