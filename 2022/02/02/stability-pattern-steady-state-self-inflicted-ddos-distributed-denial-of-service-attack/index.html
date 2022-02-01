@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>The self-inflicted denial-of-service (DDoS) attack</title>
+	<meta content="Reviewing a pull request has bring back &quot;fond&quot; memories of an outage from a previous life. " name="description" /><meta content="stability patterns self-inflicted denial-of-service attack DDoS example how to avoid" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="The self-inflicted denial-of-service (DDoS) attack" property="og:title" /><meta content="Reviewing a pull request has bring back &quot;fond&quot; memories of an outage from a previous life. " property="og:description" /><meta content="https://danlebrero.com/2022/02/02/stability-pattern-steady-state-self-inflicted-ddos-distributed-denial-of-service-attack/" property="og:url" /><meta content="The self-inflicted denial-of-service (DDoS) attack" name="twitter:title" /><meta content="Reviewing a pull request has bring back &quot;fond&quot; memories of an outage from a previous life. " name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/ddos/thundering-herd.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/ddos/thundering-herd.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2022/02/02/stability-pattern-steady-state-self-inflicted-ddos-distributed-denial-of-service-attack/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">The self-inflicted denial-of-service (DDoS) attack</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 2 Feb 2022</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Reviewing a pull request has bring back "fond" memories of an outage from a previous life. </p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/ddos/thundering-herd.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>I was happily <strike>complaining</strike> reviewing some pull request, when the following piece of code make me shudder:</p>
+<pre><code>var unsent-messages = new List();
+
+function log(message) {
+    unsent-message =+ message
+}
+
+every (5 secs) {
+    send-all(unsent-messages)
+    unsent-message = new List();
+}
+</code></pre><p>Then it made me smile. I had seen a similar piece of code cause a major outage on a billion dollar company.</p><h2>Outage 1</h2><p>As all good outages, it all started with some network misconfiguration.</p><p>In this case, the network issue made all the company’s systems unreachable from the outside, causing a few minutes outage.</p><p>Change was reverted, service was restored, blame was assigned, bureaucracy was added and we all went back to work.</p><p>At least for some minutes.</p><h2>Outage 2</h2><p>A side effect of fixing the first outage was that in few seconds, like a thundering herd, thousands of our client’s browsers were trying to reconnect to back.</p><p>All services hold their ground except for one: the browser statistics service.</p><h3>The Browser Statistics Service (stats service)</h3><p>The stats service was born to collect feature usage data for one team, for one particular subset of the web application.</p><p><img src="/images/blog/ddos/stats-service-architecture.png" alt="service architecture" /></p><p>The service log into disk the usage data sent by the browser, Splunk read the log files, and the developers build in Splunk their dashboards and alerts.</p><p>It was all self-service and very low <strike>bureaucracy</strike> friction, which meant that all front-end teams ended up adopting it.</p><p>Obviously, no stats is complete without knowing how times something fails (aka. exceptions) and in what way (aka. stacktrace).</p><p>And here is where trouble started.</p><h3>A big pile of errors</h3><p>During the first outage, as none of the backend services were reachable, the client’s browsers have been collecting the stats of all failed attempts. </p><p>When the first outage was fixed, for the stats service was like:</p>
+<script src="/js/freezeframe.min.js"></script><p><img class="gifoverlay" src="/images/blog/ddos/like-a-thundering-herd.gif" /></p><p>The service could not write fast enough to disk, so requests started to pile up in the stats service.</p><p>The piled up requests increased the memory pressure, causing the stats service to GC like crazy, adding yet more latency.</p><p>When the Apaches noticed that an stats service instance was not timely responding, they did the opposite of what you would like: they resent the requests to another instance, basically doubling the pressure.</p><p>And, as all these request started to fail or timeout, the client’s browser diligently recorded the failure and added it to the pile of errors to report.</p><h2>DDoS attack</h2><p>To add salt to the injury, the front-end stats library had been designed to not lose data, hence a failed request to the stats service would not reset the stats.</p><p>In fact, the failed stats requests would be recorded and added to the next stats service call, which made the stats message size bigger and bigger, adding more and more pressure to the already struggling stats service and everything on its path.</p><p>The amount of traffic caused the Apache layer to start choking, making requests to other downstream services slower and slower.</p><p>This raised the number of errors in the client’s browsers, which increased the stats request’s size even further, which caused the Apaches to choke even more, which added extra latency, causing more errors, bigger requests, more latency, more errors, … </p><p><img class="gifoverlay" src="/images/blog/ddos/snowball-effect.gif" /></p>
+<script>
+new Freezeframe(".gifoverlay", {
+  overlay: true
+});
+</script><p>End result: thousands of browsers all over the globe sending every few seconds megabyte long POST requests to the stats service, telling the stats service that the stats service - and everything else - was failing. </p><p>A complete outage thanks to a self-inflicted distributed denial-of-service attack.</p><h2>Steady State pattern</h2><p>Multiple things went wrong (and multiple things we fixed afterwards). </p><p>Focusing on the initial piece of code, applying the <a href="https://www.amazon.com/Release-Design-Deploy-Production-Ready-Software/dp/1680502395">Steady State pattern</a> could have avoided the issue. </p><p>Steady State just points out the obvious: <a href="/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video/#content">nothing is infinite</a>. Not memory, not CPU, not bandwidth, not disk, not time, not money.</p><p>So you need to set some limits: the max size in the unsent messages array in this case. </p><p>Adding those limits is scary, mostly because the <a href="https://en.wikipedia.org/wiki/Fear_of_missing_out">fear of missing out</a>. </p><p>But without those limits, your system’s stability is at risk, specially when things start to fail. </p><p>And remember that …</p><p><img src="/images/blog/ddos/failure-is-inevitable.png" alt="failure-inevitable" /></p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/good_practices/index.html">good practices </a><a href="/tags/resilience/index.html">resilience </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1680502395&amp;asins=1680502395&amp;linkId=98fc761019fdb7fe116e070714d6c3ba&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe> </div>
+						<div id="toprightbanner2" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492043869&amp;asins=1492043869&amp;linkId=b368e934bc79913cda8218551aecf743&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (33)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Career/index.html">Career (10)</a></li><li><a href="/tags/Clojure/index.html">Clojure (35)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (28)</a></li><li><a href="/tags/good_practices/index.html">good practices (25)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1119387507&amp;asins=1119387507&amp;linkId=51ed9a26585395bab6e0ac16c9c1c678&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
