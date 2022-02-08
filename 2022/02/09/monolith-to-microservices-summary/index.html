@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith</title>
+	<meta content="Book notes on &quot;Monolith to Microservices&quot; by Sam Newman" name="description" /><meta content="Book review notes summary monolith to microservices Evolutionary Patterns Transform Your Monolith" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith" property="og:title" /><meta content="Book notes on &quot;Monolith to Microservices&quot; by Sam Newman" property="og:description" /><meta content="https://danlebrero.com/2022/02/09/monolith-to-microservices-summary/" property="og:url" /><meta content="Book notes: Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith" name="twitter:title" /><meta content="Book notes on &quot;Monolith to Microservices&quot; by Sam Newman" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/monolith-to-microservices/monolith-to-microservices.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/monolith-to-microservices/monolith-to-microservices.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2022/02/09/monolith-to-microservices-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 9 Feb 2022</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Monolith to Microservices" by Sam Newman</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/monolith-to-microservices/monolith-to-microservices.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3ISOj8Q">Monolith to Microservices</a> by <a href="https://twitter.com/samnewman">Sam Newman</a>.</p><p>Practical and useful book on the subject.</p><h1>Key Insights</h1>
+<ul>
+  <li>Microservices are independently deployable services modeled around a business domain.</li>
+  <li>Don’t focus on size but:
+  <ol>
+    <li>How many microservices can you handle.</li>
+    <li>How to define boundaries to get the most out of the microservices, without everything becoming a horrible coupled mess.</li>
+  </ol></li>
+  <li>Modular monolith still have the challenge of a monolith DB.</li>
+  <li>DDD:
+  <ul>
+    <li>Aggregate: self-contained unit that have a life cycle around them.</li>
+    <li>Bounded context (BC) + Aggregate == unit of cohesion.</li>
+    <li>The aggregate is a self-contained state machine that focuses on a single domain concept in our system, with the BC representing a collection of associated aggregates, with an explicit interface to the wider world.</li>
+  </ul></li>
+  <li>Microservices are not the goal.
+  <ul>
+    <li>What are you going to achieve that you cannot with your current architecture?</li>
+    <li>Have you considered alternatives to using microservices?</li>
+    <li>How will you know if the transition is working?</li>
+  </ul></li>
+  <li>Reuse it not an outcome.</li>
+  <li>When not to use microservices:
+  <ol>
+    <li>Unclear domain.</li>
+    <li>Startups.</li>
+    <li>Customer installed and managed software.</li>
+  </ol></li>
+  <li>Dr John Kotter’s eight-step process for implementing org change (from <a href="https://amzn.to/3FFEMjD">Leading Change</a>):
+  <ol>
+    <li>Establish a sense of urgency.</li>
+    <li>Creating the Guiding Coalition.</li>
+    <li>Developing a Vision and Strategy.</li>
+    <li>Communicating the change vision.</li>
+    <li>Empowering employees for broad-based action.</li>
+    <li>Generating short-team wins.</li>
+    <li>Consolidating gains and producing more change.</li>
+    <li>Anchoring new approaches in the culture.</li>
+  </ol></li>
+  <li>Small changes, little steps.
+  <ul>
+    <li>The biggest the bet and bigger the accompanying fanfare, the harder is to pull out when it is going wrong.</li>
+  </ul></li>
+  <li>Pattern: Change Data Capture (CDC):
+  <ul>
+    <li>Use when there is no other option.</li>
+  </ul></li>
+  <li>Pattern: Database-as-a-Service interface.</li>
+  <li>When you are relying on network analysis to determine who is using your database, you are in trouble.</li>
+  <li>Split the DB first or the code?
+  <ul>
+    <li>Code first.</li>
+  </ul></li>
+  <li>Static reference data:
+  <ul>
+    <li>Duplicate, dedicated schema, static library.</li>
+    <li>Data service: only when creating microservices is cheap.</li>
+  </ul></li>
+  <li>BPM tools: issue is that they are non-dev tools that end up being used by devs.</li>
+  <li>The more coupling, the earlier the pains will manifest:
+  <ul>
+    <li>2-10 services:
+    <ul>
+      <li>Breaking changes.</li>
+      <li>Reporting.</li>
+    </ul></li>
+    <li>10-50:
+    <ul>
+      <li>Ownership at scale.</li>
+      <li>Developer experience.</li>
+      <li>Running too many things.</li>
+    </ul></li>
+    <li>50+:
+    <ul>
+      <li>Loads of teams.</li>
+      <li>Global vs local optimization.</li>
+      <li>Orphaned services.</li>
+    </ul></li>
+    <li>In all:
+    <ul>
+      <li>Robustness and resilience.</li>
+      <li>Monitoring and troubleshooting.</li>
+      <li>End-to-end testing.
+      <ul>
+        <li>Solutions:
+        <ul>
+          <li>No cross team tests.</li>
+          <li>Consumer-driven contracts.</li>
+          <li>Use automated release remediation and progressive delivery in addition to end-to-end tests.</li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Without strong code ownership (one and only one team can change service, other teams can do pull requests to propose changes) a microservices’ architecture will grow into a distributed monolith.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-1">Chapter 1 - Just Enough Microservices</a></li>
+  <li><a href="#ch-2">Chapter 2 - Planning a Migration</a></li>
+  <li><a href="#ch-3">Chapter 3 - Splitting the Monolith</a></li>
+  <li><a href="#ch4">Chapter 4 - Decomposing the database</a></li>
+  <li><a href="#ch-5">Chapter 5 - Growing Pains</a></li>
+</ul><h1><a name="ch-1"></a>Chapter 1 - Just Enough Microservices</h1>
+<ul>
+  <li>Microservices are <strong>independently deployable</strong> services modeled around a business domain.
+  <ul>
+    <li>Type of SOA.</li>
+  </ul></li>
+  <li>Start with the technology that you know.</li>
+  <li>Don’t focus on size but:
+  <ol>
+    <li>How many microservices can you handle.</li>
+    <li>How to define boundaries to get the most out of the microservices, without everything becoming a horrible coupled mess.</li>
+  </ol></li>
+  <li>Modular monolith still have the challenge of a monolith DB.</li>
+  <li>Other monoliths:
+  <ul>
+    <li>Distributed monolith.</li>
+    <li>Third-party black-box systems, both on premise and SaaS.</li>
+  </ul></li>
+  <li>Coupling types:
+  <ul>
+    <li><a href="/2021/11/17/fundamentals-of-software-architecture-summary/#ch-3">Types</a>.</li>
+    <li>Implementation coupling.</li>
+    <li>Temporal coupling (in the sense of sync calls).</li>
+    <li>Deployment coupling (release trains).</li>
+    <li>Domain coupling.</li>
+  </ul></li>
+  <li>DDD:
+  <ul>
+    <li>Aggregate: self-contained unit that have a life cycle around them.</li>
+    <li>Bounded context (BC):
+    <ul>
+      <li>Hide implementation and internal details.</li>
+    </ul></li>
+    <li>BC + Aggregate == unit of cohesion.</li>
+    <li>The Aggregate is a self-contained state machine that focuses on a single domain concept in our system, with the BC representing a collection of associated aggregates, again with an explicit interface to the wider world.</li>
+  </ul></li>
+  <li>Start by targeting services that encompass entire BC.
+  <ul>
+    <li>You can split them further latter, hiding this decision.</li>
+  </ul></li>
+</ul><h1><a name="ch-2"></a>Chapter 2 - Planning a Migration</h1>
+<ul>
+  <li>Microservices are not the goal.</li>
+  <li>Key questions:
+  <ul>
+    <li>What are you going to achieve that you cannot with your current architecture?</li>
+    <li>Have you considered alternatives to using microservices?</li>
+    <li>How will you know if the transition is working?</li>
+  </ul></li>
+  <li>Reuse it not an outcome.</li>
+  <li>Limit the scope of expected outcomes.</li>
+  <li>Possible whys:
+  <ul>
+    <li>Improve team autonomy, alternatives:
+    <ul>
+      <li>Modular monoliths.</li>
+      <li>Assign responsibilities based on functional grounds.</li>
+      <li>Self-servicing.</li>
+    </ul></li>
+    <li>Reduce time to market, alternatives:
+    <ul>
+      <li><a href="/2021/03/10/value-stream-mapping-summary/#content">Value stream mapping</a> to identify bottlenecks.</li>
+    </ul></li>
+    <li>Scale cost-effectively for load, alternatives:
+    <ul>
+      <li>Vertical or horizontal scaling.</li>
+    </ul></li>
+    <li>Improve robustness:
+    <ul>
+      <li>Being able to react to expected variations.</li>
+      <li>Alternatives:
+      <ul>
+        <li>Running multiple copies of your monolith.</li>
+        <li>Use more reliable SW/HW.</li>
+        <li>Automate manual processes.</li>
+      </ul></li>
+    </ul></li>
+    <li>Scale number of developers, alternatives:
+    <ul>
+      <li>Modular monolith (but less).</li>
+    </ul></li>
+    <li>Embrace new technology, alternatives:
+    <ul>
+      <li>None.</li>
+    </ul></li>
+  </ul></li>
+  <li>When not to use microservices:
+  <ol>
+    <li>Unclear domain:
+    <ul>
+      <li>Getting services wrong can be expensive due to large number of cross-service changes and overly coupled components.</li>
+    </ul></li>
+    <li>Startups.</li>
+    <li>Customer installed and managed software:
+    <ul>
+      <li>Due to increased operational complexity.</li>
+    </ul></li>
+  </ol></li>
+  <li>Dr John Kotter’s eight-step process for implementing org change (from <a href="https://amzn.to/3FFEMjD">Leading Change</a>):
+  <ol>
+    <li>Establish a sense of urgency.</li>
+    <li>Creating the Guiding Coalition:
+    <ul>
+      <li>Try to bring somebody from “the business”.</li>
+    </ul></li>
+    <li>Developing a Vision and Strategy:
+    <ul>
+      <li>Vision: realistic yet aspirational.</li>
+      <li>Commitment to vision is important, but overly commitment to strategy can be dangerous</li>
+    </ul></li>
+    <li>Communicating the change vision:
+    <ul>
+      <li>Face to face + broadcast.</li>
+    </ul></li>
+    <li>Empowering employees for broad-based action:
+    <ul>
+      <li>Bandwidth change: increase capacity or reduce load.</li>
+    </ul></li>
+    <li>Generating short-team wins.</li>
+    <li>Consolidating gains and producing more change:
+    <ul>
+      <li>Keep pushing on.</li>
+    </ul></li>
+    <li>Anchoring new approaches in the culture:
+    <ul>
+      <li>Communicate successes and failures.</li>
+    </ul></li>
+  </ol></li>
+  <li>Small changes, little steps.</li>
+  <li>Whiteboard is where the cost of change and the cost of mistake is the lowest.</li>
+  <li>Where to start?
+  <ul>
+    <li>Identify BC and their relationships:
+    <ul>
+      <li>Just enough DDD to get started.</li>
+      <li>Maybe use Event Storming</li>
+      <li>Relationship show how easy/difficult should be to extract that BC (warn: code may disagree).</li>
+    </ul></li>
+    <li>Plot BC in:<br />  <img src="/images/blog/books/monolith-to-microservices/where-to-start.jpg" alt="change curve" /></li>
+  </ul></li>
+  <li>Is the transition working?
+  <ul>
+    <li>Regular checkpoints. Agenda:
+    <ol>
+      <li>Restate what you are trying to achieve. Does it still make sense?</li>
+      <li>Review quantitative metrics.</li>
+      <li>Ask for qualitative feedback: Happier in <a href="/2021/12/01/sonner-safer-happier-summary-patterns-business-agility/#content">BVSSH</a>.</li>
+      <li>Decide if any change is needed.</li>
+    </ol></li>
+  </ul></li>
+  <li>Avoid the skunk cost fallacy:
+  <ul>
+    <li>The biggest the bet and bigger the accompanying fanfare, the harder is to pull out when it is going wrong.</li>
+  </ul></li>
+</ul><h1><a name="ch-3"></a>Chapter 3 - Splitting the Monolith</h1>
+<ul>
+  <li>You have more options if you can change the monolith.
+  <ul>
+    <li>Best if you can copy (not move) existing code.</li>
+    <li>Consider refactoring into modular monolith first.</li>
+  </ul></li>
+  <li>Pattern: Stranger Fig Application:
+  <ul>
+    <li>Steps:
+    <ol>
+      <li>Identify what to migrate.</li>
+      <li>Copy to microservice.</li>
+      <li>Reroute calls to new microservice.</li>
+    </ol></li>
+    <li>Safe to rollback routing.</li>
+    <li>There must be a clear way to redirect the calls to the new service.</li>
+    <li>In case of HTTP, a reverse HTTP proxy in front of the monolith.
+    <ul>
+      <li>Consider Ngnix + Lua if need something custom.</li>
+      <li>If custom logic is very complex (like changing protocol from SOAP to gRPC), consider:
+      <ol>
+        <li>Avoid putting the logic in the proxy, as it is a shared service between teams.</li>
+        <li>Implement it in the microservice.</li>
+        <li>Use service mesh.</li>
+      </ol></li>
+    </ul></li>
+    <li>In message systems, the proxy consumes the monolith queue and does a content-based routing to two queues: new monolith queue and microservices one.</li>
+    <li>While migrating, avoid any functionality change.</li>
+  </ul></li>
+  <li>Pattern: UI Composition:
+  <ul>
+    <li>UI to call new microservice.</li>
+    <li>Widget or page level.</li>
+    <li>Mobile apps are monoliths, unless you can make changes without resubmitting them.</li>
+    <li>Micro-frontend.</li>
+  </ul></li>
+  <li>Pattern: Branch by Abstraction:
+  <ul>
+    <li>Steps:
+    <ol>
+      <li>Create abstraction for the functionality to be replaced.</li>
+      <li>Change clients to use new abstraction.</li>
+      <li>Create new implementation that uses the new microservice.</li>
+      <li>Switch over the new implementation.</li>
+      <li>Cleanup.</li>
+    </ol></li>
+    <li>Verify branch by abstraction:
+    <ul>
+      <li>If call to new implementation fails, call the old implementation.</li>
+    </ul></li>
+  </ul></li>
+  <li>Pattern: Parallel Run:
+  <ul>
+    <li>In strangler and branch by abstraction, call both implementation and compare results.</li>
+    <li>Can check also performance.</li>
+    <li>N-version programming:
+    <ul>
+      <li>Implement functionality in several different ways, and do a parallel run, choosing the “correct” (quorum) one.</li>
+      <li>For fault tolerance and to avoid bugs.</li>
+    </ul></li>
+    <li>Verification techniques:
+    <ul>
+      <li>Use spy in microservices to record what will do, but without doing it.
+      <ul>
+        <li>When duplicated side-effects are not ok.</li>
+      </ul></li>
+      <li><a href="https://github.com/github/scientist">Github scientist</a>.</li>
+    </ul></li>
+    <li>Not trivial, use just when there is a high risk.</li>
+  </ul></li>
+  <li>Pattern: Decorating Collaborator:
+  <ul>
+    <li>When cannot or don’t want to change monolith.</li>
+    <li>Proxy works as a decorator that calls new microservice in addition to old monolith.</li>
+  </ul></li>
+  <li>Pattern: Change Data Capture (CDC):
+  <ul>
+    <li>React to changes happened in the data store.</li>
+    <li>Typical implementations:
+    <ol>
+      <li>DB triggers:
+      <ul>
+        <li>Use very sparingly.</li>
+      </ul></li>
+      <li>Transaction log poll.</li>
+      <li>Batch delta copier:
+      <ul>
+        <li>Process that on a regular schedule scans the DB to find what data has changed since last run.</li>
+      </ul></li>
+    </ol></li>
+    <li>Use when there is no other option.</li>
+  </ul></li>
+</ul><h1><a name="ch4"></a>Chapter 4 - Decomposing the database</h1>
+<ul>
+  <li>Shared DB:
+  <ul>
+    <li>It is ok with:
+    <ul>
+      <li>Read-only static reference data that is stable and has a clear owner.</li>
+      <li>Pattern: Database-as-a-Service interface.</li>
+    </ul></li>
+    <li>Pattern: Database view:
+    <ul>
+      <li>Less coupling than shared DB.</li>
+      <li>When you are relying on network analysis to determine who is using your database, you are in trouble.</li>
+      <li>Useful only for read-only.</li>
+    </ul></li>
+    <li>Pattern: Database wrapping service:
+    <ul>
+      <li>Move database dependencies to service dependencies.</li>
+      <li>When is too hard pulling the schema apart.</li>
+      <li>More flexible than DB view.</li>
+      <li>Can take writes.</li>
+      <li>Stepping stone, buys you time.</li>
+    </ul></li>
+    <li>Pattern: Database-as-a-Service interface:
+    <ul>
+      <li>Create a specific and dedicated DB to be accessed externally.</li>
+      <li>Mapping engine options:
+      <ol>
+        <li><a href="https://debezium.io/">CDC</a>.</li>
+        <li>Batch process.</li>
+        <li>Build from an event log.</li>
+      </ol></li>
+    </ul></li>
+  </ul></li>
+  <li>Transferring Ownership:
+  <ul>
+    <li>Pattern: Aggregate exposing monolith:
+    <ul>
+      <li>Monolith expose a proper aggregate API.</li>
+      <li>When a newly extracted microservice still needs data owned by the monolith.</li>
+      <li>Maybe a future microservice.</li>
+    </ul></li>
+    <li>Pattern: Change data ownership:
+    <ul>
+      <li>When monolith still depends on newly extracted microservice data.</li>
+      <li>Ideally monolith should call new service API:
+      <ul>
+        <li>Copying the data back to the monolith DB as an alternative.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Data synchronization:
+  <ul>
+    <li>Pattern: Synchronize data in application:
+    <ul>
+      <li>Steps:
+      <ol>
+        <li>Bulk synchronize data:
+        <ul>
+          <li>If monolith was kept online, implement CDC to copy data since snapshot created.</li>
+        </ul></li>
+        <li>Synchronize on write, read from old schema.</li>
+        <li>Synchronize on write, read from new schema.</li>
+        <li>Decommission old schema.</li>
+      </ol></li>
+    </ul></li>
+    <li>Pattern: Tracer write:
+    <ul>
+      <li>Same as synchronize data in app, but one table at a time (instead of the whole bundled context) using the new microservice API.</li>
+    </ul></li>
+  </ul></li>
+  <li>Split the DB first or the code?
+  <ul>
+    <li>DB first:
+    <ul>
+      <li>Easy, little short-term benefit.</li>
+      <li>When concerned about performance or data consistency.</li>
+      <li>Pattern: repository per BC:
+      <ul>
+        <li>First step to understand dependencies.</li>
+      </ul></li>
+      <li>Pattern: database per BC:
+      <ul>
+        <li>Bet for future split.</li>
+        <li>Recommend for greenfield.</li>
+      </ul></li>
+    </ul></li>
+    <li>Code first:
+    <ul>
+      <li>Most common.</li>
+      <li>Short-term improvements.</li>
+      <li>Pattern: Monolith as data access layer:
+      <ul>
+        <li>Same pattern as “aggregate exposing monolith”.</li>
+      </ul></li>
+      <li>Pattern: Multischema storage:
+      <ul>
+        <li>New microservice uses new schema for new functionality/data, old schema for existing data.</li>
+      </ul></li>
+    </ul></li>
+    <li>DB and code at the same time:
+    <ul>
+      <li>Avoid.</li>
+    </ul></li>
+  </ul></li>
+  <li>Schema separation examples:
+  <ul>
+    <li>Pattern: Split table:
+    <ul>
+      <li>When table is owned by 2 or more BC.</li>
+      <li>Lose referential integrity.</li>
+      <li>Will need to chose the owner of the data.</li>
+    </ul></li>
+    <li>Pattern: Move foreign-key relationship to code:
+    <ul>
+      <li>Increase latency: from 1 join query to 1 select + n service calls.</li>
+      <li>Data consistency, deletion options:
+      <ol>
+        <li>Check with all services before deleting:
+        <ul>
+          <li>More coupling, reverse dependency.</li>
+          <li>Don’t use.</li>
+        </ul></li>
+        <li>Handle 404/410 gracefully in dependant service.</li>
+        <li>Don’t allow deletion:
+        <ul>
+          <li>Soft delete/tombstone record.</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+  </ul></li>
+  <li>Static reference data:
+  <ul>
+    <li>Duplicate:
+    <ul>
+      <li>As it changes infrequently maybe ok.</li>
+      <li>For large volume of data.</li>
+      <li>Background process to update it.</li>
+    </ul></li>
+    <li>Dedicated schema:
+    <ul>
+      <li>No duplication, always up to date.</li>
+      <li>Allows for cross-schema joins.</li>
+    </ul></li>
+    <li>Static library:
+    <ul>
+      <li>For small datasets.</li>
+    </ul></li>
+    <li>Data service:
+    <ul>
+      <li>When creating a new microservice is cheap.</li>
+      <li>Maybe can emit change events.</li>
+    </ul></li>
+  </ul></li>
+  <li>Avoid distributed transactions.</li>
+  <li>Sagas:
+  <ul>
+    <li>Model transactions as business processes.</li>
+    <li>Specially for long lived transactions.</li>
+    <li>Rollback with compensating transactions.</li>
+    <li>Two implementations:
+    <ol>
+      <li>Orchestrated:
+      <ul>
+        <li>Central coordinator. Command and control.</li>
+        <li>Pro: easier to understand.</li>
+        <li>Cons: coupling.</li>
+        <li>Warn: Anemic microservices: coordinator having too much logic that should be in microservices.</li>
+        <li>Different services can play the coordinator role for different flows.</li>
+        <li>BPM tools: issue is that they are non-dev tools that end up being used by devs.</li>
+        <li><a href="https://camunda.com/">Camuda</a> and <a href="https://github.com/camunda-cloud/zeebe">Zeebe</a> are targeted to microservices developers.</li>
+      </ul></li>
+      <li>Choreographed:
+      <ul>
+        <li>Distributed responsibility. Trust but verify.</li>
+        <li>Usually event based.</li>
+        <li>Pro: decoupled.</li>
+        <li>Cons: harder to understand whole flow.</li>
+        <li>Use correlation Id to build/know the state of the saga:
+        <ul>
+          <li>Service to read all events to show view.</li>
+        </ul></li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+</ul><h1><a name="ch-5"></a>Chapter 5 - Growing Pains</h1>
+<ul>
+  <li>More detailed in “Building microservices” book.</li>
+  <li>Based on anecdotal experience.</li>
+  <li>The more coupling, the earlier the pains will manifest:
+  <ul>
+    <li>2-10 services:
+    <ul>
+      <li>Breaking changes.</li>
+      <li>Reporting.</li>
+    </ul></li>
+    <li>10-50:
+    <ul>
+      <li>Ownership at scale.</li>
+      <li>Developer experience.</li>
+      <li>Running too many things.</li>
+    </ul></li>
+    <li>50+:
+    <ul>
+      <li>Loads of teams.</li>
+      <li>Global vs local optimization.</li>
+      <li>Orphaned services.</li>
+    </ul></li>
+    <li>In all:
+    <ul>
+      <li>Robustness and resilience.</li>
+      <li>Monitoring and troubleshooting.</li>
+      <li>End-to-end testing.</li>
+    </ul></li>
+  </ul></li>
+  <li>Ownership at scale:
+  <ul>
+    <li>Without strong code ownership (one and only one team can change service, other teams can do pull requests to propose changes) a microservices’ architecture will grow into a distributed monolith.</li>
+  </ul></li>
+  <li>Breaking changes:
+  <ul>
+    <li>Avoiding accidental breaking changes:
+    <ol>
+      <li>Explicit schema to avoid structural breakages.
+      <ul>
+        <li><a href="https://github.com/nilslice/protolock">Protolock</a> to prohibit incompatible changes.</li>
+      </ul></li>
+      <li>To avoid semantic breakages: testing.
+      <ul>
+        <li>Make it hard to change a service contract:
+        <ul>
+          <li>Make it obvious, no magic, or generate schemas from code.</li>
+        </ul></li>
+      </ul></li>
+    </ol></li>
+    <li>Non-accidental:
+    <ol>
+      <li>Do not break, but <a href="https://www.youtube.com/watch?v=YR5WdGrpoug">accrete</a>.</li>
+      <li>Give consumers time to migrate:
+      <ol>
+        <li>Run two versions of the service.</li>
+        <li>Support old and new endpoints in the service.</li>
+      </ol></li>
+    </ol></li>
+    <li>Be more relaxed if changes are within a team.</li>
+  </ul></li>
+  <li>Reporting:
+  <ul>
+    <li>Build a reporting specific schema.</li>
+  </ul></li>
+  <li>Monitoring and Troubleshooting:
+  <ul>
+    <li>Log aggregation:
+    <ul>
+      <li>First thing to do when implementing microservices.</li>
+    </ul></li>
+    <li>Tracing:
+    <ul>
+      <li>API GW or service mesh to generate the correlation ID.</li>
+    </ul></li>
+    <li>Test in production:
+    <ul>
+      <li>Synthetic transactions.</li>
+    </ul></li>
+    <li>Towards observability:
+    <ul>
+      <li><a href="https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/">Distributed Systems Observability</a>.</li>
+    </ul></li>
+  </ul></li>
+  <li>Local developer experience:
+  <ul>
+    <li>How many services to run locally?</li>
+    <li>Solutions:
+    <ul>
+      <li>Stubs.</li>
+      <li>Point to instance running elsewhere.</li>
+      <li>One remote env per developer:
+      <ul>
+        <li>Slow to deploy to test changes.</li>
+        <li>Cost.</li>
+      </ul></li>
+      <li>Mix local/remote:
+      <ul>
+        <li><a href="https://www.telepresence.io">Telepresence</a> for Kubernetes.</li>
+        <li>Azure’s cloud functions.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Running too many things:
+  <ul>
+    <li>Deployment, configuration and management of instances becomes more difficult.</li>
+    <li>Solution:
+    <ul>
+      <li>Kubernetes.</li>
+      <li>Function-as-a-Service (preferred).</li>
+    </ul></li>
+  </ul></li>
+  <li>End-to-end testing:
+  <ul>
+    <li>Even slower and even more brittle.</li>
+    <li>Solutions:
+    <ul>
+      <li>No cross team tests.</li>
+      <li>Consumer-driven contracts:
+      <ul>
+        <li><a href="https://docs.pact.io">Pact</a>.</li>
+      </ul></li>
+      <li>Use automated release remediation and progressive delivery in addition to end-to-end tests.</li>
+    </ul></li>
+  </ul></li>
+  <li>Global vs local optimization:
+  <ul>
+    <li>Solving the same problem twice.</li>
+    <li>Divergent tech stack.</li>
+    <li>Solutions:
+    <ul>
+      <li>Cross-cutting group to raise awareness/make tech decisions.</li>
+    </ul></li>
+  </ul></li>
+  <li>Robustness and resilience:
+  <ul>
+    <li>See <a href="https://amzn.to/3eGmoLx">Release it!</a>.</li>
+  </ul></li>
+  <li>Orphaned Services:
+  <ul>
+    <li>In-house service registries that combines service discovery + code repository data.</li>
+  </ul></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	             <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492047848&amp;asins=1492047848&amp;linkId=053f131942177f5ee8627fb6d22300e2&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (34)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (7)</a></li><li><a href="/tags/Career/index.html">Career (10)</a></li><li><a href="/tags/Clojure/index.html">Clojure (35)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (29)</a></li><li><a href="/tags/good_practices/index.html">good practices (25)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1119387507&amp;asins=1119387507&amp;linkId=51ed9a26585395bab6e0ac16c9c1c678&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
