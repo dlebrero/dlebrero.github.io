@@ -253,7 +253,8 @@ input, button {
 	-webkit-font-smoothing: antialiased;
 }
 input[type="text"], 
-input[type="password"], 
+input[type="search"],
+input[type="password"],
 input[type="email"], 
 textarea, 
 select {
@@ -274,7 +275,8 @@ textarea {
 	min-height: 162px;
 }
 input[type="text"]:focus, 
-input[type="password"]:focus, 
+input[type="search"]:focus,
+input[type="password"]:focus,
 input[type="email"]:focus, 
 textarea:focus {
 	background: white;
@@ -928,29 +930,6 @@ ul#nav li.current a {
 }
 #sidebar .widget {
 	margin-bottom: 15px;
-}
-
-/* search */
-#sidebar .widget_search {
-	padding-top: 0;
-	margin-bottom: 24px;
-}
-#sidebar .widget_search h5 {
-	display: none;
-}
-#sidebar .widget_search form {
-	position: relative;
-	margin: 0;
-}
-#sidebar .widget_search .text-search {
-	padding-right: 40px;
-	width: 100%;
-	min-width: 150px;
-	border-radius: 3px;
-	background: white;
-}
-#sidebar .widget_search .submit-search {
-	display: none;
 }
 
 /* link list */

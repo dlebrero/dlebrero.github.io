@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>CTO last day: reflections, mistakes, and some learnings</title>
+	<meta content="Burning my hands on the steering wheel." name="description" /><meta content="CTO team building experiment building bridges" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="CTO last day: reflections, mistakes, and some learnings" property="og:title" /><meta content="Burning my hands on the steering wheel." property="og:description" /><meta content="https://danlebrero.com/2022/03/09/cto-dairy-lessons-learned/" property="og:url" /><meta content="CTO last day: reflections, mistakes, and some learnings" name="twitter:title" /><meta content="Burning my hands on the steering wheel." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/cto/day8/bye.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/cto/day8/bye.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2022/03/09/cto-dairy-lessons-learned/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">CTO last day: reflections, mistakes, and some learnings</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 9 Mar 2022</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Burning my hands on the steering wheel.</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/cto/day8/bye.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>In April 2021, I left my job at Akvo as CTO, after about two years in the position.</p><p>Today, <strike>six</strike> <strike>seven</strike> <strike>eight</strike> <strike>nine</strike> ten months later, it seems like about time to stop procrastinating and write something about it.</p><h1>Leaving</h1><p>I realised that I needed to leave when Sunday evenings became the worst part of the week when I felt exactly the same as in my old school days: anxious and unhappy.</p><p>But it was not only Sunday evenings. I have never minded some work problem popping in my head out of working hours – I love solving problems – but now it will just suck all the joy of whatever I was doing.</p><p>And of course, the sleeping troubles that came with all of this.</p>
+<blockquote><p>True happiness occurs only when you find the problems you enjoy having and enjoy solving. <cite>Mark Manson, <a href="/2021/09/08/the-subtle-art-of-not-giving-a-fuck-summary/#content">The Subtle Art of Not Giving a F*ck</a>.</cite></p>
+</blockquote><h2>Root Cause Analysis</h2><p>No need to go through the <a href="https://en.wikipedia.org/wiki/Five_whys">5 whys</a> to see what the cause was: the compounded effect of the company’s financial situation, the impact of the decisions I was involved with, and the feeling of being completely unprepared.</p><p>As an example, my translation of the new business strategy: stop product development.</p><p>Who I was to push for halting the development of what has been the company’s flagship product since its inception, twelve years ago? Would a more experienced CTO see otherwise? Would a more experienced CTO change the business strategy? Changed how product development was financed? How contracts were negotiated? Find external investment?</p><p>And the impact on the development team …</p><p><em>This was the last decision that I helped make.</em></p><h1>Mistakes and lessons learned</h1><p>Mandatory “lessons learned” section:</p>
+<ol>
+  <li>Bye-bye coding.</li>
+  <li>Complaints are good.</li>
+  <li>Clarity is hard work.</li>
+  <li>Business first, tech second.</li>
+  <li>Conflicts: avoid being a broken telephone.</li>
+  <li>Difficult conversations (with data).</li>
+  <li>It is always a system problem.</li>
+  <li>Self-blaming is pointless.</li>
+  <li>It is all about teams.</li>
+  <li>Don’t make changes, run experiments.</li>
+  <li>Feedback loops are loooong.</li>
+  <li>Ring-fencing is a necessary evil.</li>
+  <li>Lonely.</li>
+  <li>I don’t dislike people management!</li>
+</ol><h3>Bye-bye coding</h3><p>As much as it hurts, there will be always something more important than coding.</p><p><img src="/images/blog/cto/day8/sad-crying.gif" alt="crying" /></p><h3>Complaints are good</h3><p>Not all complains and not all the time, but some level of complaining means that people trust you enough and that they care enough about the job.</p><p>Complains are an opportunity to either:</p>
+<ol>
+  <li>Make an improvement.</li>
+  <li>Provide <a href="/2021/03/24/97-things-every-engineering-manager-should-know-summary/#content">clarity</a>.</li>
+</ol><p>Best outcome is delegating the improvement in the complainer after giving some additional clarity.</p><h3>Clarity is hard work</h3><p>Not only <a href="/2020/04/15/on-the-importance-of-clear-communication-in-devops/#content">communication is messy</a> and you will need to repeat yourself ten times, finding the clarity yourself in the first place requires a lot of work.</p><h3>Business first, tech second</h3><p>I understood that my main responsibility as CTO was to improve how we delivered software. Major mistake.</p><p>I should have dug deeper from the very beginning on how the business works and how software supported and enabled it. </p><h3>Conflicts: avoid being a broken telephone</h3><p>Foo complains about Bar because of Buzz. You talk with Bar about Buzz but Bar says Quux, which you have no clue about. So you go back to Foo to clarify Bar’s Buzz’s Quux and Foo replies Flob.</p><p>What a waste of time, energy, and a source of confusion.</p><p>The underlying issue is that Foo does not want to have a difficult conversation with Bar, which, as much I can empathise with, it needs to happen.</p><p>So either, depending on circumstances:</p>
+<ol>
+  <li>Ask Foo to have a difficult conversation with Bar.</li>
+  <li>Sit with Foo and Bar to have a difficult conversation.</li>
+</ol><h3>Difficult conversations (with data)</h3><p>Two ingredients that made difficult conversations less difficult to have:</p>
+<ol>
+  <li>Following the <a href="/2020/04/01/no-nonsense-leadership-summary/#respectful-confrontation">respectful confrontation</a> script, which has a wonderful mix of hard-core objective real data and <a href="/2020/12/16/cto-diary-meeting-the-business/#content">fluffy feelings</a>.</li>
+  <li>Internalizing that all problems are system problems.</li>
+</ol><h3>It is always a system problem</h3>
+<blockquote><p>Everybody is doing their best, under the current circumstances. <cite>Gerald M. Weinberg, <a href="/2019/11/27/becoming-a-technical-leader-book-notes/#content">Becoming a Technical Leader</a></cite></p>
+</blockquote><p>With this in mind, it is amazing how much more productive conversations are once you move from blaming people to understanding, inspecting, and changing the system.</p><p>The steps:</p>
+<ol>
+  <li>State that we are trying to understand how the system leads to the outcome.</li>
+  <li>Repeat point 1.</li>
+  <li>Agree that the outcome was undesirable.</li>
+  <li>Collect the timeline/facts about the system behavior, to understand “the circumstances”.</li>
+  <li>Agree on what was the desirable outcome.</li>
+  <li>Agree on what system change is needed to avoid (1) and promote (2).</li>
+</ol><p>Note that “circumstances” can be a lack of knowledge or competency by the person doing the work. This is something that can be fixed.</p><p>Change the system and people will follow.</p><h3>Self-blaming is pointless</h3><p>I always thought that acknowledging that “It is my fault!” was a brave thing to do, but if you really believe that something is your fault, then you are ready to believe that others can be at fault.</p><p>Blaming and self-blaming are counterproductive. It is always a system problem.</p><h3>It is all about teams</h3><p>What teams, composition, responsibilities, the internal and external dynamics, … this is going to be your main leverage point for system change.</p><h3>Don’t make changes, run experiments</h3><p>Change is scary and comes with a lot of resistance, but running an experiment sends a different completely different signal: it is a temporal thing aimed to learn. </p><p>Experiments are expected to “fail”, which brings the psychological safety required for honest feedback and increases the willingness to participate.</p><p>Feedback is high quality as it comes from empirical evidence, not theoretical “this will never work here”. </p><p>And the most important reason:</p>
+<blockquote><p>Change culture by first changing what people do, not how people think. <cite>John Shook, <a href="https://www.lean.org/downloads/35.pdf">How to Change a Culture: Lessons from NUMMI</a></cite></p>
+</blockquote><h3>Feedback loops are loooong</h3><p>You will miss those 72 hours test suites.</p><h3>Ring-fencing is a necessary evil</h3><p>I made several times the mistake of asking people for important-but-not-urgent work and expecting them to find the time for it. It rarely worked.</p><p>As much as it pains me, the workaround is to explicitly ring-fence people’s time, so that if other conflicting priority arises, they can rely on your authority to push back, or escalate the conflict to you.</p><h3>Lonely</h3><p>I have never talked so much and been in so many meetings, but nobody in your company will be in your same position, so I actually felt quite lonely at times.</p><p>I ended up reaching out to random CTOs on LinkedIn, which was surprisingly useful. </p><h3>I don’t dislike people management!</h3><p>You probably do not care but it was a big surprise for me. </p><p>Even if the 1-2-1 days were really really draining, I actually enjoyed the time spent with other human resources.</p><h1>What is next?</h1><p><img src="/images/blog/cto/day8/beer.jpg" alt="beer" /></p><p>The experience was like my first beer, first <a href="/2016/03/17/lines-of-code/#content">blog post</a> or first <a href="/2016/10/22/repl-driven-development-voxxed-days-belgrade-2016-video/#content">conference talk</a>. </p><p>Trying once is not enough to make up my mind, but next time I want to be more prepared. This meant finding a role where I can safely learn the skills without wreaking havoc.</p><p>But before starting a new job, the original plan was to take the rest of 2021 off, get a respite from work and COVID, and take care of my family while my wife went through some nasty surgery.</p><p>But life had other plans …</p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/CTO_diary/index.html">CTO diary </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1491973897&amp;asins=1491973897&amp;linkId=7144d836e40f96634c7431b5e36359f3&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner2" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1680507249&amp;asins=1680507249&amp;linkId=ae4df07ddeab90d9e7d8259b53a337de&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (34)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (8)</a></li><li><a href="/tags/Career/index.html">Career (10)</a></li><li><a href="/tags/Clojure/index.html">Clojure (35)</a></li><li><a href="/tags/Humour/index.html">Humour (10)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (30)</a></li><li><a href="/tags/good_practices/index.html">good practices (25)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492034029&amp;asins=1492034029&amp;linkId=89e376cc517987fd8ac1e9cbbb02bf0e&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
