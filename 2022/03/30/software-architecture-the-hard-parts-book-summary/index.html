@@ -810,50 +810,48 @@ var table = new Tabulator("#styles-table", {
   <li>Tightly coupling violates one of the aspirational goals fo microservices, hence prefer loose contracts and consider using consumer-driven contracts.</li>
 </ul><h1><a name="ch-14"></a>Chapter 14 - Managing Analytical Data</h1>
 <ol>
-  <li>Data Warehouse:</li>
-</ol>
-<ul>
-  <li>Transform data at ingestion.</li>
-  <li>Brittle integration.</li>
-  <li>Usually failed to deliver.</li>
-  <li>Technical partition.</li>
-</ul>
-<ol>
-  <li>Data Lake:</li>
-</ol>
-<ul>
-  <li>Transform data at usage time.</li>
-  <li>Difficult to discover proper assets.</li>
-  <li>PII and sensitive info issues.</li>
-  <li>Technical partitioning.</li>
-</ul>
-<ol>
-  <li>Data Mesh:</li>
-</ol>
-<ul>
-  <li>Like microservices but for analytical data.</li>
-  <li>Principles:
-  <ol>
-    <li>Domain ownership of data:
-    <ul>
-      <li>Distributed and shared in a peer-to-peer fashion.</li>
-    </ul></li>
-    <li>Data as a product:
-    <ul>
-      <li>Data product quantum:</li>
-      <li>Adjacent and coupled to microservices.</li>
-      <li>Always async communication.</li>
-    </ul></li>
-    <li>Self-service platform:
-    <ul>
-      <li>Oriented to sharing and consuming data.</li>
-    </ul></li>
-    <li>Computational federated governance:
-    <ul>
-      <li>Policies automated and embedded as sidecars.</li>
-    </ul></li>
-  </ol></li>
-</ul><h1><a name="ch-15"></a>Chapter 15 - Build Your Own Trade-off Analysis</h1>
+  <li>Data Warehouse:
+  <ul>
+    <li>Transform data at ingestion.</li>
+    <li>Brittle integration.</li>
+    <li>Usually failed to deliver.</li>
+    <li>Technical partition.</li>
+  </ul></li>
+  <li>Data Lake:
+  <ul>
+    <li>Transform data at usage time.</li>
+    <li>Difficult to discover proper assets.</li>
+    <li>PII and sensitive info issues.</li>
+    <li>Technical partitioning.</li>
+  </ul></li>
+  <li>Data Mesh:
+  <ul>
+    <li>Like microservices but for analytical data.</li>
+    <li>Principles:
+    <ol>
+      <li>Domain ownership of data:
+      <ul>
+        <li>Distributed and shared in a peer-to-peer fashion.</li>
+      </ul></li>
+      <li>Data as a product:
+      <ul>
+        <li>Data product quantum:
+        <ul>
+          <li>Adjacent and coupled to microservices.</li>
+          <li>Always async communication.</li>
+        </ul></li>
+      </ul></li>
+      <li>Self-service platform:
+      <ul>
+        <li>Oriented to sharing and consuming data.</li>
+      </ul></li>
+      <li>Computational federated governance:
+      <ul>
+        <li>Policies automated and embedded as sidecars.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+</ol><h1><a name="ch-15"></a>Chapter 15 - Build Your Own Trade-off Analysis</h1>
 <ul>
   <li>Often, a solution has many beneficial aspects, but lacks critical capabilities that prevent success.</li>
   <li>Generic solutions are rarely useful in real-world architectures without applying additional situation-specific context.</li>
