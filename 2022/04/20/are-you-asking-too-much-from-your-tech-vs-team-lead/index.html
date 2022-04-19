@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Kubernetes explained in pictures: StatefulSets, Persistent Volumes and Headless Services</title>
-	<meta content="Explaining Kubernetes StatefulSets, Persistent Volume and Headless Services using KubePark's cloakroom service." name="description" /><meta content="Kubernetes explain simply pictures example dummies like I am five k8s statefulsets stateful sets persistent volume headless service" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Kubernetes explained in pictures: StatefulSets, Persistent Volumes and Headless Services" property="og:title" /><meta content="Explaining Kubernetes StatefulSets, Persistent Volume and Headless Services using KubePark's cloakroom service." property="og:description" /><meta content="https://danlebrero.com/2018/07/22/kubernetes-explained-in-pictures-stateful-sets-persistent-volume-headless-service/" property="og:url" /><meta content="Kubernetes explained in pictures: StatefulSets, Persistent Volumes and Headless Services" name="twitter:title" /><meta content="Explaining Kubernetes StatefulSets, Persistent Volume and Headless Services using KubePark's cloakroom service." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/kubernetes-explained/kubernetes-stateful-sets.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/kubernetes-explained/kubernetes-stateful-sets.jpg" property="og:image" />
+	<title>Are you asking too much from your team/tech lead?</title>
+	<meta content="Expectations for a technical or/and a team leader" name="description" /><meta content="team lead software tech responsibilities career advise" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Are you asking too much from your team/tech lead?" property="og:title" /><meta content="Expectations for a technical or/and a team leader" property="og:description" /><meta content="https://danlebrero.com/2022/04/20/are-you-asking-too-much-from-your-tech-vs-team-lead/" property="og:url" /><meta content="Are you asking too much from your team/tech lead?" name="twitter:title" /><meta content="Expectations for a technical or/and a team leader" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/tech-vs-team-lead/overloaded-team-lead-t.jpeg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/tech-vs-team-lead/overloaded-team-lead-t.jpeg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2018/07/22/kubernetes-explained-in-pictures-stateful-sets-persistent-volume-headless-service/" />
+	<link rel="canonical" href="https://danlebrero.com/2022/04/20/are-you-asking-too-much-from-your-tech-vs-team-lead/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -115,43 +115,77 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Kubernetes explained in pictures: StatefulSets, Persistent Volumes and Headless Services</h1>
+						<h1 class="entry-title">Are you asking too much from your team/tech lead?</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Sun, 22 Jul 2018</li>
+								<li id="entry-date">Wed, 20 Apr 2022</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Explaining Kubernetes StatefulSets, Persistent Volume and Headless Services using KubePark's cloakroom service.</p>
+				 <p class="lead" id="entry-summary">Expectations for a technical or/and a team leader</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/kubernetes-explained/kubernetes-stateful-sets.jpg" />
+							<img src="/images/blog/tech-vs-team-lead/overloaded-team-lead.jpeg" />
 						</div>
 					</div>
 				 
 
-					<div class="entry-content"><p>This is the third part on a series of posts where we explain Kubernetes concepts using a Theme park analogy.</p><p>On the <a href="/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/#content">first post</a> we covered the basics of a Kubernetes cluster.</p><p>On the <a href="/2018/07/16/kubernetes-explained-in-pictures-the-theme-park-analogy/#content">second post</a> we talked about scaling, affinities and taints.</p><p>On this post, we will talk StatefulSets, Persistent Volumes and Headless Services.</p><h2>The cloakroom and the cloakroom service</h2><p>To improve the KubePark’s experience, you decide to provide a free of charge cloakroom service. You use the same fun ride template to inform your crew to build one cloakroom in the park, you add a new wayfinder colour for it, and visitors happily start using it.</p><p>Complains about lost clothes don’t get long to start. Investigating what is going on, it doesn’t take you long to realize what is going on when you see your maintenance crew replacing the faulty cloakroom:</p><p><img src="/images/blog/kubernetes-explained/kubernetes-stateful-set-maintenance.jpg" alt="kubernetes stateful set maintenance" title="Kubernetes stateful set maintenance" /></p><p>Maybe the idea of <a href="/2018/07/09/kubernetes-explained-in-pictures-the-theme-park-analogy/#maintenance">burning everything to the ground</a> was not without its flaws. </p><p>Similarly, when the parcel with the cloakroom becomes unavailable, either due to some flood or because your control crew is reducing the number of rented parcels, all the clothes in that cloakroom are left behind. More lost clothes!</p><p>This is obviously not good publicity for KubePark, and your landlord doesn’t waste time offering his self storage service <strong>(k8s <a href="https://cloud.google.com/kubernetes-engine/docs/concepts/persistent-volumes">persistent volume</a>)</strong>, built in a nuclear shelter, as a solution. </p><p><img src="/images/blog/kubernetes-explained/kubernetes-persistent-volume.jpg" alt="kubernetes stateful set maintenance" title="Kubernetes persistent volume" /></p><p>The only thing that you will need to do is specify in the cloakroom’s plan how many storage units must be rented and your control crew will take of doing all the paperwork <strong>(k8s <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/">dynamic persistent volume claim</a>)</strong>. </p><p>As the self storage is outside the park, the cloakroom’s crew will run to the storage unit to leave and retrieve the visitors’ items, making the whole service slower, but at least the items will not get lost. </p><p>Problem solved! At least for a short while …</p><h2>Scaling your cloakroom service</h2><p>As KubePark gets more popular, the queue to leave the clothes starts to be unbearable. You panic: there is just one key per storage unit and the key cannot be duplicated. Increasing the number of cloakrooms will not reduce the queue! </p><p>Each cloakroom must have its own storage unit, but this brings a whole new set of problems.</p><p><img src="/images/blog/kubernetes-explained/kubernetes-stateful-set-wrong-instance.jpg" alt="kubernetes stateful set headless service missing" title="Kubernetes stateful set wrong instance" /></p><p>First, visitors will need redeem the cloakroom’s receipt in exactly the same cloakroom that they received the receipt from. </p><p>Second, if a cloakroom must be moved or replaced for maintenance, the replacement must keep the same name and storage unit key as the cloakroom that it replaced:</p>
+					<div class="entry-content"><p>Somebody recently asked:</p>
+<blockquote><p>How do you learn to be a tech lead?</p>
+</blockquote><p>Knowing her background, I replied with another question:</p>
+<blockquote><p>Do you mean tech lead or team lead?</p>
+</blockquote><p>The difference was not obvious to me until I worked as a tech lead in a team that had a team lead.</p><h2>Team vs Technical lead</h2><p>On that particular job, as a tech lead, my responsibilities were:</p>
 <ul>
-  <li>The same name so that from the visitors point of view is the same cloakroom.</li>
-  <li>The same storage unit because if not, the storage unit would be empty and items stored in the previous storage unit inaccessible.</li>
-</ul><p>This is so complex that it deserves its own attraction-like template <strong>(k8s <a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/">statefulsets</a>, note that StatefulSets also come with some additional ordering guarantees)</strong>. </p><p>Third, remember that the coloured wayfinder takes visitors to any attraction that matches a tag, but here the visitor must go to the receipt’s cloakroom, so coloured wayfinder is of no use. Even if more cumbersome for visitors, you end up installing a sign posts <strong>(k8s <a href="https://kubernetes.io/docs/concepts/services-networking/service/#headless-services">headless service</a>)</strong> with the name and direction of the cloakrooms, so that the visitor can find by herself the appropriate cloakroom.</p><p>Now KubePark can have hundreds of cloakrooms. A dream come true.</p><p><img src="/images/blog/kubernetes-explained/kubernetes-stateful-set-final.jpg" alt="kubernetes stateful set headless service" title="Kubernetes stateful set headless service" /></p><h2>Is that all?</h2><p>Almost! There are still some additional concepts to be aware of, but I don’t feel they need a KubePark analogy:</p>
-<ol>
-  <li>Namespaces, like the usual file system folders.</li>
-  <li>DaemonSets, run a pod in each and every parcel, current or future.</li>
-  <li>Secrets and Config Maps, equivalent to configuration files.</li>
-  <li>Jobs, one-off tasks.</li>
-  <li>CronJobs, a job with a cron.</li>
-  <li>Priorities, to decide what attractions are more important when scheduling or running out of resources.</li>
-  <li>Init Containers, to prepare the ground for a pod.</li>
-  <li>Replication Controllers, obsolete, replaced by Replica Set.</li>
-  <li>Replica Set, you can consider it an implementation detail of Deployments.</li>
-  <li><a href="https://kubernetes.io/docs/concepts/workloads/pods/disruptions/">Disruptions and rolling update</a>, how many pods can be down at the same time?</li>
-  <li>Kubelet/Scheduler/Master Controller/API server: <a href="https://jvns.ca/blog/2017/06/04/learning-about-kubernetes/">k8s internals</a>.</li>
-</ol><p>And of course, there are still a myriad of details on each of the concepts that you will need to be aware of, but I hope that you are a little bit less lost in the Kubernetes world.</p><p>Enjoy your Kubernetes ride!</p></div>
+  <li>Choose the right tool for the job: be aware of existing tools/libraries/frameworks, their trade-offs and what was appropriate for the company’s context.</li>
+  <li>Code contributions.</li>
+  <li>Code quality (aka bugs).</li>
+  <li>Production issues/outages.</li>
+  <li>Design and architecture, including NFRs.</li>
+  <li>Developer productivity: from testing, CI/CD, release, monitoring, …</li>
+  <li>Technical mentoring.</li>
+  <li>Awareness on other parts of the system: functionality available, technologies used, trade-off, high level workings, lessons learned.</li>
+  <li>Applying the company’s architecture constraints, principles and practices, and raising concerns when we wanted to deviate from those.</li>
+  <li>Technology proof of concept.</li>
+  <li>Technical assessment of candidates.</li>
+  <li>Technical debt prioritisation.</li>
+</ul><p>My <a href="https://leonardoalmeida.com/">fellow team lead</a> would take care of:</p>
+<ul>
+  <li>People’s career progression.</li>
+  <li>Performance appraisals.</li>
+  <li>1-2-1.</li>
+  <li>Reporting up and down.</li>
+  <li>Recruitment, team composition.</li>
+  <li>Onboarding.</li>
+  <li>Internal and inter-team conflicts.</li>
+  <li>Project management.</li>
+  <li>Inter-team coordination and dependencies.</li>
+  <li>And a myriad of other things that I was not aware of.</li>
+</ul><p>What we will both do:</p>
+<ul>
+  <li>Backlog grooming: me for feasibility and rough sizing. Team lead to know if we had the capacity and for stakeholder management.</li>
+  <li>Development process improvements: me more to suggest, team lead more as Scrum Master and lean/agile coach.</li>
+</ul><p>Basically I will become a software architect while the team lead would become an engineering manager.</p><h2>Choices</h2><p>Continuing with the conversation:</p><p>Me: “What path are you asking about? You cannot do both.”</p><p>Tech lead: “Both is actually what I have been asked to do.”</p><p>Me: “How is the experience of trying to do both?”</p><p>Tech lead: “Is it a lot. I spend most of the time doing management, admin and planning.”</p><p>Me: “So you are team leading, not tech leading. But if you are not doing the tech leading (because you have no time), then you should raise it with your manager.”</p><p>Tech lead: “Haven’t you ever act as both the team and tech lead?”</p><p>Me: "In my very early days (~2002-2004), in a very small company in a team of ~6 people. Of the list above, I know I did not had to (or did not know I had to):</p>
+<ul>
+  <li>Production issues/outages: never got anything successful in production, hence no users, hence no production issues.</li>
+  <li>Design and architecture: system that we built were simple.</li>
+  <li>Developer productivity: mostly unknown things for me back then.</li>
+  <li>Awareness on other parts of the system: there were no other parts, not other teams.</li>
+  <li>Applying the company’s architecture constraints: No such a thing.</li>
+  <li>Technology proof of concept: no time for this.</li>
+  <li>Technical debt prioritisation:</li>
+  <li>People’s career progression: we were trying to survive, not planning long or mid term, also I was probably not aware.</li>
+  <li>Performance appraisals: see above.</li>
+  <li>1-2-1: see above.</li>
+  <li>Reporting up and down: company was small enough to not need this.</li>
+  <li>Recruitment, team composition: recruitment yes, but the team composition was pretty static.</li>
+  <li>Internal and inter-team conflicts: Internal yes, but no other teams.</li>
+  <li>Inter-team coordination and dependencies: no other teams."</li>
+</ul>
+<hr /><p>That is a long list of things I did not do. </p><p>Are you asking too much from your team/tech lead? </p><p>If so, what is she neglecting? Do you agree with her choices?</p></div>
 
 				 
 
@@ -165,7 +199,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Kubernetes/index.html">Kubernetes </a>
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Career/index.html">Career </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
@@ -219,8 +253,8 @@ s.setAttribute('data-timestamp', +new Date());
 
 					<div class="container">
 					<div class="row">
-						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=B07QH3JCC6&amp;asins=B07QH3JCC6&amp;linkId=6a3c9bb3dbde53b12601499cac21de39&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
-						
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=B06XP3GJ7F&amp;asins=B06XP3GJ7F&amp;linkId=8243baf45fb1d99ef848fecfa6a9c6b9&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner2" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492043451&amp;asins=1492043451&amp;linkId=c60bf9166a29a4ef75a1348aaaee30d6&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
 					</div>
 					</div>
 
