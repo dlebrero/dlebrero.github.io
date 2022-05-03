@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Design It!: From Programmer to Software Architect</title>
+	<meta content="Book notes on &quot;Design It!: From Programmer to Software Architect&quot; by Michael Keeling" name="description" /><meta content="Book review notes summary design it programmer software architect career" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Design It!: From Programmer to Software Architect" property="og:title" /><meta content="Book notes on &quot;Design It!: From Programmer to Software Architect&quot; by Michael Keeling" property="og:description" /><meta content="https://danlebrero.com/2022/05/04/design-it-book-summary/" property="og:url" /><meta content="Book notes: Design It!: From Programmer to Software Architect" name="twitter:title" /><meta content="Book notes on &quot;Design It!: From Programmer to Software Architect&quot; by Michael Keeling" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/design-it/design-it.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/design-it/design-it.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2022/05/04/design-it-book-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Design It!: From Programmer to Software Architect</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 4 May 2022</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Design It!: From Programmer to Software Architect" by Michael Keeling</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/design-it/design-it.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3q8oElm">Design It!: From Programmer to Software Architect</a> by <a href="https://twitter.com/michaelkeeling">Michael Keeling</a>.</p><p>“From Programmer to Software Architect” is a spot on subtitle.</p><h1>Key Insights</h1>
+<ul>
+  <li>SW design is a constant struggle to find the right balance between the things you want and the reality you must accept.</li>
+  <li>Every team has at least one architect. The best teams have several.</li>
+  <li>For every SW system you build, briefly describe the system and what you learned during your time developing it.</li>
+  <li>Design Thinking Principles (From <a href="https://amzn.to/3taqfJb">Design Thinking: Understand – Improve – Apply</a>):
+  <ol>
+    <li>All design is social in nature: for and with people.</li>
+    <li>Preserve ambiguity:
+    <ul>
+      <li>Minimalist architecture:
+      <ul>
+        <li><a href="https://www.bredemeyer.com/pdf_files/MinimalistArchitecture.PDF">Less is More with Minimalist Architecture</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>All design is redesign.</li>
+    <li>Make ideas tangible to facilitate communication.</li>
+  </ol></li>
+  <li>Emphasize:
+  <ol>
+    <li>Treat solutions as experiments.</li>
+    <li>Focus on reducing risks.</li>
+    <li>Work to simplify problems.</li>
+    <li>Iterate quickly to learn quickly.</li>
+    <li>Think about the problem and solution at the same time.</li>
+  </ol></li>
+  <li><a href="#risk">Use risk to decide what to focus on.</a></li>
+  <li>Architecturally Significant Requirements:
+  <ol>
+    <li>Constraints:
+    <ul>
+      <li>Well-chosen constraints simplify the problem.</li>
+      <li>Early design decisions can become constraints in the future.</li>
+    </ul></li>
+    <li>Influential functional requirements:
+    <ul>
+      <li>Identifying influential functional requirements is equal part of art and science.</li>
+    </ul></li>
+    <li>Quality Attributes.</li>
+    <li>Others:
+    <ul>
+      <li>Tech trends.</li>
+      <li>Architecture skills, knowledge.</li>
+      <li>Team skills, knowledge.</li>
+      <li>Team organization.</li>
+    </ul></li>
+  </ol></li>
+  <li>Our confidence in a decision increases after seeing multiple alternatives.</li>
+  <li>Decision matrix: Do not use numbers as they give a false sense of confidence and precision.</li>
+  <li>Complexity is an inevitable by-product of every successful software system.</li>
+  <li>Discussion lacking in disagreement may seem like positive progress, but it is more likely to be the opposite.</li>
+  <li>Sometimes a simple table is all that is needed.</li>
+  <li>Precision gets in the way of communication: accurate, not precise.</li>
+  <li>A good-looking document tells readers the content is trustworthy and was created by a professional.</li>
+  <li>Sometimes your pile of rejected decisions can be more telling than a lengthy explanation.</li>
+  <li>Keep design authority when risks of failure are high.</li>
+  <li>The discussion is often more important than the option picked.</li>
+  <li><a href="https://medium.com/the-xplane-collection/updated-empathy-map-canvas-46df22df3c8a">Empathy map</a>.</li>
+  <li><a href="https://agilewarrior.wordpress.com/2010/11/06/the-agile-inception-deck/">The Agile Inception Deck</a>.</li>
+</ul><h1>All activities</h1><h3>Understand</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Activity </th>
+      <th>Time </th>
+      <th>Participants </th>
+      <th>Notes </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Choose one thing </td>
+      <td> </td>
+      <td>All stakeholders </td>
+      <td>Clear prioritization and disagreement. </td>
+    </tr>
+    <tr>
+      <td>Empathy map </td>
+      <td>10-30m </td>
+      <td>Solo or 3-5. Devs + Arch </td>
+      <td>For the team to develop empathy. </td>
+    </tr>
+    <tr>
+      <td>Goal-Question-Metric workshop </td>
+      <td>15-90m </td>
+      <td>1-5 people. </td>
+      <td>Prioritized metrics to gather. </td>
+    </tr>
+    <tr>
+      <td>Interview stakeholders </td>
+      <td>30-60m per interview </td>
+      <td>1-2-1 or small stakeholder group </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>List assumptions </td>
+      <td>15-30m </td>
+      <td>Whole team in 2-5 groups </td>
+      <td>Take assumptions out of the shadows. </td>
+    </tr>
+    <tr>
+      <td>Mini-Quality attributes workshop </td>
+      <td>90-180m </td>
+      <td>Arch + 3-5 stakeholders </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Point-of-View mad lib </td>
+      <td>30-45m </td>
+      <td>1-3 people. Any stakeholder </td>
+      <td>Summarize business goals and other needs. </td>
+    </tr>
+    <tr>
+      <td>Response measure straw man </td>
+      <td>Combine with other </td>
+      <td>Architect prepares </td>
+      <td>Get conversation moving. </td>
+    </tr>
+    <tr>
+      <td>Stakeholder map </td>
+      <td>30-45m </td>
+      <td>1-25. Whole team + stakeholders </td>
+      <td>Relations and interactions.</td>
+    </tr>
+  </tbody>
+</table><h3>Explore</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Activity </th>
+      <th>Time </th>
+      <th>Participants </th>
+      <th>Notes </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Personify the architecture </td>
+      <td> </td>
+      <td> </td>
+      <td>It is ok to feel silly.</td>
+    </tr>
+    <tr>
+      <td>Architecture flip book </td>
+      <td>30-45m </td>
+      <td>1-3 people </td>
+      <td>Record all steps on design iteration.</td>
+    </tr>
+    <tr>
+      <td>Component responsibility collaborator cards </td>
+      <td>30-90m </td>
+      <td>Solo or 3-5 </td>
+      <td>Propose architectural elements. </td>
+    </tr>
+    <tr>
+      <td>Concept map </td>
+      <td>30-60m </td>
+      <td>1-3 technical stakeholders </td>
+      <td>Uncover missing domain concepts. </td>
+    </tr>
+    <tr>
+      <td>Divide and conquer </td>
+      <td> </td>
+      <td>Groups of 2-4 </td>
+      <td>To cover a lot of ground in parallel. </td>
+    </tr>
+    <tr>
+      <td>Event Storming </td>
+      <td>90m </td>
+      <td>2-12. Expert + dev team </td>
+      <td>Identify domain events. </td>
+    </tr>
+    <tr>
+      <td>Group Posters </td>
+      <td>20-30m </td>
+      <td>Groups 2-5 people </td>
+      <td>To summarize outcomes. </td>
+    </tr>
+    <tr>
+      <td>Round-Robin design </td>
+      <td>15-45m </td>
+      <td>3-12 tech stakeholders </td>
+      <td>Combine ideas + build consensus. </td>
+    </tr>
+    <tr>
+      <td>Whiteboard Jam </td>
+      <td>Up to the group </td>
+      <td>3-5 tech stakeholders </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table><h3>Make</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Activity </th>
+      <th>Notes </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Architecture Decision Records </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Architecture haiku</td>
+      <td>One-page uber-terse summary </td>
+    </tr>
+    <tr>
+      <td>Context diagram </td>
+      <td>Agreement with system scope</td>
+    </tr>
+    <tr>
+      <td>Greatest hits reading list </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Inception deck </td>
+      <td>10 important questions at the start of a new project </td>
+    </tr>
+    <tr>
+      <td>Modular decomposition diagram </td>
+      <td>Tree diagram that shows relationships at different granularities </td>
+    </tr>
+    <tr>
+      <td>Paths not taken</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Prototype to learn or decide</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sequential diagram</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>System metaphor </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table><h3>Evaluate</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Activity </th>
+      <th>Time </th>
+      <th>Participants </th>
+      <th>Notes </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Architecture Briefing </td>
+      <td>45-60m preparation. 30m present. 30m questions </td>
+      <td>Arch + wide audience </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Code review </td>
+      <td>Ongoing </td>
+      <td>2 to whole team </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Decision Matrix </td>
+      <td>Varies </td>
+      <td>Arch + Stakeholders </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Observer Behaviour </td>
+      <td> </td>
+      <td> </td>
+      <td>Observability in production </td>
+    </tr>
+    <tr>
+      <td>Question-Comment-Concern </td>
+      <td>30-90m </td>
+      <td>Whole team </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Risk storming </td>
+      <td>60-90m </td>
+      <td>3-7 devs </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sanity Check </td>
+      <td>5-10m </td>
+      <td>Whole team</td>
+      <td>Pop quiz</td>
+    </tr>
+    <tr>
+      <td>Scenario walk-through </td>
+      <td>20-30m per quality attribute </td>
+      <td>3-7 people </td>
+      <td>Use early </td>
+    </tr>
+    <tr>
+      <td>Sketch and Compare </td>
+      <td>20-30m </td>
+      <td>3-5 people </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table><p><br /></p><h1>TOC</h1>
+<ul>
+  <li><a href="#part-1">Part I - Introducing Software Architecture</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - Become a Software Architect</a></li>
+    <li><a href="#ch-2">Chapter 2 - Design Thinking Fundamentals</a></li>
+  </ul></li>
+  <li><a href="#part-2">Part II - Architecture Design Fundamentals</a>
+  <ul>
+    <li><a href="#ch-3">Chapter 3 - Devise a Design Strategy</a></li>
+    <li><a href="#ch-4">Chapter 4 - Empathize with Stakeholders</a></li>
+    <li><a href="#ch-5">Chapter 5 - Dig for Architecturally Significant Requirements (ASR)</a></li>
+    <li><a href="#ch-6">Chapter 6 - Choose an Architecture (Before It Chooses You)</a></li>
+    <li><a href="#ch-7">Chapter 7 - Create a Foundation with Patterns</a></li>
+    <li><a href="#ch-8">Chapter 8 - Manage Complexity with Meaningful Models</a></li>
+    <li><a href="#ch-9">Chapter 9 - Host an Architecture Design Studio</a></li>
+    <li><a href="#ch-10">Chapter 10 - Visualize Design Decisions</a></li>
+    <li><a href="#ch-11">Chapter 11 - Describe the Architecture</a></li>
+    <li><a href="#ch-12">Chapter 12 - Give the Architecture a Report Card</a></li>
+    <li><a href="#ch-13">Chapter 13 - Empower the Architects of Your Team</a></li>
+  </ul></li>
+  <li><a href="#part-3">Part III - The Architect’s Toolbox</a>
+  <ul>
+    <li><a href="#ch-14">Chapter 14 - Activities to Understand the Problem</a></li>
+    <li><a href="#ch-15">Chapter 15 - Activities to Explore Potential Solutions</a></li>
+    <li><a href="#ch-16">Chapter 16 - Activities to Make the Design Tangible</a></li>
+    <li><a href="#ch-17">Chapter 17 - Activities to Evaluate Design Options</a></li>
+  </ul></li>
+</ul><h1><a name="part-1"></a>Part I - Introducing Software Architecture</h1><h2><a name="ch-1"></a>Chapter 1 - Become a Software Architect</h2>
+<ul>
+  <li>What architects do?
+  <ol>
+    <li>Define the problem from an engineering perspective.</li>
+    <li>Partition the system and assign responsibilities.</li>
+    <li>Keep an eye on the bigger picture:
+    <ul>
+      <li>System as a whole.</li>
+      <li>SW design is a constant struggle to find the right balance between the things you want and the reality you must accept.</li>
+    </ul></li>
+    <li>Decide trade-offs among quality attributes.</li>
+    <li>Manage technical debt.</li>
+    <li>Grow the team’s architecture skills:
+    <ul>
+      <li>Architecture design is a social activity.</li>
+    </ul></li>
+  </ol></li>
+  <li>A system’s software architecture is the set of significant design decisions about how the software is organized to promote desired quality attributes and other properties.</li>
+  <li>Software structure’s elements and relations:
+  <ol>
+    <li>Module: structure that exists at design time (class, DB table).</li>
+    <li>Component and connector (C&amp;C): exits at runtime (object, process).</li>
+    <li>Allocations: how modules and C&amp;C elements correspond to each other.
+    <ul>
+      <li>Aka: mapping structures.</li>
+    </ul></li>
+  </ol></li>
+  <li>Quality attribute is any externally visible characteristic by which stakeholders judge a SW system’s goodness.</li>
+  <li>Every team has at least one architect. The best teams have several.</li>
+  <li>For every SW system you build, briefly describe the system and what you learned during your time developing it.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Design Thinking Fundamentals</h2>
+<ul>
+  <li>Design thinking: problem-solving approach that puts humans at the center.</li>
+  <li>Principles (From <a href="https://amzn.to/3taqfJb">Design Thinking: Understand – Improve – Apply</a>):
+  <ol>
+    <li>All design is social in nature:
+    <ul>
+      <li>For and with people.</li>
+    </ul></li>
+    <li>Preserve ambiguity:
+    <ul>
+      <li>Minimalist architecture:
+      <ul>
+        <li><a href="https://www.bredemeyer.com/pdf_files/MinimalistArchitecture.PDF">Less is More with Minimalist Architecture</a>.</li>
+        <li>Only focus on how high-priority quality attributes are achieved.</li>
+      </ul></li>
+    </ul></li>
+    <li>All design is redesign.</li>
+    <li>Make ideas tangible to facilitate communication.</li>
+  </ol></li>
+  <li>To design an architecture:
+  <ol>
+    <li>Pick a mindset.</li>
+    <li>Pick a practice within that mindset.</li>
+    <li>Apply practice to learn something new.</li>
+    <li>Goto (1).</li>
+  </ol></li>
+  <li>Design mindsets:
+  <ol>
+    <li>Understand:
+    <ul>
+      <li>Requires empathy.</li>
+    </ul></li>
+    <li>Explore.</li>
+    <li>Make.</li>
+    <li>Evaluate.</li>
+  </ol></li>
+</ul><h1><a name="part-2"></a>Part II - Architecture Design Fundamentals</h1><h2><a name="ch-3"></a>Chapter 3 - Devise a Design Strategy</h2>
+<ul>
+  <li>Emphasize:
+  <ol>
+    <li>Treat solutions as experiments.</li>
+    <li>Focus on reducing risks.</li>
+    <li>Work to simplify problems.</li>
+    <li>Iterate quickly to learn quickly.</li>
+    <li>Think about the problem and solution at the same time.</li>
+  </ol></li>
+  <li>How much design up front:
+  <ul>
+    <li>Barry Boehm, Architecting: how much and when. Chapter 10 of <a href="https://amzn.to/3JS2POT">Making Software</a>.</li>
+    <li>Total project time == dev time + architecture + rework.</li>
+    <li>Architecture reduces rework time.</li>
+    <li>Bigger systems benefit the most from more up-front architecture work.</li>
+    <li><a href="http://cosysmo.mit.edu">COSYSMO</a> and <a href="https://en.wikipedia.org/wiki/COCOMO">COCOMO II</a>.</li>
+  </ul></li>
+  <li><a name="risk"></a>Use risk to decide what to focus on:
+  <ul>
+    <li>[conditions] might [consequences]</li>
+    <li>Deal with risk:
+    <ol>
+      <li>Reduce probability.</li>
+      <li>Reduce impact.</li>
+      <li>Push out the time frame of the risk.</li>
+      <li>Remove condition.</li>
+      <li>Accept it and do nothing.</li>
+    </ol></li>
+    <li>Which mindset:
+    <ul>
+      <li>Understand: risk is about problem.</li>
+      <li>Explore: risk is about solution.
+      <ul>
+        <li>Have you seen enough solution alternatives?</li>
+      </ul></li>
+      <li>Make: risk is about communication.
+      <ul>
+        <li>Do stakeholders fully understand design and architecture?</li>
+      </ul></li>
+      <li>Evaluate: risk involves a design decision or the design’s overall fit.
+      <ul>
+        <li>Do we need to make a design decision?</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Create a design plan.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Empathize with Stakeholders</h2>
+<ul>
+  <li>Create a stakeholder map with stakeholders, stakeholders groups and their relationship.</li>
+  <li>Record business goal statements:
+  <ul>
+    <li>Subject, outcome, context.</li>
+    <li>Outcome: measurable.</li>
+    <li>Context: insightful and not obvious.</li>
+  </ul></li>
+  <li>Most systems only have three to five business goals.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Dig for Architecturally Significant Requirements (ASR)</h2>
+<ul>
+  <li>4 Categories:
+  <ol>
+    <li>Constraints:
+    <ul>
+      <li>Unchangeable. Non-negotiable.</li>
+      <li>Well-chosen constraints simplify the problem.</li>
+      <li>Technical: programming lang, platforms, components, technology.</li>
+      <li>Business: team structure, schedule, budget, legal.</li>
+      <li>Early design decisions can become constraints in the future.</li>
+      <li>Keep a XLS: constraint, origin, type, context.</li>
+    </ul></li>
+    <li>Influential functional requirements (FR):
+    <ul>
+      <li>Identifying influential functional requirements is equal part of art and science.</li>
+    </ul>
+    <ol>
+      <li>Sketch notional architecture.</li>
+      <li>Identify classes of requirements:
+      <ul>
+        <li>Group FR with the same architecture elements (like persistence).</li>
+        <li>FR that seem difficult to implement.</li>
+        <li>High-value, high-priority FR.</li>
+      </ul></li>
+      <li>Try each class of requirements against the notional architecture:
+      <ul>
+        <li>If it is not obvious how to implement, the it might be an influential FR.</li>
+      </ul></li>
+    </ol></li>
+    <li>Others:
+    <ul>
+      <li>Tech trends.</li>
+      <li>Architecture skills, knowledge.</li>
+      <li>Team skills, knowledge.</li>
+      <li>Team organization.</li>
+    </ul></li>
+    <li>Quality Attributes:
+    <ul>
+      <li>Use quality attribute scenarios:
+      <ul>
+        <li>Parts:
+        <ul>
+          <li>Stimulus: event that triggers the scenario.</li>
+          <li>Source: who.</li>
+          <li>Artifact: part of the system.</li>
+          <li>Response: externally visible action by the artifact as result of the stimulus.</li>
+          <li>Response measure:
+          <ul>
+            <li>Success criteria.</li>
+            <li>Specific and measurable.</li>
+          </ul></li>
+          <li>Environment context: “normal”, peak load, failure condition.</li>
+          <li>Keep in XLS:</li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Quality Attribute </th>
+      <th>Scenario </th>
+      <th>Priority </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Availability </td>
+      <td>When DB does not respond, respond with stale data within 3 secs </td>
+      <td>high </td>
+    </tr>
+    <tr>
+      <td>… </td>
+      <td>… </td>
+      <td>… </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Build an architect significant requirements doc:
+  <ul>
+    <li>Purpose and scope.</li>
+    <li>Intended audience.</li>
+    <li>Business context.</li>
+    <li>Quality attribute requirements:
+    <ul>
+      <li>Top scenarios.</li>
+    </ul></li>
+    <li>Influential FR:
+    <ul>
+      <li>Top users or user persona.</li>
+      <li>Use cases or user stories.</li>
+    </ul></li>
+    <li>Appendix A: Glossary.</li>
+    <li>Appendix B: Quality Attributes Taxonomy.</li>
+  </ul></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Choose an Architecture (Before It Chooses You)</h2>
+<ul>
+  <li>Our confidence in a decision increases after seeing multiple alternatives.</li>
+  <li>You need to explore:
+  <ol>
+    <li>Architecture elements and their responsibilities.</li>
+    <li>How elements interact with each other. Their interfaces.</li>
+    <li>Understand the domain.</li>
+    <li>Tech and framework that promote quality attributes.</li>
+    <li>How app will be deployed.</li>
+    <li>Look at past designs.</li>
+  </ol></li>
+  <li>Decision matrix:
+  <ul>
+    <li>I personally like text + color (red, white, green).</li>
+    <li>Do not use numbers as they give a false sense of confidence and precision.</li>
+  </ul></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Option A </th>
+      <th>Option B </th>
+      <th>Option C </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Property 1 </td>
+      <td>promotes </td>
+      <td>+ </td>
+      <td><i class="fas fa-arrow-up"></i> </td>
+    </tr>
+    <tr>
+      <td>Property 2 </td>
+      <td>inhibits </td>
+      <td>- </td>
+      <td><i class="fas fa-arrow-down"></i> </td>
+    </tr>
+    <tr>
+      <td>Property 3 </td>
+      <td>neutral </td>
+      <td>o </td>
+      <td><i class="fas fa-arrow-right"></i> </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Create an element responsibility catalog:
+  <ul>
+    <li>Assign to each element the influential functional requirement.</li>
+  </ul></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Create a Foundation with Patterns</h2>
+<ul>
+  <li>See <a href="/2021/11/17/fundamentals-of-software-architecture-summary/#content">Fundamentals of Software Architecture</a>.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Manage Complexity with Meaningful Models</h2>
+<ul>
+  <li>Complexity is an inevitable by-product of every successful software system.</li>
+  <li>Abstractions help us focus on specific details at the expense of others.</li>
+  <li>Good architecture models:
+  <ul>
+    <li>Establish the vocabulary of design.</li>
+    <li>Direct attention to interesting details.</li>
+    <li>Allows to reason about quality attributes.</li>
+    <li>Captures the architect’s intention.</li>
+  </ul></li>
+  <li>Design a meta-model: concepts and rules to use those concepts.</li>
+  <li>Building models into the code:
+  <ul>
+    <li>It is possible to shrink the model-code gap, but it cannot be closed completely.</li>
+  </ul>
+  <ol>
+    <li>Use architecture vocabulary.</li>
+    <li>Organize code following architecture elements.</li>
+    <li>Enforce relations, so that it becomes impossible to violate the architecture.</li>
+    <li>Add comments.</li>
+  </ol></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Host an Architecture Design Studio</h2>
+<ul>
+  <li>Design studio encourages group collaboration and has strict time constraints to help the team see a broad range of ideas in a short time frame.</li>
+  <li>Creates buy-in of everybody involved.</li>
+  <li>Outcomes:
+  <ul>
+    <li>Things to make.</li>
+    <li>Things to research more.</li>
+    <li>New open questions.</li>
+  </ul></li>
+  <li>Typically, few hours to a day.</li>
+  <li>Steps:
+  <ol>
+    <li>Prepare:
+    <ul>
+      <li>Business and workshop goals.</li>
+      <li>Quality attributes.</li>
+      <li>ASRs.</li>
+      <li>Choose participants:
+      <ul>
+        <li>3-10.</li>
+        <li>Diverse background.</li>
+      </ul></li>
+      <li>Discussion lacking in disagreement may seem like positive progress, but it is more likely to be the opposite.</li>
+    </ul></li>
+    <li>Kick-off:
+    <ul>
+      <li>Share context.</li>
+    </ul></li>
+    <li>Create:
+    <ul>
+      <li>Choose design activity:
+      <ul>
+        <li><a href="http://mydemolife.blogspot.com/2008/12/tell-show-tell-technique-what-else.html">Tell-show-tell</a> to explain the activity.</li>
+        <li>Time boxed. Minimum 5 mins.</li>
+      </ul></li>
+    </ul></li>
+    <li>Share:
+    <ul>
+      <li>3-5 mins.</li>
+      <li>Only main points.</li>
+      <li>No questions or comments.</li>
+    </ul></li>
+    <li>Critique:
+    <ul>
+      <li>Specific.</li>
+      <li>Focus on facts.</li>
+      <li>Point also good things.</li>
+    </ul></li>
+    <li>Iterate:
+    <ul>
+      <li>Go to 3.</li>
+      <li>Tweak the group dynamics.</li>
+    </ul></li>
+    <li>Close:
+    <ul>
+      <li>Reflect.</li>
+      <li>Decide specific actions.</li>
+    </ul></li>
+  </ol></li>
+  <li>Use a parking lot to record interesting ideas for other time, and keep the workshop moving.</li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Visualize Design Decisions</h2>
+<ul>
+  <li>Sometimes a simple table is all that is needed.</li>
+  <li>Sometimes precision gets in the way of communication:
+  <ul>
+    <li>Accurate, not precise.</li>
+  </ul></li>
+  <li>Tips:
+  <ul>
+    <li>Always include a legend.</li>
+    <li>Add a descriptive title.</li>
+    <li>Highlight patterns.</li>
+    <li>Be consistent.</li>
+    <li>Provide descriptive prose, and/or text annotations.</li>
+  </ul></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Describe the Architecture</h2>
+<ul>
+  <li>Which architecture description approach should I use?<br /> <img src="/images/blog/books/design-it/describe-architecture.jpg" alt="describe architecture" /></li>
+  <li>Tribal:
+  <ul>
+    <li>Oral tradition, informal sketching, story telling.</li>
+  </ul></li>
+  <li>Communal:
+  <ul>
+    <li>When you find yourself telling the same story to more than a few people.</li>
+    <li>Architecture Haiku, ADR, architecturally evident coding style.</li>
+  </ul></li>
+  <li>Formal:
+  <ul>
+    <li>High-risk systems or architecture decisions.</li>
+    <li>Traditional SW architecture decision (SAD).</li>
+    <li>Templates:
+    <ul>
+      <li><a href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=484159">SEI views and beyond</a>.</li>
+      <li><a href="https://en.wikipedia.org/wiki/ISO/IEC_42010">ISO/IEC/IEEE 42010</a>.</li>
+    </ul></li>
+  </ul></li>
+  <li>Always keep the audience in mind:
+  <ul>
+    <li>Use <a href="https://www.nngroup.com/articles/empathy-mapping/">empathy map</a>.</li>
+  </ul></li>
+  <li>A good-looking document tells readers the content is trustworthy and was created by a professional.</li>
+  <li>Establish viewpoints:
+  <ul>
+    <li>Arch from the point of view of a related set of stakeholder concerns.</li>
+    <li>Example standard viewpoints:
+    <ul>
+      <li>SEI views and beyond.</li>
+      <li>Simon Brown’s <a href="https://c4model.com/">C4 model</a>.</li>
+      <li>Phillipe Krutchen’s <a href="https://ieeexplore.ieee.org/document/469759">4+1 view model</a>.</li>
+    </ul></li>
+    <li>Usually organized around quality attributes or stakeholder needs.</li>
+  </ul></li>
+  <li>Explain rationale:
+  <ul>
+    <li>Sometimes your pile of rejected decisions can be more telling than a lengthy explanation.</li>
+  </ul></li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Give the Architecture a Report Card</h2>
+<ul>
+  <li>Benefits of evaluation:
+  <ul>
+    <li>Educate team.</li>
+    <li>Create buy-in.</li>
+    <li>Reduce delivery risks.</li>
+    <li>Improve architecture.</li>
+  </ul></li>
+  <li>Design Rubric:
+  <ul>
+    <li>2 parts:
+    <ol>
+      <li>Criteria:
+      <ul>
+        <li>ASR as a guide.</li>
+        <li>Important, essential, distinct, observable and measurable, precise and unambiguous.</li>
+      </ul></li>
+      <li>Rating:
+      <ul>
+        <li>Select scale:
+        <ul>
+          <li>1-2: all or nothing. Few reviewers.</li>
+          <li>1-3: minimum acceptable threshold. Multiple reviewers.</li>
+          <li>1-4: Detailed feedback desired.</li>
+        </ul></li>
+        <li>Discuss any “1” score, even if the average is acceptable.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>Organize an architecture evaluation workshop:
+  <ul>
+    <li>Steps: prepare, prime reviewers, assess, analyze, follow-up.</li>
+    <li>It is important to understand why the design is fit (or not).</li>
+    <li>Great designs can always be improved.</li>
+    <li>Gold standard:
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Architecture_tradeoff_analysis_method">ATAM</a>.</li>
+      <li>See <a href="https://amzn.to/3f7XMLS">Software Architecture in Practice</a>.</li>
+      <li>Multi-day or multi-week.</li>
+    </ul></li>
+  </ul></li>
+  <li>Evaluate early, often, continuously:
+  <ul>
+    <li>Risks.</li>
+    <li>Unknowns.</li>
+    <li>Problems.</li>
+    <li>Gaps.</li>
+    <li>Arch erosion.</li>
+    <li>Contextual drift.</li>
+  </ul></li>
+  <li>Start with low ceremony methods.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Empower the Architects of Your Team</h2>
+<ul>
+  <li>Modern SW dev teams need a different kind of leader than the traditional top-down architect.
+  <ul>
+    <li>Coach, mentor, technical guru.</li>
+  </ul></li>
+  <li>Teams who embrace the idea of SW architect as a way of thinking instead of as a role, produce better SW:
+  <ul>
+    <li>More eyes.</li>
+    <li>Team buy-in. Ownership.</li>
+  </ul></li>
+  <li>Create opportunities for safe practice:
+  <ul>
+    <li>Pair design.</li>
+    <li>Create scaffolding:
+    <ol>
+      <li>Build templates for delegated work.</li>
+      <li>Provide feedback during peer reviews.</li>
+      <li>Create checklists.</li>
+    </ol></li>
+    <li>Introduce architectural guide rails:
+    <ul>
+      <li>Guide rails (constraints) decreases the chances to mess up the architecture.</li>
+    </ul></li>
+    <li>Host information sessions.</li>
+  </ul></li>
+  <li>Keep design authority when risks of failure are high.</li>
+</ul><h2><a name="part-3"></a>Part III - The Architect’s Toolbox</h2><h2><a name="ch-14"></a>Chapter 14 - Activities to Understand the Problem</h2>
+<ol>
+  <li>Choose One Thing:
+  <ul>
+    <li>Discuss priorities by presenting an extreme choice.</li>
+    <li>If you only get one thing, what will it be?</li>
+    <li>Clear prioritization.</li>
+    <li>Clear disagreement.</li>
+    <li>The discussion is often more important than the option picked.</li>
+    <li>Use early.</li>
+  </ul></li>
+  <li>Empathy Map:
+  <ul>
+    <li>Brainstorm and record responsibilities, thoughts and feelings for the team to develop empathy.</li>
+    <li><a href="https://medium.com/the-xplane-collection/updated-empathy-map-canvas-46df22df3c8a">Updated version</a>.</li>
+  </ul></li>
+  <li>Goal-Question-Metric Workshop:
+  <ul>
+    <li>Identify metrics and response measures to connect data with business goals.<br /> <img src="/images/blog/books/design-it/goal-question-metric.png" alt="goal-question-metric" /></li>
+    <li>Question to answer to know if we have met the goal.</li>
+    <li>Result: prioritized data and metrics to gather.</li>
+  </ul></li>
+  <li>Interview Stakeholders:
+  <ul>
+    <li>Unstructured interviews should still have a checklist.</li>
+  </ul></li>
+  <li>List assumptions:
+  <ul>
+    <li>Take assumptions out of the shadows.</li>
+    <li>Write down everything mentioned, even obvious ones.</li>
+    <li>Pause to discuss surprising assumptions.</li>
+  </ul></li>
+  <li>Mini-Quality Attribute workshop:
+  <ul>
+    <li>Prepare:
+    <ol>
+      <li>Quality attribute taxonomy (max 7).</li>
+      <li>Quality attribute scenario templates.</li>
+      <li>Quality attribute web.</li>
+      <li>As homework, refine top raw quality scenarios. Present in a follow-up meeting.</li>
+    </ol></li>
+  </ul></li>
+  <li>Point-of-View Mad Lib:
+  <ul>
+    <li>Summarize business goals and other needs.</li>
+    <li>Template:<br /> <img src="/images/blog/books/design-it/point-of-view-mad-lib-template.png" alt="point of view mad lib" /></li>
+    <li>Consensus is not required.</li>
+    <li>Outcome focused.</li>
+  </ul></li>
+  <li>Response Measure Straw Man:
+  <ul>
+    <li>Give stakeholders something to beat up until they arrive at their own answers.</li>
+    <li>Response either:
+    <ul>
+      <li>Honest: if you are confident.</li>
+      <li>Outrageous: to find boundaries.</li>
+    </ul></li>
+  </ul></li>
+  <li>Stakeholder Map:
+  <ul>
+    <li>To visualize relationships, hierarchies and interactions between people involved or impacted by the system.</li>
+    <li>Once completed ask who are the most important stakeholders.</li>
+  </ul></li>
+</ol><h2><a name="ch-15"></a>Chapter 15 - Activities to Explore Potential Solutions</h2>
+<ol>
+  <li>Personify the architecture:
+  <ul>
+    <li>Give it human qualities so that you can explore interactions among elements.</li>
+    <li>How it “reacts” or “feel”, make it memorable through story telling.</li>
+    <li>It is ok to feel a little silly.</li>
+  </ul></li>
+  <li>Architecture flip book:
+  <ul>
+    <li>Record every step of the design journey so others can follow along afterwards.</li>
+    <li>Sketch + notes about incremental changes.</li>
+    <li>Teach others how to think about design and modeling.</li>
+    <li>On a slide deck, keep copying the last slide and editing it.</li>
+  </ul></li>
+  <li>Component responsibility collaborator cards:
+  <ul>
+    <li>Propose architectural elements, their responsibilities and how they come together to form a view of the architecture.<br /> <img src="/images/blog/books/design-it/crc-card.png" alt="crc card" /></li>
+  </ul></li>
+  <li>Concept map:
+  <ul>
+    <li>Visualize how concepts in the domain relate to one another.</li>
+    <li>Helps to uncover missing, hidden, or implied domain concepts.</li>
+  </ul></li>
+  <li>Divide and conquer:<br />  <img src="/images/blog/books/design-it/divide-and-conquer.png" alt="divide and conquer" />
+  <ul>
+    <li>Tight feedback loops work better.</li>
+  </ul></li>
+  <li>Event Storming:
+  <ul>
+    <li>Collaborative brainstorming technique used to identify domain events.</li>
+    <li>To better engage subject-matter experts.</li>
+    <li>Concrete and specific examples, not abstract.</li>
+  </ul></li>
+  <li>Group Posters:
+  <ul>
+    <li>Create a poster that conveys their design ideas for the architecture outcomes.</li>
+    <li>To summarize outcomes.</li>
+  </ul></li>
+  <li>Round-Robin design:
+  <ul>
+    <li>Quickly explore a range of ideas, and then combine to start building consensus.</li>
+    <li>Steps:
+    <ol>
+      <li>Sketch 5m.</li>
+      <li>Rotate.</li>
+      <li>Critique 3m.</li>
+      <li>Rotate.</li>
+      <li>Improve 5m.</li>
+      <li>Review all sketches.</li>
+    </ol></li>
+  </ul></li>
+  <li>Whiteboard Jam:
+  <ul>
+    <li>Collaboratively draw diagrams on a whiteboard.</li>
+    <li>Pictures won’t make sense to someone who wasn’t there.</li>
+  </ul></li>
+</ol><h2><a name="ch-16"></a>Chapter 16 - Activities to Make the Design Tangible</h2>
+<ol>
+  <li>Architecture Decision Records:
+  <ul>
+    <li>Capture architecture design decisions using a lightweight text-based template.</li>
+  </ul></li>
+  <li>Architecture haiku:
+  <ul>
+    <li>Create bit-sized architecture summaries that stakeholders will actually use.</li>
+    <li>Think through and articulate the essential parts.</li>
+  </ul></li>
+  <li>Context diagram:
+  <ul>
+    <li>Help stakeholders understand where the software system fits in the world.</li>
+    <li>Agreement with system scope.</li>
+  </ul></li>
+  <li>Greatest hits reading list:
+  <ul>
+    <li>Help navigate the morass of design artifacts, so they can find relevant information.</li>
+    <li>Links list with tile, overview and caveats.</li>
+  </ul></li>
+  <li>Inception deck:
+  <ul>
+    <li>Answer 10 important questions at the start of a new project to avoid common failures and align stakeholders.</li>
+    <li><a href="https://agilewarrior.wordpress.com/2010/11/06/the-agile-inception-deck/">The Agile Inception Deck</a></li>
+    <li>Customize questions to your context.</li>
+    <li>Effort to create should be proportional to size and cost of project.</li>
+  </ul></li>
+  <li>Modular decomposition diagram:
+  <ul>
+    <li>Simple tree diagram that shows how abstractions at different granularities are related.</li>
+    <li>Root is the whole system.</li>
+    <li>Child are more and more specific.</li>
+  </ul></li>
+  <li>Paths not taken:
+  <ul>
+    <li>List options discarded with a brief explanation of why.</li>
+  </ul></li>
+  <li>Prototype to learn or decide:
+  <ul>
+    <li>Always prototype as quickly and cheaply as possible.</li>
+  </ul></li>
+  <li>Sequential diagram.</li>
+  <li>System metaphor.</li>
+</ol><h2><a name="ch-17"></a>Chapter 17 - Activities to Evaluate Design Options</h2>
+<ul>
+  <li>Evaluation is a continuous activity.</li>
+</ul>
+<ol>
+  <li>Architecture Briefing:
+  <ul>
+    <li>Brief presentation on some part of the architecture, to get meaningful feedback.</li>
+  </ul></li>
+  <li>Code review:
+  <ul>
+    <li>From architecture point of view.</li>
+  </ul></li>
+  <li>Decision Matrix:
+  <ul>
+    <li>Visual comparison of alternatives.</li>
+    <li>No more than 7 factors.</li>
+    <li>No more than 5 design options.</li>
+    <li>Take notes when filling the matrix.</li>
+  </ul></li>
+  <li>Observe Behaviour:
+  <ul>
+    <li>Add instrumentation to see runtime behaviours.</li>
+  </ul></li>
+  <li>Question-Comment-Concern:
+  <ul>
+    <li>Collaborative, visual activity to shine light on knowledge gaps, articulate issues, and establish known facts about the architecture.</li>
+    <li>Team puts sticky notes (comments, questions, concerns) on views of the architecture.</li>
+  </ul></li>
+  <li>Risk storming:
+  <ul>
+    <li>Collaborative, visual technique for identifying risks in the architecture.</li>
+  </ul></li>
+  <li>Sanity check:
+  <ul>
+    <li>To expose issues in team communication or understanding.</li>
+    <li>Pop quiz-like.</li>
+  </ul></li>
+  <li>Scenario walk-through:
+  <ul>
+    <li>Describe step-by-step how the architecture addresses a specific quality attribute scenario.</li>
+    <li>Use early.</li>
+    <li>Avoid problem-solving during the session.</li>
+    <li>Architect + note taker + session moderator + few reviewers. 3-7 total.</li>
+  </ul></li>
+  <li>Sketch and Compare:
+  <ul>
+    <li>Create two or more alternatives of the same design, so it is easier to see the pros/cons.</li>
+    <li>Always summarize the findings.</li>
+  </ul></li>
+</ol></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1680502093&amp;asins=1680502093&amp;linkId=fb259fd328ffde6d8224094e72844a4f&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (37)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (35)</a></li><li><a href="/tags/Humour/index.html">Humour (11)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (32)</a></li><li><a href="/tags/good_practices/index.html">good practices (25)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492034029&amp;asins=1492034029&amp;linkId=89e376cc517987fd8ac1e9cbbb02bf0e&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
