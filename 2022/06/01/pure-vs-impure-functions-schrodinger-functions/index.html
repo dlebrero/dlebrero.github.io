@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Schrödinger's functions: not the pure functions your are looking for </title>
+	<meta content="What make a pure function pure? What make a stable system stable?" name="description" /><meta content="functional programming pure impure functions stability software design" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Schrödinger's functions: not the pure functions your are looking for " property="og:title" /><meta content="What make a pure function pure? What make a stable system stable?" property="og:description" /><meta content="https://danlebrero.com/2022/06/01/pure-vs-impure-functions-schrodinger-functions/" property="og:url" /><meta content="Schrödinger's functions: not the pure functions your are looking for " name="twitter:title" /><meta content="What make a pure function pure? What make a stable system stable?" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/abstract-clojure/not-pure-functions-twitter.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/abstract-clojure/not-pure-functions-twitter.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2022/06/01/pure-vs-impure-functions-schrodinger-functions/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Schrödinger's functions: not the pure functions your are looking for </h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 1 Jun 2022</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">What make a pure function pure? What make a stable system stable?</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/abstract-clojure/not-pure-functions.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>Reading <a href="https://www.juxt.pro/blog/abstract-clojure">Abstract Clojure</a> fills me with angst.</p><p>The article ends up with the following design:</p><p><img src="/images/blog/abstract-clojure/final-design.png" alt="final design" /></p><p>I see that diagram and my reptilian brain just wants to run away and hide: this is no different from what my Java looked like ten years ago.</p><p>Is this design the best we can do for “large” applications? And if this is the case, why did I bother with Clojure?</p><h2>Pure functions</h2><p>To make your code more maintainable, a useful principle is to build your application mostly from pure functions, minimizing side-effecting code.</p><p>Pure functions are amazing as they are easier to understand than side-effecting code, hence easier to change.</p><p>Two reasons:</p>
+<ol>
+  <li>Their context is limited to their parameters: no need to worry about global variables or the database state.</li>
+  <li>They are deterministic: for a given set of parameters, they always always always always return the same result. Always.</li>
+</ol><p>An important side effect of these reasons is that, while you are trying to understand a pure function, you can stop at any layer down the call stack knowing no surprise is lurking further down, making it easier to understand the function.</p><h2>From impure to pure code</h2><p>As pure functions are important, let’s see how to build them.</p><p>We start with a prototypical web controller that calls the database to do its job:</p>
+<pre><code>(ns app.server
+    (:require [app.db :as db]))
+
+(defn get-article [data-source request]
+    (let [id (get-in request [:path-params :id])
+          article (db/get-article-by-id data-source id)] ;; &lt;&lt;-- PURE EVIL!!! Or should I say IMPURE EVIL?
+        {:status 200
+         :body article}))
+</code></pre><p>The function <code>get-article</code> is not pure as it is not deterministic. Two consecutive calls to <code>get-article</code> can return completely different responses:</p>
+<ol>
+  <li>Nothing if the article does not exist yet.</li>
+  <li>A version of the article.</li>
+  <li>Another version of the article, if there has been some write between the two calls.</li>
+  <li>An error if the database is down.</li>
+  <li>May never finish the execution, if you forgot to <a href="/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures/#content">set your timeouts</a>.</li>
+</ol><p>To smite this evil, Abstract Clojure tells us to add one level of indirection, by passing a function or protocol instead of the <code>data-source</code>, so that the <code>get-article</code> function is decoupled from the <code>database</code> namespace/package:</p>
+<pre><code>(defprotocol ArticleRepository
+    (create [_ article])
+    (get-by-id [_ id])
+    ,,,)
+
+(defn get-article [article-repository request]
+    (let [id (get-in request [:path-params :id])
+          article (article-repository/get-by-id article-repository id)] ;; &lt;&lt;-- Beautiful!
+        {:status 200
+         :body article}))
+</code></pre><p>And with this, our <code>get-article</code> function becomes pure. Victory!</p><p>Or not?</p><h2>Schrödinger’s functions</h2><p>That last version of <code>get-article</code> makes me doubt.</p>
+<blockquote><p>If a tree falls in a forest and no one is around to hear it, does it make a sound?</p>
+</blockquote><p>Sorry, I meant:</p>
+<blockquote><p>If a pure function is passed an impure function at runtime, does it make it impure?</p>
+</blockquote><p><code>get-article</code> can be passed a pure or an impure function, so is <code>get-article</code> a Schrödinger’s function? One that is sometimes pure while others is impure, and to find out you need to open the box and look into the implementation details of the <code>article-repository</code> passed as a parameter?</p><p>Before digging more into philosophy or quantum mechanics, let’s see if a statically typed language can shed some light:</p>
+<pre><code class="text">find some **obvious** Haskell IO monad example and paste here
+</code></pre><p>If that simple piece of monadic Haskell did not make sense, let me explain with some good old Java:</p>
+<pre><code class="Java">public interface ArticleRepository {
+    String createArticle(Article article);
+    Article getById(String id);
+}
+
+class ArticleController {
+    public HttpResponse getArticle(ArticleRepository articleRepository, HttpRequest request) {
+        String id = request.getParams().get("id");
+        Article article = articleRepository.getById(id);
+        return HttpResponse.withStatus(200).withBody(article);
+    }
+}
+</code></pre><p>So far, our non-idiomatic non-monadic Java does not help, but before complaining about Java’s crippled type system, let’s try to implement a DB based ArticleRepository:</p>
+<pre><code class="Java">class DatabaseArticleRepository implements ArticleRepository {
+    private DataSource dataSource;
+
+    public Article getById(String id) {
+        try (Connection connection = dataSource.getConnection()){
+            try (PreparedStatement stmt = connection.prepareStatement("select * from article where id=?")) {
+                stmt.setString(1, id);
+                ResultSet resultSet = stmt.executeQuery();
+                if (resultSet.next()) {
+                    return new Article().withContent(resultSet.getString("content"));
+                } else
+                    return null;
+            }
+        }
+    }
+}
+</code></pre><p>But this does not compile:</p>
+<pre><code class="text">DatabaseArticleRepository: unreported exception java.sql.SQLException; must be caught or declared to be thrown.
+</code></pre><p>Same as Haskell’s IO, Java’s checked exceptions tag a function/method as not safe. But with IO you are only allowed to “declare to be thrown” (unless you want to be <a href="https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO-Unsafe.html">Unsafe</a>), so the only option is to rethrow the exception:</p>
+<pre><code class="Java">class DatabaseArticleRepository implements ArticleRepository {
+    private DataSource dataSource;
+    public Article getById(String id) throws SQLException { // Throwing exception now. 
+    ,,,
+    }
+}    
+</code></pre><p>Now the compiler complains with:</p>
+<pre><code class="text">getById(java.lang.String) in DatabaseArticleController cannot implement getById(java.lang.String) in ArticleRepository  overridden method does not throw java.sql.SQLException
+</code></pre><p>Gosh! Let’s add it to the ArticleRepository:</p>
+<pre><code class="Java">public interface ArticleRepository {
+    Article getById(String id) throws SQLException; // More throwing.
+}
+</code></pre><p>And recompile:</p>
+<pre><code class="text">ArticleController: unreported exception java.sql.SQLException; must be caught or declared to be thrown
+</code></pre><p>And finally, we need to bubble it up to the top of the stack:</p>
+<pre><code class="Java">class ArticleController {
+    public HttpResponse getArticle(...) throws SQLException { // Yet more throwing
+        ...
+    }
+}
+</code></pre><p>Java checked exceptions, just like Haskell IO, just like impure functions, are contagious. Like a virus, any function that comes in contact with them is infected.</p><p>So there are no Schrödinger’s functions. A function that is passed an impure function at runtime, is an impure function (as long as it runs the impure function).</p><p>Our final version of the <code>get-article</code> function, even if it depends on an interface/protocol, is as impure as our initial one.</p><h4>Try/catch! RuntimeException!</h4><p>But if a function catches a checked exception, and swallows or rethrows it as a runtime exception, does it become a pure function?</p><p>You can pretend that it is a pure function, and I can pretend to know what I am talking about, but pretending does not make it real. </p><p>Also, we are using checked exceptions as an approximation. You can read the same argument but <a href="https://blog.ploeh.dk/2016/03/18/functional-architecture-is-ports-and-adapters/">with F# and Haskell</a>. </p><h2>Unstable</h2><p>Now that we know that depending on an interface/protocol does not make our functions pure, what does it mean for the stability of our design?</p>
+<blockquote><p>Depend in the direction of stability – Stable Dependencies Principle</p>
+</blockquote><p>This is a good principle to follow. Abstract Clojure defines stability as:</p>
+<blockquote><p>In Clojure, we can consider a function to be stable if it is referentially transparent (== pure).</p>
+</blockquote><p>If we accept this definition, our final design looks like:</p><p><img src="/images/blog/abstract-clojure/final-design-for-real.png" alt="unstable" /></p><p>So we are back to a completely unstable system, but with a lot more moving parts that the initial design. </p><p>More things, same stability? Does not seems like a winning design.</p><p>Maybe this is not the stability definition that you are looking for.</p>
+<hr /><p>So what now? We will leave the questions on how to convert impure functions into pure functions and what stability is for another day. </p></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Clojure/index.html">Clojure </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=B09D2X43VX&amp;asins=B09D2X43VX&amp;linkId=5786da7222a86f483778644d02a6ac7f&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner2" class="widget six columns"><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=B07DJYDR71&amp;asins=B07DJYDR71&amp;linkId=cc707ee87053a1c22132d3bcf5f8d978&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (38)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (36)</a></li><li><a href="/tags/Humour/index.html">Humour (11)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (32)</a></li><li><a href="/tags/good_practices/index.html">good practices (25)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492034029&amp;asins=1492034029&amp;linkId=89e376cc517987fd8ac1e9cbbb02bf0e&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
