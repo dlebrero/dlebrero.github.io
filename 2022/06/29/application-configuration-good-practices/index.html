@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Are you asking too much from your team/tech lead?</title>
-	<meta content="Expectations for a technical or/and a team leader" name="description" /><meta content="team lead software tech responsibilities career advise" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Are you asking too much from your team/tech lead?" property="og:title" /><meta content="Expectations for a technical or/and a team leader" property="og:description" /><meta content="https://danlebrero.com/2022/04/20/are-you-asking-too-much-from-your-tech-vs-team-lead/" property="og:url" /><meta content="Are you asking too much from your team/tech lead?" name="twitter:title" /><meta content="Expectations for a technical or/and a team leader" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/tech-vs-team-lead/overloaded-team-lead-t.jpeg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/tech-vs-team-lead/overloaded-team-lead-t.jpeg" property="og:image" />
+	<title>Application configuration good practices </title>
+	<meta content="A handful of practices to minimize application configuration issues" name="description" /><meta content="application configuration production development" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Application configuration good practices " property="og:title" /><meta content="A handful of practices to minimize application configuration issues" property="og:description" /><meta content="https://danlebrero.com/2022/06/29/application-configuration-good-practices/" property="og:url" /><meta content="Application configuration good practices " name="twitter:title" /><meta content="A handful of practices to minimize application configuration issues" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/application-configuration.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/application-configuration.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2022/04/20/are-you-asking-too-much-from-your-tech-vs-team-lead/" />
+	<link rel="canonical" href="https://danlebrero.com/2022/06/29/application-configuration-good-practices/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -115,77 +115,39 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Are you asking too much from your team/tech lead?</h1>
+						<h1 class="entry-title">Application configuration good practices </h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Wed, 20 Apr 2022</li>
+								<li id="entry-date">Wed, 29 Jun 2022</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Expectations for a technical or/and a team leader</p>
+				 <p class="lead" id="entry-summary">A handful of practices to minimize application configuration issues</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/tech-vs-team-lead/overloaded-team-lead.jpeg" />
+							<img src="/images/blog/application-configuration.jpg" />
 						</div>
 					</div>
 				 
 
-					<div class="entry-content"><p>Somebody recently asked:</p>
-<blockquote><p>How do you learn to be a tech lead?</p>
-</blockquote><p>Knowing her background, I replied with another question:</p>
-<blockquote><p>Do you mean tech lead or team lead?</p>
-</blockquote><p>The difference was not obvious to me until I worked as a tech lead in a team that had a team lead.</p><h2>Team vs Technical lead</h2><p>On that particular job, as a tech lead, my responsibilities were:</p>
-<ul>
-  <li>Choose the right tool for the job: be aware of existing tools/libraries/frameworks, their trade-offs and what was appropriate for the company’s context.</li>
-  <li>Code contributions.</li>
-  <li>Code quality (aka bugs).</li>
-  <li>Production issues/outages.</li>
-  <li>Design and architecture, including NFRs.</li>
-  <li>Developer productivity: from testing, CI/CD, release, monitoring, …</li>
-  <li>Technical mentoring.</li>
-  <li>Awareness on other parts of the system: functionality available, technologies used, trade-off, high level workings, lessons learned.</li>
-  <li>Applying the company’s architecture constraints, principles and practices, and raising concerns when we wanted to deviate from those.</li>
-  <li>Technology proof of concept.</li>
-  <li>Technical assessment of candidates.</li>
-  <li>Technical debt prioritisation.</li>
-</ul><p>My <a href="https://leonardoalmeida.com/">fellow team lead</a> would take care of:</p>
-<ul>
-  <li>People’s career progression.</li>
-  <li>Performance appraisals.</li>
-  <li>1-2-1.</li>
-  <li>Reporting up and down.</li>
-  <li>Recruitment, team composition.</li>
-  <li>Onboarding.</li>
-  <li>Internal and inter-team conflicts.</li>
-  <li>Project management.</li>
-  <li>Inter-team coordination and dependencies.</li>
-  <li>And a myriad of other things that I was not aware of.</li>
-</ul><p>What we will both do:</p>
-<ul>
-  <li>Backlog grooming: me for feasibility and rough sizing. Team lead to know if we had the capacity and for stakeholder management.</li>
-  <li>Development process improvements: me more to suggest, team lead more as Scrum Master and lean/agile coach.</li>
-</ul><p>Basically I will become a software architect while the team lead would become an engineering manager.</p><h2>Choices</h2><p>Continuing with the conversation:</p><p>Me: “What path are you asking about? You cannot do both.”</p><p>Tech lead: “Both is actually what I have been asked to do.”</p><p>Me: “How is the experience of trying to do both?”</p><p>Tech lead: “Is it a lot. I spend most of the time doing management, admin and planning.”</p><p>Me: “So you are team leading, not tech leading. But if you are not doing the tech leading (because you have no time), then you should raise it with your manager.”</p><p>Tech lead: “Haven’t you ever act as both the team and tech lead?”</p><p>Me: "In my very early days (~2002-2004), in a very small company in a team of ~6 people. Of the list above, I know I did not had to (or did not know I had to):</p>
-<ul>
-  <li>Production issues/outages: never got anything successful in production, hence no users, hence no production issues.</li>
-  <li>Design and architecture: system that we built were simple.</li>
-  <li>Developer productivity: mostly unknown things for me back then.</li>
-  <li>Awareness on other parts of the system: there were no other parts, not other teams.</li>
-  <li>Applying the company’s architecture constraints: No such a thing.</li>
-  <li>Technology proof of concept: no time for this.</li>
-  <li>Technical debt prioritisation:</li>
-  <li>People’s career progression: we were trying to survive, not planning long or mid term, also I was probably not aware.</li>
-  <li>Performance appraisals: see above.</li>
-  <li>1-2-1: see above.</li>
-  <li>Reporting up and down: company was small enough to not need this.</li>
-  <li>Recruitment, team composition: recruitment yes, but the team composition was pretty static.</li>
-  <li>Internal and inter-team conflicts: Internal yes, but no other teams.</li>
-  <li>Inter-team coordination and dependencies: no other teams."</li>
-</ul>
-<hr /><p>That is a long list of things I did not do. </p><p>Are you asking too much from your team/tech lead? </p><p>If so, what is she neglecting? Do you agree with her choices?</p></div>
+					<div class="entry-content"><p>As an aftermath of our last production incident, here are a bunch of application configuration practices that have worked well enough for me over the years:</p>
+<ol>
+  <li>Version controlled.</li>
+  <li>Self-service.</li>
+  <li>Restricted secrets.</li>
+  <li>Default to production.</li>
+  <li>Fail fast.</li>
+  <li>No logic.</li>
+  <li>Staging == production.</li>
+  <li>Avoid “isDevEnv?”</li>
+  <li>Preconfigured local dev.</li>
+  <li>Minimal.</li>
+</ol><h2>Version controlled</h2><p>Same as code and infrastructure, configuration should be version controlled, so that you know who, when, how, why and what, and changes can be easily reviewed and rolled back.</p><h2>Self-service</h2><p>Ticketing systems to change configuration in production? Meh.</p><p>The team owning the service is already making any code changes that they want, so allowing them to change some configuration is not riskier.</p><p>If you really need gatekeeping, the owning team should be able to create pull requests with the required changes for the gatekeepers to approve/merge, reducing the chances of miscommunication.</p><h2>Restricted secrets</h2><p>Secrets that everybody can read are no secrets. Reduce your risks by restricting who can see and change which secrets.</p><h2>Default to production</h2><p>When adding some new configuration, always set the default to the production value.</p><p>This will avoid the most common issue with configuration: “Oh, the app does not start because we forgot to set the configuration for …” </p><p>And never ever default to some dev or testing value. Never ever.</p><p>Obviously, only default if it is safe. You don’t want to be sending emails to your real clients, connecting to your production data stores and such if some dev forgets to configure their local environment properly. </p><p>If not safe, the safe value is no default. In this case, add the production configuration as soon as possible. Do not wait for the code release. </p><h2>Fail fast</h2><p>Validate the configuration at start time, and crash the application if any value is missing or it has the wrong type.</p><h2>No logic</h2><p>Avoid any logic related to manipulating configuration, like string manipulation, url building or splitting. </p><p>It is less likely that you are be able to test it, and if the logic fails in production it will be harder to find out, especially for secret values.</p><h2>Staging == production</h2><p>The principle to make staging as similar as production includes configuration.</p><p>Especially important if you broke the “no logic” principle.</p><h2>Avoid “isDevEnv?”</h2><p>All config usually start with a simple “environment” configuration variable, that will sprinkle your codebase with “isDevEnv?” conditionals.</p><p>But soon enough, your app will be run in new environments (CI, test, staging, demo, training, load testing, hotbugfix-33, KafkaPoC, other team’s local dev) and it will not be so clear what is dev and what is not.</p><p>So prefer explicit configuration variables to avoid implicit coupling of a bunch of behaviors to one configuration variable. </p><h2>Preconfigured local dev</h2><p>A big chunk of your configuration exists just for the local development environment, so given that most configuration is going to default to production values, it is important to make it easy to set up, add and update that configuration in every developer’s box.</p><p>My preferred approach is still a <a href="/2017/09/01/a-docker-compose-environment/#content">dockerized local environment</a>.</p><h2>Minimize configuration</h2><p>Less config, less chance for bugs. Same as code! <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>!</p>
+<hr /><p>In case you wonder, in our production incident we committed three sins: defaulted to a dev value, logic in config, and staging different from production.</p><p>Why sin once when you can do it thrice for the same price?</p></div>
 
 				 
 
@@ -199,7 +161,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Career/index.html">Career </a>
+					 <a href="/tags/good_practices/index.html">good practices </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
@@ -253,8 +215,8 @@ s.setAttribute('data-timestamp', +new Date());
 
 					<div class="container">
 					<div class="row">
-						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=B06XP3GJ7F&amp;asins=B06XP3GJ7F&amp;linkId=8243baf45fb1d99ef848fecfa6a9c6b9&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
-						<div id="toprightbanner2" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492043451&amp;asins=1492043451&amp;linkId=c60bf9166a29a4ef75a1348aaaee30d6&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner" class="widget six columns"><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=0135957052&amp;asins=0135957052&amp;linkId=2cd5f6f79091ded2bbbd1be1b1dad45f&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner2" class="widget six columns"><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=0132350882&amp;asins=0132350882&amp;linkId=fc2de242950d4b8eb5b773ca16ec6e18&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
 					</div>
 					</div>
 
