@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>Should I introduce an API Gateway in my workplace?</title>
-	<meta content="Considerations on when adding an API Gateway to your system architecture" name="description" /><meta content="GW gateway api gatewayapi team dynamics software architecture microservices  " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Should I introduce an API Gateway in my workplace?" property="og:title" /><meta content="Considerations on when adding an API Gateway to your system architecture" property="og:description" /><meta content="https://danlebrero.com/2020/01/08/do-i-need-a-gateway-api-team-dynamics/" property="og:url" /><meta content="Should I introduce an API Gateway in my workplace?" name="twitter:title" /><meta content="Considerations on when adding an API Gateway to your system architecture" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/do-i-need-an-api-gw/should-i-introduce-a-gw-api.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/do-i-need-an-api-gw/should-i-introduce-a-gw-api.jpg" property="og:image" />
+	<title>Book notes: Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working </title>
+	<meta content="Book notes on &quot;Remote Team Interactions Workbook&quot; by Matthew Skelton and Manuel Pais" name="description" /><meta content="Book review notes summary remote team interactions workbook team topologies remote work" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working " property="og:title" /><meta content="Book notes on &quot;Remote Team Interactions Workbook&quot; by Matthew Skelton and Manuel Pais" property="og:description" /><meta content="https://danlebrero.com/2022/07/20/team-topologies-remote-team-interactions-workbook-summary/" property="og:url" /><meta content="Book notes: Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working " name="twitter:title" /><meta content="Book notes on &quot;Remote Team Interactions Workbook&quot; by Matthew Skelton and Manuel Pais" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/remote-team-interactions-workbook.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/remote-team-interactions-workbook.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2020/01/08/do-i-need-a-gateway-api-team-dynamics/" />
+	<link rel="canonical" href="https://danlebrero.com/2022/07/20/team-topologies-remote-team-interactions-workbook-summary/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -115,51 +115,149 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">Should I introduce an API Gateway in my workplace?</h1>
+						<h1 class="entry-title">Book notes: Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working </h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Wed, 8 Jan 2020</li>
+								<li id="entry-date">Wed, 20 Jul 2022</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">Considerations on when adding an API Gateway to your system architecture</p>
+				 <p class="lead" id="entry-summary">Book notes on "Remote Team Interactions Workbook" by Matthew Skelton and Manuel Pais</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/do-i-need-an-api-gw/should-i-introduce-a-gw-api.jpg" />
+							<img src="/images/blog/books/remote-team-interactions-workbook.jpg" />
 						</div>
 					</div>
 				 
 
-					<div class="entry-content"><p>A while long ago, a friend asked for some advice regarding introducing an API gateway (API GW) into his company. </p><p>As I was a little bit surprised about my own answer, I want to share it here.</p><h2>Context</h2><p>Paraphrasing the question:</p>
-<blockquote><p>I am working in a company that has three different development teams. Each team is building their own services, which are exposed directly to our customers. There are lots of inconsistencies between the APIs exposed by the three services, which our customers have to deal with. Would you recommend us to introduce an API gateway?</p>
-</blockquote><p>As we both have worked together, we had a shared understanding about what we meant by an API gateway. Given the broad and generic term that it has become, the main functionalities of our API gateway were:</p>
-<ol>
-  <li>One place to have all the common functionality required when exposing APIs externally: authentication, authorization, rate limiting, A/B testing and other routing requirements. Also it can take care of some caching, downstream service error handling and i18n.</li>
-  <li>Make the heterogeneous internal services look homogeneous to external clients: naming conventions, concepts, url structure, versioning, timestamps, pagination, …</li>
-  <li>Provide a more coarse-grained API.</li>
-  <li>Keep backwards compatibility on external facing APIs, while internal services can evolve.</li>
-</ol><p>And from an architecture point of view, the change would be from this:</p><p><img src="/images/blog/do-i-need-an-api-gw/before-gw-api.jpg" alt="Before API GW" title="Before API GW" /></p><p>To this:</p><p><img src="/images/blog/do-i-need-an-api-gw/after-gw-api.jpg" alt="After API GW" title="After API GW" /></p><h2>Pure technical answer</h2><p>Nobody would argue that having a homogeneous, coherent API that shields clients from possible internal API changes is very valuable. </p><p>Our clients will love it.</p><p>Our developer will love it.</p><p>But you need to think about the cost. </p><h2>What the cost is</h2><p>When we talk about cost, we usually put too much emphasis on the initial investment. </p><p>As I told my friend:</p>
-<blockquote><p>I think the initial cost of building the API GW is not huge. You can build it over a weekend, or a team of four can do it over a couple of months.</p>
-</blockquote><p>Jokes aside, that last sentence has a kernel of truth, which gives us a clue about the kind of cost we should be more wary of.</p><p>Keeping with the conversation:</p>
-<blockquote><p>The issue that I see is the maintenance: who is going to own the API gateway? </p>
-</blockquote><p>Because the most important thing on the architecture change is the change on team dynamics, from:</p><p><img src="/images/blog/do-i-need-an-api-gw/team-before-gw-api.jpg" alt="Before API GW team structure" title="Before API GW Team structure" /></p><p>To:</p><p><img src="/images/blog/do-i-need-an-api-gw/team-after-gw-api.jpg" alt="After API GW team structure" title="After API GW Team structure" /></p><p>With this new team setup, you have to start thinking about how the different teams will interact between each other: </p>
+					<div class="entry-content"><p>These are my notes on <a href="https://twitter.com/matthewpskelton">Matthew Skelton</a> and <a href="https://twitter.com/manupaisable">Manuel Pais</a>’s <a href="https://amzn.to/3claIjE">Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working </a>.</p><p>A <a href="/2021/01/20/team-topologies-summary/#content">Team Topologies</a> companion with homework to map your current team topologies, and useful advise for remote work.</p><p>Thanks to <a href="https://itrevolution.com">ITRevolution</a> for the complimentary copy!</p><h1>Key Insights</h1>
 <ul>
-  <li>How internal service changes will need to be implemented and rolled out?</li>
-  <li>What information needs to be shared between the API team and the other teams?</li>
-  <li>What meetings will be required?</li>
-  <li>Who will decide on priorities?</li>
-  <li>Where will some functionality be implemented: API GW or internal services?</li>
-  <li>Who can veto an API change?</li>
-  <li>Who can veto an internal service change?</li>
-  <li>How will support be handled?</li>
-  <li>…</li>
-</ul><p>This is not to say that the new architecture is worse, but that all these questions should be taken into consideration when deciding if an API Gateway should be introduced or not.</p><p>Of course, this new team setup is just one of the possible ones. There are plenty of others (none of which is wrong) that will give different answers to the questions above, like: </p><h4>Shared responsibility, no accountability</h4><p>Where all teams own the API gateway, but nobody takes accountability.</p><p><img src="/images/blog/do-i-need-an-api-gw/everybody-responsible-gw-api.jpg" alt="Everybody responsible for API GW team structure" title="Everybody is responsible" /></p><h4>The API Council</h4><p>Where all teams agree to meet monthly to agree on API rules, and that is the only agreement that is ever reached.</p><p><img src="/images/blog/do-i-need-an-api-gw/gw-api-council.jpg" alt="The API gateway council" title="The API gateway council" /></p><h4>The Architects Overlords</h4><p>Where all powerful beings dictate the API rules for mortals to implement.</p><p><img src="/images/blog/do-i-need-an-api-gw/architects-ivory-tower.jpg" alt="Architects overloads on their ivory tower" title="Architects overloads on their ivory tower" /></p><h4>The Ignored Embedded Architects</h4><p>Where architects work along side the development teams, and meet monthly to whine about how their wise advise is completely ignored.</p><p><img src="/images/blog/do-i-need-an-api-gw/embedded-architect.jpg" alt="Embedded Architects ignored by the team" title="Embedded Architects ignored by the team" /></p><h4>The All Powerful API Framework</h4><p>Where the Platforms team provides a mandatory API framework so that teams can run their own API-rules-compliant gateways, and where all teams do their best to avoid, circumvent and replace it with battle tested Open Source alternatives. </p><p><img src="/images/blog/do-i-need-an-api-gw/shared-platform-framework.jpg" alt="Shared Platform API framework" title="Shared platform API framework" /></p><h2>A Team oriented answer</h2><p>So to answer the question <em>“Should I introduce an API Gateway in my workplace?”</em> the main concern, and what you should focus on, is not the technical aspect.</p><p>The important question to answer is:</p>
-<blockquote><p>What are the team dynamics that you want for you company, given its current context?</p>
-</blockquote><p>Conway’s law at its best.</p></div>
+  <li>Physical office was covering up poorly defined teams and poorly defined ares of focus.</li>
+  <li>In a remote work setting, it is vital to “over communicate”.</li>
+  <li>In remote settings, keep it shorter and sharper: it’s harder to hold people’s attention remotely.</li>
+  <li>Facilitating interaction longer than a few weeks suggests something isn’t quite right.</li>
+  <li>In the context of remote work, it is too easy to accidentally fall into a swamp of direct private messages.</li>
+</ul><h1>Homework</h1>
+<ul>
+  <li><a href="https://github.com/TeamTopologies/Team-API-Template">Define your Team API</a>.</li>
+  <li><a href="https://github.com/TeamTopologies/Team-Dependencies-Tracking">Track team dependencies</a>.</li>
+  <li>Start a network-building event: communities of practice, internal tech events, lunchtime talks, coffee breaks.</li>
+  <li><a href="https://github.com/TeamTopologies/Trust-Boundaries-Template">Trust boundaries assessment</a>.</li>
+  <li><a href="https://github.com/TeamTopologies/Online-Space-Assessment">Online space assessment</a>.</li>
+  <li><a href="https://github.com/TeamTopologies/Team-Cognitive-Load-Assessment">Cognitive load assessment/Internal platform survey</a>.</li>
+</ul><h1><a name="ch-0"></a>Preface</h1>
+<ul>
+  <li>Physical office was covering up poorly defined teams and poorly defined ares of focus.</li>
+  <li>A successful remote-first approach requires the explicit design of communication between teams using physical and online spaces.</li>
+</ul><h2><a name="ch-1"></a>Chapter 1 - Overview - Focus on Remote Team Interactions</h2>
+<ul>
+  <li>Google’s <a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/identify-dynamics-of-effective-teams/">five keys</a> to successful teams:
+  <ol>
+    <li>Psychological safety.</li>
+    <li>Dependability.</li>
+    <li>Structure and clarity.</li>
+    <li>Meaning.</li>
+    <li>Impact.</li>
+  </ol></li>
+  <li><a href="https://github.com/TeamTopologies/Team-Cognitive-Load-Assessment">Cognitive load assessment</a>:
+  <ul>
+    <li>This is something the platform team should use as a KPI.</li>
+  </ul></li>
+  <li>Problematic dependency between teams, symptoms:
+  <ul>
+    <li>Delays.</li>
+    <li>Increase WIP.</li>
+    <li>Unpredictability.</li>
+  </ul></li>
+  <li>Instead of waiting, focus on tracking and then removing the in-flow dependencies.
+  <ul>
+    <li><a href="https://amzn.to/3aKJS3T">Making Work Visible</a> by Dominca De Grandis.</li>
+  </ul></li>
+  <li>In a remote work setting, it is vital to “over communicate”:
+  <ul>
+    <li>What, why, how, when will be done.</li>
+  </ul></li>
+</ul><h1><a name="ch-2"></a>Chapter 2: Team Dependencies</h1>
+<ul>
+  <li>Techniques to track and manage inter-team dependencies, to promote healthy ones, and minimize others.</li>
+  <li>Team API:
+  <ul>
+    <li>For remote teams, especially important:
+    <ul>
+      <li>Road map: how to notify changes?</li>
+      <li>Communication preferences:
+      <ul>
+        <li>Channel, schedule.</li>
+        <li>Expected response time.</li>
+      </ul></li>
+    </ul></li>
+    <li><a href="https://github.com/TeamTopologies/Team-API-Template">Template</a></li>
+  </ul></li>
+  <li>Dependencies can never be fully eradicated.</li>
+  <li>Not all dependencies are the same:
+  <ul>
+    <li>Blocking vs non-blocking.</li>
+    <li>Healthy vs unhealthy.</li>
+    <li>Frequent vs infrequent.</li>
+  </ul></li>
+  <li>Tracking dependencies:
+  <ul>
+    <li>Add dependency tag to stories.</li>
+    <li><a href="https://youtu.be/faKSg7iLigw?t=2479">Physical dependency matrix</a>.</li>
+    <li>Dependency swimlane board:
+    <ul>
+      <li>Add a specific lane to your Kanban board with the tasks that depend on other teams.</li>
+    </ul></li>
+    <li><a href="https://github.com/TeamTopologies/Team-Dependencies-Tracking">Simple table</a>.</li>
+  </ul></li>
+  <li>Internal network:
+  <ul>
+    <li>Virtual coffee.</li>
+    <li>Internal conference.</li>
+    <li>Communities of Practice.</li>
+    <li>Brown bag sessions.</li>
+    <li>Enabling teams.</li>
+  </ul></li>
+  <li>Keep it shorter and sharper: it’s harder to hold people’s attention remotely.</li>
+</ul><h1><a name="ch-3"></a>Chapter 3: Setting Team Boundaries</h1>
+<ul>
+  <li>Group trust boundaries:
+  <ul>
+    <li><a href="https://danlebrero.com/2020/03/04/the-lean-mindset-summary/">Dunbar numbers</a>.</li>
+    <li>Groups slightly smaller than the trust boundary are likely to have good trust. Larger than are likely to have trust issues and are candidate to splitting into smaller groups.</li>
+    <li>When the size of an online space reaches a trust boundary, create a new space.</li>
+    <li>Online space aligned to flow of change.</li>
+    <li>Optimize for trust within online spaces.</li>
+  </ul></li>
+  <li>Chat tools:
+  <ul>
+    <li>Standardise channel names:
+    <ul>
+      <li>TeamType_TeamName.</li>
+      <li>Team_InteractionMode_Team.</li>
+    </ul></li>
+    <li>People name to include team they belong to.</li>
+    <li>Explicit etiquette.</li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4: Purposeful Interactions</h2>
+<ul>
+  <li>Facilitating interaction longer than a few weeks suggests something isn’t quite right.</li>
+  <li>Difficulties or awkwardness in team interactions can be used as a kind of sensing mechanism to help evolve the org.</li>
+  <li>Focus on flow.</li>
+  <li>In the context of remote work, it is too easy to accidentally fall into a swamp of direct private messages.</li>
+  <li>Define usage guidelines for Slack/Teams/…</li>
+  <li>Curate the chat workspace.</li>
+</ul><h1><a name="ch-5"></a>Chapter 5: Next steps</h1>
+<ul>
+  <li><a href="https://ITRev.io/EngExpFeedback">Internal Platform survey</a>.</li>
+  <li>Internal personas.</li>
+  <li>Naming and usage for chat tools: don’t attempt to design everything upfront, allow some patterns to emerge.</li>
+  <li>Expect rework.</li>
+</ul></div>
 
 				 
 
@@ -173,7 +271,7 @@
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/Humour/index.html">Humour </a>
+					 <a href="/tags/book_notes/index.html">book notes </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
@@ -227,7 +325,7 @@ s.setAttribute('data-timestamp', +new Date());
 
 					<div class="container">
 					<div class="row">
-						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1942788819&amp;asins=1942788819&amp;linkId=bad0fad97568412172de0c4e136186ad&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner" class="widget six columns"><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1950508617&amp;asins=1950508617&amp;linkId=7371512a875824eac37a5efb4b868870&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
 						
 					</div>
 					</div>
