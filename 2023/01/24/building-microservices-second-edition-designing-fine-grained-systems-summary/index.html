@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Building Microservices - Second edition</title>
+	<meta content="Book notes on &quot;Building Microservices: Designing Fine-Grained Systems&quot; by Sam Newman" name="description" /><meta content="Book review notes summary building microservices second edition designing Fine-Grained systems " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Building Microservices - Second edition" property="og:title" /><meta content="Book notes on &quot;Building Microservices: Designing Fine-Grained Systems&quot; by Sam Newman" property="og:description" /><meta content="https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/" property="og:url" /><meta content="Book notes: Building Microservices - Second edition" name="twitter:title" /><meta content="Book notes on &quot;Building Microservices: Designing Fine-Grained Systems&quot; by Sam Newman" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/building-microservices/building-microservices-second-edition.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/building-microservices/building-microservices-second-edition.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Building Microservices - Second edition</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Tue, 24 Jan 2023</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Building Microservices: Designing Fine-Grained Systems" by Sam Newman</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/building-microservices/building-microservices-second-edition.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3aTXY39">Building Microservices: Designing Fine-Grained Systems</a> by <a href="https://twitter.com/samnewman">Sam Newman</a>.</p><p>When an author lists more drawbacks thatn benefits (nine vs six), you know he knows what he is talking about.</p><h1>Key Insights</h1>
+<ul>
+  <li>Independent deployability is key.</li>
+  <li>Clear, stable service boundaries.</li>
+  <li>Smaller teams working on smaller codebases tend to be more productive.</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Benefits </th>
+      <th>Pain Points </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tech heterogeneity </td>
+      <td>Tech overload </td>
+    </tr>
+    <tr>
+      <td>Robustness </td>
+      <td>Latency </td>
+    </tr>
+    <tr>
+      <td>Scalability </td>
+      <td>Data Consistency </td>
+    </tr>
+    <tr>
+      <td>Easy of deployment </td>
+      <td>Dev experience </td>
+    </tr>
+    <tr>
+      <td>Org alignment </td>
+      <td>Cost </td>
+    </tr>
+    <tr>
+      <td>Composability </td>
+      <td>Monitoring and troubleshooting </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Reporting </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Security </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Testing </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>When to avoid:
+  <ul>
+    <li>Start ups:
+    <ul>
+      <li>Because no stable service boundaries.</li>
+      <li>Small teams.</li>
+    </ul></li>
+    <li>SW deployed by customers, due to operation burden. <img src="/images/blog/books/building-microservices/collaboration-style.png" alt="communication style" /></li>
+  </ul></li>
+  <li>Keep your middleware dumb, and keep the smarts in the endpoints.</li>
+  <li>Prefer to put into an event what you would be happy to share via an API.</li>
+  <li>Ideal technology should:
+  <ol>
+    <li>Make backwards compatibility easy.</li>
+    <li>Make interfaces explicit.</li>
+    <li>Keep your APIs technology-agnostic.</li>
+    <li>Make services simple for consumers.</li>
+    <li>Hide internal implementation details.</li>
+  </ol></li>
+  <li>Communication:
+  <ul>
+    <li>RPC:
+    <ul>
+      <li>gRPC good, other bad.</li>
+      <li>Use when good deal of control of client and server.</li>
+    </ul></li>
+    <li>REST:
+    <ul>
+      <li>Sensible default choice.</li>
+      <li>Good for external API: wide support + caching.</li>
+      <li><a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>: No practical advantage.</li>
+    </ul></li>
+    <li>GraphQL:
+    <ul>
+      <li>Dynamic queries can cause stability issues similar to a big/slow/resource intensive SQL query affecting the whole system.</li>
+      <li>CDN caching more difficult.</li>
+      <li>Write requests are awkward.</li>
+    </ul></li>
+    <li>Message brokers:
+    <ul>
+      <li>What any given broker technology means by guaranteed delivery can vary. Read the documentation very carefully.</li>
+      <li>Pay really careful attention to how exactly once delivery is implemented (if it is).
+      <ul>
+        <li>Even better, expect duplicates.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Author still a fan of XML.</li>
+  <li>Client libraries should be created by team other than the one that owns the server API.</li>
+  <li>Sagas:
+  <ul>
+    <li>Saga gives enough information to reason about what state it is in.</li>
+    <li>Sagas assume the underlying components are reliable as it does not deal with technical failures (5xx, timeouts).</li>
+    <li>General rule:
+    <ul>
+      <li>If a team owns the implementation of the entire saga: orchestration.</li>
+      <li>If multiple teams: choreographed.</li>
+    </ul></li>
+  </ul></li>
+  <li>We want to build artifacts once and only once, and use them for all deployments.</li>
+  <li>Source code organization:
+  <ul>
+    <li>Multirepo:
+    <ul>
+      <li>If you are constantly making changes across multiple services, your microservices boundaries are wrong.</li>
+    </ul></li>
+    <li>Monorepo:
+    <ul>
+      <li>Ease changes in multiple services:
+      <ul>
+        <li>Atomic commits (but not atomic deployments).</li>
+      </ul></li>
+      <li>Needs load of tooling:
+      <ul>
+        <li><a href="https://bazel.build">Bazel</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>Per team monorepo.</li>
+  </ul></li>
+  <li>3 services per dev is not an uncommon ratio.</li>
+  <li>The smarter the PaaS try to be, the more they go wrong.</li>
+  <li>If you need to do a lot of fine tuning around resources available to your functions, then FaaS is not the best option.</li>
+  <li>Explore FaaS before Kubernetes.</li>
+  <li>Future: Kubernetes hidden under a more developer friendly experience.</li>
+  <li>If your teams work independently, it follows that they should be able to test independently:
+  <ul>
+    <li>If also follows that they should own their test environments.</li>
+    <li>It is a reason against end-to-end tests.</li>
+  </ul></li>
+  <li>Contract testing and consumer-driven contracts:
+  <ul>
+    <li>Pair consumer and producer team members to write them.</li>
+    <li>Make existing communication channels more explicit.</li>
+    <li><a href="https://docs.pact.io/pact_broker">Pact Broker</a>.</li>
+    <li><a href="https://spring.io/projects/spring-cloud-contract">Spring Cloud Contract</a>. Only JVM.</li>
+  </ul></li>
+  <li>Monitoring:
+  <ol>
+    <li>Log aggregation:
+    <ul>
+      <li>Avoid log forwarding agents reformatting the logs. Make services log in the right format.</li>
+    </ul></li>
+    <li>Metrics aggregation:
+    <ul>
+      <li>Look for a product that is built with high cardinality in mind, so you can attach more metadata/tags to the metrics.</li>
+    </ul></li>
+    <li>Distributed tracing:
+    <ul>
+      <li>Pick a tool that supports <a href="https://opentelemetry.io/">OpenTelemetry</a>.</li>
+    </ul></li>
+    <li>Semantic monitoring:
+    <ul>
+      <li>Are we selling “as usual”?</li>
+      <li>Implemented with:
+      <ol>
+        <li>Real user monitoring: In the past.</li>
+        <li>Synthetic transactions: Catch issues before clients are aware.</li>
+      </ol></li>
+    </ul></li>
+  </ol>
+  <ul>
+    <li>Be sceptical of ML/AI.</li>
+  </ul></li>
+  <li>Good alert:
+  <ul>
+    <li>Relevant.</li>
+    <li>Unique.</li>
+    <li>Timely.</li>
+    <li>Prioritized.</li>
+    <li>Understandable.</li>
+    <li>Diagnostic: clear what is wrong.</li>
+    <li>Advisory: help understand what actions to take.</li>
+    <li>Focusing.</li>
+  </ul></li>
+  <li>Standardization:
+  <ul>
+    <li>Make it easy to do the right thing.</li>
+  </ul></li>
+  <li>You are only as secure as your least secure aspect.</li>
+  <li>Credentials of users and operators are often the weakest point of our system:
+  <ul>
+    <li>In 2020, 80% of hacks due to it.</li>
+  </ul></li>
+  <li>Cost of any security implementation should be justified by your threat model.</li>
+  <li>Failure is everywhere:
+  <ul>
+    <li>Spend less time trying to stop the inevitable and more dealing with it gracefully.</li>
+  </ul></li>
+  <li>Root cause analysis: it is surprising how often we want that root cause to be a human.</li>
+  <li>CQRS: one of the hardest forms of scaling.</li>
+  <li>The ideal number of places to cache is zero.</li>
+  <li>When customizing a product built by someone else, you have to work in their world.</li>
+  <li>One experience, one backend for frontend (BFF).</li>
+  <li>Collective ownership can allow for more standardization, hence easier to move people/work around.</li>
+  <li>The biggest cost to working efficiently at scale is the need of coordination.</li>
+  <li>Coming up with a vision without considering how your staff will feel about it and without considering what capabilities they have is likely to lead to a bad place.</li>
+  <li>Architecture is what happens, not what is planned.</li>
+  <li>Make Product Manager accountable for the technical quality of the system.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#p-1">Part I - Foundation</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - What are Microservices?</a></li>
+    <li><a href="#ch-2">Chapter 2 - How to Model Microservices</a></li>
+    <li><a href="#ch-3">Chapter 3 - Splitting the Monolith</a></li>
+    <li><a href="#ch-4">Chapter 4 - Microservices Communication Styles</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Implementation</a>
+  <ul>
+    <li><a href="#ch-5">Chapter 5 - Implementing Microservices Communication</a></li>
+    <li><a href="#ch-6">Chapter 6 - Workflow</a></li>
+    <li><a href="#ch-7">Chapter 7 - Build</a></li>
+    <li><a href="#ch-8">Chapter 8 - Deployment</a></li>
+    <li><a href="#ch-9">Chapter 9 - Testing</a></li>
+    <li><a href="#ch-10">Chapter 10 - From Monitoring to Observability</a></li>
+    <li><a href="#ch-11">Chapter 11 - Security</a></li>
+    <li><a href="#ch-12">Chapter 12 - Resilience</a></li>
+    <li><a href="#ch-13">Chapter 13 - Scaling</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - People</a>
+  <ul>
+    <li><a href="#ch-14">Chapter 14 - User Interfaces</a></li>
+    <li><a href="#ch-15">Chapter 15 - Organizational Structures</a></li>
+    <li><a href="#ch-16">Chapter 16 - The Evolutionary Architect</a></li>
+  </ul></li>
+</ul><h1><a name="p-1"></a>Part I - Foundation</h1><h2><a name="ch-1"></a>Chapter 1 - What are Microservices?</h2>
+<ul>
+  <li>Independent deployability is key.</li>
+  <li>Clear, stable service boundaries.</li>
+  <li>Monoliths:
+  <ul>
+    <li>Single-process monolith.</li>
+    <li>Modular monolith.</li>
+    <li>Distributed monolith.</li>
+  </ul></li>
+  <li>Tech that enable microservices:
+  <ul>
+    <li>Log aggregation and distributed tracing.</li>
+    <li>Containers and Kubernetes.</li>
+    <li>Streaming.</li>
+    <li>Public Cloud and Serverless.</li>
+  </ul></li>
+  <li>Smaller teams working on smaller codebases tend to be more productive.</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Benefits </th>
+      <th>Pain Points </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tech heterogeneity </td>
+      <td>Tech overload </td>
+    </tr>
+    <tr>
+      <td>Robustness </td>
+      <td>Latency </td>
+    </tr>
+    <tr>
+      <td>Scalability </td>
+      <td>Data Consistency </td>
+    </tr>
+    <tr>
+      <td>Easy of deployment </td>
+      <td>Dev experience </td>
+    </tr>
+    <tr>
+      <td>Org alignment </td>
+      <td>Cost </td>
+    </tr>
+    <tr>
+      <td>Composability </td>
+      <td>Monitoring and troubleshooting </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Reporting </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Security </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Testing </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>When to avoid:
+  <ul>
+    <li>Start ups:
+    <ul>
+      <li>Because no stable service boundaries.</li>
+      <li>Small teams.</li>
+    </ul></li>
+    <li>SW deployed by customers, due to operation burden.</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - How to Model Microservices</h2>
+<ul>
+  <li>Boundaries:
+  <ul>
+    <li>Information hiding.</li>
+    <li>Strong cohesion:
+    <ul>
+      <li>Code that changes together, stays together.</li>
+    </ul></li>
+    <li>Low coupling.</li>
+  </ul></li>
+  <li>Types of coupling, from low to high:
+  <ol>
+    <li>Domain coupling:
+    <ul>
+      <li>Unavoidable: one service calling another.</li>
+      <li>Beware of one service talking to too many downstream services:
+      <ul>
+        <li>Too much logic centralized.</li>
+        <li><a href="https://en.wikipedia.org/wiki/God_object">God “class”</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>Pass-through coupling:
+    <ul>
+      <li>One service passes data to another purely because the data is needed further downstream.</li>
+      <li>Fix by:
+      <ol>
+        <li>Bypass the intermediary:
+        <ul>
+          <li>Increase the domain coupling of calling service.</li>
+        </ul></li>
+        <li>Required information to become part of the intermediary contract:
+        <ul>
+          <li>Intermediary to collect all/part of that data.</li>
+        </ul></li>
+        <li>Intermediary to treat required information as a blob:
+        <ul>
+          <li>The Clojure way!</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+    <li>Common coupling:
+    <ul>
+      <li>Two services using the same data.</li>
+      <li>Okish for reference data ( low change, read only).</li>
+      <li>Service that are thin wrappers around CRUD, is a sign of weak cohesion and high coupling.</li>
+    </ul></li>
+    <li>Content coupling:
+    <ul>
+      <li>Upstream service reaches into the internals of a downstream service and changes its internal state.</li>
+      <li>Other services touching your DB directly.</li>
+    </ul></li>
+  </ol></li>
+  <li>To model:
+  <ol>
+    <li>Mainly, use DDD:
+    <ul>
+      <li>Both aggregates and bounded context give us the unit of cohesion with well defined interfaces: candidates for microservices.</li>
+      <li>Coarser-grained bounded context can contain/hide other bounded context.</li>
+    </ul></li>
+    <li>Event Storming.</li>
+    <li>Other forces:
+    <ul>
+      <li>Volatility: things that change frequently should go into their own service.</li>
+      <li>Data: PII/PCI.</li>
+      <li>Technology: use the right tool for the job.</li>
+      <li>Organizational: Conway’s law.</li>
+    </ul></li>
+  </ol></li>
+  <li>Onion architecture: it has lots of layers and makes you cry when you have to cut through it.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Splitting the Monolith</h2><p>Skipped. See book notes on <a href="/2022/02/09/monolith-to-microservices-summary/#content">Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith</a>.</p><h2><a name="ch-4"></a>Chapter 4 - Microservices Communication Styles</h2>
+<ul>
+  <li>When you buy into specific tech choice, you are buying into a set of ideas and constraints that come with it.</li>
+</ul><p><img src="/images/blog/books/building-microservices/collaboration-style.png" alt="communication style" /></p>
+<ul>
+  <li>Sync blocking: beware of long call chains.</li>
+  <li>Common data:
+  <ul>
+    <li>Large volumes.</li>
+    <li>Universal.</li>
+    <li>High latency.</li>
+  </ul></li>
+  <li>Keep your middleware dumb, and keep the smarts in the endpoints.</li>
+  <li>Prefer to put into an event what you would be happy to share via an API.</li>
+</ul><h1><a name="p-2"></a>Part II - Implementation</h1><h2><a name="ch-5"></a>Chapter 5 - Implementing Microservices Communication</h2>
+<ul>
+  <li>Ideal technology should:
+  <ol>
+    <li>Make backwards compatibility easy.</li>
+    <li>Make interfaces explicit.</li>
+    <li>Keep your APIs technology-agnostic.</li>
+    <li>Make services simple for consumers.</li>
+    <li>Hide internal implementation details.</li>
+  </ol></li>
+  <li>Choices:
+  <ul>
+    <li>RPC:
+    <ul>
+      <li>gRPC good, other bad.</li>
+      <li>Use when good deal of control of client and server.</li>
+    </ul></li>
+    <li>REST:
+    <ul>
+      <li>Open API concern: a spec used for documenting now being used for a more explicit contract.</li>
+      <li>Lot more complex than protobuf.</li>
+      <li>Less performance than gRPC.</li>
+      <li>HTTP/3: based on <a href="https://en.wikipedia.org/wiki/QUIC">QUIC</a>, less overhead than TPC.</li>
+      <li>Sensible default choice.</li>
+      <li>Good for external API: wide support + caching.</li>
+      <li><a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>:
+      <ul>
+        <li>Many of the ideas in REST are predicated on creating distributed hypermedia systems, and this isn’t what most people end up building.</li>
+        <li>More chatty.</li>
+        <li>No practical advantage.</li>
+      </ul></li>
+    </ul></li>
+    <li>GraphQL:
+    <ul>
+      <li>Dynamic queries can cause stability issues similar to a big/slow/resource intensive SQL query affecting the whole system.</li>
+      <li>CDN caching more difficult.</li>
+      <li>Write requests are awkward.</li>
+    </ul></li>
+    <li>Message brokers:
+    <ul>
+      <li>What any given broker technology means by guaranteed delivery can vary. Read the documentation very carefully.</li>
+      <li>Pay really careful attention to how exactly once delivery is implemented (if it is).
+      <ul>
+        <li>Even better, expect duplicates.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Serialization formats:
+  <ul>
+    <li>Author still a fan of XML.</li>
+  </ul></li>
+  <li>Use schemas to catch structural breakages.</li>
+  <li>Avoid breaking changes:
+  <ul>
+    <li>Just add, never remove.</li>
+    <li>Tolerant reader.</li>
+  </ul></li>
+  <li>Explicit interfaces:
+  <ul>
+    <li>Events:
+    <ul>
+      <li><a href="https://www.asyncapi.com">https://www.asyncapi.com</a>.</li>
+      <li><a href="https://cloudevents.io">https://cloudevents.io</a>.</li>
+    </ul></li>
+  </ul></li>
+  <li>Breaking changes:
+  <ul>
+    <li>Lockstep deployments:
+    <ul>
+      <li>Avoid.</li>
+      <li>More palatable if service + all consumers owned by the same team.</li>
+    </ul></li>
+    <li>Coexists incompatible microservices versions:
+    <ul>
+      <li>Use sparingly and for short periods of time.</li>
+    </ul></li>
+    <li>Emulate the old interface:
+    <ul>
+      <li>Preferred approach.</li>
+      <li>Author torn between encoding versions in urls (simpler, obvious) or specify in header (less coupling).</li>
+    </ul></li>
+    <li>Social contract:
+    <ul>
+      <li>How breaking changes will be notified?</li>
+      <li>How they will be agreed upon?</li>
+      <li>Who will update the consumers?</li>
+      <li>How long before old endpoint is removed?</li>
+    </ul></li>
+  </ul></li>
+  <li>If you are using libraries for code reuse across microservices boundaries, you have to accept that multiple versions of that library will be out there.</li>
+  <li>Client libraries should be created by team other than the one that owns the server API:
+  <ul>
+    <li>To avoid tightly coupled.</li>
+  </ul></li>
+  <li>Service discovery:
+  <ul>
+    <li>DNS:
+    <ul>
+      <li>Slow to propagate changes.</li>
+      <li>Okish with a load balancer.</li>
+    </ul></li>
+    <li>Dynamic service registries:
+    <ul>
+      <li>Avoid Zookeeper.</li>
+      <li>Consul: good, specially if you need Vault also.</li>
+      <li>etcd/kubernetes.</li>
+    </ul></li>
+  </ul></li>
+  <li>When using an API gateway or service mesh, it is essential that their behaviour is generic, agnostic of specific microservices.</li>
+  <li>In API gateway, avoid:
+  <ul>
+    <li>Call aggregation.</li>
+    <li>Protocol rewriting.</li>
+    <li>Use between your microservices.</li>
+  </ul></li>
+  <li><a href="https://www.bizops.com/what-is-bizops">BizOps</a>.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Workflow</h2>
+<ul>
+  <li>Sagas does not give atomicity in ACID terms:
+  <ul>
+    <li>Saga gives enough information to reason about what state it is in.</li>
+  </ul></li>
+  <li>Saga failure mode:
+  <ul>
+    <li>Sagas assume the underlying components are reliable as it does not deal with technical failures (5xx, timeouts).</li>
+    <li>Backwards recovery: compensating transactions.</li>
+    <li>Forward recovery: retry and keep processing.</li>
+  </ul></li>
+  <li>Orchestrated sagas:
+  <ul>
+    <li>One coordinator.</li>
+    <li>Easy to understand: one place to look at how a process work.</li>
+    <li>High coupling.</li>
+    <li>Risk of “god” service and anemic ones:
+    <ul>
+      <li>Avoid by having different services play the orchestrator role for different flows.</li>
+    </ul></li>
+  </ul></li>
+  <li>Choreographed sagas:
+  <ul>
+    <li>More decoupled.</li>
+    <li>harder to understand the process and the saga state.</li>
+    <li>Saga state:
+    <ul>
+      <li>Events should have a correlationID or sagaID.</li>
+      <li>A process consumes all events to show the actual state.</li>
+    </ul></li>
+  </ul></li>
+  <li>General rule:
+  <ul>
+    <li>If a team owns the implementation of the entire saga: orchestration.</li>
+    <li>If multiple teams: choreographed.</li>
+  </ul></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Build</h2>
+<ul>
+  <li>We want to build artifacts once and only once, and use them for all deployments.</li>
+  <li>Source code organization:
+  <ul>
+    <li>One giant repo, one giant build:
+    <ul>
+      <li>Avoid.</li>
+    </ul></li>
+    <li>Multirepo:
+    <ul>
+      <li>Hard to work with several services at the same time.</li>
+      <li>If you are constantly making changes across multiple services, your microservices boundaries are wrong.</li>
+      <li>Most straightforward.</li>
+    </ul></li>
+    <li>Monorepo:
+    <ul>
+      <li>Ease:
+      <ul>
+        <li>Fine grained code reuse.</li>
+        <li>Changes in multiple services:
+        <ul>
+          <li>Atomic commits (but not atomic deployments).</li>
+        </ul></li>
+      </ul></li>
+      <li>Needs load of tooling:
+      <ul>
+        <li><a href="https://bazel.build">Bazel</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>Per team monorepo.</li>
+  </ul></li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Deployment</h2>
+<ul>
+  <li>Principles of microservices deployment:
+  <ol>
+    <li>Isolated execution.</li>
+    <li>Focus on automation:
+    <ul>
+      <li>Aim for self-service.</li>
+      <li>3 services per dev is not an uncommon ratio.</li>
+    </ul></li>
+    <li>Infrastructure as code:
+    <ul>
+      <li>How automation should be done.</li>
+      <li><a href="https://www.terraform.io">Terraform</a> / <a href="https://www.pulumi.com">Pulumi</a>.</li>
+    </ul></li>
+    <li>Zero-downtime deployment:
+    <ul>
+      <li>Avoid coordination.</li>
+    </ul></li>
+    <li>Desired state management:
+    <ul>
+      <li>Declarative state.</li>
+      <li>Platform automatically makes changes to arrive to the desired state.</li>
+      <li><a href="https://kubernetes.io">Kubernetes</a> / <a href="https://www.nomadproject.io">Nomad</a>.</li>
+      <li>GitOps: <a href="https://fluxcd.io">Flux</a>.</li>
+    </ul></li>
+  </ol></li>
+  <li>Deployment options:
+  <ol>
+    <li>Physical machine.</li>
+    <li>Virtual machine:
+    <ul>
+      <li>Stricter isolation than containers.</li>
+    </ul></li>
+    <li>Containers:
+    <ul>
+      <li>More lightweight than virtual machines.</li>
+    </ul></li>
+    <li>Application containers.</li>
+    <li>Platform as a service (PaaS):
+    <ul>
+      <li>When PaaS solutions work well for your context, they work very well indeed.</li>
+      <li>The smarter the PaaS try to be, the more they go wrong.</li>
+    </ul></li>
+    <li>Function as a Service (FaaS):
+    <ul>
+      <li>If you need to do a lot of fine tuning around resources available to your functions, then FaaS is not the best option.</li>
+      <li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview">Azure Durable Functions</a>.</li>
+      <li>Cold start is optimized in most platforms.</li>
+      <li>One function per microservice or per aggregate:
+      <ul>
+        <li>Avoid more fine-grained.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+  <li>Explore FaaS before Kubernetes.</li>
+  <li>Kubernetes has limited multitenancy capabilities:
+  <ol>
+    <li>Use <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">OpenShift</a>.</li>
+    <li>Use federated model: multiple Kubernetes clusters with a layer on top.</li>
+  </ol></li>
+  <li><a href="https://knative.dev/docs/">Knative</a> aims to provide FaaS-style workflows to developers:
+  <ul>
+    <li>Risky to adopt.</li>
+  </ul></li>
+  <li>Future: Kubernetes hidden under a more developer friendly experience.</li>
+  <li>Progressive delivery:
+  <ul>
+    <li>Separate deployment from release.</li>
+    <li>Blue/Green deployments.</li>
+    <li>Feature toggles.</li>
+    <li>Canary releases:
+    <ul>
+      <li><a href="https://spinnaker.io">Spinnaker</a>.</li>
+    </ul></li>
+    <li>Parallel run: send to old and new and compare.</li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Testing</h2>
+<ul>
+  <li>Who owns an end-to-end test suite?
+  <ul>
+    <li>Everybody / nobody.</li>
+    <li>Dedicated team: this can be disastrous.</li>
+    <li>Split suite and assign subsets to teams.</li>
+  </ul></li>
+  <li><p>Actively remove tests that are no longer needed.</p>
+  <blockquote>Why not use a version number for the whole system? Now you have 2.1.0 problems. <cite><a href="https://twitter.com/brandonbyars">Brandom Byars</a></cite>
+  </blockquote></li>
+  <li><p>If your teams work independently, it follows that they should be able to test independently:</p>
+  <ul>
+    <li>If also follows that they should own their test environments.</li>
+    <li>It is a reason against end-to-end tests.</li>
+  </ul></li>
+  <li>Contract testing and consumer-driven contracts:
+  <ul>
+    <li>Pair consumer and producer team members to write them.</li>
+    <li>Make existing communication channels more explicit.</li>
+    <li><a href="https://docs.pact.io/pact_broker">Pact Broker</a>.</li>
+    <li><a href="https://spring.io/projects/spring-cloud-contract">Spring Cloud Contract</a>. Only JVM.</li>
+  </ul></li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - From Monitoring to Observability</h2>
+<ul>
+  <li>Observability: the extent to which you can understand the internal state of the system from external outputs.</li>
+  <li>Monitoring and observability system are production systems.</li>
+  <li>Building blocks:
+  <ol>
+    <li>Log aggregation:
+    <ul>
+      <li>Prerequisite for microservices.</li>
+      <li>Pick a common format.</li>
+      <li>Avoid log forwarding agents reformatting the logs. Make services log in the right format.</li>
+      <li>Log correlation ID.</li>
+      <li>Careful with timestamps and clock skew:
+      <ul>
+        <li>Tracing does not have this issue.</li>
+      </ul></li>
+    </ul></li>
+    <li>Metrics aggregation:
+    <ul>
+      <li>Look for a product that is built with high cardinality in mind, so you can attach more metadata/tags to the metrics.</li>
+      <li><a href="https://prometheus.io/">Prometheus</a> is low-cardinality.</li>
+      <li><a href="https://www.honeycomb.io/">HoneyComb</a> or <a href="https://lightstep.com/">LightSteps</a>.</li>
+    </ul></li>
+    <li>Distributed tracing:
+    <ul>
+      <li>Pick a tool that supports <a href="https://opentelemetry.io/">OpenTelemetry</a>.</li>
+    </ul></li>
+    <li>Are we doing ok?
+    <ul>
+      <li>SLA.</li>
+      <li>SLO: at the team level.</li>
+      <li>SLI: indicator-data to know if we are meeting a SLO.</li>
+      <li><a href="/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/#content">Error budgets</a>.</li>
+    </ul></li>
+    <li>Alerting:
+    <ul>
+      <li>Biggest question: Should this problem cause someone to be woken up at 3am?</li>
+      <li>Avoid overalerting.</li>
+      <li>Good alert:
+      <ul>
+        <li>Relevant.</li>
+        <li>Unique.</li>
+        <li>Timely.</li>
+        <li>Prioritized.</li>
+        <li>Understandable.</li>
+        <li>Diagnostic: clear what is wrong.</li>
+        <li>Advisory: help understand what actions to take.</li>
+        <li>Focusing.</li>
+      </ul></li>
+    </ul></li>
+    <li>Semantic monitoring:
+    <ul>
+      <li>Are we selling “as usual”?</li>
+      <li>Are users login as usual?</li>
+      <li>Implemented with:
+      <ol>
+        <li>Real user monitoring:
+        <ul>
+          <li>In the past.</li>
+          <li>Noisy.</li>
+        </ul></li>
+        <li>Synthetic transactions:
+        <ul>
+          <li>Catch issues before clients are aware.</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+    <li>Testing in production:
+    <ol>
+      <li>Synthetic transactions.</li>
+      <li>A/B testing.</li>
+      <li>Canary releases.</li>
+      <li>Parallel run.</li>
+      <li>Smoke test.</li>
+      <li>Chaos engineering.</li>
+    </ol></li>
+  </ol></li>
+  <li>Standardization:
+  <ul>
+    <li>Important in monitoring and observability.</li>
+    <li>Make it easy to do the right thing.</li>
+  </ul></li>
+  <li>Select tools that:
+  <ul>
+    <li>Democratic: everybody can use them.</li>
+    <li>Easy to integrate: OpenTelemetry.</li>
+    <li>Provide temporal, relative, relational and proportional context.</li>
+    <li>Realtime.</li>
+    <li>Suitable for your scale.</li>
+  </ul></li>
+  <li>Be sceptical of ML/AI.</li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Security</h2>
+<ul>
+  <li>You are only as secure as your least secure aspect.</li>
+  <li>Core principles:
+  <ol>
+    <li>Least privilege.</li>
+    <li>Defense in depth:
+    <ul>
+      <li>Multiple protections.</li>
+      <li>Microservices provide more defense in depth than monoliths as:
+      <ul>
+        <li>They have smaller scope.</li>
+        <li>Can be segmented in networks.</li>
+      </ul></li>
+    </ul></li>
+    <li>Automation:
+    <ul>
+      <li>Recover.</li>
+      <li>Rotate keys.</li>
+    </ul></li>
+  </ol></li>
+  <li>Five functions of Cybersecurity:
+  <ol>
+    <li>Identify potential attackers, their targets are where you are most vulnerable:
+    <ul>
+      <li>As human beings, we are quite bad at understanding risks.</li>
+      <li>Threat modeling:
+      <ul>
+        <li>Focus on the whole system, not a subset.</li>
+      </ul></li>
+    </ul></li>
+    <li>Protect.</li>
+    <li>Detect.</li>
+    <li>Respond.</li>
+    <li>Recover.</li>
+  </ol></li>
+  <li>Foundations of application security:
+  <ol>
+    <li>Credentials:
+    <ul>
+      <li>Credentials of users and operators are often the weakest point of our system:
+      <ul>
+        <li>In 2020, 80% of hacks due to it.</li>
+      </ul></li>
+      <li>Troy Hunt, <a href="https://www.troyhunt.com/passwords-evolved-authentication-guidance-for-the-modern-era/">Passwords evolved</a>:
+      <ul>
+        <li>Use password managers.</li>
+        <li>Avoid complex password rules.</li>
+        <li>Avoid mandated regular password changes.</li>
+      </ul></li>
+      <li><a href="https://git-secret.io">git-secret</a> and <a href="https://github.com/zricethezav/gitleaks">gitleaks</a>.</li>
+    </ul></li>
+    <li>Patching:
+    <ul>
+      <li>Containers: <a href="https://www.aquasec.com/">Aqua</a>.</li>
+      <li>Libraries: <a href="https://snyk.io/">Snyk</a> or Github.</li>
+    </ul></li>
+    <li>Backups.</li>
+    <li>Rebuilds:
+    <ul>
+      <li>Including restoration of backed up data.</li>
+    </ul></li>
+  </ol></li>
+  <li>Cost of any security implementation should be justified by your threat model.</li>
+  <li>Data in transit:
+  <ol>
+    <li>Server identity: HTTPS.</li>
+    <li>Client identity:
+    <ul>
+      <li>Mutual TLS.</li>
+      <li>API keys.</li>
+    </ul></li>
+    <li>Visibility of data: HTTPS.</li>
+    <li>Manipulation of data:
+    <ul>
+      <li>HTTPS.</li>
+      <li>HMAC.</li>
+    </ul></li>
+  </ol></li>
+  <li>Data at rest:
+  <ul>
+    <li>Where do you store the encryption keys?</li>
+  </ul></li>
+  <li>Do fine-grained authorization in service. It is ok for coarse-grained in the gateway.</li>
+  <li>Gateway generating a JWT per request.</li>
+  <li><a href="https://amzn.to/3opUfNH">Agile Application Security</a> by Laure Bell.</li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Resilience</h2>
+<ul>
+  <li>Resilience:
+  <ol>
+    <li>Robustness:
+    <ul>
+      <li>The ability to absorb expected perturbation.</li>
+      <li>As we increase robustness, we increase complexity.</li>
+    </ul></li>
+    <li>Rebound:
+    <ul>
+      <li>Ability to recover after a traumatic event.</li>
+    </ul></li>
+    <li>Graceful extensibility:
+    <ul>
+      <li>How well we deal with a situation that is unexpected.</li>
+      <li>Flatter orgs will often be better prepared.</li>
+      <li>Optimizations can increase brittleness.</li>
+    </ul></li>
+    <li>Sustained adaptability:
+    <ul>
+      <li>Ability to continually adapt to changing envs, stakeholders and demands.</li>
+      <li>Requires a holistic view of the system.</li>
+      <li>Share information freely on an incident.</li>
+      <li>Culture to find time to learn from incident.</li>
+    </ul></li>
+  </ol></li>
+  <li>Failure is everywhere:
+  <ul>
+    <li>Spend less time trying to stop the inevitable and more dealing with it gracefully.</li>
+  </ul></li>
+  <li>Responding very slowly is one of the worst failure modes you can experience.</li>
+  <li>CP (from CAP theorem) systems can’t fix all your problems, specially if you keep records of the real world.</li>
+  <li>Blame:
+  <ul>
+    <li>Root cause analysis: it is surprising how often we want that root cause to be a human.</li>
+    <li>If it is true that one person making a mistake can really bring an entire telco to its knees, you’d think that would say more about the telco than the individual.</li>
+  </ul></li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Scaling</h2>
+<ul>
+  <li>Four axes:
+  <ol>
+    <li>Vertical scaling:
+    <ul>
+      <li>In a public cloud provider, is very fast to apply.</li>
+      <li>Little risk.</li>
+      <li>Does not improve robustness.</li>
+    </ul></li>
+    <li>Horizontal duplication:
+    <ul>
+      <li>It does improve robustness.</li>
+    </ul></li>
+    <li>Data partitioning:
+    <ul>
+      <li>It does not improve robustness.</li>
+    </ul></li>
+    <li>Functional decomposition:
+    <ul>
+      <li>It does improve robustness.</li>
+      <li>Can choose tech most appropriate to the microservice load.</li>
+    </ul></li>
+  </ol></li>
+  <li>CQRS: one of the hardest forms of scaling.</li>
+  <li>Caching:
+  <ul>
+    <li>Improves robustness.</li>
+    <li>Client-side:
+    <ul>
+      <li>Main issue is invalidation and consistency.</li>
+      <li>Better latency.</li>
+    </ul></li>
+    <li>Server-side:
+    <ul>
+      <li>Main issue is that clients still need to make a network trip.</li>
+      <li>Latency improved for all clients.</li>
+    </ul></li>
+    <li>Server to return TTL.</li>
+    <li>Conditional GET (<a href="https://en.wikipedia.org/wiki/HTTP_ETag">ETag</a>).</li>
+    <li>Notification (pub/sub):
+    <ul>
+      <li>Consider adding a heartbeat.</li>
+    </ul></li>
+    <li>The ideal number of places to cache is zero.</li>
+  </ul></li>
+  <li>At certain scaling points, you will need to rearchitect.</li>
+</ul><h1><a name="p-3"></a>Part III - People</h1><h2><a name="ch-14"></a>Chapter 14 - User Interfaces</h2>
+<ul>
+  <li>Traditional reasons for dedicated FE teams:
+  <ol>
+    <li>Scarcity of specialist:
+    <ul>
+      <li>Share between teams:
+      <ul>
+        <li>Do the hard bits and teach the team to do the easy ones.</li>
+        <li><a href="/2021/01/20/team-topologies-summary/#content">Enabling teams</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>UI consistency:
+    <ul>
+      <li>Enabling teams.</li>
+      <li><a href="https://uxdesign.cc/everything-you-need-to-know-about-design-systems-54b109851969">Design System</a>.</li>
+    </ul></li>
+    <li>Technical challenge:
+    <ol>
+      <li>Monolith FE.</li>
+      <li>Micro FE:
+      <ul>
+        <li>Key problem: unlikely that 1 micro FE == 1 microservice, so micro FE ends up making multiple API calls to multiple BE services.</li>
+        <li>2 types:
+        <ol>
+          <li>Page-based decomposition:
+          <ul>
+            <li>We’ve lost a lot by automatically assuming that a web-based UI means a single-page app.</li>
+            <li>Forward traffic to microservice/microFE depending on url.</li>
+          </ul></li>
+          <li>Widget-based decomposition:
+          <ul>
+            <li>Needs an assembly layer to pull the parts together.</li>
+            <li>Options:
+            <ul>
+              <li>Iframes: issues with comms between widgets.</li>
+              <li>Server-side templating.</li>
+              <li>Dynamically inserted by the client.</li>
+            </ul></li>
+            <li>Issues:
+            <ul>
+              <li>Dependencies:
+              <ul>
+                <li>Great to upgrade one widget dependencies at a time.</li>
+                <li>Duplication of libraries to download.</li>
+              </ul></li>
+              <li>Communication using custom events:
+              <ul>
+                <li>Same as event-driven communication patterns.</li>
+              </ul></li>
+            </ul></li>
+          </ul></li>
+        </ol></li>
+      </ul></li>
+      <li>Central aggregating gateway:
+      <ul>
+        <li>Often the central aggregating gateway does so much that ends up being owned by a dedicated team:
+        <ul>
+          <li>Potential contention and bottleneck.</li>
+        </ul></li>
+        <li>When customizing a product built by someone else, you have to work in their world.</li>
+        <li>Strongly advise against using filtering and aggregation capabilities of dedicated gateway API.</li>
+      </ul></li>
+      <li>Backend for frontend (BFF):
+      <ul>
+        <li>Like (3) but one BFF per FE.</li>
+        <li>FE and its BFF owned by same team and very coupled.</li>
+        <li>One experience, one BFF.</li>
+        <li>Consider BFF for external parties as a way to isolation APIs.</li>
+      </ul></li>
+      <li>GraphQL.</li>
+    </ol></li>
+  </ol></li>
+</ul><h2><a name="ch-15"></a>Chapter 15 - Organizational Structures</h2>
+<ul>
+  <li>The biggest cost to working efficiently at scale is the need of coordination.</li>
+  <li>Conways law, team API, platform team, enabling teams: <a href="/2021/01/20/team-topologies-summary/#content">Team Topologies</a>.</li>
+  <li>Automation is key.</li>
+  <li><a href="/2020/03/04/the-lean-mindset-summary/#content">Dunbar numbers</a>.</li>
+  <li>Strong ownership can allow for more local variation than collective ownership.</li>
+  <li>Collective ownership can allow for more standardization, hence easier to move people/work around.</li>
+  <li>When creating an internal framework, it all starts with the best intentions.</li>
+  <li>Avoid internal framework unless you’ve exhausted your other options.</li>
+  <li>Do code reviews promptly: pair programming FTW!</li>
+  <li>Coming up with a vision without considering how your staff will feel about it and without considering what capabilities they have is likely to lead to a bad place.</li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - The Evolutionary Architect</h2>
+<ul>
+  <li>Architects and engineers have a rigor and discipline we could only dream of.</li>
+  <li>Many forms of IT certification are worthless, as we know little about what “good” looks like.</li>
+  <li>SW architects should focus on helping create a framework in which the right systems can emerge and continue to grow as we learn more.</li>
+  <li>SW arch as a town planner. (Same analogy as in <a href="/2020/08/12/elements-of-clojure-book-summary/#content">Elements of Clojure</a>).</li>
+  <li>Architecture is what happens, not what is planned.</li>
+  <li>Habitability: is the characteristic of source code that enables programmers coming to the code later in its life to understand its construction and intentions and to change it comfortably and confidently.</li>
+  <li>Strategic goals -&gt; Technical vision -&gt; Principles -&gt; Practices.</li>
+  <li>Architects as an enabling team:
+  <ul>
+    <li>2-3 full time architects plus tech leads.</li>
+  </ul></li>
+  <li>Make Product Manager accountable for the technical quality of the system.</li>
+  <li>Key things to standardize:
+  <ul>
+    <li>Monitoring.</li>
+    <li>Interfaces between microservices.</li>
+    <li>Architectural safety (error codes, circuit breakers, …).</li>
+    <li>Governance:
+    <ul>
+      <li>Group activity, mostly people executing the work being governed.</li>
+      <li>Examples.</li>
+      <li>Microservices templates.</li>
+    </ul></li>
+  </ul></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492034029&amp;asins=1492034029&amp;linkId=4fa69d32eef7c359668ae325ec27c093&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (39)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (36)</a></li><li><a href="/tags/Humour/index.html">Humour (11)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (36)</a></li><li><a href="/tags/good_practices/index.html">good practices (26)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1950508579&amp;asins=1950508579&amp;linkId=a7707c5d642b9c837598a70521052b5c&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
