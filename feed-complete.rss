@@ -1,1 +1,3849 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0100</lastBuildDate><pubDate>Wed, 15 Mar 2023 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Notes on book notes</title><link>https://danlebrero.com/2023/03/15/why-to-take-booknotes/</link><guid>https://danlebrero.com/2023/03/15/why-to-take-booknotes/</guid><pubDate>Wed, 15 Mar 2023 00:00:00 +0100</pubDate><description>Three years and 36 books later, here is the process for taking book notes that I ended up with, and why.</description></item><item><title>Book notes: Building Microservices - Second edition</title><link>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</link><guid>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</guid><pubDate>Tue, 24 Jan 2023 00:00:00 +0100</pubDate><description>Book notes on "Building Microservices: Designing Fine-Grained Systems" by Sam Newman</description></item><item><title>Book notes: Investments Unlimited, a novel about devops, security, audit compliance, and thriving in the Digital Age</title><link>https://danlebrero.com/2022/08/31/investments-unlimited-novel-security-devops-summary/</link><guid>https://danlebrero.com/2022/08/31/investments-unlimited-novel-security-devops-summary/</guid><pubDate>Wed, 31 Aug 2022 00:00:00 +0200</pubDate><description>Book notes on "Investments Unlimited" by Helen Beal, Bill Bensing, Jason Cox, Michael Edenzon, Dr. Tapabrata "Topo" Pal, Caleb Queern, John Rzeszotarski, Andres Vega, and John Willis</description></item><item><title>Book notes: Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working </title><link>https://danlebrero.com/2022/07/20/team-topologies-remote-team-interactions-workbook-summary/</link><guid>https://danlebrero.com/2022/07/20/team-topologies-remote-team-interactions-workbook-summary/</guid><pubDate>Wed, 20 Jul 2022 00:00:00 +0200</pubDate><description>Book notes on "Remote Team Interactions Workbook" by Matthew Skelton and Manuel Pais</description></item><item><title>Book notes: An Elegant Puzzle: Systems of Engineering Management</title><link>https://danlebrero.com/2022/07/06/an-elegant-puzzle-systems-of-engineer-management-book-summary/</link><guid>https://danlebrero.com/2022/07/06/an-elegant-puzzle-systems-of-engineer-management-book-summary/</guid><pubDate>Wed, 06 Jul 2022 00:00:00 +0200</pubDate><description>Book notes on "An Elegant Puzzle: Systems of Engineering Management" by Will Larson</description></item><item><title>Application configuration good practices </title><link>https://danlebrero.com/2022/06/29/application-configuration-good-practices/</link><guid>https://danlebrero.com/2022/06/29/application-configuration-good-practices/</guid><pubDate>Wed, 29 Jun 2022 00:00:00 +0200</pubDate><description>A handful of practices to minimize application configuration issues</description></item><item><title>Schrödinger's functions: not the pure functions your are looking for </title><link>https://danlebrero.com/2022/06/01/pure-vs-impure-functions-schrodinger-functions/</link><guid>https://danlebrero.com/2022/06/01/pure-vs-impure-functions-schrodinger-functions/</guid><pubDate>Wed, 01 Jun 2022 09:00:00 +0200</pubDate><description>What make a pure function pure? What make a stable system stable?</description></item><item><title>Book notes: Design It!: From Programmer to Software Architect</title><link>https://danlebrero.com/2022/05/04/design-it-book-summary/</link><guid>https://danlebrero.com/2022/05/04/design-it-book-summary/</guid><pubDate>Wed, 04 May 2022 00:00:00 +0200</pubDate><description>Book notes on "Design It!: From Programmer to Software Architect" by Michael Keeling</description></item><item><title>Are you asking too much from your team/tech lead?</title><link>https://danlebrero.com/2022/04/20/are-you-asking-too-much-from-your-tech-vs-team-lead/</link><guid>https://danlebrero.com/2022/04/20/are-you-asking-too-much-from-your-tech-vs-team-lead/</guid><pubDate>Wed, 20 Apr 2022 00:00:00 +0200</pubDate><description>Expectations for a technical or/and a team leader</description></item><item><title>Book notes: Software Architecture: The Hard Parts</title><link>https://danlebrero.com/2022/03/30/software-architecture-the-hard-parts-book-summary/</link><guid>https://danlebrero.com/2022/03/30/software-architecture-the-hard-parts-book-summary/</guid><pubDate>Wed, 30 Mar 2022 00:00:00 +0200</pubDate><description>Book notes on "Software Architecture: The Hard Parts" by Neal Ford, Mark Richards, Pramod Sadalage and Zhamak Dehghani</description></item></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0100</lastBuildDate><pubDate>Wed, 15 Mar 2023 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Notes on book notes</title><link>https://danlebrero.com/2023/03/15/why-to-take-booknotes/</link><guid>https://danlebrero.com/2023/03/15/why-to-take-booknotes/</guid><pubDate>Wed, 15 Mar 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>Let&rsquo;s explain the process of taking <a href="/tags/book_notes/index.html">book notes</a> before looking at the why.</p><h2>The process</h2><p>Step one: buy a book, or even better, pick up one from your towering unread book pile.</p><p>As you read, take notes in an old-fashioned notebook. Pen and paper.</p><p>Once you finish the book, leave it aside for a few weeks.</p><p>Next, prune the handwritten notes while moving them to electronic form. Leave it aside for a few weeks.</p><p>Last, summarize the notes into key learning and publish in your blog.</p><h2>The benefits</h2><h3>1. More focus, more learning</h3><p>Taking notes by hand has two benefits:</p>
+<ol>
+  <li>Handwriting notes forces me to focus on what I am reading, improving my understanding and retention of the material.</li>
+  <li>As writing the notes is laborious, I tend to write fewer notes, which means trying to understand the key points, which in turn means learning more.
+  <ul>
+    <li>This is in contrast with highlighting text in an ebook.</li>
+  </ul></li>
+</ol><h3>Retain more due to repetition</h3><p>Repetition. I “read” a book at least four times:</p>
+<ol>
+  <li>The actual reading.</li>
+  <li>Writing the notes to the notebook.</li>
+  <li>Reading the notes and writing them back notes to electronic form.</li>
+  <li>Summarizing the electronic forms.</li>
+</ol><p>As several weeks have passed, for both steps 3 and 4 I have to go back to the book to understand what some notes mean.</p><p>Step 3 will be especially effective if your handwriting is as crappy as mine:</p><p><img src="/images/blog/books/notes-book-notes/book-notes.jpg" alt="Book notes" /></p><p>This will require you to go back to the book to figure out what you wrote and why it was important.</p><h3>No book left behind</h3><p>If you have abandoned a book for a few weeks, it can be a struggle to pick up where you left off.</p><p>With notes in hand, however, you can quickly refresh your memory and get back into the flow of the book.</p><p>I have found that my abandon rate has dropped significantly since I started taking notes.</p>
+<p class="sidenote">my abandon rate of ebooks is significantly higher than paper books, hence I avoid ebooks as much as possible.</p><h3>Fast refresh, future reminder</h3><p>Key learnings take two minutes to read, and the full notes five. This means that it is effortless to re-read them from time to time, reinforcing your memory.</p><p>And, obviously, being in electronic form makes them searchable.</p><h3>Doing two things at once</h3><p>In <a href="/2019/11/27/becoming-a-technical-leader-book-notes/">Becoming a Technical Leader</a>, Weinberg recommends trying to do two things at once, but not in the sense of multitasking but in the sense of killing two birds with one stone.</p><p>In my case, taking notes means that I am both reading a book, having a quick reference for my future self, and at the same time generating content for my blog.</p><h2>Drawbacks</h2><p>Absolutely none.</p><p>Oooooookkk, maybe all this process takes significantly more time, but I wish I had started with my very first book:</p><p><img src="/images/blog/books/notes-book-notes/all-books.jpg" alt="All books" /></p><h2>Tools</h2><p>Some geekery about what do I use:</p>
+<ol>
+  <li><a href="https://amzn.to/3mE31tG">Oxford Notepad</a>:
+  <ul>
+    <li>A5 is THE right size.</li>
+    <li>Spiral because:
+    <ol>
+      <li>holds the pen.</li>
+      <li>It can be folded entirely over.</li>
+    </ol></li>
+    <li>80gms: no ink in the other side</li>
+  </ul></li>
+  <li><a href="https://amzn.to/406YNcB">Pilot V5</a>: writes in every position/surface, but I find it dirty.
+  <ul>
+    <li>Happy to learn about alternatives.</li>
+  </ul></li>
+  <li><a href="https://amzn.to/3JC5rkL">Neck light</a>: a surprisingly useful present.</li>
+</ol><p>And the most important of all, a bookmark for each book handcrafted by my lovely daughter:</p><p><img src="/images/blog/books/notes-book-notes/book-marker.jpg" alt="book mark" /></p><p>They will become a very good reason to revisit all the books … and it keeps her busy for at least oen hour each <i class="far fa-smile" aria-hidden="true"></i>.</p>]]></description></item><item><title>Book notes: Building Microservices - Second edition</title><link>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</link><guid>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</guid><pubDate>Tue, 24 Jan 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3aTXY39">Building Microservices: Designing Fine-Grained Systems</a> by <a href="https://twitter.com/samnewman">Sam Newman</a>.</p><p>When an author lists more drawbacks thatn benefits (nine vs six), you know he knows what he is talking about.</p><h1>Key Insights</h1>
+<ul>
+  <li>Independent deployability is key.</li>
+  <li>Clear, stable service boundaries.</li>
+  <li>Smaller teams working on smaller codebases tend to be more productive.</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Benefits </th>
+      <th>Pain Points </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tech heterogeneity </td>
+      <td>Tech overload </td>
+    </tr>
+    <tr>
+      <td>Robustness </td>
+      <td>Latency </td>
+    </tr>
+    <tr>
+      <td>Scalability </td>
+      <td>Data Consistency </td>
+    </tr>
+    <tr>
+      <td>Easy of deployment </td>
+      <td>Dev experience </td>
+    </tr>
+    <tr>
+      <td>Org alignment </td>
+      <td>Cost </td>
+    </tr>
+    <tr>
+      <td>Composability </td>
+      <td>Monitoring and troubleshooting </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Reporting </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Security </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Testing </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>When to avoid:
+  <ul>
+    <li>Start ups:
+    <ul>
+      <li>Because no stable service boundaries.</li>
+      <li>Small teams.</li>
+    </ul></li>
+    <li>SW deployed by customers, due to operation burden. <img src="/images/blog/books/building-microservices/collaboration-style.png" alt="communication style" /></li>
+  </ul></li>
+  <li>Keep your middleware dumb, and keep the smarts in the endpoints.</li>
+  <li>Prefer to put into an event what you would be happy to share via an API.</li>
+  <li>Ideal technology should:
+  <ol>
+    <li>Make backwards compatibility easy.</li>
+    <li>Make interfaces explicit.</li>
+    <li>Keep your APIs technology-agnostic.</li>
+    <li>Make services simple for consumers.</li>
+    <li>Hide internal implementation details.</li>
+  </ol></li>
+  <li>Communication:
+  <ul>
+    <li>RPC:
+    <ul>
+      <li>gRPC good, other bad.</li>
+      <li>Use when good deal of control of client and server.</li>
+    </ul></li>
+    <li>REST:
+    <ul>
+      <li>Sensible default choice.</li>
+      <li>Good for external API: wide support + caching.</li>
+      <li><a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>: No practical advantage.</li>
+    </ul></li>
+    <li>GraphQL:
+    <ul>
+      <li>Dynamic queries can cause stability issues similar to a big/slow/resource intensive SQL query affecting the whole system.</li>
+      <li>CDN caching more difficult.</li>
+      <li>Write requests are awkward.</li>
+    </ul></li>
+    <li>Message brokers:
+    <ul>
+      <li>What any given broker technology means by guaranteed delivery can vary. Read the documentation very carefully.</li>
+      <li>Pay really careful attention to how exactly once delivery is implemented (if it is).
+      <ul>
+        <li>Even better, expect duplicates.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Author still a fan of XML.</li>
+  <li>Client libraries should be created by team other than the one that owns the server API.</li>
+  <li>Sagas:
+  <ul>
+    <li>Saga gives enough information to reason about what state it is in.</li>
+    <li>Sagas assume the underlying components are reliable as it does not deal with technical failures (5xx, timeouts).</li>
+    <li>General rule:
+    <ul>
+      <li>If a team owns the implementation of the entire saga: orchestration.</li>
+      <li>If multiple teams: choreographed.</li>
+    </ul></li>
+  </ul></li>
+  <li>We want to build artifacts once and only once, and use them for all deployments.</li>
+  <li>Source code organization:
+  <ul>
+    <li>Multirepo:
+    <ul>
+      <li>If you are constantly making changes across multiple services, your microservices boundaries are wrong.</li>
+    </ul></li>
+    <li>Monorepo:
+    <ul>
+      <li>Ease changes in multiple services:
+      <ul>
+        <li>Atomic commits (but not atomic deployments).</li>
+      </ul></li>
+      <li>Needs load of tooling:
+      <ul>
+        <li><a href="https://bazel.build">Bazel</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>Per team monorepo.</li>
+  </ul></li>
+  <li>3 services per dev is not an uncommon ratio.</li>
+  <li>The smarter the PaaS try to be, the more they go wrong.</li>
+  <li>If you need to do a lot of fine tuning around resources available to your functions, then FaaS is not the best option.</li>
+  <li>Explore FaaS before Kubernetes.</li>
+  <li>Future: Kubernetes hidden under a more developer friendly experience.</li>
+  <li>If your teams work independently, it follows that they should be able to test independently:
+  <ul>
+    <li>If also follows that they should own their test environments.</li>
+    <li>It is a reason against end-to-end tests.</li>
+  </ul></li>
+  <li>Contract testing and consumer-driven contracts:
+  <ul>
+    <li>Pair consumer and producer team members to write them.</li>
+    <li>Make existing communication channels more explicit.</li>
+    <li><a href="https://docs.pact.io/pact_broker">Pact Broker</a>.</li>
+    <li><a href="https://spring.io/projects/spring-cloud-contract">Spring Cloud Contract</a>. Only JVM.</li>
+  </ul></li>
+  <li>Monitoring:
+  <ol>
+    <li>Log aggregation:
+    <ul>
+      <li>Avoid log forwarding agents reformatting the logs. Make services log in the right format.</li>
+    </ul></li>
+    <li>Metrics aggregation:
+    <ul>
+      <li>Look for a product that is built with high cardinality in mind, so you can attach more metadata/tags to the metrics.</li>
+    </ul></li>
+    <li>Distributed tracing:
+    <ul>
+      <li>Pick a tool that supports <a href="https://opentelemetry.io/">OpenTelemetry</a>.</li>
+    </ul></li>
+    <li>Semantic monitoring:
+    <ul>
+      <li>Are we selling &ldquo;as usual&rdquo;?</li>
+      <li>Implemented with:
+      <ol>
+        <li>Real user monitoring: In the past.</li>
+        <li>Synthetic transactions: Catch issues before clients are aware.</li>
+      </ol></li>
+    </ul></li>
+  </ol>
+  <ul>
+    <li>Be sceptical of ML/AI.</li>
+  </ul></li>
+  <li>Good alert:
+  <ul>
+    <li>Relevant.</li>
+    <li>Unique.</li>
+    <li>Timely.</li>
+    <li>Prioritized.</li>
+    <li>Understandable.</li>
+    <li>Diagnostic: clear what is wrong.</li>
+    <li>Advisory: help understand what actions to take.</li>
+    <li>Focusing.</li>
+  </ul></li>
+  <li>Standardization:
+  <ul>
+    <li>Make it easy to do the right thing.</li>
+  </ul></li>
+  <li>You are only as secure as your least secure aspect.</li>
+  <li>Credentials of users and operators are often the weakest point of our system:
+  <ul>
+    <li>In 2020, 80% of hacks due to it.</li>
+  </ul></li>
+  <li>Cost of any security implementation should be justified by your threat model.</li>
+  <li>Failure is everywhere:
+  <ul>
+    <li>Spend less time trying to stop the inevitable and more dealing with it gracefully.</li>
+  </ul></li>
+  <li>Root cause analysis: it is surprising how often we want that root cause to be a human.</li>
+  <li>CQRS: one of the hardest forms of scaling.</li>
+  <li>The ideal number of places to cache is zero.</li>
+  <li>When customizing a product built by someone else, you have to work in their world.</li>
+  <li>One experience, one backend for frontend (BFF).</li>
+  <li>Collective ownership can allow for more standardization, hence easier to move people/work around.</li>
+  <li>The biggest cost to working efficiently at scale is the need of coordination.</li>
+  <li>Coming up with a vision without considering how your staff will feel about it and without considering what capabilities they have is likely to lead to a bad place.</li>
+  <li>Architecture is what happens, not what is planned.</li>
+  <li>Make Product Manager accountable for the technical quality of the system.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#p-1">Part I - Foundation</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - What are Microservices?</a></li>
+    <li><a href="#ch-2">Chapter 2 - How to Model Microservices</a></li>
+    <li><a href="#ch-3">Chapter 3 - Splitting the Monolith</a></li>
+    <li><a href="#ch-4">Chapter 4 - Microservices Communication Styles</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Implementation</a>
+  <ul>
+    <li><a href="#ch-5">Chapter 5 - Implementing Microservices Communication</a></li>
+    <li><a href="#ch-6">Chapter 6 - Workflow</a></li>
+    <li><a href="#ch-7">Chapter 7 - Build</a></li>
+    <li><a href="#ch-8">Chapter 8 - Deployment</a></li>
+    <li><a href="#ch-9">Chapter 9 - Testing</a></li>
+    <li><a href="#ch-10">Chapter 10 - From Monitoring to Observability</a></li>
+    <li><a href="#ch-11">Chapter 11 - Security</a></li>
+    <li><a href="#ch-12">Chapter 12 - Resilience</a></li>
+    <li><a href="#ch-13">Chapter 13 - Scaling</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - People</a>
+  <ul>
+    <li><a href="#ch-14">Chapter 14 - User Interfaces</a></li>
+    <li><a href="#ch-15">Chapter 15 - Organizational Structures</a></li>
+    <li><a href="#ch-16">Chapter 16 - The Evolutionary Architect</a></li>
+  </ul></li>
+</ul><h1><a name="p-1"></a>Part I - Foundation</h1><h2><a name="ch-1"></a>Chapter 1 - What are Microservices?</h2>
+<ul>
+  <li>Independent deployability is key.</li>
+  <li>Clear, stable service boundaries.</li>
+  <li>Monoliths:
+  <ul>
+    <li>Single-process monolith.</li>
+    <li>Modular monolith.</li>
+    <li>Distributed monolith.</li>
+  </ul></li>
+  <li>Tech that enable microservices:
+  <ul>
+    <li>Log aggregation and distributed tracing.</li>
+    <li>Containers and Kubernetes.</li>
+    <li>Streaming.</li>
+    <li>Public Cloud and Serverless.</li>
+  </ul></li>
+  <li>Smaller teams working on smaller codebases tend to be more productive.</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Benefits </th>
+      <th>Pain Points </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tech heterogeneity </td>
+      <td>Tech overload </td>
+    </tr>
+    <tr>
+      <td>Robustness </td>
+      <td>Latency </td>
+    </tr>
+    <tr>
+      <td>Scalability </td>
+      <td>Data Consistency </td>
+    </tr>
+    <tr>
+      <td>Easy of deployment </td>
+      <td>Dev experience </td>
+    </tr>
+    <tr>
+      <td>Org alignment </td>
+      <td>Cost </td>
+    </tr>
+    <tr>
+      <td>Composability </td>
+      <td>Monitoring and troubleshooting </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Reporting </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Security </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Testing </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>When to avoid:
+  <ul>
+    <li>Start ups:
+    <ul>
+      <li>Because no stable service boundaries.</li>
+      <li>Small teams.</li>
+    </ul></li>
+    <li>SW deployed by customers, due to operation burden.</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - How to Model Microservices</h2>
+<ul>
+  <li>Boundaries:
+  <ul>
+    <li>Information hiding.</li>
+    <li>Strong cohesion:
+    <ul>
+      <li>Code that changes together, stays together.</li>
+    </ul></li>
+    <li>Low coupling.</li>
+  </ul></li>
+  <li>Types of coupling, from low to high:
+  <ol>
+    <li>Domain coupling:
+    <ul>
+      <li>Unavoidable: one service calling another.</li>
+      <li>Beware of one service talking to too many downstream services:
+      <ul>
+        <li>Too much logic centralized.</li>
+        <li><a href="https://en.wikipedia.org/wiki/God_object">God &ldquo;class&rdquo;</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>Pass-through coupling:
+    <ul>
+      <li>One service passes data to another purely because the data is needed further downstream.</li>
+      <li>Fix by:
+      <ol>
+        <li>Bypass the intermediary:
+        <ul>
+          <li>Increase the domain coupling of calling service.</li>
+        </ul></li>
+        <li>Required information to become part of the intermediary contract:
+        <ul>
+          <li>Intermediary to collect all/part of that data.</li>
+        </ul></li>
+        <li>Intermediary to treat required information as a blob:
+        <ul>
+          <li>The Clojure way!</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+    <li>Common coupling:
+    <ul>
+      <li>Two services using the same data.</li>
+      <li>Okish for reference data ( low change, read only).</li>
+      <li>Service that are thin wrappers around CRUD, is a sign of weak cohesion and high coupling.</li>
+    </ul></li>
+    <li>Content coupling:
+    <ul>
+      <li>Upstream service reaches into the internals of a downstream service and changes its internal state.</li>
+      <li>Other services touching your DB directly.</li>
+    </ul></li>
+  </ol></li>
+  <li>To model:
+  <ol>
+    <li>Mainly, use DDD:
+    <ul>
+      <li>Both aggregates and bounded context give us the unit of cohesion with well defined interfaces: candidates for microservices.</li>
+      <li>Coarser-grained bounded context can contain/hide other bounded context.</li>
+    </ul></li>
+    <li>Event Storming.</li>
+    <li>Other forces:
+    <ul>
+      <li>Volatility: things that change frequently should go into their own service.</li>
+      <li>Data: PII/PCI.</li>
+      <li>Technology: use the right tool for the job.</li>
+      <li>Organizational: Conway&rsquo;s law.</li>
+    </ul></li>
+  </ol></li>
+  <li>Onion architecture: it has lots of layers and makes you cry when you have to cut through it.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Splitting the Monolith</h2><p>Skipped. See book notes on <a href="/2022/02/09/monolith-to-microservices-summary/#content">Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith</a>.</p><h2><a name="ch-4"></a>Chapter 4 - Microservices Communication Styles</h2>
+<ul>
+  <li>When you buy into specific tech choice, you are buying into a set of ideas and constraints that come with it.</li>
+</ul><p><img src="/images/blog/books/building-microservices/collaboration-style.png" alt="communication style" /></p>
+<ul>
+  <li>Sync blocking: beware of long call chains.</li>
+  <li>Common data:
+  <ul>
+    <li>Large volumes.</li>
+    <li>Universal.</li>
+    <li>High latency.</li>
+  </ul></li>
+  <li>Keep your middleware dumb, and keep the smarts in the endpoints.</li>
+  <li>Prefer to put into an event what you would be happy to share via an API.</li>
+</ul><h1><a name="p-2"></a>Part II - Implementation</h1><h2><a name="ch-5"></a>Chapter 5 - Implementing Microservices Communication</h2>
+<ul>
+  <li>Ideal technology should:
+  <ol>
+    <li>Make backwards compatibility easy.</li>
+    <li>Make interfaces explicit.</li>
+    <li>Keep your APIs technology-agnostic.</li>
+    <li>Make services simple for consumers.</li>
+    <li>Hide internal implementation details.</li>
+  </ol></li>
+  <li>Choices:
+  <ul>
+    <li>RPC:
+    <ul>
+      <li>gRPC good, other bad.</li>
+      <li>Use when good deal of control of client and server.</li>
+    </ul></li>
+    <li>REST:
+    <ul>
+      <li>Open API concern: a spec used for documenting now being used for a more explicit contract.</li>
+      <li>Lot more complex than protobuf.</li>
+      <li>Less performance than gRPC.</li>
+      <li>HTTP/3: based on <a href="https://en.wikipedia.org/wiki/QUIC">QUIC</a>, less overhead than TPC.</li>
+      <li>Sensible default choice.</li>
+      <li>Good for external API: wide support + caching.</li>
+      <li><a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>:
+      <ul>
+        <li>Many of the ideas in REST are predicated on creating distributed hypermedia systems, and this isn&rsquo;t what most people end up building.</li>
+        <li>More chatty.</li>
+        <li>No practical advantage.</li>
+      </ul></li>
+    </ul></li>
+    <li>GraphQL:
+    <ul>
+      <li>Dynamic queries can cause stability issues similar to a big/slow/resource intensive SQL query affecting the whole system.</li>
+      <li>CDN caching more difficult.</li>
+      <li>Write requests are awkward.</li>
+    </ul></li>
+    <li>Message brokers:
+    <ul>
+      <li>What any given broker technology means by guaranteed delivery can vary. Read the documentation very carefully.</li>
+      <li>Pay really careful attention to how exactly once delivery is implemented (if it is).
+      <ul>
+        <li>Even better, expect duplicates.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Serialization formats:
+  <ul>
+    <li>Author still a fan of XML.</li>
+  </ul></li>
+  <li>Use schemas to catch structural breakages.</li>
+  <li>Avoid breaking changes:
+  <ul>
+    <li>Just add, never remove.</li>
+    <li>Tolerant reader.</li>
+  </ul></li>
+  <li>Explicit interfaces:
+  <ul>
+    <li>Events:
+    <ul>
+      <li><a href="https://www.asyncapi.com">https://www.asyncapi.com</a>.</li>
+      <li><a href="https://cloudevents.io">https://cloudevents.io</a>.</li>
+    </ul></li>
+  </ul></li>
+  <li>Breaking changes:
+  <ul>
+    <li>Lockstep deployments:
+    <ul>
+      <li>Avoid.</li>
+      <li>More palatable if service + all consumers owned by the same team.</li>
+    </ul></li>
+    <li>Coexists incompatible microservices versions:
+    <ul>
+      <li>Use sparingly and for short periods of time.</li>
+    </ul></li>
+    <li>Emulate the old interface:
+    <ul>
+      <li>Preferred approach.</li>
+      <li>Author torn between encoding versions in urls (simpler, obvious) or specify in header (less coupling).</li>
+    </ul></li>
+    <li>Social contract:
+    <ul>
+      <li>How breaking changes will be notified?</li>
+      <li>How they will be agreed upon?</li>
+      <li>Who will update the consumers?</li>
+      <li>How long before old endpoint is removed?</li>
+    </ul></li>
+  </ul></li>
+  <li>If you are using libraries for code reuse across microservices boundaries, you have to accept that multiple versions of that library will be out there.</li>
+  <li>Client libraries should be created by team other than the one that owns the server API:
+  <ul>
+    <li>To avoid tightly coupled.</li>
+  </ul></li>
+  <li>Service discovery:
+  <ul>
+    <li>DNS:
+    <ul>
+      <li>Slow to propagate changes.</li>
+      <li>Okish with a load balancer.</li>
+    </ul></li>
+    <li>Dynamic service registries:
+    <ul>
+      <li>Avoid Zookeeper.</li>
+      <li>Consul: good, specially if you need Vault also.</li>
+      <li>etcd/kubernetes.</li>
+    </ul></li>
+  </ul></li>
+  <li>When using an API gateway or service mesh, it is essential that their behaviour is generic, agnostic of specific microservices.</li>
+  <li>In API gateway, avoid:
+  <ul>
+    <li>Call aggregation.</li>
+    <li>Protocol rewriting.</li>
+    <li>Use between your microservices.</li>
+  </ul></li>
+  <li><a href="https://www.bizops.com/what-is-bizops">BizOps</a>.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Workflow</h2>
+<ul>
+  <li>Sagas does not give atomicity in ACID terms:
+  <ul>
+    <li>Saga gives enough information to reason about what state it is in.</li>
+  </ul></li>
+  <li>Saga failure mode:
+  <ul>
+    <li>Sagas assume the underlying components are reliable as it does not deal with technical failures (5xx, timeouts).</li>
+    <li>Backwards recovery: compensating transactions.</li>
+    <li>Forward recovery: retry and keep processing.</li>
+  </ul></li>
+  <li>Orchestrated sagas:
+  <ul>
+    <li>One coordinator.</li>
+    <li>Easy to understand: one place to look at how a process work.</li>
+    <li>High coupling.</li>
+    <li>Risk of &ldquo;god&rdquo; service and anemic ones:
+    <ul>
+      <li>Avoid by having different services play the orchestrator role for different flows.</li>
+    </ul></li>
+  </ul></li>
+  <li>Choreographed sagas:
+  <ul>
+    <li>More decoupled.</li>
+    <li>harder to understand the process and the saga state.</li>
+    <li>Saga state:
+    <ul>
+      <li>Events should have a correlationID or sagaID.</li>
+      <li>A process consumes all events to show the actual state.</li>
+    </ul></li>
+  </ul></li>
+  <li>General rule:
+  <ul>
+    <li>If a team owns the implementation of the entire saga: orchestration.</li>
+    <li>If multiple teams: choreographed.</li>
+  </ul></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Build</h2>
+<ul>
+  <li>We want to build artifacts once and only once, and use them for all deployments.</li>
+  <li>Source code organization:
+  <ul>
+    <li>One giant repo, one giant build:
+    <ul>
+      <li>Avoid.</li>
+    </ul></li>
+    <li>Multirepo:
+    <ul>
+      <li>Hard to work with several services at the same time.</li>
+      <li>If you are constantly making changes across multiple services, your microservices boundaries are wrong.</li>
+      <li>Most straightforward.</li>
+    </ul></li>
+    <li>Monorepo:
+    <ul>
+      <li>Ease:
+      <ul>
+        <li>Fine grained code reuse.</li>
+        <li>Changes in multiple services:
+        <ul>
+          <li>Atomic commits (but not atomic deployments).</li>
+        </ul></li>
+      </ul></li>
+      <li>Needs load of tooling:
+      <ul>
+        <li><a href="https://bazel.build">Bazel</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>Per team monorepo.</li>
+  </ul></li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Deployment</h2>
+<ul>
+  <li>Principles of microservices deployment:
+  <ol>
+    <li>Isolated execution.</li>
+    <li>Focus on automation:
+    <ul>
+      <li>Aim for self-service.</li>
+      <li>3 services per dev is not an uncommon ratio.</li>
+    </ul></li>
+    <li>Infrastructure as code:
+    <ul>
+      <li>How automation should be done.</li>
+      <li><a href="https://www.terraform.io">Terraform</a> / <a href="https://www.pulumi.com">Pulumi</a>.</li>
+    </ul></li>
+    <li>Zero-downtime deployment:
+    <ul>
+      <li>Avoid coordination.</li>
+    </ul></li>
+    <li>Desired state management:
+    <ul>
+      <li>Declarative state.</li>
+      <li>Platform automatically makes changes to arrive to the desired state.</li>
+      <li><a href="https://kubernetes.io">Kubernetes</a> / <a href="https://www.nomadproject.io">Nomad</a>.</li>
+      <li>GitOps: <a href="https://fluxcd.io">Flux</a>.</li>
+    </ul></li>
+  </ol></li>
+  <li>Deployment options:
+  <ol>
+    <li>Physical machine.</li>
+    <li>Virtual machine:
+    <ul>
+      <li>Stricter isolation than containers.</li>
+    </ul></li>
+    <li>Containers:
+    <ul>
+      <li>More lightweight than virtual machines.</li>
+    </ul></li>
+    <li>Application containers.</li>
+    <li>Platform as a service (PaaS):
+    <ul>
+      <li>When PaaS solutions work well for your context, they work very well indeed.</li>
+      <li>The smarter the PaaS try to be, the more they go wrong.</li>
+    </ul></li>
+    <li>Function as a Service (FaaS):
+    <ul>
+      <li>If you need to do a lot of fine tuning around resources available to your functions, then FaaS is not the best option.</li>
+      <li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview">Azure Durable Functions</a>.</li>
+      <li>Cold start is optimized in most platforms.</li>
+      <li>One function per microservice or per aggregate:
+      <ul>
+        <li>Avoid more fine-grained.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+  <li>Explore FaaS before Kubernetes.</li>
+  <li>Kubernetes has limited multitenancy capabilities:
+  <ol>
+    <li>Use <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">OpenShift</a>.</li>
+    <li>Use federated model: multiple Kubernetes clusters with a layer on top.</li>
+  </ol></li>
+  <li><a href="https://knative.dev/docs/">Knative</a> aims to provide FaaS-style workflows to developers:
+  <ul>
+    <li>Risky to adopt.</li>
+  </ul></li>
+  <li>Future: Kubernetes hidden under a more developer friendly experience.</li>
+  <li>Progressive delivery:
+  <ul>
+    <li>Separate deployment from release.</li>
+    <li>Blue/Green deployments.</li>
+    <li>Feature toggles.</li>
+    <li>Canary releases:
+    <ul>
+      <li><a href="https://spinnaker.io">Spinnaker</a>.</li>
+    </ul></li>
+    <li>Parallel run: send to old and new and compare.</li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Testing</h2>
+<ul>
+  <li>Who owns an end-to-end test suite?
+  <ul>
+    <li>Everybody / nobody.</li>
+    <li>Dedicated team: this can be disastrous.</li>
+    <li>Split suite and assign subsets to teams.</li>
+  </ul></li>
+  <li><p>Actively remove tests that are no longer needed.</p>
+  <blockquote>Why not use a version number for the whole system? Now you have 2.1.0 problems. <cite><a href="https://twitter.com/brandonbyars">Brandom Byars</a></cite>
+  </blockquote></li>
+  <li><p>If your teams work independently, it follows that they should be able to test independently:</p>
+  <ul>
+    <li>If also follows that they should own their test environments.</li>
+    <li>It is a reason against end-to-end tests.</li>
+  </ul></li>
+  <li>Contract testing and consumer-driven contracts:
+  <ul>
+    <li>Pair consumer and producer team members to write them.</li>
+    <li>Make existing communication channels more explicit.</li>
+    <li><a href="https://docs.pact.io/pact_broker">Pact Broker</a>.</li>
+    <li><a href="https://spring.io/projects/spring-cloud-contract">Spring Cloud Contract</a>. Only JVM.</li>
+  </ul></li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - From Monitoring to Observability</h2>
+<ul>
+  <li>Observability: the extent to which you can understand the internal state of the system from external outputs.</li>
+  <li>Monitoring and observability system are production systems.</li>
+  <li>Building blocks:
+  <ol>
+    <li>Log aggregation:
+    <ul>
+      <li>Prerequisite for microservices.</li>
+      <li>Pick a common format.</li>
+      <li>Avoid log forwarding agents reformatting the logs. Make services log in the right format.</li>
+      <li>Log correlation ID.</li>
+      <li>Careful with timestamps and clock skew:
+      <ul>
+        <li>Tracing does not have this issue.</li>
+      </ul></li>
+    </ul></li>
+    <li>Metrics aggregation:
+    <ul>
+      <li>Look for a product that is built with high cardinality in mind, so you can attach more metadata/tags to the metrics.</li>
+      <li><a href="https://prometheus.io/">Prometheus</a> is low-cardinality.</li>
+      <li><a href="https://www.honeycomb.io/">HoneyComb</a> or <a href="https://lightstep.com/">LightSteps</a>.</li>
+    </ul></li>
+    <li>Distributed tracing:
+    <ul>
+      <li>Pick a tool that supports <a href="https://opentelemetry.io/">OpenTelemetry</a>.</li>
+    </ul></li>
+    <li>Are we doing ok?
+    <ul>
+      <li>SLA.</li>
+      <li>SLO: at the team level.</li>
+      <li>SLI: indicator-data to know if we are meeting a SLO.</li>
+      <li><a href="/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/#content">Error budgets</a>.</li>
+    </ul></li>
+    <li>Alerting:
+    <ul>
+      <li>Biggest question: Should this problem cause someone to be woken up at 3am?</li>
+      <li>Avoid overalerting.</li>
+      <li>Good alert:
+      <ul>
+        <li>Relevant.</li>
+        <li>Unique.</li>
+        <li>Timely.</li>
+        <li>Prioritized.</li>
+        <li>Understandable.</li>
+        <li>Diagnostic: clear what is wrong.</li>
+        <li>Advisory: help understand what actions to take.</li>
+        <li>Focusing.</li>
+      </ul></li>
+    </ul></li>
+    <li>Semantic monitoring:
+    <ul>
+      <li>Are we selling &ldquo;as usual&rdquo;?</li>
+      <li>Are users login as usual?</li>
+      <li>Implemented with:
+      <ol>
+        <li>Real user monitoring:
+        <ul>
+          <li>In the past.</li>
+          <li>Noisy.</li>
+        </ul></li>
+        <li>Synthetic transactions:
+        <ul>
+          <li>Catch issues before clients are aware.</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+    <li>Testing in production:
+    <ol>
+      <li>Synthetic transactions.</li>
+      <li>A/B testing.</li>
+      <li>Canary releases.</li>
+      <li>Parallel run.</li>
+      <li>Smoke test.</li>
+      <li>Chaos engineering.</li>
+    </ol></li>
+  </ol></li>
+  <li>Standardization:
+  <ul>
+    <li>Important in monitoring and observability.</li>
+    <li>Make it easy to do the right thing.</li>
+  </ul></li>
+  <li>Select tools that:
+  <ul>
+    <li>Democratic: everybody can use them.</li>
+    <li>Easy to integrate: OpenTelemetry.</li>
+    <li>Provide temporal, relative, relational and proportional context.</li>
+    <li>Realtime.</li>
+    <li>Suitable for your scale.</li>
+  </ul></li>
+  <li>Be sceptical of ML/AI.</li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Security</h2>
+<ul>
+  <li>You are only as secure as your least secure aspect.</li>
+  <li>Core principles:
+  <ol>
+    <li>Least privilege.</li>
+    <li>Defense in depth:
+    <ul>
+      <li>Multiple protections.</li>
+      <li>Microservices provide more defense in depth than monoliths as:
+      <ul>
+        <li>They have smaller scope.</li>
+        <li>Can be segmented in networks.</li>
+      </ul></li>
+    </ul></li>
+    <li>Automation:
+    <ul>
+      <li>Recover.</li>
+      <li>Rotate keys.</li>
+    </ul></li>
+  </ol></li>
+  <li>Five functions of Cybersecurity:
+  <ol>
+    <li>Identify potential attackers, their targets are where you are most vulnerable:
+    <ul>
+      <li>As human beings, we are quite bad at understanding risks.</li>
+      <li>Threat modeling:
+      <ul>
+        <li>Focus on the whole system, not a subset.</li>
+      </ul></li>
+    </ul></li>
+    <li>Protect.</li>
+    <li>Detect.</li>
+    <li>Respond.</li>
+    <li>Recover.</li>
+  </ol></li>
+  <li>Foundations of application security:
+  <ol>
+    <li>Credentials:
+    <ul>
+      <li>Credentials of users and operators are often the weakest point of our system:
+      <ul>
+        <li>In 2020, 80% of hacks due to it.</li>
+      </ul></li>
+      <li>Troy Hunt, <a href="https://www.troyhunt.com/passwords-evolved-authentication-guidance-for-the-modern-era/">Passwords evolved</a>:
+      <ul>
+        <li>Use password managers.</li>
+        <li>Avoid complex password rules.</li>
+        <li>Avoid mandated regular password changes.</li>
+      </ul></li>
+      <li><a href="https://git-secret.io">git-secret</a> and <a href="https://github.com/zricethezav/gitleaks">gitleaks</a>.</li>
+    </ul></li>
+    <li>Patching:
+    <ul>
+      <li>Containers: <a href="https://www.aquasec.com/">Aqua</a>.</li>
+      <li>Libraries: <a href="https://snyk.io/">Snyk</a> or Github.</li>
+    </ul></li>
+    <li>Backups.</li>
+    <li>Rebuilds:
+    <ul>
+      <li>Including restoration of backed up data.</li>
+    </ul></li>
+  </ol></li>
+  <li>Cost of any security implementation should be justified by your threat model.</li>
+  <li>Data in transit:
+  <ol>
+    <li>Server identity: HTTPS.</li>
+    <li>Client identity:
+    <ul>
+      <li>Mutual TLS.</li>
+      <li>API keys.</li>
+    </ul></li>
+    <li>Visibility of data: HTTPS.</li>
+    <li>Manipulation of data:
+    <ul>
+      <li>HTTPS.</li>
+      <li>HMAC.</li>
+    </ul></li>
+  </ol></li>
+  <li>Data at rest:
+  <ul>
+    <li>Where do you store the encryption keys?</li>
+  </ul></li>
+  <li>Do fine-grained authorization in service. It is ok for coarse-grained in the gateway.</li>
+  <li>Gateway generating a JWT per request.</li>
+  <li><a href="https://amzn.to/3opUfNH">Agile Application Security</a> by Laure Bell.</li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Resilience</h2>
+<ul>
+  <li>Resilience:
+  <ol>
+    <li>Robustness:
+    <ul>
+      <li>The ability to absorb expected perturbation.</li>
+      <li>As we increase robustness, we increase complexity.</li>
+    </ul></li>
+    <li>Rebound:
+    <ul>
+      <li>Ability to recover after a traumatic event.</li>
+    </ul></li>
+    <li>Graceful extensibility:
+    <ul>
+      <li>How well we deal with a situation that is unexpected.</li>
+      <li>Flatter orgs will often be better prepared.</li>
+      <li>Optimizations can increase brittleness.</li>
+    </ul></li>
+    <li>Sustained adaptability:
+    <ul>
+      <li>Ability to continually adapt to changing envs, stakeholders and demands.</li>
+      <li>Requires a holistic view of the system.</li>
+      <li>Share information freely on an incident.</li>
+      <li>Culture to find time to learn from incident.</li>
+    </ul></li>
+  </ol></li>
+  <li>Failure is everywhere:
+  <ul>
+    <li>Spend less time trying to stop the inevitable and more dealing with it gracefully.</li>
+  </ul></li>
+  <li>Responding very slowly is one of the worst failure modes you can experience.</li>
+  <li>CP (from CAP theorem) systems can&rsquo;t fix all your problems, specially if you keep records of the real world.</li>
+  <li>Blame:
+  <ul>
+    <li>Root cause analysis: it is surprising how often we want that root cause to be a human.</li>
+    <li>If it is true that one person making a mistake can really bring an entire telco to its knees, you&rsquo;d think that would say more about the telco than the individual.</li>
+  </ul></li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Scaling</h2>
+<ul>
+  <li>Four axes:
+  <ol>
+    <li>Vertical scaling:
+    <ul>
+      <li>In a public cloud provider, is very fast to apply.</li>
+      <li>Little risk.</li>
+      <li>Does not improve robustness.</li>
+    </ul></li>
+    <li>Horizontal duplication:
+    <ul>
+      <li>It does improve robustness.</li>
+    </ul></li>
+    <li>Data partitioning:
+    <ul>
+      <li>It does not improve robustness.</li>
+    </ul></li>
+    <li>Functional decomposition:
+    <ul>
+      <li>It does improve robustness.</li>
+      <li>Can choose tech most appropriate to the microservice load.</li>
+    </ul></li>
+  </ol></li>
+  <li>CQRS: one of the hardest forms of scaling.</li>
+  <li>Caching:
+  <ul>
+    <li>Improves robustness.</li>
+    <li>Client-side:
+    <ul>
+      <li>Main issue is invalidation and consistency.</li>
+      <li>Better latency.</li>
+    </ul></li>
+    <li>Server-side:
+    <ul>
+      <li>Main issue is that clients still need to make a network trip.</li>
+      <li>Latency improved for all clients.</li>
+    </ul></li>
+    <li>Server to return TTL.</li>
+    <li>Conditional GET (<a href="https://en.wikipedia.org/wiki/HTTP_ETag">ETag</a>).</li>
+    <li>Notification (pub/sub):
+    <ul>
+      <li>Consider adding a heartbeat.</li>
+    </ul></li>
+    <li>The ideal number of places to cache is zero.</li>
+  </ul></li>
+  <li>At certain scaling points, you will need to rearchitect.</li>
+</ul><h1><a name="p-3"></a>Part III - People</h1><h2><a name="ch-14"></a>Chapter 14 - User Interfaces</h2>
+<ul>
+  <li>Traditional reasons for dedicated FE teams:
+  <ol>
+    <li>Scarcity of specialist:
+    <ul>
+      <li>Share between teams:
+      <ul>
+        <li>Do the hard bits and teach the team to do the easy ones.</li>
+        <li><a href="/2021/01/20/team-topologies-summary/#content">Enabling teams</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>UI consistency:
+    <ul>
+      <li>Enabling teams.</li>
+      <li><a href="https://uxdesign.cc/everything-you-need-to-know-about-design-systems-54b109851969">Design System</a>.</li>
+    </ul></li>
+    <li>Technical challenge:
+    <ol>
+      <li>Monolith FE.</li>
+      <li>Micro FE:
+      <ul>
+        <li>Key problem: unlikely that 1 micro FE == 1 microservice, so micro FE ends up making multiple API calls to multiple BE services.</li>
+        <li>2 types:
+        <ol>
+          <li>Page-based decomposition:
+          <ul>
+            <li>We&rsquo;ve lost a lot by automatically assuming that a web-based UI means a single-page app.</li>
+            <li>Forward traffic to microservice/microFE depending on url.</li>
+          </ul></li>
+          <li>Widget-based decomposition:
+          <ul>
+            <li>Needs an assembly layer to pull the parts together.</li>
+            <li>Options:
+            <ul>
+              <li>Iframes: issues with comms between widgets.</li>
+              <li>Server-side templating.</li>
+              <li>Dynamically inserted by the client.</li>
+            </ul></li>
+            <li>Issues:
+            <ul>
+              <li>Dependencies:
+              <ul>
+                <li>Great to upgrade one widget dependencies at a time.</li>
+                <li>Duplication of libraries to download.</li>
+              </ul></li>
+              <li>Communication using custom events:
+              <ul>
+                <li>Same as event-driven communication patterns.</li>
+              </ul></li>
+            </ul></li>
+          </ul></li>
+        </ol></li>
+      </ul></li>
+      <li>Central aggregating gateway:
+      <ul>
+        <li>Often the central aggregating gateway does so much that ends up being owned by a dedicated team:
+        <ul>
+          <li>Potential contention and bottleneck.</li>
+        </ul></li>
+        <li>When customizing a product built by someone else, you have to work in their world.</li>
+        <li>Strongly advise against using filtering and aggregation capabilities of dedicated gateway API.</li>
+      </ul></li>
+      <li>Backend for frontend (BFF):
+      <ul>
+        <li>Like (3) but one BFF per FE.</li>
+        <li>FE and its BFF owned by same team and very coupled.</li>
+        <li>One experience, one BFF.</li>
+        <li>Consider BFF for external parties as a way to isolation APIs.</li>
+      </ul></li>
+      <li>GraphQL.</li>
+    </ol></li>
+  </ol></li>
+</ul><h2><a name="ch-15"></a>Chapter 15 - Organizational Structures</h2>
+<ul>
+  <li>The biggest cost to working efficiently at scale is the need of coordination.</li>
+  <li>Conways law, team API, platform team, enabling teams: <a href="/2021/01/20/team-topologies-summary/#content">Team Topologies</a>.</li>
+  <li>Automation is key.</li>
+  <li><a href="/2020/03/04/the-lean-mindset-summary/#content">Dunbar numbers</a>.</li>
+  <li>Strong ownership can allow for more local variation than collective ownership.</li>
+  <li>Collective ownership can allow for more standardization, hence easier to move people/work around.</li>
+  <li>When creating an internal framework, it all starts with the best intentions.</li>
+  <li>Avoid internal framework unless you&rsquo;ve exhausted your other options.</li>
+  <li>Do code reviews promptly: pair programming FTW!</li>
+  <li>Coming up with a vision without considering how your staff will feel about it and without considering what capabilities they have is likely to lead to a bad place.</li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - The Evolutionary Architect</h2>
+<ul>
+  <li>Architects and engineers have a rigor and discipline we could only dream of.</li>
+  <li>Many forms of IT certification are worthless, as we know little about what &ldquo;good&rdquo; looks like.</li>
+  <li>SW architects should focus on helping create a framework in which the right systems can emerge and continue to grow as we learn more.</li>
+  <li>SW arch as a town planner. (Same analogy as in <a href="/2020/08/12/elements-of-clojure-book-summary/#content">Elements of Clojure</a>).</li>
+  <li>Architecture is what happens, not what is planned.</li>
+  <li>Habitability: is the characteristic of source code that enables programmers coming to the code later in its life to understand its construction and intentions and to change it comfortably and confidently.</li>
+  <li>Strategic goals -&gt; Technical vision -&gt; Principles -&gt; Practices.</li>
+  <li>Architects as an enabling team:
+  <ul>
+    <li>2-3 full time architects plus tech leads.</li>
+  </ul></li>
+  <li>Make Product Manager accountable for the technical quality of the system.</li>
+  <li>Key things to standardize:
+  <ul>
+    <li>Monitoring.</li>
+    <li>Interfaces between microservices.</li>
+    <li>Architectural safety (error codes, circuit breakers, &hellip;).</li>
+    <li>Governance:
+    <ul>
+      <li>Group activity, mostly people executing the work being governed.</li>
+      <li>Examples.</li>
+      <li>Microservices templates.</li>
+    </ul></li>
+  </ul></li>
+</ul>]]></description></item><item><title>Book notes: Investments Unlimited, a novel about devops, security, audit compliance, and thriving in the Digital Age</title><link>https://danlebrero.com/2022/08/31/investments-unlimited-novel-security-devops-summary/</link><guid>https://danlebrero.com/2022/08/31/investments-unlimited-novel-security-devops-summary/</guid><pubDate>Wed, 31 Aug 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3KdOtZy">Investments Unlimited</a> by <a href="https://twitter.com/helenhappybee">Helen Beal</a>, <a href="https://twitter.com/BillBensing">Bill Bensing</a>, <a href="https://twitter.com/jasonacox">Jason Cox</a>, <a href="https://twitter.com/MichaelEdenzon">Michael Edenzon</a>, <a href="https://twitter.com/TopoPal">Dr. Tapabrata &ldquo;Topo&rdquo; Pal</a>, <a href="https://twitter.com/HttpSecHeaders">Caleb Queern</a>, <a href="https://www.linkedin.com/in/john-rzeszotarski-6113814/">John Rzeszotarski</a>, <a href="https://twitter.com/invariantly">Andres Vega</a>, and <a href="https://twitter.com/botchagalupe">John Willis</a>.</p><p>I thought that it was impossible for any book, but Investments Unlimited is as enjoyable and insightful as <a href="/2020/02/05/the-unicorn-project-summary/#content">The Unicorn Project</a>.</p><p>You can consider this book a sequel of what happens after adopting DevOps (and forgetting about Security/Audit/Compliance).</p><p>WARN: some dialogues will make you angry.</p><h1>Key Insights</h1>
+<ul>
+  <li>Governance is the process of identifying and making promises, and then checking that you keep those promises.</li>
+  <li>Promises:
+  <ul>
+    <li>Good way to market any change management.</li>
+    <li>Controls are very sterile but nobody wants to break a promise.</li>
+  </ul></li>
+  <li>Normalization of deviance: exceptions to process becoming the norm.</li>
+  <li>Risk is increased by someone not familiar with the change putting the change in production:
+  <ul>
+    <li>Better is to enforce a peer review process.</li>
+  </ul></li>
+  <li><p>One could look at compliance and security features as non-functional requirements: Product Manager responsibility.</p>
+  <blockquote>Software is not eating the world, it is infecting it <cite>Josh Corman, <a href="https://www.youtube.com/watch?v=jkoFL7hGiUk">Continuous Acceleration</a></cite>
+  </blockquote></li>
+  <li>Their processes reflect how you incentive them.</li>
+  <li><a href="http://DearAuditor.org">DearAuditor.org</a></li>
+  <li><a href="https://itrevolution.com/book/devops-automated-governance-reference-architecture/">Devops Automated Governance Reference Architecture</a>.</li>
+  <li>The change process rigor was based on what happened historically, not the system needs.</li>
+  <li>Subjectivity encourages lack of transparency and opinion-driven measures.</li>
+  <li><a href="#thelinesmodel">Three Lines Model</a>.</li>
+  <li>Policy as code!
+  <ul>
+    <li><a href="https://www.open-scap.org">Open Security Content Automation Protocol (OSCAP)</a>.</li>
+    <li><a href="https://www.openpolicyagent.org">Open Policy Agent (OPA)</a>.</li>
+  </ul></li>
+  <li>Diffusion of responsibility: as the number of bystanders increases, the personal responsibility that an individual bystander feels decreases.
+  <ul>
+    <li>Open Source: Everybody assumes that someone else has checked the source.</li>
+  </ul></li>
+  <li>Change Advisor Board (CAB) as consulting partners, not approval authority.</li>
+  <li>Where does it say the word &ldquo;automated&rdquo;?</li>
+  <li>More important to have the evidence of what the team decided, than to be 100% compliant all the time.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Chapter 0 - Preface</a></li>
+  <li><a href="#ch-1">Chapter 1 - Tuesday March 29th</a></li>
+  <li><a href="#ch-2">Chapter 2 - Thursday, March 29th</a></li>
+  <li><a href="#ch-3">Chapter 3 - Tuesday, April 5th</a></li>
+  <li><a href="#ch-4">Chapter 4 - Wednesday, April 6th</a></li>
+  <li><a href="#ch-5">Chapter 5 - Tuesday, April 19th</a></li>
+  <li><a href="#ch-6">Chapter 6 - Tuesday, April 28th</a></li>
+  <li><a href="#ch-7">Chapter 7 - Wednesday, May 18th</a></li>
+  <li><a href="#ch-8">Chapter 8 - Monday, June 6th</a></li>
+  <li><a href="#ch-9">Chapter 9 - Thursday 1st</a></li>
+  <li><a href="#ch-10">Chapter 10 - Wednesday, September 21st</a></li>
+  <li><a href="#ch-11">Chapter 11 - Thursday, October 1st</a></li>
+  <li><a href="#ch-12">Chapter 12 - December 13th</a></li>
+  <li><a href="#ch-13">Chapter 13 - February 7th</a></li>
+  <li><a href="#ch-14">Epilogue</a></li>
+</ul><h1><a name="ch-0"></a>Chapter 0 - Preface</h1>
+<ul>
+  <li>Governance, either:</li>
+  <li>Anxiety, frustration, fear, anger.</li>
+  <li>Control, peace, order, safety.</li>
+  <li>Governance aims to safeguard what a company holds of value.</li>
+</ul><h1><a name="ch-1"></a>Chapter 1 - Tuesday March 29th</h1>
+<ul>
+  <li>Chief Audit Executive and Chief Risk Officer role are highly interrelated and interdependent, so much that some orgs have merged into a single CRCO (Chief Risk and Compliance Officer).</li>
+  <li>Product release deadlines always a higher priority: (╯°□°）╯︵ ┻━┻
+  <ul>
+    <li>VP of Product: &ldquo;We had no choice.&rdquo;</li>
+  </ul></li>
+  <li>She wasn&rsquo;t pleased by the blame that was being tossed around the room.</li>
+  <li>VP Product: It takes forever to get features out. I don&rsquo;t know what our dev teams do all day.
+  <ul>
+    <li>VP Eng: Tech debt + urgent new features.</li>
+    <li>Hire more engineers!</li>
+  </ul></li>
+  <li>CEO: what I need are solutions.</li>
+</ul><h1><a name="ch-2"></a>Chapter 2 - Thursday, March 29th</h1>
+<ul>
+  <li>It always falls to Engineering to fix everything. (ノಠ益ಠ)ノ彡┻━┻</li>
+  <li>Auditor role: compare what org says it should do to manage risk with what is actually done.</li>
+  <li>Inconsistent process, ineffective in ensuring security and compliance, resulting in unauthorized and vulnerable SW with significant number of defects in production. (╯’□’)╯︵ ┻━┻</li>
+  <li>Just mentioning the Governance, Risk and Compliance (GRC) system caused an audible groan in the room.</li>
+  <li>Our best security advice mostly comes from internet searches. (ノ-_-)ノ ミ ┴┴</li>
+  <li>Bits and pieces may work in silos, but it doesn&rsquo;t work as a full system.</li>
+  <li>Backlogs were so back up that each backlog had a backlog item to review the backlog.</li>
+  <li>Promises:
+  <ul>
+    <li>Good way to market any change management.</li>
+    <li>Promises we are making to regulators and customers and to each other.</li>
+    <li>Controls are very sterile but nobody wants to break a promise.</li>
+  </ul></li>
+  <li>People love to talk about themselves, especially when someone is listening to them moan about a problem:
+  <ul>
+    <li>Lead the conversation with empathy.</li>
+    <li>Elicit fact from the complaining.</li>
+  </ul></li>
+  <li>Copious notes.</li>
+</ul><h1><a name="ch-3"></a>Chapter 3 - Tuesday, April 5th</h1>
+<ul>
+  <li>It is amazing what happens when you can focus and finish a task.</li>
+  <li>Subjective nature of how we create evidence. (ノ ゜Д゜)ノ ︵ ┻━┻</li>
+  <li>Normalization of deviance: exceptions to process becoming the norm.</li>
+  <li>We have clear and published guidelines:
+  <ul>
+    <li>But people just ignore them.</li>
+  </ul></li>
+  <li>We need segregation of duties: developers vs operations.
+  <ul>
+    <li>But in &ldquo;DevOps-fied&rdquo; teams everybody is a dev.</li>
+    <li>Does not work: as risk is increased by someone not familiar with the change putting the change in production.</li>
+    <li>Better is to enforce a peer review process.</li>
+  </ul></li>
+  <li>One could look at compliance and security features as non-functional requirements:
+  <ul>
+    <li>Product Manager responsibility.</li>
+  </ul></li>
+  <li><a href="https://amzn.to/3AJci8A">Build Trap</a>:
+  <ul>
+    <li>Only focus on features and neglect experimentation and learning (including learning how to work better).</li>
+  </ul></li>
+  <li>Change not only engineering but also business.</li>
+</ul><h1><a name="ch-4"></a>Chapter 4 - Wednesday, April 6th</h1>
+<ul>
+  <li>Product Manager needs to manage upwards, sideways and downward.</li>
+  <li><p><a href="http://blog.jabebloom.com/2020/03/04/the-three-economies-an-introduction/">The Three Economies</a>.</p>
+  <blockquote>Software is not eating the world, it is infecting it <cite>Josh Corman, <a href="https://www.youtube.com/watch?v=jkoFL7hGiUk">Continuous Acceleration</a></cite>
+  </blockquote></li>
+  <li><p>Chronic conflicts between dev, ops and sec.</p></li>
+  <li>Their processes reflect how you incentive them.</li>
+  <li>Shift left: smart people defining and codifying the security and compliance policies, instead of manually checking screenshots.</li>
+  <li>Compliance/Security as a product: how would you bring a product to market when you have no objective evidence the markets wants it but some qualitative evidence that it is desired?
+  <ul>
+    <li>Small, quick experiments, minimally viable products, to learn what and what doesn&rsquo;t work.</li>
+  </ul></li>
+</ul><h1><a name="ch-5"></a>Chapter 5 - Tuesday, April 19th</h1>
+<ul>
+  <li><a href="http://DearAuditor.org">DearAuditor.org</a></li>
+  <li>Was never going to drag itself out of this mess without seeing Audit in a new light.</li>
+  <li><a href="https://itrevolution.com/book/devops-automated-governance-reference-architecture/">Devops Automated Governance Reference Architecture</a>.</li>
+  <li>First design the business process of automated governance, then do a tool and tech selection.</li>
+  <li>Production Access Debt:
+  <ul>
+    <li>Every time a persistent production account is accessed, you add ten points. Each breakglass read account is one, each write account is five.</li>
+    <li>Reduce points by:
+    <ol>
+      <li>Everything must be code:
+      <ul>
+        <li>Including infra and build/deploy pipelines.</li>
+      </ul></li>
+      <li>All logs must be streamed out.</li>
+      <li>No system in production unless it has observability built in.</li>
+    </ol></li>
+  </ul></li>
+  <li><a href="https://www.capitalone.com/tech/software-engineering/governance-in-a-devops-environment/">Governance in a DevOps environment</a>.</li>
+</ul><h1><a name="ch-6"></a>Chapter 6 - Tuesday, April 28th</h1>
+<ul>
+  <li>Subjective change approval policies and processes. (┛ಸ_ಸ)┛彡┻━┻</li>
+  <li>The change process rigor was based on what happened historically, not the system needs.</li>
+  <li>No standardization because engineering inability to agree on a converted set of operation approaches.</li>
+  <li>The Devops Automated Governance takes subjectivity and makes it objective.</li>
+  <li>Subjectivity encourages lack of transparency and opinion-driven measures.</li>
+</ul><h1><a name="ch-7"></a>Chapter 7 - Wednesday, May 18th</h1>
+<ul>
+  <li>Shift left on security: let risk management being in the developer&rsquo;s mind:
+  <ul>
+    <li>Seeking advice and input from Audit early in the process.</li>
+  </ul></li>
+</ul><h1><a name="ch-8"></a>Chapter 8 - Monday, June 6th</h1>
+<ul>
+  <li>Didn&rsquo;t care about how it was done; they only cared about the number of applications that were migrated onto the cloud. ( °□°) ︵ ┻━┻</li>
+  <li>Governance is the process of identifying and making promises, and then checking that you keep those promises.</li>
+  <li><a href="https://www.theiia.org/globalassets/site/about-us/advocacy/three-lines-model-updated.pdf">Three Lines Model</a>:<br/><div id="thelinesmodel"></div> <img src="/images/blog/books/investment-unlimited/three-lines-model.png" alt="Three lines model" />
+  <ol>
+    <li>First line (bank tellers, engineers):
+    <ul>
+      <li>Own and manage the risk associated with their responsibilities.</li>
+      <li>Provide input into designing controls, as they execute them in a daily basis and knows what works.</li>
+    </ul></li>
+    <li>Second line (Risk management and compliance, Security):
+    <ul>
+      <li>Structure risk management framework.</li>
+      <li>Decide on policies and controls.</li>
+      <li>Monitors first line for following the policies and controls.</li>
+    </ul></li>
+    <li>Third line (assurance mechanism, Audit):
+    <ul>
+      <li>Asses if risk management approach is effective.</li>
+    </ul></li>
+  </ol></li>
+  <li>Policy as code!
+  <ul>
+    <li><a href="https://www.open-scap.org">Open Security Content Automation Protocol (OSCAP)</a>.</li>
+    <li><a href="https://www.openpolicyagent.org">Open Policy Agent (OPA)</a>.</li>
+  </ul></li>
+</ul><h1><a name="ch-9"></a>Chapter 9 - Thursday 1st</h1>
+<ul>
+  <li>Diffusion of responsibility: as the number of bystanders increases, the personal responsibility that an individual bystander feels decreases.
+  <ul>
+    <li>Open Source:
+    <ul>
+      <li>Everybody assumes that someone else has checked the source.</li>
+      <li>Hence, OS is not more secure than closed source.</li>
+    </ul></li>
+  </ul></li>
+</ul><h1><a name="ch-10"></a>Chapter 10 - Wednesday, September 21st</h1>
+<ul>
+  <li>Software bill of materials: all the components you use to build your software:
+  <ul>
+    <li>Easily find out which code/product is using a particular library version.</li>
+    <li><a href="https://owasp.org/www-project-dependency-track/">OWASP Dependency Track</a>.</li>
+  </ul></li>
+</ul><h1><a name="ch-11"></a>Chapter 11 - Thursday, October 1st</h1>
+<ul>
+  <li>Publish non-compliant artefacts and break at deploy time:
+  <ul>
+    <li>This allows for break-glass scenarios where someone has to accept the risk of deploying a non-compliant deploy.</li>
+  </ul></li>
+  <li>If a change is 100% compliant, lets eliminated CAB (change advisor board):
+  <ul>
+    <li>CAB as consulting partners, not approval authority.</li>
+  </ul></li>
+</ul><h1><a name="ch-12"></a>Chapter 12 - December 13th</h1>
+<ul>
+  <li>Where does it say the word &ldquo;automated&rdquo;?</li>
+</ul><h1><a name="ch-13"></a>Chapter 13 - February 7th</h1>
+<ul>
+  <li>Guiding policies:
+  <ol>
+    <li>If the rest of the policies are abided by, then you can bypass manual change approval process and go straight to production.</li>
+    <li>Complete automation for capturing evidence of quality, risk mitigation, and compliance. Only manual process is peer-review.</li>
+    <li>Security and compliance are as important as functional requirements. Security, Risk, Compliance and Audit must identify requires from day one.</li>
+    <li>Software budget: to track deficit in quality, risk, compliance and audit. When budget is depleted, no more feature work is allowed.</li>
+  </ol></li>
+  <li>Bring authority to information, not the other way around.</li>
+  <li>Security is responsibility of those building the SW.</li>
+  <li>More important to have the evidence of what the team decided, than to be 100% compliant all the time.</li>
+</ul><h1><a name="ch-14"></a>Epilogue</h1>
+<ul>
+  <li>When done well, tech and security cannot be seen from the outside.</li>
+  <li>Every business was truly a technology business and every business leader was a technology leader.</li>
+  <li><a href="https://www.devsecops.org">DevSecOps.org</a></li>
+</ul>]]></description></item><item><title>Book notes: Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working </title><link>https://danlebrero.com/2022/07/20/team-topologies-remote-team-interactions-workbook-summary/</link><guid>https://danlebrero.com/2022/07/20/team-topologies-remote-team-interactions-workbook-summary/</guid><pubDate>Wed, 20 Jul 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://twitter.com/matthewpskelton">Matthew Skelton</a> and <a href="https://twitter.com/manupaisable">Manuel Pais</a>&rsquo;s <a href="https://amzn.to/3claIjE">Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working </a>.</p><p>A <a href="/2021/01/20/team-topologies-summary/#content">Team Topologies</a> companion with homework to map your current team topologies, and useful advise for remote work.</p><p>Thanks to <a href="https://itrevolution.com">ITRevolution</a> for the complimentary copy!</p><h1>Key Insights</h1>
+<ul>
+  <li>Physical office was covering up poorly defined teams and poorly defined ares of focus.</li>
+  <li>In a remote work setting, it is vital to &ldquo;over communicate&rdquo;.</li>
+  <li>In remote settings, keep it shorter and sharper: it&rsquo;s harder to hold people&rsquo;s attention remotely.</li>
+  <li>Facilitating interaction longer than a few weeks suggests something isn&rsquo;t quite right.</li>
+  <li>In the context of remote work, it is too easy to accidentally fall into a swamp of direct private messages.</li>
+</ul><h1>Homework</h1>
+<ul>
+  <li><a href="https://github.com/TeamTopologies/Team-API-Template">Define your Team API</a>.</li>
+  <li><a href="https://github.com/TeamTopologies/Team-Dependencies-Tracking">Track team dependencies</a>.</li>
+  <li>Start a network-building event: communities of practice, internal tech events, lunchtime talks, coffee breaks.</li>
+  <li><a href="https://github.com/TeamTopologies/Trust-Boundaries-Template">Trust boundaries assessment</a>.</li>
+  <li><a href="https://github.com/TeamTopologies/Online-Space-Assessment">Online space assessment</a>.</li>
+  <li><a href="https://github.com/TeamTopologies/Team-Cognitive-Load-Assessment">Cognitive load assessment/Internal platform survey</a>.</li>
+</ul><h1><a name="ch-0"></a>Preface</h1>
+<ul>
+  <li>Physical office was covering up poorly defined teams and poorly defined ares of focus.</li>
+  <li>A successful remote-first approach requires the explicit design of communication between teams using physical and online spaces.</li>
+</ul><h2><a name="ch-1"></a>Chapter 1 - Overview - Focus on Remote Team Interactions</h2>
+<ul>
+  <li>Google&rsquo;s <a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/identify-dynamics-of-effective-teams/">five keys</a> to successful teams:
+  <ol>
+    <li>Psychological safety.</li>
+    <li>Dependability.</li>
+    <li>Structure and clarity.</li>
+    <li>Meaning.</li>
+    <li>Impact.</li>
+  </ol></li>
+  <li><a href="https://github.com/TeamTopologies/Team-Cognitive-Load-Assessment">Cognitive load assessment</a>:
+  <ul>
+    <li>This is something the platform team should use as a KPI.</li>
+  </ul></li>
+  <li>Problematic dependency between teams, symptoms:
+  <ul>
+    <li>Delays.</li>
+    <li>Increase WIP.</li>
+    <li>Unpredictability.</li>
+  </ul></li>
+  <li>Instead of waiting, focus on tracking and then removing the in-flow dependencies.
+  <ul>
+    <li><a href="https://amzn.to/3aKJS3T">Making Work Visible</a> by Dominca De Grandis.</li>
+  </ul></li>
+  <li>In a remote work setting, it is vital to &ldquo;over communicate&rdquo;:
+  <ul>
+    <li>What, why, how, when will be done.</li>
+  </ul></li>
+</ul><h1><a name="ch-2"></a>Chapter 2: Team Dependencies</h1>
+<ul>
+  <li>Techniques to track and manage inter-team dependencies, to promote healthy ones, and minimize others.</li>
+  <li>Team API:
+  <ul>
+    <li>For remote teams, especially important:
+    <ul>
+      <li>Road map: how to notify changes?</li>
+      <li>Communication preferences:
+      <ul>
+        <li>Channel, schedule.</li>
+        <li>Expected response time.</li>
+      </ul></li>
+    </ul></li>
+    <li><a href="https://github.com/TeamTopologies/Team-API-Template">Template</a></li>
+  </ul></li>
+  <li>Dependencies can never be fully eradicated.</li>
+  <li>Not all dependencies are the same:
+  <ul>
+    <li>Blocking vs non-blocking.</li>
+    <li>Healthy vs unhealthy.</li>
+    <li>Frequent vs infrequent.</li>
+  </ul></li>
+  <li>Tracking dependencies:
+  <ul>
+    <li>Add dependency tag to stories.</li>
+    <li><a href="https://youtu.be/faKSg7iLigw?t=2479">Physical dependency matrix</a>.</li>
+    <li>Dependency swimlane board:
+    <ul>
+      <li>Add a specific lane to your Kanban board with the tasks that depend on other teams.</li>
+    </ul></li>
+    <li><a href="https://github.com/TeamTopologies/Team-Dependencies-Tracking">Simple table</a>.</li>
+  </ul></li>
+  <li>Internal network:
+  <ul>
+    <li>Virtual coffee.</li>
+    <li>Internal conference.</li>
+    <li>Communities of Practice.</li>
+    <li>Brown bag sessions.</li>
+    <li>Enabling teams.</li>
+  </ul></li>
+  <li>Keep it shorter and sharper: it&rsquo;s harder to hold people&rsquo;s attention remotely.</li>
+</ul><h1><a name="ch-3"></a>Chapter 3: Setting Team Boundaries</h1>
+<ul>
+  <li>Group trust boundaries:
+  <ul>
+    <li><a href="https://danlebrero.com/2020/03/04/the-lean-mindset-summary/">Dunbar numbers</a>.</li>
+    <li>Groups slightly smaller than the trust boundary are likely to have good trust. Larger than are likely to have trust issues and are candidate to splitting into smaller groups.</li>
+    <li>When the size of an online space reaches a trust boundary, create a new space.</li>
+    <li>Online space aligned to flow of change.</li>
+    <li>Optimize for trust within online spaces.</li>
+  </ul></li>
+  <li>Chat tools:
+  <ul>
+    <li>Standardise channel names:
+    <ul>
+      <li>TeamType_TeamName.</li>
+      <li>Team_InteractionMode_Team.</li>
+    </ul></li>
+    <li>People name to include team they belong to.</li>
+    <li>Explicit etiquette.</li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4: Purposeful Interactions</h2>
+<ul>
+  <li>Facilitating interaction longer than a few weeks suggests something isn&rsquo;t quite right.</li>
+  <li>Difficulties or awkwardness in team interactions can be used as a kind of sensing mechanism to help evolve the org.</li>
+  <li>Focus on flow.</li>
+  <li>In the context of remote work, it is too easy to accidentally fall into a swamp of direct private messages.</li>
+  <li>Define usage guidelines for Slack/Teams/&hellip;</li>
+  <li>Curate the chat workspace.</li>
+</ul><h1><a name="ch-5"></a>Chapter 5: Next steps</h1>
+<ul>
+  <li><a href="https://ITRev.io/EngExpFeedback">Internal Platform survey</a>.</li>
+  <li>Internal personas.</li>
+  <li>Naming and usage for chat tools: don&rsquo;t attempt to design everything upfront, allow some patterns to emerge.</li>
+  <li>Expect rework.</li>
+</ul>]]></description></item><item><title>Book notes: An Elegant Puzzle: Systems of Engineering Management</title><link>https://danlebrero.com/2022/07/06/an-elegant-puzzle-systems-of-engineer-management-book-summary/</link><guid>https://danlebrero.com/2022/07/06/an-elegant-puzzle-systems-of-engineer-management-book-summary/</guid><pubDate>Wed, 06 Jul 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3tvRUEL">An Elegant Puzzle: Systems of Engineering Management</a> by <a href="https://twitter.com/Lethain">Will Larson</a>.</p><h1>Key Insights</h1>
+<ul>
+  <li>Managers should support 6-8 engineers.</li>
+  <li>Managers of mangers should support 4-6 managers.</li>
+  <li>Tech lead is a role with limited career opportunities: too little management and too little technical.</li>
+  <li>Teams smaller than 4 are not teams.</li>
+  <li>On hiring, fix one team at a time, not a bit on each.</li>
+  <li>Move work, not people.</li>
+  <li>States of a team:
+  <ol>
+    <li>Falling behind:
+    <ul>
+      <li>Backlog growing, low morale, hard work but little progress.</li>
+      <li>Solution: hire more people.</li>
+      <li>Tactical support:
+      <ul>
+        <li>Setting user expectations.</li>
+        <li>Quick wins (for morale).</li>
+      </ul></li>
+    </ul></li>
+    <li>Threading water:
+    <ul>
+      <li>Critical work gets done but no innovation or paying technical debt.</li>
+      <li>Solution: reduce WIP.</li>
+      <li>Tactical support: from personal to team view on productivity.</li>
+    </ul></li>
+    <li>Repaying debt:
+    <ul>
+      <li>Compounding effect.</li>
+      <li>Solution: find time to continue.</li>
+      <li>Tactical support: ensure enough delivery to keep users happy.</li>
+    </ul></li>
+    <li>Innovating:
+    <ul>
+      <li>Solution: Enough slack.</li>
+      <li>High performing teams are sacred.</li>
+      <li>Tactical support: ensure work is valued.</li>
+    </ul></li>
+  </ol></li>
+  <li>Key tools for leading change:
+  <ol>
+    <li>Systems thinking.</li>
+    <li>Metrics.</li>
+    <li>Vision.</li>
+  </ol></li>
+  <li>Folks universally want to be responsible.</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Strategy </th>
+      <th>Vision </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Purpose </td>
+      <td>Approach to a specific challenge </td>
+      <td>A gentle, aligning pressure </td>
+    </tr>
+    <tr>
+      <td>Character </td>
+      <td>Practical </td>
+      <td>Aspirational </td>
+    </tr>
+    <tr>
+      <td>Time Frame </td>
+      <td>Variable </td>
+      <td>Long-term </td>
+    </tr>
+    <tr>
+      <td>Specificity </td>
+      <td>Accurate, detailed </td>
+      <td>Illustrative, directional </td>
+    </tr>
+    <tr>
+      <td>Quantity </td>
+      <td>As many as useful </td>
+      <td>As few as possible </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>The fact that something stops working at significantly increased scale is a sign that it was designed appropriately to the previous constraints rather than being over-designed.</li>
+  <li>Most poor working relationships are the by-product of information gaps.</li>
+  <li>Prioritize long-term success over short-term quality.</li>
+  <li>Bad policy is one that does little constraint.</li>
+  <li>Policies are hard to enforce because:
+  <ul>
+    <li>Reduce opportunities.</li>
+    <li>Are a local suboptimal.</li>
+  </ul></li>
+  <li>With the right people, any process works, and with the wrong people, no process works.</li>
+  <li><a href="#errors">Typical errors as a manager</a>.</li>
+  <li>Growth only comes from change, and that is something you can influence.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-2">Chapter 2 - Organizations</a></li>
+  <li><a href="#ch-3">Chapter 3 - Tools</a></li>
+  <li><a href="#ch-4">Chapter 4 - Approaches</a></li>
+  <li><a href="#ch-5">Chapter 5 - Culture</a></li>
+  <li><a href="#ch-6">Chapter 6 - Careers</a></li>
+  <li><a href="#ch-7">Chapter 7 - Appendix</a></li>
+</ul><h1><a name="ch-2"></a>Chapter 2 - Organizations</h1>
+<ul>
+  <li>Sizing teams:
+  <ul>
+    <li>The fundamental challenge of organizational design.</li>
+    <li>Managers should support 6-8 engineers:
+    <ul>
+      <li>Less == tech lead.
+      <ul>
+        <li>It is a role with limited career opportunities:
+        <ul>
+          <li>Too little management and too little technical.</li>
+        </ul></li>
+      </ul></li>
+      <li>More == coach.</li>
+    </ul></li>
+    <li>Managers of mangers should support 4-6 managers:
+    <ul>
+      <li>Less == underutilized, tempted to create their own work.</li>
+      <li>More == coach.</li>
+    </ul></li>
+    <li>On-call requires 8 engineers.</li>
+    <li>Teams smaller than 4 are not teams.</li>
+  </ul></li>
+  <li>Staying on the path to high-performing teams.
+  <ul>
+    <li>States of a team:
+    <ol>
+      <li>Falling behind:
+      <ul>
+        <li>Backlog growing, low morale, hard work but little progress.</li>
+        <li>Solution: hire more people.</li>
+        <li>Tactical support:
+        <ul>
+          <li>Setting user expectations.</li>
+          <li>Quick wins (for morale).</li>
+        </ul></li>
+      </ul></li>
+      <li>Threading water:
+      <ul>
+        <li>Critical work gets done but no innovation or paying technical debt.</li>
+        <li>Solution: reduce WIP.</li>
+        <li>Tactical support: from personal to team view on productivity.</li>
+      </ul></li>
+      <li>Repaying debt:
+      <ul>
+        <li>Compounding effect.</li>
+        <li>Solution: find time to continue.</li>
+        <li>Tactical support: ensure enough delivery to keep users happy.</li>
+      </ul></li>
+      <li>Innovating:
+      <ul>
+        <li>Solution: Enough slack.</li>
+        <li>High performing teams are sacred.</li>
+        <li>Tactical support: ensure work is valued.</li>
+      </ul></li>
+    </ol></li>
+    <li>Slow process to move between stages.</li>
+    <li>On hiring, fix one team at a time, not a bit on each.</li>
+    <li>Move work, not people.</li>
+    <li>Gatekeeper antipattern:
+    <ul>
+      <li>Having humans who perform gatekeeping activities creates very odd social dynamics, and is rarely a great use of a human&rsquo;s time.</li>
+    </ul></li>
+    <li>If you are overwhelmed with possible areas of improvements, agree with your manager on an explicit plan, and give yourself permission to do the rest poorly.</li>
+    <li>Plan your succession: Page 53.</li>
+  </ul></li>
+</ul><h1><a name="ch-3"></a>Chapter 3 - Tools</h1>
+<ul>
+  <li>Key tools for leading change:
+  <ol>
+    <li>Systems thinking.</li>
+    <li>Metrics.</li>
+    <li>Vision.</li>
+  </ol></li>
+  <li>Basic product management:
+  <ol>
+    <li>Explore problems to solve:
+    <ul>
+      <li>User&rsquo;s pain.</li>
+      <li>User&rsquo;s purpose.</li>
+      <li>Competition.</li>
+      <li>User cohorts.</li>
+      <li>Further competitive advantages.</li>
+    </ul></li>
+    <li>Problem selection:
+    <ul>
+      <li>Consider different time frames.</li>
+      <li>Industry trends.</li>
+      <li>ROI.</li>
+    </ul></li>
+    <li>Solution validation:
+    <ul>
+      <li>Write an announcement letter.</li>
+      <li>Prior art.</li>
+      <li>User switching costs.</li>
+      <li>Find an early adopter.</li>
+      <li>It is far more reliable to get good at cheap validation than it is to get great at picking the right solution.</li>
+    </ul></li>
+  </ol></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Strategy </th>
+      <th>Vision </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Purpose </td>
+      <td>Approach to a specific challenge </td>
+      <td>A gentle, aligning pressure </td>
+    </tr>
+    <tr>
+      <td>Character </td>
+      <td>Practical </td>
+      <td>Aspirational </td>
+    </tr>
+    <tr>
+      <td>Time Frame </td>
+      <td>Variable </td>
+      <td>Long-term </td>
+    </tr>
+    <tr>
+      <td>Specificity </td>
+      <td>Accurate, detailed </td>
+      <td>Illustrative, directional </td>
+    </tr>
+    <tr>
+      <td>Quantity </td>
+      <td>As many as useful </td>
+      <td>As few as possible </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Goals decouple the &ldquo;what&rdquo; from the &ldquo;how&rdquo;.</li>
+  <li>Good goals have 4 numbers:
+  <ol>
+    <li>Target.</li>
+    <li>Baseline.</li>
+    <li>Trend.</li>
+    <li>Time frame.</li>
+  </ol>
+  <ul>
+    <li>Answer:
+    <ol>
+      <li>How ambitious the goal is.</li>
+      <li>When it is achieved.</li>
+    </ol></li>
+    <li>Set constraints: investment, baselines that should not change.</li>
+  </ul></li>
+  <li>Metrics are an effective way to lead change with little or no organizational authority:
+  <ul>
+    <li>The most general and self-managing tool is bench marking (against other teams).</li>
+    <li>Nudge teams into action by pushing notifications.</li>
+    <li>Folks universally want to be responsible.</li>
+  </ul></li>
+  <li>The fact that something stops working at significantly increased scale is a sign that it was designed appropriately to the previous constraints rather than being over-designed.</li>
+  <li>Migrations are the only mechanism to effectively manage technical debt.</li>
+  <li>Reorgs:
+  <ul>
+    <li>Is it going to solve an already existing and not temporal structural problem?</li>
+    <li>Use a years out head count, to avoid yearly reorgs.</li>
+    <li>Put teams that work together (especially poorly) as close together as possible. This minimizes distance from escalation during disagreements, allowing arbiters to have sufficient context.</li>
+  </ul></li>
+  <li>Most poor working relationships are the by-product of information gaps.</li>
+  <li>Career progression:
+  <ol>
+    <li>Identify your 3-5 years goal.</li>
+    <li>Identify gaps in your skills to achieve that goal.</li>
+    <li>Pick a few to focus for the next 3-6 months.</li>
+    <li>Agree on action plan with manager.</li>
+  </ol></li>
+  <li>Model, document, share:
+  <ul>
+    <li>Approach to leadership without authority.</li>
+    <li>Model:
+    <ol>
+      <li>Baseline.</li>
+      <li>Try it long enough as an experiment.</li>
+    </ol></li>
+    <li>Document:
+    <ul>
+      <li>The problem solved.</li>
+      <li>Learning.</li>
+      <li>Detailed approach.</li>
+    </ul></li>
+    <li>Share:
+    <ul>
+      <li>Don&rsquo;t lobby for changes, just present.</li>
+    </ul></li>
+  </ul></li>
+  <li>Designing centralized decision-making groups:
+  <ul>
+    <li>Aim to increase positive freedom, while not reducing negative freedom.</li>
+    <li>Decide:
+    <ol>
+      <li>Influence: advisory &lt;&ndash;&gt; authoritarian.</li>
+      <li>Interface: ticket, email, weekly review sessions.</li>
+      <li>Size.</li>
+      <li>Time commitment.</li>
+      <li>Identity: small teams and high time commitment are required for shifting identity to this group. If you want this.</li>
+      <li>Selection process.</li>
+      <li>Length of term.</li>
+      <li>How representative will this group be?</li>
+    </ol></li>
+    <li>Failure modes:
+    <ul>
+      <li>Domineering.</li>
+      <li>Bottlenecked.</li>
+      <li>Status oriented.</li>
+      <li>Inert.</li>
+    </ul></li>
+  </ul></li>
+  <li>Presenting to senior leadership: Page 104.</li>
+  <li>Time management:
+  <ul>
+    <li>Reflect on how you spend your time.</li>
+    <li>Prioritize long-term success over short-term quality.</li>
+    <li>Stop doing things, and then alert your team and management.</li>
+  </ul></li>
+  <li>Communities of learnings:
+  <ol>
+    <li>Few minutes of content, then move to discussion.</li>
+    <li>Discuss in groups of 4-5.</li>
+    <li>Regroup and share learnings per group.</li>
+  </ol>
+  <ul>
+    <li>Pick topics people already know about.</li>
+  </ul></li>
+</ul><h1><a name="ch-4"></a>Chapter 4 - Approaches</h1>
+<ul>
+  <li>Policies:
+  <ul>
+    <li>To bring consistency == fairness.</li>
+  </ul>
+  <ol>
+    <li>Define goals.</li>
+    <li>Defines constraints that support those goals.</li>
+  </ol>
+  <ul>
+    <li>Bad policy is one that does little constraint.</li>
+    <li>Policies are hard to enforce because:
+    <ul>
+      <li>Reduce opportunities.</li>
+      <li>Are a local suboptimal.</li>
+    </ul></li>
+    <li>Avoid exceptions:
+    <ol>
+      <li>Collect escalations and exception requests.</li>
+      <li>Periodically, review policy with (1) in mind.</li>
+    </ol></li>
+  </ul></li>
+  <li>How to say no to more work:
+  <ol>
+    <li>Explain current velocity and its constraint. Outcome, either:
+    <ol>
+      <li>You get more resources.</li>
+      <li>Move to prioritization vs current work.</li>
+    </ol></li>
+    <li>Prioritization vs current work:
+    <ol>
+      <li>Document all incoming tasks.</li>
+      <li>Develop guiding principles on how work is selected.</li>
+      <li>Show selected list.</li>
+      <li>Compare new work against principles and selected list.</li>
+    </ol></li>
+  </ol></li>
+  <li>Almost every internal problem can be traced back to a missing or poor relationship:
+  <ul>
+    <li>Start debugging problems from the relationship angle.</li>
+  </ul></li>
+  <li>With the right people, any process works, and with the wrong people, no process works.</li>
+  <li>When:
+  <ul>
+    <li>Rapid growing: execution is more important than new ideas.</li>
+    <li>Stabilized: ideas &gt; execution.</li>
+  </ul></li>
+  <li><p id="errors"/>Typical errors as a manager:
+  <ul>
+    <li>Junior:
+    <ul>
+      <li>Only manage down.</li>
+      <li>Only manage up.</li>
+      <li>Never manage up.</li>
+      <li>Optimize locally.</li>
+      <li>Assume hiring never solves any problem.</li>
+      <li>Not spending time building relationships.</li>
+      <li>Define their role too narrowly</li>
+      <li>Forget your manager is a human being.</li>
+    </ul></li>
+    <li>More experienced:
+    <ul>
+      <li>Do what worked in previous company.</li>
+      <li>Spend too much time building relationships.</li>
+      <li>Assume hiring can solve any problem.</li>
+      <li>Abscond rather than delegate.</li>
+      <li>Become disconnected from ground truth.</li>
+    </ul></li>
+    <li>Both:
+    <ul>
+      <li>Mistake team size for impact.</li>
+      <li>Mistake title for impact.</li>
+      <li>Confuse authority with truth.</li>
+      <li>Dont trust the team enough to delegate.</li>
+      <li>Let other people manage your time.</li>
+      <li>Only see problems and not celebrate successes.</li>
+    </ul></li>
+  </ul></li>
+  <li>To grow as a manager, purse growth in scope rather than # people you manage.</li>
+</ul><h1><a name="ch-5"></a>Chapter 5 - Culture</h1>
+<ul>
+  <li>To make your peers your team:
+  <ol>
+    <li>Must be aware of each others work.</li>
+    <li>Know at a personal level.</li>
+    <li>Somebody must act as a referee.</li>
+    <li>Avoid zero-sum culture.</li>
+    <li>Make it explicit.</li>
+  </ol></li>
+</ul><h1><a name="ch-6"></a>Chapter 6 - Careers</h1>
+<ul>
+  <li>Growth only comes from change, and that is something you can influence.</li>
+  <li>Interview process:
+  <ol>
+    <li>Be kind.
+    <ul>
+      <li>Budget enough time.</li>
+    </ul></li>
+    <li>Agree with interviews on role&rsquo;s requirements.</li>
+    <li>Understand the signal your interview is checking for.</li>
+    <li>Come prepared.</li>
+    <li>Deliberately express interest:
+    <ul>
+      <li>Get every interviewer to send a note saying that they enjoyed the interview (with an explanation).</li>
+    </ul></li>
+    <li>Feedback loops:
+    <ul>
+      <li>Training new interviews.</li>
+      <li>Candidate to interview designer.</li>
+      <li>Interviewers to interview designer.</li>
+    </ul></li>
+  </ol></li>
+  <li>Performance management systems are the most valuable entry point to shape company&rsquo;s culture, inclusion and performance.</li>
+  <li>Moving away from generalized roles and towards specialists, creates a more brittle organization.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Appendix</h2>
+<ul>
+  <li>Teams and orgs have very limited appetite for new process: roll out one change at a time.</li>
+  <li>Sprints work well if:
+  <ul>
+    <li>Team knows:
+    <ul>
+      <li>What they should be working on.</li>
+      <li>Can determine if the work is complete.</li>
+      <li>Knows how to figure out what to work on next.</li>
+    </ul></li>
+    <li>Stakeholders:
+    <ul>
+      <li>Can learn what the team is working on.</li>
+      <li>Can learn what the team plans to work on next.</li>
+      <li>Know how to influence the team&rsquo;s plans.</li>
+    </ul></li>
+    <li>Middle management: focus on roadmaps.</li>
+  </ul></li>
+</ul>]]></description></item><item><title>Application configuration good practices </title><link>https://danlebrero.com/2022/06/29/application-configuration-good-practices/</link><guid>https://danlebrero.com/2022/06/29/application-configuration-good-practices/</guid><pubDate>Wed, 29 Jun 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>As an aftermath of our last production incident, here are a bunch of application configuration practices that have worked well enough for me over the years:</p>
+<ol>
+  <li>Version controlled.</li>
+  <li>Self-service.</li>
+  <li>Restricted secrets.</li>
+  <li>Default to production.</li>
+  <li>Fail fast.</li>
+  <li>No logic.</li>
+  <li>Staging == production.</li>
+  <li>Avoid &ldquo;isDevEnv?&rdquo;</li>
+  <li>Preconfigured local dev.</li>
+  <li>Minimal.</li>
+</ol><h2>Version controlled</h2><p>Same as code and infrastructure, configuration should be version controlled, so that you know who, when, how, why and what, and changes can be easily reviewed and rolled back.</p><h2>Self-service</h2><p>Ticketing systems to change configuration in production? Meh.</p><p>The team owning the service is already making any code changes that they want, so allowing them to change some configuration is not riskier.</p><p>If you really need gatekeeping, the owning team should be able to create pull requests with the required changes for the gatekeepers to approve/merge, reducing the chances of miscommunication.</p><h2>Restricted secrets</h2><p>Secrets that everybody can read are no secrets. Reduce your risks by restricting who can see and change which secrets.</p><h2>Default to production</h2><p>When adding some new configuration, always set the default to the production value.</p><p>This will avoid the most common issue with configuration: “Oh, the app does not start because we forgot to set the configuration for …” </p><p>And never ever default to some dev or testing value. Never ever.</p><p>Obviously, only default if it is safe. You don’t want to be sending emails to your real clients, connecting to your production data stores and such if some dev forgets to configure their local environment properly. </p><p>If not safe, the safe value is no default. In this case, add the production configuration as soon as possible. Do not wait for the code release. </p><h2>Fail fast</h2><p>Validate the configuration at start time, and crash the application if any value is missing or it has the wrong type.</p><h2>No logic</h2><p>Avoid any logic related to manipulating configuration, like string manipulation, url building or splitting. </p><p>It is less likely that you are be able to test it, and if the logic fails in production it will be harder to find out, especially for secret values.</p><h2>Staging == production</h2><p>The principle to make staging as similar as production includes configuration.</p><p>Especially important if you broke the “no logic” principle.</p><h2>Avoid “isDevEnv?”</h2><p>All config usually start with a simple “environment” configuration variable, that will sprinkle your codebase with “isDevEnv?” conditionals.</p><p>But soon enough, your app will be run in new environments (CI, test, staging, demo, training, load testing, hotbugfix-33, KafkaPoC, other team&rsquo;s local dev) and it will not be so clear what is dev and what is not.</p><p>So prefer explicit configuration variables to avoid implicit coupling of a bunch of behaviors to one configuration variable. </p><h2>Preconfigured local dev</h2><p>A big chunk of your configuration exists just for the local development environment, so given that most configuration is going to default to production values, it is important to make it easy to set up, add and update that configuration in every developer’s box.</p><p>My preferred approach is still a <a href="/2017/09/01/a-docker-compose-environment/#content">dockerized local environment</a>.</p><h2>Minimize configuration</h2><p>Less config, less chance for bugs. Same as code! <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>!</p>
+<hr/><p>In case you wonder, in our production incident we committed three sins: defaulted to a dev value, logic in config, and staging different from production.</p><p>Why sin once when you can do it thrice for the same price?</p>]]></description></item><item><title>Schrödinger's functions: not the pure functions your are looking for </title><link>https://danlebrero.com/2022/06/01/pure-vs-impure-functions-schrodinger-functions/</link><guid>https://danlebrero.com/2022/06/01/pure-vs-impure-functions-schrodinger-functions/</guid><pubDate>Wed, 01 Jun 2022 09:00:00 +0200</pubDate><description><![CDATA[<p>Reading <a href="https://www.juxt.pro/blog/abstract-clojure">Abstract Clojure</a> fills me with angst.</p><p>The article ends up with the following design:</p><p><img src="/images/blog/abstract-clojure/final-design.png" alt="final design" /></p><p>I see that diagram and my reptilian brain just wants to run away and hide: this is no different from what my Java looked like ten years ago.</p><p>Is this design the best we can do for &ldquo;large&rdquo; applications? And if this is the case, why did I bother with Clojure?</p><h2>Pure functions</h2><p>To make your code more maintainable, a useful principle is to build your application mostly from pure functions, minimizing side-effecting code.</p><p>Pure functions are amazing as they are easier to understand than side-effecting code, hence easier to change.</p><p>Two reasons:</p>
+<ol>
+  <li>Their context is limited to their parameters: no need to worry about global variables or the database state.</li>
+  <li>They are deterministic: for a given set of parameters, they always always always always return the same result. Always.</li>
+</ol><p>An important side effect of these reasons is that, while you are trying to understand a pure function, you can stop at any layer down the call stack knowing no surprise is lurking further down, making it easier to understand the function.</p><h2>From impure to pure code</h2><p>As pure functions are important, let&rsquo;s see how to build them.</p><p>We start with a prototypical web controller that calls the database to do its job:</p>
+<pre><code>(ns app.server
+    (:require [app.db :as db]))
+
+(defn get-article [data-source request]
+    (let [id (get-in request [:path-params :id])
+          article (db/get-article-by-id data-source id)] ;; &lt;&lt;-- PURE EVIL!!! Or should I say IMPURE EVIL?
+        {:status 200
+         :body article}))
+</code></pre><p>The function <code>get-article</code> is not pure as it is not deterministic. Two consecutive calls to <code>get-article</code> can return completely different responses:</p>
+<ol>
+  <li>Nothing if the article does not exist yet.</li>
+  <li>A version of the article.</li>
+  <li>Another version of the article, if there has been some write between the two calls.</li>
+  <li>An error if the database is down.</li>
+  <li>May never finish the execution, if you forgot to <a href="/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures/#content">set your timeouts</a>.</li>
+</ol><p>To smite this evil, Abstract Clojure tells us to add one level of indirection, by passing a function or protocol instead of the <code>data-source</code>, so that the <code>get-article</code> function is decoupled from the <code>database</code> namespace/package:</p>
+<pre><code>(defprotocol ArticleRepository
+    (create [_ article])
+    (get-by-id [_ id])
+    ,,,)
+
+(defn get-article [article-repository request]
+    (let [id (get-in request [:path-params :id])
+          article (article-repository/get-by-id article-repository id)] ;; &lt;&lt;-- Beautiful!
+        {:status 200
+         :body article}))
+</code></pre><p>And with this, our <code>get-article</code> function becomes pure. Victory!</p><p>Or not?</p><h2>Schrödinger&rsquo;s functions</h2><p>That last version of <code>get-article</code> makes me doubt.</p>
+<blockquote><p>If a tree falls in a forest and no one is around to hear it, does it make a sound?</p>
+</blockquote><p>Sorry, I meant:</p>
+<blockquote><p>If a pure function is passed an impure function at runtime, does it make it impure?</p>
+</blockquote><p><code>get-article</code> can be passed a pure or an impure function, so is <code>get-article</code> a Schrödinger&rsquo;s function? One that is sometimes pure while others is impure, and to find out you need to open the box and look into the implementation details of the <code>article-repository</code> passed as a parameter?</p><p>Before digging more into philosophy or quantum mechanics, let’s see if a statically typed language can shed some light:</p>
+<pre><code class="text">find some **obvious** Haskell IO monad example and paste here
+</code></pre><p>If that simple piece of monadic Haskell did not make sense, let me explain with some good old Java:</p>
+<pre><code class="Java">public interface ArticleRepository {
+    String createArticle(Article article);
+    Article getById(String id);
+}
+
+class ArticleController {
+    public HttpResponse getArticle(ArticleRepository articleRepository, HttpRequest request) {
+        String id = request.getParams().get(&quot;id&quot;);
+        Article article = articleRepository.getById(id);
+        return HttpResponse.withStatus(200).withBody(article);
+    }
+}
+</code></pre><p>So far, our non-idiomatic non-monadic Java does not help, but before complaining about Java’s crippled type system, let’s try to implement a DB based ArticleRepository:</p>
+<pre><code class="Java">class DatabaseArticleRepository implements ArticleRepository {
+    private DataSource dataSource;
+
+    public Article getById(String id) {
+        try (Connection connection = dataSource.getConnection()){
+            try (PreparedStatement stmt = connection.prepareStatement(&quot;select * from article where id=?&quot;)) {
+                stmt.setString(1, id);
+                ResultSet resultSet = stmt.executeQuery();
+                if (resultSet.next()) {
+                    return new Article().withContent(resultSet.getString(&quot;content&quot;));
+                } else
+                    return null;
+            }
+        }
+    }
+}
+</code></pre><p>But this does not compile:</p>
+<pre><code class="text">DatabaseArticleRepository: unreported exception java.sql.SQLException; must be caught or declared to be thrown.
+</code></pre><p>Same as Haskell&rsquo;s IO, Java&rsquo;s checked exceptions tag a function/method as not safe. But with IO you are only allowed to &ldquo;declare to be thrown&rdquo; (unless you want to be <a href="https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO-Unsafe.html">Unsafe</a>), so the only option is to rethrow the exception:</p>
+<pre><code class="Java">class DatabaseArticleRepository implements ArticleRepository {
+    private DataSource dataSource;
+    public Article getById(String id) throws SQLException { // Throwing exception now. 
+    ,,,
+    }
+}    
+</code></pre><p>Now the compiler complains with:</p>
+<pre><code class="text">getById(java.lang.String) in DatabaseArticleController cannot implement getById(java.lang.String) in ArticleRepository  overridden method does not throw java.sql.SQLException
+</code></pre><p>Gosh! Let&rsquo;s add it to the ArticleRepository:</p>
+<pre><code class="Java">public interface ArticleRepository {
+    Article getById(String id) throws SQLException; // More throwing.
+}
+</code></pre><p>And recompile:</p>
+<pre><code class="text">ArticleController: unreported exception java.sql.SQLException; must be caught or declared to be thrown
+</code></pre><p>And finally, we need to bubble it up to the top of the stack:</p>
+<pre><code class="Java">class ArticleController {
+    public HttpResponse getArticle(...) throws SQLException { // Yet more throwing
+        ...
+    }
+}
+</code></pre><p>Java checked exceptions, just like Haskell IO, just like impure functions, are contagious. Like a virus, any function that comes in contact with them is infected.</p><p>So there are no Schrödinger&rsquo;s functions. A function that is passed an impure function at runtime, is an impure function (as long as it runs the impure function).</p><p>Our final version of the <code>get-article</code> function, even if it depends on an interface/protocol, is as impure as our initial one.</p><h4>Try/catch! RuntimeException!</h4><p>But if a function catches a checked exception, and swallows or rethrows it as a runtime exception, does it become a pure function?</p><p>You can pretend that it is a pure function, and I can pretend to know what I am talking about, but pretending does not make it real. </p><p>Also, we are using checked exceptions as an approximation. You can read the same argument but <a href="https://blog.ploeh.dk/2016/03/18/functional-architecture-is-ports-and-adapters/">with F# and Haskell</a>. </p><h2>Unstable</h2><p>Now that we know that depending on an interface/protocol does not make our functions pure, what does it mean for the stability of our design?</p>
+<blockquote><p>Depend in the direction of stability – Stable Dependencies Principle</p>
+</blockquote><p>This is a good principle to follow. Abstract Clojure defines stability as:</p>
+<blockquote><p>In Clojure, we can consider a function to be stable if it is referentially transparent (== pure).</p>
+</blockquote><p>If we accept this definition, our final design looks like:</p><p><img src="/images/blog/abstract-clojure/final-design-for-real.png" alt="unstable" /></p><p>So we are back to a completely unstable system, but with a lot more moving parts that the initial design. </p><p>More things, same stability? Does not seems like a winning design.</p><p>Maybe this is not the stability definition that you are looking for.</p>
+<hr/><p>So what now? We will leave the questions on how to convert impure functions into pure functions and what stability is for another day. </p>]]></description></item><item><title>Book notes: Design It!: From Programmer to Software Architect</title><link>https://danlebrero.com/2022/05/04/design-it-book-summary/</link><guid>https://danlebrero.com/2022/05/04/design-it-book-summary/</guid><pubDate>Wed, 04 May 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3q8oElm">Design It!: From Programmer to Software Architect</a> by <a href="https://twitter.com/michaelkeeling">Michael Keeling</a>.</p><p>&ldquo;From Programmer to Software Architect&rdquo; is a spot on subtitle.</p><h1>Key Insights</h1>
+<ul>
+  <li>SW design is a constant struggle to find the right balance between the things you want and the reality you must accept.</li>
+  <li>Every team has at least one architect. The best teams have several.</li>
+  <li>For every SW system you build, briefly describe the system and what you learned during your time developing it.</li>
+  <li>Design Thinking Principles (From <a href="https://amzn.to/3taqfJb">Design Thinking: Understand – Improve – Apply</a>):
+  <ol>
+    <li>All design is social in nature: for and with people.</li>
+    <li>Preserve ambiguity:
+    <ul>
+      <li>Minimalist architecture:
+      <ul>
+        <li><a href="https://www.bredemeyer.com/pdf_files/MinimalistArchitecture.PDF">Less is More with Minimalist Architecture</a>.</li>
+      </ul></li>
+    </ul></li>
+    <li>All design is redesign.</li>
+    <li>Make ideas tangible to facilitate communication.</li>
+  </ol></li>
+  <li>Emphasize:
+  <ol>
+    <li>Treat solutions as experiments.</li>
+    <li>Focus on reducing risks.</li>
+    <li>Work to simplify problems.</li>
+    <li>Iterate quickly to learn quickly.</li>
+    <li>Think about the problem and solution at the same time.</li>
+  </ol></li>
+  <li><a href="#risk">Use risk to decide what to focus on.</a></li>
+  <li>Architecturally Significant Requirements:
+  <ol>
+    <li>Constraints:
+    <ul>
+      <li>Well-chosen constraints simplify the problem.</li>
+      <li>Early design decisions can become constraints in the future.</li>
+    </ul></li>
+    <li>Influential functional requirements:
+    <ul>
+      <li>Identifying influential functional requirements is equal part of art and science.</li>
+    </ul></li>
+    <li>Quality Attributes.</li>
+    <li>Others:
+    <ul>
+      <li>Tech trends.</li>
+      <li>Architecture skills, knowledge.</li>
+      <li>Team skills, knowledge.</li>
+      <li>Team organization.</li>
+    </ul></li>
+  </ol></li>
+  <li>Our confidence in a decision increases after seeing multiple alternatives.</li>
+  <li>Decision matrix: Do not use numbers as they give a false sense of confidence and precision.</li>
+  <li>Complexity is an inevitable by-product of every successful software system.</li>
+  <li>Discussion lacking in disagreement may seem like positive progress, but it is more likely to be the opposite.</li>
+  <li>Sometimes a simple table is all that is needed.</li>
+  <li>Precision gets in the way of communication: accurate, not precise.</li>
+  <li>A good-looking document tells readers the content is trustworthy and was created by a professional.</li>
+  <li>Sometimes your pile of rejected decisions can be more telling than a lengthy explanation.</li>
+  <li>Keep design authority when risks of failure are high.</li>
+  <li>The discussion is often more important than the option picked.</li>
+  <li><a href="https://medium.com/the-xplane-collection/updated-empathy-map-canvas-46df22df3c8a">Empathy map</a>.</li>
+  <li><a href="https://agilewarrior.wordpress.com/2010/11/06/the-agile-inception-deck/">The Agile Inception Deck</a>.</li>
+</ul><h1>All activities</h1><h3>Understand</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Activity </th>
+      <th>Time </th>
+      <th>Participants </th>
+      <th>Notes </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Choose one thing </td>
+      <td> </td>
+      <td>All stakeholders </td>
+      <td>Clear prioritization and disagreement. </td>
+    </tr>
+    <tr>
+      <td>Empathy map </td>
+      <td>10-30m </td>
+      <td>Solo or 3-5. Devs + Arch </td>
+      <td>For the team to develop empathy. </td>
+    </tr>
+    <tr>
+      <td>Goal-Question-Metric workshop </td>
+      <td>15-90m </td>
+      <td>1-5 people. </td>
+      <td>Prioritized metrics to gather. </td>
+    </tr>
+    <tr>
+      <td>Interview stakeholders </td>
+      <td>30-60m per interview </td>
+      <td>1-2-1 or small stakeholder group </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>List assumptions </td>
+      <td>15-30m </td>
+      <td>Whole team in 2-5 groups </td>
+      <td>Take assumptions out of the shadows. </td>
+    </tr>
+    <tr>
+      <td>Mini-Quality attributes workshop </td>
+      <td>90-180m </td>
+      <td>Arch + 3-5 stakeholders </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Point-of-View mad lib </td>
+      <td>30-45m </td>
+      <td>1-3 people. Any stakeholder </td>
+      <td>Summarize business goals and other needs. </td>
+    </tr>
+    <tr>
+      <td>Response measure straw man </td>
+      <td>Combine with other </td>
+      <td>Architect prepares </td>
+      <td>Get conversation moving. </td>
+    </tr>
+    <tr>
+      <td>Stakeholder map </td>
+      <td>30-45m </td>
+      <td>1-25. Whole team + stakeholders </td>
+      <td>Relations and interactions.</td>
+    </tr>
+  </tbody>
+</table><h3>Explore</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Activity </th>
+      <th>Time </th>
+      <th>Participants </th>
+      <th>Notes </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Personify the architecture </td>
+      <td> </td>
+      <td> </td>
+      <td>It is ok to feel silly.</td>
+    </tr>
+    <tr>
+      <td>Architecture flip book </td>
+      <td>30-45m </td>
+      <td>1-3 people </td>
+      <td>Record all steps on design iteration.</td>
+    </tr>
+    <tr>
+      <td>Component responsibility collaborator cards </td>
+      <td>30-90m </td>
+      <td>Solo or 3-5 </td>
+      <td>Propose architectural elements. </td>
+    </tr>
+    <tr>
+      <td>Concept map </td>
+      <td>30-60m </td>
+      <td>1-3 technical stakeholders </td>
+      <td>Uncover missing domain concepts. </td>
+    </tr>
+    <tr>
+      <td>Divide and conquer </td>
+      <td> </td>
+      <td>Groups of 2-4 </td>
+      <td>To cover a lot of ground in parallel. </td>
+    </tr>
+    <tr>
+      <td>Event Storming </td>
+      <td>90m </td>
+      <td>2-12. Expert + dev team </td>
+      <td>Identify domain events. </td>
+    </tr>
+    <tr>
+      <td>Group Posters </td>
+      <td>20-30m </td>
+      <td>Groups 2-5 people </td>
+      <td>To summarize outcomes. </td>
+    </tr>
+    <tr>
+      <td>Round-Robin design </td>
+      <td>15-45m </td>
+      <td>3-12 tech stakeholders </td>
+      <td>Combine ideas + build consensus. </td>
+    </tr>
+    <tr>
+      <td>Whiteboard Jam </td>
+      <td>Up to the group </td>
+      <td>3-5 tech stakeholders </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table><h3>Make</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Activity </th>
+      <th>Notes </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Architecture Decision Records </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Architecture haiku</td>
+      <td>One-page uber-terse summary </td>
+    </tr>
+    <tr>
+      <td>Context diagram </td>
+      <td>Agreement with system scope</td>
+    </tr>
+    <tr>
+      <td>Greatest hits reading list </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Inception deck </td>
+      <td>10 important questions at the start of a new project </td>
+    </tr>
+    <tr>
+      <td>Modular decomposition diagram </td>
+      <td>Tree diagram that shows relationships at different granularities </td>
+    </tr>
+    <tr>
+      <td>Paths not taken</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Prototype to learn or decide</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sequential diagram</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>System metaphor </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table><h3>Evaluate</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Activity </th>
+      <th>Time </th>
+      <th>Participants </th>
+      <th>Notes </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Architecture Briefing </td>
+      <td>45-60m preparation. 30m present. 30m questions </td>
+      <td>Arch + wide audience </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Code review </td>
+      <td>Ongoing </td>
+      <td>2 to whole team </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Decision Matrix </td>
+      <td>Varies </td>
+      <td>Arch + Stakeholders </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Observer Behaviour </td>
+      <td> </td>
+      <td> </td>
+      <td>Observability in production </td>
+    </tr>
+    <tr>
+      <td>Question-Comment-Concern </td>
+      <td>30-90m </td>
+      <td>Whole team </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Risk storming </td>
+      <td>60-90m </td>
+      <td>3-7 devs </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sanity Check </td>
+      <td>5-10m </td>
+      <td>Whole team</td>
+      <td>Pop quiz</td>
+    </tr>
+    <tr>
+      <td>Scenario walk-through </td>
+      <td>20-30m per quality attribute </td>
+      <td>3-7 people </td>
+      <td>Use early </td>
+    </tr>
+    <tr>
+      <td>Sketch and Compare </td>
+      <td>20-30m </td>
+      <td>3-5 people </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table><p><br/></p><h1>TOC</h1>
+<ul>
+  <li><a href="#part-1">Part I - Introducing Software Architecture</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - Become a Software Architect</a></li>
+    <li><a href="#ch-2">Chapter 2 - Design Thinking Fundamentals</a></li>
+  </ul></li>
+  <li><a href="#part-2">Part II - Architecture Design Fundamentals</a>
+  <ul>
+    <li><a href="#ch-3">Chapter 3 - Devise a Design Strategy</a></li>
+    <li><a href="#ch-4">Chapter 4 - Empathize with Stakeholders</a></li>
+    <li><a href="#ch-5">Chapter 5 - Dig for Architecturally Significant Requirements (ASR)</a></li>
+    <li><a href="#ch-6">Chapter 6 - Choose an Architecture (Before It Chooses You)</a></li>
+    <li><a href="#ch-7">Chapter 7 - Create a Foundation with Patterns</a></li>
+    <li><a href="#ch-8">Chapter 8 - Manage Complexity with Meaningful Models</a></li>
+    <li><a href="#ch-9">Chapter 9 - Host an Architecture Design Studio</a></li>
+    <li><a href="#ch-10">Chapter 10 - Visualize Design Decisions</a></li>
+    <li><a href="#ch-11">Chapter 11 - Describe the Architecture</a></li>
+    <li><a href="#ch-12">Chapter 12 - Give the Architecture a Report Card</a></li>
+    <li><a href="#ch-13">Chapter 13 - Empower the Architects of Your Team</a></li>
+  </ul></li>
+  <li><a href="#part-3">Part III - The Architect&rsquo;s Toolbox</a>
+  <ul>
+    <li><a href="#ch-14">Chapter 14 - Activities to Understand the Problem</a></li>
+    <li><a href="#ch-15">Chapter 15 - Activities to Explore Potential Solutions</a></li>
+    <li><a href="#ch-16">Chapter 16 - Activities to Make the Design Tangible</a></li>
+    <li><a href="#ch-17">Chapter 17 - Activities to Evaluate Design Options</a></li>
+  </ul></li>
+</ul><h1><a name="part-1"></a>Part I - Introducing Software Architecture</h1><h2><a name="ch-1"></a>Chapter 1 - Become a Software Architect</h2>
+<ul>
+  <li>What architects do?
+  <ol>
+    <li>Define the problem from an engineering perspective.</li>
+    <li>Partition the system and assign responsibilities.</li>
+    <li>Keep an eye on the bigger picture:
+    <ul>
+      <li>System as a whole.</li>
+      <li>SW design is a constant struggle to find the right balance between the things you want and the reality you must accept.</li>
+    </ul></li>
+    <li>Decide trade-offs among quality attributes.</li>
+    <li>Manage technical debt.</li>
+    <li>Grow the team&rsquo;s architecture skills:
+    <ul>
+      <li>Architecture design is a social activity.</li>
+    </ul></li>
+  </ol></li>
+  <li>A system&rsquo;s software architecture is the set of significant design decisions about how the software is organized to promote desired quality attributes and other properties.</li>
+  <li>Software structure&rsquo;s elements and relations:
+  <ol>
+    <li>Module: structure that exists at design time (class, DB table).</li>
+    <li>Component and connector (C&amp;C): exits at runtime (object, process).</li>
+    <li>Allocations: how modules and C&amp;C elements correspond to each other.
+    <ul>
+      <li>Aka: mapping structures.</li>
+    </ul></li>
+  </ol></li>
+  <li>Quality attribute is any externally visible characteristic by which stakeholders judge a SW system&rsquo;s goodness.</li>
+  <li>Every team has at least one architect. The best teams have several.</li>
+  <li>For every SW system you build, briefly describe the system and what you learned during your time developing it.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Design Thinking Fundamentals</h2>
+<ul>
+  <li>Design thinking: problem-solving approach that puts humans at the center.</li>
+  <li>Principles (From <a href="https://amzn.to/3taqfJb">Design Thinking: Understand – Improve – Apply</a>):
+  <ol>
+    <li>All design is social in nature:
+    <ul>
+      <li>For and with people.</li>
+    </ul></li>
+    <li>Preserve ambiguity:
+    <ul>
+      <li>Minimalist architecture:
+      <ul>
+        <li><a href="https://www.bredemeyer.com/pdf_files/MinimalistArchitecture.PDF">Less is More with Minimalist Architecture</a>.</li>
+        <li>Only focus on how high-priority quality attributes are achieved.</li>
+      </ul></li>
+    </ul></li>
+    <li>All design is redesign.</li>
+    <li>Make ideas tangible to facilitate communication.</li>
+  </ol></li>
+  <li>To design an architecture:
+  <ol>
+    <li>Pick a mindset.</li>
+    <li>Pick a practice within that mindset.</li>
+    <li>Apply practice to learn something new.</li>
+    <li>Goto (1).</li>
+  </ol></li>
+  <li>Design mindsets:
+  <ol>
+    <li>Understand:
+    <ul>
+      <li>Requires empathy.</li>
+    </ul></li>
+    <li>Explore.</li>
+    <li>Make.</li>
+    <li>Evaluate.</li>
+  </ol></li>
+</ul><h1><a name="part-2"></a>Part II - Architecture Design Fundamentals</h1><h2><a name="ch-3"></a>Chapter 3 - Devise a Design Strategy</h2>
+<ul>
+  <li>Emphasize:
+  <ol>
+    <li>Treat solutions as experiments.</li>
+    <li>Focus on reducing risks.</li>
+    <li>Work to simplify problems.</li>
+    <li>Iterate quickly to learn quickly.</li>
+    <li>Think about the problem and solution at the same time.</li>
+  </ol></li>
+  <li>How much design up front:
+  <ul>
+    <li>Barry Boehm, Architecting: how much and when. Chapter 10 of <a href="https://amzn.to/3JS2POT">Making Software</a>.</li>
+    <li>Total project time == dev time + architecture + rework.</li>
+    <li>Architecture reduces rework time.</li>
+    <li>Bigger systems benefit the most from more up-front architecture work.</li>
+    <li><a href="http://cosysmo.mit.edu">COSYSMO</a> and <a href="https://en.wikipedia.org/wiki/COCOMO">COCOMO II</a>.</li>
+  </ul></li>
+  <li><a name="risk"></a>Use risk to decide what to focus on:
+  <ul>
+    <li>[conditions] might [consequences]</li>
+    <li>Deal with risk:
+    <ol>
+      <li>Reduce probability.</li>
+      <li>Reduce impact.</li>
+      <li>Push out the time frame of the risk.</li>
+      <li>Remove condition.</li>
+      <li>Accept it and do nothing.</li>
+    </ol></li>
+    <li>Which mindset:
+    <ul>
+      <li>Understand: risk is about problem.</li>
+      <li>Explore: risk is about solution.
+      <ul>
+        <li>Have you seen enough solution alternatives?</li>
+      </ul></li>
+      <li>Make: risk is about communication.
+      <ul>
+        <li>Do stakeholders fully understand design and architecture?</li>
+      </ul></li>
+      <li>Evaluate: risk involves a design decision or the design&rsquo;s overall fit.
+      <ul>
+        <li>Do we need to make a design decision?</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Create a design plan.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Empathize with Stakeholders</h2>
+<ul>
+  <li>Create a stakeholder map with stakeholders, stakeholders groups and their relationship.</li>
+  <li>Record business goal statements:
+  <ul>
+    <li>Subject, outcome, context.</li>
+    <li>Outcome: measurable.</li>
+    <li>Context: insightful and not obvious.</li>
+  </ul></li>
+  <li>Most systems only have three to five business goals.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Dig for Architecturally Significant Requirements (ASR)</h2>
+<ul>
+  <li>4 Categories:
+  <ol>
+    <li>Constraints:
+    <ul>
+      <li>Unchangeable. Non-negotiable.</li>
+      <li>Well-chosen constraints simplify the problem.</li>
+      <li>Technical: programming lang, platforms, components, technology.</li>
+      <li>Business: team structure, schedule, budget, legal.</li>
+      <li>Early design decisions can become constraints in the future.</li>
+      <li>Keep a XLS: constraint, origin, type, context.</li>
+    </ul></li>
+    <li>Influential functional requirements (FR):
+    <ul>
+      <li>Identifying influential functional requirements is equal part of art and science.</li>
+    </ul>
+    <ol>
+      <li>Sketch notional architecture.</li>
+      <li>Identify classes of requirements:
+      <ul>
+        <li>Group FR with the same architecture elements (like persistence).</li>
+        <li>FR that seem difficult to implement.</li>
+        <li>High-value, high-priority FR.</li>
+      </ul></li>
+      <li>Try each class of requirements against the notional architecture:
+      <ul>
+        <li>If it is not obvious how to implement, the it might be an influential FR.</li>
+      </ul></li>
+    </ol></li>
+    <li>Others:
+    <ul>
+      <li>Tech trends.</li>
+      <li>Architecture skills, knowledge.</li>
+      <li>Team skills, knowledge.</li>
+      <li>Team organization.</li>
+    </ul></li>
+    <li>Quality Attributes:
+    <ul>
+      <li>Use quality attribute scenarios:
+      <ul>
+        <li>Parts:
+        <ul>
+          <li>Stimulus: event that triggers the scenario.</li>
+          <li>Source: who.</li>
+          <li>Artifact: part of the system.</li>
+          <li>Response: externally visible action by the artifact as result of the stimulus.</li>
+          <li>Response measure:
+          <ul>
+            <li>Success criteria.</li>
+            <li>Specific and measurable.</li>
+          </ul></li>
+          <li>Environment context: &ldquo;normal&rdquo;, peak load, failure condition.</li>
+          <li>Keep in XLS:</li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Quality Attribute </th>
+      <th>Scenario </th>
+      <th>Priority </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Availability </td>
+      <td>When DB does not respond, respond with stale data within 3 secs </td>
+      <td>high </td>
+    </tr>
+    <tr>
+      <td>&hellip; </td>
+      <td>&hellip; </td>
+      <td>&hellip; </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Build an architect significant requirements doc:
+  <ul>
+    <li>Purpose and scope.</li>
+    <li>Intended audience.</li>
+    <li>Business context.</li>
+    <li>Quality attribute requirements:
+    <ul>
+      <li>Top scenarios.</li>
+    </ul></li>
+    <li>Influential FR:
+    <ul>
+      <li>Top users or user persona.</li>
+      <li>Use cases or user stories.</li>
+    </ul></li>
+    <li>Appendix A: Glossary.</li>
+    <li>Appendix B: Quality Attributes Taxonomy.</li>
+  </ul></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Choose an Architecture (Before It Chooses You)</h2>
+<ul>
+  <li>Our confidence in a decision increases after seeing multiple alternatives.</li>
+  <li>You need to explore:
+  <ol>
+    <li>Architecture elements and their responsibilities.</li>
+    <li>How elements interact with each other. Their interfaces.</li>
+    <li>Understand the domain.</li>
+    <li>Tech and framework that promote quality attributes.</li>
+    <li>How app will be deployed.</li>
+    <li>Look at past designs.</li>
+  </ol></li>
+  <li>Decision matrix:
+  <ul>
+    <li>I personally like text + color (red, white, green).</li>
+    <li>Do not use numbers as they give a false sense of confidence and precision.</li>
+  </ul></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Option A </th>
+      <th>Option B </th>
+      <th>Option C </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Property 1 </td>
+      <td>promotes </td>
+      <td>+ </td>
+      <td><i class="fas fa-arrow-up"></i> </td>
+    </tr>
+    <tr>
+      <td>Property 2 </td>
+      <td>inhibits </td>
+      <td>- </td>
+      <td><i class="fas fa-arrow-down"></i> </td>
+    </tr>
+    <tr>
+      <td>Property 3 </td>
+      <td>neutral </td>
+      <td>o </td>
+      <td><i class="fas fa-arrow-right"></i> </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Create an element responsibility catalog:
+  <ul>
+    <li>Assign to each element the influential functional requirement.</li>
+  </ul></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Create a Foundation with Patterns</h2>
+<ul>
+  <li>See <a href="/2021/11/17/fundamentals-of-software-architecture-summary/#content">Fundamentals of Software Architecture</a>.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Manage Complexity with Meaningful Models</h2>
+<ul>
+  <li>Complexity is an inevitable by-product of every successful software system.</li>
+  <li>Abstractions help us focus on specific details at the expense of others.</li>
+  <li>Good architecture models:
+  <ul>
+    <li>Establish the vocabulary of design.</li>
+    <li>Direct attention to interesting details.</li>
+    <li>Allows to reason about quality attributes.</li>
+    <li>Captures the architect&rsquo;s intention.</li>
+  </ul></li>
+  <li>Design a meta-model: concepts and rules to use those concepts.</li>
+  <li>Building models into the code:
+  <ul>
+    <li>It is possible to shrink the model-code gap, but it cannot be closed completely.</li>
+  </ul>
+  <ol>
+    <li>Use architecture vocabulary.</li>
+    <li>Organize code following architecture elements.</li>
+    <li>Enforce relations, so that it becomes impossible to violate the architecture.</li>
+    <li>Add comments.</li>
+  </ol></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Host an Architecture Design Studio</h2>
+<ul>
+  <li>Design studio encourages group collaboration and has strict time constraints to help the team see a broad range of ideas in a short time frame.</li>
+  <li>Creates buy-in of everybody involved.</li>
+  <li>Outcomes:
+  <ul>
+    <li>Things to make.</li>
+    <li>Things to research more.</li>
+    <li>New open questions.</li>
+  </ul></li>
+  <li>Typically, few hours to a day.</li>
+  <li>Steps:
+  <ol>
+    <li>Prepare:
+    <ul>
+      <li>Business and workshop goals.</li>
+      <li>Quality attributes.</li>
+      <li>ASRs.</li>
+      <li>Choose participants:
+      <ul>
+        <li>3-10.</li>
+        <li>Diverse background.</li>
+      </ul></li>
+      <li>Discussion lacking in disagreement may seem like positive progress, but it is more likely to be the opposite.</li>
+    </ul></li>
+    <li>Kick-off:
+    <ul>
+      <li>Share context.</li>
+    </ul></li>
+    <li>Create:
+    <ul>
+      <li>Choose design activity:
+      <ul>
+        <li><a href="http://mydemolife.blogspot.com/2008/12/tell-show-tell-technique-what-else.html">Tell-show-tell</a> to explain the activity.</li>
+        <li>Time boxed. Minimum 5 mins.</li>
+      </ul></li>
+    </ul></li>
+    <li>Share:
+    <ul>
+      <li>3-5 mins.</li>
+      <li>Only main points.</li>
+      <li>No questions or comments.</li>
+    </ul></li>
+    <li>Critique:
+    <ul>
+      <li>Specific.</li>
+      <li>Focus on facts.</li>
+      <li>Point also good things.</li>
+    </ul></li>
+    <li>Iterate:
+    <ul>
+      <li>Go to 3.</li>
+      <li>Tweak the group dynamics.</li>
+    </ul></li>
+    <li>Close:
+    <ul>
+      <li>Reflect.</li>
+      <li>Decide specific actions.</li>
+    </ul></li>
+  </ol></li>
+  <li>Use a parking lot to record interesting ideas for other time, and keep the workshop moving.</li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Visualize Design Decisions</h2>
+<ul>
+  <li>Sometimes a simple table is all that is needed.</li>
+  <li>Sometimes precision gets in the way of communication:
+  <ul>
+    <li>Accurate, not precise.</li>
+  </ul></li>
+  <li>Tips:
+  <ul>
+    <li>Always include a legend.</li>
+    <li>Add a descriptive title.</li>
+    <li>Highlight patterns.</li>
+    <li>Be consistent.</li>
+    <li>Provide descriptive prose, and/or text annotations.</li>
+  </ul></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Describe the Architecture</h2>
+<ul>
+  <li>Which architecture description approach should I use?<br/> <img src="/images/blog/books/design-it/describe-architecture.jpg" alt="describe architecture" /></li>
+  <li>Tribal:
+  <ul>
+    <li>Oral tradition, informal sketching, story telling.</li>
+  </ul></li>
+  <li>Communal:
+  <ul>
+    <li>When you find yourself telling the same story to more than a few people.</li>
+    <li>Architecture Haiku, ADR, architecturally evident coding style.</li>
+  </ul></li>
+  <li>Formal:
+  <ul>
+    <li>High-risk systems or architecture decisions.</li>
+    <li>Traditional SW architecture decision (SAD).</li>
+    <li>Templates:
+    <ul>
+      <li><a href="https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=484159">SEI views and beyond</a>.</li>
+      <li><a href="https://en.wikipedia.org/wiki/ISO/IEC_42010">ISO/IEC/IEEE 42010</a>.</li>
+    </ul></li>
+  </ul></li>
+  <li>Always keep the audience in mind:
+  <ul>
+    <li>Use <a href="https://www.nngroup.com/articles/empathy-mapping/">empathy map</a>.</li>
+  </ul></li>
+  <li>A good-looking document tells readers the content is trustworthy and was created by a professional.</li>
+  <li>Establish viewpoints:
+  <ul>
+    <li>Arch from the point of view of a related set of stakeholder concerns.</li>
+    <li>Example standard viewpoints:
+    <ul>
+      <li>SEI views and beyond.</li>
+      <li>Simon Brown&rsquo;s <a href="https://c4model.com/">C4 model</a>.</li>
+      <li>Phillipe Krutchen&rsquo;s <a href="https://ieeexplore.ieee.org/document/469759">4+1 view model</a>.</li>
+    </ul></li>
+    <li>Usually organized around quality attributes or stakeholder needs.</li>
+  </ul></li>
+  <li>Explain rationale:
+  <ul>
+    <li>Sometimes your pile of rejected decisions can be more telling than a lengthy explanation.</li>
+  </ul></li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Give the Architecture a Report Card</h2>
+<ul>
+  <li>Benefits of evaluation:
+  <ul>
+    <li>Educate team.</li>
+    <li>Create buy-in.</li>
+    <li>Reduce delivery risks.</li>
+    <li>Improve architecture.</li>
+  </ul></li>
+  <li>Design Rubric:
+  <ul>
+    <li>2 parts:
+    <ol>
+      <li>Criteria:
+      <ul>
+        <li>ASR as a guide.</li>
+        <li>Important, essential, distinct, observable and measurable, precise and unambiguous.</li>
+      </ul></li>
+      <li>Rating:
+      <ul>
+        <li>Select scale:
+        <ul>
+          <li>1-2: all or nothing. Few reviewers.</li>
+          <li>1-3: minimum acceptable threshold. Multiple reviewers.</li>
+          <li>1-4: Detailed feedback desired.</li>
+        </ul></li>
+        <li>Discuss any &ldquo;1&rdquo; score, even if the average is acceptable.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>Organize an architecture evaluation workshop:
+  <ul>
+    <li>Steps: prepare, prime reviewers, assess, analyze, follow-up.</li>
+    <li>It is important to understand why the design is fit (or not).</li>
+    <li>Great designs can always be improved.</li>
+    <li>Gold standard:
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Architecture_tradeoff_analysis_method">ATAM</a>.</li>
+      <li>See <a href="https://amzn.to/3f7XMLS">Software Architecture in Practice</a>.</li>
+      <li>Multi-day or multi-week.</li>
+    </ul></li>
+  </ul></li>
+  <li>Evaluate early, often, continuously:
+  <ul>
+    <li>Risks.</li>
+    <li>Unknowns.</li>
+    <li>Problems.</li>
+    <li>Gaps.</li>
+    <li>Arch erosion.</li>
+    <li>Contextual drift.</li>
+  </ul></li>
+  <li>Start with low ceremony methods.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Empower the Architects of Your Team</h2>
+<ul>
+  <li>Modern SW dev teams need a different kind of leader than the traditional top-down architect.
+  <ul>
+    <li>Coach, mentor, technical guru.</li>
+  </ul></li>
+  <li>Teams who embrace the idea of SW architect as a way of thinking instead of as a role, produce better SW:
+  <ul>
+    <li>More eyes.</li>
+    <li>Team buy-in. Ownership.</li>
+  </ul></li>
+  <li>Create opportunities for safe practice:
+  <ul>
+    <li>Pair design.</li>
+    <li>Create scaffolding:
+    <ol>
+      <li>Build templates for delegated work.</li>
+      <li>Provide feedback during peer reviews.</li>
+      <li>Create checklists.</li>
+    </ol></li>
+    <li>Introduce architectural guide rails:
+    <ul>
+      <li>Guide rails (constraints) decreases the chances to mess up the architecture.</li>
+    </ul></li>
+    <li>Host information sessions.</li>
+  </ul></li>
+  <li>Keep design authority when risks of failure are high.</li>
+</ul><h2><a name="part-3"></a>Part III - The Architect&rsquo;s Toolbox</h2><h2><a name="ch-14"></a>Chapter 14 - Activities to Understand the Problem</h2>
+<ol>
+  <li>Choose One Thing:
+  <ul>
+    <li>Discuss priorities by presenting an extreme choice.</li>
+    <li>If you only get one thing, what will it be?</li>
+    <li>Clear prioritization.</li>
+    <li>Clear disagreement.</li>
+    <li>The discussion is often more important than the option picked.</li>
+    <li>Use early.</li>
+  </ul></li>
+  <li>Empathy Map:
+  <ul>
+    <li>Brainstorm and record responsibilities, thoughts and feelings for the team to develop empathy.</li>
+    <li><a href="https://medium.com/the-xplane-collection/updated-empathy-map-canvas-46df22df3c8a">Updated version</a>.</li>
+  </ul></li>
+  <li>Goal-Question-Metric Workshop:
+  <ul>
+    <li>Identify metrics and response measures to connect data with business goals.<br/> <img src="/images/blog/books/design-it/goal-question-metric.png" alt="goal-question-metric" /></li>
+    <li>Question to answer to know if we have met the goal.</li>
+    <li>Result: prioritized data and metrics to gather.</li>
+  </ul></li>
+  <li>Interview Stakeholders:
+  <ul>
+    <li>Unstructured interviews should still have a checklist.</li>
+  </ul></li>
+  <li>List assumptions:
+  <ul>
+    <li>Take assumptions out of the shadows.</li>
+    <li>Write down everything mentioned, even obvious ones.</li>
+    <li>Pause to discuss surprising assumptions.</li>
+  </ul></li>
+  <li>Mini-Quality Attribute workshop:
+  <ul>
+    <li>Prepare:
+    <ol>
+      <li>Quality attribute taxonomy (max 7).</li>
+      <li>Quality attribute scenario templates.</li>
+      <li>Quality attribute web.</li>
+      <li>As homework, refine top raw quality scenarios. Present in a follow-up meeting.</li>
+    </ol></li>
+  </ul></li>
+  <li>Point-of-View Mad Lib:
+  <ul>
+    <li>Summarize business goals and other needs.</li>
+    <li>Template:<br/> <img src="/images/blog/books/design-it/point-of-view-mad-lib-template.png" alt="point of view mad lib" /></li>
+    <li>Consensus is not required.</li>
+    <li>Outcome focused.</li>
+  </ul></li>
+  <li>Response Measure Straw Man:
+  <ul>
+    <li>Give stakeholders something to beat up until they arrive at their own answers.</li>
+    <li>Response either:
+    <ul>
+      <li>Honest: if you are confident.</li>
+      <li>Outrageous: to find boundaries.</li>
+    </ul></li>
+  </ul></li>
+  <li>Stakeholder Map:
+  <ul>
+    <li>To visualize relationships, hierarchies and interactions between people involved or impacted by the system.</li>
+    <li>Once completed ask who are the most important stakeholders.</li>
+  </ul></li>
+</ol><h2><a name="ch-15"></a>Chapter 15 - Activities to Explore Potential Solutions</h2>
+<ol>
+  <li>Personify the architecture:
+  <ul>
+    <li>Give it human qualities so that you can explore interactions among elements.</li>
+    <li>How it &ldquo;reacts&rdquo; or &ldquo;feel&rdquo;, make it memorable through story telling.</li>
+    <li>It is ok to feel a little silly.</li>
+  </ul></li>
+  <li>Architecture flip book:
+  <ul>
+    <li>Record every step of the design journey so others can follow along afterwards.</li>
+    <li>Sketch + notes about incremental changes.</li>
+    <li>Teach others how to think about design and modeling.</li>
+    <li>On a slide deck, keep copying the last slide and editing it.</li>
+  </ul></li>
+  <li>Component responsibility collaborator cards:
+  <ul>
+    <li>Propose architectural elements, their responsibilities and how they come together to form a view of the architecture.<br/> <img src="/images/blog/books/design-it/crc-card.png" alt="crc card" /></li>
+  </ul></li>
+  <li>Concept map:
+  <ul>
+    <li>Visualize how concepts in the domain relate to one another.</li>
+    <li>Helps to uncover missing, hidden, or implied domain concepts.</li>
+  </ul></li>
+  <li>Divide and conquer:<br/>  <img src="/images/blog/books/design-it/divide-and-conquer.png" alt="divide and conquer" />
+  <ul>
+    <li>Tight feedback loops work better.</li>
+  </ul></li>
+  <li>Event Storming:
+  <ul>
+    <li>Collaborative brainstorming technique used to identify domain events.</li>
+    <li>To better engage subject-matter experts.</li>
+    <li>Concrete and specific examples, not abstract.</li>
+  </ul></li>
+  <li>Group Posters:
+  <ul>
+    <li>Create a poster that conveys their design ideas for the architecture outcomes.</li>
+    <li>To summarize outcomes.</li>
+  </ul></li>
+  <li>Round-Robin design:
+  <ul>
+    <li>Quickly explore a range of ideas, and then combine to start building consensus.</li>
+    <li>Steps:
+    <ol>
+      <li>Sketch 5m.</li>
+      <li>Rotate.</li>
+      <li>Critique 3m.</li>
+      <li>Rotate.</li>
+      <li>Improve 5m.</li>
+      <li>Review all sketches.</li>
+    </ol></li>
+  </ul></li>
+  <li>Whiteboard Jam:
+  <ul>
+    <li>Collaboratively draw diagrams on a whiteboard.</li>
+    <li>Pictures won&rsquo;t make sense to someone who wasn&rsquo;t there.</li>
+  </ul></li>
+</ol><h2><a name="ch-16"></a>Chapter 16 - Activities to Make the Design Tangible</h2>
+<ol>
+  <li>Architecture Decision Records:
+  <ul>
+    <li>Capture architecture design decisions using a lightweight text-based template.</li>
+  </ul></li>
+  <li>Architecture haiku:
+  <ul>
+    <li>Create bit-sized architecture summaries that stakeholders will actually use.</li>
+    <li>Think through and articulate the essential parts.</li>
+  </ul></li>
+  <li>Context diagram:
+  <ul>
+    <li>Help stakeholders understand where the software system fits in the world.</li>
+    <li>Agreement with system scope.</li>
+  </ul></li>
+  <li>Greatest hits reading list:
+  <ul>
+    <li>Help navigate the morass of design artifacts, so they can find relevant information.</li>
+    <li>Links list with tile, overview and caveats.</li>
+  </ul></li>
+  <li>Inception deck:
+  <ul>
+    <li>Answer 10 important questions at the start of a new project to avoid common failures and align stakeholders.</li>
+    <li><a href="https://agilewarrior.wordpress.com/2010/11/06/the-agile-inception-deck/">The Agile Inception Deck</a></li>
+    <li>Customize questions to your context.</li>
+    <li>Effort to create should be proportional to size and cost of project.</li>
+  </ul></li>
+  <li>Modular decomposition diagram:
+  <ul>
+    <li>Simple tree diagram that shows how abstractions at different granularities are related.</li>
+    <li>Root is the whole system.</li>
+    <li>Child are more and more specific.</li>
+  </ul></li>
+  <li>Paths not taken:
+  <ul>
+    <li>List options discarded with a brief explanation of why.</li>
+  </ul></li>
+  <li>Prototype to learn or decide:
+  <ul>
+    <li>Always prototype as quickly and cheaply as possible.</li>
+  </ul></li>
+  <li>Sequential diagram.</li>
+  <li>System metaphor.</li>
+</ol><h2><a name="ch-17"></a>Chapter 17 - Activities to Evaluate Design Options</h2>
+<ul>
+  <li>Evaluation is a continuous activity.</li>
+</ul>
+<ol>
+  <li>Architecture Briefing:
+  <ul>
+    <li>Brief presentation on some part of the architecture, to get meaningful feedback.</li>
+  </ul></li>
+  <li>Code review:
+  <ul>
+    <li>From architecture point of view.</li>
+  </ul></li>
+  <li>Decision Matrix:
+  <ul>
+    <li>Visual comparison of alternatives.</li>
+    <li>No more than 7 factors.</li>
+    <li>No more than 5 design options.</li>
+    <li>Take notes when filling the matrix.</li>
+  </ul></li>
+  <li>Observe Behaviour:
+  <ul>
+    <li>Add instrumentation to see runtime behaviours.</li>
+  </ul></li>
+  <li>Question-Comment-Concern:
+  <ul>
+    <li>Collaborative, visual activity to shine light on knowledge gaps, articulate issues, and establish known facts about the architecture.</li>
+    <li>Team puts sticky notes (comments, questions, concerns) on views of the architecture.</li>
+  </ul></li>
+  <li>Risk storming:
+  <ul>
+    <li>Collaborative, visual technique for identifying risks in the architecture.</li>
+  </ul></li>
+  <li>Sanity check:
+  <ul>
+    <li>To expose issues in team communication or understanding.</li>
+    <li>Pop quiz-like.</li>
+  </ul></li>
+  <li>Scenario walk-through:
+  <ul>
+    <li>Describe step-by-step how the architecture addresses a specific quality attribute scenario.</li>
+    <li>Use early.</li>
+    <li>Avoid problem-solving during the session.</li>
+    <li>Architect + note taker + session moderator + few reviewers. 3-7 total.</li>
+  </ul></li>
+  <li>Sketch and Compare:
+  <ul>
+    <li>Create two or more alternatives of the same design, so it is easier to see the pros/cons.</li>
+    <li>Always summarize the findings.</li>
+  </ul></li>
+</ol>]]></description></item><item><title>Are you asking too much from your team/tech lead?</title><link>https://danlebrero.com/2022/04/20/are-you-asking-too-much-from-your-tech-vs-team-lead/</link><guid>https://danlebrero.com/2022/04/20/are-you-asking-too-much-from-your-tech-vs-team-lead/</guid><pubDate>Wed, 20 Apr 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>Somebody recently asked:</p>
+<blockquote><p>How do you learn to be a tech lead?</p>
+</blockquote><p>Knowing her background, I replied with another question:</p>
+<blockquote><p>Do you mean tech lead or team lead?</p>
+</blockquote><p>The difference was not obvious to me until I worked as a tech lead in a team that had a team lead.</p><h2>Team vs Technical lead</h2><p>On that particular job, as a tech lead, my responsibilities were:</p>
+<ul>
+  <li>Choose the right tool for the job: be aware of existing tools/libraries/frameworks, their trade-offs and what was appropriate for the company&rsquo;s context.</li>
+  <li>Code contributions.</li>
+  <li>Code quality (aka bugs).</li>
+  <li>Production issues/outages.</li>
+  <li>Design and architecture, including NFRs.</li>
+  <li>Developer productivity: from testing, CI/CD, release, monitoring, …</li>
+  <li>Technical mentoring.</li>
+  <li>Awareness on other parts of the system: functionality available, technologies used, trade-off, high level workings, lessons learned.</li>
+  <li>Applying the company&rsquo;s architecture constraints, principles and practices, and raising concerns when we wanted to deviate from those.</li>
+  <li>Technology proof of concept.</li>
+  <li>Technical assessment of candidates.</li>
+  <li>Technical debt prioritisation.</li>
+</ul><p>My <a href="https://leonardoalmeida.com/">fellow team lead</a> would take care of:</p>
+<ul>
+  <li>People&rsquo;s career progression.</li>
+  <li>Performance appraisals.</li>
+  <li>1-2-1.</li>
+  <li>Reporting up and down.</li>
+  <li>Recruitment, team composition.</li>
+  <li>Onboarding.</li>
+  <li>Internal and inter-team conflicts.</li>
+  <li>Project management.</li>
+  <li>Inter-team coordination and dependencies.</li>
+  <li>And a myriad of other things that I was not aware of.</li>
+</ul><p>What we will both do:</p>
+<ul>
+  <li>Backlog grooming: me for feasibility and rough sizing. Team lead to know if we had the capacity and for stakeholder management.</li>
+  <li>Development process improvements: me more to suggest, team lead more as Scrum Master and lean/agile coach.</li>
+</ul><p>Basically I will become a software architect while the team lead would become an engineering manager.</p><h2>Choices</h2><p>Continuing with the conversation:</p><p>Me: &ldquo;What path are you asking about? You cannot do both.&rdquo;</p><p>Tech lead: &ldquo;Both is actually what I have been asked to do.&rdquo;</p><p>Me: &ldquo;How is the experience of trying to do both?&rdquo;</p><p>Tech lead: &ldquo;Is it a lot. I spend most of the time doing management, admin and planning.&rdquo;</p><p>Me: &ldquo;So you are team leading, not tech leading. But if you are not doing the tech leading (because you have no time), then you should raise it with your manager.&rdquo;</p><p>Tech lead: &ldquo;Haven&rsquo;t you ever act as both the team and tech lead?&rdquo;</p><p>Me: &quot;In my very early days (~2002-2004), in a very small company in a team of ~6 people. Of the list above, I know I did not had to (or did not know I had to):</p>
+<ul>
+  <li>Production issues/outages: never got anything successful in production, hence no users, hence no production issues.</li>
+  <li>Design and architecture: system that we built were simple.</li>
+  <li>Developer productivity: mostly unknown things for me back then.</li>
+  <li>Awareness on other parts of the system: there were no other parts, not other teams.</li>
+  <li>Applying the company&rsquo;s architecture constraints: No such a thing.</li>
+  <li>Technology proof of concept: no time for this.</li>
+  <li>Technical debt prioritisation:</li>
+  <li>People&rsquo;s career progression: we were trying to survive, not planning long or mid term, also I was probably not aware.</li>
+  <li>Performance appraisals: see above.</li>
+  <li>1-2-1: see above.</li>
+  <li>Reporting up and down: company was small enough to not need this.</li>
+  <li>Recruitment, team composition: recruitment yes, but the team composition was pretty static.</li>
+  <li>Internal and inter-team conflicts: Internal yes, but no other teams.</li>
+  <li>Inter-team coordination and dependencies: no other teams.&quot;</li>
+</ul>
+<hr/><p>That is a long list of things I did not do. </p><p>Are you asking too much from your team/tech lead? </p><p>If so, what is she neglecting? Do you agree with her choices?</p>]]></description></item><item><title>Book notes: Software Architecture: The Hard Parts</title><link>https://danlebrero.com/2022/03/30/software-architecture-the-hard-parts-book-summary/</link><guid>https://danlebrero.com/2022/03/30/software-architecture-the-hard-parts-book-summary/</guid><pubDate>Wed, 30 Mar 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/35b92Wj">Software Architecture: The Hard Parts</a> by <a href="https://twitter.com/neal4d">Neal Ford</a>, <a href="https://twitter.com/markrichardssa">Mark Richards</a>, <a href="https://twitter.com/pramodsadalage">Pramod Sadalage</a> and <a href="https://twitter.com/zhamakd">Zhamak Dehghani</a>.</p><p>A book full trade-off tables. The dream of any <a href="https://rpg.stackexchange.com/questions/64800/what-does-minmax-mean">MinMax RPG player</a>.</p><h1>Key Insights</h1>
+<ul>
+  <li>Timeless skill: How architects make decisions, and how to objectively weight trade-offs.</li>
+  <li>SW architecture is in the service of data.</li>
+  <li>Trade-off analysis:
+  <ol>
+    <li>Find what parts are entangles together.</li>
+    <li>Analyze how they are coupled to one another.</li>
+    <li>Assess trade-offs by determining the impact of change on interdependent systems.</li>
+  </ol></li>
+  <li>Primary reasons for breaking applications apart is:
+  <ol>
+    <li>Time to market (== agility == deployability + testability + maintainability)</li>
+    <li>Scalability.</li>
+    <li>Availability.</li>
+    <li>Fault tolerance.</li>
+  </ol></li>
+  <li>Tactical forking: Copy the entire monolith, and delete the code not needed.</li>
+  <li>Coupling is the most significant factor in determining the overall success and feasibility of breaking a monolith.</li>
+  <li>Size components:
+  <ul>
+    <li>Not too big, not too small == ~ 1-2 standard deviation from average.</li>
+  </ul></li>
+  <li>Service granularity disintegrators:
+  <ol>
+    <li>Service Scope and Function:
+    <ul>
+      <li>Subjective, so don&rsquo;t use alone.</li>
+    </ul></li>
+    <li>Code volatility:
+    <ul>
+      <li>If a component changes more frequently than others, consider to split it, so that deployment and testing scope is smaller.</li>
+    </ul></li>
+  </ol></li>
+  <li>Strive for fine-grained libraries.</li>
+  <li>The service that performs writes owns the data.</li>
+  <li>As workflow complexity goes up, the need for an orchestrator raises.</li>
+  <li>Tightly coupling violates one of the aspirational goals fo microservices, hence prefer loose contracts and consider using consumer-driven contracts.</li>
+  <li><a href="https://martinfowler.com/articles/data-mesh-principles.html">Data Mesh</a>:
+  <ul>
+    <li>Like microservices but for analytical data.</li>
+  </ul></li>
+  <li>Often, a solution has many beneficial aspects, but lacks critical capabilities that prevent success.</li>
+  <li>Generic solutions are rarely useful in real-world architectures without applying additional situation-specific context.</li>
+  <li>Use concrete use cases.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-1">Chapter 1 - What Happens When There Are No &ldquo;Best Practices&rdquo;?</a></li>
+  <li><a href="#part-1">Part I - Pulling Things Apart</a>
+  <ul>
+    <li><a href="#ch-2">Chapter 2 - Discerning Coupling in SW Architecture</a></li>
+    <li><a href="#ch-3">Chapter 3 - Architectural Modularity</a></li>
+    <li><a href="#ch-4">Chapter 4 - Architectural Decomposition</a></li>
+    <li><a href="#ch-5">Chapter 5 - Component-Based Decomposition Patterns</a></li>
+    <li><a href="#ch-6">Chapter 6 - Pulling Apart Operational Data</a></li>
+    <li><a href="#ch-7">Chapter 7 - Service Granularity</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Putting Things Back Together</a>
+  <ul>
+    <li><a href="#ch-8">Chapter 8 - Reuse Patterns</a></li>
+    <li><a href="#ch-9">Chapter 9 - Data Ownership and Distributed Transactions</a></li>
+    <li><a href="#ch-10">Chapter 10 - Distributed Data Access</a></li>
+    <li><a href="#ch-11">Chapter 11 - Managing Distributed Workflow</a></li>
+    <li><a href="#ch-12">Chapter 12 - Transactional Sagas</a></li>
+    <li><a href="#ch-13">Chapter 13 - Contracts</a></li>
+    <li><a href="#ch-14">Chapter 14 - Managing Analytical Data</a></li>
+    <li><a href="#ch-15">Chapter 15 - Build Your Own Trade-off Analysis</a></li>
+  </ul></li>
+</ul><h2><a name="ch-1"></a>Chapter 1 - What Happens When There Are No &ldquo;Best Practices&rdquo;?</h2>
+<ul>
+  <li>Architects constantly face difficult problems that literally no one has faced before (due to context).</li>
+  <li>Timeless skill: How architects make decisions, and how to objectively weight trade-offs.</li>
+  <li>SW architecture is in the service of data.</li>
+</ul><h2><a name="part-1"></a>Part I - Pulling Things Apart</h2><h2><a name="ch-2"></a>Chapter 2 - Discerning Coupling in SW Architecture</h2>
+<ul>
+  <li>No best practice exist that can you apply to real-world complex system.</li>
+  <li>Trade-off analysis:
+  <ol>
+    <li>Find what parts are entangles together.</li>
+    <li>Analyze how they are coupled to one another.</li>
+    <li>Assess trade-offs by determining the impact of change on interdependent systems.</li>
+  </ol></li>
+  <li>Architecture quantum:
+  <ul>
+    <li>Independent deployable.</li>
+    <li>High functional cohesion.</li>
+    <li>High static coupling.</li>
+    <li>Synchronous dynamic coupling.</li>
+  </ul></li>
+  <li>Dynamic coupling dimensions:
+  <ul>
+    <li>Communication: sync or async.</li>
+    <li>Consistency: atomic or eventual.</li>
+    <li>Coordination: orchestration or choreography.</li>
+  </ul></li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Architectural Modularity</h2>
+<ul>
+  <li>SW architecture must constantly change and adapt.</li>
+  <li>Primary reasons for breaking applications apart is:
+  <ol>
+    <li>Time to market (== agility == deployability + testability + maintainability)</li>
+    <li>Scalability.</li>
+    <li>Availability.</li>
+    <li>Fault tolerance.</li>
+  </ol></li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Architectural Decomposition</h2>
+<ul>
+  <li>Is a codebase decomposable?
+  <ul>
+    <li>Architect to decide. Tools:
+    <ul>
+      <li><a href="/2021/11/17/fundamentals-of-software-architecture-summary/#mainsequence">Distance to main sequence</a>.</li>
+    </ul></li>
+  </ul></li>
+  <li>Component-based decomposition:
+  <ul>
+    <li>Enable migration to service-oriented architecture.</li>
+  </ul></li>
+  <li>Tactical forking:
+  <ul>
+    <li>When there is little internal structure.</li>
+    <li>Copy the entire monolith, and delete the code not needed.</li>
+  </ul></li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Component-Based Decomposition Patterns</h2>
+<ul>
+  <li>Initially, apply in order:
+  <ol>
+    <li>Identify and size components:
+    <ul>
+      <li>Not too big, not too small == ~ 1-2 standard deviation from average.</li>
+      <li>Size == # statements.</li>
+      <li>Too big &ndash;&gt; split.</li>
+    </ul></li>
+    <li>Gather common domain components:
+    <ul>
+      <li>To eliminate duplication.</li>
+      <li>Shared domain logic, not infrastructure.</li>
+      <li>Mostly a manual process.</li>
+    </ul></li>
+    <li>Flatten components:
+    <ul>
+      <li>Component == leaf package/namespace.</li>
+      <li>All code should be in a component.</li>
+      <li>Move shared code to its own component.</li>
+    </ul></li>
+    <li>Determine component dependencies:
+    <ul>
+      <li>Coupling is the most significant factor in determining the overall success and feasibility of breaking a monolith.</li>
+      <li>Both afferent and efferent coupling.</li>
+      <li>Consider refactor to reduce coupling (like splitting a component in two).</li>
+    </ul></li>
+    <li>Create component domains:
+    <ul>
+      <li>Domains =~ service.</li>
+      <li>Package structure:
+      <ul>
+        <li><code>ss .customer.billing  .payments .MonthlyBilling</code></li>
+        <li><code>app.domain  .subdomain.component.class</code></li>
+      </ul></li>
+      <li>Move components to appropriate domain.</li>
+    </ul></li>
+    <li>Create domain services:
+    <ul>
+      <li><a href="/2021/11/17/fundamentals-of-software-architecture-summary/#ch-13">Service-based architecture</a>.</li>
+      <li>Don&rsquo;t apply this pattern until all domains have been identified and refactored.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Pulling Apart Operational Data</h2>
+<ul>
+  <li>Evaluate data disintegrators and data integrators.</li>
+  <li>Disintegrators:
+  <ol>
+    <li>Change control:
+    <ul>
+      <li>How many services are impacted by a DB change?</li>
+      <li>All must be deployed at the same time.</li>
+    </ul></li>
+    <li>Connection management:
+    <ul>
+      <li>Are we reaching the max number of connections allowed by the DB?</li>
+      <li>Are we running out of DB connections?</li>
+    </ul></li>
+    <li>Scalability:
+    <ul>
+      <li>Data is partitioned.</li>
+    </ul></li>
+    <li>Fault tolerance:
+    <ul>
+      <li>Avoid DB as a single point of failure.</li>
+    </ul></li>
+    <li>Increase Architecture Quantum.</li>
+    <li>Need for different kinds of DBs.</li>
+  </ol></li>
+  <li>Integrators:
+  <ol>
+    <li>Data relationships:
+    <ul>
+      <li>Referential integrity.</li>
+    </ul></li>
+    <li>DB transactions.</li>
+  </ol></li>
+  <li>Steps to split a DB:
+  <ol>
+    <li>Analyze DB and create data domains:
+    <ul>
+      <li>Data domain: group of tables/triggers/stored procs related to one domain.</li>
+    </ul></li>
+    <li>Assign tabled to data domains:
+    <ul>
+      <li>Move tables to data domain (== DB schema).</li>
+      <li>Allow for cross-schema joins.</li>
+    </ul></li>
+    <li>Separate DB connections to data domains:
+    <ul>
+      <li>Disallow cross-schema joins.</li>
+      <li>Replace joins with service calls.</li>
+    </ul></li>
+    <li>Move schemas to separate DB servers.</li>
+    <li>Switch over to independent DB servers:
+    <ul>
+      <li>Clean up old DB, do not connect to it.</li>
+    </ul></li>
+  </ol></li>
+  <li>Selecting DB type:
+  <ol>
+    <li>Relational DB:
+    <ul>
+      <li>When not to use:
+      <ul>
+        <li>Graph structures with arbitrary depth.</li>
+        <li>Horizontal scalability required.</li>
+        <li>Availability (over consistency).</li>
+        <li>Reactive stream APIs.</li>
+      </ul></li>
+    </ul></li>
+    <li>Key-Value DB:
+    <ul>
+      <li>Key -&gt; blob.</li>
+      <li>Single index.</li>
+    </ul></li>
+    <li>Document DB:
+    <ul>
+      <li>Key -&gt; JSON/XML.</li>
+      <li>Multiple indices.</li>
+    </ul></li>
+    <li>Column Family DBs.</li>
+    <li>Graph DB:
+    <ul>
+      <li>Beginners tend to add properties to relations, while seasoned add nodes and relations.</li>
+    </ul></li>
+    <li>New SQL DB:
+    <ul>
+      <li>Scalability of NoSQL with Relational DB features like ACID.</li>
+      <li><a href="https://www.cockroachlabs.com/">CockroachDB</a></li>
+    </ul></li>
+    <li>Cloud Native DB:
+    <ul>
+      <li>Mix bag of DBs (including <a href="https://www.datomic.com">Datomic</a>).</li>
+    </ul></li>
+    <li>Time-Series DB.</li>
+  </ol></li>
+</ul><p>Support means &ldquo;Programming language support, product maturity, SQ: support, community&rdquo;.</p>
+<div id="styles-table"></div><p><link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet"> <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script></p>
+<script>
+
+var tabledata = [
+    {id:1, name:"Relational", learn: 4, model:3, scale:2, fault:1, consis:5, support:4, read: "50% - 50%"},
+    {id:2, name:"Key-Value", learn: 3, model:1, scale:4, fault:4, consis:2, support:3, read: "80% - 20%"},
+    {id:3, name:"Document", learn: 3, model:3, scale:2, fault:3, consis:2, support:3, read: "70% - 30%"},
+    {id:4, name:"Column", learn: 2, model:1, scale:4, fault:4, consis:1, support:2, read: "30% - 70%"},
+    {id:5, name:"Graph", learn: 1, model:2, scale:3, fault:3, consis:3, support:2, read: "70% - 30%"},
+    {id:6, name:"New SQL", learn: 3, model:3, scale:3, fault:3, consis:2, support:2, read: "50% - 50%"},
+    {id:7, name:"Cloud Native", learn: 2, model:2, scale:4, fault:3, consis:3, support:2, read: "70% - 30%"},
+    {id:8, name:"Time-Series", learn: 1, model:2, scale:4, fault:2, consis:3, support:2, read: "70% - 30%"}
+];
+
+var table = new Tabulator("#styles-table", {
+    data:tabledata,           
+    layout:"fitColumns",      
+    responsiveLayout:false,  
+    tooltips:true,            
+    history:false,            
+    pagination:false,       
+    movableColumns:true,      
+    movableRows:true,      
+    resizableRows:false,      
+    columns:[                 
+        {title:"", field:"name"},
+        {title:"Ease of learn", field:"learn", formatter:"star", hozAlign:"center"},
+        {title:"Ease of data modeling", field:"model", formatter:"star", hozAlign:"center"},
+        {title:"Scalability", field:"scale", formatter:"star", hozAlign:"center"},
+        {title:"Availability", field:"fault", formatter:"star", hozAlign:"center"},
+        {title:"Consistency", field:"consis", formatter:"star", hozAlign:"center"},
+        {title:"Fault Tolerance", field:"fault", formatter:"star", hozAlign:"center"},
+        {title:"Support", field:"support", formatter:"star", hozAlign:"center"},
+        {title:"Read/write priority", field:"read", hozAlign:"center"}
+    ],
+});</script><h2><a name="ch-7"></a>Chapter 7 - Service Granularity</h2>
+<ul>
+  <li>Granularity == size == # of statements + # public interfaces.</li>
+  <li>Granularity disintegrators:
+  <ol>
+    <li>Service Scope and Function:
+    <ul>
+      <li>Consider cohesion and size.</li>
+      <li>Single responsibility principle.</li>
+      <li>Subjective, so don&rsquo;t use alone.</li>
+    </ul></li>
+    <li>Code volatility:
+    <ul>
+      <li>If a component changes more frequently than others, consider to split it, so that deployment and testing scope is smaller.</li>
+    </ul></li>
+    <li>Scalability and Throughput:
+    <ul>
+      <li>Some component needs to scale more than others.</li>
+    </ul></li>
+    <li>Fault tolerance:
+    <ul>
+      <li>One component more likely to crash and affect other component.</li>
+    </ul></li>
+    <li>Security:
+    <ul>
+      <li>Different security requirements per component.</li>
+    </ul></li>
+    <li>Extensibility:
+    <ul>
+      <li>If a new functionality will be more appropriate as a new service.</li>
+    </ul></li>
+  </ol></li>
+  <li>Granularity integrators:
+  <ol>
+    <li>DB transactions.</li>
+    <li>Workflow and choreography:
+    <ul>
+      <li>Too many inter-service callas:
+      <ul>
+        <li>Less fault tolerant.</li>
+        <li>Less performant.</li>
+      </ul></li>
+    </ul></li>
+    <li>Shared code (business code, not infrastructure).</li>
+    <li>Data relationships.</li>
+  </ol></li>
+</ul><h1><a name="p-2"></a>Part II - Putting Things Back Together</h1><h2><a name="ch-8"></a>Chapter 8 - Reuse Patterns</h2>
+<ol>
+  <li>Code replication:
+  <ul>
+    <li>Copy and paste between services.</li>
+    <li>Use for simple static code that is unlikely to change.</li>
+  </ul></li>
+  <li>Shared library:
+  <ul>
+    <li>Trade-off between dependency management and change control.</li>
+    <li>In general, strive for fine-grained libraries.</li>
+    <li>Use in homogeneous environments where shared code change is low to moderate.</li>
+  </ul></li>
+  <li>Shared service:
+  <ul>
+    <li>Easier to deploy changes, but:
+    <ul>
+      <li>Less performance, scalable, fault tolerant.</li>
+      <li>Versioning can be more difficult.</li>
+    </ul></li>
+    <li>Good in:
+    <ul>
+      <li>Polyglot environments.</li>
+      <li>High number of changes in shared functionality.</li>
+    </ul></li>
+  </ul></li>
+  <li>Sidecars and service mesh:
+  <ul>
+    <li>Mostly for cross-cutting operational concerns.</li>
+  </ul></li>
+</ol>
+<ul>
+  <li>Reuse is derived via abstraction but operationalized by slow rate of change.</li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Data Ownership and Distributed Transactions</h2>
+<ul>
+  <li>In general, the service that performs writes owns the data.</li>
+  <li>Scenarios:
+  <ol>
+    <li>Simple ownership:
+    <ul>
+      <li>Only one writer.</li>
+      <li>Writer owns the data.</li>
+    </ul></li>
+    <li>Common ownership:
+    <ul>
+      <li>Most services write to the table.</li>
+      <li>Solution: create a new service that owns the data.</li>
+    </ul></li>
+    <li>Joint ownership:
+    <ul>
+      <li>Solutions:
+      <ol>
+        <li>Split table:
+        <ul>
+          <li>May required data replication/synchronization between services on delete/create of primary entity.</li>
+        </ul></li>
+        <li>Data domain techniques:
+        <ul>
+          <li>Both services own the table, so keep as it is.</li>
+        </ul></li>
+        <li>Delegate techniques:
+        <ul>
+          <li>One service owns the data, the other makes service calls.</li>
+          <li>Consider owner by primary domain or by operational characteristic.</li>
+        </ul></li>
+        <li>Service consolidation technique:
+        <ul>
+          <li>Combine possible owners in a bigger service.</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+  </ol></li>
+  <li>Distribute transactions, eventual consistency patterns:
+  <ol>
+    <li>Background synchronization pattern:
+    <ul>
+      <li>Separate external process or service that periodically check data sources and keeps them in sync.</li>
+      <li>Pro: no inter-service communication.</li>
+      <li>Cons:
+      <ul>
+        <li>Slow eventual consistency.</li>
+        <li>High coupling between sync process and all other processes.</li>
+      </ul></li>
+      <li>Complex implementation.</li>
+    </ul></li>
+    <li>Orchestrated Request-Based Pattern:
+    <ul>
+      <li>One process/service in charge of making synchronous requests to other services.</li>
+      <li>Prefer a dedicated orchestrator.</li>
+      <li>Pro:
+      <ul>
+        <li>Services still decoupled, if orchestrator is standalone.</li>
+        <li>Favours consistency over availability.</li>
+        <li>Atomic business requests.</li>
+      </ul></li>
+      <li>Cons:
+      <ul>
+        <li>Slower responsiveness.</li>
+        <li>Complex error handling.</li>
+        <li>Usually requires compensating transactions.</li>
+      </ul></li>
+    </ul></li>
+    <li>Event-based pattern:
+    <ul>
+      <li>Pro:
+      <ul>
+        <li>Decoupled services.</li>
+        <li>Fast data consistency.</li>
+        <li>Fast responsiveness.</li>
+      </ul></li>
+      <li>Cons: complex error handling.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Distributed Data Access</h2>
+<ul>
+  <li>Data access patterns:
+  <ol>
+    <li>Inter-service calls.</li>
+    <li>Column schema replication:
+    <ul>
+      <li>Keep local copy of the other service data.</li>
+    </ul></li>
+    <li>Duplicated caching pattern:
+    <ul>
+      <li>Same as (2) but in-memory and using some product (Hazelcast, Ignite).</li>
+      <li>Pro: data remains consistent and ownership is preserved.
+      <ul>
+        <li>How much I disagree on this?</li>
+      </ul></li>
+    </ul></li>
+    <li>Data domain pattern:
+    <ul>
+      <li>Share DB, same as joint ownership.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Managing Distributed Workflow</h2>
+<ol>
+  <li>Orchestration communication style:
+  <ul>
+    <li>Aka mediator.</li>
+    <li>In microservices, one orchestrator per workflow.</li>
+    <li>Responsibilities:
+    <ul>
+      <li>Workflow state.</li>
+      <li>Optional behaviour.</li>
+      <li>Error handling.</li>
+      <li>Notification.</li>
+    </ul></li>
+  </ul></li>
+  <li>Choreography communication style:
+  <ul>
+    <li>Workflow state management patterns:
+    <ol>
+      <li>Front controller pattern:
+      <ul>
+        <li>First called service owns the state.</li>
+        <li>Other services may query and update the state.</li>
+      </ul></li>
+      <li>Stateless choreography:
+      <ul>
+        <li>Query individual services to know the state of the workflow.</li>
+      </ul></li>
+      <li>Stamp coupling:
+      <ul>
+        <li>Add workflow state in the message between services.</li>
+        <li>Each service updates its part.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+</ol>
+<ul>
+  <li>As workflow complexity goes up, the need for an orchestrator raises.</li>
+</ul><h1><a name="ch-12"></a>Chapter 12 - Transactional Sagas</h1>
+<ul>
+  <li><p>Types:</p>
+  <ul>
+    <li>Epic saga:
+    <ul>
+      <li>&ldquo;Traditional&rdquo;.</li>
+      <li>Avoid.</li>
+    </ul></li>
+    <li>Phone Tag:
+    <ul>
+      <li>Like Epic but without a coordinator.</li>
+    </ul></li>
+    <li>Fairy Tale:
+    <ul>
+      <li>As Epic but without distributed transactions.</li>
+    </ul></li>
+    <li>Fantasy Fiction:
+    <ul>
+      <li>To improve the Epic saga performance, but it fails.</li>
+    </ul></li>
+    <li>Horror Story:
+    <ul>
+      <li>Building atomicity on top of async + no mediator.</li>
+    </ul></li>
+  </ul></li>
+  <li><p>R/A stands for Responsiveness/Availability.</p></li>
+  <li>S/E stands for Scale/Elasticity.</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Saga </th>
+      <th>Communication </th>
+      <th>Consistency </th>
+      <th>Coordination </th>
+      <th>Coupling </th>
+      <th>Complexity </th>
+      <th>R/A </th>
+      <th>S/E </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Epic </td>
+      <td>Sync </td>
+      <td>Atomic </td>
+      <td>Orchestrated </td>
+      <td>Very high </td>
+      <td>Low </td>
+      <td>Low </td>
+      <td>Very low </td>
+    </tr>
+    <tr>
+      <td>Phone Tag </td>
+      <td>Sync </td>
+      <td>Atomic </td>
+      <td>Choreographed </td>
+      <td>High </td>
+      <td>High </td>
+      <td>Low </td>
+      <td>Low </td>
+    </tr>
+    <tr>
+      <td>Fairy Tale </td>
+      <td>Sync </td>
+      <td>Eventual </td>
+      <td>Orchestrated </td>
+      <td>High </td>
+      <td>Very low </td>
+      <td>Medium </td>
+      <td>High </td>
+    </tr>
+    <tr>
+      <td>Time Travel </td>
+      <td>Sync </td>
+      <td>Eventual </td>
+      <td>Choreographed </td>
+      <td>Medium </td>
+      <td>Low </td>
+      <td>Medium </td>
+      <td>High </td>
+    </tr>
+    <tr>
+      <td>Fantasy Fiction </td>
+      <td>Async </td>
+      <td>Atomic </td>
+      <td>Orchestrated </td>
+      <td>High </td>
+      <td>High </td>
+      <td>Low </td>
+      <td>Low </td>
+    </tr>
+    <tr>
+      <td>Horror Story </td>
+      <td>Async </td>
+      <td>Atomic </td>
+      <td>Choreographed </td>
+      <td>Medium </td>
+      <td>Very high </td>
+      <td>Low </td>
+      <td>Medium </td>
+    </tr>
+    <tr>
+      <td>Parallel </td>
+      <td>Async </td>
+      <td>Eventual </td>
+      <td>Orchestrated </td>
+      <td>Low </td>
+      <td>Low </td>
+      <td>High </td>
+      <td>High </td>
+    </tr>
+    <tr>
+      <td>Anthology </td>
+      <td>Async </td>
+      <td>Eventual </td>
+      <td>Choreographed </td>
+      <td>Very low </td>
+      <td>High </td>
+      <td>High </td>
+      <td>Very high </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Consider state machines (instead of atomic distributed transactions) to know the current state of a transactional saga.</li>
+</ul><h1><a name="ch-13"></a>Chapter 13 - Contracts</h1>
+<ul>
+  <li>Anti-pattern: include in contract more information than needed.</li>
+  <li>Strict contracts:
+  <ul>
+    <li>Pros:
+    <ul>
+      <li>Guaranteed contract fidelity.</li>
+      <li>Versioned.</li>
+      <li>Easier to verify at build time.</li>
+      <li>Better documentation.</li>
+    </ul></li>
+    <li>Cons:
+    <ul>
+      <li>Tight coupling.</li>
+      <li>Versioned.</li>
+    </ul></li>
+  </ul></li>
+  <li>Loose contracts:
+  <ul>
+    <li>Pros:
+    <ul>
+      <li>Highly decoupled.</li>
+      <li>Easier to evolve.</li>
+    </ul></li>
+    <li>Cons:
+    <ul>
+      <li>Contract management.</li>
+      <li>Requires fitness functions.</li>
+    </ul></li>
+  </ul></li>
+  <li>Tightly coupling violates one of the aspirational goals fo microservices, hence prefer loose contracts and consider using consumer-driven contracts.</li>
+</ul><h1><a name="ch-14"></a>Chapter 14 - Managing Analytical Data</h1>
+<ol>
+  <li>Data Warehouse:
+  <ul>
+    <li>Transform data at ingestion.</li>
+    <li>Brittle integration.</li>
+    <li>Usually failed to deliver.</li>
+    <li>Technical partition.</li>
+  </ul></li>
+  <li>Data Lake:
+  <ul>
+    <li>Transform data at usage time.</li>
+    <li>Difficult to discover proper assets.</li>
+    <li>PII and sensitive info issues.</li>
+    <li>Technical partitioning.</li>
+  </ul></li>
+  <li>Data Mesh:
+  <ul>
+    <li>Like microservices but for analytical data.</li>
+    <li>Principles:
+    <ol>
+      <li>Domain ownership of data:
+      <ul>
+        <li>Distributed and shared in a peer-to-peer fashion.</li>
+      </ul></li>
+      <li>Data as a product:
+      <ul>
+        <li>Data product quantum:
+        <ul>
+          <li>Adjacent and coupled to microservices.</li>
+          <li>Always async communication.</li>
+        </ul></li>
+      </ul></li>
+      <li>Self-service platform:
+      <ul>
+        <li>Oriented to sharing and consuming data.</li>
+      </ul></li>
+      <li>Computational federated governance:
+      <ul>
+        <li>Policies automated and embedded as sidecars.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+</ol><h1><a name="ch-15"></a>Chapter 15 - Build Your Own Trade-off Analysis</h1>
+<ul>
+  <li>Often, a solution has many beneficial aspects, but lacks critical capabilities that prevent success.</li>
+  <li>Generic solutions are rarely useful in real-world architectures without applying additional situation-specific context.</li>
+  <li>Use concrete use cases.</li>
+  <li>Reduce trade-off analysis to a few key points:
+  <ul>
+    <li>Translate them to non-technical parlance for non-tech people.</li>
+  </ul></li>
+</ul>]]></description></item></channel></rss>
