@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Client-side good practices when building third party API integrations</title>
+	<meta content="Good practices, pains and other considerations from a client's perspective when building third party integrations" name="description" /><meta content="good practices integration third api party client side" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Client-side good practices when building third party API integrations" property="og:title" /><meta content="Good practices, pains and other considerations from a client's perspective when building third party integrations" property="og:description" /><meta content="https://danlebrero.com/2023/03/29/why-to-take-booknotes/" property="og:url" /><meta content="Client-side good practices when building third party API integrations" name="twitter:title" /><meta content="Good practices, pains and other considerations from a client's perspective when building third party integrations" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/client-side-integration.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/client-side-integration.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2023/03/29/why-to-take-booknotes/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-87361578-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Client-side good practices when building third party API integrations</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 29 Mar 2023</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Good practices, pains and other considerations from a client's perspective when building third party integrations</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/client-side-integration.jpg" />
+						</div>
+					</div>
+				 <div class="entry-content-media-attribution">
+					 <small>Image attribution:</small>
+						 <small>Photo by <a href="https://unsplash.com/@purzlbaum?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Claudio Schwarz</a> on <a href="https://unsplash.com/photos/qjX0QBtDXto?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></small>
+
+				 </div>
+
+					<div class="entry-content"><p>Here is a brain dump of things that I consider when I have to build a new integration with some third party API provider.</p><p>Notes are quite sketchy. If something needs of a longer explanation let me know!</p><h1>Truths</h1>
+<ul>
+  <li>They are messy.</li>
+  <li>Third parties will become unavailable, both in small doses (few requests “randomly” failing) and in big ones (few minutes or hours of downtime).</li>
+  <li>FTP is a perfectly acceptable way of integrating.</li>
+</ul><h1>Practices</h1><h2>Initial implementation</h2>
+<ul>
+  <li>Read the docs.
+  <ul>
+    <li>Do not just fiddle with the endpoints but read the actual docs.</li>
+  </ul></li>
+  <li>Play with the API to understand behaviours. What if:
+  <ul>
+    <li>the url is wrong? Does it return a 404?</li>
+    <li>the data queried does not exist? Empty result or 404?</li>
+    <li>we miss some query/body parameters?</li>
+    <li>we concurrently update the same piece of information?</li>
+    <li>we exceed the rate limit?</li>
+  </ul></li>
+  <li>Estimate call rate and data volumes:
+  <ul>
+    <li>Is batching available?</li>
+    <li>Is pagination available?</li>
+    <li>Get a sense of the performance:
+    <ul>
+      <li>It might affect the implementation and business flow.</li>
+    </ul></li>
+  </ul></li>
+  <li>Document findings
+  <ul>
+    <li>Include support contact information and expectations.</li>
+  </ul></li>
+  <li>Subscribe the provider’s status page.</li>
+  <li>Find out what is their change management process:
+  <ul>
+    <li>Subscribe to whatever you need to subscribe to find out about changes.</li>
+    <li>Is it a newly built third party?
+    <ul>
+      <li>Try to get direct access to their technical team.</li>
+      <li>Expect loads of backwards incompatible changes.</li>
+      <li>VS mature products, higher chance that the bug is on their side.</li>
+    </ul></li>
+  </ul></li>
+  <li>Consider a <a href="https://martinfowler.com/bliki/DarkLaunching.html">dark launch</a>:
+  <ul>
+    <li>Put the integration in production, so it is exercised but do not use it in a client facing functionality.</li>
+    <li>Minimum monitoring (error and performance) required for this to be useful.</li>
+    <li>Useful also to collect real example responses to use for additional testing.</li>
+  </ul></li>
+</ul><h2>On the way to production</h2>
+<ul>
+  <li>What is the acceptable business process when the integration fails?
+  <ul>
+    <li>Integration will fail.</li>
+    <li>Avoid “at all costs” making an integration mandatory for a key user flow.</li>
+    <li>What is the fallback mechanism? Default answer?</li>
+    <li>If there is a reasonable business flow, consider recording which user flows where affected and proper actions retried/amended/reviewed/notified.</li>
+    <li>It is a business decision.</li>
+  </ul></li>
+  <li>Add retries:
+  <ul>
+    <li>Think of clock time, not number of retries.</li>
+    <li>Consider supporting a manual retry mechanism for your support folks.</li>
+    <li>See “user-flow vs background integrations below”.</li>
+  </ul></li>
+  <li>Add a kill-switch:
+  <ul>
+    <li>Ideally in the hands of a PM.</li>
+    <li>Review “What is the acceptable business process when the integration fails”.</li>
+  </ul></li>
+  <li>Always set timeouts in network calls:
+  <ul>
+    <li>In the case of Apache HTTP client, <a href="/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures">at least connection and read timeout</a>.</li>
+    <li>Consider that while the thread is waiting for a response, it might be holding other resources (locks, db connections) hostage, which might affect unrelated requests.</li>
+    <li>Review “What is the acceptable business process when the integration fails”.</li>
+    <li>Note: when there is a read timeout while waiting for the server to respond, the client side does not know if the request was processed or not.</li>
+    <li>Note: if the client application crashes, any in-flight request to the provider ends up in an unknown state from the client’s point of view.
+    <ul>
+      <li>Consider a retry/recovery mechanism when the client application starts up.</li>
+    </ul></li>
+  </ul></li>
+  <li>If you can influence it, encourage the provider to implement idempotent APIs:
+  <ul>
+    <li>“At least once” semantics are way easier than “at most once”.</li>
+  </ul></li>
+  <li>You might want to consider splitting one third party API into smaller independent integrations if:
+  <ul>
+    <li>Some endpoints are more critical than others for your business process.</li>
+    <li>The various endpoints have widely different latencies.</li>
+  </ul></li>
+  <li>Monitoring:
+  <ul>
+    <li>Call rate, error rate, latency.</li>
+    <li>Logs:
+    <ul>
+      <li>All calls.</li>
+      <li>Request/Response body in the case of an error.
+      <ul>
+        <li>Careful with PII data.</li>
+      </ul></li>
+      <li>Side note: client side monitoring is always better than server side monitoring, as the server might not see some requests if they never reach it, or it might miss monitoring data if it is struggling with load/network/crashing.
+      <ul>
+        <li>Server side monitoring is still required.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Set alerts:
+  <ul>
+    <li>Useful distinction between errors:
+    <ul>
+      <li>4xx:
+      <ul>
+        <li>It’s our fault.</li>
+        <li>Most likely something that we can do about it.</li>
+        <li>Daily/weekly report:
+        <ul>
+          <li>Daily the first few weeks.</li>
+          <li>Only alert if % is very high.</li>
+          <li>Very unlikely that a retry will help.</li>
+        </ul></li>
+      </ul></li>
+      <li>5xx and timeouts/network errors:
+      <ul>
+        <li><a href="/2016/11/21/the-boy-who-cried-wolf-an-it-tale/">Do not alert on each and every error</a>:
+        <ul>
+          <li>Timeout and 5xx will happen and are normal.</li>
+        </ul></li>
+        <li>Too many:
+        <ul>
+          <li>First few weeks might mean that you need to tweak your timeouts:
+          <ul>
+            <li>Dark launch!</li>
+          </ul></li>
+          <li>Escalate to the provider team.</li>
+        </ul></li>
+        <li>Retries will help.</li>
+      </ul></li>
+      <li>In both cases, keep a close eye the first time that you release an integration.</li>
+      <li>Remember that GraphQL needs <a href="https://productionreadygraphql.com/2020-08-01-guide-to-graphql-errors">additional error handling</a>.</li>
+    </ul></li>
+    <li>If you are doing out of hours escalation, ensure that the person to be contacted when there is an alert is the person that thinks that the alert deserves an out of hours alert.
+    <ul>
+      <li>Most likely it is an issue with the provider, so it “only” needs to be escalated to their support.</li>
+      <li>Provide a dashboard for that alert that even a PM will understand.</li>
+      <li>Provide a phone contact to the third party support.</li>
+    </ul></li>
+    <li>See “user-flow vs background integrations below”.</li>
+    <li>Consider doing load testing.</li>
+  </ul></li>
+  <li>Security:
+  <ul>
+    <li>SSL.</li>
+    <li>IP allow-list.</li>
+    <li>Credentials rotation:
+    <ul>
+      <li>If it is not automated, figure out who to contact.</li>
+    </ul></li>
+    <li>On start up, check that the credentials are valid.</li>
+  </ul></li>
+</ul><h2>Practices for user-flow vs background integrations</h2><p>The main difference between API integration that is in a user-flow and integration that runs in some background process is that the user-flow integrations require a low latency, as it is unlikely that users are willing to wait long.</p><h4>Background integrations</h4>
+<ul>
+  <li>Multiple retries:
+  <ul>
+    <li>Consider exponential backoff.</li>
+    <li>Think in terms of clock time: For how many minutes/hours is the business process still meaningful? Or is it pointless if delayed more than X?
+    <ul>
+      <li>Business decision.</li>
+    </ul></li>
+  </ul></li>
+  <li>Alerts:
+  <ul>
+    <li>Think in terms of clock time: how long can this integration be down before somebody should panic?
+    <ul>
+      <li>Business decision.</li>
+    </ul></li>
+    <li>Consider alerting before the process runs out of retries, so that once the issue is addressed the process will (hopefully) successfully retry.</li>
+  </ul></li>
+  <li>Timeouts can be longer: up to minutes could be ok.</li>
+  <li>Batching is more likely to be useful.</li>
+  <li>No need for circuit-breakers.</li>
+  <li>Rate-limiting should result in traffic shaping.</li>
+</ul><h4>User-flow integrations</h4>
+<ul>
+  <li>You cannot wait long as there is a human looking at a spinning icon on the other side, so:
+  <ul>
+    <li>No more than one retry.</li>
+    <li>Short timeouts.</li>
+    <li>This in terms of clock time: how long will the human be willing to wait for the result to appear on their screen before they think your app is broken?</li>
+    <li>Most of the time, a few seconds tops.</li>
+  </ul></li>
+  <li>Connection pools are a must:
+  <ul>
+    <li>Unless your call rate is so low that it will make no difference.</li>
+    <li>Each integration should have its own connection pool:
+    <ul>
+      <li>Do not share connection pools between different integrations.</li>
+    </ul></li>
+    <li>Configure the connection pool timeout and the TTL.</li>
+  </ul></li>
+  <li>Circuit breakers are a must.</li>
+  <li>Consider stale-while-revalidating + stale-while-error for cached authorization tokens and data:
+  <ul>
+    <li>Reduce extra latency when the token/data is stale.</li>
+    <li>Better resilience: set refresh short enough that any transient error in the provider will not affect the user as the refresh will be retried several times before it comes really stale.</li>
+  </ul></li>
+  <li>Alerts:
+  <ul>
+    <li>Based on circuit breakers.</li>
+    <li>Think in terms of clock time:
+    <ul>
+      <li>For how long a circuit breaker must be open before somebody should panic?</li>
+    </ul></li>
+  </ul></li>
+  <li>Most PaaS platforms have a hard time limit to process the request.</li>
+  <li>Consider:
+  <ul>
+    <li>Moving to a completely or mostly async IO model, to avoid thread starvation.</li>
+    <li><a href="https://blogs.oracle.com/javamagazine/post/java-loom-virtual-threads-platform-threads">Java virtual threads</a>!</li>
+    <li>Sync data from the provider in a background process, store locally and serve from local store.</li>
+    <li>Splitting processing into two steps:
+    <ol>
+      <li>Trigger request to provider on first client request.</li>
+      <li>Client to periodically poll to check if the response is ready.</li>
+    </ol></li>
+  </ul></li>
+</ul><h2>Annoyances</h2><p>A list of things that should never happen, and do not make sense at all, but you will need to live with.</p>
+<ul>
+  <li>Expect the integration to behave out of spec:
+  <ul>
+    <li>Be kind with the provider’s developers.</li>
+  </ul></li>
+  <li>A 200 response does not mean a successful response:
+  <ul>
+    <li>Look at something inside the response to confirm that it was a successful response.</li>
+  </ul></li>
+  <li>Health check endpoints tell you that the health check endpoint is working (or not):
+  <ul>
+    <li>Making this call does not guarantee the success of the following HTTP request:
+    <ul>
+      <li>Health check implementations usually just return a 200 if the API server is up, but do not check that all the downstream dependencies are up and running.
+      <ul>
+        <li>Doing so is usually very expensive.</li>
+      </ul></li>
+    </ul></li>
+    <li>Even if the health check endpoint does health checking of downstream servers and the downstream servers of the downstream servers, it is possible that by the time we send the second request, the API server or any of its dependencies is frozen or dead, or that there is some network issue on the path.</li>
+    <li>Making this call makes the error handling and logic more complex.</li>
+    <li>So, avoid.</li>
+    <li>See “Side note: client side monitoring is always better than server side monitoring”.</li>
+  </ul></li>
+  <li>Probably the dev environment of the provider is crap:
+  <ul>
+    <li>Consider using their staging in all pre-production environments.</li>
+    <li>Use their dev environment for initial development.</li>
+  </ul></li>
+</ul><h1>Extra references</h1>
+<ul>
+  <li><a href="/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video">Resilience Patterns</a>.</li>
+  <li><a href="https://martinfowler.com/bliki/DarkLaunching.html">Dark launch</a>.</li>
+  <li><a href="/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures">Configuring connection pools and timeouts</a>.</li>
+  <li><a href="https://productionreadygraphql.com/2020-08-01-guide-to-graphql-errors">GraphQL error handling</a>.</li>
+  <li><a href="/2016/11/21/the-boy-who-cried-wolf-an-it-tale/">Alert fatigue</a>.</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/good_practices/index.html">good practices </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1680502395&amp;asins=1680502395&amp;linkId=98fc761019fdb7fe116e070714d6c3ba&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						<div id="toprightbanner2" class="widget six columns"><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1492034029&amp;asins=1492034029&amp;linkId=4fa69d32eef7c359668ae325ec27c093&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (40)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (36)</a></li><li><a href="/tags/Humour/index.html">Humour (11)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (37)</a></li><li><a href="/tags/good_practices/index.html">good practices (27)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1950508579&amp;asins=1950508579&amp;linkId=a7707c5d642b9c837598a70521052b5c&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>

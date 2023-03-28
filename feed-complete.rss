@@ -1,4 +1,265 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0100</lastBuildDate><pubDate>Wed, 15 Mar 2023 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Notes on book notes</title><link>https://danlebrero.com/2023/03/15/why-to-take-booknotes/</link><guid>https://danlebrero.com/2023/03/15/why-to-take-booknotes/</guid><pubDate>Wed, 15 Mar 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>Let&rsquo;s explain the process of taking <a href="/tags/book_notes/index.html">book notes</a> before looking at the why.</p><h2>The process</h2><p>Step one: buy a book, or even better, pick up one from your towering unread book pile.</p><p>As you read, take notes in an old-fashioned notebook. Pen and paper.</p><p>Once you finish the book, leave it aside for a few weeks.</p><p>Next, prune the handwritten notes while moving them to electronic form. Leave it aside for a few weeks.</p><p>Last, summarize the notes into key learning and publish in your blog.</p><h2>The benefits</h2><h3>1. More focus, more learning</h3><p>Taking notes by hand has two benefits:</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 29 Mar 2023 00:00:00 +0200</lastBuildDate><pubDate>Wed, 29 Mar 2023 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Client-side good practices when building third party API integrations</title><link>https://danlebrero.com/2023/03/29/why-to-take-booknotes/</link><guid>https://danlebrero.com/2023/03/29/why-to-take-booknotes/</guid><pubDate>Wed, 29 Mar 2023 00:00:00 +0200</pubDate><description><![CDATA[<p>Here is a brain dump of things that I consider when I have to build a new integration with some third party API provider.</p><p>Notes are quite sketchy. If something needs of a longer explanation let me know!</p><h1>Truths</h1>
+<ul>
+  <li>They are messy.</li>
+  <li>Third parties will become unavailable, both in small doses (few requests &ldquo;randomly&rdquo; failing) and in big ones (few minutes or hours of downtime).</li>
+  <li>FTP is a perfectly acceptable way of integrating.</li>
+</ul><h1>Practices</h1><h2>Initial implementation</h2>
+<ul>
+  <li>Read the docs.
+  <ul>
+    <li>Do not just fiddle with the endpoints but read the actual docs.</li>
+  </ul></li>
+  <li>Play with the API to understand behaviours. What if:
+  <ul>
+    <li>the url is wrong? Does it return a 404?</li>
+    <li>the data queried does not exist? Empty result or 404?</li>
+    <li>we miss some query/body parameters?</li>
+    <li>we concurrently update the same piece of information?</li>
+    <li>we exceed the rate limit?</li>
+  </ul></li>
+  <li>Estimate call rate and data volumes:
+  <ul>
+    <li>Is batching available?</li>
+    <li>Is pagination available?</li>
+    <li>Get a sense of the performance:
+    <ul>
+      <li>It might affect the implementation and business flow.</li>
+    </ul></li>
+  </ul></li>
+  <li>Document findings
+  <ul>
+    <li>Include support contact information and expectations.</li>
+  </ul></li>
+  <li>Subscribe the provider&rsquo;s status page.</li>
+  <li>Find out what is their change management process:
+  <ul>
+    <li>Subscribe to whatever you need to subscribe to find out about changes.</li>
+    <li>Is it a newly built third party?
+    <ul>
+      <li>Try to get direct access to their technical team.</li>
+      <li>Expect loads of backwards incompatible changes.</li>
+      <li>VS mature products, higher chance that the bug is on their side.</li>
+    </ul></li>
+  </ul></li>
+  <li>Consider a <a href="https://martinfowler.com/bliki/DarkLaunching.html">dark launch</a>:
+  <ul>
+    <li>Put the integration in production, so it is exercised but do not use it in a client facing functionality.</li>
+    <li>Minimum monitoring (error and performance) required for this to be useful.</li>
+    <li>Useful also to collect real example responses to use for additional testing.</li>
+  </ul></li>
+</ul><h2>On the way to production</h2>
+<ul>
+  <li>What is the acceptable business process when the integration fails?
+  <ul>
+    <li>Integration will fail.</li>
+    <li>Avoid &ldquo;at all costs&rdquo; making an integration mandatory for a key user flow.</li>
+    <li>What is the fallback mechanism? Default answer?</li>
+    <li>If there is a reasonable business flow, consider recording which user flows where affected and proper actions retried/amended/reviewed/notified.</li>
+    <li>It is a business decision.</li>
+  </ul></li>
+  <li>Add retries:
+  <ul>
+    <li>Think of clock time, not number of retries.</li>
+    <li>Consider supporting a manual retry mechanism for your support folks.</li>
+    <li>See &ldquo;user-flow vs background integrations below&rdquo;.</li>
+  </ul></li>
+  <li>Add a kill-switch:
+  <ul>
+    <li>Ideally in the hands of a PM.</li>
+    <li>Review &ldquo;What is the acceptable business process when the integration fails&rdquo;.</li>
+  </ul></li>
+  <li>Always set timeouts in network calls:
+  <ul>
+    <li>In the case of Apache HTTP client, <a href="/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures">at least connection and read timeout</a>.</li>
+    <li>Consider that while the thread is waiting for a response, it might be holding other resources (locks, db connections) hostage, which might affect unrelated requests.</li>
+    <li>Review &ldquo;What is the acceptable business process when the integration fails&rdquo;.</li>
+    <li>Note: when there is a read timeout while waiting for the server to respond, the client side does not know if the request was processed or not.</li>
+    <li>Note: if the client application crashes, any in-flight request to the provider ends up in an unknown state from the client&rsquo;s point of view.
+    <ul>
+      <li>Consider a retry/recovery mechanism when the client application starts up.</li>
+    </ul></li>
+  </ul></li>
+  <li>If you can influence it, encourage the provider to implement idempotent APIs:
+  <ul>
+    <li>&ldquo;At least once&rdquo; semantics are way easier than &ldquo;at most once&rdquo;.</li>
+  </ul></li>
+  <li>You might want to consider splitting one third party API into smaller independent integrations if:
+  <ul>
+    <li>Some endpoints are more critical than others for your business process.</li>
+    <li>The various endpoints have widely different latencies.</li>
+  </ul></li>
+  <li>Monitoring:
+  <ul>
+    <li>Call rate, error rate, latency.</li>
+    <li>Logs:
+    <ul>
+      <li>All calls.</li>
+      <li>Request/Response body in the case of an error.
+      <ul>
+        <li>Careful with PII data.</li>
+      </ul></li>
+      <li>Side note: client side monitoring is always better than server side monitoring, as the server might not see some requests if they never reach it, or it might miss monitoring data if it is struggling with load/network/crashing.
+      <ul>
+        <li>Server side monitoring is still required.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Set alerts:
+  <ul>
+    <li>Useful distinction between errors:
+    <ul>
+      <li>4xx:
+      <ul>
+        <li>It&rsquo;s our fault.</li>
+        <li>Most likely something that we can do about it.</li>
+        <li>Daily/weekly report:
+        <ul>
+          <li>Daily the first few weeks.</li>
+          <li>Only alert if % is very high.</li>
+          <li>Very unlikely that a retry will help.</li>
+        </ul></li>
+      </ul></li>
+      <li>5xx and timeouts/network errors:
+      <ul>
+        <li><a href="/2016/11/21/the-boy-who-cried-wolf-an-it-tale/">Do not alert on each and every error</a>:
+        <ul>
+          <li>Timeout and 5xx will happen and are normal.</li>
+        </ul></li>
+        <li>Too many:
+        <ul>
+          <li>First few weeks might mean that you need to tweak your timeouts:
+          <ul>
+            <li>Dark launch!</li>
+          </ul></li>
+          <li>Escalate to the provider team.</li>
+        </ul></li>
+        <li>Retries will help.</li>
+      </ul></li>
+      <li>In both cases, keep a close eye the first time that you release an integration.</li>
+      <li>Remember that GraphQL needs <a href="https://productionreadygraphql.com/2020-08-01-guide-to-graphql-errors">additional error handling</a>.</li>
+    </ul></li>
+    <li>If you are doing out of hours escalation, ensure that the person to be contacted when there is an alert is the person that thinks that the alert deserves an out of hours alert.
+    <ul>
+      <li>Most likely it is an issue with the provider, so it &ldquo;only&rdquo; needs to be escalated to their support.</li>
+      <li>Provide a dashboard for that alert that even a PM will understand.</li>
+      <li>Provide a phone contact to the third party support.</li>
+    </ul></li>
+    <li>See &ldquo;user-flow vs background integrations below&rdquo;.</li>
+    <li>Consider doing load testing.</li>
+  </ul></li>
+  <li>Security:
+  <ul>
+    <li>SSL.</li>
+    <li>IP allow-list.</li>
+    <li>Credentials rotation:
+    <ul>
+      <li>If it is not automated, figure out who to contact.</li>
+    </ul></li>
+    <li>On start up, check that the credentials are valid.</li>
+  </ul></li>
+</ul><h2>Practices for user-flow vs background integrations</h2><p>The main difference between API integration that is in a user-flow and integration that runs in some background process is that the user-flow integrations require a low latency, as it is unlikely that users are willing to wait long.</p><h4>Background integrations</h4>
+<ul>
+  <li>Multiple retries:
+  <ul>
+    <li>Consider exponential backoff.</li>
+    <li>Think in terms of clock time: For how many minutes/hours is the business process still meaningful? Or is it pointless if delayed more than X?
+    <ul>
+      <li>Business decision.</li>
+    </ul></li>
+  </ul></li>
+  <li>Alerts:
+  <ul>
+    <li>Think in terms of clock time: how long can this integration be down before somebody should panic?
+    <ul>
+      <li>Business decision.</li>
+    </ul></li>
+    <li>Consider alerting before the process runs out of retries, so that once the issue is addressed the process will (hopefully) successfully retry.</li>
+  </ul></li>
+  <li>Timeouts can be longer: up to minutes could be ok.</li>
+  <li>Batching is more likely to be useful.</li>
+  <li>No need for circuit-breakers.</li>
+  <li>Rate-limiting should result in traffic shaping.</li>
+</ul><h4>User-flow integrations</h4>
+<ul>
+  <li>You cannot wait long as there is a human looking at a spinning icon on the other side, so:
+  <ul>
+    <li>No more than one retry.</li>
+    <li>Short timeouts.</li>
+    <li>This in terms of clock time: how long will the human be willing to wait for the result to appear on their screen before they think your app is broken?</li>
+    <li>Most of the time, a few seconds tops.</li>
+  </ul></li>
+  <li>Connection pools are a must:
+  <ul>
+    <li>Unless your call rate is so low that it will make no difference.</li>
+    <li>Each integration should have its own connection pool:
+    <ul>
+      <li>Do not share connection pools between different integrations.</li>
+    </ul></li>
+    <li>Configure the connection pool timeout and the TTL.</li>
+  </ul></li>
+  <li>Circuit breakers are a must.</li>
+  <li>Consider stale-while-revalidating + stale-while-error for cached authorization tokens and data:
+  <ul>
+    <li>Reduce extra latency when the token/data is stale.</li>
+    <li>Better resilience: set refresh short enough that any transient error in the provider will not affect the user as the refresh will be retried several times before it comes really stale.</li>
+  </ul></li>
+  <li>Alerts:
+  <ul>
+    <li>Based on circuit breakers.</li>
+    <li>Think in terms of clock time:
+    <ul>
+      <li>For how long a circuit breaker must be open before somebody should panic?</li>
+    </ul></li>
+  </ul></li>
+  <li>Most PaaS platforms have a hard time limit to process the request.</li>
+  <li>Consider:
+  <ul>
+    <li>Moving to a completely or mostly async IO model, to avoid thread starvation.</li>
+    <li><a href="https://blogs.oracle.com/javamagazine/post/java-loom-virtual-threads-platform-threads">Java virtual threads</a>!</li>
+    <li>Sync data from the provider in a background process, store locally and serve from local store.</li>
+    <li>Splitting processing into two steps:
+    <ol>
+      <li>Trigger request to provider on first client request.</li>
+      <li>Client to periodically poll to check if the response is ready.</li>
+    </ol></li>
+  </ul></li>
+</ul><h2>Annoyances</h2><p>A list of things that should never happen, and do not make sense at all, but you will need to live with.</p>
+<ul>
+  <li>Expect the integration to behave out of spec:
+  <ul>
+    <li>Be kind with the provider&rsquo;s developers.</li>
+  </ul></li>
+  <li>A 200 response does not mean a successful response:
+  <ul>
+    <li>Look at something inside the response to confirm that it was a successful response.</li>
+  </ul></li>
+  <li>Health check endpoints tell you that the health check endpoint is working (or not):
+  <ul>
+    <li>Making this call does not guarantee the success of the following HTTP request:
+    <ul>
+      <li>Health check implementations usually just return a 200 if the API server is up, but do not check that all the downstream dependencies are up and running.
+      <ul>
+        <li>Doing so is usually very expensive.</li>
+      </ul></li>
+    </ul></li>
+    <li>Even if the health check endpoint does health checking of downstream servers and the downstream servers of the downstream servers, it is possible that by the time we send the second request, the API server or any of its dependencies is frozen or dead, or that there is some network issue on the path.</li>
+    <li>Making this call makes the error handling and logic more complex.</li>
+    <li>So, avoid.</li>
+    <li>See &ldquo;Side note: client side monitoring is always better than server side monitoring&rdquo;.</li>
+  </ul></li>
+  <li>Probably the dev environment of the provider is crap:
+  <ul>
+    <li>Consider using their staging in all pre-production environments.</li>
+    <li>Use their dev environment for initial development.</li>
+  </ul></li>
+</ul><h1>Extra references</h1>
+<ul>
+  <li><a href="/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video">Resilience Patterns</a>.</li>
+  <li><a href="https://martinfowler.com/bliki/DarkLaunching.html">Dark launch</a>.</li>
+  <li><a href="/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures">Configuring connection pools and timeouts</a>.</li>
+  <li><a href="https://productionreadygraphql.com/2020-08-01-guide-to-graphql-errors">GraphQL error handling</a>.</li>
+  <li><a href="/2016/11/21/the-boy-who-cried-wolf-an-it-tale/">Alert fatigue</a>.</li>
+</ul>]]></description></item><item><title>Notes on book notes</title><link>https://danlebrero.com/2023/03/15/why-to-take-booknotes/</link><guid>https://danlebrero.com/2023/03/15/why-to-take-booknotes/</guid><pubDate>Wed, 15 Mar 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>Let&rsquo;s explain the process of taking <a href="/tags/book_notes/index.html">book notes</a> before looking at the why.</p><h2>The process</h2><p>Step one: buy a book, or even better, pick up one from your towering unread book pile.</p><p>As you read, take notes in an old-fashioned notebook. Pen and paper.</p><p>Once you finish the book, leave it aside for a few weeks.</p><p>Next, prune the handwritten notes while moving them to electronic form. Leave it aside for a few weeks.</p><p>Last, summarize the notes into key learning and publish in your blog.</p><h2>The benefits</h2><h3>1. More focus, more learning</h3><p>Taking notes by hand has two benefits:</p>
 <ol>
   <li>Handwriting notes forces me to focus on what I am reading, improving my understanding and retention of the material.</li>
   <li>As writing the notes is laborious, I tend to write fewer notes, which means trying to understand the key points, which in turn means learning more.
@@ -29,7 +290,7 @@
     <li>Happy to learn about alternatives.</li>
   </ul></li>
   <li><a href="https://amzn.to/3JC5rkL">Neck light</a>: a surprisingly useful present.</li>
-</ol><p>And the most important of all, a bookmark for each book handcrafted by my lovely daughter:</p><p><img src="/images/blog/books/notes-book-notes/book-marker.jpg" alt="book mark" /></p><p>They will become a very good reason to revisit all the books … and it keeps her busy for at least oen hour each <i class="far fa-smile" aria-hidden="true"></i>.</p>]]></description></item><item><title>Book notes: Building Microservices - Second edition</title><link>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</link><guid>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</guid><pubDate>Tue, 24 Jan 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3aTXY39">Building Microservices: Designing Fine-Grained Systems</a> by <a href="https://twitter.com/samnewman">Sam Newman</a>.</p><p>When an author lists more drawbacks thatn benefits (nine vs six), you know he knows what he is talking about.</p><h1>Key Insights</h1>
+</ol><p>And the most important of all, a bookmark for each book handcrafted by my lovely daughter:</p><p><img src="/images/blog/books/notes-book-notes/book-marker.jpg" alt="book mark" /></p><p>They will become a very good reason to revisit all the books … and it keeps her busy for at least one hour each <i class="far fa-smile" aria-hidden="true"></i>.</p>]]></description></item><item><title>Book notes: Building Microservices - Second edition</title><link>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</link><guid>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</guid><pubDate>Tue, 24 Jan 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3aTXY39">Building Microservices: Designing Fine-Grained Systems</a> by <a href="https://twitter.com/samnewman">Sam Newman</a>.</p><p>When an author lists more drawbacks thatn benefits (nine vs six), you know he knows what he is talking about.</p><h1>Key Insights</h1>
 <ul>
   <li>Independent deployability is key.</li>
   <li>Clear, stable service boundaries.</li>
@@ -3120,730 +3381,4 @@ class ArticleController {
   <li>Internal and inter-team conflicts: Internal yes, but no other teams.</li>
   <li>Inter-team coordination and dependencies: no other teams.&quot;</li>
 </ul>
-<hr/><p>That is a long list of things I did not do. </p><p>Are you asking too much from your team/tech lead? </p><p>If so, what is she neglecting? Do you agree with her choices?</p>]]></description></item><item><title>Book notes: Software Architecture: The Hard Parts</title><link>https://danlebrero.com/2022/03/30/software-architecture-the-hard-parts-book-summary/</link><guid>https://danlebrero.com/2022/03/30/software-architecture-the-hard-parts-book-summary/</guid><pubDate>Wed, 30 Mar 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/35b92Wj">Software Architecture: The Hard Parts</a> by <a href="https://twitter.com/neal4d">Neal Ford</a>, <a href="https://twitter.com/markrichardssa">Mark Richards</a>, <a href="https://twitter.com/pramodsadalage">Pramod Sadalage</a> and <a href="https://twitter.com/zhamakd">Zhamak Dehghani</a>.</p><p>A book full trade-off tables. The dream of any <a href="https://rpg.stackexchange.com/questions/64800/what-does-minmax-mean">MinMax RPG player</a>.</p><h1>Key Insights</h1>
-<ul>
-  <li>Timeless skill: How architects make decisions, and how to objectively weight trade-offs.</li>
-  <li>SW architecture is in the service of data.</li>
-  <li>Trade-off analysis:
-  <ol>
-    <li>Find what parts are entangles together.</li>
-    <li>Analyze how they are coupled to one another.</li>
-    <li>Assess trade-offs by determining the impact of change on interdependent systems.</li>
-  </ol></li>
-  <li>Primary reasons for breaking applications apart is:
-  <ol>
-    <li>Time to market (== agility == deployability + testability + maintainability)</li>
-    <li>Scalability.</li>
-    <li>Availability.</li>
-    <li>Fault tolerance.</li>
-  </ol></li>
-  <li>Tactical forking: Copy the entire monolith, and delete the code not needed.</li>
-  <li>Coupling is the most significant factor in determining the overall success and feasibility of breaking a monolith.</li>
-  <li>Size components:
-  <ul>
-    <li>Not too big, not too small == ~ 1-2 standard deviation from average.</li>
-  </ul></li>
-  <li>Service granularity disintegrators:
-  <ol>
-    <li>Service Scope and Function:
-    <ul>
-      <li>Subjective, so don&rsquo;t use alone.</li>
-    </ul></li>
-    <li>Code volatility:
-    <ul>
-      <li>If a component changes more frequently than others, consider to split it, so that deployment and testing scope is smaller.</li>
-    </ul></li>
-  </ol></li>
-  <li>Strive for fine-grained libraries.</li>
-  <li>The service that performs writes owns the data.</li>
-  <li>As workflow complexity goes up, the need for an orchestrator raises.</li>
-  <li>Tightly coupling violates one of the aspirational goals fo microservices, hence prefer loose contracts and consider using consumer-driven contracts.</li>
-  <li><a href="https://martinfowler.com/articles/data-mesh-principles.html">Data Mesh</a>:
-  <ul>
-    <li>Like microservices but for analytical data.</li>
-  </ul></li>
-  <li>Often, a solution has many beneficial aspects, but lacks critical capabilities that prevent success.</li>
-  <li>Generic solutions are rarely useful in real-world architectures without applying additional situation-specific context.</li>
-  <li>Use concrete use cases.</li>
-</ul><h1>TOC</h1>
-<ul>
-  <li><a href="#ch-1">Chapter 1 - What Happens When There Are No &ldquo;Best Practices&rdquo;?</a></li>
-  <li><a href="#part-1">Part I - Pulling Things Apart</a>
-  <ul>
-    <li><a href="#ch-2">Chapter 2 - Discerning Coupling in SW Architecture</a></li>
-    <li><a href="#ch-3">Chapter 3 - Architectural Modularity</a></li>
-    <li><a href="#ch-4">Chapter 4 - Architectural Decomposition</a></li>
-    <li><a href="#ch-5">Chapter 5 - Component-Based Decomposition Patterns</a></li>
-    <li><a href="#ch-6">Chapter 6 - Pulling Apart Operational Data</a></li>
-    <li><a href="#ch-7">Chapter 7 - Service Granularity</a></li>
-  </ul></li>
-  <li><a href="#p-2">Part II - Putting Things Back Together</a>
-  <ul>
-    <li><a href="#ch-8">Chapter 8 - Reuse Patterns</a></li>
-    <li><a href="#ch-9">Chapter 9 - Data Ownership and Distributed Transactions</a></li>
-    <li><a href="#ch-10">Chapter 10 - Distributed Data Access</a></li>
-    <li><a href="#ch-11">Chapter 11 - Managing Distributed Workflow</a></li>
-    <li><a href="#ch-12">Chapter 12 - Transactional Sagas</a></li>
-    <li><a href="#ch-13">Chapter 13 - Contracts</a></li>
-    <li><a href="#ch-14">Chapter 14 - Managing Analytical Data</a></li>
-    <li><a href="#ch-15">Chapter 15 - Build Your Own Trade-off Analysis</a></li>
-  </ul></li>
-</ul><h2><a name="ch-1"></a>Chapter 1 - What Happens When There Are No &ldquo;Best Practices&rdquo;?</h2>
-<ul>
-  <li>Architects constantly face difficult problems that literally no one has faced before (due to context).</li>
-  <li>Timeless skill: How architects make decisions, and how to objectively weight trade-offs.</li>
-  <li>SW architecture is in the service of data.</li>
-</ul><h2><a name="part-1"></a>Part I - Pulling Things Apart</h2><h2><a name="ch-2"></a>Chapter 2 - Discerning Coupling in SW Architecture</h2>
-<ul>
-  <li>No best practice exist that can you apply to real-world complex system.</li>
-  <li>Trade-off analysis:
-  <ol>
-    <li>Find what parts are entangles together.</li>
-    <li>Analyze how they are coupled to one another.</li>
-    <li>Assess trade-offs by determining the impact of change on interdependent systems.</li>
-  </ol></li>
-  <li>Architecture quantum:
-  <ul>
-    <li>Independent deployable.</li>
-    <li>High functional cohesion.</li>
-    <li>High static coupling.</li>
-    <li>Synchronous dynamic coupling.</li>
-  </ul></li>
-  <li>Dynamic coupling dimensions:
-  <ul>
-    <li>Communication: sync or async.</li>
-    <li>Consistency: atomic or eventual.</li>
-    <li>Coordination: orchestration or choreography.</li>
-  </ul></li>
-</ul><h2><a name="ch-3"></a>Chapter 3 - Architectural Modularity</h2>
-<ul>
-  <li>SW architecture must constantly change and adapt.</li>
-  <li>Primary reasons for breaking applications apart is:
-  <ol>
-    <li>Time to market (== agility == deployability + testability + maintainability)</li>
-    <li>Scalability.</li>
-    <li>Availability.</li>
-    <li>Fault tolerance.</li>
-  </ol></li>
-</ul><h2><a name="ch-4"></a>Chapter 4 - Architectural Decomposition</h2>
-<ul>
-  <li>Is a codebase decomposable?
-  <ul>
-    <li>Architect to decide. Tools:
-    <ul>
-      <li><a href="/2021/11/17/fundamentals-of-software-architecture-summary/#mainsequence">Distance to main sequence</a>.</li>
-    </ul></li>
-  </ul></li>
-  <li>Component-based decomposition:
-  <ul>
-    <li>Enable migration to service-oriented architecture.</li>
-  </ul></li>
-  <li>Tactical forking:
-  <ul>
-    <li>When there is little internal structure.</li>
-    <li>Copy the entire monolith, and delete the code not needed.</li>
-  </ul></li>
-</ul><h2><a name="ch-5"></a>Chapter 5 - Component-Based Decomposition Patterns</h2>
-<ul>
-  <li>Initially, apply in order:
-  <ol>
-    <li>Identify and size components:
-    <ul>
-      <li>Not too big, not too small == ~ 1-2 standard deviation from average.</li>
-      <li>Size == # statements.</li>
-      <li>Too big &ndash;&gt; split.</li>
-    </ul></li>
-    <li>Gather common domain components:
-    <ul>
-      <li>To eliminate duplication.</li>
-      <li>Shared domain logic, not infrastructure.</li>
-      <li>Mostly a manual process.</li>
-    </ul></li>
-    <li>Flatten components:
-    <ul>
-      <li>Component == leaf package/namespace.</li>
-      <li>All code should be in a component.</li>
-      <li>Move shared code to its own component.</li>
-    </ul></li>
-    <li>Determine component dependencies:
-    <ul>
-      <li>Coupling is the most significant factor in determining the overall success and feasibility of breaking a monolith.</li>
-      <li>Both afferent and efferent coupling.</li>
-      <li>Consider refactor to reduce coupling (like splitting a component in two).</li>
-    </ul></li>
-    <li>Create component domains:
-    <ul>
-      <li>Domains =~ service.</li>
-      <li>Package structure:
-      <ul>
-        <li><code>ss .customer.billing  .payments .MonthlyBilling</code></li>
-        <li><code>app.domain  .subdomain.component.class</code></li>
-      </ul></li>
-      <li>Move components to appropriate domain.</li>
-    </ul></li>
-    <li>Create domain services:
-    <ul>
-      <li><a href="/2021/11/17/fundamentals-of-software-architecture-summary/#ch-13">Service-based architecture</a>.</li>
-      <li>Don&rsquo;t apply this pattern until all domains have been identified and refactored.</li>
-    </ul></li>
-  </ol></li>
-</ul><h2><a name="ch-6"></a>Chapter 6 - Pulling Apart Operational Data</h2>
-<ul>
-  <li>Evaluate data disintegrators and data integrators.</li>
-  <li>Disintegrators:
-  <ol>
-    <li>Change control:
-    <ul>
-      <li>How many services are impacted by a DB change?</li>
-      <li>All must be deployed at the same time.</li>
-    </ul></li>
-    <li>Connection management:
-    <ul>
-      <li>Are we reaching the max number of connections allowed by the DB?</li>
-      <li>Are we running out of DB connections?</li>
-    </ul></li>
-    <li>Scalability:
-    <ul>
-      <li>Data is partitioned.</li>
-    </ul></li>
-    <li>Fault tolerance:
-    <ul>
-      <li>Avoid DB as a single point of failure.</li>
-    </ul></li>
-    <li>Increase Architecture Quantum.</li>
-    <li>Need for different kinds of DBs.</li>
-  </ol></li>
-  <li>Integrators:
-  <ol>
-    <li>Data relationships:
-    <ul>
-      <li>Referential integrity.</li>
-    </ul></li>
-    <li>DB transactions.</li>
-  </ol></li>
-  <li>Steps to split a DB:
-  <ol>
-    <li>Analyze DB and create data domains:
-    <ul>
-      <li>Data domain: group of tables/triggers/stored procs related to one domain.</li>
-    </ul></li>
-    <li>Assign tabled to data domains:
-    <ul>
-      <li>Move tables to data domain (== DB schema).</li>
-      <li>Allow for cross-schema joins.</li>
-    </ul></li>
-    <li>Separate DB connections to data domains:
-    <ul>
-      <li>Disallow cross-schema joins.</li>
-      <li>Replace joins with service calls.</li>
-    </ul></li>
-    <li>Move schemas to separate DB servers.</li>
-    <li>Switch over to independent DB servers:
-    <ul>
-      <li>Clean up old DB, do not connect to it.</li>
-    </ul></li>
-  </ol></li>
-  <li>Selecting DB type:
-  <ol>
-    <li>Relational DB:
-    <ul>
-      <li>When not to use:
-      <ul>
-        <li>Graph structures with arbitrary depth.</li>
-        <li>Horizontal scalability required.</li>
-        <li>Availability (over consistency).</li>
-        <li>Reactive stream APIs.</li>
-      </ul></li>
-    </ul></li>
-    <li>Key-Value DB:
-    <ul>
-      <li>Key -&gt; blob.</li>
-      <li>Single index.</li>
-    </ul></li>
-    <li>Document DB:
-    <ul>
-      <li>Key -&gt; JSON/XML.</li>
-      <li>Multiple indices.</li>
-    </ul></li>
-    <li>Column Family DBs.</li>
-    <li>Graph DB:
-    <ul>
-      <li>Beginners tend to add properties to relations, while seasoned add nodes and relations.</li>
-    </ul></li>
-    <li>New SQL DB:
-    <ul>
-      <li>Scalability of NoSQL with Relational DB features like ACID.</li>
-      <li><a href="https://www.cockroachlabs.com/">CockroachDB</a></li>
-    </ul></li>
-    <li>Cloud Native DB:
-    <ul>
-      <li>Mix bag of DBs (including <a href="https://www.datomic.com">Datomic</a>).</li>
-    </ul></li>
-    <li>Time-Series DB.</li>
-  </ol></li>
-</ul><p>Support means &ldquo;Programming language support, product maturity, SQ: support, community&rdquo;.</p>
-<div id="styles-table"></div><p><link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet"> <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script></p>
-<script>
-
-var tabledata = [
-    {id:1, name:"Relational", learn: 4, model:3, scale:2, fault:1, consis:5, support:4, read: "50% - 50%"},
-    {id:2, name:"Key-Value", learn: 3, model:1, scale:4, fault:4, consis:2, support:3, read: "80% - 20%"},
-    {id:3, name:"Document", learn: 3, model:3, scale:2, fault:3, consis:2, support:3, read: "70% - 30%"},
-    {id:4, name:"Column", learn: 2, model:1, scale:4, fault:4, consis:1, support:2, read: "30% - 70%"},
-    {id:5, name:"Graph", learn: 1, model:2, scale:3, fault:3, consis:3, support:2, read: "70% - 30%"},
-    {id:6, name:"New SQL", learn: 3, model:3, scale:3, fault:3, consis:2, support:2, read: "50% - 50%"},
-    {id:7, name:"Cloud Native", learn: 2, model:2, scale:4, fault:3, consis:3, support:2, read: "70% - 30%"},
-    {id:8, name:"Time-Series", learn: 1, model:2, scale:4, fault:2, consis:3, support:2, read: "70% - 30%"}
-];
-
-var table = new Tabulator("#styles-table", {
-    data:tabledata,           
-    layout:"fitColumns",      
-    responsiveLayout:false,  
-    tooltips:true,            
-    history:false,            
-    pagination:false,       
-    movableColumns:true,      
-    movableRows:true,      
-    resizableRows:false,      
-    columns:[                 
-        {title:"", field:"name"},
-        {title:"Ease of learn", field:"learn", formatter:"star", hozAlign:"center"},
-        {title:"Ease of data modeling", field:"model", formatter:"star", hozAlign:"center"},
-        {title:"Scalability", field:"scale", formatter:"star", hozAlign:"center"},
-        {title:"Availability", field:"fault", formatter:"star", hozAlign:"center"},
-        {title:"Consistency", field:"consis", formatter:"star", hozAlign:"center"},
-        {title:"Fault Tolerance", field:"fault", formatter:"star", hozAlign:"center"},
-        {title:"Support", field:"support", formatter:"star", hozAlign:"center"},
-        {title:"Read/write priority", field:"read", hozAlign:"center"}
-    ],
-});</script><h2><a name="ch-7"></a>Chapter 7 - Service Granularity</h2>
-<ul>
-  <li>Granularity == size == # of statements + # public interfaces.</li>
-  <li>Granularity disintegrators:
-  <ol>
-    <li>Service Scope and Function:
-    <ul>
-      <li>Consider cohesion and size.</li>
-      <li>Single responsibility principle.</li>
-      <li>Subjective, so don&rsquo;t use alone.</li>
-    </ul></li>
-    <li>Code volatility:
-    <ul>
-      <li>If a component changes more frequently than others, consider to split it, so that deployment and testing scope is smaller.</li>
-    </ul></li>
-    <li>Scalability and Throughput:
-    <ul>
-      <li>Some component needs to scale more than others.</li>
-    </ul></li>
-    <li>Fault tolerance:
-    <ul>
-      <li>One component more likely to crash and affect other component.</li>
-    </ul></li>
-    <li>Security:
-    <ul>
-      <li>Different security requirements per component.</li>
-    </ul></li>
-    <li>Extensibility:
-    <ul>
-      <li>If a new functionality will be more appropriate as a new service.</li>
-    </ul></li>
-  </ol></li>
-  <li>Granularity integrators:
-  <ol>
-    <li>DB transactions.</li>
-    <li>Workflow and choreography:
-    <ul>
-      <li>Too many inter-service callas:
-      <ul>
-        <li>Less fault tolerant.</li>
-        <li>Less performant.</li>
-      </ul></li>
-    </ul></li>
-    <li>Shared code (business code, not infrastructure).</li>
-    <li>Data relationships.</li>
-  </ol></li>
-</ul><h1><a name="p-2"></a>Part II - Putting Things Back Together</h1><h2><a name="ch-8"></a>Chapter 8 - Reuse Patterns</h2>
-<ol>
-  <li>Code replication:
-  <ul>
-    <li>Copy and paste between services.</li>
-    <li>Use for simple static code that is unlikely to change.</li>
-  </ul></li>
-  <li>Shared library:
-  <ul>
-    <li>Trade-off between dependency management and change control.</li>
-    <li>In general, strive for fine-grained libraries.</li>
-    <li>Use in homogeneous environments where shared code change is low to moderate.</li>
-  </ul></li>
-  <li>Shared service:
-  <ul>
-    <li>Easier to deploy changes, but:
-    <ul>
-      <li>Less performance, scalable, fault tolerant.</li>
-      <li>Versioning can be more difficult.</li>
-    </ul></li>
-    <li>Good in:
-    <ul>
-      <li>Polyglot environments.</li>
-      <li>High number of changes in shared functionality.</li>
-    </ul></li>
-  </ul></li>
-  <li>Sidecars and service mesh:
-  <ul>
-    <li>Mostly for cross-cutting operational concerns.</li>
-  </ul></li>
-</ol>
-<ul>
-  <li>Reuse is derived via abstraction but operationalized by slow rate of change.</li>
-</ul><h2><a name="ch-9"></a>Chapter 9 - Data Ownership and Distributed Transactions</h2>
-<ul>
-  <li>In general, the service that performs writes owns the data.</li>
-  <li>Scenarios:
-  <ol>
-    <li>Simple ownership:
-    <ul>
-      <li>Only one writer.</li>
-      <li>Writer owns the data.</li>
-    </ul></li>
-    <li>Common ownership:
-    <ul>
-      <li>Most services write to the table.</li>
-      <li>Solution: create a new service that owns the data.</li>
-    </ul></li>
-    <li>Joint ownership:
-    <ul>
-      <li>Solutions:
-      <ol>
-        <li>Split table:
-        <ul>
-          <li>May required data replication/synchronization between services on delete/create of primary entity.</li>
-        </ul></li>
-        <li>Data domain techniques:
-        <ul>
-          <li>Both services own the table, so keep as it is.</li>
-        </ul></li>
-        <li>Delegate techniques:
-        <ul>
-          <li>One service owns the data, the other makes service calls.</li>
-          <li>Consider owner by primary domain or by operational characteristic.</li>
-        </ul></li>
-        <li>Service consolidation technique:
-        <ul>
-          <li>Combine possible owners in a bigger service.</li>
-        </ul></li>
-      </ol></li>
-    </ul></li>
-  </ol></li>
-  <li>Distribute transactions, eventual consistency patterns:
-  <ol>
-    <li>Background synchronization pattern:
-    <ul>
-      <li>Separate external process or service that periodically check data sources and keeps them in sync.</li>
-      <li>Pro: no inter-service communication.</li>
-      <li>Cons:
-      <ul>
-        <li>Slow eventual consistency.</li>
-        <li>High coupling between sync process and all other processes.</li>
-      </ul></li>
-      <li>Complex implementation.</li>
-    </ul></li>
-    <li>Orchestrated Request-Based Pattern:
-    <ul>
-      <li>One process/service in charge of making synchronous requests to other services.</li>
-      <li>Prefer a dedicated orchestrator.</li>
-      <li>Pro:
-      <ul>
-        <li>Services still decoupled, if orchestrator is standalone.</li>
-        <li>Favours consistency over availability.</li>
-        <li>Atomic business requests.</li>
-      </ul></li>
-      <li>Cons:
-      <ul>
-        <li>Slower responsiveness.</li>
-        <li>Complex error handling.</li>
-        <li>Usually requires compensating transactions.</li>
-      </ul></li>
-    </ul></li>
-    <li>Event-based pattern:
-    <ul>
-      <li>Pro:
-      <ul>
-        <li>Decoupled services.</li>
-        <li>Fast data consistency.</li>
-        <li>Fast responsiveness.</li>
-      </ul></li>
-      <li>Cons: complex error handling.</li>
-    </ul></li>
-  </ol></li>
-</ul><h2><a name="ch-10"></a>Chapter 10 - Distributed Data Access</h2>
-<ul>
-  <li>Data access patterns:
-  <ol>
-    <li>Inter-service calls.</li>
-    <li>Column schema replication:
-    <ul>
-      <li>Keep local copy of the other service data.</li>
-    </ul></li>
-    <li>Duplicated caching pattern:
-    <ul>
-      <li>Same as (2) but in-memory and using some product (Hazelcast, Ignite).</li>
-      <li>Pro: data remains consistent and ownership is preserved.
-      <ul>
-        <li>How much I disagree on this?</li>
-      </ul></li>
-    </ul></li>
-    <li>Data domain pattern:
-    <ul>
-      <li>Share DB, same as joint ownership.</li>
-    </ul></li>
-  </ol></li>
-</ul><h2><a name="ch-11"></a>Chapter 11 - Managing Distributed Workflow</h2>
-<ol>
-  <li>Orchestration communication style:
-  <ul>
-    <li>Aka mediator.</li>
-    <li>In microservices, one orchestrator per workflow.</li>
-    <li>Responsibilities:
-    <ul>
-      <li>Workflow state.</li>
-      <li>Optional behaviour.</li>
-      <li>Error handling.</li>
-      <li>Notification.</li>
-    </ul></li>
-  </ul></li>
-  <li>Choreography communication style:
-  <ul>
-    <li>Workflow state management patterns:
-    <ol>
-      <li>Front controller pattern:
-      <ul>
-        <li>First called service owns the state.</li>
-        <li>Other services may query and update the state.</li>
-      </ul></li>
-      <li>Stateless choreography:
-      <ul>
-        <li>Query individual services to know the state of the workflow.</li>
-      </ul></li>
-      <li>Stamp coupling:
-      <ul>
-        <li>Add workflow state in the message between services.</li>
-        <li>Each service updates its part.</li>
-      </ul></li>
-    </ol></li>
-  </ul></li>
-</ol>
-<ul>
-  <li>As workflow complexity goes up, the need for an orchestrator raises.</li>
-</ul><h1><a name="ch-12"></a>Chapter 12 - Transactional Sagas</h1>
-<ul>
-  <li><p>Types:</p>
-  <ul>
-    <li>Epic saga:
-    <ul>
-      <li>&ldquo;Traditional&rdquo;.</li>
-      <li>Avoid.</li>
-    </ul></li>
-    <li>Phone Tag:
-    <ul>
-      <li>Like Epic but without a coordinator.</li>
-    </ul></li>
-    <li>Fairy Tale:
-    <ul>
-      <li>As Epic but without distributed transactions.</li>
-    </ul></li>
-    <li>Fantasy Fiction:
-    <ul>
-      <li>To improve the Epic saga performance, but it fails.</li>
-    </ul></li>
-    <li>Horror Story:
-    <ul>
-      <li>Building atomicity on top of async + no mediator.</li>
-    </ul></li>
-  </ul></li>
-  <li><p>R/A stands for Responsiveness/Availability.</p></li>
-  <li>S/E stands for Scale/Elasticity.</li>
-</ul>
-<table>
-  <thead>
-    <tr>
-      <th>Saga </th>
-      <th>Communication </th>
-      <th>Consistency </th>
-      <th>Coordination </th>
-      <th>Coupling </th>
-      <th>Complexity </th>
-      <th>R/A </th>
-      <th>S/E </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Epic </td>
-      <td>Sync </td>
-      <td>Atomic </td>
-      <td>Orchestrated </td>
-      <td>Very high </td>
-      <td>Low </td>
-      <td>Low </td>
-      <td>Very low </td>
-    </tr>
-    <tr>
-      <td>Phone Tag </td>
-      <td>Sync </td>
-      <td>Atomic </td>
-      <td>Choreographed </td>
-      <td>High </td>
-      <td>High </td>
-      <td>Low </td>
-      <td>Low </td>
-    </tr>
-    <tr>
-      <td>Fairy Tale </td>
-      <td>Sync </td>
-      <td>Eventual </td>
-      <td>Orchestrated </td>
-      <td>High </td>
-      <td>Very low </td>
-      <td>Medium </td>
-      <td>High </td>
-    </tr>
-    <tr>
-      <td>Time Travel </td>
-      <td>Sync </td>
-      <td>Eventual </td>
-      <td>Choreographed </td>
-      <td>Medium </td>
-      <td>Low </td>
-      <td>Medium </td>
-      <td>High </td>
-    </tr>
-    <tr>
-      <td>Fantasy Fiction </td>
-      <td>Async </td>
-      <td>Atomic </td>
-      <td>Orchestrated </td>
-      <td>High </td>
-      <td>High </td>
-      <td>Low </td>
-      <td>Low </td>
-    </tr>
-    <tr>
-      <td>Horror Story </td>
-      <td>Async </td>
-      <td>Atomic </td>
-      <td>Choreographed </td>
-      <td>Medium </td>
-      <td>Very high </td>
-      <td>Low </td>
-      <td>Medium </td>
-    </tr>
-    <tr>
-      <td>Parallel </td>
-      <td>Async </td>
-      <td>Eventual </td>
-      <td>Orchestrated </td>
-      <td>Low </td>
-      <td>Low </td>
-      <td>High </td>
-      <td>High </td>
-    </tr>
-    <tr>
-      <td>Anthology </td>
-      <td>Async </td>
-      <td>Eventual </td>
-      <td>Choreographed </td>
-      <td>Very low </td>
-      <td>High </td>
-      <td>High </td>
-      <td>Very high </td>
-    </tr>
-  </tbody>
-</table>
-<ul>
-  <li>Consider state machines (instead of atomic distributed transactions) to know the current state of a transactional saga.</li>
-</ul><h1><a name="ch-13"></a>Chapter 13 - Contracts</h1>
-<ul>
-  <li>Anti-pattern: include in contract more information than needed.</li>
-  <li>Strict contracts:
-  <ul>
-    <li>Pros:
-    <ul>
-      <li>Guaranteed contract fidelity.</li>
-      <li>Versioned.</li>
-      <li>Easier to verify at build time.</li>
-      <li>Better documentation.</li>
-    </ul></li>
-    <li>Cons:
-    <ul>
-      <li>Tight coupling.</li>
-      <li>Versioned.</li>
-    </ul></li>
-  </ul></li>
-  <li>Loose contracts:
-  <ul>
-    <li>Pros:
-    <ul>
-      <li>Highly decoupled.</li>
-      <li>Easier to evolve.</li>
-    </ul></li>
-    <li>Cons:
-    <ul>
-      <li>Contract management.</li>
-      <li>Requires fitness functions.</li>
-    </ul></li>
-  </ul></li>
-  <li>Tightly coupling violates one of the aspirational goals fo microservices, hence prefer loose contracts and consider using consumer-driven contracts.</li>
-</ul><h1><a name="ch-14"></a>Chapter 14 - Managing Analytical Data</h1>
-<ol>
-  <li>Data Warehouse:
-  <ul>
-    <li>Transform data at ingestion.</li>
-    <li>Brittle integration.</li>
-    <li>Usually failed to deliver.</li>
-    <li>Technical partition.</li>
-  </ul></li>
-  <li>Data Lake:
-  <ul>
-    <li>Transform data at usage time.</li>
-    <li>Difficult to discover proper assets.</li>
-    <li>PII and sensitive info issues.</li>
-    <li>Technical partitioning.</li>
-  </ul></li>
-  <li>Data Mesh:
-  <ul>
-    <li>Like microservices but for analytical data.</li>
-    <li>Principles:
-    <ol>
-      <li>Domain ownership of data:
-      <ul>
-        <li>Distributed and shared in a peer-to-peer fashion.</li>
-      </ul></li>
-      <li>Data as a product:
-      <ul>
-        <li>Data product quantum:
-        <ul>
-          <li>Adjacent and coupled to microservices.</li>
-          <li>Always async communication.</li>
-        </ul></li>
-      </ul></li>
-      <li>Self-service platform:
-      <ul>
-        <li>Oriented to sharing and consuming data.</li>
-      </ul></li>
-      <li>Computational federated governance:
-      <ul>
-        <li>Policies automated and embedded as sidecars.</li>
-      </ul></li>
-    </ol></li>
-  </ul></li>
-</ol><h1><a name="ch-15"></a>Chapter 15 - Build Your Own Trade-off Analysis</h1>
-<ul>
-  <li>Often, a solution has many beneficial aspects, but lacks critical capabilities that prevent success.</li>
-  <li>Generic solutions are rarely useful in real-world architectures without applying additional situation-specific context.</li>
-  <li>Use concrete use cases.</li>
-  <li>Reduce trade-off analysis to a few key points:
-  <ul>
-    <li>Translate them to non-technical parlance for non-tech people.</li>
-  </ul></li>
-</ul>]]></description></item></channel></rss>
+<hr/><p>That is a long list of things I did not do. </p><p>Are you asking too much from your team/tech lead? </p><p>If so, what is she neglecting? Do you agree with her choices?</p>]]></description></item></channel></rss>
