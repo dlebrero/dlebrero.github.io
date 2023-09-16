@@ -1,4 +1,531 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Thu, 11 May 2023 00:00:00 +0200</lastBuildDate><pubDate>Thu, 11 May 2023 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Inspired: How to Create Tech Products Customers Love</title><link>https://danlebrero.com/2023/05/11/inspired-how-to-create-tech-products-customers-love-summary/</link><guid>https://danlebrero.com/2023/05/11/inspired-how-to-create-tech-products-customers-love-summary/</guid><pubDate>Thu, 11 May 2023 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3MFmJNc">Inspired: How to Create Tech Products Customers Love</a> by <a href="https://twitter.com/cagan">Marty Cagan</a>.</p><p>If you liked <a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">Accelerate</a>, The DevOps Handbook, <a href="/2021/12/01/sonner-safer-happier-summary-patterns-business-agility/#content">Sooner, safer, happier</a> or other similar books, you will want to buy this book for your Product Manager.</p><h1>Key Insights</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Mon, 16 Oct 2023 10:30:00 +0200</lastBuildDate><pubDate>Mon, 16 Oct 2023 10:30:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Never split the difference</title><link>https://danlebrero.com/2023/10/16/never-split-the-difference-summary/</link><guid>https://danlebrero.com/2023/10/16/never-split-the-difference-summary/</guid><pubDate>Mon, 16 Oct 2023 10:30:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3yKCWKN">Never Split the Difference</a> by <a href="https://twitter.com/VossNegotiation">Chris Voss</a> and <a href="https://twitter.com/tahlraz">Tahl Raz</a></p><p>Kidnappers are just businessman trying to get the best price.</p><h1>Key Insights</h1>
+<ul>
+  <li>Apology and first name to seed warmth.</li>
+  <li>Open-ended questions (calibrated questions):
+  <ul>
+    <li>Gives other illusion of control.</li>
+    <li>How the other would solved your problems.</li>
+  </ul></li>
+  <li>Negotiate more effectively by influencing System 1.</li>
+  <li>Core concept: Tactical empathy:
+  <ul>
+    <li>Listening is the most active thing you can do.</li>
+    <li>When people feel listened:
+    <ol>
+      <li>Listen to themselves more carefully.</li>
+      <li>More open to evaluate and clarify their own thoughts and feelings.</li>
+      <li>Less defensive.</li>
+      <li>More willing to listen to others.</li>
+    </ol></li>
+  </ul></li>
+  <li>Engage negotiation with a mindset of discovery.</li>
+  <li>Make it all about the other.</li>
+  <li>Mirroring (isopraxism):
+  <ul>
+    <li>Sign of bonding.</li>
+    <li>We fear what&rsquo;s different and drawn to what&rsquo;s similar.</li>
+    <li>Repeat the last 3 words, or the critical 1 to 3 words.</li>
+    <li>Downward inflection: I am listening and understand.</li>
+    <li>Upward inflection: invite response.</li>
+    <li>4 steps:
+    <ol>
+      <li>Use late-night FM DJ voice.</li>
+      <li>Start with &ldquo;I&rsquo;m sorry&rdquo;.</li>
+      <li>Mirror.</li>
+      <li>Silence. 4 secs at least.</li>
+      <li>Repeat.</li>
+    </ol></li>
+  </ul></li>
+  <li>Never ask &ldquo;What do you mean by that?&rdquo;:
+  <ul>
+    <li>Is more irritating than mirroring.</li>
+  </ul></li>
+  <li>Labeling:
+  <ul>
+    <li>Validating someone&rsquo;s emotions by acknowledging them.</li>
+    <li>Labeling negative emotions diffuses them.</li>
+    <li>Labeling positive emotions reinforces them.</li>
+  </ul></li>
+  <li>&ldquo;No&rdquo; starts the negotiation.</li>
+  <li>Clearly giving permission to say &ldquo;NO&rdquo; to your ideas preserve people need for autonomy.</li>
+  <li>Helps people feel safe, secure, emotionally comfortable, and in control of their decision.</li>
+  <li>Provoke a &ldquo;no&rdquo;.</li>
+  <li>&ldquo;That&rsquo;s right&rdquo; (making progress) vs &ldquo;You&rsquo;re right&rdquo; (nothing changes).</li>
+  <li>Deadlines are often arbitrary, almost always flexible, and hardly ever trigger the consequences we think they will.</li>
+  <li>We are hardwired to reject unfairness.</li>
+  <li>Prospect Theory (Kahneman and Tversky):
+  <ul>
+    <li>Certainty effect:
+    <ul>
+      <li>People are drawn to sure things over probabilities, even when probabilities is a better choice.</li>
+    </ul></li>
+    <li>Loss aversion:
+    <ul>
+      <li>People take greater risk to avoid losses than to achieve gains.</li>
+    </ul></li>
+  </ul></li>
+  <li>How to negotiate a better salary:
+  <ol>
+    <li>Be pleasantly persistent on non-salary terms.</li>
+    <li>Define success and metrics for next rise.</li>
+    <li>Ask: &ldquo;What does it take to be successful here?&rdquo;
+    <ul>
+      <li>Interviewer will give advise, watch if you follow and become your unofficial mentor.</li>
+    </ul></li>
+  </ol></li>
+  <li>Failure plants the seed of future success.</li>
+  <li>&ldquo;How am I supposed to do that?&rdquo;.</li>
+  <li>&ldquo;Yes&rdquo; is nothing without &ldquo;how&rdquo;.</li>
+  <li><a href="#ch-9">You must understand your counterpart style for effective negotiation</a>.</li>
+  <li><a href="#bargain">Ackerman bargaining</a>.</li>
+  <li>When pressure is on, you don&rsquo;t raise to the occasion; you fall to your highest level of preparation.</li>
+  <li>The first few minutes before a meeting, and the last few minutes (when everybody is leaving) often tell you more about the other side than anything in between.</li>
+  <li><a href="https://info.blackswanltd.com/download-the-negotiation-one-sheet">Negotiation one sheet pdf</a>.</li>
+</ul><h1><a name="ch-1"></a>Chapter 1: The new rules</h1>
+<ul>
+  <li>Apology and first name to seed warmth.</li>
+  <li>Open-ended questions (calibrated questions):
+  <ul>
+    <li>The other side can respond but there are no fixed answers.</li>
+    <li>Buys you time.</li>
+    <li>Gives other illusion of control.</li>
+    <li>How the other would solved your problems.</li>
+    <li>&ldquo;How I am supposed to do that?&rdquo;</li>
+  </ul></li>
+  <li>Kidnappers are just businessman trying to get the best price.</li>
+  <li>Cognitive bias:
+  <ul>
+    <li><a href="https://amzn.to/3CIAzL6">Thinking, fast and slow</a>.</li>
+    <li>Irrational, more than <a href="https://en.wikipedia.org/wiki/List_of_cognitive_biases">150 different ones</a>.</li>
+    <li>Come from System 1 thinking.</li>
+    <li>System 1 steers and guides our rational thoughts (System 2).</li>
+    <li>Negotiate more effectively by influencing System 1.</li>
+  </ul></li>
+  <li>Core concept: Tactical empathy:
+  <ul>
+    <li>Listening is the most active thing you can do.</li>
+    <li>When people feel listened:
+    <ol>
+      <li>Listen to themselves more carefully.</li>
+      <li>More open to evaluate and clarify their own thoughts and feelings.</li>
+      <li>Less defensive.</li>
+      <li>More willing to listen to others.</li>
+    </ol></li>
+  </ul></li>
+  <li>Negotiation is the heart of collaboration:
+  <ul>
+    <li>Makes conflict meaningful and productive for all parties.</li>
+  </ul></li>
+</ul><h1><a name="ch-2"></a>Chapter 2: Be a Mirror</h1>
+<ul>
+  <li>Engage negotiation with a mindset of discovery.</li>
+  <li>Overuse of personal pronouns (we/they vs me/I):
+  <ul>
+    <li>The less important he makes himself, the more important he probably is.</li>
+  </ul></li>
+  <li>Team of 4 or 5 to listen.</li>
+  <li>Voices in your head:
+  <ul>
+    <li>When not talking, you are thinking about your arguments.</li>
+    <li>When talking, making your arguments.</li>
+    <li>The other is possibly doing the same.</li>
+  </ul></li>
+  <li>Make it all about the other.</li>
+  <li>Three voice tones:
+  <ol>
+    <li>Late-night FM DJ voice:
+    <ul>
+      <li>Deep, soft, slow and reassuring.</li>
+      <li><a href="https://www.youtube.com/watch?v=RJjnkxvbxaI">Listen here!</a>.</li>
+    </ul></li>
+    <li>Positive/playful voice:
+    <ul>
+      <li>Default one.</li>
+      <li>Easy going. Good natured person.</li>
+      <li>Relax and smile while talking.</li>
+    </ul></li>
+    <li>Assertive dominance voice:
+    <ul>
+      <li>Used very rarely.</li>
+      <li>Probably push back.</li>
+    </ul></li>
+  </ol></li>
+  <li>Mirroring (isopraxism):
+  <ul>
+    <li>Sign of bonding.</li>
+    <li>We fear what&rsquo;s different and drawn to what&rsquo;s similar.</li>
+    <li>Repeat the last 3 words, or the critical 1 to 3 words.</li>
+    <li>Downward inflection: I am listening and understand.</li>
+    <li>Upward inflection: invite response.</li>
+  </ul></li>
+  <li>4 steps:
+  <ol>
+    <li>Use late-night FM DJ voice.</li>
+    <li>Start with &ldquo;I&rsquo;m sorry&rdquo;.</li>
+    <li>Mirror.</li>
+    <li>Silence. 4 secs at least.</li>
+    <li>Repeat.</li>
+  </ol></li>
+  <li>Never ask &ldquo;What do you mean by that?&rdquo;:
+  <ul>
+    <li>Is more irritating than mirroring.</li>
+  </ul></li>
+</ul><h1><a name="ch-3"></a>Chapter 3: Don&rsquo;t Feel Their Pain, Label It.</h1>
+<ul>
+  <li>Tactical empathy:
+  <ul>
+    <li>The ability to recognize the perspective of a counterpart, and the vocalization of that recognition.</li>
+    <li>Emotional intelligence on steroids.</li>
+    <li>Visualize yourself in the position they describe, and put in as much detail as you can.</li>
+  </ul></li>
+  <li>Labeling:
+  <ul>
+    <li>Validating someone&rsquo;s emotions by acknowledging them.</li>
+    <li>Give emotions a name.</li>
+    <li>Steps:
+    <ol>
+      <li>Detect other person&rsquo;s emotional state.
+      <ul>
+        <li>Pay attention to changes people undergo when they respond to external events (your words).</li>
+      </ul></li>
+      <li>Label it:
+      <ul>
+        <li>It seems like &hellip;</li>
+        <li>It sounds like &hellip;</li>
+        <li>It looks like &hellip;</li>
+        <li>NOT &ldquo;I am hearing that &hellip;&rdquo;</li>
+      </ul></li>
+      <li>Silence: be quiet and listen.</li>
+    </ol></li>
+    <li>Labeling negative emotions diffuses them:
+    <ul>
+      <li>When making a mistake, go straight to acknowledge it.</li>
+    </ul></li>
+    <li>Labeling positive emotions reinforces them.</li>
+  </ul></li>
+  <li>Accusation audit:
+  <ul>
+    <li>List every terrible thing your counterpart could say about you.</li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4: Beware &ldquo;Yes&rdquo; - Master &ldquo;No&rdquo;</h2>
+<ul>
+  <li>&ldquo;No&rdquo; starts the negotiation.</li>
+  <li>Clearly giving permission to say &ldquo;NO&rdquo; to your ideas preserve people need for autonomy:
+  <ul>
+    <li>Emotions calm.</li>
+    <li>Give time.</li>
+  </ul></li>
+  <li>No != rejection:
+  <ul>
+    <li>I am not yet ready to agree.</li>
+    <li>I do not understand.</li>
+    <li>I want something else.</li>
+    <li>I need more information.</li>
+  </ul></li>
+  <li>After &ldquo;no&rdquo;, pause, ask solution-based questions or label their effect:
+  <ul>
+    <li>What about this doesn&rsquo;t work for you?</li>
+    <li>It seems like there&rsquo;s something here that bothers you.</li>
+  </ul></li>
+  <li>Persuade them from their perspective, not ours:
+  <ul>
+    <li>Two primal urges:
+    <ol>
+      <li>Feel safe and secure.</li>
+      <li>Feel in control.</li>
+    </ol></li>
+  </ul></li>
+  <li>And early &ldquo;yes&rdquo; is often a counterfeit dodge.</li>
+  <li>&ldquo;No&rdquo; skills:
+  <ul>
+    <li>Allows the real issue to be brought forth.</li>
+    <li>Protects people from making ineffective decisions or to correct them.</li>
+    <li>Slow things down so that people can freely embrace their decision.</li>
+    <li>Helps people feel safe, secure, emotionally comfortable, and in control of their decision.</li>
+    <li>Moves everyone&rsquo;s efforts forward.</li>
+  </ul></li>
+  <li>No &ldquo;no&rdquo; means no go.</li>
+  <li>Email magic: provoke a &ldquo;no&rdquo;:
+  <ul>
+    <li>Have you given up on this project?</li>
+  </ul></li>
+  <li>Is not a bad time to talk?</li>
+</ul><h1><a name="ch-5"></a>Chapter 5: Trigger the two words that immediately transform any negotiation</h1>
+<ul>
+  <li>Behavioral Change Stairway Model (BCSM) stages:
+  <ol>
+    <li>Active listening.</li>
+    <li>Empathy.</li>
+    <li>Rapport.</li>
+    <li>Influence.</li>
+    <li>Behavioural change.</li>
+  </ol></li>
+  <li>&ldquo;That&rsquo;s right&rdquo;:
+  <ul>
+    <li>To trigger: summarize paraphrasing + labeling.</li>
+  </ul></li>
+  <li>&ldquo;You&rsquo;re right&rdquo;: nothing changes.</li>
+</ul><h1><a name="ch-6"></a>Chapter 6: Bend their reality</h1>
+<ul>
+  <li>No deal is better than a bad deal.</li>
+  <li>Creative solutions are preceded by some degree of risk, annoyance, confusion, and conflict.
+  <ul>
+    <li>Compromise produce none of that.</li>
+  </ul></li>
+  <li>Deadlines are often arbitrary, almost always flexible, and hardly ever trigger the consequences we think they will.
+  <ul>
+    <li>Deadlines are the bogeyman of negotiations.</li>
+    <li>Don A. Moore: when negotiators tell about their deadline, they get better deals.</li>
+  </ul></li>
+  <li>People who had damaged the part of the brain where emotions are generated cannot make decisions.</li>
+  <li>The F-word: fair.
+  <ul>
+    <li>We are hardwired to reject unfairness.</li>
+    <li>Don&rsquo;t concede when accused of unfairness.
+    <ul>
+      <li>Ask how you&rsquo;re mistreating them.</li>
+    </ul></li>
+    <li>Good use:
+    <ul>
+      <li>&ldquo;I want you to feel like you are being treated fairly at all times. So please stop me at any time if you feel I&rsquo;m being unfair, and we&rsquo;ll address it&rdquo;.</li>
+    </ul></li>
+  </ul></li>
+  <li>Prospect Theory (Kahneman and Tversky):
+  <ul>
+    <li>Certainty effect:
+    <ul>
+      <li>People are drawn to sure things over probabilities, even when probabilities is a better choice.</li>
+    </ul></li>
+    <li>Loss aversion:
+    <ul>
+      <li>People take greater risk to avoid losses than to achieve gains.</li>
+    </ul></li>
+    <li>To get real leverage, you have to persuade that they have something concrete to lose if the deal fall through.</li>
+    <li>Tactics:
+    <ol>
+      <li>Anchor their emotions:
+      <ol>
+        <li>Accusation audit.</li>
+        <li>Play on their loss aversion.</li>
+      </ol></li>
+      <li>Let the other guy go first &hellip; most of the time:
+      <ul>
+        <li>Let the other side anchor monetary negotiations.</li>
+        <li>Except if the other side is pro, as they may bend your reality with an extreme anchor.</li>
+        <li>Except if the other side is a rookie, as you can bend their reality.</li>
+      </ul></li>
+      <li>Establish a range:
+      <ul>
+        <li>Expect them to come in at the lower end.</li>
+      </ul></li>
+      <li>Pivot to non-monetary terms.</li>
+      <li>When you do talk numbers, use odd(weird) ones. Avoid rounded ones.
+      <ul>
+        <li>Example: 27,343.</li>
+      </ul></li>
+      <li>Surprise with a gift:
+      <ul>
+        <li>It triggers reciprocity.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>How to negotiate a better salary:
+  <ol>
+    <li>Be pleasantly persistent on non-salary terms.</li>
+    <li>Define success and metrics for next rise.</li>
+    <li>Ask: &ldquo;What does it take to be successful here?&rdquo;
+    <ul>
+      <li>Interviewer will give advise, watch if you follow and become your unofficial mentor.</li>
+    </ul></li>
+  </ol></li>
+</ul><h1><a name="ch-7"></a>Chapter 7: Create the Illusion of Control</h1>
+<ul>
+  <li>Failure plants the seed of future success.</li>
+  <li>Illusion of control with open-ended/calibrated questions:
+  <ul>
+    <li>Allows you to introduce an idea without sounding pushy.</li>
+    <li>&ldquo;How am I supposed to do that?&rdquo;.
+    <ul>
+      <li>Ask for help! Not accusation or threat.</li>
+    </ul></li>
+    <li>Calibrated: they have a direction where you want the conversation to go.</li>
+    <li>Question must start with &ldquo;what&rdquo; or &ldquo;how&rdquo;.
+    <ul>
+      <li>What about this is important to you?</li>
+      <li>How can I help to make this better for us?</li>
+      <li>How would you like me to proceed?</li>
+      <li>How can we solve this problem?</li>
+      <li>What are we trying to accomplish here?</li>
+      <li>What is the biggest challenge you face?</li>
+    </ul></li>
+  </ul></li>
+  <li>Without self-control and emotional regulation it does not work.
+  <ul>
+    <li>Bite your tongue, do not counterattack, learn to change your state to something more positive.</li>
+  </ul></li>
+</ul><h2><a name="ch-8"></a>Chapter 8: Guarantee Execution.</h2>
+<ul>
+  <li>&ldquo;Yes&rdquo; is nothing without &ldquo;how&rdquo;.</li>
+  <li>Let your counterparts think they are defining success their way:
+  <ol>
+    <li>Questions:
+    <ol>
+      <li>How will we know we&rsquo;re on track?</li>
+      <li>How will we address things if we find we&rsquo;re off track?</li>
+    </ol></li>
+    <li>Summarize until &ldquo;That&rsquo;s right&rdquo;.</li>
+  </ol></li>
+  <li>Signs the other doesn&rsquo;t believe it is their idea:
+  <ul>
+    <li>&ldquo;You&rsquo;re right&rdquo;.</li>
+    <li>&ldquo;I&rsquo;ll try&rdquo;.</li>
+  </ul></li>
+  <li>The other side is a team. Buy must come from all.</li>
+  <li>Spotting liars:
+  <ol>
+    <li>Body language or tone of voice does not match words.</li>
+    <li>Rule of three:
+    <ul>
+      <li>Get 3 times confirmation:
+      <ul>
+        <li>Summarize.</li>
+        <li>Similar calibrated questions.</li>
+      </ul></li>
+    </ul></li>
+    <li>Pinocchio effect:
+    <ul>
+      <li>Liars tend to speak in more complex sentences.</li>
+      <li>Liars avoid using &ldquo;I&rdquo;.</li>
+    </ul></li>
+  </ol></li>
+  <li>How to get your counterparts bid against themselves:
+  <ul>
+    <li>You can express &ldquo;no&rdquo; four times before actually saying the word:
+    <ol>
+      <li>How am I supposed to do that?</li>
+      <li>Your offer is very generous. I&rsquo;m sorry, that just doesn&rsquo;t work for me.</li>
+      <li>I&rsquo;m sorry, but I&rsquo;m afraid I just can&rsquo;t do that.</li>
+      <li>I&rsquo;m sorry, no.</li>
+    </ol></li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9: Bargain hard</h2>
+<ul>
+  <li>Negotiation styles:
+  <ol>
+    <li>Analyst:
+    <ul>
+      <li>Motto: as much time as it takes to get it right.</li>
+      <li>Problem solvers, information aggregators.</li>
+      <li>Hypersensitive to reciprocity.</li>
+      <li>Avoid slowing emotion.</li>
+      <li>Hate surprises. Loads of preparation.</li>
+      <li>Skeptical by nature.</li>
+      <li>Dont ask them too many questions.</li>
+      <li>User clear data.</li>
+    </ul></li>
+    <li>Accommodator:
+    <ul>
+      <li>Love building the relationship.
+      <ul>
+        <li>Great rapport may help little.</li>
+      </ul></li>
+      <li>Extremely friendly, optimistic, poor time managers.</li>
+      <li>Can be difficult uncover their objections, hidden to avoid conflict.</li>
+    </ul></li>
+    <li>Assertive:
+    <ul>
+      <li>Time is money.</li>
+      <li>Done over perfect.</li>
+      <li>Want to win.</li>
+      <li>Don&rsquo;t listen until they feel heard and understood.</li>
+      <li>Give an inch, take a mile.</li>
+    </ul></li>
+  </ol></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Time </th>
+      <th>Silence </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Assertive </td>
+      <td>Money </td>
+      <td>More talking </td>
+    </tr>
+    <tr>
+      <td>Analyst </td>
+      <td>Preparation </td>
+      <td>Thinking </td>
+    </tr>
+    <tr>
+      <td>Accomodator </td>
+      <td>Relationship </td>
+      <td>Anger </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li><a href="https://info.blackswanltd.com/guide-to-3-negotiator-types">Guide to identify type</a>.
+  <ul>
+    <li>You must understand your counterpart style for effective negotiation.</li>
+  </ul></li>
+  <li>Be ready for the counterparts extreme anchor.</li>
+  <li>Punch back:
+  <ul>
+    <li>Avoid it!!!</li>
+    <li>&ldquo;Strategic umbrage&rdquo;: threat without anger but with &ldquo;poise&rdquo;.</li>
+    <li>&ldquo;Why would you do that?&rdquo; but in a way that the &ldquo;that&rdquo; favours you:
+    <ul>
+      <li>Why would you ever change your existing supplier?</li>
+    </ul></li>
+    <li>&ldquo;I&rdquo; messages: &quot;I feel ___ when you ___ because ___&quot;.
+</li>
+  </ul></li>
+  <li><a name="bargain"></a>Ackerman bargaining:
+  <ol>
+    <li>Set your target price.</li>
+    <li>First offer at 65%.</li>
+    <li>Other offers at 85, 95, 100%.</li>
+    <li>Use lots of empathy and different ways of saying &ldquo;no&rdquo; to get the other side to counter before you increase your offer.</li>
+    <li>For final amount, use non-rounded numbers.</li>
+    <li>On the final number, throw a non-monetary item to show you&rsquo;re at your limit.</li>
+  </ol></li>
+  <li>When pressure is on, you don&rsquo;t raise to the occasion; you fall to your highest level of preparation.</li>
+</ul><h1><a name="ch-10"></a>Find the Black Swan</h1>
+<ul>
+  <li>What we know must guide us but not blind us to what we do not know.
+  <ul>
+    <li>Retain beginner&rsquo;s mind.</li>
+  </ul></li>
+  <li>Black Swan == Unknown unknowns.
+  <ul>
+    <li>At least 3 on each negotiation.</li>
+    <li>Change in mindset: open up your established pathways and embrace more intuitive and nuanced ways of listening.</li>
+    <li>Not closely guarded information, but also completely innocuous. The value is misunderstood.</li>
+  </ul></li>
+  <li>Leverage:
+  <ul>
+    <li>Positive: You have something the other want.</li>
+    <li>Negative:
+    <ul>
+      <li>If you can threat, make the other suffer.</li>
+      <li>Avoid or label it.</li>
+    </ul></li>
+    <li>Normative: if you can show inconsistencies between their beliefs and their actions.</li>
+  </ul></li>
+  <li>When people act irrationally, is either:
+  <ol>
+    <li>Are ill-informed.</li>
+    <li>They are constrained.</li>
+    <li>They have other hidden interests.</li>
+  </ol></li>
+  <li>The first few minutes before a meeting, and the last few minutes (when everybody is leaving) often tell you more about the other side than anything in between.</li>
+  <li><a href="https://info.blackswanltd.com/download-the-negotiation-one-sheet">Negotiation one sheet pdf</a>.</li>
+</ul>]]></description></item><item><title>Book notes: Inspired: How to Create Tech Products Customers Love</title><link>https://danlebrero.com/2023/05/11/inspired-how-to-create-tech-products-customers-love-summary/</link><guid>https://danlebrero.com/2023/05/11/inspired-how-to-create-tech-products-customers-love-summary/</guid><pubDate>Thu, 11 May 2023 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3MFmJNc">Inspired: How to Create Tech Products Customers Love</a> by <a href="https://twitter.com/cagan">Marty Cagan</a>.</p><p>If you liked <a href="/2020/01/22/accelerate-high-performing-technology-orgs-summary/#content">Accelerate</a>, The DevOps Handbook, <a href="/2021/12/01/sonner-safer-happier-summary-patterns-business-agility/#content">Sooner, safer, happier</a> or other similar books, you will want to buy this book for your Product Manager.</p><h1>Key Insights</h1>
 <ul>
   <li>Root cause of failed product efforts: Waterfall process from ideas to deploy.
   <ul>
@@ -4075,17 +4602,4 @@ new Freezeframe(".gifoverlay", {
     </ul></li>
     <li>Middle management: focus on roadmaps.</li>
   </ul></li>
-</ul>]]></description></item><item><title>Application configuration good practices </title><link>https://danlebrero.com/2022/06/29/application-configuration-good-practices/</link><guid>https://danlebrero.com/2022/06/29/application-configuration-good-practices/</guid><pubDate>Wed, 29 Jun 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>As an aftermath of our last production incident, here are a bunch of application configuration practices that have worked well enough for me over the years:</p>
-<ol>
-  <li>Version controlled.</li>
-  <li>Self-service.</li>
-  <li>Restricted secrets.</li>
-  <li>Default to production.</li>
-  <li>Fail fast.</li>
-  <li>No logic.</li>
-  <li>Staging == production.</li>
-  <li>Avoid &ldquo;isDevEnv?&rdquo;</li>
-  <li>Preconfigured local dev.</li>
-  <li>Minimal.</li>
-</ol><h2>Version controlled</h2><p>Same as code and infrastructure, configuration should be version controlled, so that you know who, when, how, why and what, and changes can be easily reviewed and rolled back.</p><h2>Self-service</h2><p>Ticketing systems to change configuration in production? Meh.</p><p>The team owning the service is already making any code changes that they want, so allowing them to change some configuration is not riskier.</p><p>If you really need gatekeeping, the owning team should be able to create pull requests with the required changes for the gatekeepers to approve/merge, reducing the chances of miscommunication.</p><h2>Restricted secrets</h2><p>Secrets that everybody can read are no secrets. Reduce your risks by restricting who can see and change which secrets.</p><h2>Default to production</h2><p>When adding some new configuration, always set the default to the production value.</p><p>This will avoid the most common issue with configuration: “Oh, the app does not start because we forgot to set the configuration for …” </p><p>And never ever default to some dev or testing value. Never ever.</p><p>Obviously, only default if it is safe. You don’t want to be sending emails to your real clients, connecting to your production data stores and such if some dev forgets to configure their local environment properly. </p><p>If not safe, the safe value is no default. In this case, add the production configuration as soon as possible. Do not wait for the code release. </p><h2>Fail fast</h2><p>Validate the configuration at start time, and crash the application if any value is missing or it has the wrong type.</p><h2>No logic</h2><p>Avoid any logic related to manipulating configuration, like string manipulation, url building or splitting. </p><p>It is less likely that you are be able to test it, and if the logic fails in production it will be harder to find out, especially for secret values.</p><h2>Staging == production</h2><p>The principle to make staging as similar as production includes configuration.</p><p>Especially important if you broke the “no logic” principle.</p><h2>Avoid “isDevEnv?”</h2><p>All config usually start with a simple “environment” configuration variable, that will sprinkle your codebase with “isDevEnv?” conditionals.</p><p>But soon enough, your app will be run in new environments (CI, test, staging, demo, training, load testing, hotbugfix-33, KafkaPoC, other team&rsquo;s local dev) and it will not be so clear what is dev and what is not.</p><p>So prefer explicit configuration variables to avoid implicit coupling of a bunch of behaviors to one configuration variable. </p><h2>Preconfigured local dev</h2><p>A big chunk of your configuration exists just for the local development environment, so given that most configuration is going to default to production values, it is important to make it easy to set up, add and update that configuration in every developer’s box.</p><p>My preferred approach is still a <a href="/2017/09/01/a-docker-compose-environment/#content">dockerized local environment</a>.</p><h2>Minimize configuration</h2><p>Less config, less chance for bugs. Same as code! <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a>!</p>
-<hr/><p>In case you wonder, in our production incident we committed three sins: defaulted to a dev value, logic in config, and staging different from production.</p><p>Why sin once when you can do it thrice for the same price?</p>]]></description></item></channel></rss>
+</ul>]]></description></item></channel></rss>
