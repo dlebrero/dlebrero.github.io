@@ -1,4 +1,325 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 25 Oct 2023 00:00:00 +0200</lastBuildDate><pubDate>Wed, 25 Oct 2023 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Wrong fit, Right fit: Why How We Work Matters More Than Ever</title><link>https://danlebrero.com/2023/10/25/right-fit-wrong-fit-summary/</link><guid>https://danlebrero.com/2023/10/25/right-fit-wrong-fit-summary/</guid><pubDate>Wed, 25 Oct 2023 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3QrhK7X">Wrong Fit, Right Fit: Why How We Work Matters More Than Ever</a> by <a href="https://twitter.com/gramico">André Martin</a></p><p>Very interesting view on how to find your ideal job, and how companies can hire the right people: focus a lot more on how day-to-day work is done (and our preferences).</p><h1>Key Insights</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 08 Nov 2023 00:00:00 +0100</lastBuildDate><pubDate>Wed, 08 Nov 2023 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Code that fits in your head: Heuristics for Software Engineering</title><link>https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/</link><guid>https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/</guid><pubDate>Wed, 08 Nov 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3Hi4Y6K">Code that fits in your head: Heuristics for Software Engineering</a> by <a href="https://twitter.com/ploeh">Mark Seemann</a>.</p><p>Good advise for junior and mid level devs that have to work with Object-Oriented languages.</p><p>But my favourite quote:</p>
+<blockquote><p>Do yourself a favour and learn functional programming. It fits better in your head.</p>
+</blockquote><h1>Key Insights</h1>
+<ul>
+  <li><p>Only unsuccessful software ends.</p>
+  <blockquote>The act of describing a program in unambiguous detail and the act of programming are one and the same <cite>Kevlin Henney</cite>
+  </blockquote></li>
+  <li>SW engineering was derailed by personal computers:
+  <ul>
+    <li>They created a generation of self-taught programmers that grow unaware of existing SW engineering knowledge.</li>
+    <li>SW engineering should make the SW dev process more <strong>regular</strong>.</li>
+  </ul></li>
+  <li>Change compiler and linter warnings into errors.</li>
+  <li>High-level tests should go easy on assertions.</li>
+  <li>Don&rsquo;t get derailed: write down your improvement ideas and move on.</li>
+  <li>Explicit is better than implicit.</li>
+  <li>Cyclomatic complexity is one of the rare code metrics that I find useful in practice.</li>
+  <li>You can compose code in many ways, but there are more wrong ways than good ways.</li>
+  <li>Good interface design considers not only what is possible, but also what should be deliberately impossible.</li>
+  <li>Every time your code successfully builds, commit it.</li>
+  <li>Code reviews that take more than one hour are not effective.</li>
+  <li>Do not sit with the author to do a code review:
+  <ul>
+    <li>Author will influence the reviewer.</li>
+  </ul></li>
+  <li>The more you edit test code, the less you can trust it.</li>
+  <li>Write a test to reproduce the bug.</li>
+  <li>Time it takes to execute a test suite matters: Less than 10 seconds.</li>
+  <li>Do yourself a favour and learn functional programming. It fits better in your head.</li>
+  <li>What to log:
+  <ul>
+    <li>Log all impure actions but not more.</li>
+  </ul></li>
+  <li>Meetings don&rsquo;t scale, documentation does.</li>
+  <li>Security is like insurance.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#part-1">Part I: Acceleration</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1: Art or Science?</a></li>
+    <li><a href="#ch-2">Chapter 2: Checklists</a></li>
+    <li><a href="#ch-3">Chapter 3 - Tackling Complexity</a></li>
+    <li><a href="#ch-4">Chapter 4 - Vertical Slice</a></li>
+    <li><a href="#ch-5">Chapter 5 - Encapsulation</a></li>
+    <li><a href="#ch-6">Chapter 6 - Triangulation</a></li>
+    <li><a href="#ch-7">Chapter 7 - Decomposition</a></li>
+    <li><a href="#ch-8">Chapter 8 - API Design</a></li>
+    <li><a href="#ch-9">Chapter 9 - Teamwork</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Sustainability</a>
+  <ul>
+    <li><a href="#ch-10">Chapter 10 - Augmenting Code</a></li>
+    <li><a href="#ch-11">Chapter 11 - Editing Unit Tests</a></li>
+    <li><a href="#ch-12">Chapter 12 - Troubleshooting</a></li>
+    <li><a href="#ch-13">Chapter 13 - Separation of Concerns</a></li>
+    <li><a href="#ch-14">Chapter 14 - Rhythm</a></li>
+    <li><a href="#ch-15">Chapter 15 - The Usual Suspects</a></li>
+    <li><a href="#ch-16">Chapter 16 - Tour</a></li>
+  </ul></li>
+</ul><h1><a name="part-1"></a>Part I: Acceleration</h1><h2><a name="ch-1"></a>Chapter 1: Art or Science?</h2>
+<ul>
+  <li>How we think about SW development shapes how we work.</li>
+  <li>Only unsuccessful software ends.</li>
+</ul>
+<blockquote><p>The act of describing a program in unambiguous detail and the act of programming are one and the same <cite>Kevlin Henney</cite></p>
+</blockquote>
+<ul>
+  <li>None of the metaphors fit:
+  <ul>
+    <li>House building:
+    <ul>
+      <li>Projects.</li>
+      <li>Phases.</li>
+      <li>Dependencies.</li>
+    </ul></li>
+    <li>Garden:
+    <ul>
+      <li>Who grows the garden?</li>
+    </ul></li>
+    <li>Craftsman:
+    <ul>
+      <li>Heuristics: It does not scale.</li>
+    </ul></li>
+    <li>SW engineering:
+    <ul>
+      <li>It was derailed by personal computers:
+      <ul>
+        <li>They created a generation of self-taught programmers that grow unaware of existing SW engineering  knowledge.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>The skills you need to work as a professional SW dev tend to be situational (codebase, tools, &hellip;).</li>
+</ul>
+<blockquote><p>Programming is Pop Culture <cite>Alan Kay</cite></p>
+</blockquote><h2><a name="ch-2"></a>Chapter 2: Checklists</h2>
+<ul>
+  <li>To enable, support and liberate.
+  <ul>
+    <li>Not to monitor or audit.</li>
+  </ul></li>
+  <li>Improve the outcome with no increase in skill.</li>
+  <li>Change compiler and linter warnings into errors.
+  <ul>
+    <li>On existing codebases, enable one rule/namespace at a time.</li>
+  </ul></li>
+  <li>You are the technical expert, it is your job to make technical decisions, which includes internal quality decisions.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Tackling Complexity</h2>
+<ul>
+  <li>What does fit in your head.</li>
+  <li>SW engineering should make the SW dev process more <strong>regular</strong>.</li>
+  <li>Sustainability: balance between too much focus vs too little on value.</li>
+  <li>Why is programming difficult?
+  <ol>
+    <li>Short-memory con hold only 4-7 pieces of information.</li>
+    <li>You spend more time reading than writing code:</li>
+  </ol>
+  <ul>
+    <li>Optimise for code readability.</li>
+    <li>Every minute you invest in making the code easier to understand pays itself back tenfold.</li>
+  </ul>
+  <ol>
+    <li>System 1 (making decision based on immediate information) vs System 2.</li>
+  </ol></li>
+  <li>You can do SW engineering without understanding Computer Science.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Vertical Slice</h2>
+<ul>
+  <li>SW eng: methodology to make sure that SW works as intended, and that stays that way.
+  <ul>
+    <li>As intended != solving the user problem.</li>
+  </ul></li>
+  <li>Implement features with the simples possible code, but look out for duplication.</li>
+  <li>Walking skeleton.</li>
+  <li>Drive changes through tests.</li>
+  <li>Author ignores compiler warning when writing tests because readability, but does not for production code.</li>
+  <li>High-level tests should go easy on assertions:
+  <ul>
+    <li>Make only the essentials visible.</li>
+  </ul></li>
+  <li>Author moves to unit tests with all behaviours test in green (???).</li>
+  <li>DTO, Repository, Entity, equals &amp; hashcode. Very glad I left all of this behind.</li>
+  <li>Manual testing from time to time is ok.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Encapsulation</h2>
+<ul>
+  <li>Trading a compile-time error for a runtime exception is a poor trade-off.</li>
+  <li>Encapsulation is a contract that describes valid interactions between objects and callers.</li>
+  <li>Red-green-refactor.</li>
+  <li>Postel&rsquo;s Law: Be conservative in what you send, be liberal in what you accept.</li>
+  <li>With immutable objects, you only need to consider validity in one place: the constructor.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Triangulation</h2>
+<ul>
+  <li>When you work with legacy code, you slowly, painstakingly commit the structure of the code base to long-term memory:
+  <ul>
+    <li>Information in long-term memory is harder to change, hence legacy code is harder to change.</li>
+  </ul></li>
+  <li>Don&rsquo;t get derailed: write down your improvement ideas and move on.</li>
+  <li>Explicit is better than implicit.</li>
+  <li>Devil&rsquo;s advocate technique: try to pass test with an obviously incomplete implementation:
+  <ul>
+    <li>This works as a critique of your tests.</li>
+    <li>When to stop? Ask &ldquo;How likely is such a regression to happen?&rdquo;</li>
+  </ul></li>
+  <li>Use only &lt; or &lt;=.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Decomposition</h2>
+<ul>
+  <li>Once the team&rsquo;s mindset has changed, the rule itself becomes redundant.</li>
+  <li>Cyclomatic complexity is one of the rare code metrics that I find useful in practice.</li>
+  <li>No more than 7 things should be going on in a single piece of code:
+  <ul>
+    <li>Each branch as one thing, so no more than cyclomatic complexity of 7.</li>
+  </ul></li>
+  <li>&ldquo;Static&rdquo; methods or methods with 0 parameters are a code smell.</li>
+  <li>Parse, don&rsquo;t validate:
+  <ul>
+    <li>Instead of returning a bool, return either an error or a class from the domain model.</li>
+  </ul></li>
+  <li>Fractal architecture:
+  <ul>
+    <li>Each layer/piece of code should have no more than 7 things, those things themselves being composed of no more than 7 things.</li>
+    <li>Low level details should be represented as a single abstract chunk, and higher level details should be either irrelevant at that level of zoom, or otherwise explicitly visible as method parameters or injected dependencies.</li>
+  </ul></li>
+  <li>Count variables to measure complexity:
+  <ul>
+    <li>Params + locals + class fields.</li>
+    <li>Consider refactoring to Parameter Object if complexity becomes high.</li>
+  </ul></li>
+  <li>&ldquo;If you know ASP.NET &hellip;&rdquo;: In my experience with Spring, this is a big &ldquo;if&rdquo;. Spring has become a beast able to do many things, so knowing a lot of complex machinery beforehand should count somehow towards the complexity of the codebase.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - API Design</h2>
+<ul>
+  <li>You can compose code in many ways, but there are more wrong ways than good ways:
+  <ul>
+    <li>It requires skill and taste.</li>
+  </ul></li>
+  <li>Good interface design considers not only what is possible, but also what should be deliberately impossible.
+  <ul>
+    <li>Design APIs so that it is difficult to misuse them.</li>
+  </ul></li>
+  <li>Favour specialised APIs over Swiss Army API.</li>
+  <li>Remove method names from an interface and see if you can guess what they do out of the interface name + inputs + outputs.</li>
+  <li>Methods with side effects should return no data (void), so makes it trivial to recognise them:
+  <ul>
+    <li>Does this mean throw exceptions to signal errors?</li>
+  </ul></li>
+  <li>From best to worse communication options:
+  <ol>
+    <li>Types as they are check at compile time.</li>
+    <li>Method names.</li>
+    <li>Comments.</li>
+    <li>Automated tests.</li>
+    <li>Commit messages.</li>
+    <li>Documentation.</li>
+  </ol></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Teamwork</h2>
+<ul>
+  <li>Git: 50/72 rule
+  <ul>
+    <li>Headline in imperative 50 chars.</li>
+    <li>Body 72 chars wide.</li>
+  </ul></li>
+  <li>CI: integrate every 4 hours.</li>
+  <li>Every time your code successfully builds, commit it.</li>
+  <li>Reject big PR.</li>
+  <li>Code reviews that take more than one hour are not effective.</li>
+  <li>Code review question: Will I be okay maintaining this?</li>
+  <li>Do not sit with the author to do a code review:
+  <ul>
+    <li>Author will influence the reviewer.</li>
+  </ul></li>
+  <li>Cheer when you see something you like.</li>
+</ul><h1><a name="p-2"></a>Part II - Sustainability</h1><h2><a name="ch-10"></a>Chapter 10 - Augmenting Code</h2>
+<ul>
+  <li>Strangler pattern at the method and class level.</li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Editing Unit Tests</h2>
+<ul>
+  <li>The more you edit test code, the less you can trust it.</li>
+  <li>You can&rsquo;t refactor unit tests.</li>
+  <li>A test method having only one assertion: too simplistic.</li>
+  <li>When you need to change your test code, try to do it without touching the production code.</li>
+  <li>Don&rsquo;t trust a test that you haven&rsquo;t seen fail:
+  <ul>
+    <li>Comment out production code and bring it back a piece at a time.</li>
+  </ul></li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Troubleshooting</h2>
+<ul>
+  <li>Step 1: Try to understand what is going on:
+  <ul>
+    <li>Use the scientific method:
+    <ol>
+      <li>Make a prediction (hypothesis).</li>
+      <li>Perform an experiment.</li>
+      <li>Compare outcome with prediction.</li>
+      <li>Goto 1 until you understand.</li>
+    </ol></li>
+  </ul></li>
+  <li>Delete code to simplify.</li>
+  <li>Time-box the process and take breaks if no progress is made.</li>
+  <li>Rubber ducking: the mere act of explaining a problem tends to produce new insights.</li>
+  <li>When a bug appears, stop what you are doing and fix it.</li>
+  <li>Write a test to reproduce the bug.</li>
+  <li>Time it takes to execute a test suite matters: Less than 10 seconds.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Separation of Concerns</h2>
+<ul>
+  <li>You must be able to recompose what you decomposed.</li>
+  <li>Nested composition:
+  <ul>
+    <li>Typical in OO</li>
+    <li>Around side-effects:
+    <ul>
+      <li>You model actions.</li>
+      <li>Compose by nesting.</li>
+      <li>Hidden interactions: increases complexity.</li>
+    </ul></li>
+  </ul></li>
+  <li>Sequential composition:
+  <ul>
+    <li>Pipeline.</li>
+    <li>No side-effects.</li>
+    <li>Good, pure functions.</li>
+  </ul></li>
+  <li>Push side-effects to the edge of the system.</li>
+  <li>Functional programming fits better in your head.</li>
+  <li>If you see an exception in the logs, treat it as a defect.</li>
+  <li>What to log:
+  <ul>
+    <li>HTTP request + response.</li>
+    <li>DB request + response.</li>
+    <li>Log all impure actions but not more.</li>
+  </ul></li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Rhythm</h2>
+<ul>
+  <li>Personal:
+  <ul>
+    <li>Pomodoro: time-box 25 mins, 5 min break even when in the flow.</li>
+    <li>Don&rsquo;t work long hours.</li>
+    <li>Meetings don&rsquo;t scale, documentation does.</li>
+    <li>Learn to touch type.</li>
+  </ul></li>
+  <li>Team:
+  <ul>
+    <li>Update dependencies regularly.</li>
+  </ul></li>
+</ul><h2><a name="ch-15"></a>Chapter 15 - The Usual Suspects</h2>
+<ul>
+  <li>Security is like insurance.</li>
+  <li>STRIDE:
+  <ul>
+    <li>Spoofing: try to pose as somebody else.</li>
+    <li>Tampering.</li>
+    <li>Repudiation: deny performing an action, like receiving an item.</li>
+    <li>Information disclosure.</li>
+    <li>Denial of service.</li>
+    <li>Elevation of privilege.</li>
+  </ul></li>
+  <li>Property base testing.</li>
+  <li><a href="https://codescene.com/">Behavioural code analysis</a></li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - Tour</h2>
+<ul>
+  <li>File organization: put all files in one directory:
+  <ul>
+    <li>Break into multiple packages to enforce no cyclic dependencies.</li>
+  </ul></li>
+  <li>Learn a new system from tests.</li>
+</ul>]]></description></item><item><title>Book notes: Wrong fit, Right fit: Why How We Work Matters More Than Ever</title><link>https://danlebrero.com/2023/10/25/right-fit-wrong-fit-summary/</link><guid>https://danlebrero.com/2023/10/25/right-fit-wrong-fit-summary/</guid><pubDate>Wed, 25 Oct 2023 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3QrhK7X">Wrong Fit, Right Fit: Why How We Work Matters More Than Ever</a> by <a href="https://twitter.com/gramico">André Martin</a></p><p>Very interesting view on how to find your ideal job, and how companies can hire the right people: focus a lot more on how day-to-day work is done (and our preferences).</p><h1>Key Insights</h1>
 <ul>
   <li>Fit: Deep and authentic connection to how a company works day-to-day.</li>
   <li>No place will be a perfect match.</li>
@@ -4731,127 +5052,4 @@ new Freezeframe(".gifoverlay", {
   <li>When done well, tech and security cannot be seen from the outside.</li>
   <li>Every business was truly a technology business and every business leader was a technology leader.</li>
   <li><a href="https://www.devsecops.org">DevSecOps.org</a></li>
-</ul>]]></description></item><item><title>Book notes: Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working </title><link>https://danlebrero.com/2022/07/20/team-topologies-remote-team-interactions-workbook-summary/</link><guid>https://danlebrero.com/2022/07/20/team-topologies-remote-team-interactions-workbook-summary/</guid><pubDate>Wed, 20 Jul 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://twitter.com/matthewpskelton">Matthew Skelton</a> and <a href="https://twitter.com/manupaisable">Manuel Pais</a>&rsquo;s <a href="https://amzn.to/3claIjE">Remote Team Interactions Workbook: Using Team Topologies Patterns for Remote Working </a>.</p><p>A <a href="/2021/01/20/team-topologies-summary/#content">Team Topologies</a> companion with homework to map your current team topologies, and useful advise for remote work.</p><p>Thanks to <a href="https://itrevolution.com">ITRevolution</a> for the complimentary copy!</p><h1>Key Insights</h1>
-<ul>
-  <li>Physical office was covering up poorly defined teams and poorly defined ares of focus.</li>
-  <li>In a remote work setting, it is vital to &ldquo;over communicate&rdquo;.</li>
-  <li>In remote settings, keep it shorter and sharper: it&rsquo;s harder to hold people&rsquo;s attention remotely.</li>
-  <li>Facilitating interaction longer than a few weeks suggests something isn&rsquo;t quite right.</li>
-  <li>In the context of remote work, it is too easy to accidentally fall into a swamp of direct private messages.</li>
-</ul><h1>Homework</h1>
-<ul>
-  <li><a href="https://github.com/TeamTopologies/Team-API-Template">Define your Team API</a>.</li>
-  <li><a href="https://github.com/TeamTopologies/Team-Dependencies-Tracking">Track team dependencies</a>.</li>
-  <li>Start a network-building event: communities of practice, internal tech events, lunchtime talks, coffee breaks.</li>
-  <li><a href="https://github.com/TeamTopologies/Trust-Boundaries-Template">Trust boundaries assessment</a>.</li>
-  <li><a href="https://github.com/TeamTopologies/Online-Space-Assessment">Online space assessment</a>.</li>
-  <li><a href="https://github.com/TeamTopologies/Team-Cognitive-Load-Assessment">Cognitive load assessment/Internal platform survey</a>.</li>
-</ul><h1><a name="ch-0"></a>Preface</h1>
-<ul>
-  <li>Physical office was covering up poorly defined teams and poorly defined ares of focus.</li>
-  <li>A successful remote-first approach requires the explicit design of communication between teams using physical and online spaces.</li>
-</ul><h2><a name="ch-1"></a>Chapter 1 - Overview - Focus on Remote Team Interactions</h2>
-<ul>
-  <li>Google&rsquo;s <a href="https://rework.withgoogle.com/guides/understanding-team-effectiveness/steps/identify-dynamics-of-effective-teams/">five keys</a> to successful teams:
-  <ol>
-    <li>Psychological safety.</li>
-    <li>Dependability.</li>
-    <li>Structure and clarity.</li>
-    <li>Meaning.</li>
-    <li>Impact.</li>
-  </ol></li>
-  <li><a href="https://github.com/TeamTopologies/Team-Cognitive-Load-Assessment">Cognitive load assessment</a>:
-  <ul>
-    <li>This is something the platform team should use as a KPI.</li>
-  </ul></li>
-  <li>Problematic dependency between teams, symptoms:
-  <ul>
-    <li>Delays.</li>
-    <li>Increase WIP.</li>
-    <li>Unpredictability.</li>
-  </ul></li>
-  <li>Instead of waiting, focus on tracking and then removing the in-flow dependencies.
-  <ul>
-    <li><a href="https://amzn.to/3aKJS3T">Making Work Visible</a> by Dominca De Grandis.</li>
-  </ul></li>
-  <li>In a remote work setting, it is vital to &ldquo;over communicate&rdquo;:
-  <ul>
-    <li>What, why, how, when will be done.</li>
-  </ul></li>
-</ul><h1><a name="ch-2"></a>Chapter 2: Team Dependencies</h1>
-<ul>
-  <li>Techniques to track and manage inter-team dependencies, to promote healthy ones, and minimize others.</li>
-  <li>Team API:
-  <ul>
-    <li>For remote teams, especially important:
-    <ul>
-      <li>Road map: how to notify changes?</li>
-      <li>Communication preferences:
-      <ul>
-        <li>Channel, schedule.</li>
-        <li>Expected response time.</li>
-      </ul></li>
-    </ul></li>
-    <li><a href="https://github.com/TeamTopologies/Team-API-Template">Template</a></li>
-  </ul></li>
-  <li>Dependencies can never be fully eradicated.</li>
-  <li>Not all dependencies are the same:
-  <ul>
-    <li>Blocking vs non-blocking.</li>
-    <li>Healthy vs unhealthy.</li>
-    <li>Frequent vs infrequent.</li>
-  </ul></li>
-  <li>Tracking dependencies:
-  <ul>
-    <li>Add dependency tag to stories.</li>
-    <li><a href="https://youtu.be/faKSg7iLigw?t=2479">Physical dependency matrix</a>.</li>
-    <li>Dependency swimlane board:
-    <ul>
-      <li>Add a specific lane to your Kanban board with the tasks that depend on other teams.</li>
-    </ul></li>
-    <li><a href="https://github.com/TeamTopologies/Team-Dependencies-Tracking">Simple table</a>.</li>
-  </ul></li>
-  <li>Internal network:
-  <ul>
-    <li>Virtual coffee.</li>
-    <li>Internal conference.</li>
-    <li>Communities of Practice.</li>
-    <li>Brown bag sessions.</li>
-    <li>Enabling teams.</li>
-  </ul></li>
-  <li>Keep it shorter and sharper: it&rsquo;s harder to hold people&rsquo;s attention remotely.</li>
-</ul><h1><a name="ch-3"></a>Chapter 3: Setting Team Boundaries</h1>
-<ul>
-  <li>Group trust boundaries:
-  <ul>
-    <li><a href="https://danlebrero.com/2020/03/04/the-lean-mindset-summary/">Dunbar numbers</a>.</li>
-    <li>Groups slightly smaller than the trust boundary are likely to have good trust. Larger than are likely to have trust issues and are candidate to splitting into smaller groups.</li>
-    <li>When the size of an online space reaches a trust boundary, create a new space.</li>
-    <li>Online space aligned to flow of change.</li>
-    <li>Optimize for trust within online spaces.</li>
-  </ul></li>
-  <li>Chat tools:
-  <ul>
-    <li>Standardise channel names:
-    <ul>
-      <li>TeamType_TeamName.</li>
-      <li>Team_InteractionMode_Team.</li>
-    </ul></li>
-    <li>People name to include team they belong to.</li>
-    <li>Explicit etiquette.</li>
-  </ul></li>
-</ul><h2><a name="ch-4"></a>Chapter 4: Purposeful Interactions</h2>
-<ul>
-  <li>Facilitating interaction longer than a few weeks suggests something isn&rsquo;t quite right.</li>
-  <li>Difficulties or awkwardness in team interactions can be used as a kind of sensing mechanism to help evolve the org.</li>
-  <li>Focus on flow.</li>
-  <li>In the context of remote work, it is too easy to accidentally fall into a swamp of direct private messages.</li>
-  <li>Define usage guidelines for Slack/Teams/&hellip;</li>
-  <li>Curate the chat workspace.</li>
-</ul><h1><a name="ch-5"></a>Chapter 5: Next steps</h1>
-<ul>
-  <li><a href="https://ITRev.io/EngExpFeedback">Internal Platform survey</a>.</li>
-  <li>Internal personas.</li>
-  <li>Naming and usage for chat tools: don&rsquo;t attempt to design everything upfront, allow some patterns to emerge.</li>
-  <li>Expect rework.</li>
 </ul>]]></description></item></channel></rss>

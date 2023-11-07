@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Code that fits in your head: Heuristics for Software Engineering</title>
+	<meta content="Book notes on &quot;Code that fits in your head&quot; by Mark Seemann" name="description" /><meta content="Book review notes summary Code that fits in your head: Heuristics for Software Engineering " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Code that fits in your head: Heuristics for Software Engineering" property="og:title" /><meta content="Book notes on &quot;Code that fits in your head&quot; by Mark Seemann" property="og:description" /><meta content="https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/" property="og:url" /><meta content="Book notes: Code that fits in your head: Heuristics for Software Engineering" name="twitter:title" /><meta content="Book notes on &quot;Code that fits in your head&quot; by Mark Seemann" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/code-that-fits-in-your-head.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/code-that-fits-in-your-head.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+	<!-- Google tag (gtag.js) -->
+	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-3KPNQF7Y7S"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3KPNQF7Y7S');
+</script>	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Code that fits in your head: Heuristics for Software Engineering</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 8 Nov 2023</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Code that fits in your head" by Mark Seemann</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/code-that-fits-in-your-head.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3Hi4Y6K">Code that fits in your head: Heuristics for Software Engineering</a> by <a href="https://twitter.com/ploeh">Mark Seemann</a>.</p><p>Good advise for junior and mid level devs that have to work with Object-Oriented languages.</p><p>But my favourite quote:</p>
+<blockquote><p>Do yourself a favour and learn functional programming. It fits better in your head.</p>
+</blockquote><h1>Key Insights</h1>
+<ul>
+  <li><p>Only unsuccessful software ends.</p>
+  <blockquote>The act of describing a program in unambiguous detail and the act of programming are one and the same <cite>Kevlin Henney</cite>
+  </blockquote></li>
+  <li>SW engineering was derailed by personal computers:
+  <ul>
+    <li>They created a generation of self-taught programmers that grow unaware of existing SW engineering knowledge.</li>
+    <li>SW engineering should make the SW dev process more <strong>regular</strong>.</li>
+  </ul></li>
+  <li>Change compiler and linter warnings into errors.</li>
+  <li>High-level tests should go easy on assertions.</li>
+  <li>Don’t get derailed: write down your improvement ideas and move on.</li>
+  <li>Explicit is better than implicit.</li>
+  <li>Cyclomatic complexity is one of the rare code metrics that I find useful in practice.</li>
+  <li>You can compose code in many ways, but there are more wrong ways than good ways.</li>
+  <li>Good interface design considers not only what is possible, but also what should be deliberately impossible.</li>
+  <li>Every time your code successfully builds, commit it.</li>
+  <li>Code reviews that take more than one hour are not effective.</li>
+  <li>Do not sit with the author to do a code review:
+  <ul>
+    <li>Author will influence the reviewer.</li>
+  </ul></li>
+  <li>The more you edit test code, the less you can trust it.</li>
+  <li>Write a test to reproduce the bug.</li>
+  <li>Time it takes to execute a test suite matters: Less than 10 seconds.</li>
+  <li>Do yourself a favour and learn functional programming. It fits better in your head.</li>
+  <li>What to log:
+  <ul>
+    <li>Log all impure actions but not more.</li>
+  </ul></li>
+  <li>Meetings don’t scale, documentation does.</li>
+  <li>Security is like insurance.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#part-1">Part I: Acceleration</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1: Art or Science?</a></li>
+    <li><a href="#ch-2">Chapter 2: Checklists</a></li>
+    <li><a href="#ch-3">Chapter 3 - Tackling Complexity</a></li>
+    <li><a href="#ch-4">Chapter 4 - Vertical Slice</a></li>
+    <li><a href="#ch-5">Chapter 5 - Encapsulation</a></li>
+    <li><a href="#ch-6">Chapter 6 - Triangulation</a></li>
+    <li><a href="#ch-7">Chapter 7 - Decomposition</a></li>
+    <li><a href="#ch-8">Chapter 8 - API Design</a></li>
+    <li><a href="#ch-9">Chapter 9 - Teamwork</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Sustainability</a>
+  <ul>
+    <li><a href="#ch-10">Chapter 10 - Augmenting Code</a></li>
+    <li><a href="#ch-11">Chapter 11 - Editing Unit Tests</a></li>
+    <li><a href="#ch-12">Chapter 12 - Troubleshooting</a></li>
+    <li><a href="#ch-13">Chapter 13 - Separation of Concerns</a></li>
+    <li><a href="#ch-14">Chapter 14 - Rhythm</a></li>
+    <li><a href="#ch-15">Chapter 15 - The Usual Suspects</a></li>
+    <li><a href="#ch-16">Chapter 16 - Tour</a></li>
+  </ul></li>
+</ul><h1><a name="part-1"></a>Part I: Acceleration</h1><h2><a name="ch-1"></a>Chapter 1: Art or Science?</h2>
+<ul>
+  <li>How we think about SW development shapes how we work.</li>
+  <li>Only unsuccessful software ends.</li>
+</ul>
+<blockquote><p>The act of describing a program in unambiguous detail and the act of programming are one and the same <cite>Kevlin Henney</cite></p>
+</blockquote>
+<ul>
+  <li>None of the metaphors fit:
+  <ul>
+    <li>House building:
+    <ul>
+      <li>Projects.</li>
+      <li>Phases.</li>
+      <li>Dependencies.</li>
+    </ul></li>
+    <li>Garden:
+    <ul>
+      <li>Who grows the garden?</li>
+    </ul></li>
+    <li>Craftsman:
+    <ul>
+      <li>Heuristics: It does not scale.</li>
+    </ul></li>
+    <li>SW engineering:
+    <ul>
+      <li>It was derailed by personal computers:
+      <ul>
+        <li>They created a generation of self-taught programmers that grow unaware of existing SW engineering  knowledge.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>The skills you need to work as a professional SW dev tend to be situational (codebase, tools, …).</li>
+</ul>
+<blockquote><p>Programming is Pop Culture <cite>Alan Kay</cite></p>
+</blockquote><h2><a name="ch-2"></a>Chapter 2: Checklists</h2>
+<ul>
+  <li>To enable, support and liberate.
+  <ul>
+    <li>Not to monitor or audit.</li>
+  </ul></li>
+  <li>Improve the outcome with no increase in skill.</li>
+  <li>Change compiler and linter warnings into errors.
+  <ul>
+    <li>On existing codebases, enable one rule/namespace at a time.</li>
+  </ul></li>
+  <li>You are the technical expert, it is your job to make technical decisions, which includes internal quality decisions.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Tackling Complexity</h2>
+<ul>
+  <li>What does fit in your head.</li>
+  <li>SW engineering should make the SW dev process more <strong>regular</strong>.</li>
+  <li>Sustainability: balance between too much focus vs too little on value.</li>
+  <li>Why is programming difficult?
+  <ol>
+    <li>Short-memory con hold only 4-7 pieces of information.</li>
+    <li>You spend more time reading than writing code:</li>
+  </ol>
+  <ul>
+    <li>Optimise for code readability.</li>
+    <li>Every minute you invest in making the code easier to understand pays itself back tenfold.</li>
+  </ul>
+  <ol>
+    <li>System 1 (making decision based on immediate information) vs System 2.</li>
+  </ol></li>
+  <li>You can do SW engineering without understanding Computer Science.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Vertical Slice</h2>
+<ul>
+  <li>SW eng: methodology to make sure that SW works as intended, and that stays that way.
+  <ul>
+    <li>As intended != solving the user problem.</li>
+  </ul></li>
+  <li>Implement features with the simples possible code, but look out for duplication.</li>
+  <li>Walking skeleton.</li>
+  <li>Drive changes through tests.</li>
+  <li>Author ignores compiler warning when writing tests because readability, but does not for production code.</li>
+  <li>High-level tests should go easy on assertions:
+  <ul>
+    <li>Make only the essentials visible.</li>
+  </ul></li>
+  <li>Author moves to unit tests with all behaviours test in green (???).</li>
+  <li>DTO, Repository, Entity, equals &amp; hashcode. Very glad I left all of this behind.</li>
+  <li>Manual testing from time to time is ok.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Encapsulation</h2>
+<ul>
+  <li>Trading a compile-time error for a runtime exception is a poor trade-off.</li>
+  <li>Encapsulation is a contract that describes valid interactions between objects and callers.</li>
+  <li>Red-green-refactor.</li>
+  <li>Postel’s Law: Be conservative in what you send, be liberal in what you accept.</li>
+  <li>With immutable objects, you only need to consider validity in one place: the constructor.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Triangulation</h2>
+<ul>
+  <li>When you work with legacy code, you slowly, painstakingly commit the structure of the code base to long-term memory:
+  <ul>
+    <li>Information in long-term memory is harder to change, hence legacy code is harder to change.</li>
+  </ul></li>
+  <li>Don’t get derailed: write down your improvement ideas and move on.</li>
+  <li>Explicit is better than implicit.</li>
+  <li>Devil’s advocate technique: try to pass test with an obviously incomplete implementation:
+  <ul>
+    <li>This works as a critique of your tests.</li>
+    <li>When to stop? Ask “How likely is such a regression to happen?”</li>
+  </ul></li>
+  <li>Use only &lt; or &lt;=.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Decomposition</h2>
+<ul>
+  <li>Once the team’s mindset has changed, the rule itself becomes redundant.</li>
+  <li>Cyclomatic complexity is one of the rare code metrics that I find useful in practice.</li>
+  <li>No more than 7 things should be going on in a single piece of code:
+  <ul>
+    <li>Each branch as one thing, so no more than cyclomatic complexity of 7.</li>
+  </ul></li>
+  <li>“Static” methods or methods with 0 parameters are a code smell.</li>
+  <li>Parse, don’t validate:
+  <ul>
+    <li>Instead of returning a bool, return either an error or a class from the domain model.</li>
+  </ul></li>
+  <li>Fractal architecture:
+  <ul>
+    <li>Each layer/piece of code should have no more than 7 things, those things themselves being composed of no more than 7 things.</li>
+    <li>Low level details should be represented as a single abstract chunk, and higher level details should be either irrelevant at that level of zoom, or otherwise explicitly visible as method parameters or injected dependencies.</li>
+  </ul></li>
+  <li>Count variables to measure complexity:
+  <ul>
+    <li>Params + locals + class fields.</li>
+    <li>Consider refactoring to Parameter Object if complexity becomes high.</li>
+  </ul></li>
+  <li>“If you know ASP.NET …”: In my experience with Spring, this is a big “if”. Spring has become a beast able to do many things, so knowing a lot of complex machinery beforehand should count somehow towards the complexity of the codebase.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - API Design</h2>
+<ul>
+  <li>You can compose code in many ways, but there are more wrong ways than good ways:
+  <ul>
+    <li>It requires skill and taste.</li>
+  </ul></li>
+  <li>Good interface design considers not only what is possible, but also what should be deliberately impossible.
+  <ul>
+    <li>Design APIs so that it is difficult to misuse them.</li>
+  </ul></li>
+  <li>Favour specialised APIs over Swiss Army API.</li>
+  <li>Remove method names from an interface and see if you can guess what they do out of the interface name + inputs + outputs.</li>
+  <li>Methods with side effects should return no data (void), so makes it trivial to recognise them:
+  <ul>
+    <li>Does this mean throw exceptions to signal errors?</li>
+  </ul></li>
+  <li>From best to worse communication options:
+  <ol>
+    <li>Types as they are check at compile time.</li>
+    <li>Method names.</li>
+    <li>Comments.</li>
+    <li>Automated tests.</li>
+    <li>Commit messages.</li>
+    <li>Documentation.</li>
+  </ol></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Teamwork</h2>
+<ul>
+  <li>Git: 50/72 rule
+  <ul>
+    <li>Headline in imperative 50 chars.</li>
+    <li>Body 72 chars wide.</li>
+  </ul></li>
+  <li>CI: integrate every 4 hours.</li>
+  <li>Every time your code successfully builds, commit it.</li>
+  <li>Reject big PR.</li>
+  <li>Code reviews that take more than one hour are not effective.</li>
+  <li>Code review question: Will I be okay maintaining this?</li>
+  <li>Do not sit with the author to do a code review:
+  <ul>
+    <li>Author will influence the reviewer.</li>
+  </ul></li>
+  <li>Cheer when you see something you like.</li>
+</ul><h1><a name="p-2"></a>Part II - Sustainability</h1><h2><a name="ch-10"></a>Chapter 10 - Augmenting Code</h2>
+<ul>
+  <li>Strangler pattern at the method and class level.</li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Editing Unit Tests</h2>
+<ul>
+  <li>The more you edit test code, the less you can trust it.</li>
+  <li>You can’t refactor unit tests.</li>
+  <li>A test method having only one assertion: too simplistic.</li>
+  <li>When you need to change your test code, try to do it without touching the production code.</li>
+  <li>Don’t trust a test that you haven’t seen fail:
+  <ul>
+    <li>Comment out production code and bring it back a piece at a time.</li>
+  </ul></li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Troubleshooting</h2>
+<ul>
+  <li>Step 1: Try to understand what is going on:
+  <ul>
+    <li>Use the scientific method:
+    <ol>
+      <li>Make a prediction (hypothesis).</li>
+      <li>Perform an experiment.</li>
+      <li>Compare outcome with prediction.</li>
+      <li>Goto 1 until you understand.</li>
+    </ol></li>
+  </ul></li>
+  <li>Delete code to simplify.</li>
+  <li>Time-box the process and take breaks if no progress is made.</li>
+  <li>Rubber ducking: the mere act of explaining a problem tends to produce new insights.</li>
+  <li>When a bug appears, stop what you are doing and fix it.</li>
+  <li>Write a test to reproduce the bug.</li>
+  <li>Time it takes to execute a test suite matters: Less than 10 seconds.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Separation of Concerns</h2>
+<ul>
+  <li>You must be able to recompose what you decomposed.</li>
+  <li>Nested composition:
+  <ul>
+    <li>Typical in OO</li>
+    <li>Around side-effects:
+    <ul>
+      <li>You model actions.</li>
+      <li>Compose by nesting.</li>
+      <li>Hidden interactions: increases complexity.</li>
+    </ul></li>
+  </ul></li>
+  <li>Sequential composition:
+  <ul>
+    <li>Pipeline.</li>
+    <li>No side-effects.</li>
+    <li>Good, pure functions.</li>
+  </ul></li>
+  <li>Push side-effects to the edge of the system.</li>
+  <li>Functional programming fits better in your head.</li>
+  <li>If you see an exception in the logs, treat it as a defect.</li>
+  <li>What to log:
+  <ul>
+    <li>HTTP request + response.</li>
+    <li>DB request + response.</li>
+    <li>Log all impure actions but not more.</li>
+  </ul></li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Rhythm</h2>
+<ul>
+  <li>Personal:
+  <ul>
+    <li>Pomodoro: time-box 25 mins, 5 min break even when in the flow.</li>
+    <li>Don’t work long hours.</li>
+    <li>Meetings don’t scale, documentation does.</li>
+    <li>Learn to touch type.</li>
+  </ul></li>
+  <li>Team:
+  <ul>
+    <li>Update dependencies regularly.</li>
+  </ul></li>
+</ul><h2><a name="ch-15"></a>Chapter 15 - The Usual Suspects</h2>
+<ul>
+  <li>Security is like insurance.</li>
+  <li>STRIDE:
+  <ul>
+    <li>Spoofing: try to pose as somebody else.</li>
+    <li>Tampering.</li>
+    <li>Repudiation: deny performing an action, like receiving an item.</li>
+    <li>Information disclosure.</li>
+    <li>Denial of service.</li>
+    <li>Elevation of privilege.</li>
+  </ul></li>
+  <li>Property base testing.</li>
+  <li><a href="https://codescene.com/">Behavioural code analysis</a></li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - Tour</h2>
+<ul>
+  <li>File organization: put all files in one directory:
+  <ul>
+    <li>Break into multiple packages to enforce no cyclic dependencies.</li>
+  </ul></li>
+  <li>Learn a new system from tests.</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/Architecture/index.html">Architecture </a><a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<div class="row">
+						<div id="toprightbanner" class="widget six columns"><iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=0137464401&amp;asins=0137464401&amp;linkId=046fd9b59b0bae1cbad8f34c6b57c0d9&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe></div>
+						
+					</div>
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (41)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (36)</a></li><li><a href="/tags/Humour/index.html">Humour (12)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (42)</a></li><li><a href="/tags/good_practices/index.html">good practices (27)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1950508838&amp;asins=1950508838&amp;linkId=1abcab6ed414fe6ad50e093b9d78cb44&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
