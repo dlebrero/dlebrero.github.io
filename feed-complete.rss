@@ -1,4 +1,705 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 08 Nov 2023 00:00:00 +0100</lastBuildDate><pubDate>Wed, 08 Nov 2023 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Code that fits in your head: Heuristics for Software Engineering</title><link>https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/</link><guid>https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/</guid><pubDate>Wed, 08 Nov 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3Hi4Y6K">Code that fits in your head: Heuristics for Software Engineering</a> by <a href="https://twitter.com/ploeh">Mark Seemann</a>.</p><p>Good advise for junior and mid level devs that have to work with Object-Oriented languages.</p><p>But my favourite quote:</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Mon, 27 Nov 2023 23:30:00 +0100</lastBuildDate><pubDate>Mon, 27 Nov 2023 23:30:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Wiring the Winning Organization</title><link>https://danlebrero.com/2023/11/27/wiring-the-winning-organization-summary/</link><guid>https://danlebrero.com/2023/11/27/wiring-the-winning-organization-summary/</guid><pubDate>Mon, 27 Nov 2023 23:30:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3tT8Xmk">Wiring the Winning Organization</a> by <a href="https://twitter.com/RealGeneKim">Gene Kim</a> and <a href="https://twitter.com/StevenJSpear">Steven J. Spear</a>.</p><p>Gene and Steven present the <a href="https://en.wikipedia.org/wiki/Grand_Unified_Theory">Grand Unified Theory</a> of organization performance.</p><p>3 questions to get started:</p>
+<ol>
+  <li>Are we solving our toughest problems in planning and practice, where we can iterate and learn?</li>
+  <li>Are we shaping our problems so that they are easier to solve because they are simple, low risk, controllable, and easy to understand and iterate and learn from?</li>
+  <li>Are we calling out problems loudly and consistently so that they can be swarmed, container, solved and prevent future occurrences?</li>
+</ol><h1>Key Insights</h1>
+<ul>
+  <li>People with the best work experiences need fewer resources, less capital equipment, and less time to accomplish greater things:
+  <ul>
+    <li>It is the management system.</li>
+  </ul></li>
+  <li>Collaborative problem-solving occurs in three distinct layers:
+  <ol>
+    <li>Layer 1 contains the technical objects being worked on. Code in our case.</li>
+    <li>Layer 2 contains the tools.</li>
+    <li>Layer 3 contains the social circuitry:
+    <ul>
+      <li>Workers have what they need, when they need it, and in the format they need it.</li>
+    </ul></li>
+  </ol>
+  <ul>
+    <li>Layer 1 and 2 are the &ldquo;technical&rdquo; part of a sociotechnical system. Layer 3 is the &ldquo;socio&rdquo; part.</li>
+  </ul></li>
+  <li>Three mechanisms which create the difference between success and failure:
+  <ol>
+    <li>Slowification, to make solving problems easier to do:
+    <ul>
+      <li>Pulling problem-solving out of the realm of performance (operations or execution).</li>
+      <li>Instead, realms of planning and practice.</li>
+    </ul></li>
+    <li>Simplification, to make the problems themselves easier to solve:
+    <ul>
+      <li>Partitioning large systems into smaller, coherent pieces allow to solve more problems independently and in parallel.</li>
+    </ul>
+    <ol>
+      <li>Incrementalization:
+      <ul>
+        <li>Partition what is novel (which needs to be tested) from what is known (which is already validated).</li>
+        <li>Adds to the novelty in smaller increments.</li>
+        <li>Allow to iterate and test changes on fewer factors, so more quickly and safely.</li>
+      </ul></li>
+      <li>Modularization:
+      <ul>
+        <li>Smaller, simpler, more numerous coherent pieces.</li>
+        <li>Less coupled as they are connected through only a few well-defined and stable interfaces.</li>
+      </ul></li>
+      <li>Linearization:
+      <ul>
+        <li>Assembly line.</li>
+        <li>Partitions operations that share resources to accomplish multiple objectives into independent and coherent workflows.</li>
+        <li>Coherence is achieved by committing all resources needed to generate outputs to workflows.</li>
+        <li>Partitioning across workflows is achieved by preventing the sharing of resources between them.</li>
+        <li>Partitioning within workflows is achieved by defining hand-offs between steps.</li>
+      </ul></li>
+    </ol></li>
+    <li>Amplification, to make it obvious that there are problems that demand attention and whether they&rsquo;ve been seen and solved.</li>
+  </ol></li>
+  <li>Toyota + General Motors joint venture <a href="https://en.wikipedia.org/wiki/NUMMI">NUMMI</a>:
+  <ul>
+    <li>From worst to best with same people after changing management system.</li>
+  </ul></li>
+  <li>Difference between exceptional and ordinary is obvious by observing the experiences of people doing their work.</li>
+  <li>Boundary of a group solving problems must be large enough that it is coherent, having all the people and resources needed, but small enough to not require large amounts of coordination.
+  <ul>
+    <li>How much coupling there is determines how much coherence leaders must create.</li>
+  </ul></li>
+  <li>To slowify or not is a choice that leaders make.</li>
+  <li>To make things simpler, aim to no need to coordinate with anyone outside the team.</li>
+  <li>Change their behaviours, which is a precursor for changing their beliefs.</li>
+  <li>When we have more time, lower stakes, and less fear, our creativity can flourish.</li>
+  <li>Three phases of work:
+  <ol>
+    <li>Planning.</li>
+    <li>Practice:
+    <ul>
+      <li>Preproduction/testing.</li>
+      <li>We can control the pace and the incremental complexity of what is occurring, so we are not overwhelmed.</li>
+      <li>Feedback is used to find flaws and improve our plans.</li>
+      <li>Time to coach and improve our abilities to execute those plans.</li>
+    </ul></li>
+    <li>Performance:
+    <ul>
+      <li>Force us to depend on already-developed routines, skills, and habits.</li>
+      <li>Bring issues back to practice or planning.</li>
+    </ul></li>
+  </ol></li>
+  <li>Training on speaking up directly, fostering psychologically safe conditions for others to speak up.</li>
+  <li>Knowledge capture and the potential for continued progress are never-ending.</li>
+  <li>A learning leader are more concerned with asking the question and listening to their team.</li>
+  <li>Knowledge can also be captured as code.</li>
+  <li>Knowledge capture can be conveyed in routines.</li>
+  <li>They believed they couldn&rsquo;t think their way to the right answer; instead, they experimented relentlessly with great frequency and at low cost.</li>
+  <li><p><a href="#center-out">Center-out leadership</a>.</p>
+  <blockquote>As the complexity of the system increases, so do the cognitive demands on the organization. Managing cognitive load through teams with clear responsibilities and boundaries is a distinguishing focus of effective team design. <cite><a href="https://twitter.com/ruthmalan">Ruth Malan</a></cite>
+  </blockquote></li>
+  <li>Linearized processes can be fragile:
+  <ul>
+    <li>Without various stabilization mechanisms, they can quickly devolve into &ldquo;job shops&rdquo;.</li>
+  </ul></li>
+  <li>Design requires isomorphism between Layers 1 and 3. Production requires isomorphism in all three layers:
+  <ul>
+    <li>If there is a mismatch, orgs underperform.</li>
+  </ul></li>
+  <li>If effectively run orgs:
+  <ul>
+    <li>The functional leader is responsible for &ldquo;who&rdquo; and &ldquo;how&rdquo; - providing trainer people.</li>
+    <li>The flow owner is responsible for the &ldquo;what&rdquo; and &ldquo;when&rdquo; of how those people are deployed.</li>
+  </ul></li>
+  <li>Accident investigations that stop at &ldquo;human error&rdquo; are not just bad but dangerous.</li>
+  <li>Control theory addresses a broad variety of situations where no static plan can achieve the desired goal, no matter how good the plan is:
+  <ul>
+    <li>Feedback mechanisms are needed.</li>
+    <li>Must be significantly faster and more reliable than the object being controlled.</li>
+    <li>Fail: People become indifferent, when they point out problems that are never fixed, or help is requested but never arrives.</li>
+  </ul></li>
+  <li>Standards make succeeding easier; they make it more obvious that something is difficult or even wrong.</li>
+  <li>One team leader for every four or so associates doing direct work:
+  <ul>
+    <li>Primary job is to help associates when they encounter problems.</li>
+  </ul></li>
+  <li>When we consider that the most precious resource in any organization is people&rsquo;s ingenuity and creativity, the most common risk is cognitive overload.</li>
+</ul><h1>Practices</h1><p>List of practices and theories and if they support Slowification, Simplification ( <strong>I</strong>ncrementalization, <strong>M</strong>odularization, <strong>L</strong>inearization) or Amplification.</p>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Slowification</th>
+      <th>Simplification </th>
+      <th>Amplification </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Toyota Production System </td>
+      <td>X </td>
+      <td>I M L </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>DevOps </td>
+      <td>X </td>
+      <td>I M L </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Deming </td>
+      <td>X </td>
+      <td>L </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Agile SW Dev </td>
+      <td>X </td>
+      <td>I </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Lean Startup </td>
+      <td>X </td>
+      <td>I </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Resilience Engineering </td>
+      <td>X </td>
+      <td>M </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>System Dynamics </td>
+      <td>X </td>
+      <td> </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Double-Loop Learning </td>
+      <td>X </td>
+      <td> </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Improvement Kata </td>
+      <td>X </td>
+      <td> </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Gemba walks, Empowerment, Participative Management </td>
+      <td>X </td>
+      <td> </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Conway&rsquo;s Law </td>
+      <td> </td>
+      <td>M L </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Cognitive Load </td>
+      <td> </td>
+      <td>M L </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Team Topologies </td>
+      <td>X </td>
+      <td>M L </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Technical Debt </td>
+      <td>X </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Software Architecture </td>
+      <td> </td>
+      <td>M </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Normalization of Deviance </td>
+      <td> </td>
+      <td> </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Lean Thinking </td>
+      <td> </td>
+      <td>L </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Psychological Safety </td>
+      <td> </td>
+      <td> </td>
+      <td>X </td>
+    </tr>
+    <tr>
+      <td>Westrum Cultural Typologies </td>
+      <td> </td>
+      <td> </td>
+      <td>X </td>
+    </tr>
+  </tbody>
+</table><p><br/></p><h1>Case Studies</h1><p>List of all cases studies in the book:</p>
+<ol>
+  <li>Chapter 5:
+  <ul>
+    <li>Case studies:</li>
+    <li>MIT Sloan School Sailing Team.</li>
+    <li>Mrs. Morris/Ms. Morrison.</li>
+    <li>Apollo 11.</li>
+    <li>The Columbia Space Shuttle Disaster.</li>
+    <li>The Imperial Japanese Navy and Command, Control, and Compliance Leadership.</li>
+    <li>The US Navy and Learning Leadership.</li>
+    <li>United Airlines Flight 232 Crash Landing.</li>
+    <li>United Airlines Flight 173 Crash.</li>
+    <li>Google and Amazon Disaster Readiness Drills.</li>
+    <li>Netflix.</li>
+  </ul></li>
+  <li>Chapter 6:
+  <ul>
+    <li>Boston Marathon: Preparing for a Mass Casualty Event.</li>
+  </ul></li>
+  <li>Chapter 8:
+  <ul>
+    <li>Wright Brother&rsquo;s First Flight.</li>
+    <li>Incrementalization in the Arts.</li>
+    <li>Apple iPhone vs Nokia.</li>
+    <li>Menomonee Falls Safe School Reopenings.</li>
+    <li>Mastering New Naval Technology.</li>
+    <li>Amazon (pre-2002).</li>
+    <li>IBM System/360.</li>
+    <li>Accelerate Drug Development.</li>
+    <li>Pratt &amp; Whitney&rsquo;s Jet Engine Design.</li>
+    <li>Team of Teams.</li>
+  </ul></li>
+  <li>Chapter 9:
+  <ul>
+    <li>NASA Space Program: Mercury, Gemini, and Apollo.</li>
+  </ul></li>
+  <li>Chapter 10:
+  <ul>
+    <li>Toyota.</li>
+  </ul></li>
+</ol><h1>TOC</h1>
+<ul>
+  <li><a href="#p-0">Preface</a></li>
+  <li><a href="#p-1">Part I - A New Theory of Performance Management</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - The Pinnacles of Human Achievement and Why We Form Organizations</a></li>
+    <li><a href="#ch-2">Chapter 2 - Navigating from Danger Zones to Winning Zones</a></li>
+    <li><a href="#ch-3">Chapter 3 - Winning Based on Liberating Ingenuity</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Slowification</a>
+  <ul>
+    <li><a href="#ch-4">Chapter 4 - Slowification: A Theory Overview</a></li>
+    <li><a href="#ch-5">Chapter 5 - Slowification: Case Studies in Planning, Practice, and Performance</a></li>
+    <li><a href="#ch-6">Chapter 6 - Slowification: Exemplar Case Study and Further Examination</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - Simplification</a>
+  <ul>
+    <li><a href="#ch-7">Chapter 7 - Simplification: A Theory Overview</a></li>
+    <li><a href="#ch-8">Chapter 8 - Simplification: Case Studies in Incrementalization, Modularization, and Linearization</a></li>
+    <li><a href="#ch-9">Chapter 9 - Simplification: Exemplar Case Study and Further Examination</a></li>
+  </ul></li>
+  <li><a href="#p-4">Part IV - Amplification</a>
+  <ul>
+    <li><a href="#ch-10">Chapter 10 - Amplification: A Theory Overview and Exemplar Case Study</a></li>
+  </ul></li>
+  <li><a href="#p-5">Conclusion</a></li>
+  <li><a href="#p-6">Appendix B - Transactional vs Developmental Leadership</a></li>
+</ul><h1><a name="p-0"></a>Preface</h1>
+<ul>
+  <li>People with the best work experiences need fewer resources, less capital equipment, and less time to accomplish greater things:
+  <ul>
+    <li>It is the management system.</li>
+  </ul></li>
+  <li>Social circuity: the overlay of precesses, procedures, routines, and norms that enable people to do their work easily and well.</li>
+</ul><h1><a name="p-1"></a>Part I - A New Theory of Performance Management</h1><h2><a name="ch-1"></a>Chapter 1 - The Pinnacles of Human Achievement and Why We Form Organizations</h2>
+<ul>
+  <li>Three mechanisms which create the difference between success and failure:
+  <ol>
+    <li>Slowification, to make solving problems easier to do:
+    <ul>
+      <li>Pulling problem-solving out of the realm of performance (operations or execution).</li>
+      <li>Instead, realms of planning and practice.</li>
+    </ul></li>
+    <li>Simplification, to make the problems themselves easier to solve:
+    <ul>
+      <li>Through incrementalization, modularization, and linearization.</li>
+      <li>Aim to make Layer 1 problem-solving parallel with little coordination from Layer 3.</li>
+    </ul></li>
+    <li>Amplification, to make it obvious that there are problems that demand attention and whether they&rsquo;ve been seen and solved:
+    <ul>
+      <li>Early and often, before problem become large and systematically disruptive.</li>
+    </ul></li>
+  </ol></li>
+  <li>Toyota + General Motors joint venture <a href="https://en.wikipedia.org/wiki/NUMMI">NUMMI</a>:
+  <ul>
+    <li>From worst to best with same people after changing management system.</li>
+  </ul></li>
+  <li>Difference between exceptional and ordinary is obvious by observing the experiences of people doing their work.</li>
+  <li>Collaborative problem-solving occurs in three distinct layers:
+  <ol>
+    <li>Layer 1 contains the technical objects being worked on. Code in our case.</li>
+    <li>Layer 2 contains the tools.</li>
+    <li>Layer 3 contains the social circuitry:
+    <ul>
+      <li>Workers have what they need, when they need it, and in the format they need it.</li>
+    </ul></li>
+  </ol>
+  <ul>
+    <li>Layer 1 and 2 are the &ldquo;technical&rdquo; part of a sociotechnical system. Layer 3 is the &ldquo;socio&rdquo; part.</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Navigating from Danger Zones to Winning Zones</h2>
+<ul>
+  <li>Boundary of a group solving problems must be large enough that it is coherent, having all the people and resources needed, but small enough to not require large amounts of coordination.</li>
+  <li>Coherent:
+  <ul>
+    <li>Having the quality of a unified whole.</li>
+    <li>In the same group, communicating directly with the needed frequency, speed, accuracy and detail required.</li>
+  </ul></li>
+  <li>Coupling:
+  <ul>
+    <li>When changes in one affect the other.</li>
+  </ul></li>
+  <li>How much coupling there is determines how much coherence leaders must create.</li>
+  <li>Bad:
+  <ul>
+    <li>Over coupled and under partitioned.</li>
+    <li>Under coupled and over partitioned.</li>
+  </ul></li>
+  <li>Estimates for the time (to remove furniture) is nearly always wrong:
+  <ul>
+    <li>First, they try to create a more accurate schedule by getting better information.</li>
+    <li>Then, try to help by finding from others teams who doesn&rsquo;t seem too busy.</li>
+    <li>This makes matters much worse.</li>
+    <li>Now had two problems instead of one.</li>
+    <li>Instead: keep people that are good at dealing with trickier issues in reserve.</li>
+  </ul></li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Winning Based on Liberating Ingenuity</h2>
+<ul>
+  <li>To slowify or not is a choice that leaders make.</li>
+  <li>To make things simpler, aim to no need to coordinate with anyone outside the team.</li>
+  <li>Recursive modularization:
+  <ul>
+    <li>Work was increasingly able to be performed and improved in parallel.</li>
+  </ul></li>
+  <li>Linearization does for sequential processes what modularization does for parallel processes.</li>
+  <li>Flawed wiring: talking to the wrong people, at the wrong time, in the wrong way, about the wrong things.</li>
+  <li>Wiring also dictates the type of feedback that is generated.</li>
+  <li>Model line:
+  <ul>
+    <li>Transformative tool.</li>
+    <li>Segment of the larger enterprise where new approaches can be tested.</li>
+    <li>Small but coherent.</li>
+  </ul></li>
+  <li>Change their behaviours, which is a precursor for changing their beliefs.</li>
+</ul><h1><a name="p-2"></a>Part II - Slowification</h1><h2><a name="ch-4"></a>Chapter 4 - Slowification: A Theory Overview</h2>
+<ul>
+  <li>Slowification is applied in one of two ways:
+  <ol>
+    <li>Slowing ourselves down, so we can be more deliberative and self-reflective.</li>
+    <li>Slowing down the environment.</li>
+  </ol></li>
+  <li>When we have more time, lower stakes, and less fear, our creativity can flourish.</li>
+  <li>When using System 1 (fast thinking):
+  <ul>
+    <li>We use only what we already know.</li>
+    <li>Does not encourage or allow time to improve our thinking.</li>
+  </ul></li>
+  <li>Three phases of work:
+  <ol>
+    <li>Planning:
+    <ul>
+      <li>Safest environment.</li>
+      <li>Cost of expressing and capturing ideas is low.</li>
+      <li>Allow for slowification.</li>
+    </ul></li>
+    <li>Practice:
+    <ul>
+      <li>Preproduction/testing.</li>
+      <li>Ideas are put into action.</li>
+      <li>We can control the pace and the incremental complexity of what is occurring, so we are not overwhelmed.</li>
+      <li>Feedback is used to find flaws and improve our plans.</li>
+      <li>Time to coach and improve our abilities to execute those plans.</li>
+      <li>Develop capabilities to address:
+      <ul>
+        <li>Most likely scenarios.</li>
+        <li>Less likely but highly consequential scenarios.</li>
+      </ul></li>
+    </ul></li>
+  </ol>
+  <ul>
+    <li>Allow for slowification.</li>
+  </ul>
+  <ol>
+    <li>Performance:</li>
+  </ol>
+  <ul>
+    <li>It controls the pace of the experience.</li>
+    <li>Force us to depend on already-developed routines, skills, and habits.</li>
+    <li>Bring issues back to practice or planning.</li>
+  </ul></li>
+  <li>Common element to slowification is feedback.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Slowification: Case Studies in Planning, Practice, and Performance</h2>
+<ul>
+  <li>Deming&rsquo;s learning cycle of Plan-Do-Study-Act is a tool to encourage slowification.</li>
+  <li>Leaders must capture the lessons learned to create an ever-improving baseline.</li>
+  <li>&ldquo;Pause time&rdquo; culture to figure out what the problem is.</li>
+  <li>Stress-testing their systems during practice sessions.</li>
+  <li>Compliance leadership expect that instructions are followed without question.</li>
+  <li>In learning leadership, plans are treated as best guesses and are subject to forceful backup.</li>
+  <li>Training on speaking up directly, fostering psychologically safe conditions for others to speak up.</li>
+  <li>Certain engineers were marked as either &ldquo;abducted by aliens&rdquo; or &ldquo;killed by zombies&rdquo;.</li>
+  <li>An often-overlooked area of testing is business process and communications.</li>
+  <li>Most often, stress testing discovered weak points in the Layer 3 social circuitry of their operations.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Slowification: Exemplar Case Study and Further Examination</h2>
+<ul>
+  <li>Knowledge capture and the potential for continued progress are never-ending.</li>
+  <li>Book of lessons learned.</li>
+  <li>How often and well do we capture lessons learned in a way that is easy to access?</li>
+  <li>How often are incorporated into future planning and used in future practice?</li>
+  <li>Knowledge can also be captured as code.</li>
+  <li>Knowledge capture can be conveyed in routines.</li>
+  <li>A learning leader are more concerned with asking the question and listening to their team.</li>
+</ul><h1><a name="p-3"></a>Part III - Simplification</h1><h2><a name="ch-7"></a>Chapter 7 - Simplification: A Theory Overview</h2>
+<ul>
+  <li>Partitioning large systems into smaller, coherent pieces allow to solve more problems independently and in parallel.</li>
+  <li>A coherent component often requires teams to be cross-functional.</li>
+  <li>When a coherent unit is decoupled from others, disruptions in one don&rsquo;t spill over.</li>
+  <li>Three simplification techniques:
+  <ol>
+    <li>Incrementalization:
+    <ul>
+      <li>Partition what is novel (which needs to be tested) from what is known (which is already validated) into their own self-contained, coherent units.</li>
+      <li>Adds to the novelty in smaller increments.</li>
+      <li>Allow to iterate and test changes on fewer factors, so more quickly and safely.</li>
+    </ul></li>
+    <li>Modularization:
+    <ul>
+      <li>Smaller, simpler, more numerous coherent pieces.</li>
+      <li>Less coupled as they are connected through only a few well-defined and stable interfaces.</li>
+      <li>Creates option value: decouple (temporally) decisions tomorrow from conditions today, giving latitude of action to decision-makers.</li>
+      <li>Downsides:
+      <ul>
+        <li>Potential incompatibility.</li>
+        <li>Misspecification at the interfaces.</li>
+        <li>Inability to change the interface when it proves to be inadequate.</li>
+      </ul></li>
+      <li>Leader has the Layer 3 responsibility to balance independence of action with ensuring enough compatibility that all integrate into a cohesive whole.</li>
+    </ul></li>
+    <li>Linearization:
+    <ul>
+      <li>Assembly line.</li>
+      <li>Partitions operations that share resources to accomplish multiple objectives into independent and coherent workflows.</li>
+      <li>Coherence is achieved by committing all resources needed to generate outputs to workflows.</li>
+      <li>Partitioning across workflows is achieved by preventing the sharing of resources between them.</li>
+      <li>Partitioning within workflows is achieved by defining hand-offs between steps.</li>
+      <li>4 elements:
+      <ol>
+        <li>Sequentialization: outputs are generated along the single dedicated, non-looping pathway of connected activities.</li>
+        <li>Standardization: output, steps/activities, handoffs and how work is done in each individual activity.</li>
+        <li>Stabilization: triggers when there is a problem and resources to swarm it.</li>
+        <li>Self-synchronization: system can automatically self-pace without elaborate scheduling.</li>
+      </ol></li>
+    </ul></li>
+  </ol></li>
+  <li>People can focus on a small number of novel items in a small number of projects and interact with the smallest number of people necessary.</li>
+  <li>Ideally, there should be coordinated collaboration among those whose work depends on or is depended on by others:
+  <ul>
+    <li>However, too often, coordination is done only &ldquo;at the top of the silo&rdquo;.</li>
+  </ul></li>
+  <li>Nonlinearized flows need considerably more Layer 3 coordination.</li>
+  <li>Managing how work is performed at the bottleneck is much simpler and more effective than scheduling the entire factory.</li>
+  <li>Linearization is also essential in high-speed, sustained improvement.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Simplification: Case Studies in Incrementalization, Modularization, and Linearization</h2>
+<ul>
+  <li>They believed they couldn&rsquo;t think their way to the right answer; instead, they experimented relentlessly with great frequency and at low cost.</li>
+  <li>Breaking large problems into smaller pieces, around which it is easier to experiment and learn.</li>
+  <li>Nokia engineers took over 48 hours to compile the Symbian OS, and two week to get a software build that could run on a prototype.</li>
+  <li><a name="center-out"></a>Center-out leadership:
+  <ul>
+    <li>Collect as much information as they can get and push it out to those running local operations.</li>
+    <li>Then delegate authority to local leaders to generate solutions that work for their unique situations.</li>
+    <li>Then gather local lessons and synthesize them into shareable, collective wisdom.</li>
+    <li>Useful when operational responsibility is distributed or when work happens in coherent local units that do not affect each other.</li>
+  </ul></li>
+  <li>Amazon pre-2002:
+  <ul>
+    <li>To change the ordering process, the digital teams would walk to the 80 different ordering teams and say &ldquo;We need to change this&rdquo;. The ordering teams would respond that they hadn&rsquo;t budgeted for it.</li>
+    <li>SKU changes caused many global outages.</li>
+    <li>Hire more project managers to help coordinate the work.</li>
+    <li>Put in more approval processes in an attempt to reduce outages.</li>
+  </ul></li>
+  <li>Ruth Malan: As the complexity of the system increases, so do the cognitive demands on the organization. Managing cognitive load through teams with clear responsibilities and boundaries is a distinguishing focus of effective team design.</li>
+  <li>Stabilization mechanism: they assigned only enough work to account for 85% of their colleagues&rsquo; time.</li>
+  <li>Linearized processes can be fragile:
+  <ul>
+    <li>Without various stabilization mechanisms, they can quickly devolve into &ldquo;job shops&rdquo;.</li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Simplification: Exemplar Case Study and Further Examination</h2>
+<ul>
+  <li>By having clarity around how these technical subsystems interact at Layer 1, orgs can be formed on how they should interact in Layer 3.</li>
+  <li>Design requires isomorphism between Layers 1 and 3. Production requires isomorphism in all three layers:
+  <ul>
+    <li>If there is a mismatch, orgs underperform.</li>
+  </ul></li>
+  <li>If effectively run orgs, the functional leader is responsible for &ldquo;who&rdquo; and &ldquo;how&rdquo; - providing trainer people.</li>
+  <li>The flow owner is responsible for:
+  <ul>
+    <li>The &ldquo;what&rdquo; and &ldquo;when&rdquo; of how those people are deployed.</li>
+    <li>Establish what outputs.</li>
+    <li>Work is sequenced properly.</li>
+    <li>Balance cycle times and work load.</li>
+    <li>Exchanges and handoffs between steps are well established.</li>
+  </ul></li>
+  <li>All-at-once leadership:
+  <ul>
+    <li>Must hold in their heads the entire Layer 1 system for which they are responsible and must coordinate nearly everyone and everything in Layer 3.</li>
+  </ul></li>
+  <li>Incremental leadership:
+  <ul>
+    <li>Maintain comm channels and mechanism of knowledge sharing.</li>
+    <li>Partition novel from validated and ensuring experiments are being conducted rigorously and frequently.</li>
+  </ul></li>
+</ul><h1><a name="p-4"></a>Part IV - Amplification</h1><h2><a name="ch-10"></a>Chapter 10 - Amplification: A Theory Overview and Exemplar Case Study</h2>
+<ul>
+  <li>Amplification is the act of calling out problems loudly and consistently enough so help is triggered to swarm them.</li>
+  <li>Control theory addresses a broad variety of situations where no static plan can achieve the desired goal, no matter how good the plan is:
+  <ul>
+    <li>Feedback mechanisms are needed.</li>
+    <li>It can fail because of delays and imprecision.</li>
+    <li>Must be significantly faster and more reliable than the object being controlled.</li>
+  </ul></li>
+  <li>Layer 3 processes and procedures must integrate signaling that should be frequent enough, fast enough, accurate enough, and loud enough.
+  <ul>
+    <li>Signaling must be designed well and deliberately.</li>
+  </ul></li>
+  <li>Six steps of amplification:
+  <ol>
+    <li>Sender generates signal:
+    <ul>
+      <li>Fail: People become indifferent, when they point out problems that are never fixed, or help is requested but never arrives.</li>
+      <li>NASA culture: call out and examine anything anomalous or unexpected, and study it until it could be explained.</li>
+    </ul></li>
+    <li>Sender transmits signal:
+    <ul>
+      <li>Fail: People recognize a problem but do not feel safe calling it out.</li>
+    </ul></li>
+    <li>Receiver receives signal:
+    <ul>
+      <li>Simon Sinek: Communication is not about speaking what we think. It&rsquo;s about ensuring others hear what we mean.</li>
+      <li>Fail: Leaders consumed with maintaining operational tempo can&rsquo;t pause long enough to develop new approaches.</li>
+      <li>Apollo missions: only people allowed to communicate with astronauts in space were CAPCOMs:
+      <ul>
+        <li>Backup astronauts or training crew.</li>
+        <li>Same training and same shared experiences allowed them to develop a highly efficient code.</li>
+      </ul></li>
+    </ul></li>
+    <li>Corrective reaction is started:
+    <ul>
+      <li>Fail: signal arrives too late.</li>
+      <li>Fail: nobody reacts to signal.</li>
+    </ul></li>
+    <li>Corrective reaction is completed.</li>
+    <li>Sender confirms that reported problem has been solved:
+    <ul>
+      <li>Otherwise, they send another signal.</li>
+    </ul></li>
+  </ol></li>
+  <li>In the best factories, mechanics pulled the anon cord twelve times a shift:
+  <ul>
+    <li>There were enough capable team leaders to consistently provide help.</li>
+  </ul></li>
+  <li>Accident investigations that stop at &ldquo;human error&rdquo; are not just bad but dangerous.</li>
+  <li>Toyota&rsquo;s policy of &ldquo;global localization&rdquo;: building where it sells and buying where it builds.</li>
+  <li>Exemplar case study:
+  <ul>
+    <li>One vehicle per minute.</li>
+    <li>Varied and complex work.</li>
+    <li>Several thousand employees.</li>
+    <li>On-site suppliers.</li>
+    <li>One team leader for every four or so associates doing direct work:
+    <ul>
+      <li>Primary job is to help associates when they encounter problems.</li>
+      <li>Deliberate inversion of who was responsible.</li>
+      <li>Ratio depends on technical sophistication of the work, and the frequency and severity with which problems occur.</li>
+    </ul></li>
+    <li>President:
+    <ul>
+      <li>Spend several hours a day on the shop floor.</li>
+      <li>See the nuance and detail of what is actually occurring.</li>
+    </ul></li>
+    <li>Stopping the line was routine:
+    <ul>
+      <li>Short pause, associates tidy the work area.</li>
+      <li>Long pauses: improvement activities or training.</li>
+      <li>Back-shop teams use the time to do maintenance and repair.</li>
+    </ul></li>
+    <li>62 problem-solving stations:
+    <ul>
+      <li>Each focused in one big problem.</li>
+      <li>Shared by both shifts, collaborating continually.</li>
+      <li>Clear visibility.</li>
+    </ul></li>
+  </ul></li>
+  <li>Standards make succeeding easier; they make it more obvious that something is difficult or even wrong.</li>
+</ul><h1><a name="p-5"></a>Conclusion</h1>
+<ul>
+  <li>Successes are fantastic, yet often without obvious evidence of leadership involvement:
+  <ul>
+    <li>Leadership was everywhere in planning and practice.</li>
+  </ul></li>
+  <li>Both DevOps and TPS have the commonality of being developed to create conditions in which it is easier for individuals to succeed at what they do and have their efforts contribute seamlessly to a much larger whole.</li>
+  <li>When we consider that the most precious resource in any organization is people&rsquo;s ingenuity and creativity, the most common risk is cognitive overload.</li>
+  <li>3 questions to get started:
+  <ol>
+    <li>Are we solving our toughest problems in planning and practice, where we can iterate and learn?</li>
+    <li>Are we shaping our problems so that they are easier to solve because they are simple, low risk, controllable, and easy to understand and iterate and learn from?</li>
+    <li>Are we calling out problems loudly and consistently so that they can be swarmed, container, solved and prevent future occurrences?</li>
+  </ol></li>
+</ul><h1><a name="p-6"></a>Appendix B - Transactional vs Developmental Leadership</h1>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Transactional orientation </th>
+      <th>Developmental orientation </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Limit </td>
+      <td>Scare resources </td>
+      <td>Useful understanding of resources&rsquo; best possible use </td>
+    </tr>
+    <tr>
+      <td>Actions </td>
+      <td>Optimization by allocation of scarce resources to best possible use </td>
+      <td>Make it quicker and easier to solve difficult problems better </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>People has to adapt to the system </td>
+      <td>The system has to adapt to the people </td>
+    </tr>
+    <tr>
+      <td>How increase output </td>
+      <td>More resources </td>
+      <td>Better problem-solving </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Transactional leaders focus on the process itself.</li>
+  <li>Developmental mindset assumes that their limitation is insufficient understanding about how to use the resource available to them. They don&rsquo;t try to fix everything all at once.</li>
+</ul>]]></description></item><item><title>Book notes: Code that fits in your head: Heuristics for Software Engineering</title><link>https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/</link><guid>https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/</guid><pubDate>Wed, 08 Nov 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3Hi4Y6K">Code that fits in your head: Heuristics for Software Engineering</a> by <a href="https://twitter.com/ploeh">Mark Seemann</a>.</p><p>Good advise for junior and mid level devs that have to work with Object-Oriented languages.</p><p>But my favourite quote:</p>
 <blockquote><p>Do yourself a favour and learn functional programming. It fits better in your head.</p>
 </blockquote><h1>Key Insights</h1>
 <ul>
@@ -4816,240 +5517,4 @@ new Freezeframe(".gifoverlay", {
       <li>Microservices templates.</li>
     </ul></li>
   </ul></li>
-</ul>]]></description></item><item><title>Book notes: Investments Unlimited, a novel about devops, security, audit compliance, and thriving in the Digital Age</title><link>https://danlebrero.com/2022/08/31/investments-unlimited-novel-security-devops-summary/</link><guid>https://danlebrero.com/2022/08/31/investments-unlimited-novel-security-devops-summary/</guid><pubDate>Wed, 31 Aug 2022 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3KdOtZy">Investments Unlimited</a> by <a href="https://twitter.com/helenhappybee">Helen Beal</a>, <a href="https://twitter.com/BillBensing">Bill Bensing</a>, <a href="https://twitter.com/jasonacox">Jason Cox</a>, <a href="https://twitter.com/MichaelEdenzon">Michael Edenzon</a>, <a href="https://twitter.com/TopoPal">Dr. Tapabrata &ldquo;Topo&rdquo; Pal</a>, <a href="https://twitter.com/HttpSecHeaders">Caleb Queern</a>, <a href="https://www.linkedin.com/in/john-rzeszotarski-6113814/">John Rzeszotarski</a>, <a href="https://twitter.com/invariantly">Andres Vega</a>, and <a href="https://twitter.com/botchagalupe">John Willis</a>.</p><p>I thought that it was impossible for any book, but Investments Unlimited is as enjoyable and insightful as <a href="/2020/02/05/the-unicorn-project-summary/#content">The Unicorn Project</a>.</p><p>You can consider this book a sequel of what happens after adopting DevOps (and forgetting about Security/Audit/Compliance).</p><p>WARN: some dialogues will make you angry.</p><h1>Key Insights</h1>
-<ul>
-  <li>Governance is the process of identifying and making promises, and then checking that you keep those promises.</li>
-  <li>Promises:
-  <ul>
-    <li>Good way to market any change management.</li>
-    <li>Controls are very sterile but nobody wants to break a promise.</li>
-  </ul></li>
-  <li>Normalization of deviance: exceptions to process becoming the norm.</li>
-  <li>Risk is increased by someone not familiar with the change putting the change in production:
-  <ul>
-    <li>Better is to enforce a peer review process.</li>
-  </ul></li>
-  <li><p>One could look at compliance and security features as non-functional requirements: Product Manager responsibility.</p>
-  <blockquote>Software is not eating the world, it is infecting it <cite>Josh Corman, <a href="https://www.youtube.com/watch?v=jkoFL7hGiUk">Continuous Acceleration</a></cite>
-  </blockquote></li>
-  <li>Their processes reflect how you incentive them.</li>
-  <li><a href="http://DearAuditor.org">DearAuditor.org</a></li>
-  <li><a href="https://itrevolution.com/book/devops-automated-governance-reference-architecture/">Devops Automated Governance Reference Architecture</a>.</li>
-  <li>The change process rigor was based on what happened historically, not the system needs.</li>
-  <li>Subjectivity encourages lack of transparency and opinion-driven measures.</li>
-  <li><a href="#thelinesmodel">Three Lines Model</a>.</li>
-  <li>Policy as code!
-  <ul>
-    <li><a href="https://www.open-scap.org">Open Security Content Automation Protocol (OSCAP)</a>.</li>
-    <li><a href="https://www.openpolicyagent.org">Open Policy Agent (OPA)</a>.</li>
-  </ul></li>
-  <li>Diffusion of responsibility: as the number of bystanders increases, the personal responsibility that an individual bystander feels decreases.
-  <ul>
-    <li>Open Source: Everybody assumes that someone else has checked the source.</li>
-  </ul></li>
-  <li>Change Advisor Board (CAB) as consulting partners, not approval authority.</li>
-  <li>Where does it say the word &ldquo;automated&rdquo;?</li>
-  <li>More important to have the evidence of what the team decided, than to be 100% compliant all the time.</li>
-</ul><h1>TOC</h1>
-<ul>
-  <li><a href="#ch-0">Chapter 0 - Preface</a></li>
-  <li><a href="#ch-1">Chapter 1 - Tuesday March 29th</a></li>
-  <li><a href="#ch-2">Chapter 2 - Thursday, March 29th</a></li>
-  <li><a href="#ch-3">Chapter 3 - Tuesday, April 5th</a></li>
-  <li><a href="#ch-4">Chapter 4 - Wednesday, April 6th</a></li>
-  <li><a href="#ch-5">Chapter 5 - Tuesday, April 19th</a></li>
-  <li><a href="#ch-6">Chapter 6 - Tuesday, April 28th</a></li>
-  <li><a href="#ch-7">Chapter 7 - Wednesday, May 18th</a></li>
-  <li><a href="#ch-8">Chapter 8 - Monday, June 6th</a></li>
-  <li><a href="#ch-9">Chapter 9 - Thursday 1st</a></li>
-  <li><a href="#ch-10">Chapter 10 - Wednesday, September 21st</a></li>
-  <li><a href="#ch-11">Chapter 11 - Thursday, October 1st</a></li>
-  <li><a href="#ch-12">Chapter 12 - December 13th</a></li>
-  <li><a href="#ch-13">Chapter 13 - February 7th</a></li>
-  <li><a href="#ch-14">Epilogue</a></li>
-</ul><h1><a name="ch-0"></a>Chapter 0 - Preface</h1>
-<ul>
-  <li>Governance, either:</li>
-  <li>Anxiety, frustration, fear, anger.</li>
-  <li>Control, peace, order, safety.</li>
-  <li>Governance aims to safeguard what a company holds of value.</li>
-</ul><h1><a name="ch-1"></a>Chapter 1 - Tuesday March 29th</h1>
-<ul>
-  <li>Chief Audit Executive and Chief Risk Officer role are highly interrelated and interdependent, so much that some orgs have merged into a single CRCO (Chief Risk and Compliance Officer).</li>
-  <li>Product release deadlines always a higher priority: (╯°□°）╯︵ ┻━┻
-  <ul>
-    <li>VP of Product: &ldquo;We had no choice.&rdquo;</li>
-  </ul></li>
-  <li>She wasn&rsquo;t pleased by the blame that was being tossed around the room.</li>
-  <li>VP Product: It takes forever to get features out. I don&rsquo;t know what our dev teams do all day.
-  <ul>
-    <li>VP Eng: Tech debt + urgent new features.</li>
-    <li>Hire more engineers!</li>
-  </ul></li>
-  <li>CEO: what I need are solutions.</li>
-</ul><h1><a name="ch-2"></a>Chapter 2 - Thursday, March 29th</h1>
-<ul>
-  <li>It always falls to Engineering to fix everything. (ノಠ益ಠ)ノ彡┻━┻</li>
-  <li>Auditor role: compare what org says it should do to manage risk with what is actually done.</li>
-  <li>Inconsistent process, ineffective in ensuring security and compliance, resulting in unauthorized and vulnerable SW with significant number of defects in production. (╯’□’)╯︵ ┻━┻</li>
-  <li>Just mentioning the Governance, Risk and Compliance (GRC) system caused an audible groan in the room.</li>
-  <li>Our best security advice mostly comes from internet searches. (ノ-_-)ノ ミ ┴┴</li>
-  <li>Bits and pieces may work in silos, but it doesn&rsquo;t work as a full system.</li>
-  <li>Backlogs were so back up that each backlog had a backlog item to review the backlog.</li>
-  <li>Promises:
-  <ul>
-    <li>Good way to market any change management.</li>
-    <li>Promises we are making to regulators and customers and to each other.</li>
-    <li>Controls are very sterile but nobody wants to break a promise.</li>
-  </ul></li>
-  <li>People love to talk about themselves, especially when someone is listening to them moan about a problem:
-  <ul>
-    <li>Lead the conversation with empathy.</li>
-    <li>Elicit fact from the complaining.</li>
-  </ul></li>
-  <li>Copious notes.</li>
-</ul><h1><a name="ch-3"></a>Chapter 3 - Tuesday, April 5th</h1>
-<ul>
-  <li>It is amazing what happens when you can focus and finish a task.</li>
-  <li>Subjective nature of how we create evidence. (ノ ゜Д゜)ノ ︵ ┻━┻</li>
-  <li>Normalization of deviance: exceptions to process becoming the norm.</li>
-  <li>We have clear and published guidelines:
-  <ul>
-    <li>But people just ignore them.</li>
-  </ul></li>
-  <li>We need segregation of duties: developers vs operations.
-  <ul>
-    <li>But in &ldquo;DevOps-fied&rdquo; teams everybody is a dev.</li>
-    <li>Does not work: as risk is increased by someone not familiar with the change putting the change in production.</li>
-    <li>Better is to enforce a peer review process.</li>
-  </ul></li>
-  <li>One could look at compliance and security features as non-functional requirements:
-  <ul>
-    <li>Product Manager responsibility.</li>
-  </ul></li>
-  <li><a href="https://amzn.to/3AJci8A">Build Trap</a>:
-  <ul>
-    <li>Only focus on features and neglect experimentation and learning (including learning how to work better).</li>
-  </ul></li>
-  <li>Change not only engineering but also business.</li>
-</ul><h1><a name="ch-4"></a>Chapter 4 - Wednesday, April 6th</h1>
-<ul>
-  <li>Product Manager needs to manage upwards, sideways and downward.</li>
-  <li><p><a href="http://blog.jabebloom.com/2020/03/04/the-three-economies-an-introduction/">The Three Economies</a>.</p>
-  <blockquote>Software is not eating the world, it is infecting it <cite>Josh Corman, <a href="https://www.youtube.com/watch?v=jkoFL7hGiUk">Continuous Acceleration</a></cite>
-  </blockquote></li>
-  <li><p>Chronic conflicts between dev, ops and sec.</p></li>
-  <li>Their processes reflect how you incentive them.</li>
-  <li>Shift left: smart people defining and codifying the security and compliance policies, instead of manually checking screenshots.</li>
-  <li>Compliance/Security as a product: how would you bring a product to market when you have no objective evidence the markets wants it but some qualitative evidence that it is desired?
-  <ul>
-    <li>Small, quick experiments, minimally viable products, to learn what and what doesn&rsquo;t work.</li>
-  </ul></li>
-</ul><h1><a name="ch-5"></a>Chapter 5 - Tuesday, April 19th</h1>
-<ul>
-  <li><a href="http://DearAuditor.org">DearAuditor.org</a></li>
-  <li>Was never going to drag itself out of this mess without seeing Audit in a new light.</li>
-  <li><a href="https://itrevolution.com/book/devops-automated-governance-reference-architecture/">Devops Automated Governance Reference Architecture</a>.</li>
-  <li>First design the business process of automated governance, then do a tool and tech selection.</li>
-  <li>Production Access Debt:
-  <ul>
-    <li>Every time a persistent production account is accessed, you add ten points. Each breakglass read account is one, each write account is five.</li>
-    <li>Reduce points by:
-    <ol>
-      <li>Everything must be code:
-      <ul>
-        <li>Including infra and build/deploy pipelines.</li>
-      </ul></li>
-      <li>All logs must be streamed out.</li>
-      <li>No system in production unless it has observability built in.</li>
-    </ol></li>
-  </ul></li>
-  <li><a href="https://www.capitalone.com/tech/software-engineering/governance-in-a-devops-environment/">Governance in a DevOps environment</a>.</li>
-</ul><h1><a name="ch-6"></a>Chapter 6 - Tuesday, April 28th</h1>
-<ul>
-  <li>Subjective change approval policies and processes. (┛ಸ_ಸ)┛彡┻━┻</li>
-  <li>The change process rigor was based on what happened historically, not the system needs.</li>
-  <li>No standardization because engineering inability to agree on a converted set of operation approaches.</li>
-  <li>The Devops Automated Governance takes subjectivity and makes it objective.</li>
-  <li>Subjectivity encourages lack of transparency and opinion-driven measures.</li>
-</ul><h1><a name="ch-7"></a>Chapter 7 - Wednesday, May 18th</h1>
-<ul>
-  <li>Shift left on security: let risk management being in the developer&rsquo;s mind:
-  <ul>
-    <li>Seeking advice and input from Audit early in the process.</li>
-  </ul></li>
-</ul><h1><a name="ch-8"></a>Chapter 8 - Monday, June 6th</h1>
-<ul>
-  <li>Didn&rsquo;t care about how it was done; they only cared about the number of applications that were migrated onto the cloud. ( °□°) ︵ ┻━┻</li>
-  <li>Governance is the process of identifying and making promises, and then checking that you keep those promises.</li>
-  <li><a href="https://www.theiia.org/globalassets/site/about-us/advocacy/three-lines-model-updated.pdf">Three Lines Model</a>:<br/><div id="thelinesmodel"></div> <img src="/images/blog/books/investment-unlimited/three-lines-model.png" alt="Three lines model" />
-  <ol>
-    <li>First line (bank tellers, engineers):
-    <ul>
-      <li>Own and manage the risk associated with their responsibilities.</li>
-      <li>Provide input into designing controls, as they execute them in a daily basis and knows what works.</li>
-    </ul></li>
-    <li>Second line (Risk management and compliance, Security):
-    <ul>
-      <li>Structure risk management framework.</li>
-      <li>Decide on policies and controls.</li>
-      <li>Monitors first line for following the policies and controls.</li>
-    </ul></li>
-    <li>Third line (assurance mechanism, Audit):
-    <ul>
-      <li>Asses if risk management approach is effective.</li>
-    </ul></li>
-  </ol></li>
-  <li>Policy as code!
-  <ul>
-    <li><a href="https://www.open-scap.org">Open Security Content Automation Protocol (OSCAP)</a>.</li>
-    <li><a href="https://www.openpolicyagent.org">Open Policy Agent (OPA)</a>.</li>
-  </ul></li>
-</ul><h1><a name="ch-9"></a>Chapter 9 - Thursday 1st</h1>
-<ul>
-  <li>Diffusion of responsibility: as the number of bystanders increases, the personal responsibility that an individual bystander feels decreases.
-  <ul>
-    <li>Open Source:
-    <ul>
-      <li>Everybody assumes that someone else has checked the source.</li>
-      <li>Hence, OS is not more secure than closed source.</li>
-    </ul></li>
-  </ul></li>
-</ul><h1><a name="ch-10"></a>Chapter 10 - Wednesday, September 21st</h1>
-<ul>
-  <li>Software bill of materials: all the components you use to build your software:
-  <ul>
-    <li>Easily find out which code/product is using a particular library version.</li>
-    <li><a href="https://owasp.org/www-project-dependency-track/">OWASP Dependency Track</a>.</li>
-  </ul></li>
-</ul><h1><a name="ch-11"></a>Chapter 11 - Thursday, October 1st</h1>
-<ul>
-  <li>Publish non-compliant artefacts and break at deploy time:
-  <ul>
-    <li>This allows for break-glass scenarios where someone has to accept the risk of deploying a non-compliant deploy.</li>
-  </ul></li>
-  <li>If a change is 100% compliant, lets eliminated CAB (change advisor board):
-  <ul>
-    <li>CAB as consulting partners, not approval authority.</li>
-  </ul></li>
-</ul><h1><a name="ch-12"></a>Chapter 12 - December 13th</h1>
-<ul>
-  <li>Where does it say the word &ldquo;automated&rdquo;?</li>
-</ul><h1><a name="ch-13"></a>Chapter 13 - February 7th</h1>
-<ul>
-  <li>Guiding policies:
-  <ol>
-    <li>If the rest of the policies are abided by, then you can bypass manual change approval process and go straight to production.</li>
-    <li>Complete automation for capturing evidence of quality, risk mitigation, and compliance. Only manual process is peer-review.</li>
-    <li>Security and compliance are as important as functional requirements. Security, Risk, Compliance and Audit must identify requires from day one.</li>
-    <li>Software budget: to track deficit in quality, risk, compliance and audit. When budget is depleted, no more feature work is allowed.</li>
-  </ol></li>
-  <li>Bring authority to information, not the other way around.</li>
-  <li>Security is responsibility of those building the SW.</li>
-  <li>More important to have the evidence of what the team decided, than to be 100% compliant all the time.</li>
-</ul><h1><a name="ch-14"></a>Epilogue</h1>
-<ul>
-  <li>When done well, tech and security cannot be seen from the outside.</li>
-  <li>Every business was truly a technology business and every business leader was a technology leader.</li>
-  <li><a href="https://www.devsecops.org">DevSecOps.org</a></li>
 </ul>]]></description></item></channel></rss>
