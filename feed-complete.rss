@@ -1,4 +1,313 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Mon, 27 Nov 2023 23:30:00 +0100</lastBuildDate><pubDate>Mon, 27 Nov 2023 23:30:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Wiring the Winning Organization</title><link>https://danlebrero.com/2023/11/27/wiring-the-winning-organization-summary/</link><guid>https://danlebrero.com/2023/11/27/wiring-the-winning-organization-summary/</guid><pubDate>Mon, 27 Nov 2023 23:30:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3tT8Xmk">Wiring the Winning Organization</a> by <a href="https://twitter.com/RealGeneKim">Gene Kim</a> and <a href="https://twitter.com/StevenJSpear">Steven J. Spear</a>.</p><p>Gene and Steven present the <a href="https://en.wikipedia.org/wiki/Grand_Unified_Theory">Grand Unified Theory</a> of organization performance.</p><p>3 questions to get started:</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0100</lastBuildDate><pubDate>Thu, 04 Jan 2024 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Deming's Journey to Profound Knowledge: How Deming Helped Win a War, Altered the Face of Industry, and Holds the Key to Our Future</title><link>https://danlebrero.com/2024/01/04/deming-journey-to-profound-knowledge-summary/</link><guid>https://danlebrero.com/2024/01/04/deming-journey-to-profound-knowledge-summary/</guid><pubDate>Thu, 04 Jan 2024 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3FFsMQH">Deming&rsquo;s Journey to Profound Knowledge: How Deming Helped Win a War, Altered the Face of Industry, and Holds the Key to Our Future</a> by <a href="https://twitter.com/botchagalupe">John Willis</a> with <a href="https://www.linkedin.com/in/dereklewisbooks/">Derek Lewis</a>.</p><p>&ldquo;This book is truly about how the lens of Profound Knowledge was found&rdquo;.</p><h1>Key Insights</h1>
+<ul>
+  <li>Deming is the foundation of Lean, Agile and DevOps.</li>
+  <li>Variability is a fact of life.</li>
+  <li>Elements of the System of Profound Knowledge:</li>
+</ul>
+<ol>
+  <li>A Theory of Knowledge: How we know what we believe we know?</li>
+  <li>A Theory of Variation: How do we analyze and understand what we know?</li>
+  <li>A Theory of Psychology: How do we account for human behaviour?</li>
+  <li>An Appreciation of Systems/Systems Thinking: Are we seeing the bigger picture?</li>
+</ol>
+<ul>
+  <li>The opposite of analytic thinking is systems thinking.</li>
+  <li>Japanese workers believed they were doing something that <em>mattered</em>.</li>
+  <li>No matter how precise the machines and the processes, the outputs all slightly varied from each other.</li>
+  <li>Less waste allowed manufacturers to do more and more with less and less.</li>
+  <li>Shewhart’s method enabled management to see defects as result of process instead of the workers.</li>
+  <li>Defect classification:</li>
+</ul>
+<ol>
+  <li>Common cause: variations that could be predicted and should be planned for.</li>
+  <li>Special cause: couldn&rsquo;t be predicted and shouldn&rsquo;t be planned for.</li>
+</ol>
+<ul>
+  <li>The real value of Statistical Process Control is that it allows you to observe variation and look at random vs non-random patterns:</li>
+  <li>A random pattern represents a stable process, aka a process &ldquo;under control&rdquo;.</li>
+  <li>A non-random pattern is a useful predictor of potential defects, signaling an amount of uncertainly in the process.</li>
+  <li>And here is the root of all evil: misidentifying variation.</li>
+  <li>Under-performing and brand-new operators would have 100% of their work inspected until their work fell within the control limits.</li>
+  <li>We really didn’t believe. We did what we were told and it worked.</li>
+  <li>They shouldn’t strive to be better than others but to strive to be better than themselves - that is true competition.</li>
+  <li>Management by means (MBM):</li>
+  <li>If you don&rsquo;t know how you achieved your objective, how do you know if you can do it again?</li>
+  <li><a href="https://deming.org/explore/fourteen-points/">14 Points for Management</a></li>
+  <li>A common disease that afflicts management is the impression that “our problems are different”.</li>
+  <li>Only 6% of problems are due to human error. 94% are system error. And since the system is the responsibility of management, 94% of problems are caused by bad management.</li>
+  <li><p>Quality is not so much about improving the product as it is about improving the process.</p>
+  <blockquote>In God we trust. All others must bring data. <cite>Dr. Deming</cite>
+  </blockquote></li>
+  <li>Organizations need to be a place where people can teach themselves.</li>
+  <li>Perfection is not for this world.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#p-0">Preface</a></li>
+  <li><a href="#p-00">Introduction</a></li>
+  <li><a href="#p-1">Part I - Foundations of Profound Knowledge</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - Humble Origins &amp; Non-Determinism</a></li>
+    <li><a href="#ch-2">Chapter 2 - The Jungle in Paradise</a></li>
+    <li><a href="#ch-3">Chapter 3 - The Birth of Quality Control &amp; Standardization</a></li>
+    <li><a href="#ch-4">Chapter 4 - The Root of All Evil</a></li>
+    <li><a href="#ch-5">Chapter 5 - Pragmatist</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Applications of Profound Knowledge</a>
+  <ul>
+    <li><a href="#ch-6">Chapter 6 - Dr. Deming Goes to Washington</a></li>
+    <li><a href="#ch-7">Chapter 7 - Rosie &amp; World War II</a></li>
+    <li><a href="#ch-8">Chapter 8 - CLASSIFIED</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - International Implications of Profound Knowledge</a>
+  <ul>
+    <li><a href="#ch-9">Chapter 9 - Samurai Statistics</a></li>
+    <li><a href="#ch-10">Chapter 10 - JUSE &amp; the Gentle Giant</a></li>
+    <li><a href="#ch-11">Chapter 11 - The Butterfly Effect</a></li>
+    <li><a href="#ch-12">Chapter 12 - Made in Japan</a></li>
+    <li><a href="#ch-13">Chapter 13 - Rising Sun, Falling Eagle</a></li>
+    <li><a href="#ch-14">Chapter 14 - Demingmania</a></li>
+    <li><a href="#ch-15">Chapter 15 - Dr. Quinn, Medicine Woman</a></li>
+  </ul></li>
+  <li><a href="#p-4">Part IV - The Next Generation of Profound Knowledge</a>
+  <ul>
+    <li><a href="#ch-16">Chapter 16 - The Digital Cambrian Explosion</a></li>
+    <li><a href="#ch-17">Chapter 17 - What Would Deming Do?</a></li>
+    <li><a href="#ch-18">Chapter 18 - Deming&rsquo;s Dark Legacy</a></li>
+    <li><a href="#ch-19">Chapter 19 - Out of the Cyber Crisis</a></li>
+  </ul></li>
+</ul><h1><a name="p-0"></a>Preface</h1>
+<ul>
+  <li><a href="https://amzn.to/3s94VpF">Eliyahu Goldratt</a> books:
+  <ul>
+    <li>The Goal.</li>
+    <li>Theory of Constraints.</li>
+    <li>Critical Chain.</li>
+    <li>It&rsquo;s Not Luck.</li>
+    <li>Necessary but Not Sufficient.</li>
+  </ul></li>
+  <li>Deming is the foundation of Lean, Agile and DevOps.</li>
+</ul><h2><a name="p-00"></a>Introduction</h2>
+<ul>
+  <li>The Allies won because the US outproduced the rest of the world:
+  <ul>
+    <li>Despite the absence of millions of skilled American workers and managers.</li>
+    <li>Thanks to the statistical process control method.</li>
+  </ul></li>
+  <li>The very nature of reality is random.</li>
+  <li>Variability is a fact of life.</li>
+  <li>Elements of the System of Profound Knowledge:
+  <ol>
+    <li>A Theory of Knowledge: How we know what we believe we know?</li>
+    <li>A Theory of Variation: How do we analyze and understand what we know?</li>
+    <li>A Theory of Psychology: How do we account for human behaviour?</li>
+    <li>An Appreciation of Systems/Systems Thinking: Are we seeing the bigger picture?</li>
+  </ol></li>
+  <li>Deming&rsquo;s mission was to work himself out of a job.</li>
+</ul><h1><a name="p-1"></a>Part I - Foundations of Profound Knowledge</h1><h2><a name="ch-1"></a>Chapter 1 - Humble Origins &amp; Non-Determinism</h2>
+<ul>
+  <li>Determinism (Newtonian Physics): World operates solely on cause and effect.</li>
+  <li>Non-Determinism:
+  <ul>
+    <li>No matter how much you know, there is an infinite amount of change and randomness in the universe.</li>
+    <li>No such thing as absolute certainty.</li>
+    <li>Crucial role in shaping Deming&rsquo;s worldview:
+    <ol>
+      <li>Long-established and long-held beliefs weren&rsquo;t necessarily true.</li>
+      <li>Underpinnings of our very existence are random.</li>
+      <li>Forced him to look at problems as multifaceted, complex systems.</li>
+    </ol></li>
+  </ul></li>
+  <li>The opposite of analytic thinking is systems thinking.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - The Jungle in Paradise</h2>
+<ul>
+  <li>Hawthorne Works:
+  <ul>
+    <li>Treated its workers more like partners than peasants. And it worked.</li>
+    <li>Corporate success forged a bond of loyalty with its employees.</li>
+    <li>&ldquo;Hawthorne Effect&rdquo;:
+    <ul>
+      <li>The act of subjects changing their behaviour in response to being observed.</li>
+    </ul></li>
+  </ul></li>
+  <li>Japanese workers believed they were doing something that <em>mattered</em>.</li>
+  <li>Workers:
+  <ul>
+    <li>Ford:
+    <ul>
+      <li>Saw them as inconvenient cogs in the machine.</li>
+      <li>Standardize to make them interchangeable.</li>
+    </ul></li>
+    <li>Taylor:
+    <ul>
+      <li>Scientific management.</li>
+      <li>Saw them as machines themselves.</li>
+      <li>Optimize them for maximum efficiency, through right physical and psychological conditions.</li>
+    </ul></li>
+    <li>Both:
+    <ul>
+      <li>Think that workers don&rsquo;t want to work.</li>
+      <li>Antagonism between workers and managers.</li>
+    </ul></li>
+  </ul></li>
+  <li>Piecework is man&rsquo;s lowest degradation:
+  <ul>
+    <li>Incentivices workers to focus on quantity, not quality.</li>
+  </ul></li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - The Birth of Quality Control &amp; Standardization</h2>
+<ul>
+  <li>The eternal question of quality has always been this: &ldquo;How good is good enough?&rdquo;</li>
+  <li>Machine age: standardization was the catalyst.</li>
+  <li>Interchangeable parts were the turning point in the history of quality control and led to the theory of variation.</li>
+  <li>No matter how precise the machines and the processes, the outputs all slightly varied from each other:
+  <ul>
+    <li>This spawned a need to allow for variance in product specifications.</li>
+    <li>This is more in line with a non-deterministic approach.</li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - The Root of All Evil</h2>
+<ul>
+  <li>Statistics is about how confident you feel when dealing with uncertainty.</li>
+  <li>Operational definition: procedure agreed upon to translate a concept into a precise measurement.</li>
+  <li>If you can track variation, then you can trace variation to better understand why a production line creates defects and detect it much earlier in the process.</li>
+  <li>Statistical Process Control (SPC) let managers compare variation across workers and machines.</li>
+  <li>Less waste allowed manufacturers to do more and more with less and less.</li>
+  <li>Shewhart&rsquo;s method enabled management to see defects as result of process instead of the workers.</li>
+  <li>Plan, do, check, study.</li>
+  <li>Defect classification:
+  <ol>
+    <li>Common cause: variations that could be predicted and should be planned for.</li>
+    <li>Special cause: couldn&rsquo;t be predicted and shouldn&rsquo;t be planned for.</li>
+  </ol></li>
+  <li>Shewhart: as long as the variance fell within standard-deviation limits, the variance was inherent to the manufacturing process (common cause).</li>
+  <li>The real value of SPC is that it allows you to observe variation and look at random vs non-random patterns:
+  <ul>
+    <li>A random pattern represents a stable process, aka a process &ldquo;under control&rdquo;.</li>
+    <li>A non-random pattern is a useful predictor of potential defects, signaling an amount of uncertainly in the process.</li>
+    <li>And here is the root of all evil: misidentifying variation.</li>
+    <li>As a result, managers can spend their time on things they can control.</li>
+  </ul></li>
+  <li>SPC allows you to statistically predict defects before they occur.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Pragmatist</h2>
+<ul>
+  <li>The philosophy of pragmatism, what Deming would later call the Theory of Knowledge.</li>
+  <li>A meter would be defined as the cord length needed for a clock&rsquo;s pendulum to travel one swing per second.</li>
+  <li>Two types of knowledge: a priori and a posteriori.</li>
+  <li>A posteriori thinkers or &ldquo;pragmatists&rdquo;:
+  <ul>
+    <li>Experience is the best teacher.</li>
+    <li>Begin with observations and empirical data (hard evidence) and then work their way backwards.</li>
+  </ul></li>
+  <li>A standard is a measurement that suffices and that everybody agrees upon.</li>
+</ul><h1><a name="p-2"></a>Part II - Applications of Profound Knowledge</h1><h2><a name="ch-6"></a>Chapter 6 - Dr. Deming Goes to Washington</h2>
+<ul>
+  <li>Under-performing and brand-new operators would have 100% of their work inspected until their work fell within the control limits.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Rosie &amp; World War II</h2>
+<ul>
+  <li>Victory came because the US outproduced the rest of the world.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - CLASSIFIED</h2>
+<ul>
+  <li>Bounded rationality: humans can process only so much information at a time.</li>
+  <li>David Woods: Anomaly response situations frequently involved time pressure, multiple interacting goals, high consequences of failure, and multiple interleaved tasks.</li>
+</ul><h1><a name="p-3"></a>Part III - International Implications of Profound Knowledge</h1><h2><a name="ch-9"></a>Chapter 9 - Samurai Statistics</h2>
+<ul>
+  <li>The US used statistics to win the war, even as Japan threw statistics out of the windows. Afterwards, Japan used statistics to win the economic war, even as the US threw statistics out the window.</li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - JUSE &amp; the Gentle Giant</h2>
+<ul>
+  <li>SPC wasn&rsquo;t just about applying statistics to output. Quality touched everything in the process, including the quality of raw materials and components received from supplier and vendors.</li>
+  <li>Ed knew that unless it included top management, the classes were unlikely to succeed.</li>
+  <li>JUSE used the proceeds from the lecture fees and book royalties to fund a prize in Deming&rsquo;s honor. Accomplished three critical purposes:
+  <ol>
+    <li>Associated JUSE with one of the most famous statisticians in the world.</li>
+    <li>Laid a sort of territorial claim to the man.</li>
+    <li>Guaranteed Deming&rsquo;s involvement in Japan.</li>
+  </ol></li>
+  <li>Deming: They wanted more conferences, so we had more. It was a terrifying experience for me because I was new at it. I was a technical man.</li>
+  <li>We really didn&rsquo;t believe. We did what we were told and it worked.</li>
+  <li>He inspired hope, if not confidence.</li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - The Butterfly Effect</h2>
+<ul>
+  <li>He demonstrated how even competitors working together benefited their respective companies and, more importantly, their customers.</li>
+  <li>What is Deming&rsquo;s real legacy? It is seeing the grander scheme and preaching cooperation instead of competition.</li>
+  <li>They shouldn&rsquo;t strive to be better than others but to strive to be better than themselves - that is true competition.</li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Made in Japan</h2>
+<ul>
+  <li>Because demand and profit margins were so high, US companies could afford waste, rework, stockpiling inventory, and other inefficiencies.</li>
+  <li>Taylorism focused on eliminating individual waste. Ohno focused on systemic waste.</li>
+  <li>Assembly-line workers were cross-trained in different positions.</li>
+  <li>Machines were make multipurpose.</li>
+  <li>Kanban:
+  <ul>
+    <li>The aim was to produce only what was needed, when it was needed, and in the amount needed.</li>
+    <li>It went against everything Henry Ford believed and practiced.</li>
+  </ul></li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Rising Sun, Falling Eagle</h2>
+<ul>
+  <li>Kaizen: a process of deliberate, patient, continual refinement.</li>
+  <li>How long do you think it will take the US to catch up with Japan?
+  <ul>
+    <li>Do you think Japan is standing still?</li>
+  </ul></li>
+  <li>What made one manufacturing plant better than others? Adopting a lean manufacturing philosophy trumped all those other factors.</li>
+  <li>US companies focused on the process but forgot the people.</li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Demingmania</h2>
+<ul>
+  <li>Management by means (MBM):
+  <ul>
+    <li>If you don&rsquo;t know how you achieved your objective, how do you know if you can do it again?</li>
+  </ul></li>
+  <li><a href="https://deming.org/explore/fourteen-points/">14 Points for Management</a>:
+  <ul>
+    <li>Improve constantly and forever the system.</li>
+    <li>Eliminate slogans, exhortations, and targets for the workforce asking for zero defects and new levels of productivity. Such exhortations only create adversarial relationships, as the build of the causes of low quality and low productivity belong to the system and thus lie beyond the power of the workforce.</li>
+  </ul></li>
+  <li>Waraniak didn&rsquo;t focus on the race: he looked at the preparations and training leading up to it:
+  <ul>
+    <li>By using two cars and two teams in the design, training, and setup phases, GM could prototype twice the number of ideas and innovations.</li>
+  </ul></li>
+</ul><h2><a name="ch-15"></a>Chapter 15 - Dr. Quinn, Medicine Woman</h2><h1><a name="p-4"></a>Part IV - The Next Generation of Profound Knowledge</h1><h2><a name="ch-16"></a>Chapter 16 - The Digital Cambrian Explosion</h2>
+<ul>
+  <li>Dr. Deming reaction to someone who was complaning that he had changed something in his teaching: &ldquo;I will never apologize for learning&rdquo;.</li>
+  <li>Lean development focus on waste, whereas agile focus on delivery.</li>
+  <li>Steve Blank, The Lean Startup: putting together build, measure, learn and MVP with agile and lean methodologies.</li>
+  <li>DevOps: collaboration between devs and ops, and automation of agile and lean principles.</li>
+  <li>Read Deming&rsquo;s 14 Points of Management to understand the roots of DevOps.</li>
+</ul><h2><a name="ch-17"></a>Chapter 17 - What Would Deming Do?</h2>
+<ul>
+  <li>A common disease that afflicts management is the impression that &ldquo;our problems are different&rdquo;:
+  <ul>
+    <li>They are different, to be sure, but the principles that will help are universal in nature.</li>
+  </ul></li>
+  <li>To profoundly change a system, requires know-how outside of that system.
+  <ul>
+    <li>If the system had the knowledge, then it would change itself on its own.</li>
+    <li>Ed&rsquo;s System of Profound Knowledge does not require someone from the outside.</li>
+  </ul></li>
+  <li>Only 6% of problems are due to human error. 94% are system error.
+  <ul>
+    <li>And since the system is the responsibility of management, 94% of problems are caused by bad management.</li>
+  </ul></li>
+</ul><h2><a name="ch-18"></a>Chapter 18 - Deming&rsquo;s Dark Legacy</h2>
+<ul>
+  <li>From 2021, federal government&rsquo;s vendors are required to supply a software bill of materials.</li>
+</ul><h2><a name="ch-19"></a>Chapter 19 - Out of the Cyber Crisis</h2>
+<ul>
+  <li>When you silo cybersecurity, seeing it as an independent component instead of a system, you put your entire organization at risk.</li>
+  <li><p>Shannon Lietz: security needs to be designed into an organization&rsquo;s system.</p>
+  <blockquote>It is not necessary to change. Survival is not mandatory. <cite>Dr. Deming</cite>
+  </blockquote></li>
+  <li>Today, leaders wait until there is a problem before they fix it.</li>
+  <li>Quality is not so much about improving the product as it is about improving the process.</li>
+  <li>Tighter relationships with fewer suppliers lead to increased process alignment and lower overall costs.</li>
+  <li>In God we trust. All others must bring data.</li>
+  <li>Instead of looking at incidents through arbitrary categories (P1 to P4), System of Profound Knowledge could be used to identify common-cause and special-cause patterns across all incidents.</li>
+  <li>Blameless post-mortem: instead of assigning a problem to a certain person, blame would be placed on the system.</li>
+  <li>&ldquo;I didn&rsquo;t question it&rdquo;: famous last words.</li>
+  <li>Plenty of executive managers still don&rsquo;t understand the nature of the digital world and demand &ldquo;zero defects&rdquo; or &ldquo;never fail&rdquo; software.</li>
+  <li>Maginot Line thinking is when you expend considerable resources in an effort to counteract a past threat.</li>
+  <li>The security industry should assume that hackers will gain access to the system. We should plan for the inevitability of them getting in.</li>
+  <li>Too often, managing by hard numbers sacrifices quality.</li>
+  <li>Organizations need to be a place where people can teach themselves.</li>
+  <li>Perfection is not for this world.</li>
+</ul>]]></description></item><item><title>Book notes: Wiring the Winning Organization</title><link>https://danlebrero.com/2023/11/27/wiring-the-winning-organization-summary/</link><guid>https://danlebrero.com/2023/11/27/wiring-the-winning-organization-summary/</guid><pubDate>Mon, 27 Nov 2023 23:30:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3tT8Xmk">Wiring the Winning Organization</a> by <a href="https://twitter.com/RealGeneKim">Gene Kim</a> and <a href="https://twitter.com/StevenJSpear">Steven J. Spear</a>.</p><p>Gene and Steven present the <a href="https://en.wikipedia.org/wiki/Grand_Unified_Theory">Grand Unified Theory</a> of organization performance.</p><p>3 questions to get started:</p>
 <ol>
   <li>Are we solving our toughest problems in planning and practice, where we can iterate and learn?</li>
   <li>Are we shaping our problems so that they are easier to solve because they are simple, low risk, controllable, and easy to understand and iterate and learn from?</li>
@@ -4462,1059 +4771,4 @@ new Freezeframe(".gifoverlay", {
     <li>Happy to learn about alternatives.</li>
   </ul></li>
   <li><a href="https://amzn.to/3JC5rkL">Neck light</a>: a surprisingly useful present.</li>
-</ol><p>And the most important of all, a bookmark for each book handcrafted by my lovely daughter:</p><p><img src="/images/blog/books/notes-book-notes/book-marker.jpg" alt="book mark" /></p><p>They will become a very good reason to revisit all the books … and it keeps her busy for at least one hour each <i class="far fa-smile" aria-hidden="true"></i>.</p>]]></description></item><item><title>Book notes: Building Microservices - Second edition</title><link>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</link><guid>https://danlebrero.com/2023/01/24/building-microservices-second-edition-designing-fine-grained-systems-summary/</guid><pubDate>Tue, 24 Jan 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3aTXY39">Building Microservices: Designing Fine-Grained Systems</a> by <a href="https://twitter.com/samnewman">Sam Newman</a>.</p><p>When an author lists more drawbacks thatn benefits (nine vs six), you know he knows what he is talking about.</p><h1>Key Insights</h1>
-<ul>
-  <li>Independent deployability is key.</li>
-  <li>Clear, stable service boundaries.</li>
-  <li>Smaller teams working on smaller codebases tend to be more productive.</li>
-</ul>
-<table>
-  <thead>
-    <tr>
-      <th>Benefits </th>
-      <th>Pain Points </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Tech heterogeneity </td>
-      <td>Tech overload </td>
-    </tr>
-    <tr>
-      <td>Robustness </td>
-      <td>Latency </td>
-    </tr>
-    <tr>
-      <td>Scalability </td>
-      <td>Data Consistency </td>
-    </tr>
-    <tr>
-      <td>Easy of deployment </td>
-      <td>Dev experience </td>
-    </tr>
-    <tr>
-      <td>Org alignment </td>
-      <td>Cost </td>
-    </tr>
-    <tr>
-      <td>Composability </td>
-      <td>Monitoring and troubleshooting </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Reporting </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Security </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Testing </td>
-    </tr>
-  </tbody>
-</table>
-<ul>
-  <li>When to avoid:
-  <ul>
-    <li>Start ups:
-    <ul>
-      <li>Because no stable service boundaries.</li>
-      <li>Small teams.</li>
-    </ul></li>
-    <li>SW deployed by customers, due to operation burden. <img src="/images/blog/books/building-microservices/collaboration-style.png" alt="communication style" /></li>
-  </ul></li>
-  <li>Keep your middleware dumb, and keep the smarts in the endpoints.</li>
-  <li>Prefer to put into an event what you would be happy to share via an API.</li>
-  <li>Ideal technology should:
-  <ol>
-    <li>Make backwards compatibility easy.</li>
-    <li>Make interfaces explicit.</li>
-    <li>Keep your APIs technology-agnostic.</li>
-    <li>Make services simple for consumers.</li>
-    <li>Hide internal implementation details.</li>
-  </ol></li>
-  <li>Communication:
-  <ul>
-    <li>RPC:
-    <ul>
-      <li>gRPC good, other bad.</li>
-      <li>Use when good deal of control of client and server.</li>
-    </ul></li>
-    <li>REST:
-    <ul>
-      <li>Sensible default choice.</li>
-      <li>Good for external API: wide support + caching.</li>
-      <li><a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>: No practical advantage.</li>
-    </ul></li>
-    <li>GraphQL:
-    <ul>
-      <li>Dynamic queries can cause stability issues similar to a big/slow/resource intensive SQL query affecting the whole system.</li>
-      <li>CDN caching more difficult.</li>
-      <li>Write requests are awkward.</li>
-    </ul></li>
-    <li>Message brokers:
-    <ul>
-      <li>What any given broker technology means by guaranteed delivery can vary. Read the documentation very carefully.</li>
-      <li>Pay really careful attention to how exactly once delivery is implemented (if it is).
-      <ul>
-        <li>Even better, expect duplicates.</li>
-      </ul></li>
-    </ul></li>
-  </ul></li>
-  <li>Author still a fan of XML.</li>
-  <li>Client libraries should be created by team other than the one that owns the server API.</li>
-  <li>Sagas:
-  <ul>
-    <li>Saga gives enough information to reason about what state it is in.</li>
-    <li>Sagas assume the underlying components are reliable as it does not deal with technical failures (5xx, timeouts).</li>
-    <li>General rule:
-    <ul>
-      <li>If a team owns the implementation of the entire saga: orchestration.</li>
-      <li>If multiple teams: choreographed.</li>
-    </ul></li>
-  </ul></li>
-  <li>We want to build artifacts once and only once, and use them for all deployments.</li>
-  <li>Source code organization:
-  <ul>
-    <li>Multirepo:
-    <ul>
-      <li>If you are constantly making changes across multiple services, your microservices boundaries are wrong.</li>
-    </ul></li>
-    <li>Monorepo:
-    <ul>
-      <li>Ease changes in multiple services:
-      <ul>
-        <li>Atomic commits (but not atomic deployments).</li>
-      </ul></li>
-      <li>Needs load of tooling:
-      <ul>
-        <li><a href="https://bazel.build">Bazel</a>.</li>
-      </ul></li>
-    </ul></li>
-    <li>Per team monorepo.</li>
-  </ul></li>
-  <li>3 services per dev is not an uncommon ratio.</li>
-  <li>The smarter the PaaS try to be, the more they go wrong.</li>
-  <li>If you need to do a lot of fine tuning around resources available to your functions, then FaaS is not the best option.</li>
-  <li>Explore FaaS before Kubernetes.</li>
-  <li>Future: Kubernetes hidden under a more developer friendly experience.</li>
-  <li>If your teams work independently, it follows that they should be able to test independently:
-  <ul>
-    <li>If also follows that they should own their test environments.</li>
-    <li>It is a reason against end-to-end tests.</li>
-  </ul></li>
-  <li>Contract testing and consumer-driven contracts:
-  <ul>
-    <li>Pair consumer and producer team members to write them.</li>
-    <li>Make existing communication channels more explicit.</li>
-    <li><a href="https://docs.pact.io/pact_broker">Pact Broker</a>.</li>
-    <li><a href="https://spring.io/projects/spring-cloud-contract">Spring Cloud Contract</a>. Only JVM.</li>
-  </ul></li>
-  <li>Monitoring:
-  <ol>
-    <li>Log aggregation:
-    <ul>
-      <li>Avoid log forwarding agents reformatting the logs. Make services log in the right format.</li>
-    </ul></li>
-    <li>Metrics aggregation:
-    <ul>
-      <li>Look for a product that is built with high cardinality in mind, so you can attach more metadata/tags to the metrics.</li>
-    </ul></li>
-    <li>Distributed tracing:
-    <ul>
-      <li>Pick a tool that supports <a href="https://opentelemetry.io/">OpenTelemetry</a>.</li>
-    </ul></li>
-    <li>Semantic monitoring:
-    <ul>
-      <li>Are we selling &ldquo;as usual&rdquo;?</li>
-      <li>Implemented with:
-      <ol>
-        <li>Real user monitoring: In the past.</li>
-        <li>Synthetic transactions: Catch issues before clients are aware.</li>
-      </ol></li>
-    </ul></li>
-  </ol>
-  <ul>
-    <li>Be sceptical of ML/AI.</li>
-  </ul></li>
-  <li>Good alert:
-  <ul>
-    <li>Relevant.</li>
-    <li>Unique.</li>
-    <li>Timely.</li>
-    <li>Prioritized.</li>
-    <li>Understandable.</li>
-    <li>Diagnostic: clear what is wrong.</li>
-    <li>Advisory: help understand what actions to take.</li>
-    <li>Focusing.</li>
-  </ul></li>
-  <li>Standardization:
-  <ul>
-    <li>Make it easy to do the right thing.</li>
-  </ul></li>
-  <li>You are only as secure as your least secure aspect.</li>
-  <li>Credentials of users and operators are often the weakest point of our system:
-  <ul>
-    <li>In 2020, 80% of hacks due to it.</li>
-  </ul></li>
-  <li>Cost of any security implementation should be justified by your threat model.</li>
-  <li>Failure is everywhere:
-  <ul>
-    <li>Spend less time trying to stop the inevitable and more dealing with it gracefully.</li>
-  </ul></li>
-  <li>Root cause analysis: it is surprising how often we want that root cause to be a human.</li>
-  <li>CQRS: one of the hardest forms of scaling.</li>
-  <li>The ideal number of places to cache is zero.</li>
-  <li>When customizing a product built by someone else, you have to work in their world.</li>
-  <li>One experience, one backend for frontend (BFF).</li>
-  <li>Collective ownership can allow for more standardization, hence easier to move people/work around.</li>
-  <li>The biggest cost to working efficiently at scale is the need of coordination.</li>
-  <li>Coming up with a vision without considering how your staff will feel about it and without considering what capabilities they have is likely to lead to a bad place.</li>
-  <li>Architecture is what happens, not what is planned.</li>
-  <li>Make Product Manager accountable for the technical quality of the system.</li>
-</ul><h1>TOC</h1>
-<ul>
-  <li><a href="#p-1">Part I - Foundation</a>
-  <ul>
-    <li><a href="#ch-1">Chapter 1 - What are Microservices?</a></li>
-    <li><a href="#ch-2">Chapter 2 - How to Model Microservices</a></li>
-    <li><a href="#ch-3">Chapter 3 - Splitting the Monolith</a></li>
-    <li><a href="#ch-4">Chapter 4 - Microservices Communication Styles</a></li>
-  </ul></li>
-  <li><a href="#p-2">Part II - Implementation</a>
-  <ul>
-    <li><a href="#ch-5">Chapter 5 - Implementing Microservices Communication</a></li>
-    <li><a href="#ch-6">Chapter 6 - Workflow</a></li>
-    <li><a href="#ch-7">Chapter 7 - Build</a></li>
-    <li><a href="#ch-8">Chapter 8 - Deployment</a></li>
-    <li><a href="#ch-9">Chapter 9 - Testing</a></li>
-    <li><a href="#ch-10">Chapter 10 - From Monitoring to Observability</a></li>
-    <li><a href="#ch-11">Chapter 11 - Security</a></li>
-    <li><a href="#ch-12">Chapter 12 - Resilience</a></li>
-    <li><a href="#ch-13">Chapter 13 - Scaling</a></li>
-  </ul></li>
-  <li><a href="#p-3">Part III - People</a>
-  <ul>
-    <li><a href="#ch-14">Chapter 14 - User Interfaces</a></li>
-    <li><a href="#ch-15">Chapter 15 - Organizational Structures</a></li>
-    <li><a href="#ch-16">Chapter 16 - The Evolutionary Architect</a></li>
-  </ul></li>
-</ul><h1><a name="p-1"></a>Part I - Foundation</h1><h2><a name="ch-1"></a>Chapter 1 - What are Microservices?</h2>
-<ul>
-  <li>Independent deployability is key.</li>
-  <li>Clear, stable service boundaries.</li>
-  <li>Monoliths:
-  <ul>
-    <li>Single-process monolith.</li>
-    <li>Modular monolith.</li>
-    <li>Distributed monolith.</li>
-  </ul></li>
-  <li>Tech that enable microservices:
-  <ul>
-    <li>Log aggregation and distributed tracing.</li>
-    <li>Containers and Kubernetes.</li>
-    <li>Streaming.</li>
-    <li>Public Cloud and Serverless.</li>
-  </ul></li>
-  <li>Smaller teams working on smaller codebases tend to be more productive.</li>
-</ul>
-<table>
-  <thead>
-    <tr>
-      <th>Benefits </th>
-      <th>Pain Points </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Tech heterogeneity </td>
-      <td>Tech overload </td>
-    </tr>
-    <tr>
-      <td>Robustness </td>
-      <td>Latency </td>
-    </tr>
-    <tr>
-      <td>Scalability </td>
-      <td>Data Consistency </td>
-    </tr>
-    <tr>
-      <td>Easy of deployment </td>
-      <td>Dev experience </td>
-    </tr>
-    <tr>
-      <td>Org alignment </td>
-      <td>Cost </td>
-    </tr>
-    <tr>
-      <td>Composability </td>
-      <td>Monitoring and troubleshooting </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Reporting </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Security </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>Testing </td>
-    </tr>
-  </tbody>
-</table>
-<ul>
-  <li>When to avoid:
-  <ul>
-    <li>Start ups:
-    <ul>
-      <li>Because no stable service boundaries.</li>
-      <li>Small teams.</li>
-    </ul></li>
-    <li>SW deployed by customers, due to operation burden.</li>
-  </ul></li>
-</ul><h2><a name="ch-2"></a>Chapter 2 - How to Model Microservices</h2>
-<ul>
-  <li>Boundaries:
-  <ul>
-    <li>Information hiding.</li>
-    <li>Strong cohesion:
-    <ul>
-      <li>Code that changes together, stays together.</li>
-    </ul></li>
-    <li>Low coupling.</li>
-  </ul></li>
-  <li>Types of coupling, from low to high:
-  <ol>
-    <li>Domain coupling:
-    <ul>
-      <li>Unavoidable: one service calling another.</li>
-      <li>Beware of one service talking to too many downstream services:
-      <ul>
-        <li>Too much logic centralized.</li>
-        <li><a href="https://en.wikipedia.org/wiki/God_object">God &ldquo;class&rdquo;</a>.</li>
-      </ul></li>
-    </ul></li>
-    <li>Pass-through coupling:
-    <ul>
-      <li>One service passes data to another purely because the data is needed further downstream.</li>
-      <li>Fix by:
-      <ol>
-        <li>Bypass the intermediary:
-        <ul>
-          <li>Increase the domain coupling of calling service.</li>
-        </ul></li>
-        <li>Required information to become part of the intermediary contract:
-        <ul>
-          <li>Intermediary to collect all/part of that data.</li>
-        </ul></li>
-        <li>Intermediary to treat required information as a blob:
-        <ul>
-          <li>The Clojure way!</li>
-        </ul></li>
-      </ol></li>
-    </ul></li>
-    <li>Common coupling:
-    <ul>
-      <li>Two services using the same data.</li>
-      <li>Okish for reference data ( low change, read only).</li>
-      <li>Service that are thin wrappers around CRUD, is a sign of weak cohesion and high coupling.</li>
-    </ul></li>
-    <li>Content coupling:
-    <ul>
-      <li>Upstream service reaches into the internals of a downstream service and changes its internal state.</li>
-      <li>Other services touching your DB directly.</li>
-    </ul></li>
-  </ol></li>
-  <li>To model:
-  <ol>
-    <li>Mainly, use DDD:
-    <ul>
-      <li>Both aggregates and bounded context give us the unit of cohesion with well defined interfaces: candidates for microservices.</li>
-      <li>Coarser-grained bounded context can contain/hide other bounded context.</li>
-    </ul></li>
-    <li>Event Storming.</li>
-    <li>Other forces:
-    <ul>
-      <li>Volatility: things that change frequently should go into their own service.</li>
-      <li>Data: PII/PCI.</li>
-      <li>Technology: use the right tool for the job.</li>
-      <li>Organizational: Conway&rsquo;s law.</li>
-    </ul></li>
-  </ol></li>
-  <li>Onion architecture: it has lots of layers and makes you cry when you have to cut through it.</li>
-</ul><h2><a name="ch-3"></a>Chapter 3 - Splitting the Monolith</h2><p>Skipped. See book notes on <a href="/2022/02/09/monolith-to-microservices-summary/#content">Monolith to Microservices: Evolutionary Patterns to Transform Your Monolith</a>.</p><h2><a name="ch-4"></a>Chapter 4 - Microservices Communication Styles</h2>
-<ul>
-  <li>When you buy into specific tech choice, you are buying into a set of ideas and constraints that come with it.</li>
-</ul><p><img src="/images/blog/books/building-microservices/collaboration-style.png" alt="communication style" /></p>
-<ul>
-  <li>Sync blocking: beware of long call chains.</li>
-  <li>Common data:
-  <ul>
-    <li>Large volumes.</li>
-    <li>Universal.</li>
-    <li>High latency.</li>
-  </ul></li>
-  <li>Keep your middleware dumb, and keep the smarts in the endpoints.</li>
-  <li>Prefer to put into an event what you would be happy to share via an API.</li>
-</ul><h1><a name="p-2"></a>Part II - Implementation</h1><h2><a name="ch-5"></a>Chapter 5 - Implementing Microservices Communication</h2>
-<ul>
-  <li>Ideal technology should:
-  <ol>
-    <li>Make backwards compatibility easy.</li>
-    <li>Make interfaces explicit.</li>
-    <li>Keep your APIs technology-agnostic.</li>
-    <li>Make services simple for consumers.</li>
-    <li>Hide internal implementation details.</li>
-  </ol></li>
-  <li>Choices:
-  <ul>
-    <li>RPC:
-    <ul>
-      <li>gRPC good, other bad.</li>
-      <li>Use when good deal of control of client and server.</li>
-    </ul></li>
-    <li>REST:
-    <ul>
-      <li>Open API concern: a spec used for documenting now being used for a more explicit contract.</li>
-      <li>Lot more complex than protobuf.</li>
-      <li>Less performance than gRPC.</li>
-      <li>HTTP/3: based on <a href="https://en.wikipedia.org/wiki/QUIC">QUIC</a>, less overhead than TPC.</li>
-      <li>Sensible default choice.</li>
-      <li>Good for external API: wide support + caching.</li>
-      <li><a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>:
-      <ul>
-        <li>Many of the ideas in REST are predicated on creating distributed hypermedia systems, and this isn&rsquo;t what most people end up building.</li>
-        <li>More chatty.</li>
-        <li>No practical advantage.</li>
-      </ul></li>
-    </ul></li>
-    <li>GraphQL:
-    <ul>
-      <li>Dynamic queries can cause stability issues similar to a big/slow/resource intensive SQL query affecting the whole system.</li>
-      <li>CDN caching more difficult.</li>
-      <li>Write requests are awkward.</li>
-    </ul></li>
-    <li>Message brokers:
-    <ul>
-      <li>What any given broker technology means by guaranteed delivery can vary. Read the documentation very carefully.</li>
-      <li>Pay really careful attention to how exactly once delivery is implemented (if it is).
-      <ul>
-        <li>Even better, expect duplicates.</li>
-      </ul></li>
-    </ul></li>
-  </ul></li>
-  <li>Serialization formats:
-  <ul>
-    <li>Author still a fan of XML.</li>
-  </ul></li>
-  <li>Use schemas to catch structural breakages.</li>
-  <li>Avoid breaking changes:
-  <ul>
-    <li>Just add, never remove.</li>
-    <li>Tolerant reader.</li>
-  </ul></li>
-  <li>Explicit interfaces:
-  <ul>
-    <li>Events:
-    <ul>
-      <li><a href="https://www.asyncapi.com">https://www.asyncapi.com</a>.</li>
-      <li><a href="https://cloudevents.io">https://cloudevents.io</a>.</li>
-    </ul></li>
-  </ul></li>
-  <li>Breaking changes:
-  <ul>
-    <li>Lockstep deployments:
-    <ul>
-      <li>Avoid.</li>
-      <li>More palatable if service + all consumers owned by the same team.</li>
-    </ul></li>
-    <li>Coexists incompatible microservices versions:
-    <ul>
-      <li>Use sparingly and for short periods of time.</li>
-    </ul></li>
-    <li>Emulate the old interface:
-    <ul>
-      <li>Preferred approach.</li>
-      <li>Author torn between encoding versions in urls (simpler, obvious) or specify in header (less coupling).</li>
-    </ul></li>
-    <li>Social contract:
-    <ul>
-      <li>How breaking changes will be notified?</li>
-      <li>How they will be agreed upon?</li>
-      <li>Who will update the consumers?</li>
-      <li>How long before old endpoint is removed?</li>
-    </ul></li>
-  </ul></li>
-  <li>If you are using libraries for code reuse across microservices boundaries, you have to accept that multiple versions of that library will be out there.</li>
-  <li>Client libraries should be created by team other than the one that owns the server API:
-  <ul>
-    <li>To avoid tightly coupled.</li>
-  </ul></li>
-  <li>Service discovery:
-  <ul>
-    <li>DNS:
-    <ul>
-      <li>Slow to propagate changes.</li>
-      <li>Okish with a load balancer.</li>
-    </ul></li>
-    <li>Dynamic service registries:
-    <ul>
-      <li>Avoid Zookeeper.</li>
-      <li>Consul: good, specially if you need Vault also.</li>
-      <li>etcd/kubernetes.</li>
-    </ul></li>
-  </ul></li>
-  <li>When using an API gateway or service mesh, it is essential that their behaviour is generic, agnostic of specific microservices.</li>
-  <li>In API gateway, avoid:
-  <ul>
-    <li>Call aggregation.</li>
-    <li>Protocol rewriting.</li>
-    <li>Use between your microservices.</li>
-  </ul></li>
-  <li><a href="https://www.bizops.com/what-is-bizops">BizOps</a>.</li>
-</ul><h2><a name="ch-6"></a>Chapter 6 - Workflow</h2>
-<ul>
-  <li>Sagas does not give atomicity in ACID terms:
-  <ul>
-    <li>Saga gives enough information to reason about what state it is in.</li>
-  </ul></li>
-  <li>Saga failure mode:
-  <ul>
-    <li>Sagas assume the underlying components are reliable as it does not deal with technical failures (5xx, timeouts).</li>
-    <li>Backwards recovery: compensating transactions.</li>
-    <li>Forward recovery: retry and keep processing.</li>
-  </ul></li>
-  <li>Orchestrated sagas:
-  <ul>
-    <li>One coordinator.</li>
-    <li>Easy to understand: one place to look at how a process work.</li>
-    <li>High coupling.</li>
-    <li>Risk of &ldquo;god&rdquo; service and anemic ones:
-    <ul>
-      <li>Avoid by having different services play the orchestrator role for different flows.</li>
-    </ul></li>
-  </ul></li>
-  <li>Choreographed sagas:
-  <ul>
-    <li>More decoupled.</li>
-    <li>harder to understand the process and the saga state.</li>
-    <li>Saga state:
-    <ul>
-      <li>Events should have a correlationID or sagaID.</li>
-      <li>A process consumes all events to show the actual state.</li>
-    </ul></li>
-  </ul></li>
-  <li>General rule:
-  <ul>
-    <li>If a team owns the implementation of the entire saga: orchestration.</li>
-    <li>If multiple teams: choreographed.</li>
-  </ul></li>
-</ul><h2><a name="ch-7"></a>Chapter 7 - Build</h2>
-<ul>
-  <li>We want to build artifacts once and only once, and use them for all deployments.</li>
-  <li>Source code organization:
-  <ul>
-    <li>One giant repo, one giant build:
-    <ul>
-      <li>Avoid.</li>
-    </ul></li>
-    <li>Multirepo:
-    <ul>
-      <li>Hard to work with several services at the same time.</li>
-      <li>If you are constantly making changes across multiple services, your microservices boundaries are wrong.</li>
-      <li>Most straightforward.</li>
-    </ul></li>
-    <li>Monorepo:
-    <ul>
-      <li>Ease:
-      <ul>
-        <li>Fine grained code reuse.</li>
-        <li>Changes in multiple services:
-        <ul>
-          <li>Atomic commits (but not atomic deployments).</li>
-        </ul></li>
-      </ul></li>
-      <li>Needs load of tooling:
-      <ul>
-        <li><a href="https://bazel.build">Bazel</a>.</li>
-      </ul></li>
-    </ul></li>
-    <li>Per team monorepo.</li>
-  </ul></li>
-</ul><h2><a name="ch-8"></a>Chapter 8 - Deployment</h2>
-<ul>
-  <li>Principles of microservices deployment:
-  <ol>
-    <li>Isolated execution.</li>
-    <li>Focus on automation:
-    <ul>
-      <li>Aim for self-service.</li>
-      <li>3 services per dev is not an uncommon ratio.</li>
-    </ul></li>
-    <li>Infrastructure as code:
-    <ul>
-      <li>How automation should be done.</li>
-      <li><a href="https://www.terraform.io">Terraform</a> / <a href="https://www.pulumi.com">Pulumi</a>.</li>
-    </ul></li>
-    <li>Zero-downtime deployment:
-    <ul>
-      <li>Avoid coordination.</li>
-    </ul></li>
-    <li>Desired state management:
-    <ul>
-      <li>Declarative state.</li>
-      <li>Platform automatically makes changes to arrive to the desired state.</li>
-      <li><a href="https://kubernetes.io">Kubernetes</a> / <a href="https://www.nomadproject.io">Nomad</a>.</li>
-      <li>GitOps: <a href="https://fluxcd.io">Flux</a>.</li>
-    </ul></li>
-  </ol></li>
-  <li>Deployment options:
-  <ol>
-    <li>Physical machine.</li>
-    <li>Virtual machine:
-    <ul>
-      <li>Stricter isolation than containers.</li>
-    </ul></li>
-    <li>Containers:
-    <ul>
-      <li>More lightweight than virtual machines.</li>
-    </ul></li>
-    <li>Application containers.</li>
-    <li>Platform as a service (PaaS):
-    <ul>
-      <li>When PaaS solutions work well for your context, they work very well indeed.</li>
-      <li>The smarter the PaaS try to be, the more they go wrong.</li>
-    </ul></li>
-    <li>Function as a Service (FaaS):
-    <ul>
-      <li>If you need to do a lot of fine tuning around resources available to your functions, then FaaS is not the best option.</li>
-      <li><a href="https://docs.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview">Azure Durable Functions</a>.</li>
-      <li>Cold start is optimized in most platforms.</li>
-      <li>One function per microservice or per aggregate:
-      <ul>
-        <li>Avoid more fine-grained.</li>
-      </ul></li>
-    </ul></li>
-  </ol></li>
-  <li>Explore FaaS before Kubernetes.</li>
-  <li>Kubernetes has limited multitenancy capabilities:
-  <ol>
-    <li>Use <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">OpenShift</a>.</li>
-    <li>Use federated model: multiple Kubernetes clusters with a layer on top.</li>
-  </ol></li>
-  <li><a href="https://knative.dev/docs/">Knative</a> aims to provide FaaS-style workflows to developers:
-  <ul>
-    <li>Risky to adopt.</li>
-  </ul></li>
-  <li>Future: Kubernetes hidden under a more developer friendly experience.</li>
-  <li>Progressive delivery:
-  <ul>
-    <li>Separate deployment from release.</li>
-    <li>Blue/Green deployments.</li>
-    <li>Feature toggles.</li>
-    <li>Canary releases:
-    <ul>
-      <li><a href="https://spinnaker.io">Spinnaker</a>.</li>
-    </ul></li>
-    <li>Parallel run: send to old and new and compare.</li>
-  </ul></li>
-</ul><h2><a name="ch-9"></a>Chapter 9 - Testing</h2>
-<ul>
-  <li>Who owns an end-to-end test suite?
-  <ul>
-    <li>Everybody / nobody.</li>
-    <li>Dedicated team: this can be disastrous.</li>
-    <li>Split suite and assign subsets to teams.</li>
-  </ul></li>
-  <li><p>Actively remove tests that are no longer needed.</p>
-  <blockquote>Why not use a version number for the whole system? Now you have 2.1.0 problems. <cite><a href="https://twitter.com/brandonbyars">Brandom Byars</a></cite>
-  </blockquote></li>
-  <li><p>If your teams work independently, it follows that they should be able to test independently:</p>
-  <ul>
-    <li>If also follows that they should own their test environments.</li>
-    <li>It is a reason against end-to-end tests.</li>
-  </ul></li>
-  <li>Contract testing and consumer-driven contracts:
-  <ul>
-    <li>Pair consumer and producer team members to write them.</li>
-    <li>Make existing communication channels more explicit.</li>
-    <li><a href="https://docs.pact.io/pact_broker">Pact Broker</a>.</li>
-    <li><a href="https://spring.io/projects/spring-cloud-contract">Spring Cloud Contract</a>. Only JVM.</li>
-  </ul></li>
-</ul><h2><a name="ch-10"></a>Chapter 10 - From Monitoring to Observability</h2>
-<ul>
-  <li>Observability: the extent to which you can understand the internal state of the system from external outputs.</li>
-  <li>Monitoring and observability system are production systems.</li>
-  <li>Building blocks:
-  <ol>
-    <li>Log aggregation:
-    <ul>
-      <li>Prerequisite for microservices.</li>
-      <li>Pick a common format.</li>
-      <li>Avoid log forwarding agents reformatting the logs. Make services log in the right format.</li>
-      <li>Log correlation ID.</li>
-      <li>Careful with timestamps and clock skew:
-      <ul>
-        <li>Tracing does not have this issue.</li>
-      </ul></li>
-    </ul></li>
-    <li>Metrics aggregation:
-    <ul>
-      <li>Look for a product that is built with high cardinality in mind, so you can attach more metadata/tags to the metrics.</li>
-      <li><a href="https://prometheus.io/">Prometheus</a> is low-cardinality.</li>
-      <li><a href="https://www.honeycomb.io/">HoneyComb</a> or <a href="https://lightstep.com/">LightSteps</a>.</li>
-    </ul></li>
-    <li>Distributed tracing:
-    <ul>
-      <li>Pick a tool that supports <a href="https://opentelemetry.io/">OpenTelemetry</a>.</li>
-    </ul></li>
-    <li>Are we doing ok?
-    <ul>
-      <li>SLA.</li>
-      <li>SLO: at the team level.</li>
-      <li>SLI: indicator-data to know if we are meeting a SLO.</li>
-      <li><a href="/2017/07/16/error-budget-google-solution-for-innovating-at-a-sustainable-pace/#content">Error budgets</a>.</li>
-    </ul></li>
-    <li>Alerting:
-    <ul>
-      <li>Biggest question: Should this problem cause someone to be woken up at 3am?</li>
-      <li>Avoid overalerting.</li>
-      <li>Good alert:
-      <ul>
-        <li>Relevant.</li>
-        <li>Unique.</li>
-        <li>Timely.</li>
-        <li>Prioritized.</li>
-        <li>Understandable.</li>
-        <li>Diagnostic: clear what is wrong.</li>
-        <li>Advisory: help understand what actions to take.</li>
-        <li>Focusing.</li>
-      </ul></li>
-    </ul></li>
-    <li>Semantic monitoring:
-    <ul>
-      <li>Are we selling &ldquo;as usual&rdquo;?</li>
-      <li>Are users login as usual?</li>
-      <li>Implemented with:
-      <ol>
-        <li>Real user monitoring:
-        <ul>
-          <li>In the past.</li>
-          <li>Noisy.</li>
-        </ul></li>
-        <li>Synthetic transactions:
-        <ul>
-          <li>Catch issues before clients are aware.</li>
-        </ul></li>
-      </ol></li>
-    </ul></li>
-    <li>Testing in production:
-    <ol>
-      <li>Synthetic transactions.</li>
-      <li>A/B testing.</li>
-      <li>Canary releases.</li>
-      <li>Parallel run.</li>
-      <li>Smoke test.</li>
-      <li>Chaos engineering.</li>
-    </ol></li>
-  </ol></li>
-  <li>Standardization:
-  <ul>
-    <li>Important in monitoring and observability.</li>
-    <li>Make it easy to do the right thing.</li>
-  </ul></li>
-  <li>Select tools that:
-  <ul>
-    <li>Democratic: everybody can use them.</li>
-    <li>Easy to integrate: OpenTelemetry.</li>
-    <li>Provide temporal, relative, relational and proportional context.</li>
-    <li>Realtime.</li>
-    <li>Suitable for your scale.</li>
-  </ul></li>
-  <li>Be sceptical of ML/AI.</li>
-</ul><h2><a name="ch-11"></a>Chapter 11 - Security</h2>
-<ul>
-  <li>You are only as secure as your least secure aspect.</li>
-  <li>Core principles:
-  <ol>
-    <li>Least privilege.</li>
-    <li>Defense in depth:
-    <ul>
-      <li>Multiple protections.</li>
-      <li>Microservices provide more defense in depth than monoliths as:
-      <ul>
-        <li>They have smaller scope.</li>
-        <li>Can be segmented in networks.</li>
-      </ul></li>
-    </ul></li>
-    <li>Automation:
-    <ul>
-      <li>Recover.</li>
-      <li>Rotate keys.</li>
-    </ul></li>
-  </ol></li>
-  <li>Five functions of Cybersecurity:
-  <ol>
-    <li>Identify potential attackers, their targets are where you are most vulnerable:
-    <ul>
-      <li>As human beings, we are quite bad at understanding risks.</li>
-      <li>Threat modeling:
-      <ul>
-        <li>Focus on the whole system, not a subset.</li>
-      </ul></li>
-    </ul></li>
-    <li>Protect.</li>
-    <li>Detect.</li>
-    <li>Respond.</li>
-    <li>Recover.</li>
-  </ol></li>
-  <li>Foundations of application security:
-  <ol>
-    <li>Credentials:
-    <ul>
-      <li>Credentials of users and operators are often the weakest point of our system:
-      <ul>
-        <li>In 2020, 80% of hacks due to it.</li>
-      </ul></li>
-      <li>Troy Hunt, <a href="https://www.troyhunt.com/passwords-evolved-authentication-guidance-for-the-modern-era/">Passwords evolved</a>:
-      <ul>
-        <li>Use password managers.</li>
-        <li>Avoid complex password rules.</li>
-        <li>Avoid mandated regular password changes.</li>
-      </ul></li>
-      <li><a href="https://git-secret.io">git-secret</a> and <a href="https://github.com/zricethezav/gitleaks">gitleaks</a>.</li>
-    </ul></li>
-    <li>Patching:
-    <ul>
-      <li>Containers: <a href="https://www.aquasec.com/">Aqua</a>.</li>
-      <li>Libraries: <a href="https://snyk.io/">Snyk</a> or Github.</li>
-    </ul></li>
-    <li>Backups.</li>
-    <li>Rebuilds:
-    <ul>
-      <li>Including restoration of backed up data.</li>
-    </ul></li>
-  </ol></li>
-  <li>Cost of any security implementation should be justified by your threat model.</li>
-  <li>Data in transit:
-  <ol>
-    <li>Server identity: HTTPS.</li>
-    <li>Client identity:
-    <ul>
-      <li>Mutual TLS.</li>
-      <li>API keys.</li>
-    </ul></li>
-    <li>Visibility of data: HTTPS.</li>
-    <li>Manipulation of data:
-    <ul>
-      <li>HTTPS.</li>
-      <li>HMAC.</li>
-    </ul></li>
-  </ol></li>
-  <li>Data at rest:
-  <ul>
-    <li>Where do you store the encryption keys?</li>
-  </ul></li>
-  <li>Do fine-grained authorization in service. It is ok for coarse-grained in the gateway.</li>
-  <li>Gateway generating a JWT per request.</li>
-  <li><a href="https://amzn.to/3opUfNH">Agile Application Security</a> by Laure Bell.</li>
-</ul><h2><a name="ch-12"></a>Chapter 12 - Resilience</h2>
-<ul>
-  <li>Resilience:
-  <ol>
-    <li>Robustness:
-    <ul>
-      <li>The ability to absorb expected perturbation.</li>
-      <li>As we increase robustness, we increase complexity.</li>
-    </ul></li>
-    <li>Rebound:
-    <ul>
-      <li>Ability to recover after a traumatic event.</li>
-    </ul></li>
-    <li>Graceful extensibility:
-    <ul>
-      <li>How well we deal with a situation that is unexpected.</li>
-      <li>Flatter orgs will often be better prepared.</li>
-      <li>Optimizations can increase brittleness.</li>
-    </ul></li>
-    <li>Sustained adaptability:
-    <ul>
-      <li>Ability to continually adapt to changing envs, stakeholders and demands.</li>
-      <li>Requires a holistic view of the system.</li>
-      <li>Share information freely on an incident.</li>
-      <li>Culture to find time to learn from incident.</li>
-    </ul></li>
-  </ol></li>
-  <li>Failure is everywhere:
-  <ul>
-    <li>Spend less time trying to stop the inevitable and more dealing with it gracefully.</li>
-  </ul></li>
-  <li>Responding very slowly is one of the worst failure modes you can experience.</li>
-  <li>CP (from CAP theorem) systems can&rsquo;t fix all your problems, specially if you keep records of the real world.</li>
-  <li>Blame:
-  <ul>
-    <li>Root cause analysis: it is surprising how often we want that root cause to be a human.</li>
-    <li>If it is true that one person making a mistake can really bring an entire telco to its knees, you&rsquo;d think that would say more about the telco than the individual.</li>
-  </ul></li>
-</ul><h2><a name="ch-13"></a>Chapter 13 - Scaling</h2>
-<ul>
-  <li>Four axes:
-  <ol>
-    <li>Vertical scaling:
-    <ul>
-      <li>In a public cloud provider, is very fast to apply.</li>
-      <li>Little risk.</li>
-      <li>Does not improve robustness.</li>
-    </ul></li>
-    <li>Horizontal duplication:
-    <ul>
-      <li>It does improve robustness.</li>
-    </ul></li>
-    <li>Data partitioning:
-    <ul>
-      <li>It does not improve robustness.</li>
-    </ul></li>
-    <li>Functional decomposition:
-    <ul>
-      <li>It does improve robustness.</li>
-      <li>Can choose tech most appropriate to the microservice load.</li>
-    </ul></li>
-  </ol></li>
-  <li>CQRS: one of the hardest forms of scaling.</li>
-  <li>Caching:
-  <ul>
-    <li>Improves robustness.</li>
-    <li>Client-side:
-    <ul>
-      <li>Main issue is invalidation and consistency.</li>
-      <li>Better latency.</li>
-    </ul></li>
-    <li>Server-side:
-    <ul>
-      <li>Main issue is that clients still need to make a network trip.</li>
-      <li>Latency improved for all clients.</li>
-    </ul></li>
-    <li>Server to return TTL.</li>
-    <li>Conditional GET (<a href="https://en.wikipedia.org/wiki/HTTP_ETag">ETag</a>).</li>
-    <li>Notification (pub/sub):
-    <ul>
-      <li>Consider adding a heartbeat.</li>
-    </ul></li>
-    <li>The ideal number of places to cache is zero.</li>
-  </ul></li>
-  <li>At certain scaling points, you will need to rearchitect.</li>
-</ul><h1><a name="p-3"></a>Part III - People</h1><h2><a name="ch-14"></a>Chapter 14 - User Interfaces</h2>
-<ul>
-  <li>Traditional reasons for dedicated FE teams:
-  <ol>
-    <li>Scarcity of specialist:
-    <ul>
-      <li>Share between teams:
-      <ul>
-        <li>Do the hard bits and teach the team to do the easy ones.</li>
-        <li><a href="/2021/01/20/team-topologies-summary/#content">Enabling teams</a>.</li>
-      </ul></li>
-    </ul></li>
-    <li>UI consistency:
-    <ul>
-      <li>Enabling teams.</li>
-      <li><a href="https://uxdesign.cc/everything-you-need-to-know-about-design-systems-54b109851969">Design System</a>.</li>
-    </ul></li>
-    <li>Technical challenge:
-    <ol>
-      <li>Monolith FE.</li>
-      <li>Micro FE:
-      <ul>
-        <li>Key problem: unlikely that 1 micro FE == 1 microservice, so micro FE ends up making multiple API calls to multiple BE services.</li>
-        <li>2 types:
-        <ol>
-          <li>Page-based decomposition:
-          <ul>
-            <li>We&rsquo;ve lost a lot by automatically assuming that a web-based UI means a single-page app.</li>
-            <li>Forward traffic to microservice/microFE depending on url.</li>
-          </ul></li>
-          <li>Widget-based decomposition:
-          <ul>
-            <li>Needs an assembly layer to pull the parts together.</li>
-            <li>Options:
-            <ul>
-              <li>Iframes: issues with comms between widgets.</li>
-              <li>Server-side templating.</li>
-              <li>Dynamically inserted by the client.</li>
-            </ul></li>
-            <li>Issues:
-            <ul>
-              <li>Dependencies:
-              <ul>
-                <li>Great to upgrade one widget dependencies at a time.</li>
-                <li>Duplication of libraries to download.</li>
-              </ul></li>
-              <li>Communication using custom events:
-              <ul>
-                <li>Same as event-driven communication patterns.</li>
-              </ul></li>
-            </ul></li>
-          </ul></li>
-        </ol></li>
-      </ul></li>
-      <li>Central aggregating gateway:
-      <ul>
-        <li>Often the central aggregating gateway does so much that ends up being owned by a dedicated team:
-        <ul>
-          <li>Potential contention and bottleneck.</li>
-        </ul></li>
-        <li>When customizing a product built by someone else, you have to work in their world.</li>
-        <li>Strongly advise against using filtering and aggregation capabilities of dedicated gateway API.</li>
-      </ul></li>
-      <li>Backend for frontend (BFF):
-      <ul>
-        <li>Like (3) but one BFF per FE.</li>
-        <li>FE and its BFF owned by same team and very coupled.</li>
-        <li>One experience, one BFF.</li>
-        <li>Consider BFF for external parties as a way to isolation APIs.</li>
-      </ul></li>
-      <li>GraphQL.</li>
-    </ol></li>
-  </ol></li>
-</ul><h2><a name="ch-15"></a>Chapter 15 - Organizational Structures</h2>
-<ul>
-  <li>The biggest cost to working efficiently at scale is the need of coordination.</li>
-  <li>Conways law, team API, platform team, enabling teams: <a href="/2021/01/20/team-topologies-summary/#content">Team Topologies</a>.</li>
-  <li>Automation is key.</li>
-  <li><a href="/2020/03/04/the-lean-mindset-summary/#content">Dunbar numbers</a>.</li>
-  <li>Strong ownership can allow for more local variation than collective ownership.</li>
-  <li>Collective ownership can allow for more standardization, hence easier to move people/work around.</li>
-  <li>When creating an internal framework, it all starts with the best intentions.</li>
-  <li>Avoid internal framework unless you&rsquo;ve exhausted your other options.</li>
-  <li>Do code reviews promptly: pair programming FTW!</li>
-  <li>Coming up with a vision without considering how your staff will feel about it and without considering what capabilities they have is likely to lead to a bad place.</li>
-</ul><h2><a name="ch-16"></a>Chapter 16 - The Evolutionary Architect</h2>
-<ul>
-  <li>Architects and engineers have a rigor and discipline we could only dream of.</li>
-  <li>Many forms of IT certification are worthless, as we know little about what &ldquo;good&rdquo; looks like.</li>
-  <li>SW architects should focus on helping create a framework in which the right systems can emerge and continue to grow as we learn more.</li>
-  <li>SW arch as a town planner. (Same analogy as in <a href="/2020/08/12/elements-of-clojure-book-summary/#content">Elements of Clojure</a>).</li>
-  <li>Architecture is what happens, not what is planned.</li>
-  <li>Habitability: is the characteristic of source code that enables programmers coming to the code later in its life to understand its construction and intentions and to change it comfortably and confidently.</li>
-  <li>Strategic goals -&gt; Technical vision -&gt; Principles -&gt; Practices.</li>
-  <li>Architects as an enabling team:
-  <ul>
-    <li>2-3 full time architects plus tech leads.</li>
-  </ul></li>
-  <li>Make Product Manager accountable for the technical quality of the system.</li>
-  <li>Key things to standardize:
-  <ul>
-    <li>Monitoring.</li>
-    <li>Interfaces between microservices.</li>
-    <li>Architectural safety (error codes, circuit breakers, &hellip;).</li>
-    <li>Governance:
-    <ul>
-      <li>Group activity, mostly people executing the work being governed.</li>
-      <li>Examples.</li>
-      <li>Microservices templates.</li>
-    </ul></li>
-  </ul></li>
-</ul>]]></description></item></channel></rss>
+</ol><p>And the most important of all, a bookmark for each book handcrafted by my lovely daughter:</p><p><img src="/images/blog/books/notes-book-notes/book-marker.jpg" alt="book mark" /></p><p>They will become a very good reason to revisit all the books … and it keeps her busy for at least one hour each <i class="far fa-smile" aria-hidden="true"></i>.</p>]]></description></item></channel></rss>
