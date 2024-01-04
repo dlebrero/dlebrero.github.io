@@ -2,36 +2,36 @@
 <ul>
   <li>Deming is the foundation of Lean, Agile and DevOps.</li>
   <li>Variability is a fact of life.</li>
-  <li>Elements of the System of Profound Knowledge:</li>
-</ul>
-<ol>
-  <li>A Theory of Knowledge: How we know what we believe we know?</li>
-  <li>A Theory of Variation: How do we analyze and understand what we know?</li>
-  <li>A Theory of Psychology: How do we account for human behaviour?</li>
-  <li>An Appreciation of Systems/Systems Thinking: Are we seeing the bigger picture?</li>
-</ol>
-<ul>
+  <li>Elements of the System of Profound Knowledge:
+  <ol>
+    <li>A Theory of Knowledge: How we know what we believe we know?</li>
+    <li>A Theory of Variation: How do we analyze and understand what we know?</li>
+    <li>A Theory of Psychology: How do we account for human behaviour?</li>
+    <li>An Appreciation of Systems/Systems Thinking: Are we seeing the bigger picture?</li>
+  </ol></li>
   <li>The opposite of analytic thinking is systems thinking.</li>
   <li>Japanese workers believed they were doing something that <em>mattered</em>.</li>
   <li>No matter how precise the machines and the processes, the outputs all slightly varied from each other.</li>
   <li>Less waste allowed manufacturers to do more and more with less and less.</li>
   <li>Shewhart’s method enabled management to see defects as result of process instead of the workers.</li>
-  <li>Defect classification:</li>
-</ul>
-<ol>
-  <li>Common cause: variations that could be predicted and should be planned for.</li>
-  <li>Special cause: couldn&rsquo;t be predicted and shouldn&rsquo;t be planned for.</li>
-</ol>
-<ul>
-  <li>The real value of Statistical Process Control is that it allows you to observe variation and look at random vs non-random patterns:</li>
-  <li>A random pattern represents a stable process, aka a process &ldquo;under control&rdquo;.</li>
-  <li>A non-random pattern is a useful predictor of potential defects, signaling an amount of uncertainly in the process.</li>
-  <li>And here is the root of all evil: misidentifying variation.</li>
+  <li>Defect classification:
+  <ol>
+    <li>Common cause: variations that could be predicted and should be planned for.</li>
+    <li>Special cause: couldn&rsquo;t be predicted and shouldn&rsquo;t be planned for.</li>
+  </ol></li>
+  <li>The real value of Statistical Process Control is that it allows you to observe variation and look at random vs non-random patterns:
+  <ul>
+    <li>A random pattern represents a stable process, aka a process &ldquo;under control&rdquo;.</li>
+    <li>A non-random pattern is a useful predictor of potential defects, signaling an amount of uncertainly in the process.</li>
+    <li>And here is the root of all evil: misidentifying variation.</li>
+  </ul></li>
   <li>Under-performing and brand-new operators would have 100% of their work inspected until their work fell within the control limits.</li>
   <li>We really didn’t believe. We did what we were told and it worked.</li>
   <li>They shouldn’t strive to be better than others but to strive to be better than themselves - that is true competition.</li>
-  <li>Management by means (MBM):</li>
-  <li>If you don&rsquo;t know how you achieved your objective, how do you know if you can do it again?</li>
+  <li>Management by means (MBM):
+  <ul>
+    <li>If you don&rsquo;t know how you achieved your objective, how do you know if you can do it again?</li>
+  </ul></li>
   <li><a href="https://deming.org/explore/fourteen-points/">14 Points for Management</a></li>
   <li>A common disease that afflicts management is the impression that “our problems are different”.</li>
   <li>Only 6% of problems are due to human error. 94% are system error. And since the system is the responsibility of management, 94% of problems are caused by bad management.</li>
