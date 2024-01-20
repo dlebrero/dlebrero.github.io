@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change</title>
+	<meta content="Book notes on &quot;The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change&quot; by Tanya Reilly" name="description" /><meta content="Book review notes summary The Staff Engineer Path Guide  Individual Contributors Navigating Growth and Change architect career" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change" property="og:title" /><meta content="Book notes on &quot;The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change&quot; by Tanya Reilly" property="og:description" /><meta content="https://danlebrero.com/2024/01/24/the-staff-engineers-path-summary/" property="og:url" /><meta content="Book notes: The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change" name="twitter:title" /><meta content="Book notes on &quot;The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change&quot; by Tanya Reilly" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/staff-engineers-path/staff-engineering-path.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/staff-engineers-path/staff-engineering-path.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2024/01/24/the-staff-engineers-path-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+	<!-- Google tag (gtag.js) -->
+	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-3KPNQF7Y7S"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3KPNQF7Y7S');
+</script>	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+				 <li id="menu-popular"><a href="/popular/">Popular entries.</a></li>
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 24 Jan 2024</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change" by Tanya Reilly</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/staff-engineers-path/staff-engineering-path.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3thSc4p">The Staff Engineer’s Path: A Guide for Individual Contributors Navigating Growth and Change</a> by <a href="https://www.linkedin.com/in/tanyareilly">Tanya Reilly</a>.</p><p>Must-read for anybody interested on growing in the individual contributor track.</p>
+<blockquote><p>Be the engineer that everyone wants to work with. <cite>Tanya Reilly, this book</cite></p>
+</blockquote><h1>Key Insights</h1><p><img src="/images/blog/books/staff-engineers-path/pillars.png" alt="Staff engineer pillars" /></p>
+<ul>
+  <li>Staff eng roles come in a lot of shapes, but not all orgs will need all kinds of staff engs.</li>
+  <li>Senior is a “tenure” level: you don’t need to go further.</li>
+  <li>Whenever there is a feeling of “someone should do something here”, there is a reasonable change that the someone is you.</li>
+  <li>Autonomous: Find your own problems to work on.</li>
+  <li>Know why the problem you are working on is strategically important, and it is not, do something else.</li>
+  <li>Not necessary to provide solution but to ensure there is agreed-upon, well-understood solution that solves the problem.</li>
+  <li>Feedback loops will be months.</li>
+  <li>Write down a “what do I do here?” doc to ensure expectations/focus in shared with manager and peers.</li>
+  <li>Vision/Strategy is not always needed:
+  <ul>
+    <li>It is a big project.</li>
+    <li>Getting the people to agree <strong>is</strong> the work.</li>
+  </ul></li>
+  <li>None of the options can make everybody happy:
+  <ul>
+    <li>Rather than asking “Is everyone ok with option A?” ask “Can anyone not live with option A?”</li>
+    <li>Not deciding is a decision, usually not a good one.</li>
+  </ul></li>
+  <li>You have to make peace with walking past things that are broken or suboptimal.</li>
+  <li>Do what is important for the company, but also what is important for you.</li>
+  <li>Notice when you are doing busy work because you are tired, and find a way to rest instead.</li>
+  <li>Put non meetings in the calendar too:
+  <ul>
+    <li>Not “make time” but specific items.</li>
+  </ul></li>
+  <li>The usual reason why a project is difficult is that you are dealing with ambiguity.</li>
+  <li>Number one tool for project success: writing things down.</li>
+  <li>As a project lead, you will fill any roles that you don’t have someone in them.</li>
+  <li>Recruit people that are optimistic, good at conflict resolution and comms.</li>
+  <li>Better wrong than vague: chance to change direction early.</li>
+  <li>If it seems trivial, it is because you do not understand it.</li>
+  <li>Writing code is rarely the highest leverage thing you can spend time on.
+  <ul>
+    <li>Coding gives you a depth of understanding that is hard to gain otherwise.</li>
+  </ul></li>
+  <li>Something will always go wrong:
+  <ul>
+    <li>Take it as an opportunity to learn.</li>
+  </ul></li>
+  <li>Techniques to get unstuck:
+  <ol>
+    <li>Understand and explain.</li>
+    <li>Make the work easier.</li>
+    <li>Get org support.</li>
+    <li>Make alternative plans.</li>
+  </ol></li>
+  <li>Supporting an untrained person through making a change in a difficult codebase takes more effort than doing it yourself.</li>
+  <li>Three bullet points and a call to action:
+  <ul>
+    <li>Three bullet points detailing the issue at hand.</li>
+    <li>One and only one call to action.</li>
+  </ul></li>
+  <li>Blocked by:
+  <ul>
+    <li>A decision: make a guess and document it with an ADR.</li>
+  </ul></li>
+  <li>No talk about implementation until all agree about the problem.</li>
+  <li>Don’t just tell people that the solution exists: you need to keep telling them.</li>
+  <li>If the project is not in good shape by the end of it, it will never be.</li>
+  <li>People assume that you know what you are talking about, so be careful with what you say.</li>
+  <li>Values is what you do.</li>
+  <li>The degree to which other people want to work with you is a direct indication of how successful you’ll be in your career as an engineer.</li>
+  <li>Do not accept a management role until you are a solid senior engineer.</li>
+  <li><a href="https://medium.com/@ElizAyer/dont-ask-forgiveness-radiate-intent-d36fd22393a3">Radiating intent</a> (instead of seeking permission or asking for forgiveness).</li>
+  <li>Attributes of a staff engineer:
+  <ol>
+    <li>Competent.</li>
+    <li>Responsible.</li>
+    <li>Remembers the goal:
+    <ul>
+      <li>SW is a means to a goal, not a goal itself.</li>
+      <li>There is always a budget.</li>
+    </ul></li>
+    <li>Look Ahead.</li>
+  </ol></li>
+  <li>Don’t jump to give advice, sometimes the mentee just need to vent or get empathy on the situation.</li>
+  <li>If you cannot think on what to improve, ask yourself why they aren’t one level more senior.</li>
+  <li>You cannot be an expert in everything.</li>
+  <li>Every job should help you grow towards your long-term goals and meet your immediate needs.</li>
+  <li>Keep a weekly record of your job signals.</li>
+  <li>Staying in one place for long gives you the feedback loop that comes from seeing the consequences of your actions.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Introduction</a></li>
+  <li><a href="#p-1">Part I - The Big Picture</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - What would you say you do here?</a></li>
+    <li><a href="#ch-2">Chapter 2 - Three Maps</a></li>
+    <li><a href="#ch-3">Chapter 3 - Creating the Big Picture</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Execution</a>
+  <ul>
+    <li><a href="#ch-4">Chapter 4 - Finite Time</a></li>
+    <li><a href="#ch-5">Chapter 5 - Leading Big Projects</a></li>
+    <li><a href="#ch-6">Chapter 6 - Why Have We Stopped?</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - Leveling Up</a>
+  <ul>
+    <li><a href="#ch-7">Chapter 7 - You’re a Role Model Now (Sorry)</a></li>
+    <li><a href="#ch-8">Chapter 8 - Good Influence at Scale</a></li>
+    <li><a href="#ch-9">Chapter 9 - What’s Next?</a></li>
+  </ul></li>
+</ul><h1><a name="ch-0"></a>Introduction</h1>
+<ul>
+  <li>Both paths need many of the same skills.</li>
+  <li>Pillars:
+  <ol>
+    <li>Big-picture thinking.</li>
+    <li>Execution.</li>
+    <li>Leveling up others.</li>
+  </ol></li>
+  <li>When acting as a role model, you need to be right.</li>
+</ul><p><img src="/images/blog/books/staff-engineers-path/pillars.png" alt="Staff engineer pillars" /></p><h1><a name="p-1"></a>Part I - The Big Picture</h1><h2><a name="ch-1"></a>Chapter 1 - What would you say you do here?</h2>
+<ul>
+  <li>Staff eng roles come in a lot of shapes, but not all orgs will need all kinds of staff engs.</li>
+  <li>Senior is a “tenure” level: you don’t need to go further.</li>
+  <li>Big picture:
+  <ul>
+    <li>Good decisions need context:
+    <ul>
+      <li>Gathering context requires time and effort.</li>
+    </ul></li>
+    <li>Managers, as the people responsible for assigning headcount to technical initiatives, need to be part of major tech decisions.</li>
+  </ul></li>
+  <li>Project management:
+  <ul>
+    <li>Unstuck.</li>
+    <li>Tech quality.</li>
+    <li>High level system design.</li>
+  </ul></li>
+  <li>Whenever there is a feeling of “someone should do something here”, there is a reasonable change that the someone is you.</li>
+  <li><a href="https://kind.engineering/">https://kind.engineering/</a>.</li>
+  <li>Programming will often not be the best use of your time:
+  <ul>
+    <li>Enough work to make problems manageable by someone else:
+    <ul>
+      <li>Growth opportunity for less experience devs.</li>
+    </ul></li>
+  </ul></li>
+  <li>Autonomous: Find your own problems to work on.</li>
+  <li>Not necessary to provide solution but to ensure there is agreed-upon, well-understood solution that solves the problem.</li>
+  <li>Who you report to influences:
+  <ol>
+    <li>Support you receive.</li>
+    <li>Information you can access.</li>
+    <li>How you are perceived.</li>
+    <li>Scope: domain, teams:
+    <ul>
+      <li>Too broad:
+      <ul>
+        <li>Lack of impact: distracted with side-quests.</li>
+        <li>Become a bottleneck: take part on every decision.</li>
+        <li>Decision fatigue.</li>
+        <li>Missing relationships: not enough regular contact.</li>
+      </ul></li>
+      <li>Too narrow:
+      <ul>
+        <li>Lack of impact.</li>
+        <li>Opportunity cost: working on less important stuff.</li>
+        <li>Overshadowing other engineers: no room for other engs to solve problems.</li>
+        <li>Over-engineering: too much time on your hands.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+  <li>Ensure your scope is aligned to your preference of broad vs deep work.</li>
+  <li>4 disciplines in any job:
+  <ul>
+    <li>Core tech skills.</li>
+    <li>Product management.</li>
+    <li>Project management.</li>
+    <li>People management.</li>
+  </ul></li>
+  <li>Consider how much you want to code.</li>
+  <li>Feedback loops will be months.</li>
+  <li>Know why the problem you are working on is strategically important, and it is not, do something else.</li>
+  <li><a href="/2022/02/23/staff-engineering-leadership-beyond-the-management-track-book-summary/#ch-1">4 staff eng archetypes</a>.</li>
+  <li>Write down a “what do I do here?” doc to ensure expectations/focus in shared with manager and peers:
+  <ul>
+    <li>Overview.</li>
+    <li>Goals.</li>
+    <li>Sample activities.</li>
+    <li>What success looks like?</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Three Maps</h2>
+<ol>
+  <li>Locator map:
+  <ul>
+    <li>Where are you in the org, and what is outside your bubble.</li>
+    <li>Put your work in a bigger context.</li>
+    <li>To make good decisions, you’ll need to be able to see from others point of view.</li>
+    <li>Risk of focusing only on your context:
+    <ol>
+      <li>Prioritizing badly:
+      <ul>
+        <li>Your problems seem more important and special.</li>
+        <li>It is unusual to find a problem that is genuinely brand now.</li>
+      </ul></li>
+      <li>Losing empathy:
+      <ul>
+        <li>Think other domains are simpler.</li>
+        <li>Overestimate what others know from your domain.</li>
+      </ul></li>
+      <li>Tuning out the background noise:
+      <ul>
+        <li>Stop noticing some problems because you get so used to them.</li>
+      </ul></li>
+      <li>Forgetting what they work is for:
+      <ul>
+        <li>Lose connection with the company’s goals.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>Topological map:
+  <ul>
+    <li>Discover existing “dangers” and paths:
+    <ul>
+      <li>How leaders prefer to work.</li>
+      <li>How decisions are made.</li>
+      <li>“Shadow org” charts.</li>
+    </ul></li>
+    <li>Issues without one:
+    <ol>
+      <li>Your good ideas don’t get traction.</li>
+      <li>You don’t find the difficult parts until you get there.</li>
+      <li>Everything takes longer.</li>
+    </ol></li>
+    <li>Understand your org:
+    <ul>
+      <li>Culture:
+      <ul>
+        <li>Open or secret?
+        <ul>
+          <li>Open information can lead to more drama.</li>
+        </ul></li>
+        <li>Oral or written?</li>
+        <li>Top-down or bottom-up?</li>
+        <li>Fast change or deliberate change?
+        <ul>
+          <li>Tightly connected to oral/written.</li>
+        </ul></li>
+        <li>Back channels or front doors?</li>
+        <li>Allocated or available?
+        <ul>
+          <li>If there are plenty of available people, changes are that a competing novel grassroots initiatives are about to start.</li>
+        </ul></li>
+        <li>Liquid (meritocracy of sorts) or crystallized (structured hierarchy and promotion)?</li>
+      </ul></li>
+    </ul></li>
+    <li>Points of interests:
+    <ol>
+      <li>Chasms between teams/orgs:
+      <ul>
+        <li>Difficult to communicate, make decisions and resolve disputes.</li>
+      </ul></li>
+      <li>Fortresses:
+      <ul>
+        <li>Well-intended gatekeepers, but stop projects/change from happening.</li>
+        <li>Avoid a battle, even if you might win.</li>
+      </ul></li>
+      <li>Disputed territory:
+      <ul>
+        <li>When two or more teams need to work closely together, their projects can fall into chaos if they don’t have the same clear view of where they are trying to get to.</li>
+      </ul></li>
+      <li>Uncrossable desserts:
+      <ul>
+        <li>Unwinnable battles.</li>
+      </ul></li>
+      <li>Paved roads, shortcuts and busy ways around.</li>
+    </ol></li>
+    <li>You need to be technically correct and convince the right people.</li>
+    <li>Figure out where decisions are happening:
+    <ul>
+      <li>You can influence higher up decisions by making sure relevant information reaches via your reporting chain.</li>
+      <li>Ask to join but show how it will make the org more likely to achieve its goals.</li>
+      <li>Figure out shadow org chart:
+      <ul>
+        <li>Connectors: people that know everybody.</li>
+        <li>Old-timers.</li>
+      </ul></li>
+    </ul></li>
+    <li>Be a bridge.</li>
+  </ul></li>
+  <li>Treasure map:
+  <ul>
+    <li>Where and why.</li>
+    <li>Destination and stop points.</li>
+    <li>Long term view.</li>
+    <li>If only short term vision:
+    <ol>
+      <li>Harder to keep everybody going in the same direction.</li>
+      <li>Not finish big things.</li>
+      <li>Accumulate cruft.</li>
+      <li>Competing initiatives.</li>
+      <li>Engineers stop growing:
+      <ul>
+        <li>Small project problems != big project ones.</li>
+      </ul></li>
+    </ol></li>
+    <li>If the map is not clear, create a new one.</li>
+    <li>Trail map:
+    <ul>
+      <li>Tell the story of the work.</li>
+      <li>Every small task become part of a bigger story.</li>
+    </ul></li>
+  </ul></li>
+</ol>
+<ul>
+  <li>You learn some parts of the map through everyday learning, but you need to be deliberate for others.</li>
+  <li>Hiking example: easy to find out what you miss by looking at others:
+  <ul>
+    <li>They had learned to pay attention adn they know what they were looking for.</li>
+  </ul></li>
+  <li>Habit of paying attention:
+  <ul>
+    <li>Take notes.</li>
+    <li>What? Anything that helps you or others:
+    <ul>
+      <li>Have context.</li>
+      <li>Navigate your org.</li>
+      <li>Progress towards your goals.</li>
+    </ul></li>
+  </ul></li>
+  <li>Techniques for seeing the bigger picture:
+  <ol>
+    <li>Taking an outsider view:
+    <ul>
+      <li>A new person to the team/org can always see the problems.</li>
+    </ul></li>
+    <li>Befriend other staff eng to understand from their point of view what your team/group looks like.</li>
+    <li>Befriend non-eng to learn what is important for business.</li>
+    <li>Understand your customer.</li>
+    <li>Understand what already exists inside and outside your org before creating something new.</li>
+  </ol></li>
+  <li><a href="https://www.thevoid.community/report">The VOID report</a>: incidents newsletter.</li>
+  <li><a href="https://www.rawsignal.ca/newsletter">Raw signal</a>: management and leadership newsletter.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Creating the Big Picture</h2>
+<ul>
+  <li>Tech vision:
+  <ul>
+    <li>Describe future as if all work to get there had been done.</li>
+    <li>Any scope:
+    <ul>
+      <li>Smaller scopes should inherit from larger ones.</li>
+    </ul></li>
+  </ul></li>
+  <li>Tech strategy:
+  <ul>
+    <li>Plan of action: how to achieve your goals, and navigating past the obstacles.</li>
+    <li><a href="/2020/08/31/good-strategy-bad-strategy-summary/#content">Good/Bad strategy</a>:
+    <ol>
+      <li>Diagnosis: distill the situation to its most essential characteristic.</li>
+      <li>Guiding policy: short and clear signpost, marking the direction forward.</li>
+      <li>Coherent action: specific based from diagnosis/guiding policy.
+      <ul>
+        <li>They are a time commitment.</li>
+      </ul></li>
+    </ol>
+    <ul>
+      <li>Strategy should draw on your advantages.</li>
+      <li>Strategy is realistic and within your org constraints.</li>
+    </ul></li>
+  </ul></li>
+  <li>Vision/Strategy is not always needed:
+  <ul>
+    <li>It is a big project.</li>
+    <li>Getting the people to agree <strong>is</strong> the work.</li>
+  </ul></li>
+  <li>The approach:
+  <ul>
+    <li>Good strategy is boring to write about:
+    <ul>
+      <li>Should be obvious.</li>
+    </ul></li>
+    <li>Join existing initiatives.</li>
+    <li>Find a sponsor:
+    <ul>
+      <li>Ensure your plan fix some of their problems.</li>
+      <li>Elevator pitch.</li>
+    </ul></li>
+    <li>Choose your core group:
+    <ul>
+      <li>Makes you accountable.</li>
+      <li>Small (2-4), committed to 8-12 hours per week.</li>
+      <li>Consider bringing those who will oppose the most.</li>
+      <li>Keep a broader set of allies informed and engaged.</li>
+    </ul></li>
+    <li>Set scope:
+    <ul>
+      <li>How much of the ord you plan to influence.</li>
+    </ul></li>
+    <li>Make sure it is achievable:
+    <ul>
+      <li>Cut scope.</li>
+      <li>Be prepared to give up.</li>
+    </ul></li>
+    <li>Make it official.</li>
+  </ul></li>
+  <li>The writing:<br /> <img src="/images/blog/books/staff-engineers-path/writing.png" alt="Writing process" />
+  <ul>
+    <li>Questions:
+    <ul>
+      <li>What is great as it is?</li>
+      <li>What is important?</li>
+      <li>What will future you wish that present you had done?</li>
+    </ul></li>
+    <li>Reviewers will be biased by what is already in the doc:
+    <ul>
+      <li>Mitigations:
+      <ul>
+        <li>Talk more before writing.</li>
+        <li>Make clear what parts you don’t feel strong about.</li>
+      </ul></li>
+    </ul></li>
+    <li>Interviews final questions:
+    <ul>
+      <li>What else should I have asked you?</li>
+      <li>Is there anything important I missed?</li>
+    </ul></li>
+    <li>None of the options can make everybody happy:
+    <ul>
+      <li>Rather than asking “Is everyone ok with option A?” ask “Can anyone not live with option A?”</li>
+      <li>Decide upfront who is the tiebreaker.</li>
+      <li>Not deciding is a decision, usually not a good one.</li>
+      <li>Document any decision, including trade-offs and reasons.</li>
+    </ul></li>
+  </ul></li>
+  <li>Alignment:
+  <ul>
+    <li>Stay aligned with your sponsor, at minimum in the major checkpoints.</li>
+    <li>Nemawashi: by the time of voting, you should know the result.</li>
+    <li>Vision or strategy that not everyone knows is of little value.</li>
+    <li>Find a one-liner slogan.</li>
+    <li>What is the difference between your document being yours and the organizations?
+    <ul>
+      <li>Belief.</li>
+      <li>Staffing the work, second.</li>
+    </ul></li>
+  </ul></li>
+</ul><h1><a name="p-2"></a>Part II - Execution</h1><h2><a name="ch-4"></a>Chapter 4 - Finite Time</h2>
+<ul>
+  <li>You have to make peace with walking past things that are broken or suboptimal.</li>
+  <li>Do what is important for the company, but also what is important for you.
+  <ul>
+    <li>Consider:
+    <ul>
+      <li>Energy:
+      <ul>
+        <li>Your current level and what the project will consume.</li>
+        <li>Different people need different levels of energy for the same project.</li>
+        <li>How many things are you already doing? Limit WIP.</li>
+        <li>Does this kind of work give you or take energy?</li>
+        <li>Are you procrastinating?
+        <ul>
+          <li>Notice when you are doing busy work because you are tired, and find a way to rest instead.</li>
+        </ul></li>
+        <li>Is this fight worth it?
+        <ul>
+          <li>Compare with other work.</li>
+        </ul></li>
+      </ul></li>
+      <li>Quality of life:
+      <ul>
+        <li>Do you enjoy this work?</li>
+        <li>How do you feel about the project’s goals?</li>
+      </ul></li>
+      <li>Credibility:
+      <ul>
+        <li>Does this project use your technical skills?</li>
+        <li>Does this project show your leadership skills?</li>
+      </ul></li>
+      <li>Social capital:
+      <ul>
+        <li>It this the kind of work that your company and your manager expect at your level?
+        <ul>
+          <li>Making your reporting chain successful gives them social capital that they can spend to help you.</li>
+        </ul></li>
+        <li>Will this work be respected?</li>
+        <li>Are you squandering the capital you have built?</li>
+      </ul></li>
+      <li>Skills:
+      <ul>
+        <li>Each project will increase or decrease these.</li>
+        <li>Will this project teach you something you want to learn?</li>
+        <li>Will people around you raise your game?</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Everything you commit to have an opportunity cost.</li>
+  <li>Put non meetings in the calendar too:
+  <ul>
+    <li>Not “make time” but specific items.</li>
+  </ul></li>
+  <li>Don’t allocate 100% of your time:
+  <ul>
+    <li>Spikes in work will spill to your personal life.</li>
+  </ul></li>
+  <li>Increase your skills in three ways:
+  <ol>
+    <li>Deliberately learn something: take a class, buy a book, take a toy project.
+    <ul>
+      <li>Unlikely to happen at work.</li>
+    </ul></li>
+    <li>Work with someone more skilled.</li>
+    <li>Learn by doing: most common.</li>
+  </ol></li>
+  <li>What if it is the wrong project?
+  <ul>
+    <li>If it is temporal, maybe do it.</li>
+    <li>Let others lead: mentorship opportunity.</li>
+    <li>Resize it.</li>
+    <li>Say no.</li>
+  </ul></li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Leading Big Projects</h2>
+<ul>
+  <li>A great project lead has:
+  <ul>
+    <li>Perseverance.</li>
+    <li>Courage.</li>
+    <li>Willingness to talk to other people.</li>
+  </ul></li>
+  <li>The usual reason why a project is difficult is that you are dealing with ambiguity.</li>
+  <li>Big project == several months + multiple teams.</li>
+  <li>Number one tool for project success: writing things down.</li>
+  <li>Ambiguity is the nature of the work.</li>
+  <li>To make a project less overwhelming at the beginning:
+  <ol>
+    <li>Write things down: ideas, leads, rumors, to-dos, …</li>
+    <li>Talk to your sponsor: understand what they want to achieve.</li>
+    <li>Find at least one person that you can be open and unsure with.</li>
+    <li>Give yourself a win: small steps.</li>
+    <li>Use your strengths.</li>
+  </ol></li>
+  <li>Building context:
+  <ol>
+    <li>Goals: why are you doing this project?</li>
+    <li>Understand customers:
+    <ul>
+      <li>Working with PMs, ask for their advice.</li>
+    </ul></li>
+    <li>Success metrics.</li>
+    <li>Stakeholders.</li>
+    <li>Figure out fixed constraints.</li>
+    <li>Risks and mitigations.</li>
+    <li>History of the project:
+    <ul>
+      <li>Respect what came before.</li>
+      <li>Where it did come from?</li>
+      <li>How was it announced?</li>
+      <li>Who has already tried? What they left behind?</li>
+    </ul></li>
+    <li>Team.</li>
+  </ol></li>
+  <li>Project structure:
+  <ul>
+    <li>Define roles:
+    <ul>
+      <li>Specially important if multiple senior people are involved.</li>
+      <li>To avoid overlaps and cracks/orphaned work/responsibilities.</li>
+      <li><a href="https://www.cio.com/article/287088/project-management-how-to-design-a-successful-raci-project-plan.html">RACI matrix</a>:
+      <ul>
+        <li>Responsible: doing the work.</li>
+        <li>Accountable: only one per task.</li>
+        <li>Consulted.</li>
+        <li>Informed.</li>
+      </ul></li>
+      <li>As a project lead, you will fill any roles that you don’t have someone in them.</li>
+    </ul></li>
+    <li>Recruit people that are optimistic, good at conflict resolution and comms.</li>
+    <li>Scope and milestones:
+    <ul>
+      <li>People don’t act with a sense of urgency until there is a deadline that they cannot avoid thinking about.</li>
+    </ul></li>
+    <li>I have met almost nobody who is good at time estimation.</li>
+    <li>Estimating should take into account other teams that you depend on:
+    <ul>
+      <li>If you ask those teams for last minute changed, you are disrupting the time estimation of other projects.</li>
+    </ul></li>
+    <li>Set rituals, comm channels, dev practices.</li>
+    <li>Kick off meeting.</li>
+  </ul></li>
+  <li>Driving the project:
+  <ul>
+    <li><a href="https://leaddev.com/agile-other-ways-working/avoid-lake">Avoid the lake!</a> by Kripa Krishnan.</li>
+  </ul>
+  <ol>
+    <li>Explore:
+    <ul>
+      <li>Get to the point where you can concisely explain what different teams in the project want in a way that they’ll agree is accurate:
+      <ul>
+        <li>Loads of talking <strong>and listening</strong>.</li>
+      </ul></li>
+      <li>Build elevator pitch: reduce it to its most important aspects.</li>
+    </ul></li>
+    <li>Clarify:
+    <ul>
+      <li>Give mental models for what you are all doing:
+      <ul>
+        <li>Hook your model to the person’s existing knowledge.</li>
+        <li>Analogies and metaphors.</li>
+      </ul></li>
+      <li>Glossary: ubiquitous language.</li>
+      <li>Graph/pictures.</li>
+    </ul></li>
+    <li>Design:
+    <ul>
+      <li>A written design is a very cheap iteration, <a href="https://www.linkedin.com/in/cian-synnott/">Cian Synnott</a>.</li>
+    </ul></li>
+  </ol></li>
+</ul>
+<blockquote><p>We are built for novelty and excitement, not for careful attention to detail. Discipline is something we have to work at. <cite>Atul Gawande, <em>The Checklist Manifesto</em></cite></p>
+</blockquote>
+<ul>
+  <li>RFC:
+  <ul>
+    <li>The implementation should serve the goal; it should not be the goal.</li>
+    <li>Design section:
+    <ul>
+      <li>Readers should understand what you intend to do, and should be able to tell you whether they think it will work.</li>
+      <li>Better wrong than vague: chance to change direction early.</li>
+      <li>Avoid passive voice:
+      <ul>
+        <li>Dr. Rebecca Johnson: If you can insert ‘by zombies’ after the verb, you have passive voice.</li>
+      </ul></li>
+      <li>If it seems trivial, it is because you do not understand it.</li>
+      <li>Any part of your solution that involves humans changing their workflows or behaviour will be difficult and needs to be part of the design.</li>
+      <li>Figure the hard parts earlier.</li>
+      <li>Name who will be on call for any new system.</li>
+    </ul></li>
+  </ul></li>
+  <li>Coding:
+  <ul>
+    <li>Writing code is rarely the highest leverage thing you can spend time on.</li>
+    <li>Coding gives you a depth of understanding that is hard to gain otherwise.</li>
+    <li>Avoid being in the critical path.</li>
+    <li>Set example (design, patterns, …).</li>
+  </ul></li>
+  <li>Communicating well is key for delivering a project in time.</li>
+  <li>If your project is stuck, don’t hide it: ask for help.</li>
+  <li>Something will always go wrong:
+  <ul>
+    <li>Take it as an opportunity to learn.</li>
+  </ul></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Why Have We Stopped?</h2>
+<ul>
+  <li>Techniques to get unstuck:
+  <ol>
+    <li>Understand and explain.</li>
+    <li>Make the work easier.</li>
+    <li>Get org support:
+    <ul>
+      <li>Show it is an objective.</li>
+      <li>Show value.</li>
+      <li>Escalate.</li>
+    </ul></li>
+    <li>Make alternative plans.</li>
+  </ol></li>
+  <li>Supporting an untrained person through making a change in a difficult codebase takes more effort than doing it yourself.</li>
+  <li>Three bullet points and a call to action:
+  <ul>
+    <li>Three bullet points detailing the issue at hand.</li>
+    <li>One and only one call to action.</li>
+  </ul></li>
+  <li>Blocked by:
+  <ul>
+    <li>A decision: make a guess and document it with an ADR.</li>
+    <li>A single “please click this button”:
+    <ul>
+      <li>Might be a big queue of “just click this button”.</li>
+      <li>The other person is responsible for the result.</li>
+    </ul></li>
+    <li>Unassigned work:
+    <ul>
+      <li>Rollup the context to make it explicit.</li>
+      <li>Volunteer to mentor/advise/join the team that will own it.</li>
+    </ul></li>
+    <li>By a huge crowd of people:
+    <ul>
+      <li>Like a migration.</li>
+      <li>Be a bridge
+      <ul>
+        <li>The team pushing for the migration to do as much work as possible.</li>
+        <li>Make the new way the default:
+        <ul>
+          <li>Consider adding some friction to the old way.</li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>You are stuck:
+  <ul>
+    <li>Don’t know where you’re all going:
+    <ul>
+      <li>No agreement. Too many disparate voices, all interested in the problem:
+      <ol>
+        <li>Clarify roles:
+        <ul>
+          <li>Leader is the final decision maker.</li>
+        </ul></li>
+        <li>Choose strategy:
+        <ul>
+          <li>No talk about implementation until all agree about the problem.</li>
+          <li>Don’t try to solve everything neither please everyone.</li>
+        </ul></li>
+        <li>Choose stakeholder:
+        <ul>
+          <li>Reorient the project around getting something to someone.</li>
+          <li>Vertical slices.</li>
+        </ul></li>
+      </ol></li>
+    </ul></li>
+    <li>You don’t know how to get there:
+    <ul>
+      <li>Path is unknown but not unknowable.</li>
+      <li>Articulate the problem.</li>
+      <li>Revisit your assumptions:
+      <ul>
+        <li>Have you already assumed a specific solution?</li>
+      </ul></li>
+      <li>Step away from the problem for a few days.</li>
+      <li>Look for prior art, including outside IT.</li>
+      <li>Connect with the community.</li>
+      <li>Start small.</li>
+      <li>Look at the problem from a completely different angles.</li>
+      <li>Ask for help.</li>
+    </ul></li>
+    <li>You don’t know where you stand:
+    <ul>
+      <li>Is the work still necessary?</li>
+      <li>Less comms or interest from leadership.</li>
+      <li>Go and ask.</li>
+      <li>You will not get what you want if you don’t ask for it.</li>
+    </ul></li>
+  </ul></li>
+  <li>Team thinks project is done but problem is not solved:
+  <ol>
+    <li>“Finished” but not usable yet:
+    <ul>
+      <li>Agree on a definition of done.</li>
+      <li>Be your own user.</li>
+      <li>Celebrate only once users are happy.</li>
+    </ul></li>
+    <li>Done but nobody uses it:
+    <ul>
+      <li>Don’t just tell people that the solution exists: you need to keep telling them.</li>
+      <li>Make it easy to find.</li>
+    </ul></li>
+    <li>Built on shaky foundations:
+    <ul>
+      <li>If the project is not in good shape by the end of it, it will never be.</li>
+      <li>Set a culture of quality.</li>
+      <li>User stories out of bugs and incidents.</li>
+      <li>Negotiate ring-fencing resources for technical work.</li>
+    </ul></li>
+  </ol></li>
+  <li>Reasons to stop:
+  <ul>
+    <li>Further investment is not worth the cost.</li>
+    <li>You learn that it will not work.</li>
+    <li>Project cancelled by higher management:
+    <ul>
+      <li>Even if it is for good reasons, you will feel bad about it.</li>
+      <li>Be the one telling the team.</li>
+    </ul></li>
+    <li>You finished! Celebrate!</li>
+  </ul></li>
+</ul><h1><a name="p-3"></a>Part III - Leveling Up</h1><h2><a name="ch-7"></a>Chapter 7 - You’re a Role Model Now (Sorry)</h2>
+<ul>
+  <li>People assume that you know what you are talking about, so be careful with what you say.</li>
+  <li>You are a role model: how you behave is how others will behave.</li>
+  <li>Values is what you do.</li>
+  <li>The clearest indication of what the company is what gets people promoted.</li>
+  <li>Attributes of a staff engineer:
+  <ol>
+    <li>Competent:
+    <ol>
+      <li>Technically:
+      <ul>
+        <li>You can learn a lot from books but there is no substitute for doing it yourself.</li>
+        <li>Do not accept a management role until you are a solid senior engineer.</li>
+        <li>Beware if you are only learning how your company operated, but nothing technical.</li>
+      </ul></li>
+      <li>Self-aware:
+      <ul>
+        <li>What you cant do.</li>
+        <li>How long will take.</li>
+        <li>What you don’t know.</li>
+        <li>Your own context (which will be different from others).</li>
+      </ul></li>
+      <li>High standards:
+      <ul>
+        <li>Seek constructive criticism.</li>
+        <li>Own your mistakes:
+        <ul>
+          <li>Communicate clearly and quickly.</li>
+          <li>Set to fix it.</li>
+        </ul></li>
+      </ul></li>
+      <li>Be reliable: finish what you start.</li>
+    </ol></li>
+    <li>Responsible:
+    <ol>
+      <li>Take ownership:
+      <ul>
+        <li><a href="https://medium.com/@ElizAyer/dont-ask-forgiveness-radiate-intent-d36fd22393a3">Radiating intent</a> (instead of seeking permission or asking for forgiveness).</li>
+        <li>Make decisions.</li>
+        <li>Ask “obvious” questions: make the implicit explicit.</li>
+        <li>Glue work.</li>
+      </ul></li>
+      <li>Take charge:
+      <ul>
+        <li>Redirecting colleagues to more valuable work.</li>
+        <li>Take control of a mess/incident.</li>
+        <li>Drive meetings:
+        <ul>
+          <li>Take notes.</li>
+          <li>Ensure agenda.</li>
+          <li>Keep it focused.</li>
+        </ul></li>
+        <li>Speak up when you see behavioral problems.</li>
+      </ul></li>
+      <li>Create calm:
+      <ul>
+        <li>Make big problems small.</li>
+        <li>Keep small problems small.</li>
+        <li>Be consistent.</li>
+        <li>Take time off.</li>
+      </ul></li>
+    </ol></li>
+    <li>Remember the goal:
+    <ul>
+      <li>SW is a means to a goal, not a goal itself.</li>
+      <li>There is always a budget.</li>
+    </ul></li>
+    <li>Look Ahead:
+    <ul>
+      <li>Don’t optimize for now at the cost of future velocity or capability.</li>
+      <li>Announce intention to deprecate old systems.</li>
+      <li>Continually make your environment better.</li>
+      <li>Faster safer deploys.</li>
+      <li>Document.</li>
+      <li>Build the expectation of failure into your products.</li>
+      <li>Optimize for maintenance, not creation.</li>
+      <li>Keep it simple: spend at least the same amount of time on possible second solution as you will in the first one.</li>
+      <li>Build with decommission in mind.</li>
+      <li>Create future leaders.</li>
+    </ul></li>
+  </ol></li>
+  <li>The degree to which other people want to work with you is a direct indication of how successful you’ll be in your career as an engineer. Be the engineer that everyone wants to work with.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Good Influence at Scale</h2>
+<ul>
+  <li>Three tiers of influence:
+  <ul>
+    <li>Individual.</li>
+    <li>Group.</li>
+    <li>Catalyst: your influence continue even after you step away.</li>
+    <li>Do the first two first, only go broader if value is clear.</li>
+  </ul></li>
+  <li>4 forms:</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Individual </th>
+      <th>Group </th>
+      <th>Catalyst </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Advice </td>
+      <td>Mentoring, sharing knowledge, feedback </td>
+      <td>Tech talks, documentation, articles </td>
+      <td>Mentorship program, tech talk events </td>
+    </tr>
+    <tr>
+      <td>Teaching </td>
+      <td>Code reviews, design review, coaching, pairing, shadowing </td>
+      <td>Classes, codelabs </td>
+      <td>Onboarding curriculum, teaching people to teach </td>
+    </tr>
+    <tr>
+      <td>Guardrails </td>
+      <td>Code review, change review, design review </td>
+      <td>Processes, linters, style guides </td>
+      <td>Frameworks, culture change </td>
+    </tr>
+    <tr>
+      <td>Opportunity </td>
+      <td>Delegating, sponsorship, cheerleading, ongoing support </td>
+      <td>Sharing the spotlight, empowering your team </td>
+      <td>Creating a culture of opportunity, watching with pride as your superstar junior colleagues change the world </td>
+    </tr>
+  </tbody>
+</table>
+<ol>
+  <li>Advise:
+  <ul>
+    <li>Should be tailored to the person receiving it.</li>
+    <li>Mentorship:
+    <ul>
+      <li>Sharing <strong>your</strong> experience so others can leverage on it:
+      <ul>
+        <li>Might not be useful/applicable.</li>
+      </ul></li>
+      <li>Don’t jump to give advice, sometimes the mentee just need to vent or get empathy on the situation.</li>
+      <li>Set objectives for mentorship.</li>
+    </ul></li>
+    <li>Be kindly honest.</li>
+    <li>Peer reviews:
+    <ul>
+      <li>2 audiences:
+      <ul>
+        <li>Person who asked for feedback.</li>
+        <li>Their manager.</li>
+      </ul></li>
+      <li>If you cannot think on what to improve, ask yourself why they aren’t one level more senior.</li>
+    </ul></li>
+    <li>Encourage people to write things down.</li>
+  </ul></li>
+  <li>Teaching:
+  <ul>
+    <li>Code reviews:
+    <ul>
+      <li>Careful to not destroy somebody’s confidence and growth mindset.</li>
+      <li>Call out the good as well as the bad.</li>
+    </ul></li>
+  </ul></li>
+  <li>Guardrails:
+  <ul>
+    <li>Encourage autonomy, exploration and innovation:
+    <ul>
+      <li>They will not stop you going over the edge.</li>
+    </ul></li>
+    <li>Reviews:
+    <ul>
+      <li>Should the work exists?</li>
+      <li>Does it solve the problem?</li>
+      <li>Will it handle failure?</li>
+      <li>Understandable?</li>
+      <li>Fits the bigger picture?</li>
+      <li>Do the right people know about it?</li>
+    </ul></li>
+  </ul></li>
+  <li>Opportunity:
+  <ul>
+    <li>Finding people the experience that they need to grow.</li>
+    <li>Delegation:
+    <ul>
+      <li>Give them a messy, unscoped project with a bit of a safety net.</li>
+      <li>When you delegate, you are not going to get a clone:
+      <ul>
+        <li>Good as long as they achieve the goals.</li>
+      </ul></li>
+    </ul></li>
+    <li>Sponsorship:
+    <ul>
+      <li>You are investing your time and social capital in their growth.</li>
+    </ul></li>
+  </ul></li>
+</ol><h2><a name="ch-9"></a>Chapter 9 - What’s Next?</h2>
+<ul>
+  <li>Expand your perspective by reading, attending conferences and asking others about their journey.</li>
+  <li>You cannot be an expert in everything.</li>
+  <li>If the work fills you with dread or exhausts you, instead of exciting you, look for a different path to your goal.</li>
+  <li><a href="https://www.scienceofpeople.com/conference-networking/">How to network</a> by Vanessa Van Edwards.</li>
+  <li>Build visibility.</li>
+  <li>The most time-efficient way to build skills, visibility and contacts is as part of your job. You’ll get better at whatever you spend time on.</li>
+  <li>Every job should help you grow towards your long-term goals and meet your immediate needs.</li>
+  <li>Keep a weekly record of your job signals:
+  <ol>
+    <li>Are you growing/learning?</li>
+    <li>Are the skills transferable?</li>
+    <li>Would you recruit friends to your company?</li>
+    <li>How is your confidence? How capable you feel?</li>
+    <li>How stressed you feel?</li>
+  </ol></li>
+  <li>Staying in one place for long gives you the feedback loop that comes from seeing the consequences of your actions.</li>
+  <li>What to do next:
+  <ul>
+    <li>You may just want to use your current skills and keep doing much the same job until you retire.</li>
+    <li>Promotion.</li>
+    <li>Work less:
+    <ul>
+      <li>If you weren’t able to avoid working overtime at five days a week, why you think you can stick to working four?</li>
+    </ul></li>
+    <li>Change internal team.</li>
+    <li>New specialization.</li>
+    <li>Management.</li>
+    <li>Find/invent your own niche:
+    <ul>
+      <li>Learn what your strengths are, and then finding “holes that are shaped like you”.</li>
+    </ul></li>
+    <li>Same job, different employer.</li>
+    <li>Change jobs and level up or down.</li>
+    <li>Your own start-up.</li>
+    <li>Go independent.</li>
+    <li>Change careers.</li>
+  </ul></li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<!--div class="row">
+						<div id="toprightbanner" class="widget six columns">
+						</div>
+						<div id="toprightbanner2" class="widget six columns">
+						</div>
+					</div-->
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (41)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (36)</a></li><li><a href="/tags/Humour/index.html">Humour (12)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (45)</a></li><li><a href="/tags/good_practices/index.html">good practices (27)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<h5 class="widget-title">Now Reading</h5>
+						<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&amp;OneJS=1&amp;Operation=GetAdHtml&amp;MarketPlace=US&amp;source=ss&amp;ref=as_ss_li_til&amp;ad_type=product_link&amp;tracking_id=danlebrero-20&amp;language=en_US&amp;marketplace=amazon&amp;region=US&amp;placement=1950508838&amp;asins=1950508838&amp;linkId=1abcab6ed414fe6ad50e093b9d78cb44&amp;show_border=true&amp;link_opens_in_new_window=true"></iframe>
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
