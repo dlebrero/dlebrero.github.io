@@ -1,4 +1,454 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 24 Jan 2024 00:00:00 +0100</lastBuildDate><pubDate>Wed, 24 Jan 2024 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change</title><link>https://danlebrero.com/2024/01/24/the-staff-engineers-path-summary/</link><guid>https://danlebrero.com/2024/01/24/the-staff-engineers-path-summary/</guid><pubDate>Wed, 24 Jan 2024 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3thSc4p">The Staff Engineer&rsquo;s Path: A Guide for Individual Contributors Navigating Growth and Change</a> by <a href="https://www.linkedin.com/in/tanyareilly">Tanya Reilly</a>.</p><p>Must-read for anybody interested on growing in the individual contributor track.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 28 Feb 2024 00:00:00 +0100</lastBuildDate><pubDate>Wed, 28 Feb 2024 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Continuous Discovery Habits</title><link>https://danlebrero.com/2024/02/28/continuous-discovery-habits-summary/</link><guid>https://danlebrero.com/2024/02/28/continuous-discovery-habits-summary/</guid><pubDate>Wed, 28 Feb 2024 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/48Ihqbv">Continuous Discovery Habits</a> by <a href="https://twitter.com/ttorres">Teresa Torres</a>.</p><p>Very practical advise and tool for Product Managers. To quote Teresa:</p>
+<blockquote><p>Approach to give you confidence to act while preparing you to be wrong.</p>
+</blockquote><p>Interestingly, a lot of the advice it very applicable to software architecture:</p>
+<ul>
+  <li>Best path to desired outcome is the &ldquo;ill-structured problem&rdquo;:
+  <ul>
+    <li>There is no right or wrong, only better or worse.</li>
+    <li>Most of the work is framing the problem itself:
+    <ul>
+      <li>Framing impacts how we solve it.</li>
+      <li>Good problem-solvers try many framings.</li>
+    </ul></li>
+  </ul></li>
+</ul><h1>Key Insights</h1>
+<ul>
+  <li>Product trio:
+  <ul>
+    <li>Product Manager + Designer + SW eng.</li>
+    <li>Product trios should interview together.</li>
+  </ul></li>
+  <li>At minimum, weekly touch points with customers by the team building the product where they conduct small research activities in pursuit of a desired outcome.
+  <ul>
+    <li>Continuous interviewing is the keystone habit for continuous discovery.</li>
+  </ul></li>
+  <li>Opportunity Solution Tree (OST):<br/>  <img src="/images/blog/books/continuous-discovery-habits/ost.jpg" alt="OST" /></li>
+  <li>Avoid &ldquo;whether or not&rdquo; decisions, but a &ldquo;compare and contrast&rdquo;.</li>
+  <li>Best designers evolve the problem and solution space together.</li>
+  <li>When an idea does not work, take the time to reflect on what you learned.</li>
+  <li>Josh Seiden, <a href="https://amzn.to/493cjm7">Outcomes Over Outputs</a>:
+  <ul>
+    <li>An outcome is a change in human behavior that drives business results.</li>
+  </ul></li>
+  <li>Primary research question:
+  <ul>
+    <li>What opportunity matter most to this customer?</li>
+    <li>Best is to ask them to share specific stories about their experience:
+    <ul>
+      <li>Dig into the details.</li>
+      <li>Don&rsquo;t allow them to generalize.</li>
+    </ul></li>
+  </ul></li>
+  <li>An opportunity should have more than one potential solution, otherwise it is simply a solution in disguise.</li>
+  <li>Do not score opportunities:
+  <ul>
+    <li>Make a data-informed, subjective comparison.</li>
+  </ul></li>
+  <li>Choosing an opportunity is an easily reversible decision, so:
+  <ul>
+    <li>Avoid analysis-paralysis:
+    <ul>
+      <li>We will learn more by acting.</li>
+    </ul></li>
+    <li>You are just committing to explore it further.</li>
+  </ul></li>
+  <li>Research shows:
+  <ul>
+    <li>More idea == more diverse and novel.</li>
+    <li>Most original ideas tend to be generated toward the end of the ideation session.</li>
+    <li>Individuals outperformed brainstorming groups.</li>
+    <li>We are better at evaluating ideas as a group.</li>
+    <li>Best:
+    <ol>
+      <li>Generate ideas individually.</li>
+      <li>Share.</li>
+      <li>Go to 1.</li>
+    </ol></li>
+  </ul></li>
+  <li>Fast discovery iterations only possible if instead of testing ideas, test the assumptions that need to be true in order for the ideas to succeed.
+  <ul>
+    <li>Do not test one idea at a time, but assumptions from all ideas at the same time.</li>
+    <li>Assumption tests should simulate an experience, so that the participant behaves, not only says that they will do or not.</li>
+    <li>Define evaluation criteria upfront.</li>
+    <li>You are not trying to prove that an assumption is true, but to reduce the risk.</li>
+  </ul></li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Introduction</a></li>
+  <li><a href="#p-1">Part I - What is Continuous Delivery?</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - The What and Why of Continuous Delivery</a></li>
+    <li><a href="#ch-2">Chapter 2 - A Common Framework for Continuous Delivery</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Continuous Discovery Habits</a>
+  <ul>
+    <li><a href="#ch-3">Chapter 3 - Focusing on Outcomes over Outputs</a></li>
+    <li><a href="#ch-4">Chapter 4 - Visualizing What You Know</a></li>
+    <li><a href="#ch-5">Chapter 5 - Continuous Interviewing</a></li>
+    <li><a href="#ch-6">Chapter 6 - Mapping the Opportunity Space</a></li>
+    <li><a href="#ch-7">Chapter 7 - Prioritizing Opportunities, Not Solutions</a></li>
+    <li><a href="#ch-8">Chapter 8 - Supercharged Ideation</a></li>
+    <li><a href="#ch-9">Chapter 9 - Identifying Hidden Assumptions</a></li>
+    <li><a href="#ch-10">Chapter 10 - Testing Assumptions, Not Ideas</a></li>
+    <li><a href="#ch-11">Chapter 11 - Measure Impact</a></li>
+    <li><a href="#ch-12">Chapter 12 - Managing The Cycles</a></li>
+    <li><a href="#ch-13">Chapter 13 - Slow You Work</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - Developing You Continuous Discovery Habits</a>
+  <ul>
+    <li><a href="#ch-14">Chapter 14 - Start Small, and Iterate</a></li>
+  </ul></li>
+</ul><h1><a name="ch-0"></a>Introduction</h1>
+<ul>
+  <li>Focus on customers was a better strategy than obsessing about our competitors.</li>
+  <li>Naively thought business would be human centered.</li>
+</ul><h1><a name="p-1"></a>Part I - What is Continuous Delivery?</h1><h2><a name="ch-1"></a>Chapter 1 - The What and Why of Continuous Delivery</h2>
+<ul>
+  <li>Questions:
+  <ul>
+    <li>Does the customer want it?</li>
+    <li>Are you improving over time?</li>
+    <li>Are you creating value for the customer and your business?</li>
+  </ul></li>
+  <li>Approach to give you confidence to act while preparing you to be wrong.</li>
+  <li>Product trio:
+  <ul>
+    <li>Product Manager + Designer + SW eng.</li>
+    <li>Other roles are welcomed but beware of the cost.</li>
+  </ul></li>
+  <li>Mindset:
+  <ol>
+    <li>Outcome-oriented.</li>
+    <li>Customer-centric.</li>
+    <li>Collaborative.</li>
+    <li>Visual:
+    <ul>
+      <li>Humans have an immense capacity for spatial reasoning.</li>
+    </ul></li>
+    <li>Experimental.</li>
+    <li>Continuous.</li>
+  </ol></li>
+  <li>At minimum, weekly touch points with customers by the team building the product where they conduct small research activities in pursuit of a desired outcome.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - A Common Framework for Continuous Delivery</h2>
+<ul>
+  <li>The focus on outcomes at the cost of the customer is not uncommon.</li>
+  <li>Best path to desired outcome is the &ldquo;ill-structured problem&rdquo;:
+  <ul>
+    <li>There is no right or wrong, only better or worse.</li>
+    <li>Most of the work is framing the problem itself:
+    <ul>
+      <li>Framing impacts how we solve it.</li>
+      <li>Good problem-solvers try many framings.</li>
+    </ul></li>
+  </ul></li>
+  <li>Pursue business value by creating customer value.</li>
+  <li>Opportunity: customer needs, pain points or desires.</li>
+  <li>Opportunity Solution Tree (OST):<br/> <img src="/images/blog/books/continuous-discovery-habits/ost.jpg" alt="OST" />
+  <ul>
+    <li>Shared understanding.</li>
+    <li>Split big opportunities into smaller and smaller ones.</li>
+  </ul></li>
+  <li>Chip and Dan Heath, <a href="https://amzn.to/3Hx7x4I">Decisive Book</a>:
+  <ul>
+    <li>4 villains of decision-making:
+    <ol>
+      <li>Looking too narrowly at a problem.</li>
+      <li>Confirmation bias.</li>
+      <li>Letting short-term emotions affect decisions.</li>
+      <li>Overconfidence.</li>
+    </ol></li>
+    <li>First book to read after this one.</li>
+  </ul></li>
+  <li>Avoid &ldquo;whether or not&rdquo; decisions, but a &ldquo;compare and contrast&rdquo;.</li>
+  <li>Best designers evolve the problem and solution space together.</li>
+  <li>When an idea does not work, take the time to reflect on what you learned.</li>
+</ul><h1><a name="p-2"></a>Part II - Continuous Discovery Habits</h1><h2><a name="ch-3"></a>Chapter 3 - Focusing on Outcomes over Outputs</h2>
+<ul>
+  <li>Josh Seiden, <a href="https://amzn.to/493cjm7">Outcomes Over Outputs</a>:
+  <ul>
+    <li>An outcome is a change in human behavior that drives business results.</li>
+  </ul></li>
+  <li>Product teams have to do discovery work to identify the connection between product outcomes (metrics they can influence) and business outcomes (metrics that drive the business).</li>
+  <li><a href="https://amzn.to/47M7Pzm">Measure What Matters</a> valid criticisms from <a href="https://felipecastro.com/en/blog/book-review-measure-what-matters/">Felipe Castro</a>.</li>
+  <li>Outcomes communicate uncertainty.</li>
+  <li>Multiple teams with the same business outcome make it easy to blame other teams for the lack of progress.</li>
+  <li>Traction metrics (usage of a particular feature) do not give product teams any latitude:
+  <ul>
+    <li>They are outputs.</li>
+    <li>Avoid them except:
+    <ol>
+      <li>Junior product teams.</li>
+      <li>When optimizing a solution instead of finding a new solution.</li>
+    </ol></li>
+  </ul></li>
+  <li>Outcome negotiated between product leader and product trio.</li>
+  <li>Stable product trio focused on the same outcome is critical, so that they do not need to learn again how to move the metric:
+  <ul>
+    <li>Start with a learning goal, then move to a SMART goal.</li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Visualizing What You Know</h2>
+<ul>
+  <li>Steps:
+  <ol>
+    <li>Agree on scope, focusing on desired outcome.</li>
+    <li>Individually create an experience map.</li>
+    <li>Study each other&rsquo;s map.</li>
+    <li>Co-create a map:
+    <ul>
+      <li>Include all individual nodes of all maps.</li>
+      <li>Collapse similar nodes.</li>
+      <li>Map more than the happy path.</li>
+      <li>Add context (visually if possible)</li>
+    </ul></li>
+  </ol></li>
+  <li>Experience maps are visual.</li>
+  <li>Drawing is more specific than writing. Language is vague.
+  <ul>
+    <li>I strongly disagree.</li>
+  </ul></li>
+  <li>Maps:
+  <ul>
+    <li>Nodes: moment in time, action or event.</li>
+    <li>Links.</li>
+  </ul></li>
+  <li>Refine the map as you learn.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Continuous Interviewing</h2>
+<ul>
+  <li>Interviewing is not to ask your customers what you should build:
+  <ul>
+    <li>It is to discover and explore opportunities.</li>
+  </ul></li>
+  <li>Direct (factual) questions require recalling facts without context:
+  <ul>
+    <li>Prone to cognitive biases.</li>
+    <li>Answers not accurate.</li>
+  </ul></li>
+  <li>Confidence isn&rsquo;t a good indicator of truth or reality.</li>
+  <li>When information is missing, our brains simply fill in details to make the story coherent.</li>
+  <li>Primary research question:
+  <ul>
+    <li>What opportunity matter most to this customer?</li>
+    <li>Best is to ask them to share specific stories about their experience:
+    <ul>
+      <li>Dig into the details.</li>
+      <li>Don&rsquo;t allow them to generalize.</li>
+    </ul></li>
+    <li>Use the experience map as a guide.</li>
+  </ul></li>
+  <li>Research question: what you are trying to learn.</li>
+  <li>Interview question: what you ask in your interview.</li>
+  <li>Synthesize using an interview snapshot:
+  <ul>
+    <li>Quick facts: help identify type of customer.</li>
+    <li>Opportunities: use customer&rsquo;s words.</li>
+    <li>Top right, experience map for this customer.</li>
+  </ul></li>
+</ul><p><img src="/images/blog/books/continuous-discovery-habits/interview-snapshot.png" alt="Interview snapshot" /></p>
+<ul>
+  <li>Interview at least one customer every week.</li>
+  <li>Source of candidates:
+  <ul>
+    <li>While users are using your product.</li>
+    <li>Ads.</li>
+    <li>Support.</li>
+    <li>Marketing.</li>
+    <li>Customer Advisory Board.</li>
+  </ul></li>
+  <li>Product trios should interview together.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Mapping the Opportunity Space</h2>
+<ul>
+  <li>Our job is to address customer opportunities that drive our desired outcome.</li>
+  <li>Branches in the OST must not have overlaps.</li>
+  <li>Look for key moments (or nodes) in:
+  <ol>
+    <li>Experience Map.</li>
+    <li>From patterns in interview experience maps.</li>
+  </ol></li>
+  <li>Avoid:
+  <ul>
+    <li>Opportunities framed from your company&rsquo;s perspective.</li>
+    <li>Vertical opportunities (trees with no branches).</li>
+    <li>Opportunities with two parents.</li>
+    <li>Capturing feelings as opportunities.</li>
+  </ul></li>
+  <li>An opportunity should have more than one potential solution, otherwise it is simply a solution in disguise.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Prioritizing Opportunities, Not Solutions</h2>
+<ul>
+  <li>Compare top level opportunities in the tree, and recursively do the same with the children of the chosen one.</li>
+  <li>Comparison criteria:
+  <ol>
+    <li>Size: how many customers and how often?</li>
+    <li>Market: how if affects our position in the market:
+    <ul>
+      <li>Differentiators vs table stakes.</li>
+    </ul></li>
+    <li>Company:
+    <ul>
+      <li>Does it support company/business unit/team vision/mission/strategy?</li>
+      <li>Available skills in the team.</li>
+    </ul></li>
+    <li>Customer:
+    <ul>
+      <li>How important it is.</li>
+      <li>How satisfied customers are with the current solution?</li>
+    </ul></li>
+  </ol></li>
+  <li>Do not score opportunities:
+  <ul>
+    <li>Make a data-informed, subjective comparison.</li>
+  </ul></li>
+  <li>Choosing an opportunity is an easily reversible decision, so:
+  <ul>
+    <li>Avoid analysis-paralysis:
+    <ul>
+      <li>We will learn more by acting.</li>
+    </ul></li>
+    <li>You are just committing to explore it further.</li>
+  </ul></li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Supercharged Ideation</h2>
+<ul>
+  <li>Research shows:
+  <ul>
+    <li>More idea == more diverse and novel.</li>
+    <li>Most original ideas tend to be generated toward the end of the ideation session.</li>
+  </ul></li>
+  <li>Brainstorming rules:
+  <ol>
+    <li>Focus on quantity.</li>
+    <li>Defer judgement.</li>
+    <li>Combine and improve ideas.</li>
+    <li>Welcome unusual ideas.</li>
+  </ol></li>
+  <li>Research shows that individuals outperformed brainstorming groups due to:
+  <ol>
+    <li>Social loafing:
+    <ul>
+      <li>People tend to work harder on their own.</li>
+    </ul></li>
+    <li>Group conformity:
+    <ul>
+      <li>People censored themselves due to concerns about how others would judge their ideas.</li>
+    </ul></li>
+    <li>Production blocking:
+    <ul>
+      <li>You are about to say an idea, somebody else jumps in, and you forget your idea.</li>
+    </ul></li>
+    <li>Downward not setting:
+    <ul>
+      <li>Performance of a group tends to be limited to the lowest-performing member.</li>
+    </ul></li>
+  </ol></li>
+  <li>Brainstorming groups are subject to &ldquo;illusion of group productivity&rdquo;:
+  <ul>
+    <li>Groups overestimate their performance, because &ldquo;cognitive failures&rdquo; (getting stuck) happens less often than to individuals.</li>
+  </ul></li>
+  <li>Best:
+  <ol>
+    <li>Generate ideas individually.</li>
+    <li>Share.</li>
+    <li>Go to 1.</li>
+  </ol></li>
+  <li>Tips for ideation:
+  <ul>
+    <li>Take frequent breaks.</li>
+    <li>Walk.</li>
+    <li>Change scenery.</li>
+    <li>Try different times of the day.</li>
+    <li>Sleep over it.</li>
+    <li>Look at competitors or other industries for analogous problems.</li>
+    <li>Pretend to have a magic want.</li>
+  </ul></li>
+  <li>Research shows that we are better at evaluating ideas as a group.</li>
+  <li>Dot-vote ideas as a group:
+  <ul>
+    <li>First, remove ideas that do not address the opportunity.</li>
+    <li>Only criteria is how well the idea addresses the target opportunity.</li>
+    <li>Until you have set aside <em>3 ideas</em>.</li>
+    <li>Each idea should have a strong advocate.</li>
+  </ul></li>
+  <li>Include the whole team in ideation:
+  <ul>
+    <li>Consider also including key stakeholders.</li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Identifying Hidden Assumptions</h2>
+<ul>
+  <li>Fast discovery iterations only possible if instead of testing ideas, test the assumptions that need to be true in order for the ideas to succeed.</li>
+  <li>Use story mapping to align/understand ideas:
+  <ul>
+    <li>Be specific.</li>
+    <li>Story map what would be the best solution based on what we know right now.</li>
+    <li>List assumptions in each step.</li>
+  </ul></li>
+  <li>Assumptions == risks (desirability, feasibility, usability) + ethical viability.</li>
+  <li>Use pre-mortems:
+  <ul>
+    <li>Imagine it is 6 months into the future and the product/initiative launched, and it was a complete failure. What went wrong?</li>
+  </ul></li>
+  <li>Walk up the OST and be very specific about why the solution will address the opportunity and the opportunity the outcome.</li>
+  <li>Prioritizing assumptions:
+  <ul>
+    <li>Place them relative to each other.</li>
+    <li>Pick the 2-3 top right most.</li>
+    <li>More important == less likely to have a workaround.</li>
+  </ul></li>
+</ul><p><img src="/images/blog/books/continuous-discovery-habits/opportunity-prioritization.png" alt="Prioritizing assumptions" /></p>
+<ul>
+  <li>Expect to generate ~20 assumptions per idea.</li>
+  <li>Phrase your assumptions so that they need to be true:
+  <ul>
+    <li>NO: customer will not remember their password.</li>
+    <li>YES: customers will remember their password.</li>
+  </ul></li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Testing Assumptions, Not Ideas</h2>
+<ul>
+  <li>Do not test one idea at a time, but assumptions from all three ideas at the same time:
+  <ul>
+    <li>Avoid confirmation bias and escalation of commitment.</li>
+  </ul></li>
+  <li>Assumption tests should simulate an experience, so that the participant behaves, not only says that they will do or not.</li>
+  <li>It is common for ideas to share assumptions:
+  <ul>
+    <li>Can rule out multiple ideas at once.</li>
+  </ul></li>
+  <li>Define evaluation criteria upfront:
+  <ul>
+    <li>Be explicit:
+    <ul>
+      <li>How many people we&rsquo;ll test.</li>
+      <li>How many people need to exhibit the behaviour.</li>
+    </ul></li>
+  </ul></li>
+  <li>You are not trying to prove that an assumption is true, but to reduce the risk:
+  <ul>
+    <li>Start small and iterate to bigger, more reliable tests.</li>
+  </ul></li>
+  <li>In the majority of cases, you will learn plenty from small-scale tests.</li>
+  <li>Tools:
+  <ol>
+    <li>Unmoderated user testing:
+    <ul>
+      <li>Produce a video test you can watch later.</li>
+    </ul></li>
+    <li>One-question surveys.</li>
+  </ol></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Measure Impact</h2>
+<ul>
+  <li>Measure not only what you need to evaluate our assumption tests, but also what we need to measure impact on our outcome.</li>
+  <li>Start small and experiment your way to the best instrumentation.</li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Managing The Cycles</h2>
+<ul>
+  <li>Most of the work in discovery is not following the process; it is managing the cycles.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Slow You Work</h2>
+<ul>
+  <li>Share with stakeholders your whole journey, so they can make their own conclusions and help co-create.</li>
+  <li>Use your discovery framework to help stakeholders see where their idea does (or does not) fit.</li>
+  <li>You aren&rsquo;t going to win the ideological war in one conversation (or never).</li>
+</ul><h1><a name="p-3"></a>Part III - Developing You Continuous Discovery Habits</h1><h2><a name="ch-14"></a>Chapter 14 - Start Small, and Iterate</h2>
+<ul>
+  <li>Continuous interviewing is the keystone habit for continuous discovery.</li>
+  <li>The best time to advocate for discovery is when a feature falls short of expectations.</li>
+  <li>Consider what you can do in the unique company&rsquo;s context and let go of the &ldquo;That would never work here&rdquo;.</li>
+</ul>]]></description></item><item><title>Book notes: The Staff Engineer's Path: A Guide for Individual Contributors Navigating Growth and Change</title><link>https://danlebrero.com/2024/01/24/the-staff-engineers-path-summary/</link><guid>https://danlebrero.com/2024/01/24/the-staff-engineers-path-summary/</guid><pubDate>Wed, 24 Jan 2024 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3thSc4p">The Staff Engineer&rsquo;s Path: A Guide for Individual Contributors Navigating Growth and Change</a> by <a href="https://www.linkedin.com/in/tanyareilly">Tanya Reilly</a>.</p><p>Must-read for anybody interested on growing in the individual contributor track.</p>
 <blockquote><p>Be the engineer that everyone wants to work with. <cite>Tanya Reilly, this book</cite></p>
 </blockquote><h1>Key Insights</h1><p><img src="/images/blog/books/staff-engineers-path/pillars.png" alt="Staff engineer pillars" /></p>
 <ul>
@@ -5482,265 +5932,4 @@ new Freezeframe(".gifoverlay", {
     <li>You are the one that will learn the most.</li>
     <li>If training goes well, it is nothing short of exhilarating.</li>
   </ol></li>
-</ul>]]></description></item><item><title>Client-side good practices when building third party API integrations</title><link>https://danlebrero.com/2023/03/29/client-side-integration-patterns-good-practices/</link><guid>https://danlebrero.com/2023/03/29/client-side-integration-patterns-good-practices/</guid><pubDate>Wed, 29 Mar 2023 00:00:00 +0200</pubDate><description><![CDATA[<p>Here is a brain dump of things that I consider when I have to build a new integration with some third party API provider.</p><p>Notes are quite sketchy. If something needs of a longer explanation let me know!</p><h1>Truths</h1>
-<ul>
-  <li>They are messy.</li>
-  <li>Third parties will become unavailable, both in small doses (few requests &ldquo;randomly&rdquo; failing) and in big ones (few minutes or hours of downtime).</li>
-  <li>SFTP is a perfectly acceptable way of integrating.</li>
-</ul><h1>Practices</h1><h2>Initial implementation</h2>
-<ul>
-  <li>Read the docs.
-  <ul>
-    <li>Do not just fiddle with the endpoints but read the actual docs.</li>
-  </ul></li>
-  <li>Play with the API to understand behaviours. What if:
-  <ul>
-    <li>the url is wrong? Does it return a 404?</li>
-    <li>the data queried does not exist? Empty result or 404?</li>
-    <li>we miss some query/body parameters?</li>
-    <li>we concurrently update the same piece of information?</li>
-    <li>we exceed the rate limit?</li>
-  </ul></li>
-  <li>Estimate call rate and data volumes:
-  <ul>
-    <li>Is batching available?</li>
-    <li>Is pagination available?</li>
-    <li>Get a sense of the performance:
-    <ul>
-      <li>It might affect the implementation and business flow.</li>
-    </ul></li>
-  </ul></li>
-  <li>Document findings
-  <ul>
-    <li>Include support contact information and expectations.</li>
-  </ul></li>
-  <li>Subscribe the provider&rsquo;s status page.</li>
-  <li>Find out what is their change management process:
-  <ul>
-    <li>Subscribe to whatever you need to subscribe to find out about changes.</li>
-    <li>Is it a newly built third party?
-    <ul>
-      <li>Try to get direct access to their technical team.</li>
-      <li>Expect loads of backwards incompatible changes.</li>
-      <li>VS mature products, higher chance that the bug is on their side.</li>
-    </ul></li>
-  </ul></li>
-  <li>Consider a <a href="https://martinfowler.com/bliki/DarkLaunching.html">dark launch</a>:
-  <ul>
-    <li>Put the integration in production, so it is exercised but do not use it in a client facing functionality.</li>
-    <li>Minimum monitoring (error and performance) required for this to be useful.</li>
-    <li>Useful also to collect real example responses to use for additional testing.</li>
-  </ul></li>
-</ul><h2>On the way to production</h2>
-<ul>
-  <li>What is the acceptable business process when the integration fails?
-  <ul>
-    <li>Integration will fail.</li>
-    <li>Avoid &ldquo;at all costs&rdquo; making an integration mandatory for a key user flow.</li>
-    <li>What is the fallback mechanism? Default answer?</li>
-    <li>If there is a reasonable business flow, consider recording which user flows where affected and proper actions retried/amended/reviewed/notified.</li>
-    <li>It is a business decision.</li>
-  </ul></li>
-  <li>Add retries:
-  <ul>
-    <li>Think of clock time, not number of retries.</li>
-    <li>Consider supporting a manual retry mechanism for your support folks.</li>
-    <li>See &ldquo;user-flow vs background integrations below&rdquo;.</li>
-  </ul></li>
-  <li>Add a kill-switch:
-  <ul>
-    <li>Ideally in the hands of a PM.</li>
-    <li>Review &ldquo;What is the acceptable business process when the integration fails&rdquo;.</li>
-  </ul></li>
-  <li>Always set timeouts in network calls:
-  <ul>
-    <li>In the case of Apache HTTP client, <a href="/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures">at least connection and read timeout</a>.</li>
-    <li>Consider that while the thread is waiting for a response, it might be holding other resources (locks, db connections) hostage, which might affect unrelated requests.</li>
-    <li>Review &ldquo;What is the acceptable business process when the integration fails&rdquo;.</li>
-    <li>Note: when there is a read timeout while waiting for the server to respond, the client side does not know if the request was processed or not.</li>
-    <li>Note: if the client application crashes, any in-flight request to the provider ends up in an unknown state from the client&rsquo;s point of view.
-    <ul>
-      <li>Consider a retry/recovery mechanism when the client application starts up.</li>
-    </ul></li>
-  </ul></li>
-  <li>If you can influence it, encourage the provider to implement idempotent APIs:
-  <ul>
-    <li>&ldquo;At least once&rdquo; semantics are way easier than &ldquo;at most once&rdquo;.</li>
-  </ul></li>
-  <li>You might want to consider splitting one third party API into smaller independent integrations if:
-  <ul>
-    <li>Some endpoints are more critical than others for your business process.</li>
-    <li>The various endpoints have widely different latencies.</li>
-  </ul></li>
-  <li>Monitoring:
-  <ul>
-    <li>Call rate, error rate, latency.</li>
-    <li>Logs:
-    <ul>
-      <li>All calls.</li>
-      <li>Request/Response body in the case of an error.
-      <ul>
-        <li>Careful with PII data.</li>
-      </ul></li>
-      <li>Side note: client side monitoring is always better than server side monitoring, as the server might not see some requests if they never reach it, or it might miss monitoring data if it is struggling with load/network/crashing.
-      <ul>
-        <li>Server side monitoring is still required.</li>
-      </ul></li>
-    </ul></li>
-  </ul></li>
-  <li>Set alerts:
-  <ul>
-    <li>Useful distinction between errors:
-    <ul>
-      <li>4xx:
-      <ul>
-        <li>It&rsquo;s our fault.</li>
-        <li>Most likely something that we can do about it.</li>
-        <li>Daily/weekly report:
-        <ul>
-          <li>Daily the first few weeks.</li>
-          <li>Only alert if % is very high.</li>
-          <li>Very unlikely that a retry will help.</li>
-        </ul></li>
-      </ul></li>
-      <li>5xx and timeouts/network errors:
-      <ul>
-        <li><a href="/2016/11/21/the-boy-who-cried-wolf-an-it-tale/">Do not alert on each and every error</a>:
-        <ul>
-          <li>Timeout and 5xx will happen and are normal.</li>
-        </ul></li>
-        <li>Too many:
-        <ul>
-          <li>First few weeks might mean that you need to tweak your timeouts:
-          <ul>
-            <li>Dark launch!</li>
-          </ul></li>
-          <li>Escalate to the provider team.</li>
-        </ul></li>
-        <li>Retries will help.</li>
-      </ul></li>
-      <li>In both cases, keep a close eye the first time that you release an integration.</li>
-      <li>Remember that GraphQL needs <a href="https://productionreadygraphql.com/2020-08-01-guide-to-graphql-errors">additional error handling</a>.</li>
-    </ul></li>
-    <li>If you are doing out of hours escalation, ensure that the person to be contacted when there is an alert is the person that thinks that the alert deserves an out of hours alert.
-    <ul>
-      <li>Most likely it is an issue with the provider, so it &ldquo;only&rdquo; needs to be escalated to their support.</li>
-      <li>Provide a dashboard for that alert that even a PM will understand.</li>
-      <li>Provide a phone contact to the third party support.</li>
-    </ul></li>
-    <li>See &ldquo;user-flow vs background integrations below&rdquo;.</li>
-    <li>Consider doing load testing.</li>
-  </ul></li>
-  <li>Security:
-  <ul>
-    <li>SSL.</li>
-    <li>IP allow-list.</li>
-    <li>Credentials rotation:
-    <ul>
-      <li>If it is not automated, figure out who to contact.</li>
-    </ul></li>
-    <li>On start up, check that the credentials are valid.</li>
-  </ul></li>
-</ul><h2>Practices for user-flow vs background integrations</h2><p>The main difference between API integration that is in a user-flow and integration that runs in some background process is that the user-flow integrations require a low latency, as it is unlikely that users are willing to wait long.</p><h4>Background integrations</h4>
-<ul>
-  <li>Multiple retries:
-  <ul>
-    <li>Consider exponential backoff.</li>
-    <li>Think in terms of clock time: For how many minutes/hours is the business process still meaningful? Or is it pointless if delayed more than X?
-    <ul>
-      <li>Business decision.</li>
-    </ul></li>
-  </ul></li>
-  <li>Alerts:
-  <ul>
-    <li>Think in terms of clock time: how long can this integration be down before somebody should panic?
-    <ul>
-      <li>Business decision.</li>
-    </ul></li>
-    <li>Consider alerting before the process runs out of retries, so that once the issue is addressed the process will (hopefully) successfully retry.</li>
-  </ul></li>
-  <li>Timeouts can be longer: up to minutes could be ok.</li>
-  <li>Batching is more likely to be useful.</li>
-  <li>No need for circuit-breakers.</li>
-  <li>Rate-limiting should result in traffic shaping.</li>
-</ul><h4>User-flow integrations</h4>
-<ul>
-  <li>You cannot wait long as there is a human looking at a spinning icon on the other side, so:
-  <ul>
-    <li>No more than one retry.</li>
-    <li>Short timeouts.</li>
-    <li>This in terms of clock time: how long will the human be willing to wait for the result to appear on their screen before they think your app is broken?</li>
-    <li>Most of the time, a few seconds tops.</li>
-  </ul></li>
-  <li>Connection pools are a must:
-  <ul>
-    <li>Unless your call rate is so low that it will make no difference.</li>
-    <li>Each integration should have its own connection pool:
-    <ul>
-      <li>Do not share connection pools between different integrations.</li>
-    </ul></li>
-    <li>Configure the connection pool timeout and the TTL.</li>
-  </ul></li>
-  <li>Circuit breakers are a must.</li>
-  <li>Consider stale-while-revalidating + stale-while-error for cached authorization tokens and data:
-  <ul>
-    <li>Reduce extra latency when the token/data is stale.</li>
-    <li>Better resilience: set refresh short enough that any transient error in the provider will not affect the user as the refresh will be retried several times before it comes really stale.</li>
-  </ul></li>
-  <li>Alerts:
-  <ul>
-    <li>Based on circuit breakers.</li>
-    <li>Think in terms of clock time:
-    <ul>
-      <li>For how long a circuit breaker must be open before somebody should panic?</li>
-    </ul></li>
-  </ul></li>
-  <li>Most PaaS platforms have a hard time limit to process the request.</li>
-  <li>Consider:
-  <ul>
-    <li>Moving to a completely or mostly async IO model, to avoid thread starvation.</li>
-    <li><a href="https://blogs.oracle.com/javamagazine/post/java-loom-virtual-threads-platform-threads">Java virtual threads</a>!</li>
-    <li>Sync data from the provider in a background process, store locally and serve from local store.</li>
-    <li>Splitting processing into two steps:
-    <ol>
-      <li>Trigger request to provider on first client request.</li>
-      <li>Client to periodically poll to check if the response is ready.</li>
-    </ol></li>
-  </ul></li>
-</ul><h2>Annoyances</h2><p>A list of things that should never happen, and do not make sense at all, but you will need to live with.</p>
-<ul>
-  <li>Expect the integration to behave out of spec:
-  <ul>
-    <li>Be kind with the provider&rsquo;s developers.</li>
-  </ul></li>
-  <li>A 200 response does not mean a successful response:
-  <ul>
-    <li>Look at something inside the response to confirm that it was a successful response.</li>
-  </ul></li>
-  <li>Health check endpoints tell you that the health check endpoint is working (or not):
-  <ul>
-    <li>Making this call does not guarantee the success of the following HTTP request:
-    <ul>
-      <li>Health check implementations usually just return a 200 if the API server is up, but do not check that all the downstream dependencies are up and running.
-      <ul>
-        <li>Doing so is usually very expensive.</li>
-      </ul></li>
-    </ul></li>
-    <li>Even if the health check endpoint does health checking of downstream servers and the downstream servers of the downstream servers, it is possible that by the time we send the second request, the API server or any of its dependencies is frozen or dead, or that there is some network issue on the path.</li>
-    <li>Making this call makes the error handling and logic more complex.</li>
-    <li>So, avoid.</li>
-    <li>See &ldquo;Side note: client side monitoring is always better than server side monitoring&rdquo;.</li>
-  </ul></li>
-  <li>Probably the dev environment of the provider is crap:
-  <ul>
-    <li>Consider using their staging in all pre-production environments.</li>
-    <li>Use their dev environment for initial development.</li>
-  </ul></li>
-</ul><h1>Extra references</h1>
-<ul>
-  <li><a href="/2017/08/03/stability-patterns-a-case-study-devoxx-pl-2017-video">Resilience Patterns</a>.</li>
-  <li><a href="https://martinfowler.com/bliki/DarkLaunching.html">Dark launch</a>.</li>
-  <li><a href="/2019/12/11/apache-http-client-timeouts-config-production-asynchronous-http-client-pictures">Configuring connection pools and timeouts</a>.</li>
-  <li><a href="https://productionreadygraphql.com/2020-08-01-guide-to-graphql-errors">GraphQL error handling</a>.</li>
-  <li><a href="/2016/11/21/the-boy-who-cried-wolf-an-it-tale/">Alert fatigue</a>.</li>
 </ul>]]></description></item></channel></rss>
