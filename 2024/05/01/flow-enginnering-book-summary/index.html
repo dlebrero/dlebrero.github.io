@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Flow Engineering</title>
+	<meta content="Book notes on &quot;Flow Engineering: From Value Stream Mapping to Effective Action&quot; by Steve Pereira and Andrew Davis" name="description" /><meta content="Book review notes summary, Flow Engineering, Value Stream Mapping, Agile Transformation, DevOps Implementation, Lean Management, Scaling Challenges, Customer-Centric Alignment, Specialization and Silos, Business Cybernetics, Dependency Mapping" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Flow Engineering" property="og:title" /><meta content="Book notes on &quot;Flow Engineering: From Value Stream Mapping to Effective Action&quot; by Steve Pereira and Andrew Davis" property="og:description" /><meta content="https://danlebrero.com/2024/05/01/flow-enginnering-book-summary/" property="og:url" /><meta content="Book notes: Flow Engineering" name="twitter:title" /><meta content="Book notes on &quot;Flow Engineering: From Value Stream Mapping to Effective Action&quot; by Steve Pereira and Andrew Davis" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/flow-engineering/flow-engineering.png" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/flow-engineering/flow-engineering.png" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2024/05/01/flow-enginnering-book-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+	<!-- Google tag (gtag.js) -->
+	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-3KPNQF7Y7S"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3KPNQF7Y7S');
+</script>	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+<!--				 <li id="menu-popular"><a class="smoothscroll" href="/popular/">Popular entries.</a></li>-->
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Flow Engineering</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 1 May 2024</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Flow Engineering: From Value Stream Mapping to Effective Action" by Steve Pereira and Andrew Davis</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/flow-engineering/flow-engineering.png" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/4bi6p1H">Flow Engineering: From Value Stream Mapping to Effective Action</a> by <a href="https://twitter.com/steveelsewhere/">Steve Pereira</a> and <a href="https://twitter.com/AndrewDavis_io">Andrew Davis</a>.</p><p>“Flow Engineering is a set of practices that build on the foundations of cybernetics and the Toyota Production System to provide a lightweight and iterative way of building value, clarity, and flow.”</p><p>I love the approach to do the minimal amount of work to take you to next step:</p>
+<blockquote><p>Value Stream Map in Flow Engineering is significantly simpler than the traditional one.</p>
+</blockquote><p>You can find a Miro board with <a href="https://miro.com/app/board/uXjVKNndJVU=/?share_link_id=73825138920">all Flow Engineering Maps</a>.</p><h1>Key Insights</h1>
+<ul>
+  <li>The default approach to addressing the problem of scale is to increase coordination.</li>
+  <li>In the absence of a simple purpose oriented around the customer, teams default to acting in incoherent and self-serving ways.</li>
+  <li>The fastest path to clarity is visibility.</li>
+  <li>Silos are a natural consequence of specialization and scale.</li>
+  <li>Ringelmann effect: as more people are involved in a task, their average performance decreases, with each participant tending to feel that their own effort is not critical to overall performance.</li>
+  <li>Solution to scale must have:
+  <ol>
+    <li>Engage all participants, like generative methods, to avoid disengagement.</li>
+    <li>Simple and aligned, like prescriptive methods, to avoid disorientation.</li>
+    <li>Fast and easy to put into practice, unlike prescriptive methods, to avoid distraction.</li>
+  </ol></li>
+  <li>To manage and optimize the flow of work, we must first see the flow of work.</li>
+  <li>Value is our target, clarity allow us to understand a path to the target, and flow is about optimizing that path.</li>
+  <li>Value, clarity and flow are hard to establish and easily lost.</li>
+  <li>The act of mapping enables you to learn by doing.</li>
+  <li>Maps:
+  <ol>
+    <li>Outcome Map:
+    <ul>
+      <li>Goal is to focus the team while surfacing doubts, testing assumptions, and enabling the emergence of new insights.</li>
+    </ul></li>
+    <li>Current State Value Stream Map.</li>
+    <li>Dependency Map: identify dependencies by studying constraints.</li>
+    <li>Future State Value Stream Map: how things will look like in 6 months.</li>
+    <li>Flow Roadmap: organize insights, actions, and ownership into an improvement roadmap.</li>
+  </ol></li>
+  <li>If there are no obstacle to achieving our desired goal, we would already be there.</li>
+  <li>Explicit obstacles mean they can be dealt with consciously.</li>
+  <li>Working backwards involves beginning with a clear definition of a desired target state (outcome) and using that target to guide decisions and actions.</li>
+  <li>Where there is a customer, there is a value stream.</li>
+  <li>For Value Stream Mapping (VSM) to be effective, the team needs to be aligned on their objectives and aspirations.</li>
+  <li>Don Reinertsen, in <a href="https://amzn.to/3VP4c9k">Principles of Product Development Flow</a>:
+  <ul>
+    <li>The value added by an activity is the difference in the price that an economically rational buyer would pay for a work product before, and after, the activity is performed.</li>
+  </ul></li>
+  <li>Cocreating a Current State Value Stream Map reveals issues that allow teams to get at least 20% of their time back immediately.</li>
+  <li>“It depends” isn’t an acceptable excuse for deliberation.</li>
+  <li>The rapid VSM done in Flow Engineering intentionally sacrifices precision for speed and ease:
+  <ul>
+    <li>Aim to gather just enough information to identify a critical constraint.</li>
+  </ul></li>
+  <li>Nothing is ever truly autonomous.</li>
+  <li>An SLA will consume the maximum time the SLA allows.</li>
+  <li><p>Approach Dependency Mapping with curiosity, not accusation or demand.</p>
+  <blockquote>Seek first to understand, then to be understood <cite>Stephen Covey, The 7 Habits of Highly Effective People</cite>
+  </blockquote></li>
+  <li><a href="/2021/01/06/toyota-kata-in-software-development-continuous-improvement/">Improvement Kata cycle</a>:
+  <ol>
+    <li>Vision and challenge: Outcome Map.</li>
+    <li>Gasp current condition: Current State Map and Dependency Map.</li>
+    <li>Target condition: Future State Map.</li>
+    <li>Experiments: Flow Roadmap.</li>
+  </ol></li>
+  <li>Work in progress is the silent killer of productivity.</li>
+  <li>You may miss something going too fast, and you may waste time going too deep.</li>
+  <li>Delivering value is an act of cooperation, not a zero-sum game.</li>
+  <li>We can only measure value by getting feedback from those experiencing it.</li>
+  <li>Flow implies a quality of steadiness in motion.</li>
+  <li>Optimizing for flow is contradictory to optimizing for resource utilization.</li>
+  <li>In sw dev, there is significant variation in how long work takes, so you need slack capacity to accommodate this variation.</li>
+  <li>Creating a pull-based system of work is an extraordinary feat.</li>
+  <li>Learning is central to removing waste.</li>
+  <li>Streetlight effect: we tend to look for things where it’s easy to look.</li>
+  <li>If you are not getting better, you are getting worse.</li>
+  <li><a href="#types">Developmental vs Operational</a> value streams and Core vs Supportive value streams.</li>
+</ul>
+<blockquote><p>Strategy is a commodity, execution is an art <cite>Peter Drucker</cite></p>
+</blockquote><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Introduction</a></li>
+  <li><a href="#p-1">Part 1 - The Flow Landscape</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - The Problem with Scale</a></li>
+    <li><a href="#ch-2">Chapter 2 - Solutions to Scale</a></li>
+    <li><a href="#ch-3">Chapter 3 - The Elements of Action</a></li>
+    <li><a href="#ch-4">Chapter 4 - Flow Engineering</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part 2 - Mapping the Landscape</a>
+  <ul>
+    <li><a href="#ch-5">Chapter 5 - Outcome Mapping</a></li>
+    <li><a href="#ch-6">Chapter 6 - Current State Value Stream Mapping</a></li>
+    <li><a href="#ch-7">Chapter 7 - Dependency Mapping</a></li>
+    <li><a href="#ch-8">Chapter 8 - Future State Value Stream Mapping</a></li>
+    <li><a href="#ch-9">Chapter 9 - The Flow Roadmap</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part 3 - Navigating the Landscape</a></li>
+  <li><a href="#ch-10">Chapter 10 - Principles of Flow Engineering</a>
+  <ul>
+    <li><a href="#ch-11">Chapter 11 - Leading Flow Engineering</a></li>
+    <li><a href="#ch-12">Chapter 12 - Traps to Avoid</a></li>
+    <li><a href="#ch-13">Chapter 13 - Value Stream Management</a></li>
+    <li><a href="#ch-14">Chapter 14 - Scaling Flow Engineering</a></li>
+  </ul></li>
+</ul><h1><a name="ch-0"></a>Introduction</h1>
+<ul>
+  <li>Radical transformations (Lean/Agile/DevOps) often devolve into rebranding and renaming the status quo.</li>
+  <li>Clarity is often sacrificed at the altar of getting things done.</li>
+  <li>The default approach to addressing the problem of scale is to increase coordination.</li>
+  <li>Maturation as an individual/team/org is shifting our energy from survival to benevolence.</li>
+  <li>To enable an effective and sustainable flow of work, a team’s shared purpose needs to be oriented around the customer.
+  <ul>
+    <li>In the absence of a simple purpose oriented around the customer, teams default to acting in incoherent and self-serving ways.</li>
+  </ul></li>
+  <li>The fastest path to clarity is visibility.</li>
+  <li>The paradox of modern orgs is that the more specialized workers become, the more they struggle to understand the broader system in which they fit.
+  <ul>
+    <li>Silos are a natural consequence of specialization and scale.</li>
+  </ul></li>
+  <li>Flow Engineering is a series of collaborative mapping exercises designed to connect the dots between an unclear current state a clear path to a target state.</li>
+</ul><h1><a name="p-1"></a>Part 1 - The Flow Landscape</h1><h2><a name="ch-1"></a>Chapter 1 - The Problem with Scale</h2>
+<ul>
+  <li>Scale undermines the foundations of effective action.</li>
+  <li>Costs brought on by scale:
+  <ul>
+    <li>Distraction.</li>
+    <li>Disorientation.</li>
+    <li>Disengagement.</li>
+  </ul></li>
+  <li>Ringelmann effect: as more people are involved in a task, their average performance decreases, with each participant tending to feel that their own effort is not critical to overall performance.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Solutions to Scale</h2>
+<ul>
+  <li>Prescriptive methods:
+  <ul>
+    <li>Centralized approach.</li>
+    <li>Small number of leaders/experts define how teams should organize and interact.</li>
+    <li>Provide more clarity and direction.</li>
+    <li>Heavy and constraining.</li>
+    <li>“All or nothing”.</li>
+    <li>Requires massive investment in learning and structure.</li>
+  </ul></li>
+  <li>Generative methods:
+  <ul>
+    <li>Distributed approach.</li>
+    <li>Bring stakeholders throughout the org and hope they find an emergent solution.</li>
+    <li>When people are involved in creating a solution, they are more invested in delivering the outcome.</li>
+    <li>Takes longer.</li>
+    <li>Individual contributors can lack important context.</li>
+    <li>Challenging to convert into clear, actionable business value.</li>
+  </ul></li>
+  <li>Solution to scale must have:
+  <ol>
+    <li>Engage all participants, like generative methods, to avoid disengagement.</li>
+    <li>Simple and aligned, like prescriptive methods, to avoid disorientation.</li>
+    <li>Fast and easy to put into practice, unlike prescriptive methods, to avoid distraction.</li>
+  </ol></li>
+  <li>Cybernetics: any attempt to navigate towards a goal depends on effective control systems.</li>
+  <li>The scope of a value stream is the complete loop from customer need to customer satisfaction.
+  <ul>
+    <li>It represents a complete cybernetic control system.</li>
+  </ul></li>
+  <li>To manage and optimize the flow of work, we must first see the flow of work.</li>
+  <li>Flow Engineering is a set of practices that build on the foundations of cybernetics and the Toyota Production System to provide a lightweight and iterative way of building value, clarity, and flow.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - The Elements of Action</h2>
+<ul>
+  <li>Value is our target, clarity allow us to understand a path to the target, and flow is about optimizing that path.</li>
+  <li>Value, clarity and flow are hard to establish and easily lost.</li>
+  <li>Human collaboration doesn’t scale naturally.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Flow Engineering</h2>
+<ul>
+  <li>The act of mapping enables you to learn by doing.</li>
+  <li>Aim to address the gaps in understanding that arise from silos of activity, concern, and visibility.</li>
+  <li>It enables effective collective action.</li>
+  <li>Connects the dots from efforts, activities, and improvements to the most critical focus for the organization.</li>
+  <li>Build relationships across stakeholders and contributors.</li>
+  <li>5 key maps:
+  <ol>
+    <li>Outcome Map: target outcome.</li>
+    <li>Current State Value Stream Map: constraints in the current workflow.</li>
+    <li>Dependency Map: identify dependencies by studying constraints.</li>
+    <li>Future State Value Stream Map.</li>
+    <li>Flow Roadmap: organize insights, actions, and ownership into an improvement roadmap.</li>
+  </ol></li>
+  <li>When:
+  <ul>
+    <li>To cut costs, boost efficiency, or improve time to market.</li>
+    <li>Reorg.</li>
+    <li>Your calendar is eaten up by meetings.</li>
+    <li>Acquisition.</li>
+  </ul></li>
+  <li>Who:
+  <ul>
+    <li>Responsible and accountable parties within a given value stream.</li>
+    <li>Leadership and those who are able to change the system.</li>
+    <li>You can maximize context and clarity by involved the same group in all mappings.</li>
+    <li>12 people max.</li>
+  </ul></li>
+  <li>Facilitator:
+  <ul>
+    <li>Should not have skin in the game.</li>
+    <li>Caution any individual from talking too much.</li>
+    <li>Promote standard, non-disruptive interruption method.</li>
+    <li>Emphasize the need to stay focused on the time horizon in question.</li>
+  </ul></li>
+  <li>First complete all maps in sequence, then redo individual maps depending on your needs.</li>
+</ul><h1><a name="p-2"></a>Part 2 - Mapping the Landscape</h1><h2><a name="ch-5"></a>Chapter 5 - Outcome Mapping</h2>
+<ul>
+  <li>Future state you want to be in within a set amount of time.
+  <ul>
+    <li>Typically, 6 months.</li>
+  </ul></li>
+  <li>Desired outcome from the outset gives context and purpose to all the subsequent maps.</li>
+  <li>Goal is to focus the team while surfacing doubts, testing assumptions, and enabling the emergence of new insights.</li>
+  <li>5 stages:
+  <ol>
+    <li>Outcome discovery:
+    <ul>
+      <li>What is out target?</li>
+      <li>Prompts: context, goals, pains, ideas, questions.</li>
+    </ul></li>
+    <li>Defining the Target Outcome:
+    <ul>
+      <li>What goal do we want to achieve?</li>
+    </ul></li>
+    <li>Defining Benefits:
+    <ul>
+      <li>Why does this outcome matter?</li>
+      <li>3 different perspectives:
+      <ul>
+        <li>Value for customers.</li>
+        <li>Value for the org.</li>
+        <li>Value for individual contributors.</li>
+      </ul></li>
+      <li>If you struggle to define the benefits, either:
+      <ul>
+        <li>You should not be working on this.</li>
+        <li>You haven’t fully understood the broader context in which you are working.</li>
+      </ul></li>
+    </ul></li>
+    <li>Defining Obstacles:
+    <ul>
+      <li>What could get in the way?</li>
+      <li>If there are no obstacle to achieving our desired goal, we would already be there.</li>
+      <li>Explicit obstacles mean they can be dealt with consciously.</li>
+    </ul></li>
+    <li>Defining Next Steps:
+    <ul>
+      <li>How are we going to proceed?</li>
+    </ul></li>
+  </ol></li>
+  <li>Working backwards involves beginning with a clear definition of a desired target state (outcome) and using that target to guide decisions and actions.</li>
+  <li>Flow Engineering mapping exercises are structured conversations with defined outputs.</li>
+  <li>Who:
+  <ul>
+    <li>People involved in executing the workflow.</li>
+    <li>People who have the situational awareness to accurately determine where changes can be made.</li>
+    <li>Aim to involve the minimum number of people required to make decisions that will be trusted and accepted by the rest of the team.</li>
+  </ul></li>
+  <li>Time allocation: 60 mins.</li>
+  <li>Mechanics:
+  <ol>
+    <li>Outcome mapping:
+    <ul>
+      <li>One color per category.</li>
+    </ul>
+    <ol>
+      <li>Brain dump: 5 mins.</li>
+      <li>Review, identifying perspectives and presenting themes. 5 mins.</li>
+      <li>Group notes into themes/topics. 3 mins.</li>
+      <li>Vote on which theme to tackle.  <img src="/images/blog/books/flow-engineering/flow-engineering-outcome-discovery-map.png" alt="Outcome discovery map" /><br /></li>
+    </ol></li>
+    <li>Defining target outcome:
+    <ul>
+      <li>Craft a target outcome that captures the information from the sticky notes from outcome mapping and represents a valuable target.</li>
+      <li>Maybe have a secondary outcome to counterbalance.</li>
+      <li>SMART goals.</li>
+      <li>Add to “outcome” column</li>
+    </ul></li>
+    <li>Define benefits, obstacles, next steps:
+    <ul>
+      <li>For each column:
+      <ol>
+        <li>Reflect silently to generate ideas. 1 min.</li>
+        <li>In pairs, share ideas. 2 mins.</li>
+        <li>Join 2 pais and consolidate their ideas. 4 mins.</li>
+        <li>Whole group votes on highest priority ideas and moves them to the top. 2 mins. <img src="/images/blog/books/flow-engineering/flow-engineering-outcome-map.png" alt="Outcome map" /><br /></li>
+      </ol></li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Current State Value Stream Mapping</h2><p><img src="/images/blog/books/flow-engineering/flow-engineering-current-simplified-value-stream-map.png" alt="Current simplified value stream map" /></p>
+<ul>
+  <li>The stream already exists, and the flow is already present.</li>
+  <li>Guiding principles to “see” value streams:
+  <ul>
+    <li>A value stream is just a pattern. Where this pattern appears, you can apply a consistent set of practices.</li>
+    <li>Where there is a customer, there is a value stream.</li>
+    <li>No stream is independent.</li>
+    <li>Working backward is easier than forward.</li>
+  </ul></li>
+  <li>Hiring, customer onboarding, support, roadmap definition and quarterly planning can be treated as a value stream.</li>
+  <li>Don Reinertsen, in <a href="https://amzn.to/3VP4c9k">Principles of Product Development Flow</a>:
+  <ul>
+    <li>The value added by an activity is the difference in the price that an economically rational buyer would pay for a work product before, and after, the activity is performed.</li>
+  </ul></li>
+  <li>For Value Stream Mapping (VSM) to be effective, the team needs to be aligned on their objectives and aspirations.</li>
+  <li>Time is the one thing we can’t scale and the easiest thing for us to waste. It’s also quite factual.</li>
+  <li>From raw materials (which in sw dev is typically just an idea) to a finished product (working software).</li>
+  <li>Value Stream Map in Flow Engineering is significantly simpler than the traditional one.</li>
+  <li>VSM is widely espoused but not frequently practiced.</li>
+  <li>Other than process time and wait time, other metrics are added in a just-in-time fashion as investigations indicate the need.</li>
+  <li>Cocreating a Current State Value Stream Map reveals issues that allow teams to get at least 20% of their time back immediately.</li>
+  <li>90 mins at a brisk pace. 2 hours if it is your first time.</li>
+  <li>Up to 10 people.</li>
+  <li>Steps:
+  <ol>
+    <li>Stream selection:
+    <ul>
+      <li>Recent.</li>
+      <li>Real: something that has business impact.</li>
+      <li>Reach: traverses the full value stream.</li>
+      <li>Representative: typical piece of work.</li>
+      <li>Road-tested: in production.</li>
+    </ul></li>
+    <li>Add activities:
+    <ul>
+      <li>Work backwards.</li>
+    </ul></li>
+    <li>Add timing:
+    <ul>
+      <li>Typical cycle time (process time) and delay time (wait time).</li>
+    </ul></li>
+    <li>Add dimensions and total metrics:
+    <ul>
+      <li>Lead time = total cycle time + total wait time.</li>
+      <li>Add any extra dimensions that seem relevant to your target outcome.</li>
+    </ul></li>
+    <li>Highlight constraint:
+    <ul>
+      <li>Target for future work and is the constraint used in Dependency Mapping.</li>
+    </ul></li>
+  </ol></li>
+  <li>Focus on what is happening most often. This involved repeatedly asking the team, “How long does it usually take?” and reminding them that “it depends” isn’t an acceptable excuse for deliberation.</li>
+  <li>Don’t try to thoroughly accommodate edge cases. If the flow seems to branch based on variations in process, capture it in a note but focus on what happens most often.</li>
+  <li>Rough estimates are sufficient.</li>
+  <li>If there’s disagreement, take the worst-case time.</li>
+  <li>If there is high variability, capture best and worse time.</li>
+  <li>Focus the scope of the VSM on steps that are within this group’s ability to influence.</li>
+  <li>Other possible dimensions: Quality, efficiency, work in progress, queues, roles, tools, artifacts and deliverables.</li>
+  <li>Tracking quality of work at each step typically requires intensive data-gathering and analysis. It can also be a bit of a sensitive topic.</li>
+  <li>It is possible to parallelize the exercise by having each participant create their own representation of the VSM.</li>
+  <li>It is possible to map asynchronously.</li>
+  <li>If next steps seem unclear or blocked, you can use 15% solutions: “What can you do without more resources or authority that would get you 15% of the way to a solution?”.</li>
+  <li>The analysis is focused on activities, not roles.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Dependency Mapping</h2>
+<ul>
+  <li>The rapid VSM done in Flow Engineering intentionally sacrifices precision for speed and ease:
+  <ul>
+    <li>Aim to gather just enough information to identify a critical constraint.</li>
+  </ul></li>
+  <li>Dependency Mapping is specifically designed to improve the resolution on this critical constraint, so we can identify precise remedies.
+  <ul>
+    <li>Aim to gather just enough information to uncover viable opportunities for improvement.</li>
+    <li>Challenge assumptions about where problems lie by digging deeper into likely hot spots.</li>
+    <li>There is no need to analyze or understand every dependency.</li>
+  </ul></li>
+  <li>Stages:
+  <ol>
+    <li>Start with constraints:
+    <ul>
+      <li>Copy the Value Stream Map but remove all data that does not related to the constraint.</li>
+    </ul></li>
+    <li>Zoom in on a constraint by creating a sub-Value Stream Map:</li>
+    <li>Identify hot spots.</li>
+    <li>Identify direct causes for hot spots.</li>
+    <li>Dig deeper into the constraint:
+    <ul>
+      <li>5 Whys.</li>
+    </ul></li>
+  </ol></li>
+  <li>Nothing is ever truly autonomous.</li>
+  <li>Participants: those who have a deep understanding of the constrained step.</li>
+  <li>Key questions:
+  <ol>
+    <li>What is the precise process through which step is enabled?</li>
+    <li>What are typical timings of the sub-steps in that process?</li>
+    <li>What other challenges are we are aware of in this process?</li>
+  </ol></li>
+  <li>Consider conflicting incentives.</li>
+  <li>Share context with the Outcome Map and VSM.</li>
+  <li>An SLA will consume the maximum time the SLA allows.</li>
+  <li>Approach Dependency Mapping with curiosity, not accusation or demand.</li>
+</ul>
+<blockquote><p>Seek first to understand, then to be understood <cite>Stephen Covey, The 7 Habits of Highly Effective People</cite></p>
+</blockquote>
+<ul>
+  <li>Consider dependency matrix.</li>
+  <li>Wardley mapping can be useful to explore the strategic impact of interdependent capabilities.</li>
+  <li><a href="https://en.wikipedia.org/wiki/SIPOC">SIPOC</a> diagrams.</li>
+  <li>RACI matrix.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Future State Value Stream Mapping</h2>
+<ul>
+  <li>Ideal State Maps:
+  <ul>
+    <li>If we had all the necessary capabilities and resources and could remove all wait time between steps.</li>
+    <li>Determined the upper limit of what is possible.</li>
+    <li>Elicit creative ideas.</li>
+  </ul></li>
+  <li>Future State Maps: how things will look like in 6 months.</li>
+  <li>Reducing or eliminating wait time can often reduce lead time by 80% or more.</li>
+  <li>PDSA cycle:
+  <ul>
+    <li>Plan: Future State Map.</li>
+    <li>Do: Flow Roadmap.</li>
+    <li>Study and Act: every 3 months, reassess current VSM.</li>
+  </ul></li>
+  <li>Improvement Kata cycle:
+  <ol>
+    <li>Vision and challenge: Outcome Map.</li>
+    <li>Gasp current condition: Current State Map and Dependency Map.</li>
+    <li>Target condition: Future State Map.</li>
+    <li>Experiments: Flow Roadmap.</li>
+  </ol></li>
+  <li>Stages:
+  <ol>
+    <li>Review the target outcome and finding from previous maps:
+    <ul>
+      <li>Make copy of Current State Map.</li>
+      <li>10 mins.</li>
+    </ul></li>
+    <li>Identify targets for improvements:
+    <ul>
+      <li>Review DOWNTIME wastes.</li>
+      <li>20 mins.</li>
+    </ul></li>
+    <li>Redesign the stream:
+    <ul>
+      <li>Modify the parts of teh map that constitute the bottleneck.</li>
+      <li>10 mins.</li>
+    </ul></li>
+    <li>Measure the future state:
+    <ul>
+      <li>Estimate wait and cycle times.</li>
+      <li>Focus on what can be achieved in the next 3 to 6 months.</li>
+      <li>10 mins.</li>
+    </ul></li>
+  </ol></li>
+  <li>Optimizing delivery is a fine balancing act, and teams can benefit as much from limiting controls as they can from expanding controls.</li>
+  <li>Work in progress is the silent killer of productivity.</li>
+  <li>Eight wastes of Lean in knowledge work (DOWNTIME):
+  <ol>
+    <li>Defects.</li>
+    <li>Overproduction: features no used, abandoned tasks, data duplication.</li>
+    <li>Waiting: delays, slow hand offs, queuing, approvals, unnecessary/inefficient meetings.</li>
+    <li>Non-utilized talent: missing capabilities, insufficient tooling, inadequate training, underutilized staff, bad incentives, lost morale.</li>
+    <li>Transport: moving data between teams/systems/databases/tools, manual hand offs.</li>
+    <li>Inventory: queues, backlogs, WIP, branches.</li>
+    <li>Motion: unnecessary hand-offs, context switching data transfer/duplication.</li>
+    <li>Extra processing: Unnecessary gates/approvals/reviews/validation, excess requirement details, gold-plating, excess UAT, polished docs when rough docs will suffice.</li>
+  </ol></li>
+  <li>Reducing cognitive load can help reduce motion waste.</li>
+  <li>Participants: original current VSM + key people from Dependency Mapping.</li>
+  <li>Goal is to set a target. Details left for the Flow Roadmap.</li>
+  <li>For your first Future State Map:
+  <ul>
+    <li>Aim for 3 improvements.</li>
+    <li>Consider a shorter improvement horizon, such as 4-6 weeks.</li>
+  </ul></li>
+  <li>Add more people or resources, preprocess work to simplify or increase team’s awareness of the backlog.</li>
+  <li>A common reason for a team being overloaded is excessive work in progress (WIP):
+  <ul>
+    <li>Say “no”.</li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - The Flow Roadmap</h2>
+<ul>
+  <li>The Flow Roadmap is a plan for how to improve workflow.</li>
+  <li>Plot actions, experiments, and mechanisms to improve the way you deliver.</li>
+  <li>Stages:
+  <ol>
+    <li>Identify improvement opportunities:
+    <ul>
+      <li>List the target improvement areas identified during the Future State Map.</li>
+      <li>For each, identify specific actions.</li>
+    </ul></li>
+    <li>Prioritize each activity:
+    <ul>
+      <li>Plot on the vertical axis the importance and the feasibility on the horizontal axis.</li>
+      <li>Indicate dependencies.  <img src="/images/blog/books/flow-engineering/flow-engineering-action-priorities.png" alt="Action priorities" /><br /></li>
+    </ul></li>
+    <li>Sequence activities into a roadmap:
+    <ul>
+      <li>Pick the most important and feasible.</li>
+      <li>Identify a measure of progress for the “now” actions.</li>
+      <li>Assign owners to the actions.</li>
+    </ul></li>
+  </ol></li>
+  <li>You may miss something going too fast, and you may waste time going too deep.</li>
+  <li>Participants: Those likely to be involved in the next steps.</li>
+  <li>Key questions:
+  <ol>
+    <li>What are the highest-priority actions to deliver out target outcome?</li>
+    <li>How will we measure progress?</li>
+    <li>Who will own the progress?</li>
+  </ol></li>
+  <li>In the upper left, include a copy of the Future State Map.</li>
+  <li>Less feasible:
+  <ol>
+    <li>Multiple contributors.</li>
+    <li>Lack of a capability.</li>
+    <li>With dependencies on other teams.</li>
+    <li>Unknown scopes.</li>
+  </ol></li>
+</ul><h1><a name="p-3"></a>Part 3 - Navigating the Landscape</h1><h2><a name="ch-10"></a>Chapter 10 - Principles of Flow Engineering</h2>
+<ul>
+  <li>Effective action depends on the ability of each individual to identify value, build clarity, and enable flow.</li>
+  <li>Two different ways of seeing an org:
+  <ol>
+    <li>Prescriptive approach:
+    <ul>
+      <li>An org can be designed and engineered like a machine.</li>
+    </ul></li>
+    <li>Generative approach:
+    <ul>
+      <li>An org is composed of living workers whose behavior necessarily emerges from their own values and understanding.</li>
+    </ul></li>
+  </ol>
+  <ul>
+    <li>Both approaches needed as orgs have a dual nature.</li>
+  </ul></li>
+  <li>Principles:
+  <ul>
+    <li>Specify value:
+    <ul>
+      <li>Value is subjective and transitory because it is a measure of how positively we feel about something, and whether it addresses a need.</li>
+      <li>Delivering value is an act of cooperation, not a zero-sum game.</li>
+      <li>We can only measure value by getting feedback from those experiencing it.</li>
+    </ul></li>
+    <li>Map the value stream:
+    <ul>
+      <li>Western rationalism has habituated most of us to very linear ways of thinking.</li>
+      <li>Visibility enables observability; observability enables clarity.</li>
+      <li>Effort invested in gaining clarity allows us to avoid waste and risk.</li>
+    </ul></li>
+    <li>Create flow:
+    <ul>
+      <li>Flow implies a quality of steadiness in motion.</li>
+      <li>Optimizing for flow is contradictory to optimizing for resource utilization.</li>
+      <li>To maximize value, we must focus on flow efficiency (cycle time / lead time).</li>
+      <li>In sw dev, there is significant variation in how long work takes, so you need slack capacity to accommodate this variation.</li>
+      <li>Theory of Constraints: flow is always limited by one and only one constraint at any given time.</li>
+    </ul></li>
+    <li>Pull don’t push:
+    <ul>
+      <li>Steve Spear in <a href="https://amzn.to/44zserv">The High-Velocity Edge</a>. The ideal:
+      <ol>
+        <li>Defect-free.</li>
+        <li>On demand.</li>
+        <li>One piece at a time.</li>
+        <li>Immediate.</li>
+        <li>Without waste.</li>
+        <li>Safe.</li>
+        <li>Secure.</li>
+      </ol></li>
+      <li>Pull creates a direct connection between what is needed and what is delivered.</li>
+      <li>Creating a pull-based system of work is an extraordinary feat.</li>
+    </ul></li>
+    <li>Pursue perfection:
+    <ul>
+      <li>Learning is central to removing waste.</li>
+      <li>Implicit in enabling learning is a sense of psychological safety.</li>
+      <li>Learning implies letting go of our current models.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Leading Flow Engineering</h2>
+<ul>
+  <li>Effective principles requires:
+  <ul>
+    <li>Consistent practice, which requires</li>
+    <li>Discipline and mindfulness, which requires</li>
+    <li>Strong and sustained effort, which requires</li>
+    <li>Confidence, which requires</li>
+    <li>Inspiration and vision.</li>
+  </ul></li>
+  <li>To safely deliver change, you must control risk, for which you need the ability to respond quickly and effectively when problems emerge.</li>
+  <li><p>Feedback loops must also evolve as target outcome evolve.</p>
+  <blockquote>Strategy is a commodity, execution is an art <cite>Peter Drucker</cite>
+  </blockquote></li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Traps to Avoid</h2>
+<ul>
+  <li>Top five:
+  <ol>
+    <li>Neglecting the narrative.</li>
+    <li>Misaligned and conflicting incentives.</li>
+    <li>Not mapping the complete stream.</li>
+    <li>Craving unnecessary precision.</li>
+    <li>Conflict with existing operating models.</li>
+  </ol></li>
+</ul><h2><a name="ch-14"></a>Chapter 13 - Value Stream Management</h2>
+<ul>
+  <li>A new strategic and operational approach to the data capture, analysis, planning and implementation of effective change within the core cross-functional or cross-company processes required to achieve a truly lean enterprise.</li>
+  <li>Two primary activities:
+  <ol>
+    <li>Optimizing the flow of work that delivers customer value.</li>
+    <li>Measuring those delivered outcomes to make better decisions.</li>
+  </ol></li>
+  <li>The transition from project to product is a story of flow.</li>
+  <li>Streetlight effect: we tend to look for things where it’s easy to look.</li>
+  <li>If you are not getting better, you are getting worse.</li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Scaling Flow Engineering</h2>
+<ul>
+  <li>To have a large-scale impact, you must achieve this across an entire organization:
+  <ul>
+    <li>That’s neither feasible nor affordable one stream at a time.</li>
+    <li>It is often simple to see that dependencies are common, and by addressing them for one stream, you can address them across the entire organization.</li>
+  </ul></li>
+  <li>Rapid methods to reach out beyond a single stream:
+  <ul>
+    <li>Sharing maps.</li>
+    <li>Surveying.</li>
+    <li>Communities of Practice.</li>
+  </ul></li>
+  <li><a name="types"></a>Developmental vs Operational value streams:
+  <ul>
+    <li>Developmental: focus on delivering something new each time.</li>
+    <li>Operational: focus on delivering a consistent product.</li>
+    <li>Don’t choose one or the other, but one over the other.</li>
+  </ul></li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Developmental </th>
+      <th>Operational </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Focused on </td>
+      <td>Effectiveness </td>
+      <td>Efficiency </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Design </td>
+      <td>Execution </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Innovation </td>
+      <td>Stability </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Novelty </td>
+      <td>Maintenance </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Value creation </td>
+      <td>Value maximization </td>
+    </tr>
+    <tr>
+      <td>Characterized by </td>
+      <td>Variation </td>
+      <td>Consistency </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Uncertainty </td>
+      <td>Certainty </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Investigation </td>
+      <td>Measurement </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Experimentation </td>
+      <td>Optimization </td>
+    </tr>
+    <tr>
+      <td>Function of constraints </td>
+      <td>Enablement </td>
+      <td>Governance </td>
+    </tr>
+  </tbody>
+</table>
+<ul>
+  <li>Core vs Supportive value streams:
+  <ul>
+    <li>Core:
+    <ul>
+      <li>Directly contributes to revenue or value creation for the business.</li>
+      <li>Contribute directly to external customer value.</li>
+      <li>Are <em>why</em> you are in business.</li>
+    </ul></li>
+    <li>Supportive:
+    <ul>
+      <li>Provide services and capabilities to core streams.</li>
+      <li>Are <em>how</em> you stay in business.</li>
+    </ul></li>
+  </ul></li>
+  <li><a href="https://observablehq.com/@troymagennis/impact-of-multiple-team-dependencies-in-software-developm">Troy Magennis</a>: Every dependency you can remove DOUBLES your chances of successful on-time delivery.</li>
+  <li>Started with Flow Engineering by conducting a conversational Outcome Map.</li>
+  <li>Fit mapping into existing time boxes like retrospectives or off-site meetings.</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<!--div class="row">
+						<div id="toprightbanner" class="widget six columns">
+						</div>
+						<div id="toprightbanner2" class="widget six columns">
+						</div>
+					</div-->
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+<!--						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>-->
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (41)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (36)</a></li><li><a href="/tags/Humour/index.html">Humour (12)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (47)</a></li><li><a href="/tags/good_practices/index.html">good practices (27)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<!--h5 class="widget-title">Now Reading</h5>
+						<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=danlebrero-20&language=en_US&marketplace=amazon&region=US&placement=1950508838&asins=1950508838&linkId=1abcab6ed414fe6ad50e093b9d78cb44&show_border=true&link_opens_in_new_window=true"></iframe></iframe-->
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
