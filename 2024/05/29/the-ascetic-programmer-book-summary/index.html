@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: The Ascetic Programmer   </title>
+	<meta content="Book notes on &quot;The Ascetic Programmer: How asceticism benefits programming, science, and the arts&quot; by Antonio Piccolboni" name="description" /><meta content="Book review notes summary, The Ascetic Programmer, Programming Efficiency, Software Development, Asceticism in Technology, Minimalist Programming, Code Simplification, Efficient Coding Practices, Technology and Minimalism, Code Optimization" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: The Ascetic Programmer   " property="og:title" /><meta content="Book notes on &quot;The Ascetic Programmer: How asceticism benefits programming, science, and the arts&quot; by Antonio Piccolboni" property="og:description" /><meta content="https://danlebrero.com/2024/05/29/the-ascetic-programmer-book-summary/" property="og:url" /><meta content="Book notes: The Ascetic Programmer   " name="twitter:title" /><meta content="Book notes on &quot;The Ascetic Programmer: How asceticism benefits programming, science, and the arts&quot; by Antonio Piccolboni" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/the-ascetic-programmer.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/the-ascetic-programmer.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2024/05/29/the-ascetic-programmer-book-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+	<!-- Google tag (gtag.js) -->
+	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-3KPNQF7Y7S"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3KPNQF7Y7S');
+</script>	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+<!--				 <li id="menu-popular"><a class="smoothscroll" href="/popular/">Popular entries.</a></li>-->
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: The Ascetic Programmer   </h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 29 May 2024</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "The Ascetic Programmer: How asceticism benefits programming, science, and the arts" by Antonio Piccolboni</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/the-ascetic-programmer.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3wO30sU">The Ascetic Programmer: How asceticism benefits programming, science, and the arts</a> by <a href="https://toot.community/@piccolbo">Antonio Piccolboni</a>.</p><p>A case to “do more with less” (conciseness) and “less is more” (frugality), without forgetting that is not that easy:</p>
+<blockquote><p>I would have written a shorter letter, but I did not have the time <cite>Blaise Pascal</cite></p>
+</blockquote><h1>Key Insights</h1>
+<ul>
+  <li><p>Lines of code are a valuable measure of program complexity.</p>
+  <blockquote>If we wish to count lines of code, we should not regard them as “lines produced” but as “lines spent” <cite>Dijkstra</cite>
+  </blockquote></li>
+  <li>The difference between a compressed program and a concise one is that the latter is human-intelligible.</li>
+  <li>I considered what was written eons ago sacred.</li>
+  <li>More general functions create indirect dependencies between parts of a program and, thus, more of the entanglement.</li>
+  <li>If keeping two programs completely independent is paramount, an option is duplicating.</li>
+  <li>Often code can grow as an accumulation of special cases until we realize a general rule that can replace them and covers additional ones as a bonus.</li>
+  <li>If a long variable name works as documentation, is having to read it every time you run into it a good idea?</li>
+  <li>Any non-trivial program should define the concepts relevant to the task on hand and implement data structures and operations to represent and manipulate those concepts, and this extends the language.</li>
+  <li>Languages are defined by what they allow and what they prevent.</li>
+  <li>Languages that forbid many constructs preclude them from expressing valid computations, hence developers will have to use longer programs to define equivalent computations.</li>
+  <li>A simpler language should also be less powerful and therefore require more code for the same tasks:
+  <ul>
+    <li>However, Lisp sidesteps this trade-off to some degree.</li>
+  </ul></li>
+  <li>Code generation isn’t a suitable replacement for abstraction.</li>
+  <li>Making many more assumptions about what you’re trying to do allows to be much more concise, at some cost of generality.</li>
+  <li>Developers give up on reading source code beyond what is strictly necessary to add their contributions.</li>
+  <li>Machine Learning: the complexity just morphed, but it is learned from data rather than hand-coded.</li>
+  <li>Short programs are easier to test.</li>
+  <li>Maintaining simplicity in the face of supporting new features requires a constant, organized, resourced effort.</li>
+  <li>Working on reducing complexity is generally considered second-class work and not career-boosting.</li>
+  <li>You can’t become a superstar if you have to pick the next entry in a so-called backlog.</li>
+  <li>Lawrence Kesteloot: Every line of code you write is a potential bug.</li>
+  <li>Two approaches in API design:
+  <ol>
+    <li>Minimal.</li>
+    <li>Humane: strives to support as many reasonable use cases as possible.</li>
+  </ol>
+  <ul>
+    <li>A developer writing against a minimal API will have to write more code but learn less than against a humane one.</li>
+  </ul></li>
+  <li>Bad code begets bad code.</li>
+  <li>Let the rot spread a little and meet your deadline.</li>
+  <li>Development these days is fragmented into long series of self-inflicted emergencies.</li>
+  <li>Deep Learning: Sun and co-authors concluded that “performance increases logarithmically based on volume of training data”.</li>
+  <li>The Parsimony Principle: plurality should not be posited without necessity.</li>
+  <li>Shorter sentences are easier to read and understand.</li>
+  <li>Everything that is not useful in the picture is, it follows, harmful.</li>
+  <li>Not only can most things wait, most things should. You either can’t stop thinking about them, or those thoughts fade away. Let time do some work for you.
+  <ul>
+    <li>Time acts as a filter.</li>
+  </ul></li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Introduction</a></li>
+  <li><a href="#ch-1">Chapter 1 - Computing</a>
+  <ul>
+    <li><a href="#ch-1.1">1.1 - Metrics</a></li>
+    <li><a href="#ch-1.2">1.2 - Concise Software</a></li>
+    <li><a href="#ch-1.3">1.3 - Frugal Software</a></li>
+    <li><a href="#ch-1.4">1.4 - Hardware</a></li>
+    <li><a href="#ch-1.5">1.5 - Verbosity and Bloatware</a></li>
+    <li><a href="#ch-1.6">1.6 - Code Considered Harmful</a></li>
+  </ul></li>
+  <li><a href="#ch-2">Chapter 2 - Science and Engineering</a>
+  <ul>
+    <li><a href="#ch-2.1">2.1 - Epistemology, Statistics and Machine Learning</a></li>
+    <li><a href="#ch-2.3">2.3 - Engineering and Design</a></li>
+  </ul></li>
+  <li><a href="#ch-3">Chapter 3 - Literature, Visual Arts and More</a>
+  <ul>
+    <li><a href="#ch-3.1">3.1 - Speaking and Writing</a></li>
+    <li><a href="#ch-3.2">3.2 - Visual Arts</a></li>
+    <li><a href="#ch-3.4">3.4 - Management</a></li>
+  </ul></li>
+</ul><h1><a name="ch-0"></a>Introduction</h1>
+<ul>
+  <li>Asceticism in programming comes in two flavors, roughly described by the slogans “do more with less” (conciseness) and “less is more” (frugality).</li>
+  <li>Don’t expect a grand theory, but rather a series of interconnected anecdotes and expert opinions, interspersed with the occasional theorem and research paper.</li>
+</ul><h1><a name="ch-1"></a>Chapter 1 - Computing</h1><h2><a name="ch-1.1"></a>1.1 - Metrics</h2>
+<ul>
+  <li>Lines of code are a valuable measure of program complexity.</li>
+</ul>
+<blockquote><p>If we wish to count lines of code, we should not regard them as “lines produced” but as “lines spent” <cite>Dijkstra</cite></p>
+</blockquote>
+<ul>
+  <li>Alternatives:
+  <ul>
+    <li>Counting tokens.</li>
+    <li>Cyclomatic complexity:
+    <ul>
+      <li>Correlates well with program size.</li>
+    </ul></li>
+  </ul></li>
+  <li>Properties that predict program size:
+  <ul>
+    <li>Number of bugs (<a href="https://en.wikipedia.org/wiki/Capers_Jones">Capers Jones</a>).</li>
+    <li>Probability of project failure.</li>
+  </ul></li>
+</ul><h2><a name="ch-1.2"></a>1.2 - Concise Software</h2>
+<ul>
+  <li>There are entire methodologies aimed at creating arbitrary deadlines and fostering a fictional sense of emergency.
+  <ul>
+    <li>Limits on size are rarely, if ever, encountered.</li>
+  </ul></li>
+  <li>Sometimes you have to write 500 unnecessary lines of code to get to the 50 absolutely necessary lines of code.</li>
+  <li>The difference between a compressed program and a concise one is that the latter is human-intelligible.</li>
+  <li>A line of code’s further costs are in the future and harder to estimate.
+  <ul>
+    <li>We hardly ever tried to estimate those delayed costs. Therefore, the incentives to delete are weaker.</li>
+  </ul></li>
+  <li>Nobody taught me how to delete code.
+  <ul>
+    <li>I considered what was written eons ago sacred.</li>
+  </ul></li>
+  <li>Where does the quasi-repetition stop, and where does the “vaguely related code” start?</li>
+  <li>Even when identification is easy, there may not be time to eliminate repetition because of the work required.
+  <ul>
+    <li>However, writing a ticket to mark some duplication we left unattended generally isn’t a career boosting move, and those tickets never get taken care of regardless.</li>
+  </ul></li>
+  <li>More general functions create indirect dependencies between parts of a program and, thus, more of the entanglement.</li>
+  <li>If keeping two programs completely independent is paramount, an option is duplicating.</li>
+  <li>Conciseness and modularity are two sides of coping with size.</li>
+  <li>Often code can grow as an accumulation of special cases until we realize a general rule that can replace them and covers additional ones as a bonus.</li>
+  <li>More code often means less flexibility and functionality.</li>
+  <li>Different abstraction techniques are touted for their potential to reduce coupling and not for any conciseness advantage.</li>
+  <li>Bill Atkinson used to report a negative number of lines contributed, including a “-2000” in the week he had rewritten some routines in QuickDraw to be six times faster.</li>
+  <li>If a long variable name works as documentation, is having to read it every time you run into it a good idea?</li>
+  <li>Who enjoys reading documentation?</li>
+  <li>Joshua Bloch: APIs should be self-documenting.</li>
+  <li>Any non-trivial program should define the concepts relevant to the task on hand and implement data structures and operations to represent and manipulate those concepts, and this extends the language.</li>
+  <li>Languages are defined by what they allow and what they prevent.</li>
+  <li>Paul Graham: Macros can do two things that functions can’t: hey can control (or prevent) the evaluation of their arguments, and they are expanded right into the calling context.</li>
+  <li>Guy Steele: It’s really hard to make a language that’s great at everything, in part just because there are only so many concise notations to go around. There’s this Huffman encoding problem.</li>
+  <li>Languages that forbid many constructs preclude them from expressing valid computations, hence developers will have to use longer programs to define equivalent computations.</li>
+  <li>A language with many ways to express the same computation will lead to more verbose programs.</li>
+  <li>Defining more common computations with shorter programs and accepting some verbosity for less common ones could be a good compromise but implies different languages tailored for different domains.</li>
+  <li>A simpler language should also be less powerful and therefore require more code for the same tasks:
+  <ul>
+    <li>However, Lisp sidesteps this trade-off to some degree.</li>
+  </ul></li>
+  <li>Verbose code is something to skim in long, painful, lonely sessions.</li>
+  <li>Users love these more concise forms, but having multiple evaluation rules makes programs harder to understand and hinders their parametrization and generalization.</li>
+  <li>Code generation isn’t a suitable replacement for abstraction.</li>
+  <li>POJO-aggrieved Java programmers.</li>
+  <li>No API designer can escape the compromise between the complexity of an API, its power, and the complexity of user code.</li>
+  <li>Edward Tufte:
+  <ul>
+    <li>Data-ink ratio, the ratio of ink spent to display data vs the total amount used in a chart, and recommended maximizing it.</li>
+    <li>Data density: the number of data points per unit of area.</li>
+    <li>Display lots of data with just enough ink, minimize and de-emphasize everything that isn’t data.</li>
+  </ul></li>
+  <li><a href="https://amzn.to/3VdaYoN">Grammar of graphics</a> by Leland Wilkinson.
+  <ul>
+    <li><a href="https://vega.github.io/vega/">Vega project</a>.</li>
+  </ul></li>
+  <li>Making many more assumptions about what you’re trying to do allows to be much more concise, at some cost of generality.</li>
+  <li>This lack of modularity is sometimes positively spun as coming “batteries included”, meaning that any integration challenges are taken care of.</li>
+  <li>Two orders of magnitude fewer lines of code mean a lot less attack surface.</li>
+  <li>A much smaller codebase also means code that is more likely to work the way it is supposed to.</li>
+  <li>Developers give up on reading source code beyond what is strictly necessary to add their contributions.</li>
+  <li>If you need one KLOC to fix a bug and can produce it within the available time, so be it. The maintenance bill doesn’t reach the original author.</li>
+  <li>Machine Learning: the complexity just morphed, but it is learned from data rather than hand-coded.</li>
+  <li>Short programs are easier to test.</li>
+  <li>GolfScript: unlike most code blocks in this book, we will not try to understand this one.</li>
+  <li>What is valid for programs continues to be so at the level of system architecture.</li>
+  <li>Heroku: Only by concertedly building a minimal stack that is stable and nearly operable can we maximize our ability to push forward with new products and ideas.</li>
+  <li>Maintaining simplicity in the face of supporting new features requires a constant, organized, resourced effort.</li>
+  <li>Minimalism is a necessary condition for the evolution of the product, not a “nice to have”.</li>
+  <li>If the pressure to build new features engenders complexity, we can work to reduce it after the fact.</li>
+  <li>The progression toward complexity is reversible.</li>
+  <li>Working on reducing complexity is generally considered second-class work and not career-boosting.</li>
+</ul><h2><a name="ch-1.3"></a>1.3 - Frugal Software</h2>
+<ul>
+  <li>It isn’t so much the code they write, but they decide to work on.</li>
+  <li>You can’t become a superstar if you have to pick the next entry in a so-called backlog.</li>
+  <li>Atwood: If you can’t get away with no code, next best thing is to start with brevity.</li>
+  <li>Lawrence Kesteloot: Every line of code you write is a potential bug.</li>
+  <li>Atwood: visible logging code is clutter, it actively obscures the code that is doing the real work in the application. We have since removed all logging from Stack Overflow, relying exclusively on exception logging. Honestly, I don’t miss it at all.</li>
+  <li>Filter feature requests before queuing them.</li>
+  <li>Two approaches in API design:
+  <ol>
+    <li>Minimal.</li>
+    <li>Humane: strives to support as many reasonable use cases as possible.</li>
+  </ol>
+  <ul>
+    <li>A developer writing against a minimal API will have to write more code but learn less than against a humane one.</li>
+  </ul></li>
+  <li>Josue Block:
+  <ul>
+    <li>API should be as small as possible, but not smaller.</li>
+    <li>The two requirements seem to almost directly contradict each other.</li>
+  </ul></li>
+  <li>What is more frugal than an API with a single entry that does it all?</li>
+  <li>“Negative feature list”: a list of features that it does not offer.</li>
+  <li>Mythical Man-Month: it is better to have a system omit certain anomalous features and improvements, but to reflect one set of design ideas, than to have one that contains many good but independent and uncoordinated ideas.</li>
+</ul><h2><a name="ch-1.4"></a>1.4 - Hardware</h2>
+<ul>
+  <li>The missing keyboard of the iPhone.</li>
+  <li>RISC architecture.</li>
+</ul><h2><a name="ch-1.5"></a>1.5 - Verbosity and Bloatware</h2>
+<ul>
+  <li>Hoare: Wouldn’t you be delighted if your Fairy Godmother offered to wave her wand over your program to remove all its errors and only made the condition that you should write out and key in your whole program three times!</li>
+  <li>After a bug was identified while in orbit, Boeing decided to review the whole code base for the project.
+  <ul>
+    <li>Unfortunately, there were already a million LOC to review.</li>
+  </ul></li>
+  <li>Maciej Ceglowski: two steps secret to improve the performance of any website:
+  <ol>
+    <li>Make sure that the most important elements of teh page download and render first.</li>
+    <li><p>Stop there. You don’t need all that other crap. </p>
+    <blockquote>There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult. <cite><a href="http://zoo.cs.yale.edu/classes/cs422/2011/bib/hoare81emperor.pdf">Hoare</a></cite>
+    </blockquote></li>
+  </ol></li>
+  <li>SQL is not a small language. PostgreSQL implementation contains 469 keywords. Just part 2 (out of 14) of the SQL:2016 standard has 1732 pages.</li>
+  <li>If the DRY principle guides Python and Ruby, Java should be considered a WET language: Write Explicitly Tenfold.</li>
+  <li>Bad code begets bad code.</li>
+  <li>Let the rot spread a little and meet your deadline.</li>
+  <li>Development these days is fragmented into long series of self-inflicted emergencies.</li>
+</ul><h2><a name="ch-1.6"></a>1.6 - Code Considered Harmful</h2>
+<ul>
+  <li>Go To Statement.</li>
+  <li>Ifs: <a href="https://www.antiifprogramming.com/about-the-anti-if.php">Anti-If Manifesto</a>.</li>
+  <li>Class inheritance.</li>
+  <li>You have never been paid to write code. Indeed, code is a nasty byproduct of being a sw dev.</li>
+</ul><h1><a name="ch-2"></a>Chapter 2 - Science and Engineering</h1><h2><a name="ch-2.1"></a>2.1 - Epistemology, Statistics and Machine Learning</h2>
+<ul>
+  <li>The Parsimony Principle:
+  <ul>
+    <li>Plurality should not be posited without necessity.</li>
+    <li>Aristotle: we may assume the superiority, other things being equal, of the demonstration which derives from fewer postulates or hypotheses.</li>
+  </ul></li>
+  <li>Bayesian statistics inadequate for science, as conclusions are too dependent on the choice of prior - that is why its dominant variant is called subjective Bayesianism.</li>
+  <li>Deep Learning: Sun and co-authors concluded that “performance increases logarithmically based on volume of training data”.
+  <ul>
+    <li>An additive improvement requires order-of-magnitude larger datasets and models and two orders of magnitude more computing power.</li>
+    <li>Convolutional nets and deep nets, which, for the same size, show better performance.</li>
+  </ul></li>
+</ul><h2><a name="ch-2.3"></a>2.3 - Engineering and Design</h2>
+<blockquote><p>Perfection is finally attained not when there is no longer anything to add, but when there is no longer anything to take away <cite>Antonie de Saint-Exupery</cite></p>
+</blockquote><h1><a name="ch-3"></a>Chapter 3 - Literature, Visual Arts and More</h1><h2><a name="ch-3.1"></a>3.1 - Speaking and Writing</h2>
+<ul>
+  <li>Shorter sentences are easier to read and understand.</li>
+  <li>With strict paper length limits: Many a choice turn of phrase and illustrative simile had to be sacrificed to precision, flow and brevity.</li>
+</ul>
+<blockquote><p>I would have written a shorter letter, but I did not have the time <cite>Blaise Pascal</cite></p>
+</blockquote>
+<ul>
+  <li>Plausibly extending a text was easier for this AI system than summarizing it.</li>
+  <li>Lawyered-up companies try to gain the upper end on smaller ones or private citizens by overwhelming them with long and complex contracts.</li>
+</ul><h2><a name="ch-3.2"></a>3.2 - Visual Arts</h2>
+<ul>
+  <li>Everything that is not useful in the picture is, it follows, harmful.</li>
+</ul><h2><a name="ch-3.4"></a>3.4 - Management</h2>
+<ul>
+  <li>Not only can most things wait, most things should. You either can’t stop thinking about them, or those thoughts fade away. Let time do some work for you.</li>
+  <li>Time acts as a filter.</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<!--div class="row">
+						<div id="toprightbanner" class="widget six columns">
+						</div>
+						<div id="toprightbanner2" class="widget six columns">
+						</div>
+					</div-->
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+<!--						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>-->
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (41)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (36)</a></li><li><a href="/tags/Humour/index.html">Humour (12)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (48)</a></li><li><a href="/tags/good_practices/index.html">good practices (27)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<!--h5 class="widget-title">Now Reading</h5>
+						<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=danlebrero-20&language=en_US&marketplace=amazon&region=US&placement=1950508838&asins=1950508838&linkId=1abcab6ed414fe6ad50e093b9d78cb44&show_border=true&link_opens_in_new_window=true"></iframe></iframe-->
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>

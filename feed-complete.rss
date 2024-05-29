@@ -1,4 +1,257 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 01 May 2024 00:00:00 +0200</lastBuildDate><pubDate>Wed, 01 May 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Flow Engineering</title><link>https://danlebrero.com/2024/05/01/flow-enginnering-book-summary/</link><guid>https://danlebrero.com/2024/05/01/flow-enginnering-book-summary/</guid><pubDate>Wed, 01 May 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/4bi6p1H">Flow Engineering: From Value Stream Mapping to Effective Action</a> by <a href="https://twitter.com/steveelsewhere/">Steve Pereira</a> and <a href="https://twitter.com/AndrewDavis_io">Andrew Davis</a>.</p><p>&ldquo;Flow Engineering is a set of practices that build on the foundations of cybernetics and the Toyota Production System to provide a lightweight and iterative way of building value, clarity, and flow.&rdquo;</p><p>I love the approach to do the minimal amount of work to take you to next step:</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 29 May 2024 00:00:00 +0200</lastBuildDate><pubDate>Wed, 29 May 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: The Ascetic Programmer   </title><link>https://danlebrero.com/2024/05/29/the-ascetic-programmer-book-summary/</link><guid>https://danlebrero.com/2024/05/29/the-ascetic-programmer-book-summary/</guid><pubDate>Wed, 29 May 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3wO30sU">The Ascetic Programmer: How asceticism benefits programming, science, and the arts</a> by <a href="https://toot.community/@piccolbo">Antonio Piccolboni</a>.</p><p>A case to &ldquo;do more with less&rdquo; (conciseness) and &ldquo;less is more&rdquo; (frugality), without forgetting that is not that easy:</p>
+<blockquote><p>I would have written a shorter letter, but I did not have the time <cite>Blaise Pascal</cite></p>
+</blockquote><h1>Key Insights</h1>
+<ul>
+  <li><p>Lines of code are a valuable measure of program complexity.</p>
+  <blockquote>If we wish to count lines of code, we should not regard them as &ldquo;lines produced&rdquo; but as &ldquo;lines spent&rdquo; <cite>Dijkstra</cite>
+  </blockquote></li>
+  <li>The difference between a compressed program and a concise one is that the latter is human-intelligible.</li>
+  <li>I considered what was written eons ago sacred.</li>
+  <li>More general functions create indirect dependencies between parts of a program and, thus, more of the entanglement.</li>
+  <li>If keeping two programs completely independent is paramount, an option is duplicating.</li>
+  <li>Often code can grow as an accumulation of special cases until we realize a general rule that can replace them and covers additional ones as a bonus.</li>
+  <li>If a long variable name works as documentation, is having to read it every time you run into it a good idea?</li>
+  <li>Any non-trivial program should define the concepts relevant to the task on hand and implement data structures and operations to represent and manipulate those concepts, and this extends the language.</li>
+  <li>Languages are defined by what they allow and what they prevent.</li>
+  <li>Languages that forbid many constructs preclude them from expressing valid computations, hence developers will have to use longer programs to define equivalent computations.</li>
+  <li>A simpler language should also be less powerful and therefore require more code for the same tasks:
+  <ul>
+    <li>However, Lisp sidesteps this trade-off to some degree.</li>
+  </ul></li>
+  <li>Code generation isn&rsquo;t a suitable replacement for abstraction.</li>
+  <li>Making many more assumptions about what you&rsquo;re trying to do allows to be much more concise, at some cost of generality.</li>
+  <li>Developers give up on reading source code beyond what is strictly necessary to add their contributions.</li>
+  <li>Machine Learning: the complexity just morphed, but it is learned from data rather than hand-coded.</li>
+  <li>Short programs are easier to test.</li>
+  <li>Maintaining simplicity in the face of supporting new features requires a constant, organized, resourced effort.</li>
+  <li>Working on reducing complexity is generally considered second-class work and not career-boosting.</li>
+  <li>You can&rsquo;t become a superstar if you have to pick the next entry in a so-called backlog.</li>
+  <li>Lawrence Kesteloot: Every line of code you write is a potential bug.</li>
+  <li>Two approaches in API design:
+  <ol>
+    <li>Minimal.</li>
+    <li>Humane: strives to support as many reasonable use cases as possible.</li>
+  </ol>
+  <ul>
+    <li>A developer writing against a minimal API will have to write more code but learn less than against a humane one.</li>
+  </ul></li>
+  <li>Bad code begets bad code.</li>
+  <li>Let the rot spread a little and meet your deadline.</li>
+  <li>Development these days is fragmented into long series of self-inflicted emergencies.</li>
+  <li>Deep Learning: Sun and co-authors concluded that &ldquo;performance increases logarithmically based on volume of training data&rdquo;.</li>
+  <li>The Parsimony Principle: plurality should not be posited without necessity.</li>
+  <li>Shorter sentences are easier to read and understand.</li>
+  <li>Everything that is not useful in the picture is, it follows, harmful.</li>
+  <li>Not only can most things wait, most things should. You either can&rsquo;t stop thinking about them, or those thoughts fade away. Let time do some work for you.
+  <ul>
+    <li>Time acts as a filter.</li>
+  </ul></li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Introduction</a></li>
+  <li><a href="#ch-1">Chapter 1 - Computing</a>
+  <ul>
+    <li><a href="#ch-1.1">1.1 - Metrics</a></li>
+    <li><a href="#ch-1.2">1.2 - Concise Software</a></li>
+    <li><a href="#ch-1.3">1.3 - Frugal Software</a></li>
+    <li><a href="#ch-1.4">1.4 - Hardware</a></li>
+    <li><a href="#ch-1.5">1.5 - Verbosity and Bloatware</a></li>
+    <li><a href="#ch-1.6">1.6 - Code Considered Harmful</a></li>
+  </ul></li>
+  <li><a href="#ch-2">Chapter 2 - Science and Engineering</a>
+  <ul>
+    <li><a href="#ch-2.1">2.1 - Epistemology, Statistics and Machine Learning</a></li>
+    <li><a href="#ch-2.3">2.3 - Engineering and Design</a></li>
+  </ul></li>
+  <li><a href="#ch-3">Chapter 3 - Literature, Visual Arts and More</a>
+  <ul>
+    <li><a href="#ch-3.1">3.1 - Speaking and Writing</a></li>
+    <li><a href="#ch-3.2">3.2 - Visual Arts</a></li>
+    <li><a href="#ch-3.4">3.4 - Management</a></li>
+  </ul></li>
+</ul><h1><a name="ch-0"></a>Introduction</h1>
+<ul>
+  <li>Asceticism in programming comes in two flavors, roughly described by the slogans &ldquo;do more with less&rdquo; (conciseness) and &ldquo;less is more&rdquo; (frugality).</li>
+  <li>Don&rsquo;t expect a grand theory, but rather a series of interconnected anecdotes and expert opinions, interspersed with the occasional theorem and research paper.</li>
+</ul><h1><a name="ch-1"></a>Chapter 1 - Computing</h1><h2><a name="ch-1.1"></a>1.1 - Metrics</h2>
+<ul>
+  <li>Lines of code are a valuable measure of program complexity.</li>
+</ul>
+<blockquote><p>If we wish to count lines of code, we should not regard them as &ldquo;lines produced&rdquo; but as &ldquo;lines spent&rdquo; <cite>Dijkstra</cite></p>
+</blockquote>
+<ul>
+  <li>Alternatives:
+  <ul>
+    <li>Counting tokens.</li>
+    <li>Cyclomatic complexity:
+    <ul>
+      <li>Correlates well with program size.</li>
+    </ul></li>
+  </ul></li>
+  <li>Properties that predict program size:
+  <ul>
+    <li>Number of bugs (<a href="https://en.wikipedia.org/wiki/Capers_Jones">Capers Jones</a>).</li>
+    <li>Probability of project failure.</li>
+  </ul></li>
+</ul><h2><a name="ch-1.2"></a>1.2 - Concise Software</h2>
+<ul>
+  <li>There are entire methodologies aimed at creating arbitrary deadlines and fostering a fictional sense of emergency.
+  <ul>
+    <li>Limits on size are rarely, if ever, encountered.</li>
+  </ul></li>
+  <li>Sometimes you have to write 500 unnecessary lines of code to get to the 50 absolutely necessary lines of code.</li>
+  <li>The difference between a compressed program and a concise one is that the latter is human-intelligible.</li>
+  <li>A line of code&rsquo;s further costs are in the future and harder to estimate.
+  <ul>
+    <li>We hardly ever tried to estimate those delayed costs. Therefore, the incentives to delete are weaker.</li>
+  </ul></li>
+  <li>Nobody taught me how to delete code.
+  <ul>
+    <li>I considered what was written eons ago sacred.</li>
+  </ul></li>
+  <li>Where does the quasi-repetition stop, and where does the &ldquo;vaguely related code&rdquo; start?</li>
+  <li>Even when identification is easy, there may not be time to eliminate repetition because of the work required.
+  <ul>
+    <li>However, writing a ticket to mark some duplication we left unattended generally isn&rsquo;t a career boosting move, and those tickets never get taken care of regardless.</li>
+  </ul></li>
+  <li>More general functions create indirect dependencies between parts of a program and, thus, more of the entanglement.</li>
+  <li>If keeping two programs completely independent is paramount, an option is duplicating.</li>
+  <li>Conciseness and modularity are two sides of coping with size.</li>
+  <li>Often code can grow as an accumulation of special cases until we realize a general rule that can replace them and covers additional ones as a bonus.</li>
+  <li>More code often means less flexibility and functionality.</li>
+  <li>Different abstraction techniques are touted for their potential to reduce coupling and not for any conciseness advantage.</li>
+  <li>Bill Atkinson used to report a negative number of lines contributed, including a &ldquo;-2000&rdquo; in the week he had rewritten some routines in QuickDraw to be six times faster.</li>
+  <li>If a long variable name works as documentation, is having to read it every time you run into it a good idea?</li>
+  <li>Who enjoys reading documentation?</li>
+  <li>Joshua Bloch: APIs should be self-documenting.</li>
+  <li>Any non-trivial program should define the concepts relevant to the task on hand and implement data structures and operations to represent and manipulate those concepts, and this extends the language.</li>
+  <li>Languages are defined by what they allow and what they prevent.</li>
+  <li>Paul Graham: Macros can do two things that functions can&rsquo;t: hey can control (or prevent) the evaluation of their arguments, and they are expanded right into the calling context.</li>
+  <li>Guy Steele: It&rsquo;s really hard to make a language that&rsquo;s great at everything, in part just because there are only so many concise notations to go around. There&rsquo;s this Huffman encoding problem.</li>
+  <li>Languages that forbid many constructs preclude them from expressing valid computations, hence developers will have to use longer programs to define equivalent computations.</li>
+  <li>A language with many ways to express the same computation will lead to more verbose programs.</li>
+  <li>Defining more common computations with shorter programs and accepting some verbosity for less common ones could be a good compromise but implies different languages tailored for different domains.</li>
+  <li>A simpler language should also be less powerful and therefore require more code for the same tasks:
+  <ul>
+    <li>However, Lisp sidesteps this trade-off to some degree.</li>
+  </ul></li>
+  <li>Verbose code is something to skim in long, painful, lonely sessions.</li>
+  <li>Users love these more concise forms, but having multiple evaluation rules makes programs harder to understand and hinders their parametrization and generalization.</li>
+  <li>Code generation isn&rsquo;t a suitable replacement for abstraction.</li>
+  <li>POJO-aggrieved Java programmers.</li>
+  <li>No API designer can escape the compromise between the complexity of an API, its power, and the complexity of user code.</li>
+  <li>Edward Tufte:
+  <ul>
+    <li>Data-ink ratio, the ratio of ink spent to display data vs the total amount used in a chart, and recommended maximizing it.</li>
+    <li>Data density: the number of data points per unit of area.</li>
+    <li>Display lots of data with just enough ink, minimize and de-emphasize everything that isn&rsquo;t data.</li>
+  </ul></li>
+  <li><a href="https://amzn.to/3VdaYoN">Grammar of graphics</a> by Leland Wilkinson.
+  <ul>
+    <li><a href="https://vega.github.io/vega/">Vega project</a>.</li>
+  </ul></li>
+  <li>Making many more assumptions about what you&rsquo;re trying to do allows to be much more concise, at some cost of generality.</li>
+  <li>This lack of modularity is sometimes positively spun as coming &ldquo;batteries included&rdquo;, meaning that any integration challenges are taken care of.</li>
+  <li>Two orders of magnitude fewer lines of code mean a lot less attack surface.</li>
+  <li>A much smaller codebase also means code that is more likely to work the way it is supposed to.</li>
+  <li>Developers give up on reading source code beyond what is strictly necessary to add their contributions.</li>
+  <li>If you need one KLOC to fix a bug and can produce it within the available time, so be it. The maintenance bill doesn&rsquo;t reach the original author.</li>
+  <li>Machine Learning: the complexity just morphed, but it is learned from data rather than hand-coded.</li>
+  <li>Short programs are easier to test.</li>
+  <li>GolfScript: unlike most code blocks in this book, we will not try to understand this one.</li>
+  <li>What is valid for programs continues to be so at the level of system architecture.</li>
+  <li>Heroku: Only by concertedly building a minimal stack that is stable and nearly operable can we maximize our ability to push forward with new products and ideas.</li>
+  <li>Maintaining simplicity in the face of supporting new features requires a constant, organized, resourced effort.</li>
+  <li>Minimalism is a necessary condition for the evolution of the product, not a &ldquo;nice to have&rdquo;.</li>
+  <li>If the pressure to build new features engenders complexity, we can work to reduce it after the fact.</li>
+  <li>The progression toward complexity is reversible.</li>
+  <li>Working on reducing complexity is generally considered second-class work and not career-boosting.</li>
+</ul><h2><a name="ch-1.3"></a>1.3 - Frugal Software</h2>
+<ul>
+  <li>It isn&rsquo;t so much the code they write, but they decide to work on.</li>
+  <li>You can&rsquo;t become a superstar if you have to pick the next entry in a so-called backlog.</li>
+  <li>Atwood: If you can&rsquo;t get away with no code, next best thing is to start with brevity.</li>
+  <li>Lawrence Kesteloot: Every line of code you write is a potential bug.</li>
+  <li>Atwood: visible logging code is clutter, it actively obscures the code that is doing the real work in the application. We have since removed all logging from Stack Overflow, relying exclusively on exception logging. Honestly, I don&rsquo;t miss it at all.</li>
+  <li>Filter feature requests before queuing them.</li>
+  <li>Two approaches in API design:
+  <ol>
+    <li>Minimal.</li>
+    <li>Humane: strives to support as many reasonable use cases as possible.</li>
+  </ol>
+  <ul>
+    <li>A developer writing against a minimal API will have to write more code but learn less than against a humane one.</li>
+  </ul></li>
+  <li>Josue Block:
+  <ul>
+    <li>API should be as small as possible, but not smaller.</li>
+    <li>The two requirements seem to almost directly contradict each other.</li>
+  </ul></li>
+  <li>What is more frugal than an API with a single entry that does it all?</li>
+  <li>&ldquo;Negative feature list&rdquo;: a list of features that it does not offer.</li>
+  <li>Mythical Man-Month: it is better to have a system omit certain anomalous features and improvements, but to reflect one set of design ideas, than to have one that contains many good but independent and uncoordinated ideas.</li>
+</ul><h2><a name="ch-1.4"></a>1.4 - Hardware</h2>
+<ul>
+  <li>The missing keyboard of the iPhone.</li>
+  <li>RISC architecture.</li>
+</ul><h2><a name="ch-1.5"></a>1.5 - Verbosity and Bloatware</h2>
+<ul>
+  <li>Hoare: Wouldn&rsquo;t you be delighted if your Fairy Godmother offered to wave her wand over your program to remove all its errors and only made the condition that you should write out and key in your whole program three times!</li>
+  <li>After a bug was identified while in orbit, Boeing decided to review the whole code base for the project.
+  <ul>
+    <li>Unfortunately, there were already a million LOC to review.</li>
+  </ul></li>
+  <li>Maciej Ceglowski: two steps secret to improve the performance of any website:
+  <ol>
+    <li>Make sure that the most important elements of teh page download and render first.</li>
+    <li><p>Stop there. You don&rsquo;t need all that other crap. </p>
+    <blockquote>There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult. <cite><a href="http://zoo.cs.yale.edu/classes/cs422/2011/bib/hoare81emperor.pdf">Hoare</a></cite>
+    </blockquote></li>
+  </ol></li>
+  <li>SQL is not a small language. PostgreSQL implementation contains 469 keywords. Just part 2 (out of 14) of the SQL:2016 standard has 1732 pages.</li>
+  <li>If the DRY principle guides Python and Ruby, Java should be considered a WET language: Write Explicitly Tenfold.</li>
+  <li>Bad code begets bad code.</li>
+  <li>Let the rot spread a little and meet your deadline.</li>
+  <li>Development these days is fragmented into long series of self-inflicted emergencies.</li>
+</ul><h2><a name="ch-1.6"></a>1.6 - Code Considered Harmful</h2>
+<ul>
+  <li>Go To Statement.</li>
+  <li>Ifs: <a href="https://www.antiifprogramming.com/about-the-anti-if.php">Anti-If Manifesto</a>.</li>
+  <li>Class inheritance.</li>
+  <li>You have never been paid to write code. Indeed, code is a nasty byproduct of being a sw dev.</li>
+</ul><h1><a name="ch-2"></a>Chapter 2 - Science and Engineering</h1><h2><a name="ch-2.1"></a>2.1 - Epistemology, Statistics and Machine Learning</h2>
+<ul>
+  <li>The Parsimony Principle:
+  <ul>
+    <li>Plurality should not be posited without necessity.</li>
+    <li>Aristotle: we may assume the superiority, other things being equal, of the demonstration which derives from fewer postulates or hypotheses.</li>
+  </ul></li>
+  <li>Bayesian statistics inadequate for science, as conclusions are too dependent on the choice of prior - that is why its dominant variant is called subjective Bayesianism.</li>
+  <li>Deep Learning: Sun and co-authors concluded that &ldquo;performance increases logarithmically based on volume of training data&rdquo;.
+  <ul>
+    <li>An additive improvement requires order-of-magnitude larger datasets and models and two orders of magnitude more computing power.</li>
+    <li>Convolutional nets and deep nets, which, for the same size, show better performance.</li>
+  </ul></li>
+</ul><h2><a name="ch-2.3"></a>2.3 - Engineering and Design</h2>
+<blockquote><p>Perfection is finally attained not when there is no longer anything to add, but when there is no longer anything to take away <cite>Antonie de Saint-Exupery</cite></p>
+</blockquote><h1><a name="ch-3"></a>Chapter 3 - Literature, Visual Arts and More</h1><h2><a name="ch-3.1"></a>3.1 - Speaking and Writing</h2>
+<ul>
+  <li>Shorter sentences are easier to read and understand.</li>
+  <li>With strict paper length limits: Many a choice turn of phrase and illustrative simile had to be sacrificed to precision, flow and brevity.</li>
+</ul>
+<blockquote><p>I would have written a shorter letter, but I did not have the time <cite>Blaise Pascal</cite></p>
+</blockquote>
+<ul>
+  <li>Plausibly extending a text was easier for this AI system than summarizing it.</li>
+  <li>Lawyered-up companies try to gain the upper end on smaller ones or private citizens by overwhelming them with long and complex contracts.</li>
+</ul><h2><a name="ch-3.2"></a>3.2 - Visual Arts</h2>
+<ul>
+  <li>Everything that is not useful in the picture is, it follows, harmful.</li>
+</ul><h2><a name="ch-3.4"></a>3.4 - Management</h2>
+<ul>
+  <li>Not only can most things wait, most things should. You either can&rsquo;t stop thinking about them, or those thoughts fade away. Let time do some work for you.</li>
+  <li>Time acts as a filter.</li>
+</ul>]]></description></item><item><title>Book notes: Flow Engineering</title><link>https://danlebrero.com/2024/05/01/flow-enginnering-book-summary/</link><guid>https://danlebrero.com/2024/05/01/flow-enginnering-book-summary/</guid><pubDate>Wed, 01 May 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/4bi6p1H">Flow Engineering: From Value Stream Mapping to Effective Action</a> by <a href="https://twitter.com/steveelsewhere/">Steve Pereira</a> and <a href="https://twitter.com/AndrewDavis_io">Andrew Davis</a>.</p><p>&ldquo;Flow Engineering is a set of practices that build on the foundations of cybernetics and the Toyota Production System to provide a lightweight and iterative way of building value, clarity, and flow.&rdquo;</p><p>I love the approach to do the minimal amount of work to take you to next step:</p>
 <blockquote><p>Value Stream Map in Flow Engineering is significantly simpler than the traditional one.</p>
 </blockquote><p>You can find a Miro board with <a href="https://miro.com/app/board/uXjVKNndJVU=/?share_link_id=73825138920">all Flow Engineering Maps</a>.</p><h1>Key Insights</h1>
 <ul>
@@ -5590,34 +5843,4 @@
   </ol></li>
   <li>Most companies that are exceptionally strong at execution are pretty tough places to work.</li>
   <li>Only a few companies are strong both at innovation and execution.</li>
-</ul>]]></description></item><item><title>The Taxman notification: an IT horror story</title><link>https://danlebrero.com/2023/04/27/taxman-notification-it-horror-story/</link><guid>https://danlebrero.com/2023/04/27/taxman-notification-it-horror-story/</guid><pubDate>Thu, 27 Apr 2023 00:00:00 +0200</pubDate><description><![CDATA[<script src="/js/freezeframe.min.js"></script><p>With your first coffee in the morning, you open your email and, oooooh gosh, there is an email from the TAXMAN authorities. It reads (paraphrasing):</p>
-<blockquote><p>You have an important notification to read. Please go to <a href="https://notifications.gob.es">https://notifications.gob.es</a> to read it.<br/> If you do not read it within 10 days, we will proceed to apply the resolution, whether you like it or not, you worthless scum.</p>
-</blockquote><p>After a quick check that it is not a phishing email, you anxiously click the TAXMAN notifications website link, and … BAM! You are welcomed with:</p>
-<blockquote><p>Identification failed. Digital certificate not found, you idiot!</p>
-</blockquote><p>For a second, you catch the faint sound of maniacal laughter coming from the headset, but when you put them on, you can only hear the sound of your blood pumping on your ears.</p><h2>Firefox</h2><p>As you remove the headset, you rack your brain trying to recall the last time you had to access the TAXMAN website, and suddenly, it dawns on you&hellip;</p><p><span style="font-size: calc(100% - 0px);">I</span>  <span style="font-size: calc(100% + 2px);">t</span>  <span style="font-size: calc(100% + 4px);">&nbsp;&nbsp;o</span>  <span style="font-size: calc(100% + 6px);">n</span>  <span style="font-size: calc(100% + 8px);">l</span>  <span style="font-size: calc(100% + 10px);">y</span>  <span style="font-size: calc(100% + 12px);">&nbsp;&nbsp;w</span>  <span style="font-size: calc(100% + 14px);">o</span>  <span style="font-size: calc(100% + 16px);">r</span>  <span style="font-size: calc(100% + 18px);">k</span>  <span style="font-size: calc(100% + 20px);">e</span>  <span style="font-size: calc(100% + 22px);">d</span>  <span style="font-size: calc(100% + 24px);">&nbsp;&nbsp;i</span>  <span style="font-size: calc(100% + 26px);">n</span>  <span style="font-size: calc(100% + 28px);">&nbsp;&nbsp;F</span>  <span style="font-size: calc(100% + 30px);">i</span>  <span style="font-size: calc(100% + 32px);">r</span>  <span style="font-size: calc(100% + 34px);">e</span>  <span style="font-size: calc(100% + 36px);">f</span>  <span style="font-size: calc(100% + 38px);">o</span>  <span style="font-size: calc(100% + 40px);">x</span>  <span style="font-size: calc(100% + 42px);">!</span></p><p>With the hope that you have not formatted the computer since, you copy and paste the TAXMAN notification link to Firefox and …</p>
-<blockquote><p>Identification failed. Digital certificate not found, you dumb!</p>
-</blockquote><p>As chills creep up your spine, you try to focus by closing your eyes. What was it? How did it work last time? What the difference is?</p><p><span style="font-size: calc(100% + 0px);">I</span>  <span style="font-size: calc(100% + 2px);">t</span>  <span style="font-size: calc(100% + 4px);">&nbsp;&nbsp;w</span>  <span style="font-size: calc(100% + 6px);">a</span>  <span style="font-size: calc(100% + 8px);">s</span>  <span style="font-size: calc(100% + 8px);">&nbsp;&nbsp;</span>  <span style="font-size: calc(100% + 10px);">f</span>  <span style="font-size: calc(100% + 12px);">r</span>  <span style="font-size: calc(100% + 14px);">o</span>  <span style="font-size: calc(100% + 16px);">m</span>  <span style="font-size: calc(100% + 16px);">&nbsp;&nbsp;</span>  <span style="font-size: calc(100% + 18px);">y</span>  <span style="font-size: calc(100% + 20px);">o</span>  <span style="font-size: calc(100% + 22px);">u</span>  <span style="font-size: calc(100% + 24px);">r</span>  <span style="font-size: calc(100% + 24px);">&nbsp;&nbsp;</span>  <span style="font-size: calc(100% + 26px);">o</span>  <span style="font-size: calc(100% + 28px);">l</span>  <span style="font-size: calc(100% + 30px);">d</span>  <span style="font-size: calc(100% + 30px);">&nbsp;&nbsp;</span>  <span style="font-size: calc(100% + 32px);">l</span>  <span style="font-size: calc(100% + 34px);">a</span>  <span style="font-size: calc(100% + 36px);">p</span>  <span style="font-size: calc(100% + 38px);">t</span>  <span style="font-size: calc(100% + 40px);">o</span>  <span style="font-size: calc(100% + 42px);">p</span>  <span style="font-size: calc(100% + 44px);">!</span></p><p>Praying for it to work, you race to the attic, unshelve your old fella, frantically rummage through the tangled chaos that is your overcrowded cable box and, as soon as you find its power cable - with your heart pounding in your chest - then and there, you turn it on and two beeps latter …</p><p>It starts!</p><p>Without wasting one second, you dismiss the six <code>Please update</code> popups, open the email in Firefox and …</p>
-<blockquote><p>Identification failed. Digital certificate not found, you fool!</p>
-</blockquote><h2>Where is my certificate?</h2><p>In a random forum, somebody suggests that if your Firefox has been upgraded, it is most likely that your certificates are in an old profile.</p><p>You find the instructions on how to recover an old profile, and …</p>
-<blockquote><p>Identification failed. Digital certificate not found, you dimwit!</p>
-</blockquote><p>You run downstairs to the new computer, recover the old profile and …</p>
-<blockquote><p>Identification failed. Digital certificate not found, you simpleton!</p>
-</blockquote><p>Arggghhh, nooooooooooo…….</p><p>More googling suggests finding a file named <code>cert9.db</code>.</p><p>A brute force <code>find /</code> locates the file at <code>/System/Volumes/Data/Users/dlebrero/Desktop/Old Firefox data</code>. You use it to overwrite Firefox’s current’s cert9.db - YES I AM SURE I WANT TO OVERWRITE THAT BLOODY WORTHLESS FILE - and Firefox’s settings reveal that your precious certificate is in place!</p><p><img src="/images/blog/taxman/certificate-found.jpeg" alt="Gollum finds certificate" /></p><p>With a smile on your lips and a knot on your stomach, you go ahead to read the notification …</p>
-<blockquote><p>Identification failed. Digital certificate not found, you moron!</p>
-</blockquote><p>Oh? WHAAAT?</p><p>Once your wrist starts hurting from bashing F5, you carefully inspect the certificate information and notice that it expired two months ago.</p><p><img
-class="gifoverlay"
-src="/images/blog/taxman/noooo.gif"
-/></p><p>With most of the day wasted and all joy drained from your soul, you brace yourself for what asking for a new certificate is going to entail.</p><h2>New certificate</h2><p>To request a corporate certificate, you first need a personal digital certificate.</p><p>This one just requires you to fill up a form that emails you a code, book a physical appointment in a tax office, and then present yourself with your ID card, the code and patience to last a few hours of queuing.</p><p>After this, an email arrives with a link to download your personal certificate.</p><p>Bye-bye to half a day, but at least you can ask for the corporate digital certificate!</p><h2>Corporate certificate</h2><p>Skipping lunch, you waste no time filling up the form to request the corporate certificate.</p><p>Your already low morale gets another blow when step 3 out of 4 throws an <code>unexpected error</code> at you. Fuck you unexpected!</p><p>You open the Firefox network panel to see what is going on.</p><p>One request is timing out after two minutes. Retrying several times has the same result. Some server is either overloaded, down, or on a long coffee break - who knows what privileges bureaucracy’s servers get.</p><p>You should go to have lunch and try again in a couple of hours, but &hellip;</p><p><img
-class="gifoverlay"
-src="/images/blog/taxman/refresh.gif"
-/></p><p>you cannot help yourself and after twenty-five minutes of hammering the retry button, you manage to advance to step 4!</p><p>Step 4: <code>The request timed out</code>.</p><p><big><b>WTH!!!????</b></big></p><p>The Firefox network panel is still open, so you scroll up and down several times but no request is timing-out or failing. You refresh the page a couple of times and even restart the computer just in case. </p><p><code>The request timed out</code>.</p><p><img
-class="gifoverlay"
-src="/images/blog/taxman/despair.gif"
-/></p><p>What now?</p><h2>Chrome</h2><p>Out of desperation you try with Chrome, because why not.</p><p>Chrome shows the same “timeout error” on step 4 but on opening the Chrome DevTools you see an error in the console: <code>Failed to launch ‘afirma’ because the scheme does not have a registered handler</code>. REALLY??? IN WHAT TWISTED MIND THIS IS A TIMEOUT ERROR??????? </p><p>Googling suggests that you have to install yet another piece of government software to complete the process.</p><p>And with this, and after paying the government 24€ + VAT (where the added value is?), you finally get the certificate!</p><h2>The notification</h2><p>With butterflies in your stomach and palms sweating, at last you open the TAXMAN notification. </p><p>It reads:</p>
-<blockquote><p>This is a notification to inform you that this notification system is being decommissioned and from now on you will be notified with the new <a href="https://dehu.gob.es/">https://dehu.gob.es/</a> notification website.</p>
-</blockquote>
-<script>
-new Freezeframe(".gifoverlay", {
-  overlay: true
-});
-</script><p><big><b>WTF?</b></big></p><p>But hey, it could have been worse. </p><p>This could have happened to your dad &hellip; and you had to fix it over the phone. Shrills&hellip;</p>]]></description></item></channel></rss>
+</ul>]]></description></item></channel></rss>
