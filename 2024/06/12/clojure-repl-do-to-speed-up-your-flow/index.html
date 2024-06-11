@@ -5,11 +5,11 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8" />
-	<title>But life had other plans ...</title>
-	<meta content="In May 2021 I took a sabbatical to take care of family, but things did not go as planned." name="description" /><meta content="CTO life cancer pregnancy plans sabbatical mastectomy " name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="But life had other plans ..." property="og:title" /><meta content="In May 2021 I took a sabbatical to take care of family, but things did not go as planned." property="og:description" /><meta content="https://danlebrero.com/2022/03/23/but-life-had-other-plans/" property="og:url" /><meta content="But life had other plans ..." name="twitter:title" /><meta content="In May 2021 I took a sabbatical to take care of family, but things did not go as planned." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/cto/day9/virus.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/cto/day9/virus.jpg" property="og:image" />
+	<title>"do" for a small speed up of your REPL feedback</title>
+	<meta content="A small blog post for a small tip for a small speed up on your REPL driven flow." name="description" /><meta content="Lifecheq, hiring, REPL flow, Clojure, IDE, code, REPL, top-level form, workflow, Clojure docs, function definition, function execution, do block, comment block, raise, splice, RCF, REPL session, programming tips, Clojure coding, REPL workflow, REPL tips" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="&quot;do&quot; for a small speed up of your REPL feedback" property="og:title" /><meta content="A small blog post for a small tip for a small speed up on your REPL driven flow." property="og:description" /><meta content="https://danlebrero.com/2024/06/12/clojure-repl-do-to-speed-up-your-flow/" property="og:url" /><meta content="&quot;do&quot; for a small speed up of your REPL feedback" name="twitter:title" /><meta content="A small blog post for a small tip for a small speed up on your REPL driven flow." name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/do-or-do-not.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/do-or-do-not.jpg" property="og:image" />
 	<meta name="twitter:site" content="@danlebrero" />
 	<meta name="twitter:creator" content="@danlebrero" />
-	<link rel="canonical" href="https://danlebrero.com/2022/03/23/but-life-had-other-plans/" />
+	<link rel="canonical" href="https://danlebrero.com/2024/06/12/clojure-repl-do-to-speed-up-your-flow/" />
 
 	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
 	<!-- Mobile Specific Metas
@@ -113,37 +113,55 @@
 
 				 <header class="entry-header">
 
-						<h1 class="entry-title">But life had other plans ...</h1>
+						<h1 class="entry-title">"do" for a small speed up of your REPL feedback</h1>
 
 						<div class="entry-meta">
 							<ul>
-								<li id="entry-date">Wed, 23 Mar 2022</li>
+								<li id="entry-date">Wed, 12 Jun 2024</li>
 							</ul>
 						</div>
 
 					</header>
 
-				 <p class="lead" id="entry-summary">In May 2021 I took a sabbatical to take care of family, but things did not go as planned.</p>
+				 <p class="lead" id="entry-summary">A small blog post for a small tip for a small speed up on your REPL driven flow.</p>
 
 				 <div class="entry-content-media">
 						<div class="post-thumb">
-							<img src="/images/blog/cto/day9/virus.jpg" />
+							<img src="/images/blog/do-or-do-not.jpg" />
 						</div>
 					</div>
-				 <div class="entry-content-media-attribution">
-					 <small>Image attribution:</small>
-						 <small>Image by <a href="https://pixabay.com/users/colin00b-346653/">Colin Behrens</a> from <a href="https://pixabay.com/">Pixabay</a></small>
+				 
 
-				 </div>
+					<div class="entry-content"><p>We have been <a href="https://lifecheq.freshteam.com/jobs">hiring at Lifecheq</a>, and I have been pleasantly surprised that all candidates used a “proper” REPL flow: </p>
+<ol>
+  <li>Code in your IDE.</li>
+  <li>Send top-level form to REPL.</li>
+  <li>Go to 1.</li>
+</ol><p>The Clojure website has a good example of this workflow <a href="https://clojure.org/guides/repl/enhancing_your_repl_workflow#editor-integrations">in the docs</a>.</p><p>Following on the example for the docs:</p>
+<pre><code class="clojure">(defn square 
+  [x]
+  (* x x))
+  
+(comment 
+  (square 10))
+</code></pre><p>if you find yourself moving your caret between the <code>square</code> fn definition and the <code>square</code> fn call, backwards and forwards, forwards and backwards, it is more efficient to:</p>
+<pre><code class="clojure">(do
+  (defn square 
+    [x]
+    (* x x))
 
-					<div class="entry-content"><p>In summer 2018 my mother-in-law was diagnosed with cancer.</p><p>Further testing identified a <a href="https://www.cancer.gov/about-cancer/causes-prevention/genetics/brca-fact-sheet">BRCA2 gene mutation</a> as the cause. Having the BRCA2 mutation increases your chances of developing breast cancer to 45-70% and ovarian cancer to 11-17%.</p><p>The mutation is hereditary, with a 50% chance to pass it to your children.</p><p>In May 2020, my wife’s BRCA genetic test was positive.</p><h2>Prevention</h2><p>Doctors recommended preventive surgery to remove breasts, ovaries, and Fallopian tubes which reduces the cancer risk by 90-95%.</p><p>On top of the heavy physical and psychological toll, and the inherent risk of any operation, the surgery has two additional consequences: early menopause and no more children.</p><p>A sibling for our lovely four-year-old daughter was in our plans, but with three heartbreaking miscarriages on our backs, and both of us over 40, we were ready to move past the childbearing stage of our lives.</p><p>So given what my mother-in-law had gone through, we deemed the operation and its consequences to be the lesser evil, and my wife joined the public health service’s waiting list.</p><h2>Operation and recovery</h2><p>The operation was scheduled for the last quarter of 2021, but we were given the chance of moving it forward to May.</p><p>We expected the recovery to take a couple of months, so having the surgery in May would mean that we will have enough time to recover strength before September’s school season.</p><p>But it wasn’t like that.</p><p>My wife was in constant pain, and the painkillers would make her sick and throw up, so she had no other option but to bear it day and night.</p><p>But by the end of summer, something unsettling happened: her belly slowly started to swell.</p><p>The swelling was too localized to attribute it to fattening, and it was unlikely to be an infection as she had no fever.</p><p>These left us with the possibility that either something had gone wrong with the surgery, or …</p><h2>Doctor’s visit</h2><p>We scheduled a visit with a doctor as soon as possible.</p><p>The doctor (a gynecologist) explained about peritoneal cancer, recommended an urgent tumor marker blood test, and, as the swelling was so bad, made an ultrasound scan to see if anything useful could be found.</p><p>And indeed she did.</p><p>My wife was pregnant.</p>
-<script src="/js/freezeframe.min.js"></script><p><img src="/images/blog/cto/day9/confused-wait.gif" alt="wait what" /></p><p>Wait, what?!?!? Hasn’t she just gone through surgery to remove her ovaries? How was this even possible?</p><p>Given that my wife didn’t recall talking with any angel lately, the simple explanation was that she was already pregnant when she went through the surgery.</p><p>She was five(!) months pregnant. </p><p>At the time of the surgery, the embryo was young enough to not be detected but old enough to be out of the Fallopian tubes and not depend on the ovaries’ hormones anymore. </p><p>Older than one week, but younger than three. A two-week window.</p><p><img class="gifoverlay" src="/images/blog/cto/day9/wow.gif" /></p><h2>Puzzles and odds</h2><p>The pregnancy made the pieces fall in place: no menopause symptoms, the anemia, throwing up every morning (not due to the painkillers!), and obviously the belly: </p><p><img src="/images/blog/cto/day9/belly.jpeg" alt="belly" /></p><p>When people ask why we didn’t ever contemplate the possibility of a pregnancy, first we shout “no ovaries!”, and then we explain that for 15 years we have been unable to conceive naturally.</p><p><img class="gifoverlay" src="/images/blog/cto/day9/waitwhat.gif" /></p><p>Our daughter and all the unsuccessful pregnancies have been thanks to the more advanced types of fertility treatments. </p><p>Never ever naturally. In 15 years.</p><p>It feels like a prank.</p><p>After 15 years of trying with no luck, after giving up for good, my wife gets pregnant with her <strong>very last egg</strong>; the embryo narrowly avoids death and being detected, and then it survives to such a nasty surgery and recovery procedure, while previous miscarriages had a much easier time.</p><p>But the most incredible thing: when have you seen the public health service being earlier than planned?</p><p>Life.</p>
-<hr /><p>A healthy Lucas Lebrero was born on February 4th, and my mother-in-law helps with him every day.</p>
-<script>
-new Freezeframe(".gifoverlay", {
-  overlay: true
-});
-</script></div>
+  (square 10)
+)
+</code></pre><p>Wrapping both the function and the execution in a <code>do</code> block, means that the “Send top-form to REPL” will both redefine the function and run it, saving you a lot of arrow down and arrow up keystrokes, specially for long <code>square</code> functions.</p><p>You can also include in the <code>do</code> block multiple functions, and the tip also works if you are working inside a <code>comment</code> block, like:</p>
+<pre><code class="clojure"><br />(comment
+  (do
+    (defn square
+      [x]
+      (* x x))
+
+    (square 10)
+  ))
+</code></pre><p>To remove the <code>do</code> once you are finished, if you have only one function you can use “Raise”, or if you have multiple functions you will need to “Splice” and clean up the <code>do</code> and <code>square</code> calls.</p><p>And if you find yourself wanting to run a lot of <code>square</code> calls with different parameters, consider writing some proper tests and/or using <a href="https://github.com/hyperfiddle/rcf">RCF</a>.</p></div>
 
 				 
 
@@ -157,7 +175,7 @@ new Freezeframe(".gifoverlay", {
 
 				 <p class="tags">
 					 <span>Tagged in </span>:
-					 <a href="/tags/CTO_diary/index.html">CTO diary </a><a href="/tags/Humour/index.html">Humour </a>
+					 <a href="/tags/Clojure/index.html">Clojure </a>
 				 </p>
 
 				 <div id="disqus_thread"></div>
