@@ -1,4 +1,719 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 12 Jun 2024 09:35:00 +0200</lastBuildDate><pubDate>Wed, 12 Jun 2024 09:35:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>"do" for a small speed up of your REPL feedback</title><link>https://danlebrero.com/2024/06/12/clojure-repl-do-to-speed-up-your-flow/</link><guid>https://danlebrero.com/2024/06/12/clojure-repl-do-to-speed-up-your-flow/</guid><pubDate>Wed, 12 Jun 2024 09:35:00 +0200</pubDate><description><![CDATA[<p>We have been <a href="https://lifecheq.freshteam.com/jobs">hiring at Lifecheq</a>, and I have been pleasantly surprised that all candidates used a &ldquo;proper&rdquo; REPL flow: </p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Tue, 09 Jul 2024 00:00:00 +0200</lastBuildDate><pubDate>Tue, 09 Jul 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Who Does What By How Much?   </title><link>https://danlebrero.com/2024/07/09/who-does-what-by-how-much-book-summary/</link><guid>https://danlebrero.com/2024/07/09/who-does-what-by-how-much-book-summary/</guid><pubDate>Tue, 09 Jul 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3zETQQg">Who Does What By How Much? A practical guide to customer-centric OKRs</a> by <a href="https://x.com/jboogie">Jeff Gothelf</a> and <a href="https://x.com/jseiden">Josh Seiden</a>.</p><p>Found the book not only practical but inspirational. OKRs FTW!</p><h1>Key Insights</h1>
+<ul>
+  <li>OKRs high level steps:
+  <ol>
+    <li>Leadership identifies <strong>impact</strong>, and the <strong>strategy</strong> to achieve it.
+    <ul>
+      <li>Express them as high-level organizational OKRs.</li>
+    </ul></li>
+    <li>Teams create their ORKs, tied to the org OKRs, expressing KR as <strong>outcomes</strong>.</li>
+    <li>Teams figure out and deliver <strong>outputs</strong>.</li>
+  </ol></li>
+  <li>OKRs do not contain solutions.</li>
+  <li>OKR key principles:
+  <ol>
+    <li>Focus:
+    <ul>
+      <li>Real focus means fewer OKRs.</li>
+    </ul></li>
+    <li>Autonomy.</li>
+    <li>Alignment.</li>
+    <li>Accountability.</li>
+    <li>Transparency.</li>
+    <li>Agility:
+    <ul>
+      <li>Ability to change course in response of learning.</li>
+      <li>Opinions and ideas, even the bosses ones, are all hypotheses; they have to be proven to be true.</li>
+    </ul></li>
+    <li>Customer-centric.</li>
+  </ol></li>
+  <li>Outcome:
+  <ul>
+    <li>Outcome is a measurable change in your customer&rsquo;s behaviour that creates value.</li>
+    <li>Expressed in the form:
+    <ul>
+      <li><code>Who?</code> is your customer.</li>
+      <li><code>Does what?</code> is their behaviour.</li>
+      <li><code>By how much?</code> is the measure of change in their behaviour.</li>
+    </ul></li>
+  </ul></li>
+  <li>OKRs work when they reflect and express your strategy.</li>
+  <li>What challenge to tackle is the first strategy decision.</li>
+  <li>Share your strategy as a compelling story.</li>
+  <li>OKR writing:
+  <ul>
+    <li>Focus on the things you can control.</li>
+    <li>Objective:
+    <ul>
+      <li>Provide a clear why.</li>
+      <li>Not how you overcome the challenge but how the world has changed once we&rsquo;ve solved the problem.</li>
+      <li>Inspirational, qualitative, time-boxed, specific.</li>
+      <li>Positive statement.</li>
+      <li>It has a parent OKR.</li>
+    </ul></li>
+    <li>Key result:
+    <ul>
+      <li>Expressed as an outcome.</li>
+      <li>Target is often a guess, but there is a lot of value on the conversations to figure out.
+      <ul>
+        <li>Do <em>not</em> ask open-ended questions to figure out. Close-ended questions will move the discussion forward faster.</li>
+      </ul></li>
+      <li>Key result that you cannot measure are ok.</li>
+    </ul></li>
+  </ul></li>
+  <li>Make a distinction between important business as usual work and OKRs.</li>
+  <li>Do not use OKR at the individual level.</li>
+  <li>Common pitfalls:
+  <ol>
+    <li>Key results as task lists.</li>
+    <li>Writing OKRs to fit your preexisting to-do list.</li>
+    <li>Measuring system behaviour instead of customer behaviour.</li>
+    <li>Under-promising and over-delivering.</li>
+  </ol></li>
+  <li>Of all possible solutions, prioritize high potential value and low risk first.</li>
+  <li>High risk, high value ideas should start with some learning (de-risking) activity.</li>
+  <li>Learning is work and execution is work.</li>
+  <li>Look at the rate of change in your metrics versus the effort you&rsquo;re putting in:
+  <ul>
+    <li>Consider if you want to change tactics or consider it &ldquo;done&rdquo;.</li>
+  </ul></li>
+  <li>Aligned autonomy requires transparency.</li>
+  <li>Provide universal access to data:
+  <ul>
+    <li>Without data, you&rsquo;re going to have problems.</li>
+    <li>The easiest to access the data, the faster teams can make decisions and move forward.</li>
+    <li>Make access to data the path of the least resistance.</li>
+  </ul></li>
+  <li>Particular attention to blockers of:
+  <ul>
+    <li>Learning work.</li>
+    <li>Data access.</li>
+    <li>Team autonomy.</li>
+  </ul></li>
+  <li>Killing an idea that isn&rsquo;t going to work it is progress and cost savings.</li>
+  <li>For new cultures to take hold, leaders must model them.</li>
+  <li>It is better to deliver value in smaller batches, with consistency over time, than to swing for the fences with long-term, ambitious or wildly creative projects.</li>
+  <li>Data from research rarely shows decisive results.</li>
+  <li>Evaluate people&rsquo;s contribution towards the team&rsquo;s OKRs using the 7 key OKR principles.</li>
+  <li>Operationalizing OKRs at scale across a large organization can often take years.</li>
+  <li>Avoid &ldquo;cascading&rdquo; OKRs.</li>
+  <li>Dependent teams might share OKRs.</li>
+  <li>Every OKR implementation is different because every org is different.</li>
+  <li>The most powerful predictors of success today are humility and curiosity:
+  <ul>
+    <li>Build cultures of learning and agility.</li>
+  </ul></li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Intro</a></li>
+  <li><a href="#p-1">Part 1 - What Are OKRs?</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - What Are OKRs?</a></li>
+    <li><a href="#ch-2">Chapter 2 - Why Use OKRs?</a></li>
+    <li><a href="#ch-3">Chapter 3 - OKRs and Outcomes</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part 2 - Writing OKRs</a>
+  <ul>
+    <li><a href="#ch-4">Chapter 4 - Strategy and OKRs</a></li>
+    <li><a href="#ch-5">Chapter 5 - Who Does What?</a></li>
+    <li><a href="#ch-6">Chapter 6 - Writing OKRs</a></li>
+    <li><a href="#ch-7">Chapter 7 - Setting OKRs Through Collaboration</a></li>
+    <li><a href="#ch-8">Chapter 8 - Common Questions About Writing OKRs</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part 3 - Using OKRs</a>
+  <ul>
+    <li><a href="#ch-9">Chapter 9 - The OKR Cycle</a></li>
+    <li><a href="#ch-10">Chapter 10 - Working with OKRs</a></li>
+    <li><a href="#ch-11">Chapter 11 - Checking In</a></li>
+    <li><a href="#ch-12">Chapter 12 - Planning with OKRs</a></li>
+  </ul></li>
+  <li><a href="#p-4">Part 4 - Making OKRs Successful in Your Organization</a>
+  <ul>
+    <li><a href="#ch-13">Chapter 13 - Start with Why</a></li>
+    <li><a href="#ch-14">Chapter 14 - Support OKRs from the Top</a></li>
+    <li><a href="#ch-15">Chapter 15 - Managing Up. Changing Responsibilities</a></li>
+    <li><a href="#ch-16">Chapter 16 - Scaling OKRs</a></li>
+  </ul></li>
+  <li><a href="#ch-20">Conclusion</a></li>
+</ul><h1><a name="ch-0"></a>Intro</h1>
+<ul>
+  <li>Every org wants to get better.</li>
+  <li>Orgs aren&rsquo;t worried about people working hard enough, but working on the wrong stuff:
+  <ul>
+    <li>Most common reason: people lose track of what their customers want.</li>
+    <li>Other big problems: alignment, collaboration, strategic focus.</li>
+  </ul></li>
+  <li>OKR is a tool to align teams around customer needs and focus them on company strategy.</li>
+  <li>Everyone has a customer.</li>
+  <li>Outcome:
+  <ul>
+    <li><code>Who?</code> is your customer.</li>
+    <li><code>Does what?</code> is their behaviour.</li>
+    <li><code>By how much?</code> is the measure of change in their behaviour.</li>
+  </ul></li>
+</ul><h1><a name="p-1"></a>Part 1 - What Are OKRs?</h1><h2><a name="ch-1"></a>Chapter 1 - What Are OKRs?</h2>
+<ul>
+  <li>3 parts:
+  <ol>
+    <li>Goal-setting framework:
+    <ul>
+      <li>Objective:
+      <ul>
+        <li>The goal.</li>
+        <li>Inspire the team and provide a clear why.</li>
+        <li>Inspirational, aspirational, qualitative, time-boxed and specific enough to create urgency.</li>
+      </ul></li>
+      <li>Key result:
+      <ul>
+        <li>How you measure progress towards your goal.</li>
+      </ul></li>
+      <li>OKRs do not contain solutions.</li>
+      <li>Outcome is a change in behaviour that creates value.</li>
+    </ul></li>
+    <li>OKRs are a process:
+    <ul>
+      <li>Not only how to set goals but also how work towards them: from daily to annual.</li>
+      <li>OKR cycle.</li>
+    </ul></li>
+    <li>OKRs are a culture:
+    <ul>
+      <li>OKRs should reflect the specific culture of the org.</li>
+      <li>OKRs should be customized for each company.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Why Use OKRs?</h2>
+<ul>
+  <li>Key principles:
+  <ol>
+    <li>Focus:
+    <ul>
+      <li>Real focus means fewer OKRs.</li>
+      <li>OKRs only current strategic priorities.
+      <ul>
+        <li>Everything else is either business as usual or must wait.</li>
+      </ul></li>
+    </ul></li>
+    <li>Autonomy:
+    <ul>
+      <li>Teams writing their OKRs and creating the results.</li>
+      <li>OKRs are set with a mix of top-down and bottom-up process.</li>
+    </ul></li>
+    <li>Alignment.</li>
+    <li>Accountability.</li>
+    <li>Transparency:
+    <ul>
+      <li>Puts pressure to improve data collection and access.</li>
+    </ul></li>
+    <li>Agility:
+    <ul>
+      <li>Ability to change course in response of learning.</li>
+      <li>Opinions and ideas, even the bosses ones, are all hypotheses; they have to be proven to be true.</li>
+    </ul></li>
+    <li>Customer-centric.</li>
+  </ol></li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - OKRs and Outcomes</h2>
+<ul>
+  <li>Success means that you&rsquo;ve created a valuable outcome.</li>
+  <li>Outcome is a measurable change in your customer&rsquo;s behaviour that creates value:
+  <ul>
+    <li>Output -&gt; Outcome -&gt; Impact.</li>
+    <li>Very rarely use impact to write objectives:
+    <ul>
+      <li>They are too big and the results of too many factors.</li>
+    </ul></li>
+  </ul></li>
+  <li>High-level steps:
+  <ol>
+    <li>Leadership identifies impact, and the strategy to achieve it.
+    <ul>
+      <li>Express them as high-level organizational OKRs.</li>
+    </ul></li>
+    <li>Teams create their ORKs, expressing KR as outcomes.</li>
+    <li>Teams figure out and deliver outputs.</li>
+  </ol></li>
+  <li>Value:
+  <ol>
+    <li>Make your customers successful.</li>
+    <li>Respect their time.</li>
+    <li>Solve real problems for them in meaningful ways.</li>
+    <li>Are a delight to use.</li>
+  </ol></li>
+</ul><h1><a name="p-2"></a>Part 2 - Writing OKRs</h1><h2><a name="ch-4"></a>Chapter 4 - Strategy and OKRs</h2>
+<ul>
+  <li>You can write well-structured OKRs and still focus on the wrong thing.</li>
+  <li>OKRs work when they reflect and express your strategy.</li>
+  <li>Strategy is an opinionated and coherent approach to addressing an important challenge:
+  <ul>
+    <li>Important challenge: don&rsquo;t have obvious or easy solutions.</li>
+  </ul></li>
+  <li>If you&rsquo;ve setting OKRs for your team, then you&rsquo;re using strategy.</li>
+  <li>What challenge to tackle is the first strategy decision.</li>
+  <li>Strategy isn&rsquo;t a plan; it&rsquo;s an approach.</li>
+  <li>Steps to create strategy:
+  <ol>
+    <li>Identify the biggest challenge:
+    <ul>
+      <li>Finding your most important challenge is a simple thing to describe, but it&rsquo;s hard to do.</li>
+      <li>At an org level:
+      <ul>
+        <li>What&rsquo;s your goal?</li>
+        <li>What are the obstacles to achieve that goal?</li>
+      </ul></li>
+      <li>At the team level:
+      <ul>
+        <li>What is the most impactful thing your team can do to support your org&rsquo;s strategy?</li>
+        <li>Look at the intersection of your team&rsquo;s responsibilities and your org&rsquo;s goals.
+        <ul>
+          <li>Clear connection between your strategy and the org strategy.</li>
+        </ul></li>
+        <li>Consider your peers initiatives.</li>
+      </ul></li>
+    </ul></li>
+    <li>Identify your market:
+    <ul>
+      <li>Who are the people you&rsquo;re going to focus on?</li>
+    </ul></li>
+    <li>Propose your unique competitive approach:
+    <ul>
+      <li>Prompt question on page 62.</li>
+    </ul></li>
+  </ol></li>
+  <li>Share your strategy as a compelling story.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Who Does What?</h2>
+<ul>
+  <li>To figure out who does what:
+  <ol>
+    <li>What does your team have control over?
+    <ul>
+      <li>Focus on the things you can control.</li>
+      <li>If your team is not autonomous consider coordinating with overarching OKRs or complementary OKRs.</li>
+    </ul></li>
+    <li>Who: which customer will you target first?
+    <ul>
+      <li>Be as specific as possible.</li>
+      <li>List 3 to 6 plausible roles.</li>
+    </ul></li>
+    <li>Figure out &ldquo;does what&rdquo;:
+    <ul>
+      <li>Tell a story about the customer&rsquo;s journey.
+      <ul>
+        <li>Pay attention to the &ldquo;does what&rdquo; in the story.</li>
+        <li>Write down 3 to 6 important behaviours using the [who][does what] format.</li>
+        <li>Pay attention also to the obstacles the customer has.</li>
+        <li>Consider <a href="http://www.jpattonassociates.com/wp-content/uploads/2015/03/story_mapping.pdf">user story mapping</a>.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Writing OKRs</h2>
+<ul>
+  <li>OKRs are best created in collaboration with your team.</li>
+  <li>Objective: provide a clear why.</li>
+  <li>To start:
+  <ul>
+    <li>At the org level, one OKR per business unit.</li>
+    <li>At the team level, only one OKR.</li>
+    <li>2 or 3 key results per objective.</li>
+  </ul></li>
+  <li>More OKR means less focus.</li>
+  <li>Steps to create objective:
+  <ol>
+    <li>Gather what you need:
+    <ul>
+      <li>See chapter 4 and 5.</li>
+    </ul></li>
+    <li>Identify biggest obstacle:
+    <ul>
+      <li>See chapter 4 important challenge.</li>
+      <li>From org&rsquo;s OKRs.</li>
+    </ul></li>
+    <li>Turn obstacles into positive statement:
+    <ul>
+      <li>Not how you overcome it but how the world has changed once we&rsquo;ve solved the problem.</li>
+    </ul></li>
+    <li>Self-check objective:
+    <ul>
+      <li>Check:
+      <ul>
+        <li>It is a positive statement.</li>
+        <li>It does not contain a solution.</li>
+        <li>Inspirational, qualitative, time-boxed, specific.</li>
+      </ul></li>
+    </ul></li>
+    <li>Find your parent OKR:
+    <ul>
+      <li>No need to be strictly hierarchical.</li>
+    </ul></li>
+  </ol></li>
+  <li>Steps to create key results:
+  <ol>
+    <li>Gather list of customers and customer story from chapter 5.</li>
+    <li>Turn into 2 to 4 statements in the format: [who] + [does what] + [by how much].</li>
+  </ol>
+  <ul>
+    <li>Self-check question: if we achieve all key results, will we have achieved our objective?
+    <ul>
+      <li>If not, some key result is missing.</li>
+    </ul></li>
+  </ul></li>
+  <li>By how much?
+  <ul>
+    <li>Find a good enough target:
+    <ol>
+      <li>It is possible:
+      <ul>
+        <li>Often a guess, but there is a lot of value on the conversations to figure out.</li>
+      </ul></li>
+      <li>It is valuable:
+      <ul>
+        <li>Easier to answer.</li>
+      </ul></li>
+    </ol>
+    <ul>
+      <li>Do <em>not</em> ask open-ended questions to figure out. Close-ended questions will move the discussion forward faster.</li>
+    </ul></li>
+  </ul></li>
+  <li>Scoring OKRs:
+  <ul>
+    <li>Bad:
+    <ul>
+      <li>It can lead to the team focusing on the scores themselves instead of on the results.</li>
+      <li>Performance evaluations and compensation.</li>
+    </ul></li>
+    <li>Good:
+    <ul>
+      <li>Diagnosis tool.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Setting OKRs Through Collaboration</h2>
+<ul>
+  <li>Top-down and bottom-up:
+  <ul>
+    <li>Goals are both strategic and realistic with deeper understanding.</li>
+    <li>People are more motivated.</li>
+  </ul></li>
+  <li>Process to set OKRs collaboratively:
+  <ol>
+    <li>Top-Down</li>
+    <li>Bottom-up.</li>
+    <li>Collaboration:
+    <ul>
+      <li>With leaders and peers.</li>
+      <li>Be prepared to defend your strategy, obstacle, parent OKR.</li>
+      <li>Discuss key result numbers.</li>
+      <li>Dependencies and collaborations with other teams.</li>
+    </ul></li>
+    <li>Revise and publish.</li>
+  </ol></li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Common Questions About Writing OKRs</h2>
+<ul>
+  <li>Make a distinction between important business as usual work and OKRs.</li>
+  <li>Key result that you cannot measure is ok:
+  <ul>
+    <li>Use qualitative data instead.</li>
+    <li>Use leading indicator.</li>
+    <li>Ask for help to figure out how to measure it.</li>
+  </ul></li>
+  <li>Do not use OKR at the individual level.</li>
+  <li>In some cases is ok for teams to share OKRs.</li>
+  <li>Discipline-oriented teams struggle to adopt OKRs:
+  <ol>
+    <li>Share the OKRs of the team they are working with.</li>
+    <li>OKR: make the team itself better.</li>
+    <li>Treat other teams as clients, and set OKR accordingly.</li>
+    <li>A mix f all of the above.</li>
+  </ol></li>
+  <li>Common pitfalls:
+  <ol>
+    <li>Key results as task lists.</li>
+    <li>Writing OKRs to fit your preexisting to-do list.</li>
+    <li>Measuring system behaviour instead of customer behaviour.</li>
+    <li>Under-promising and over-delivering.</li>
+  </ol></li>
+</ul><h1><a name="p-3"></a>Part 3 - Using OKRs</h1><h2><a name="ch-9"></a>Chapter 9 - The OKR Cycle</h2><p><img src="/images/blog/books/who-does-what-by-how-much/okr-cycle.png" alt="OKR cycle" /></p>
+<ul>
+  <li>The only thing that matters is results.</li>
+  <li>OKRs are one of the best frameworks for encouraging real agility.</li>
+  <li>Learning and execution should happen continuously.</li>
+  <li>Check-in:
+  <ul>
+    <li>Monthly: informal.</li>
+    <li>Quarterly:
+    <ul>
+      <li>More structured.</li>
+      <li>Recommit, update or discard OKRs.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Working with OKRs</h2>
+<ul>
+  <li>OKRs align everyone around solving problems.</li>
+  <li>Not &ldquo;when are we done?&rdquo; but &ldquo;How soon can we start creating value?&rdquo;</li>
+  <li>Adopt an experimental mindset:
+  <ul>
+    <li>Express possible solutions as testable hypothesis:
+    <ul>
+      <li>&ldquo;We believe that [solution] will achieve [outcome]&rdquo;.</li>
+    </ul></li>
+  </ul></li>
+  <li>Aim to be more experimental, outcome-oriented and customer-centric.</li>
+  <li>Before executing, start by reviewing your OKR.</li>
+  <li>Of all possible solutions, prioritize high potential value and low risk first.</li>
+  <li>High risk, high value ideas should start with some learning (de-risking) activity.</li>
+  <li>Learning activity:
+  <ul>
+    <li>First list what you are trying to learn.</li>
+    <li>Consider what is the fastest way to learn so that you can make a decision:
+    <ul>
+      <li>Talk or watch your customers work.</li>
+      <li>Avoid surveys:
+      <ul>
+        <li>Hard to do well.</li>
+        <li>Talking to 6 clients &gt; 100 survey answers.</li>
+      </ul></li>
+    </ul></li>
+  </ul></li>
+  <li>Work in smaller increments.</li>
+  <li>Learning is work and execution is work.</li>
+  <li>Collect and share both quantitative and qualitative data throughout your org.</li>
+  <li>Without data, you&rsquo;re going to have problems.</li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Checking In</h2>
+<ul>
+  <li>Monthly and quarterly are required if you want to make OKRs work:
+  <ul>
+    <li>Retro and weekly can be added to other similar meetings.</li>
+  </ul></li>
+  <li>Assessing progress:
+  <ol>
+    <li>Outcomes i primary.</li>
+    <li>Team&rsquo;s confidence on achieving the goal is a conversation starter.</li>
+    <li>Scoring: most useful for quarterly check-ins.</li>
+  </ol></li>
+  <li>Weekly check-in:
+  <ul>
+    <li>Not problem-solving but status meeting.</li>
+    <li>Only for the immediate team.</li>
+    <li>30 mins:
+    <ul>
+      <li>10 mins:
+      <ul>
+        <li>Review key results.</li>
+        <li>Highlights that require some attention from the team.</li>
+        <li>Confidence review.</li>
+      </ul></li>
+      <li>10 mins:
+      <ul>
+        <li>Discuss issues from confidence review.</li>
+        <li>Raise blockers.</li>
+        <li>Major new learnings.</li>
+      </ul></li>
+      <li>10 mins:
+      <ul>
+        <li>Decide on actions and follow-ups.</li>
+      </ul></li>
+    </ul></li>
+    <li>Keep an internal record for the team.</li>
+    <li>Share anything important with stakeholders.</li>
+  </ul></li>
+  <li>Monthly check-in:
+  <ul>
+    <li>With stakeholders.</li>
+    <li>60-90 mins.</li>
+    <li>Opening:
+    <ul>
+      <li>Review key results.</li>
+      <li>WIP review.</li>
+      <li>Optional: confidence review.</li>
+      <li>Stakeholders share any strategic updates that are important for the team&rsquo;s work.</li>
+    </ul></li>
+    <li>Middle:
+    <ul>
+      <li>Learnings: most important part of the meeting.</li>
+      <li>Discuss obstacles: not problem-solving.</li>
+      <li>Adjust OKRs: it should rarely happen.</li>
+    </ul></li>
+    <li>Closing: actions and follow-ups.</li>
+    <li>Capture and share notes.</li>
+  </ul></li>
+  <li>Quarterly check-ins:
+  <ul>
+    <li>Same as weekly but emphasis on adjusting OKRs.</li>
+    <li>With other teams.</li>
+    <li>Look at the rate of change in your metrics versus the effort you&rsquo;re putting in:
+    <ul>
+      <li>Consider if you want to change tactics or consider it &ldquo;done&rdquo;.</li>
+    </ul></li>
+  </ul></li>
+  <li>When changing OKRs:
+  <ol>
+    <li>It should never be a surprise.</li>
+    <li>Prepare evidence.</li>
+    <li>Bring an informed/educated proposal.</li>
+    <li>Explain the cost of not changing OKRs.</li>
+  </ol></li>
+  <li>Retrospective meeting:
+  <ul>
+    <li>Post the key OKR principles to prompt feedback on how the team is doing on those.</li>
+  </ul></li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Planning with OKRs</h2>
+<ul>
+  <li>Embrace uncertainty and encourage agility:
+  <ol>
+    <li>Reduce the time horizon of your plans (up to 2 quarters in advance).</li>
+    <li>Filter out work that does not or no longer help with the OKRs:
+    <ul>
+      <li>Sunk cost is lost.</li>
+      <li>Hard part is saying &ldquo;no&rdquo;, specially to work in progress.</li>
+    </ul></li>
+    <li>Outcome-based roadmaps:
+    <ul>
+      <li>Quarterly OKRs + potential work items + learning activities.</li>
+      <li>Date-driven work:
+      <ol>
+        <li>Reduce scope.</li>
+        <li>Each small batch should generate a result.</li>
+      </ol></li>
+      <li>Review and update during checkins.</li>
+    </ul></li>
+  </ol></li>
+</ul><h1><a name="p-4"></a>Part 4 - Making OKRs Successful in Your Organization</h1><h2><a name="ch-13"></a>Chapter 13 - Start with Why</h2>
+<ul>
+  <li>Why to adopt OKRs:
+  <ol>
+    <li>Problem statement.</li>
+    <li>Vision for a positive future state.</li>
+    <li>Hypothesis for the proposed process/culture.</li>
+  </ol></li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Support OKRs from the Top</h2>
+<ul>
+  <li>All change (good or bad) is hard.</li>
+  <li>The most important predictor of success when going through any change is consistent and continuous leadership support.</li>
+  <li>Ways for leaders to support OKRs:
+  <ol>
+    <li>Start with why (see chapter 13).</li>
+    <li>Provide clear strategy and high-level OKRs first (see chapter 4).</li>
+    <li>Trust the process and your teams:
+    <ul>
+      <li>Aligned autonomy requires transparency:
+      <ul>
+        <li>Weekly:
+        <ul>
+          <li>What they&rsquo;re working on.</li>
+          <li>OKR progress.</li>
+          <li>Learnings.</li>
+          <li>Changes in plan.</li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+    <li>Support learning work.</li>
+    <li>Provide universal access to data:
+    <ul>
+      <li>The easiest to access the data, the faster teams can make decisions and move forward.</li>
+      <li>Make access to data the path of the least resistance.</li>
+    </ul></li>
+    <li>Create a safe culture of learning:
+    <ul>
+      <li>Learning is key for OKR success.</li>
+      <li>Ask &ldquo;what did you learn this week?&rdquo; instead of &ldquo;when X will be done?&rdquo;</li>
+      <li>Killing an idea that isn&rsquo;t going to work it is progress and cost savings.</li>
+    </ul></li>
+    <li>Model the values you want to see in your culture:
+    <ul>
+      <li>For new cultures to take hold, leaders must model them.</li>
+      <li>As a leader you must demonstrate how much you value facts and data, even if they contradict what you said publicly.</li>
+    </ul></li>
+    <li>Design the org for collaboration and agility:
+    <ul>
+      <li>Be open to reorgs.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-15"></a>Chapter 15 - Managing Up. Changing Responsibilities</h2>
+<ul>
+  <li>Middle managers have an even harder job:
+  <ul>
+    <li>They face pressure from every side.</li>
+  </ul></li>
+  <li>OKRs change how they do their jobs:
+  <ol>
+    <li>Manage up:
+    <ul>
+      <li>Tie any bosses request to an OKR:
+      <ul>
+        <li>If there is no connection, push back or make boss drop some OKR.</li>
+      </ul></li>
+      <li>Communicate, tying up to OKR.</li>
+    </ul></li>
+    <li>Changed responsibilities:
+    <ul>
+      <li>The taskmaster part of the manager&rsquo;s job goes out of the window.</li>
+      <li>New job:
+      <ul>
+        <li>Ensure team&rsquo;s OKRs and work are aligned with strategic direction:
+        <ul>
+          <li>Keep an eye for when the team start drifting off.</li>
+        </ul></li>
+        <li>Setting guidelines and constraints around the team&rsquo;s scope of work:
+        <ul>
+          <li>It is better to deliver value in smaller batches, with consistency over time, than to swing for the fences with long-term, ambitious or wildly creative projects.</li>
+        </ul></li>
+        <li>Remove blockers:
+        <ul>
+          <li>Particular attention to blockers of:
+          <ul>
+            <li>Learning work.</li>
+            <li>Data access.</li>
+            <li>Team autonomy.</li>
+          </ul></li>
+        </ul></li>
+        <li>Make key decisions when team needs guidance:
+        <ul>
+          <li>Data from research rarely shows decisive results.</li>
+        </ul></li>
+      </ul></li>
+    </ul></li>
+    <li>Adjust performance management criteria:
+    <ul>
+      <li>Do not create individual OKRs and then use them for individual performance management:
+      <ul>
+        <li>Dont do this.</li>
+      </ul></li>
+      <li>Evaluate people&rsquo;s contribution towards the team&rsquo;s OKRs using the 7 key OKR principles. Examples:
+      <ul>
+        <li>How well they used their time in service of the OKRs (focus, accountability, prioritization).</li>
+        <li>How well they incorporate learning activities into their work (learning).</li>
+        <li>How well they use evidence to inform their work and make decisions (agility, learning).</li>
+      </ul></li>
+      <li>Performance management changes are key as they incentivise people&rsquo;s behaviour.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - Scaling OKRs</h2>
+<ul>
+  <li>Operationalizing OKRs at scale across a large organization can often take years.</li>
+  <li>Start with a clear org strategy.</li>
+  <li>Avoid &ldquo;cascading&rdquo; OKRs.
+  <ul>
+    <li>Align by ensuring every OKR has a parent OKR.</li>
+  </ul></li>
+  <li>Dependent teams might share OKRs:
+  <ul>
+    <li>Avoid hyperlocal optimizations.</li>
+    <li>Promote collaboration.</li>
+    <li>Simplifies OKR management and review.</li>
+  </ul></li>
+  <li>Timebox OKR planning to 1 month after strategic direction has been set.</li>
+  <li>When we roll out OKRs, the people in our org are our customers.</li>
+  <li>Use a experimental mindset.</li>
+  <li>Every OKR implementation is different because every org is different.</li>
+  <li>For the pilot, err on the side of radical transparency.</li>
+  <li>Start small.</li>
+  <li>Put your best folks on the challenge.</li>
+  <li>Dedicated full-time OKR coaches.</li>
+  <li>At scale, the right OKR tool makes a significant difference.</li>
+</ul><h1><a name="ch-20"></a>Conclusion</h1>
+<ul>
+  <li>The most powerful predictors of success today are humility and curiosity:
+  <ul>
+    <li>Build cultures of learning and agility.</li>
+  </ul></li>
+</ul>]]></description></item><item><title>"do" for a small speed up of your REPL feedback</title><link>https://danlebrero.com/2024/06/12/clojure-repl-do-to-speed-up-your-flow/</link><guid>https://danlebrero.com/2024/06/12/clojure-repl-do-to-speed-up-your-flow/</guid><pubDate>Wed, 12 Jun 2024 09:35:00 +0200</pubDate><description><![CDATA[<p>We have been <a href="https://lifecheq.freshteam.com/jobs">hiring at Lifecheq</a>, and I have been pleasantly surprised that all candidates used a &ldquo;proper&rdquo; REPL flow: </p>
 <ol>
   <li>Code in your IDE.</li>
   <li>Send top-level form to REPL.</li>
@@ -4486,531 +5201,4 @@
     </ul></li>
   </ul></li>
   <li>In times of transformation, think about how you work before you launch and design how it will work after.</li>
-</ul>]]></description></item><item><title>Book notes: Never split the difference</title><link>https://danlebrero.com/2023/09/16/never-split-the-difference-summary/</link><guid>https://danlebrero.com/2023/09/16/never-split-the-difference-summary/</guid><pubDate>Sat, 16 Sep 2023 10:30:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3yKCWKN">Never Split the Difference</a> by <a href="https://twitter.com/fbinegotiator">Chris Voss</a> and <a href="https://twitter.com/tahlraz">Tahl Raz</a></p><p>Kidnappers are just businessman trying to get the best price.</p><h1>Key Insights</h1>
-<ul>
-  <li>Apology and first name to seed warmth.</li>
-  <li>Open-ended questions (calibrated questions):
-  <ul>
-    <li>Gives other illusion of control.</li>
-    <li>How the other would solved your problems.</li>
-  </ul></li>
-  <li>Negotiate more effectively by influencing System 1.</li>
-  <li>Core concept: Tactical empathy:
-  <ul>
-    <li>Listening is the most active thing you can do.</li>
-    <li>When people feel listened:
-    <ol>
-      <li>Listen to themselves more carefully.</li>
-      <li>More open to evaluate and clarify their own thoughts and feelings.</li>
-      <li>Less defensive.</li>
-      <li>More willing to listen to others.</li>
-    </ol></li>
-  </ul></li>
-  <li>Engage negotiation with a mindset of discovery.</li>
-  <li>Make it all about the other.</li>
-  <li>Mirroring (isopraxism):
-  <ul>
-    <li>Sign of bonding.</li>
-    <li>We fear what&rsquo;s different and drawn to what&rsquo;s similar.</li>
-    <li>Repeat the last 3 words, or the critical 1 to 3 words.</li>
-    <li>Downward inflection: I am listening and understand.</li>
-    <li>Upward inflection: invite response.</li>
-    <li>4 steps:
-    <ol>
-      <li>Use late-night FM DJ voice.</li>
-      <li>Start with &ldquo;I&rsquo;m sorry&rdquo;.</li>
-      <li>Mirror.</li>
-      <li>Silence. 4 secs at least.</li>
-      <li>Repeat.</li>
-    </ol></li>
-  </ul></li>
-  <li>Never ask &ldquo;What do you mean by that?&rdquo;:
-  <ul>
-    <li>Is more irritating than mirroring.</li>
-  </ul></li>
-  <li>Labeling:
-  <ul>
-    <li>Validating someone&rsquo;s emotions by acknowledging them.</li>
-    <li>Labeling negative emotions diffuses them.</li>
-    <li>Labeling positive emotions reinforces them.</li>
-  </ul></li>
-  <li>&ldquo;No&rdquo; starts the negotiation.</li>
-  <li>Clearly giving permission to say &ldquo;NO&rdquo; to your ideas preserve people need for autonomy.</li>
-  <li>Helps people feel safe, secure, emotionally comfortable, and in control of their decision.</li>
-  <li>Provoke a &ldquo;no&rdquo;.</li>
-  <li>&ldquo;That&rsquo;s right&rdquo; (making progress) vs &ldquo;You&rsquo;re right&rdquo; (nothing changes).</li>
-  <li>Deadlines are often arbitrary, almost always flexible, and hardly ever trigger the consequences we think they will.</li>
-  <li>We are hardwired to reject unfairness.</li>
-  <li>Prospect Theory (Kahneman and Tversky):
-  <ul>
-    <li>Certainty effect:
-    <ul>
-      <li>People are drawn to sure things over probabilities, even when probabilities is a better choice.</li>
-    </ul></li>
-    <li>Loss aversion:
-    <ul>
-      <li>People take greater risk to avoid losses than to achieve gains.</li>
-    </ul></li>
-  </ul></li>
-  <li>How to negotiate a better salary:
-  <ol>
-    <li>Be pleasantly persistent on non-salary terms.</li>
-    <li>Define success and metrics for next rise.</li>
-    <li>Ask: &ldquo;What does it take to be successful here?&rdquo;
-    <ul>
-      <li>Interviewer will give advise, watch if you follow and become your unofficial mentor.</li>
-    </ul></li>
-  </ol></li>
-  <li>Failure plants the seed of future success.</li>
-  <li>&ldquo;How am I supposed to do that?&rdquo;.</li>
-  <li>&ldquo;Yes&rdquo; is nothing without &ldquo;how&rdquo;.</li>
-  <li><a href="#ch-9">You must understand your counterpart style for effective negotiation</a>.</li>
-  <li><a href="#bargain">Ackerman bargaining</a>.</li>
-  <li>When pressure is on, you don&rsquo;t raise to the occasion; you fall to your highest level of preparation.</li>
-  <li>The first few minutes before a meeting, and the last few minutes (when everybody is leaving) often tell you more about the other side than anything in between.</li>
-  <li><a href="https://info.blackswanltd.com/download-the-negotiation-one-sheet">Negotiation one sheet pdf</a>.</li>
-</ul><h1><a name="ch-1"></a>Chapter 1: The new rules</h1>
-<ul>
-  <li>Apology and first name to seed warmth.</li>
-  <li>Open-ended questions (calibrated questions):
-  <ul>
-    <li>The other side can respond but there are no fixed answers.</li>
-    <li>Buys you time.</li>
-    <li>Gives other illusion of control.</li>
-    <li>How the other would solved your problems.</li>
-    <li>&ldquo;How I am supposed to do that?&rdquo;</li>
-  </ul></li>
-  <li>Kidnappers are just businessman trying to get the best price.</li>
-  <li>Cognitive bias:
-  <ul>
-    <li><a href="https://amzn.to/3CIAzL6">Thinking, fast and slow</a>.</li>
-    <li>Irrational, more than <a href="https://en.wikipedia.org/wiki/List_of_cognitive_biases">150 different ones</a>.</li>
-    <li>Come from System 1 thinking.</li>
-    <li>System 1 steers and guides our rational thoughts (System 2).</li>
-    <li>Negotiate more effectively by influencing System 1.</li>
-  </ul></li>
-  <li>Core concept: Tactical empathy:
-  <ul>
-    <li>Listening is the most active thing you can do.</li>
-    <li>When people feel listened:
-    <ol>
-      <li>Listen to themselves more carefully.</li>
-      <li>More open to evaluate and clarify their own thoughts and feelings.</li>
-      <li>Less defensive.</li>
-      <li>More willing to listen to others.</li>
-    </ol></li>
-  </ul></li>
-  <li>Negotiation is the heart of collaboration:
-  <ul>
-    <li>Makes conflict meaningful and productive for all parties.</li>
-  </ul></li>
-</ul><h1><a name="ch-2"></a>Chapter 2: Be a Mirror</h1>
-<ul>
-  <li>Engage negotiation with a mindset of discovery.</li>
-  <li>Overuse of personal pronouns (we/they vs me/I):
-  <ul>
-    <li>The less important he makes himself, the more important he probably is.</li>
-  </ul></li>
-  <li>Team of 4 or 5 to listen.</li>
-  <li>Voices in your head:
-  <ul>
-    <li>When not talking, you are thinking about your arguments.</li>
-    <li>When talking, making your arguments.</li>
-    <li>The other is possibly doing the same.</li>
-  </ul></li>
-  <li>Make it all about the other.</li>
-  <li>Three voice tones:
-  <ol>
-    <li>Late-night FM DJ voice:
-    <ul>
-      <li>Deep, soft, slow and reassuring.</li>
-      <li><a href="https://www.youtube.com/watch?v=RJjnkxvbxaI">Listen here!</a>.</li>
-    </ul></li>
-    <li>Positive/playful voice:
-    <ul>
-      <li>Default one.</li>
-      <li>Easy going. Good natured person.</li>
-      <li>Relax and smile while talking.</li>
-    </ul></li>
-    <li>Assertive dominance voice:
-    <ul>
-      <li>Used very rarely.</li>
-      <li>Probably push back.</li>
-    </ul></li>
-  </ol></li>
-  <li>Mirroring (isopraxism):
-  <ul>
-    <li>Sign of bonding.</li>
-    <li>We fear what&rsquo;s different and drawn to what&rsquo;s similar.</li>
-    <li>Repeat the last 3 words, or the critical 1 to 3 words.</li>
-    <li>Downward inflection: I am listening and understand.</li>
-    <li>Upward inflection: invite response.</li>
-  </ul></li>
-  <li>4 steps:
-  <ol>
-    <li>Use late-night FM DJ voice.</li>
-    <li>Start with &ldquo;I&rsquo;m sorry&rdquo;.</li>
-    <li>Mirror.</li>
-    <li>Silence. 4 secs at least.</li>
-    <li>Repeat.</li>
-  </ol></li>
-  <li>Never ask &ldquo;What do you mean by that?&rdquo;:
-  <ul>
-    <li>Is more irritating than mirroring.</li>
-  </ul></li>
-</ul><h1><a name="ch-3"></a>Chapter 3: Don&rsquo;t Feel Their Pain, Label It.</h1>
-<ul>
-  <li>Tactical empathy:
-  <ul>
-    <li>The ability to recognize the perspective of a counterpart, and the vocalization of that recognition.</li>
-    <li>Emotional intelligence on steroids.</li>
-    <li>Visualize yourself in the position they describe, and put in as much detail as you can.</li>
-  </ul></li>
-  <li>Labeling:
-  <ul>
-    <li>Validating someone&rsquo;s emotions by acknowledging them.</li>
-    <li>Give emotions a name.</li>
-    <li>Steps:
-    <ol>
-      <li>Detect other person&rsquo;s emotional state.
-      <ul>
-        <li>Pay attention to changes people undergo when they respond to external events (your words).</li>
-      </ul></li>
-      <li>Label it:
-      <ul>
-        <li>It seems like &hellip;</li>
-        <li>It sounds like &hellip;</li>
-        <li>It looks like &hellip;</li>
-        <li>NOT &ldquo;I am hearing that &hellip;&rdquo;</li>
-      </ul></li>
-      <li>Silence: be quiet and listen.</li>
-    </ol></li>
-    <li>Labeling negative emotions diffuses them:
-    <ul>
-      <li>When making a mistake, go straight to acknowledge it.</li>
-    </ul></li>
-    <li>Labeling positive emotions reinforces them.</li>
-  </ul></li>
-  <li>Accusation audit:
-  <ul>
-    <li>List every terrible thing your counterpart could say about you.</li>
-  </ul></li>
-</ul><h2><a name="ch-4"></a>Chapter 4: Beware &ldquo;Yes&rdquo; - Master &ldquo;No&rdquo;</h2>
-<ul>
-  <li>&ldquo;No&rdquo; starts the negotiation.</li>
-  <li>Clearly giving permission to say &ldquo;NO&rdquo; to your ideas preserve people need for autonomy:
-  <ul>
-    <li>Emotions calm.</li>
-    <li>Give time.</li>
-  </ul></li>
-  <li>No != rejection:
-  <ul>
-    <li>I am not yet ready to agree.</li>
-    <li>I do not understand.</li>
-    <li>I want something else.</li>
-    <li>I need more information.</li>
-  </ul></li>
-  <li>After &ldquo;no&rdquo;, pause, ask solution-based questions or label their effect:
-  <ul>
-    <li>What about this doesn&rsquo;t work for you?</li>
-    <li>It seems like there&rsquo;s something here that bothers you.</li>
-  </ul></li>
-  <li>Persuade them from their perspective, not ours:
-  <ul>
-    <li>Two primal urges:
-    <ol>
-      <li>Feel safe and secure.</li>
-      <li>Feel in control.</li>
-    </ol></li>
-  </ul></li>
-  <li>And early &ldquo;yes&rdquo; is often a counterfeit dodge.</li>
-  <li>&ldquo;No&rdquo; skills:
-  <ul>
-    <li>Allows the real issue to be brought forth.</li>
-    <li>Protects people from making ineffective decisions or to correct them.</li>
-    <li>Slow things down so that people can freely embrace their decision.</li>
-    <li>Helps people feel safe, secure, emotionally comfortable, and in control of their decision.</li>
-    <li>Moves everyone&rsquo;s efforts forward.</li>
-  </ul></li>
-  <li>No &ldquo;no&rdquo; means no go.</li>
-  <li>Email magic: provoke a &ldquo;no&rdquo;:
-  <ul>
-    <li>Have you given up on this project?</li>
-  </ul></li>
-  <li>Is not a bad time to talk?</li>
-</ul><h1><a name="ch-5"></a>Chapter 5: Trigger the two words that immediately transform any negotiation</h1>
-<ul>
-  <li>Behavioral Change Stairway Model (BCSM) stages:
-  <ol>
-    <li>Active listening.</li>
-    <li>Empathy.</li>
-    <li>Rapport.</li>
-    <li>Influence.</li>
-    <li>Behavioural change.</li>
-  </ol></li>
-  <li>&ldquo;That&rsquo;s right&rdquo;:
-  <ul>
-    <li>To trigger: summarize paraphrasing + labeling.</li>
-  </ul></li>
-  <li>&ldquo;You&rsquo;re right&rdquo;: nothing changes.</li>
-</ul><h1><a name="ch-6"></a>Chapter 6: Bend their reality</h1>
-<ul>
-  <li>No deal is better than a bad deal.</li>
-  <li>Creative solutions are preceded by some degree of risk, annoyance, confusion, and conflict.
-  <ul>
-    <li>Compromise produce none of that.</li>
-  </ul></li>
-  <li>Deadlines are often arbitrary, almost always flexible, and hardly ever trigger the consequences we think they will.
-  <ul>
-    <li>Deadlines are the bogeyman of negotiations.</li>
-    <li>Don A. Moore: when negotiators tell about their deadline, they get better deals.</li>
-  </ul></li>
-  <li>People who had damaged the part of the brain where emotions are generated cannot make decisions.</li>
-  <li>The F-word: fair.
-  <ul>
-    <li>We are hardwired to reject unfairness.</li>
-    <li>Don&rsquo;t concede when accused of unfairness.
-    <ul>
-      <li>Ask how you&rsquo;re mistreating them.</li>
-    </ul></li>
-    <li>Good use:
-    <ul>
-      <li>&ldquo;I want you to feel like you are being treated fairly at all times. So please stop me at any time if you feel I&rsquo;m being unfair, and we&rsquo;ll address it&rdquo;.</li>
-    </ul></li>
-  </ul></li>
-  <li>Prospect Theory (Kahneman and Tversky):
-  <ul>
-    <li>Certainty effect:
-    <ul>
-      <li>People are drawn to sure things over probabilities, even when probabilities is a better choice.</li>
-    </ul></li>
-    <li>Loss aversion:
-    <ul>
-      <li>People take greater risk to avoid losses than to achieve gains.</li>
-    </ul></li>
-    <li>To get real leverage, you have to persuade that they have something concrete to lose if the deal fall through.</li>
-    <li>Tactics:
-    <ol>
-      <li>Anchor their emotions:
-      <ol>
-        <li>Accusation audit.</li>
-        <li>Play on their loss aversion.</li>
-      </ol></li>
-      <li>Let the other guy go first &hellip; most of the time:
-      <ul>
-        <li>Let the other side anchor monetary negotiations.</li>
-        <li>Except if the other side is pro, as they may bend your reality with an extreme anchor.</li>
-        <li>Except if the other side is a rookie, as you can bend their reality.</li>
-      </ul></li>
-      <li>Establish a range:
-      <ul>
-        <li>Expect them to come in at the lower end.</li>
-      </ul></li>
-      <li>Pivot to non-monetary terms.</li>
-      <li>When you do talk numbers, use odd(weird) ones. Avoid rounded ones.
-      <ul>
-        <li>Example: 27,343.</li>
-      </ul></li>
-      <li>Surprise with a gift:
-      <ul>
-        <li>It triggers reciprocity.</li>
-      </ul></li>
-    </ol></li>
-  </ul></li>
-  <li>How to negotiate a better salary:
-  <ol>
-    <li>Be pleasantly persistent on non-salary terms.</li>
-    <li>Define success and metrics for next rise.</li>
-    <li>Ask: &ldquo;What does it take to be successful here?&rdquo;
-    <ul>
-      <li>Interviewer will give advise, watch if you follow and become your unofficial mentor.</li>
-    </ul></li>
-  </ol></li>
-</ul><h1><a name="ch-7"></a>Chapter 7: Create the Illusion of Control</h1>
-<ul>
-  <li>Failure plants the seed of future success.</li>
-  <li>Illusion of control with open-ended/calibrated questions:
-  <ul>
-    <li>Allows you to introduce an idea without sounding pushy.</li>
-    <li>&ldquo;How am I supposed to do that?&rdquo;.
-    <ul>
-      <li>Ask for help! Not accusation or threat.</li>
-    </ul></li>
-    <li>Calibrated: they have a direction where you want the conversation to go.</li>
-    <li>Question must start with &ldquo;what&rdquo; or &ldquo;how&rdquo;.
-    <ul>
-      <li>What about this is important to you?</li>
-      <li>How can I help to make this better for us?</li>
-      <li>How would you like me to proceed?</li>
-      <li>How can we solve this problem?</li>
-      <li>What are we trying to accomplish here?</li>
-      <li>What is the biggest challenge you face?</li>
-    </ul></li>
-  </ul></li>
-  <li>Without self-control and emotional regulation it does not work.
-  <ul>
-    <li>Bite your tongue, do not counterattack, learn to change your state to something more positive.</li>
-  </ul></li>
-</ul><h2><a name="ch-8"></a>Chapter 8: Guarantee Execution.</h2>
-<ul>
-  <li>&ldquo;Yes&rdquo; is nothing without &ldquo;how&rdquo;.</li>
-  <li>Let your counterparts think they are defining success their way:
-  <ol>
-    <li>Questions:
-    <ol>
-      <li>How will we know we&rsquo;re on track?</li>
-      <li>How will we address things if we find we&rsquo;re off track?</li>
-    </ol></li>
-    <li>Summarize until &ldquo;That&rsquo;s right&rdquo;.</li>
-  </ol></li>
-  <li>Signs the other doesn&rsquo;t believe it is their idea:
-  <ul>
-    <li>&ldquo;You&rsquo;re right&rdquo;.</li>
-    <li>&ldquo;I&rsquo;ll try&rdquo;.</li>
-  </ul></li>
-  <li>The other side is a team. Buy must come from all.</li>
-  <li>Spotting liars:
-  <ol>
-    <li>Body language or tone of voice does not match words.</li>
-    <li>Rule of three:
-    <ul>
-      <li>Get 3 times confirmation:
-      <ul>
-        <li>Summarize.</li>
-        <li>Similar calibrated questions.</li>
-      </ul></li>
-    </ul></li>
-    <li>Pinocchio effect:
-    <ul>
-      <li>Liars tend to speak in more complex sentences.</li>
-      <li>Liars avoid using &ldquo;I&rdquo;.</li>
-    </ul></li>
-  </ol></li>
-  <li>How to get your counterparts bid against themselves:
-  <ul>
-    <li>You can express &ldquo;no&rdquo; four times before actually saying the word:
-    <ol>
-      <li>How am I supposed to do that?</li>
-      <li>Your offer is very generous. I&rsquo;m sorry, that just doesn&rsquo;t work for me.</li>
-      <li>I&rsquo;m sorry, but I&rsquo;m afraid I just can&rsquo;t do that.</li>
-      <li>I&rsquo;m sorry, no.</li>
-    </ol></li>
-  </ul></li>
-</ul><h2><a name="ch-9"></a>Chapter 9: Bargain hard</h2>
-<ul>
-  <li>Negotiation styles:
-  <ol>
-    <li>Analyst:
-    <ul>
-      <li>Motto: as much time as it takes to get it right.</li>
-      <li>Problem solvers, information aggregators.</li>
-      <li>Hypersensitive to reciprocity.</li>
-      <li>Avoid slowing emotion.</li>
-      <li>Hate surprises. Loads of preparation.</li>
-      <li>Skeptical by nature.</li>
-      <li>Dont ask them too many questions.</li>
-      <li>User clear data.</li>
-    </ul></li>
-    <li>Accommodator:
-    <ul>
-      <li>Love building the relationship.
-      <ul>
-        <li>Great rapport may help little.</li>
-      </ul></li>
-      <li>Extremely friendly, optimistic, poor time managers.</li>
-      <li>Can be difficult uncover their objections, hidden to avoid conflict.</li>
-    </ul></li>
-    <li>Assertive:
-    <ul>
-      <li>Time is money.</li>
-      <li>Done over perfect.</li>
-      <li>Want to win.</li>
-      <li>Don&rsquo;t listen until they feel heard and understood.</li>
-      <li>Give an inch, take a mile.</li>
-    </ul></li>
-  </ol></li>
-</ul>
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Time </th>
-      <th>Silence </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Assertive </td>
-      <td>Money </td>
-      <td>More talking </td>
-    </tr>
-    <tr>
-      <td>Analyst </td>
-      <td>Preparation </td>
-      <td>Thinking </td>
-    </tr>
-    <tr>
-      <td>Accomodator </td>
-      <td>Relationship </td>
-      <td>Anger </td>
-    </tr>
-  </tbody>
-</table>
-<ul>
-  <li><a href="https://info.blackswanltd.com/guide-to-3-negotiator-types">Guide to identify type</a>.
-  <ul>
-    <li>You must understand your counterpart style for effective negotiation.</li>
-  </ul></li>
-  <li>Be ready for the counterparts extreme anchor.</li>
-  <li>Punch back:
-  <ul>
-    <li>Avoid it!!!</li>
-    <li>&ldquo;Strategic umbrage&rdquo;: threat without anger but with &ldquo;poise&rdquo;.</li>
-    <li>&ldquo;Why would you do that?&rdquo; but in a way that the &ldquo;that&rdquo; favours you:
-    <ul>
-      <li>Why would you ever change your existing supplier?</li>
-    </ul></li>
-    <li>&ldquo;I&rdquo; messages: &quot;I feel ___ when you ___ because ___&quot;.
-</li>
-  </ul></li>
-  <li><a name="bargain"></a>Ackerman bargaining:
-  <ol>
-    <li>Set your target price.</li>
-    <li>First offer at 65%.</li>
-    <li>Other offers at 85, 95, 100%.</li>
-    <li>Use lots of empathy and different ways of saying &ldquo;no&rdquo; to get the other side to counter before you increase your offer.</li>
-    <li>For final amount, use non-rounded numbers.</li>
-    <li>On the final number, throw a non-monetary item to show you&rsquo;re at your limit.</li>
-  </ol></li>
-  <li>When pressure is on, you don&rsquo;t raise to the occasion; you fall to your highest level of preparation.</li>
-</ul><h1><a name="ch-10"></a>Find the Black Swan</h1>
-<ul>
-  <li>What we know must guide us but not blind us to what we do not know.
-  <ul>
-    <li>Retain beginner&rsquo;s mind.</li>
-  </ul></li>
-  <li>Black Swan == Unknown unknowns.
-  <ul>
-    <li>At least 3 on each negotiation.</li>
-    <li>Change in mindset: open up your established pathways and embrace more intuitive and nuanced ways of listening.</li>
-    <li>Not closely guarded information, but also completely innocuous. The value is misunderstood.</li>
-  </ul></li>
-  <li>Leverage:
-  <ul>
-    <li>Positive: You have something the other want.</li>
-    <li>Negative:
-    <ul>
-      <li>If you can threat, make the other suffer.</li>
-      <li>Avoid or label it.</li>
-    </ul></li>
-    <li>Normative: if you can show inconsistencies between their beliefs and their actions.</li>
-  </ul></li>
-  <li>When people act irrationally, is either:
-  <ol>
-    <li>Are ill-informed.</li>
-    <li>They are constrained.</li>
-    <li>They have other hidden interests.</li>
-  </ol></li>
-  <li>The first few minutes before a meeting, and the last few minutes (when everybody is leaving) often tell you more about the other side than anything in between.</li>
-  <li><a href="https://info.blackswanltd.com/download-the-negotiation-one-sheet">Negotiation one sheet pdf</a>.</li>
 </ul>]]></description></item></channel></rss>
