@@ -1,4 +1,672 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Tue, 09 Jul 2024 00:00:00 +0200</lastBuildDate><pubDate>Tue, 09 Jul 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Who Does What By How Much?   </title><link>https://danlebrero.com/2024/07/09/who-does-what-by-how-much-book-summary/</link><guid>https://danlebrero.com/2024/07/09/who-does-what-by-how-much-book-summary/</guid><pubDate>Tue, 09 Jul 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3zETQQg">Who Does What By How Much? A practical guide to customer-centric OKRs</a> by <a href="https://x.com/jboogie">Jeff Gothelf</a> and <a href="https://x.com/jseiden">Josh Seiden</a>.</p><p>Found the book not only practical but inspirational. OKRs FTW!</p><h1>Key Insights</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 31 Jul 2024 00:00:00 +0200</lastBuildDate><pubDate>Wed, 31 Jul 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Unbundling the Enterprise</title><link>https://danlebrero.com/2024/07/31/unbundling-the-enterprise-book-summary/</link><guid>https://danlebrero.com/2024/07/31/unbundling-the-enterprise-book-summary/</guid><pubDate>Wed, 31 Jul 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3zETQQg">Unbundling the Enterprise: APIs, Optionality, &amp; the Science of Happy Accidents</a> by <a href="https://twitter.com/fistsofreason">Stephen Fishman</a> and <a href="https://twitter.com/MattMcLartyBC">Matt McLarty</a>.</p><p>Summary of summaries:</p>
+<blockquote><p>Most valuable treasures out there are the ones you don&rsquo;t yet know to look for.</p>
+</blockquote><h1>Key Insights</h1>
+<ul>
+  <li><code>OOOps</code>:
+  <ul>
+    <li>Create <strong>O</strong>ptionality through unbundled APIs
+    <ul>
+      <li>Spend less time trying to predict the future and more preparing for any eventuality.</li>
+    </ul></li>
+    <li>Identify <strong>O</strong>pportunities through value dynamics.</li>
+    <li>Drive <strong>O</strong>ptimization through feedback loops:
+    <ul>
+      <li>Use APIs to collect feedback on business activity that can guide digital strategy.</li>
+    </ul></li>
+  </ul></li>
+  <li>4 winning strategies:
+  <ol>
+    <li>Exchange optimization: adapt to the digital world, thus increasing speed and scale of value exchanges while lowering coordination costs.</li>
+    <li>Distributed innovation:
+    <ul>
+      <li>16m software developers globally vs 1 billion knowledge workers.</li>
+      <li>3 ways to increase innovation:
+      <ol>
+        <li>Involve non-IT knowledge workers.</li>
+        <li>Involve sw developers that do not work for you.</li>
+        <li>Your own customers.</li>
+      </ol></li>
+    </ul></li>
+    <li>Capability capitalization: unbundle and rebundle business capabilities to create new products.</li>
+    <li>Value aggregation: connect disparate value networks.</li>
+  </ol></li>
+  <li>Web functioned like an ecosystem: The more life there is, the more there is for everyone.</li>
+  <li>We underestimate longer-term change because we fail to see that innovation happens in combination.</li>
+  <li>Data is a non-rival good: it is not consumed or possessed by only one party at a time.
+  <ul>
+    <li>In digital products, the degree of convexity is driven by the cost of experimentation.</li>
+  </ul></li>
+  <li>Slowing down the process of making commitments conserves optionality.</li>
+  <li>Data beats math.</li>
+  <li>For experimentation at scale:
+  <ul>
+    <li>Feature flags.</li>
+    <li>Ramps: funnel a controllable percentage of all application traffic.</li>
+    <li>Visualization tools.</li>
+    <li>Statistical literacy and tooling.</li>
+  </ul></li>
+  <li>Feedback without a strategy direction would just provide a more accurate means of demonstrating stagnation.</li>
+  <li>Not a simple task to get all stakeholders aligned on the worthiness of making the investment when the outcome is undefined.
+  <ul>
+    <li>Finance and executive leadership are slow to recognize and support anything that can&rsquo;t be expressed in a deterministic financial model.</li>
+    <li>How do you get the business to focus on walking away from revenue in the goal of eventually getting more revenue?</li>
+  </ul></li>
+  <li>Optionality:
+  <ol>
+    <li>The future is uncertain and inherently unpredictable.</li>
+    <li>Optionality can be preserved at low cost.</li>
+  </ol>
+  <ul>
+    <li>Then, potential gain is staggering because uncertainty increases the upside but not the downside. <img src="/images/blog/books/unbundling-the-enterprise/concave-and-convex-option.png" alt="concave and convex options model" /></li>
+  </ul></li>
+  <li>A large exposure to a single trial has lower expected return than a portfolio of small trials.</li>
+  <li>Abandon your sense of knowledge and instead look for systems with asymmetry between pain and gain.</li>
+  <li>Serial optionality, where winning options build upon each other to attain asymmetric gains.</li>
+  <li>If you understand the futility of trying to predict the future in an uncertain world, then manufacturing and preserving convex optionality is the surest way to outperform the competition over time.</li>
+  <li>The more uncertain the future, the greater the value of preserving optionality.</li>
+  <li>Open by default is a better strategy than closed by default.</li>
+  <li>Innovation is never done.</li>
+  <li>Innovation can be optimized:
+  <ol>
+    <li>Compress the cycle time of experiments.</li>
+    <li>Execute more experiments in parallel.</li>
+  </ol></li>
+  <li>You must consistently invest not only in creating the options themselves but also in cheapening the bets across the board.</li>
+  <li>Time to market and future planning are opposing forces.</li>
+  <li>Position shortcuts as the exception that needs scrutiny and justification.</li>
+  <li>Keep your commons teams close to the highest EBITDA revenue in order to buffer them from the unyielding waves of market volatility.</li>
+  <li>Jens Rasmussen and Dr. Richard Cook, <a href="https://medium.com/10x-curiosity/boundaries-of-failure-rasmussens-model-of-how-accidents-happen-58dc61eb1cf">Safe Boundary Model</a>. <img src="/images/blog/books/unbundling-the-enterprise/safe-boundary-model.png" alt="Safe boundary model" /></li>
+  <li>You&rsquo;re never going to get the exact requirements to innovate.</li>
+  <li>Default to buy, build as the exception.</li>
+  <li>Firms adopting public APIs grew an additional 38.7% over sixteen years relative to similar non-adopters.</li>
+  <li>Quantify the value of performance.</li>
+  <li><a href="#ch-11">Risks</a>.</li>
+  <li>For APIs, coordination costs will drop again as APIs become self-describing once LLM agents are pointed towards them.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Introduction</a>
+  <ul>
+    <li><a href="#p-1">Part 1 - Innovation By Accident</a></li>
+    <li><a href="#ch-1">Chapter 1 - Treasure in Transformation</a></li>
+    <li><a href="#ch-2">Chapter 2 - The Science of Happy Accidents</a></li>
+    <li><a href="#ch-3">Chapter 3 - Optionality through API Unbundling</a></li>
+    <li><a href="#ch-4">Chapter 4 - Opportunism through Value Dynamics</a></li>
+    <li><a href="#ch-5">Chapter 5 - Optimization through Feedback Loops</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part 2 - Success Strategies</a>
+  <ul>
+    <li><a href="#ch-6">Chapter 6 - Strategies of Success #1: Exchange Optimization</a></li>
+    <li><a href="#ch-7">Chapter 7 - Strategies of Success #2: Distributed Innovation</a></li>
+    <li><a href="#ch-8">Chapter 8 - Strategies of Success #3: Capability Capitalization</a></li>
+    <li><a href="#ch-9">Chapter 9 - Strategies of Success #4: Value Aggregation</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part 3 - Practical Considerations To Finding Digital Treasure</a>
+  <ul>
+    <li><a href="#ch-10">Chapter 10 - Getting Started on the Path to Scaled Results</a></li>
+    <li><a href="#ch-11">Chapter 11 - Ensuring a Durable Transformation by Understanding the Risks</a></li>
+    <li><a href="#ch-12">Chapter 12 - Embracing Uncertainty</a></li>
+  </ul></li>
+  <li><a href="#ch-13">Conclusion</a></li>
+</ul><h1><a name="ch-0"></a>Introduction</h1>
+<ul>
+  <li>The most important aspect of API-enabled digital treasure hunting: you don&rsquo;t need a map.</li>
+  <li>API allow them to be used in many unanticipated ways.</li>
+  <li>Treasure-Hunting methods:
+  <ol>
+    <li>Create optionality through unbundling:
+    <ul>
+      <li>Spend less time trying to predict the future and more preparing for any eventuality.</li>
+      <li>API: unbundle business capabilities into digital assets that can be combined and composed into new products, processes, and experiences that meet opportunities unlocked by innovation.</li>
+    </ul></li>
+    <li>Identify opportunities through value dynamics:
+    <ul>
+      <li>Value exchange by powering B2B.</li>
+      <li>Value dynamics is a visual method of designing business models through value network and API-enabled value exchange.</li>
+    </ul></li>
+    <li>Optimize value through feedback loops:
+    <ul>
+      <li>Use APIs to collect feedback on business activity that can guide digital strategy.</li>
+    </ul></li>
+  </ol></li>
+  <li>4 winning strategies:
+  <ol>
+    <li>Exchange optimization: adapt to the digital world, thus increasing speed and scale of value exchanges while lowering coordination costs.</li>
+    <li>Distributed innovation: Innovation in the hands of business users.</li>
+    <li>Capability capitalization: unbundle and rebundle business capabilities to create new products.</li>
+    <li>Value aggregation: connect disparate value networks.</li>
+  </ol></li>
+  <li>This is a book about connection:
+  <ul>
+    <li>Business to technology.</li>
+    <li>Long-term strategy to short term return on investment.</li>
+    <li>Intuition to science.</li>
+  </ul></li>
+</ul><h2><a name="p-1"></a>Part 1 - Innovation By Accident</h2>
+<ul>
+  <li>&ldquo;Happy accidents&rdquo; occur too frequently to be dismissed as coincidences.</li>
+</ul><h2><a name="ch-1"></a>Chapter 1 - Treasure in Transformation</h2>
+<ul>
+  <li>Whereas a product strategy is about trying to anticipate market and user needs and then delivering packaged products to meet those needs, a platform strategy is about giving the right tools to developers to test their own ideas and build their own products and services.</li>
+  <li>The Golden Rule of Platform is that you &ldquo;Eat Your Own Dog-food&rdquo;.</li>
+  <li><a href="https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/">Bezos API Mandate</a>.</li>
+  <li>O&rsquo;Reilly listed four reasons Amazon needed to adopt a platform culture by unbundling their capabilities through APIs:
+  <ul>
+    <li>APIs would provide a gateway for all the smart and creative people who work outside of Amazon to create unanticipated innovation for the company.</li>
+    <li>New revenue opportunities for Amazon if they were willing to be patient.</li>
+    <li>Web functioned like an ecosystem: The more life there is, the more there is for everyone.</li>
+  </ul></li>
+  <li>Amazon &ldquo;New Process Initiative&rdquo; to prioritize funding for new ideas became a bottleneck:
+  <ul>
+    <li>They were able to unstick the process by addressing their software architecture.</li>
+    <li>It took several years to address getting all the teams to have hard, well-documented APIs.</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - The Science of Happy Accidents</h2>
+<ul>
+  <li>We underestimate longer-term change because we fail to see that innovation happens in combination.</li>
+  <li>Digital strategy:
+  <ol>
+    <li>Orgs should strive to have a lot of capabilities.</li>
+    <li>Those capabilities need to be &ldquo;combinable&rdquo;.</li>
+  </ol></li>
+  <li>Data is a non-rival good: it is not consumed or possessed by only one party at a time.</li>
+  <li>Rival products are limited by unit costs:
+  <ul>
+    <li>Return is capped by logistic constraints within their market.</li>
+    <li>Concave curve when plotting their costs vs returns.</li>
+    <li>Non-rival goods are the opposite.</li>
+  </ul></li>
+  <li>In digital products, the degree of convexity is driven by the cost of experimentation.</li>
+  <li><code>OOOps</code>:
+  <ul>
+    <li>Create <strong>O</strong>ptionality through unbundled APIs.</li>
+    <li>Identify <strong>O</strong>pportunities through value dynamics.</li>
+    <li>Drive <strong>O</strong>ptimization through feedback loops.</li>
+  </ul></li>
+  <li>Slowing down the process of making commitments conserves optionality.</li>
+  <li>Business Model Canvas defines business models as the way companies create, deliver, and capture value:
+  <ul>
+    <li>Value dynamics is a visual method for mapping out business models by illustrating the flow of value in a digital ecosystem:
+    <ul>
+      <li>Shapes to depict constituents in the ecosystem.</li>
+      <li>Arrows to show the flow of value between constituents.</li>
+      <li>Icons that indicate what type of value &ldquo;currency&rdquo; is being exchanged.</li>
+    </ul></li>
+  </ul></li>
+  <li>For experimentation at scale:
+  <ul>
+    <li>Feature flags.</li>
+    <li>Ramps: funnel a controllable percentage of all application traffic.</li>
+    <li>Visualization tools.</li>
+    <li>Statistical literacy and tooling:
+    <ul>
+      <li>Data beats math.</li>
+      <li>Statistics tools can be misleading and cause speed-killing friction when you don&rsquo;t have the expertise to discern what the results mean and what they don&rsquo;t.</li>
+    </ul></li>
+  </ul></li>
+  <li>Feedback without a strategy direction would just provide a more accurate means of demonstrating stagnation.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Optionality through API Unbundling</h2>
+<ul>
+  <li>Not a simple task to get all stakeholders aligned on the worthiness of making the investment when the outcome is undefined.
+  <ul>
+    <li>Finance and executive leadership are slow to recognize and support anything that can&rsquo;t be expressed in a deterministic financial model.</li>
+    <li>There is a need for a new lens on how to view business forecasts along with a &ldquo;new math&rdquo; that will drive a different approach to investment and continual transformation.</li>
+  </ul></li>
+  <li><a href="https://en.wikipedia.org/wiki/Carliss_Y._Baldwin">Carliss Y. Baldwin</a>: Higher option value being present &ldquo;when consumer tastes are heterogeneous or unpredictable, and technological trajectories are uncertain&rdquo;.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb">Nassim Nicholas Taleb</a>:
+  <ul>
+    <li><a href="https://amzn.to/4eSpxFU">The Black Swan</a>.</li>
+    <li><a href="https://amzn.to/3Wc5meM">Antifragile: Things That Gain from Disorder</a>.</li>
+    <li>Two types of options: concave and convex.</li>
+    <li>Three factors of optionality:
+    <ul>
+      <li>Incremental cost (pain) to generate and maintain the option.</li>
+      <li>Potential value (gain) that could come when you exercise the option.</li>
+      <li>How the value scales when the rate of change (variable/uncertainty) scales on the Y axis.</li>
+    </ul></li>
+    <li>When:
+    <ol>
+      <li>The future is uncertain and inherently unpredictable.</li>
+      <li>Optionality can be preserved at low cost.</li>
+    </ol>
+    <ul>
+      <li>Then, potential gain is staggering because uncertainty increases the upside but not the downside. <img src="/images/blog/books/unbundling-the-enterprise/concave-and-convex-option.png" alt="concave and convex options model" /></li>
+    </ul></li>
+    <li>A large exposure to a single trial has lower expected return than a portfolio of small trials.</li>
+    <li>Attempts to use human understanding as a tool to predict future events are made in vain given that the prediction of future events in the modern worlds is impossible.</li>
+    <li>Abandon your sense of knowledge and instead look for systems with asymmetry between pain and gain.</li>
+    <li>Serial optionality, where winning options build upon each other to attain asymmetric gains.</li>
+  </ul></li>
+  <li>If you understand the futility of trying to predict the future in an uncertain world, then manufacturing and preserving convex optionality is the surest way to outperform the competition over time.</li>
+  <li>The more uncertain the future, the greater the value of preserving optionality.</li>
+  <li>Four rules:
+  <ol>
+    <li>Convexity is easier to attain than knowledge.</li>
+    <li>A convexity strategy can be executed by:
+    <ol>
+      <li>Lowering the cost per unit of trail, and</li>
+      <li>Increasing teh number of trails as large as possible.</li>
+    </ol>
+    <ul>
+      <li>This minimized the probability of missing the winning option rather than maximizing the profits of a winning option.</li>
+    </ul></li>
+    <li>Preserving serial optionality beats a strategic plan:
+    <ul>
+      <li>Long term strategic plans tend to have the side effect of restricting optionality by locking teams and systems into rigid models and policies.</li>
+    </ul></li>
+    <li>Get into the habit of cataloging negative results.</li>
+  </ol></li>
+  <li>Casinos don&rsquo;t gamble: they provide entertainment to guests and work the math at scale.</li>
+  <li>What tactics will be the most efficient and effective at lowering the costs per unit of a trial?</li>
+  <li>Steps:
+  <ul>
+    <li>High concave:
+    <ul>
+      <li>Monolith apps + self-managed dedicated physical infrastructure.</li>
+    </ul></li>
+    <li>Partially transformed:
+    <ul>
+      <li>Infrastructure as a Service.</li>
+      <li>Multi-variable testing.</li>
+      <li>Still highly complex code that is conceptually tied to a single context of use.</li>
+    </ul></li>
+    <li>Highly convex:
+    <ul>
+      <li>Previous step plus decoupled APIs.</li>
+    </ul></li>
+  </ul></li>
+  <li>Baldwin, <a href="https://www.hbs.edu/ris/Publication%20Files/09-034_149607b7-2b95-4316-b4b6-1df66dd34e83.pdf">The Architecture of Platforms</a>:
+  <ul>
+    <li>Controlling the interfaces to value rather than just the systems that deliver value is the better strategy.</li>
+    <li>Open by default is a better strategy than closed by default.</li>
+  </ul></li>
+  <li>When you choose a popular and easy-to-understand interface, it is critical to make sure that your chosen interface won&rsquo;t be too easy to commoditize or one that is easily abstracted.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Opportunism through Value Dynamics</h2>
+<ul>
+  <li>Value dynamics will improve your ability to identify high-value opportunities where you can exploit the optionality.</li>
+  <li>Business model as &ldquo;the rationale of how an organization creates, delivers and captures value&rdquo;.</li>
+  <li>Value dynamics is a way of visually analyzing business models in an ecosystem context to develop strategies on how to intentionally evolve them.</li>
+  <li>Key concepts:
+  <ul>
+    <li>Value network: bounded business ecosystem within which value flows.</li>
+    <li>Constituents: orgs and groups of people defined by a role or persona.</li>
+    <li>Value exchange: bidirectional flow of value between two constituents.</li>
+    <li>Discrete set of value currencies: <img src="/images/blog/books/unbundling-the-enterprise/value-currencies.jpeg" alt="Set value currency" /></li>
+  </ul></li>
+  <li>Value networks are typically centered around a specific constituent. <img src="/images/blog/books/unbundling-the-enterprise/values-network-example-facebook.png" alt="Value network example" /></li>
+  <li>Opening business capabilities through APIs allowed an incremental rollout that gave the companies time to learn and adjust.</li>
+  <li>Six ways to use value dynamics:
+  <ol>
+    <li>Analyze existing business models:
+    <ul>
+      <li>How balanced and sustainable are?</li>
+      <li>How well-differentiated are your org&rsquo;s enabling capabilities?</li>
+      <li>Are there additional value currencies that can be captured?</li>
+      <li>Are there any constituents who are positioned to disrupt the overall ecosystem?</li>
+    </ul></li>
+    <li>Define new business models:
+    <ul>
+      <li>Start by charting a specific customer segment.</li>
+      <li>Include intermediaries.</li>
+      <li>Consider supporting constituents.</li>
+      <li>What do my competitor&rsquo;s value network look like?</li>
+      <li>Are there constituents or value exchanges missing?</li>
+      <li>What do the value networks look like for orgs in similar positions in other industries?</li>
+    </ul></li>
+    <li>Find new value channels:
+    <ul>
+      <li>Identify missing links, specially between your org and its end customer.</li>
+    </ul></li>
+    <li>Augment current value exchanges:
+    <ul>
+      <li>All value exchanges are asymmetrical, as each constituent values the different currencies being exchanged differently.
+      <ul>
+        <li>So, it is quite possible that there are new currencies your org could request without constituents feeling that they are giving anything away.</li>
+      </ul></li>
+    </ul></li>
+    <li>Optimize supply-side exchanges:</li>
+  </ol>
+  <ul>
+    <li>Diversify a sole-supplier to reduce cost or risk.</li>
+    <li>Are there suppliers that rise above their peers and warrant exclusivity?</li>
+    <li>Any supplier that could be insourced or any capability outsourced?</li>
+  </ul>
+  <ol>
+    <li>Connect value networks:
+    <ul>
+      <li>Connecting an org&rsquo;s value networks can improve an org&rsquo;s composite value proposition exponentially.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Optimization through Feedback Loops</h2>
+<ul>
+  <li>Innovation is never done.</li>
+  <li>Innovation can be optimized:
+  <ol>
+    <li>Compress the cycle time of experiments.</li>
+    <li>Execute more experiments in parallel.</li>
+  </ol></li>
+  <li>When the cost to deliver change in an org drops precipitously, a new state of &ldquo;flow&rdquo; will inevitably emerge within that org.</li>
+  <li>As the cost to make a small change falls, so does the opportunity cost of choosing one small change over another.
+  <ul>
+    <li>The demand to make those changes will inevitably go up.</li>
+  </ul></li>
+  <li><p>Focusing your resources on lowering the average cycle time of experiments within your enterprise is the most important concept in embracing optimization.</p>
+  <blockquote>The only sustainable competitive advantage is an org&rsquo;s ability to learn faster than the competition. <cite>Peter Senge, <a href="https://amzn.to/4cDL5Vw">The Fifth Discipline</a></cite>
+  </blockquote></li>
+  <li><p>For the optionality-based approach to work at a financial level, you need to be able to place many low-cost bets.</p></li>
+  <li>You must consistently invest not only in creating the options themselves but also in cheapening the bets across the board.</li>
+</ul><h1><a name="p-2"></a>Part 2 - Success Strategies</h1><h2><a name="ch-6"></a>Chapter 6 - Strategies of Success #1: Exchange Optimization</h2>
+<ul>
+  <li>Making teams responsible for their own operational management acts as a forcing function to both keep teams honest on being efficient with their resources and to have them continually looking for ways to optimize the processes involved within their value-creating activities.</li>
+  <li>Given the cost-versus-value culture in most organizations, a leader will have to chart a course to support efforts to unbundle capabilities without having a well understood path to revenue.</li>
+  <li><a href="https://www.linkedin.com/in/davidlrice">David Rice</a>, SVP of Product and Engineering at Cox Automotive:
+  <ul>
+    <li>The barrier to achieving the potential value for all the stakeholders was more grounded in financial and operating structure than in the tech stacks and application infrastructure.</li>
+    <li>How do you get the business to focus on walking away from revenue in the goal of eventually getting more revenue?</li>
+    <li>What is more important than your org design is the remediations you put in place to deal with the fact that the org design is suboptimal in a bunch of other cases.</li>
+    <li>The path technology teams must walk is simple but not easy.
+    <ul>
+      <li>It requires business and cultural change, which is where the real complexities lie.</li>
+    </ul></li>
+    <li>Decisions will inevitably skew to localized optimization at the expense of the whole, no matter what.</li>
+    <li>Two clashing ideas that are simultaneously true:
+    <ol>
+      <li>The old way forces everything into a cost model.</li>
+      <li>Modularity is the best hedge to &ldquo;manage the unpredictability of the future&rdquo;.</li>
+    </ol></li>
+    <li>Time to market and future planning are opposing forces.</li>
+    <li>It is easy to optimize for time to market for the first version but that is not the strategy that easily scales when successful.</li>
+    <li>Position shortcuts as the exception that needs scrutiny and justification:
+    <ul>
+      <li>&ldquo;Shortcut by default&rdquo; is always adding more barriers to flexibility with every choice made.</li>
+    </ul></li>
+    <li>We want to teach teams to feel the pain of the business and the business teams to see the commons as the engine of value creation.</li>
+    <li>Keep your commons teams close to the highest EBITDA revenue in order to buffer them from the unyielding waves of market volatility.
+    <ul>
+      <li>Place development teams as close as possible to the point of revenue.</li>
+      <li>Leaders of business teams become more familiar with the value that comes out of engineering.</li>
+    </ul></li>
+    <li>Key concepts for Rice&rsquo;s solution:
+    <ol>
+      <li>All org models are flawed. Choose the model that:
+      <ul>
+        <li>Has problem that are irrelevant for your context, or</li>
+        <li>Are the sort of problems that you are well-prepared to mitigate.</li>
+      </ul></li>
+      <li>Finance respects growth above all else:
+      <ul>
+        <li>Stasis and growth below expectations is also treated as decline.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>Jens Rasmussen and Dr. Richard Cook, <a href="https://medium.com/10x-curiosity/boundaries-of-failure-rasmussens-model-of-how-accidents-happen-58dc61eb1cf">Safe Boundary Model</a>. <img src="/images/blog/books/unbundling-the-enterprise/safe-boundary-model.png" alt="Safe boundary model" /></li>
+  <li>Three different development org topologies:
+  <ol>
+    <li>Traditional Enterprise IT:
+    <ul>
+      <li>IT teams are segmented from and have a transactional relationship with business teams.</li>
+      <li>Who owns &ldquo;the what&rdquo; vs who owns &ldquo;the how&rdquo;.</li>
+      <li>Optimized for hierarchy with clean distinctions on roles and responsibilities.</li>
+      <li>High risk of deep cutbacks.</li>
+    </ul></li>
+    <li>Stream aligned:
+    <ul>
+      <li>Multidisciplinary teams that pull together all the required skills to design, create, and operate a value stream.</li>
+      <li>Optimized for flow.</li>
+      <li>Often rely on a centralized platform team.</li>
+      <li>Platform team at risk.</li>
+    </ul></li>
+    <li>Business centric:
+    <ul>
+      <li>API product teams are integrated into business contexts as far as possible.</li>
+      <li>Optimized for stability when financial disruption inevitably comes:
+      <ul>
+        <li>Fine-tuning and reinvestment.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Strategies of Success #2: Distributed Innovation</h2>
+<ul>
+  <li>16m software developers globally vs 1 billion knowledge workers.</li>
+  <li>3 ways to increase innovation:
+  <ol>
+    <li>Involve non-IT knowledge workers.</li>
+    <li>Involve sw developers that do not work for you.</li>
+    <li>Your own customers.</li>
+  </ol></li>
+  <li>The business model of using APIs to reach developers as customers created its own economy.</li>
+  <li>&ldquo;Legacy modernization&rdquo; (shift-and-lift business to digital world) vs &ldquo;functional modernization&rdquo;.</li>
+  <li>Coca-Cola:
+  <ul>
+    <li>Mindset: turning the enterprise into a platform of business capabilities.</li>
+    <li>Productize business capabilities through APIs:
+    <ul>
+      <li>Without over-engineer the APIs for unknown consumers.</li>
+    </ul></li>
+    <li>Expanded from the core outward.</li>
+    <li>Big emphasis on feedback loops.</li>
+    <li>Solutions had two aspects: what they delivered and what they enabled.</li>
+  </ul></li>
+  <li>You&rsquo;re never going to get the exact requirements to innovate.
+  <ul>
+    <li>To innovate, people have to work together, see and feel something tangible, then iterate on that.</li>
+  </ul></li>
+  <li>Minimum Viable Extensible Product.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Strategies of Success #3: Capability Capitalization</h2>
+<ul>
+  <li>Most lucrative:
+  <ul>
+    <li>Unbundle and re-bundle capabilities.</li>
+  </ul></li>
+  <li>While luck may be evenly distributed and out of your control, the skills and capabilities to exploit that luck and make a return on it are in your control.</li>
+  <li>Case studies:
+  <ul>
+    <li>Amazon.</li>
+    <li>Flickr.</li>
+    <li>Slack:
+    <ul>
+      <li>The evolution from product to platform is all about letting users build.</li>
+      <li>APIs are forever, and changing them is very hard.</li>
+      <li>Has defined a set of API design guidelines that they share and use to allow teams work quickly and independently.</li>
+    </ul></li>
+    <li>Capital One.</li>
+  </ul></li>
+  <li>Build vs buy:
+  <ol>
+    <li>Default to buy, build as the exception.</li>
+    <li>If you build, consider it as an opportunity for a market-facing service to capitalize on.</li>
+  </ol></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Strategies of Success #4: Value Aggregation</h2>
+<ul>
+  <li>Use APIs as connection points between the models, use value dynamics to identify the opportunities for value network aggregation, and then adopt a &ldquo;whole is greater than the sum of its parts&rdquo; mentality to further optimize the landscape.</li>
+  <li>The digital economy is largely a data economy.</li>
+  <li>Amazon, Google, Facebook: data is what fuels and differentiates each of their business models.</li>
+  <li>Data breaks many stands economic assumptions that were established in the physical goods economic paradigm.</li>
+  <li>Data is:
+  <ul>
+    <li>Non-rival: can be consumed/held by multiple users.</li>
+    <li>Non-fungible: sufficiently unique so that it cannot be substituted.</li>
+    <li>Experience good:
+    <ul>
+      <li>Value is not know until it has been consumed.</li>
+      <li>Opposite is search good, which value can be determined prior to consumption.</li>
+      <li>There can be a wide variance in the perceived value depending on the consumer&rsquo;s context.</li>
+    </ul></li>
+    <li>Positive externalities:
+    <ul>
+      <li>Accumulating more data makes the data you already have more valuable.</li>
+      <li>Data is the new oil: old is the exact opposite of data: a rival, fungible, search good.</li>
+    </ul></li>
+  </ul></li>
+  <li>Data is how disparate value networks can be connected.</li>
+  <li>Case studies:
+  <ul>
+    <li>Google Maps.</li>
+    <li>Best Buy.</li>
+  </ul></li>
+</ul><h1><a name="p-3"></a>Part 3 - Practical Considerations To Finding Digital Treasure</h1><h2><a name="ch-10"></a>Chapter 10 - Getting Started on the Path to Scaled Results</h2>
+<ul>
+  <li><a href="https://amzn.to/4f87JXL">Platform Revolution</a>:
+  <ul>
+    <li>Study of Uber, Airbnb and PayPal.</li>
+    <li>Two-sided marketplaces and network effects.</li>
+    <li>&ldquo;Inverted firm&rdquo;: create platforms that capture value by intermediating value exchanges between third parties.</li>
+  </ul></li>
+  <li><a href="https://pubsonline.informs.org/doi/full/10.1287/mnsc.2023.4968">How APIs Create Growth by Inverting the Firm</a>:
+  <ul>
+    <li>Firms adopting public APIs grew an additional 38.7% over sixteen years relative to similar non-adopters.</li>
+    <li>Relationship is causal, not just correlated.</li>
+    <li>No statistically significant relationship between internal API adoption and firm performance.</li>
+  </ul></li>
+  <li>Considerations for API Providers (page 167 or 195 in pdf).</li>
+  <li>Firms with public APIs see significantly increased risk of hack events in the years after opening an API.</li>
+  <li>Legal as a tool to be managed rather than as a constraint of business possibilities.
+  <ul>
+    <li>Best managed as an advisory function in the go-to-market phase rather than a gating function in the ideation and prototyping phases.</li>
+  </ul></li>
+  <li>Launching external API-based offering without some form of centralized monitoring and governance capabilities is akin of running with scissors.</li>
+  <li>Once you acknowledge that a specific future can&rsquo;t be predicted, the basic premise of being flexible in the face of generic future changes is the commonsense choice to at least hedge your uncertainty.</li>
+  <li>Most critical business metrics for a digital transformation:
+  <ol>
+    <li>Time to experiment: time and resources required to expose an experimental delivery of value to the external market.</li>
+    <li>Time to impactful insight: time and resources to evaluate the outcome of the experiment with meaningful business implications.</li>
+    <li>Time to value: time and resources required to realize revenue from an experiment.</li>
+  </ol></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Ensuring a Durable Transformation by Understanding the Risks</h2>
+<ol>
+  <li>Increased security risk:
+  <ul>
+    <li>Orgs with APIs that are widely used in external contexts have a lower frequency of breaches by malicious insiders than orgs that use exclusively internal APIs.</li>
+    <li>Signs:
+    <ul>
+      <li>Security by obscurity.</li>
+      <li>Teams are expected to come up with an approach that works for their unique context.</li>
+    </ul></li>
+    <li>Mitigation: appropriate tools and support to treat security management as non-deferrable scope.</li>
+  </ul></li>
+  <li>Increased performance risk:
+  <ul>
+    <li>Due to more network hops.</li>
+    <li>Risk of degraded performance and increase in infrastructure cost is preferred to:
+    <ul>
+      <li>Over-engineering for performance.</li>
+      <li>Productivity loss due to monolith.</li>
+    </ul></li>
+    <li>Mitigation:
+    <ul>
+      <li>Detailed profiling and optimization can wait, but enabling quick cycle time for isolating and solving performance issues cannot.</li>
+      <li>Parity across technical environments.</li>
+      <li>Quantify the value of performance.</li>
+    </ul></li>
+  </ul></li>
+  <li>Increased risk to quality issues:
+  <ul>
+    <li>More moving parts means more things to break.</li>
+    <li>Signs:
+    <ul>
+      <li>Overly reliant on manual testing practices.</li>
+      <li>QA cycles and disciplines are segmented in a silo separated from sw dev.</li>
+    </ul></li>
+    <li>Mitigation:
+    <ul>
+      <li>Tools that help shift left.</li>
+      <li>Compress the timeline, risk, and scale of experiments.</li>
+    </ul></li>
+  </ul></li>
+  <li>Increased operational complexity:
+  <ul>
+    <li>More moving parts == more complex to operate.</li>
+    <li>Signs:
+    <ul>
+      <li>Documentation is scarce.</li>
+      <li>Automated onboarding tools for API consumers are not provisioned.</li>
+      <li>Teams routinely engaged in unplanned work.</li>
+    </ul></li>
+    <li>Mitigation:
+    <ul>
+      <li>Prepare early and optimize late.</li>
+    </ul></li>
+  </ul></li>
+  <li>Misapply the MVP concept:
+  <ul>
+    <li>MVP == maximum amount of validated customer feedback with minimal effort.
+    <ul>
+      <li>A tool for testing hypotheses and discovering what will meet customers&rsquo; needs.</li>
+    </ul></li>
+    <li>Signs:
+    <ul>
+      <li>Teams fail to consider that experiments must be iterative to yield useful feedback.</li>
+    </ul></li>
+  </ul></li>
+  <li>Cannibalizing Existing Revenue:
+  <ul>
+    <li>Teams must have a nuanced understanding of financial details of the existing revenue streams.</li>
+    <li>Signs:
+    <ul>
+      <li>Product dev team fails to evaluate how new offering would lead to revenue growth for existing offerings, or how to position it as extensions/add-ones to existing offerings.</li>
+    </ul></li>
+  </ul></li>
+  <li>Technology centered transformation:
+  <ul>
+    <li>Technology-specific objectives rather than business objectives.</li>
+  </ul></li>
+  <li>Misaligned talent model and processes:
+  <ul>
+    <li>Signs:
+    <ul>
+      <li>Over-reliance on proxy metrics and singular numbers that don&rsquo;t convey context.</li>
+      <li>Localized goals at the expense of enterprise goals.</li>
+    </ul></li>
+    <li>Mitigations:
+    <ul>
+      <li>&ldquo;m-shaped&rdquo; profiles.</li>
+      <li>Training on data visualization and statistical literacy.</li>
+    </ul></li>
+  </ul></li>
+  <li>Losing discipline in times of compression:
+  <ul>
+    <li>Financial compression tactics are not aligned with preservation of value creation.</li>
+  </ul></li>
+  <li>Choosing the wrong interface to control:
+  <ul>
+    <li>Control the interface to value rather than just the systems that deliver value is the better strategy.</li>
+    <li>Signs:
+    <ul>
+      <li>Your teams don&rsquo;t have a process for understanding and evaluating how and when consumer value is added and harvested in your value stream.</li>
+    </ul></li>
+  </ul></li>
+  <li>Pervasive use of performative behaviors (aka optionality theater):
+  <ul>
+    <li>Performative compliance.</li>
+    <li>Signs:
+    <ul>
+      <li>Referring to hard rules that don&rsquo;t offer insight into applying them with a smart mindset.</li>
+    </ul></li>
+    <li>Mitigation:
+    <ul>
+      <li>Decision makers must have &ldquo;skin in the game&rdquo; for the impacts of their choices.</li>
+    </ul></li>
+  </ul></li>
+</ol><h2><a name="ch-12"></a>Chapter 12 - Embracing Uncertainty</h2>
+<ul>
+  <li>The proliferation of hyper-specialized offerings is poised to continue its acceleration while simultaneously making larger firms more efficient and productive.
+  <ul>
+    <li>APIs are at the heart.</li>
+  </ul></li>
+  <li>One potential future implication of the fall in interaction costs is that large sectors of the global economy will depend upon increasingly complex networks of decoupled providers.
+  <ul>
+    <li>A natural outcome is the need to increase service robustness and fault-tolerant services.</li>
+    <li>May cause the emergency of a new type of provider - a meta-aggregator that manages and routes traffic to the most efficient source of fulfillment.</li>
+  </ul></li>
+  <li>The semantic web:
+  <ul>
+    <li>Generative AI looks like the key that will unlock this capability.</li>
+  </ul></li>
+  <li>For APIs, coordination costs will drop again as APIs become self-describing once LLM agents are pointed towards them.</li>
+</ul><h1><a name="ch-13"></a>Conclusion</h1>
+<ul>
+  <li>83% of all internet traffic in 2018 is API traffic.</li>
+  <li>Most valuable treasures out there are the ones you don&rsquo;t yet know to look for.</li>
+</ul>]]></description></item><item><title>Book notes: Who Does What By How Much?   </title><link>https://danlebrero.com/2024/07/09/who-does-what-by-how-much-book-summary/</link><guid>https://danlebrero.com/2024/07/09/who-does-what-by-how-much-book-summary/</guid><pubDate>Tue, 09 Jul 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3zETQQg">Who Does What By How Much? A practical guide to customer-centric OKRs</a> by <a href="https://x.com/jboogie">Jeff Gothelf</a> and <a href="https://x.com/jseiden">Josh Seiden</a>.</p><p>Found the book not only practical but inspirational. OKRs FTW!</p><h1>Key Insights</h1>
 <ul>
   <li>OKRs high level steps:
   <ol>
@@ -4478,727 +5146,4 @@
     <li>Break into multiple packages to enforce no cyclic dependencies.</li>
   </ul></li>
   <li>Learn a new system from tests.</li>
-</ul>]]></description></item><item><title>Book notes: Wrong fit, Right fit: Why How We Work Matters More Than Ever</title><link>https://danlebrero.com/2023/10/25/right-fit-wrong-fit-summary/</link><guid>https://danlebrero.com/2023/10/25/right-fit-wrong-fit-summary/</guid><pubDate>Wed, 25 Oct 2023 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3QrhK7X">Wrong Fit, Right Fit: Why How We Work Matters More Than Ever</a> by <a href="https://twitter.com/gramico">André Martin</a></p><p>Very interesting view on how to find your ideal job, and how companies can hire the right people: focus a lot more on how day-to-day work is done (and our preferences).</p><h1>Key Insights</h1>
-<ul>
-  <li>Fit: Deep and authentic connection to how a company works day-to-day.</li>
-  <li>No place will be a perfect match.</li>
-  <li>Working harder to fit in does not produce right fit; rather the opposite.</li>
-  <li>Who a company says they are rarely matches how that company works day-to-day.</li>
-  <li>Talent is &ldquo;forced&rdquo; to bump into ill-defined ways of working, use their creative energy to understand how things actually get done.</li>
-  <li>Begin sharing the choice you are planning to make. If feel hesitation, doubt, or anxiety as you share there is likely something not lining up.</li>
-  <li>Top 20% talent produce 80% of value.</li>
-  <li>What if interviews where less like first dates and more like family reunions?</li>
-  <li><a href="#ch-4">Chapter 4</a> is gold to understand yourself. Holistic Candidate Profile:
-  <ol>
-    <li>What are my core values?</li>
-    <li>What is the life I am building?</li>
-    <li>What is my craft/superpower?</li>
-    <li>Who is my ideal leader?</li>
-    <li>How do I like to work?</li>
-    <li>What am I solving for?</li>
-  </ol></li>
-  <li>When a product appears superior on aspects that are comparable with other products, we will fill in the gaps on missing information or difficult to ascertain attributes in a manner that supports that superiority.</li>
-  <li>As an interviewee, &ldquo;How can I position myself as the best candidate for the job?&rdquo;
-  <ul>
-    <li>We end up &ldquo;acting&rdquo; versus &ldquo;being&rdquo;.</li>
-  </ul></li>
-  <li>Most variance in satisfaction of an employee can be accounted for by their manager or leader.</li>
-  <li><a href="#questions">Questions to understand ways of working in the company</a>:
-  <ol>
-    <li>What is the profile of the person who succeeds here?</li>
-    <li>What is the reputation of the function/team you are joining?</li>
-    <li>What happens here that didn&rsquo;t happen at the other companies you worked at previously?</li>
-  </ol></li>
-  <li>New talent is highly impressionable. Make sure they are surrounded by the &ldquo;models of your culture&rdquo; early and often.</li>
-  <li>Onboarding:
-  <ul>
-    <li>Keep a journal.</li>
-    <li>90 days.</li>
-    <li>To figure out if it is right fit.</li>
-  </ul></li>
-  <li><a href="#howwork">How does the company get work done?</a>
-  <ol>
-    <li>How does the company collaborate?
-    <ul>
-      <li>Most fundamental attribute of right fit.</li>
-    </ul></li>
-    <li>How company assess performance?
-    <ul>
-      <li>Companies pay for one of:
-      <ol>
-        <li>Performance.</li>
-        <li>Demonstrated expertise.</li>
-        <li>Lived values/behaviours.</li>
-        <li>Long-term commitment.</li>
-      </ol></li>
-    </ul></li>
-  </ol></li>
-  <li>Who owns my career, the company or me?</li>
-  <li>Our education has trained us to ignore all the positives and go straight to the places to improve.</li>
-  <li>As an executive leader, how you decide to work sets the floor (minimum expectation), not the ceiling.</li>
-  <li>The Fit Assessment (page 126).</li>
-  <li>The later you marry, the less likely you are to divorce.</li>
-  <li>Learning improves self-confidence, curb anxiety and depression.</li>
-  <li>Companies that promote learning regularly outperform competitors.</li>
-  <li>Try to create a week calendar that is closer to your ideal in terms of time, types of meeting, and people you work alongside.</li>
-  <li>A team makes the manager, not the other way around.</li>
-  <li>Individual feedback have an inverse relationship to seniority. (Should be the opposite!).</li>
-  <li>If you don&rsquo;t say no, then your yes is meaningless.</li>
-  <li>Culture is an outcome.</li>
-  <li>With each new recruit, it gets harder to consistently teach or develop consistent unwritten practices.</li>
-  <li>To know how to the company should work in the future, study the company&rsquo;s most productive teams of today:
-  <ul>
-    <li>Somewhere out in your company, there is a better practice for everything.</li>
-  </ul></li>
-  <li><a href="#realistic-job-preview">Realistic job preview</a>.</li>
-  <li>Team membership is as much of an art as team leadership.</li>
-  <li>Transition from one role to another:
-  <ul>
-    <li>Companies usually ask to cover for both roles:
-    <ul>
-      <li>More stress in an already stressful situation.</li>
-    </ul></li>
-    <li>Instead:
-    <ul>
-      <li>7 days off to rest.</li>
-      <li>7 days for reflection, reconnection and reset.</li>
-    </ul></li>
-  </ul></li>
-</ul><h1>TOC</h1>
-<ul>
-  <li><a href="#p-0">Introduction: There is a Right Fit Company Waiting for You</a></li>
-  <li><a href="#p-1">Part 1: Context + Right Fit</a>
-  <ul>
-    <li><a href="#ch-1">Chapter 1: How the Workplace Has Changed</a></li>
-    <li><a href="#ch-2">Chapter 2 - Why Right Fit Is So Rare</a></li>
-  </ul></li>
-  <li><a href="#p-2">Part 2 - Talent + Right Fit</a>
-  <ul>
-    <li><a href="#ch-3">Chapter 3 - Beginning the Search for Right Fit</a></li>
-    <li><a href="#ch-4">Chapter 4 - Self-Reflection and Fit Excursions</a></li>
-  </ul></li>
-  <li><a href="#p-3">Part 3 - Interviewing and Onboarding + Right Fit</a>
-  <ul>
-    <li><a href="#ch-5">Chapter 5 - Don&rsquo;t Judge a Company by Its Career Page</a></li>
-    <li><a href="#ch-6">Chapter 6 - Figuring Out If You Really Fit</a></li>
-  </ul></li>
-  <li><a href="#p-4">Part 4 - Buffers + Right Fit</a>
-  <ul>
-    <li><a href="#ch-7">Chapter 7 - Inspirational Buffers and Enhancing Fit Over Time</a></li>
-    <li><a href="#ch-8">Chapter 8 - Relational Buffers and Enhancing Fit Over Time</a></li>
-  </ul></li>
-  <li><a href="#p-5">Part 5 - Company + Right Fit</a>
-  <ul>
-    <li><a href="#ch-9">Chapter 9 - Crafting and Communicating How the Company Works</a></li>
-    <li><a href="#ch-10">Chapter 10 - Reimagining Fit - Recruiting and (Re)recruiting for Right Fit</a></li>
-  </ul></li>
-</ul><h1><a name="p-0"></a>Introduction: There is a Right Fit Company Waiting for You</h1>
-<ul>
-  <li>What if it isn&rsquo;t about changing how we work, but rather improving our chances of creating and finding a better fit?</li>
-  <li>Book based on 65 in-depth interviews, all level and different company sizes.</li>
-  <li>Fit:
-  <ul>
-    <li>Deep and authentic connection to how a company works day-to-day.</li>
-    <li>Days feel easy, work is meaningful and connection with company grows exponentially.</li>
-  </ul></li>
-  <li>Ways of working is innate in the fabric of the company and often emanate from early days:
-  <ul>
-    <li>How prioritize work, solve problems, innovate, manage conflict, socialize projects.</li>
-  </ul></li>
-  <li>Way of working often undervalued during recruitment.</li>
-  <li>Pressure during interview to &ldquo;fit in&rdquo;.</li>
-  <li>Three key misalignments:
-  <ol>
-    <li>Total mismatch: &ldquo;Nobody at the company looks like me or works like me&rdquo;.</li>
-    <li>Person mismatch: &ldquo;Nobody at the company looks like me, but many people work how I prefer to work&rdquo;.</li>
-    <li>Way of working mismatch: &ldquo;People look like me but nobody works the way I prefer to work&rdquo;.</li>
-  </ol></li>
-</ul><h1><a name="p-1"></a>Part 1: Context + Right Fit</h1><h2><a name="ch-1"></a>Chapter 1: How the Workplace Has Changed</h2>
-<ul>
-  <li>Great Resignation:
-  <ul>
-    <li>2022, 77% of talent resigns within the first three years. 45% within one year.</li>
-    <li>Survey: Of 2000 US employees with less than 6 month at the company, 50% are actively looking for something new.</li>
-    <li>2020:
-    <ul>
-      <li>PwC estimated 65% employees are looking for a new job.</li>
-      <li>Gallup estimated $7.8 trillion of productivity loss due to disengaged employees.</li>
-    </ul></li>
-  </ul></li>
-  <li>As human being, we want to be part of a community and be committed to something bigger than ourselves.</li>
-  <li>Trends:
-  <ol>
-    <li>Rise of the culture deck:
-    <ul>
-      <li>Netflix started it.</li>
-      <li>Brand campaigns made culture aspirational and the day-to-day climate less and less of a priority.</li>
-      <li>More adept to talking about culture than doing.</li>
-    </ul></li>
-    <li>The Ping-Pong table of purposeless perks:
-    <ul>
-      <li>Clarity about what actually matters was being clouded by more and more stuff.</li>
-    </ul></li>
-    <li>The decade of decedent growth:
-    <ul>
-      <li>2009 to 2020 marked the longest economic expansion in the last 80 years.</li>
-      <li>Habits are formed that don’t help in tougher times.</li>
-    </ul></li>
-    <li>A crisis of commitment:
-    <ul>
-      <li>With the abundance that surrounds us, we have entered into a constant state of infinite browsing where we strive to &ldquo;keep our options open&rdquo; over &ldquo;the option to choose to dedicate ourselves to&rdquo;.</li>
-    </ul></li>
-    <li>The side hustle economy:
-    <ul>
-      <li>46% americans took on a side hustle to cover their monthly budget.</li>
-      <li>Formal employers are getting the rest of us, not the best of us.</li>
-    </ul></li>
-    <li>Being more vs doing more:
-    <ul>
-      <li>Does what I am doing matter?</li>
-      <li>2017 study: found that 41% of a typical knowledge worker task don&rsquo;t add value.</li>
-      <li>Not simply doing less, but better connect all the things we do to a higher purpose.</li>
-      <li>When we are inspired, we have a nearly insatiable energy to create.</li>
-      <li>Proximity can accelerate work.</li>
-    </ul></li>
-  </ol></li>
-  <li>If you’re talent, maybe it’s time to start searching for a place you can love day-to-day in balance with searching for a position you can do or a brand you revere.</li>
-  <li>If you&rsquo;re a leader, create an experience that fits those who &ldquo;love what we love&rdquo; as opposed to either allowing many cultures under one umbrella or trying to create a place where everyone can be, on average, not unhappy.</li>
-</ul><h2><a name="ch-2"></a>Chapter 2 - Why Right Fit Is So Rare</h2>
-<ul>
-  <li>World Health Organization definition of burnout: a syndrome resulting from workplace stress that has not been successfully managed.
-  <ul>
-    <li>Three dimensions:
-    <ul>
-      <li>Feeling of energy depletion.</li>
-      <li>Increased mental distance or negative feeling about one&rsquo;s job.</li>
-      <li>Reduced professional efficacy.</li>
-    </ul></li>
-  </ul></li>
-  <li>Cost of labor is typically 70% of operating budget.</li>
-  <li>Cognitive dissonance:
-  <ul>
-    <li>Discomfort of making a choice or acting in a manner that is incongruent with one&rsquo;s stated values, opinions or preferences.</li>
-    <li>Begin sharing the choice you are planning to make. If feel hesitation, doubt, or anxiety as you share there is likely something not lining up.</li>
-  </ul></li>
-  <li>Approach and Avoidance Systems:
-  <ul>
-    <li>Avoidance system: stop us from doing thing that put us in danger.</li>
-    <li>Approach system:
-    <ul>
-      <li>Pleasure-based desires.</li>
-      <li>Pleasure now and pain later.</li>
-    </ul></li>
-    <li>When choosing a job, approach system can overtake the avoidance system.</li>
-  </ul></li>
-  <li>BIRG-ing and Fit:
-  <ul>
-    <li>BIRG-ing:
-    <ul>
-      <li>Basking in reflected glory.</li>
-      <li>Using others&rsquo; success to boost our own self-image.</li>
-    </ul></li>
-    <li>CORF-ing:
-    <ul>
-      <li>Cutting off reflected failure.</li>
-      <li>Distance ourselves from failure.</li>
-    </ul></li>
-    <li>Football: we won vs they lost.</li>
-    <li>Choosing a job for BIRG-ing.</li>
-  </ul></li>
-  <li>Fit is not about fitting in.
-  <ul>
-    <li>In wrong fit, we end up using our creative energy to &ldquo;fit in&rdquo;.</li>
-  </ul></li>
-  <li>Do I fit here?</li>
-</ul><p><img src="/images/blog/books/wrong-fit-right-fit/do-i-fit-here.jpeg" alt="Do I fit here?" /></p><h1><a name="p-2"></a>Part 2 - Talent + Right Fit</h1><h2><a name="ch-3"></a>Chapter 3 - Beginning the Search for Right Fit</h2>
-<ul>
-  <li>Researchers were able to prove that there is no standard bell curve when it comes to performance.
-  <ul>
-    <li>Top 20% talent produce 80% of value.</li>
-  </ul></li>
-  <li>82% of Fortune 500 executive said they do not recruit highly talented people. 93% don&rsquo;t believe they develop people fast and effectively.</li>
-  <li>What if interviews where less like first dates and more like family reunions?</li>
-  <li>Holistic Candidate Profile:
-  <ol>
-    <li>What are my core values?</li>
-    <li>What is the life I am building?</li>
-    <li>What is my craft/superpower?</li>
-    <li>Who is my ideal leader?</li>
-    <li>How do I like to work?</li>
-    <li>What am I solving for?</li>
-  </ol></li>
-  <li>Realistic Experience Preview:
-  <ol>
-    <li>What are our lived values?</li>
-    <li>What promise do we make to talent?</li>
-    <li>How do we make money/have an impact?</li>
-    <li>What is the profile of your leader?</li>
-    <li>What is the job the next 12-18 months?</li>
-    <li>What are the principles, practices, and platforms that define how work gets done?</li>
-  </ol></li>
-</ul><h2><a name="ch-4"></a>Chapter 4 - Self-Reflection and Fit Excursions</h2><p>For talent, 8 core question. This chapter contains one &ldquo;Excursion&rdquo;/exercise to help you answer them.</p>
-<ol>
-  <li>What are the values you most consistently hold?
-  <ul>
-    <li>Pick from pairs of values.</li>
-  </ul></li>
-  <li>What is the life you are trying to build?
-  <ul>
-    <li>In two years time, what if:
-    <ul>
-      <li>Nothing changed.</li>
-      <li>Dream the dream.</li>
-    </ul></li>
-  </ul></li>
-  <li>What are your superpowers? What are you best at (vs what do you love to do)?
-  <ul>
-    <li>Superpowers:
-    <ul>
-      <li>What gaps do you fill in every company you have joined?</li>
-      <li>What areas of expertise are you attempting to hone?</li>
-      <li>What do people come to you for?</li>
-      <li>What activities do you volunteer to take?</li>
-    </ul></li>
-    <li>Shadow side:
-    <ul>
-      <li>Often from overused strengths or non-productive behaviours when under stress.</li>
-      <li>When under stress for long period, we flip into &ldquo;the grip&rdquo; <a href="https://www.psychologyjunkie.com/what-youre-like-during-grip-stress-based-on-your-myers-briggs-personality-type/">(Myers Briggs)</a>: unfamiliar and unproductive version of ourselves.</li>
-    </ul></li>
-  </ul></li>
-  <li>Are you of craft, company or cause?</li>
-  <li>Who is your ideal leader? What do you need from them to succeed?
-  <ul>
-    <li>Good chemistry with a manager is so important and so rare that many successful talent and leadership experts advocate for following a great manager.</li>
-    <li>Things that we look for in our managers, will be gifted at ourselves.</li>
-    <li>We gain our skills as managers from our managers.</li>
-  </ul></li>
-  <li>If you were to start a company, what would you do? How would you want it to feel?</li>
-  <li>Above all else, what matters most to you right now? What are you solving for?
-  <ul>
-    <li>Our careers can be central to our life in some moments, and they can be enablers of our life in others.</li>
-  </ul></li>
-  <li>How to you bring all of your answers together into a single leadership story?
-  <ul>
-    <li>At the heart of finding right fit is changing the frame of how you see yourself.</li>
-  </ul></li>
-</ol><h1><a name="p-3"></a>Part 3 - Interviewing and Onboarding + Right Fit</h1><h2><a name="ch-5"></a>Chapter 5 - Don&rsquo;t Judge a Company by Its Career Page</h2>
-<ul>
-  <li><a href="https://en.wikipedia.org/wiki/Motivated_reasoning">Motivated reasoning</a>: When the early signals we get about a product or a place are positive and hold true, we will likely stop our search for new information or comparisons to other options.</li>
-  <li>When a product appears superior on aspects that are comparable with other products, we will fill in the gaps on missing information or difficult to ascertain attributes in a manner that supports that superiority.</li>
-  <li>Confirmation bias: potentially confirmatory evidence tends to be taken at face value while potentially dis-confirmatory evidence is subjected to critical and skeptical scrutiny.</li>
-  <li>Information available about a company is &ldquo;mostly true version of the truth&rdquo;:
-  <ul>
-    <li>Doesn&rsquo;t give enough information to really see the cracks that every company has.</li>
-    <li>Employer-brand version of Snapchat filters.</li>
-    <li>Most sources are internally produced and relatively subjective.</li>
-  </ul></li>
-  <li>Rules to validate information:
-  <ol>
-    <li>More than three sources.</li>
-    <li>Internal and external materials.</li>
-    <li>Subjective and objective data.</li>
-    <li>If something feels off, dive deeper. Don&rsquo;t ignore it.</li>
-  </ol></li>
-  <li>As an interviewee:
-  <ul>
-    <li>&ldquo;How can I position myself as the best candidate for the job?&rdquo;
-    <ul>
-      <li>The very nature of the question can lead us astray.</li>
-      <li>We end up &ldquo;acting&rdquo; versus &ldquo;being&rdquo;.</li>
-    </ul></li>
-  </ul></li>
-  <li><a name="questions"></a>Questions to understand ways of working in the company:
-  <ol>
-    <li>What is the profile of the person who succeeds here?
-    <ul>
-      <li>Learn how the company defines success.</li>
-      <li>Ask interviewer to tell you about a real person.</li>
-    </ul></li>
-    <li>How does the company get work done? (chapter 6)</li>
-    <li>What is the company&rsquo;s relationship to time?
-    <ul>
-      <li>Most important.</li>
-      <li>Productivity equals full calendar?</li>
-      <li>Is unlimited vacation really unlimited?</li>
-      <li>Do you need to be at the office or in a meeting to be deemed productive?</li>
-    </ul></li>
-    <li>What is the reputation of the function/team you are joining?</li>
-    <li>What are your day-to-day duties?
-    <ul>
-      <li>What will be the first three deliverables be once onboarding is complete?</li>
-    </ul></li>
-    <li>How does the leader get productivity out of their team?
-    <ul>
-      <li>Most variance in satisfaction of an employee can be accounted for by their manager or leader.</li>
-      <li>Study by Artz et al. found that technical competence mattered above else.</li>
-    </ul></li>
-    <li>Where do people go once they leave this job/team/leader?
-    <ul>
-      <li>Most underrated skill as a leader is being a &ldquo;star maker&rdquo;.</li>
-    </ul></li>
-    <li>What happens here that didn&rsquo;t happen at the other companies you worked at previously?
-    <ul>
-      <li>Whether the culture has been solidified enough to turn into longstanding and unique practices.</li>
-    </ul></li>
-    <li>What are the nonnegotiables at the company?
-    <ul>
-      <li>How consistent are across interviews?</li>
-    </ul></li>
-  </ol></li>
-</ul><h2><a name="ch-6"></a>Chapter 6 - Figuring Out If You Really Fit</h2>
-<ul>
-  <li>To find right fit, you should spend your first ninety days focused on understanding the reality of how the company truly works day-to-day and assessing that against your preferences.</li>
-  <li>New talent is highly impressionable. Make sure they are surrounded by the &ldquo;models of your culture&rdquo; early and often.</li>
-  <li>Fitting in is shifting away from your natural preference to be included or feel sense of belonging. This is a normal reaction to starting a new job.</li>
-  <li>Most companies rarely fully understand or know how to articulate how work actually gets done.</li>
-  <li>Three versions of a company:
-  <ol>
-    <li>The company we would be if we were at our best:
-    <ul>
-      <li>Recruiter version to sell the position.</li>
-    </ul></li>
-    <li>What is shown to talent on their first day:
-    <ul>
-      <li>Akin to being toured through a museum.</li>
-    </ul></li>
-    <li>How it is for most people, every day.</li>
-  </ol></li>
-  <li>As talent, onboarding:
-  <ul>
-    <li>Is about determining right or wrong fit.</li>
-    <li>Rules:
-    <ol>
-      <li>Avoid snap judgments: take the full 90 days.</li>
-      <li>Keep a journal.</li>
-      <li>Review what you have learned at day 10, 30, 60 and 90:
-      <ul>
-        <li>Patterns and themes.</li>
-        <li>Share with your manager/mentor.</li>
-      </ul></li>
-      <li>Let the facts lead you to your conclusions, not the other way around.</li>
-      <li>Focus your assessment on the ways the company works.</li>
-      <li>Make a decision to commit, or not:
-      <ul>
-        <li>Most important and difficult without a framework.</li>
-      </ul></li>
-      <li>Create buffers to sustain right fit as the company grows/transforms.</li>
-    </ol></li>
-  </ul></li>
-  <li><a name="howwork"></a>How does the company get work done?
-  <ol>
-    <li>How does the company make decisions?
-    <ul>
-      <li>Tradeoffs made. Is everything a priority?</li>
-      <li>Is there a clearly defined strategy that people can make decisions in alignment with?</li>
-    </ul></li>
-    <li>How does the company solve problems?
-    <ul>
-      <li>What information is most valuable when determining the best solution?</li>
-      <li>Best companies use approach depending on the size and complexity or company values.</li>
-    </ul></li>
-    <li>How are ideas communicated?
-    <ul>
-      <li>Full sentences or pithy one-liners?</li>
-    </ul></li>
-    <li>How does the company collaborate?
-    <ul>
-      <li>Most fundamental attribute of right fit.</li>
-      <li>Area that diverges the most from team to team.</li>
-      <li>Pay attention to:
-      <ul>
-        <li>Meeting culture.</li>
-        <li>Primary tools used to communicate.</li>
-        <li>Cadence of work.</li>
-      </ul></li>
-    </ul></li>
-    <li>How company assess performance?
-    <ul>
-      <li>Output, outcomes, strength of relationships, time in your seat or billed hours?</li>
-      <li>Companies pay for one of:
-      <ol>
-        <li>Performance.</li>
-        <li>Demonstrated expertise.</li>
-        <li>Lived values/behaviours.</li>
-        <li>Long-term commitment.</li>
-      </ol></li>
-      <li>To understand your own beliefs, look back at the classes you most enjoyed in school:
-      <ul>
-        <li>How did you get graded?</li>
-        <li>Work alone or in groups?</li>
-      </ul></li>
-    </ul></li>
-    <li>How does the company provide feedback?
-    <ul>
-      <li>Open, honest and consistent feedback is a rarity.</li>
-      <li>We are fairly self-centered and idiosyncratic in our measurements, and thus our assessment is ultimately random and potentially damaging.</li>
-      <li>Our education has trained us to ignore all the positives and go straight to the places to improve.</li>
-    </ul></li>
-    <li>How does the company resolve conflict and break ties?
-    <ul>
-      <li>Are purpose, values or principles used?</li>
-      <li>Full commitment or &ldquo;disagree and commit&rdquo;?</li>
-    </ul></li>
-    <li>How company develops its talent?
-    <ul>
-      <li>Turning key events into lessons takes self-awareness, feedback, coaching, learning and testing out new behaviours, things that most companies fail to invest in.</li>
-      <li>Who owns my career, the company or me?</li>
-    </ul></li>
-    <li>How does information flow?
-    <ul>
-      <li>Tells where decisions get made.</li>
-    </ul></li>
-    <li>How does the company socialize/gather?
-    <ul>
-      <li>What does the company celebrate?</li>
-    </ul></li>
-    <li>What is the company&rsquo;s relationship with time?
-    <ul>
-      <li>When on vacation, are I still available or unreachable?</li>
-    </ul></li>
-    <li>How does the company view rest and recovery?
-    <ul>
-      <li>Do leaders take vacation quietly, or are they vocal about taking breaks?</li>
-    </ul></li>
-  </ol></li>
-  <li>No place will be a perfect match.</li>
-  <li>As an executive leader, how you decide to work sets the floor (minimum expectation), not the ceiling.</li>
-  <li>The Fit Assessment (page 126).</li>
-</ul><h1><a name="p-4"></a>Part 4 - Buffers + Right Fit</h1><h2><a name="ch-7"></a>Chapter 7 - Inspirational Buffers and Enhancing Fit Over Time</h2>
-<ul>
-  <li>Great fit now doesn&rsquo;t guarantee that it will remain that way.</li>
-  <li>Wrong fit is rarely sustainable for an extended period.</li>
-  <li>Buffers to fit:
-  <ul>
-    <li>Actions to improve the overall experience over time.</li>
-  </ul></li>
-  <li>Two categories:
-  <ol>
-    <li>Inspirational:
-    <ul>
-      <li>Those that connect us to something more meaningful.</li>
-      <li>Increase better and more value-adding work.</li>
-    </ul></li>
-    <li>Relational: center around people who we interact with.</li>
-  </ol></li>
-  <li>The later you marry, the less likely you are to divorce.</li>
-  <li><a href="https://hbr.org/2013/04/does-money-really-affect-motiv">Correlation of pay to satisfaction is very weak</a>.</li>
-  <li>Intrinsic motivations FTW!</li>
-  <li>Inspirational buffers:
-  <ol>
-    <li>Connect to Purpose or Cause:
-    <ul>
-      <li>Company: why is the world better with us in it?</li>
-      <li>Try to connect to the company purpose at least once a week.</li>
-    </ul></li>
-    <li>Increase Meaningful Work, Decrease Busy Work:
-    <ul>
-      <li>Two ways:
-      <ol>
-        <li>Align nature of work:
-        <ul>
-          <li>To your passions.</li>
-          <li>Learn new skills.</li>
-          <li>Connect to a cause you care.</li>
-        </ul></li>
-        <li>Spend more time in high-value activities.</li>
-      </ol></li>
-      <li>Once people know you are passionate in something, they will give you plenty of opportunity to do it.</li>
-      <li>Say &ldquo;no&rdquo; more. Volunteer more.</li>
-    </ul></li>
-    <li>If you are learning and growing:
-    <ul>
-      <li>Learning improves self-confidence, curb anxiety and depression.</li>
-      <li>Companies that promote learning regularly outperform competitors.</li>
-      <li>Five clusters of learning opportunities:
-      <ol>
-        <li>Challenging assignments.</li>
-        <li>Developmental relationships (mentors, teachers, managers).</li>
-        <li>Hardships or adverse situations (wrong fit).</li>
-        <li>Coursework and training.</li>
-        <li>Personal experiences (birth of child, living in a new country).</li>
-      </ol></li>
-      <li>Majority of learning come from 1 and 2. Least from 4.</li>
-      <li>Learning takes work: reflection, making connections to previous events, practicing new behaviours.</li>
-      <li>Diversity of experience matters.</li>
-      <li>Hardship often brings out the most raw version of ourselves.</li>
-      <li>Treat every day as a prototype (== small experiment).</li>
-    </ul></li>
-    <li>Find a consumer in need that you can relate to and can help.</li>
-  </ol></li>
-  <li>In any project, ask if the consumer would pay an extra 5% for the work.</li>
-  <li>Make better use of your time: 41% activities are neither personally fulfilling nor add value.</li>
-  <li>Procrastination:
-  <ul>
-    <li>More during stress.</li>
-    <li>Losing time on the tasks at had due to our urgent need to &ldquo;manage negative emotions&rdquo;.</li>
-  </ul></li>
-  <li>Working harder to fit in does not produce right fit; rather the opposite.</li>
-  <li>Try to create a week calendar that is closer to your ideal in terms of time, types of meeting, and people you work alongside.</li>
-</ul><h2><a name="ch-8"></a>Chapter 8 - Relational Buffers and Enhancing Fit Over Time</h2>
-<ul>
-  <li>4 Buffers:
-  <ol>
-    <li>A supportive leader/manager:
-    <ul>
-      <li>Look at how you can shape your manager to the one that you need.</li>
-      <li>A team makes the manager, not the other way around.</li>
-      <li>Positive reinforcement.</li>
-      <li>Individual feedback have an inverse relationship to seniority.
-      <ul>
-        <li>It should be the opposite as the stakes are higher!</li>
-      </ul></li>
-      <li>Managers understand if their teams are performing, but they know very little about the why.</li>
-      <li>Researcher found that managers estimate their impact way higher than their reporters.</li>
-    </ul></li>
-    <li>Meaningful mentor:
-    <ul>
-      <li>70% of talent who have a mentor are satisfied with their jobs.</li>
-      <li>Mentors create connections, and connections are the seeds of commitment.</li>
-      <li>3 types:
-      <ol>
-        <li>Storytellers: those who have been in the company for many years.</li>
-        <li>Models: bleed the mission and values of the company.</li>
-        <li>Masters of craft.
-        <ul>
-          <li>Rarely in the top leadership positions, very rarely used as mentors.</li>
-        </ul></li>
-      </ol></li>
-      <li>Think what are you looking for in a mentor (career advise, connections, &hellip;)</li>
-      <li>Agenda should be question based and focused on real areas where you are struggling or looking for wisdom.</li>
-    </ul></li>
-    <li>Workplace BFF or Doppelganger:
-    <ul>
-      <li>Good social relationships are one of the most consistent predictors of a happy life.</li>
-      <li>Doppelganger:
-      <ul>
-        <li>Somebody like you but that moves through the org with greater ease.</li>
-        <li>Represent future possibilities.</li>
-      </ul></li>
-      <li>Invest your time in the relationship.</li>
-    </ul></li>
-    <li>Life outside work is magic:
-    <ul>
-      <li>If you don&rsquo;t say no, then your yes is meaningless. Peter Block.</li>
-      <li>The happier we are at home, the more engaged and committed we will be at work.</li>
-      <li>Don&rsquo;t let your outside work hours be filled with sensory pursuits.</li>
-    </ul></li>
-  </ol></li>
-</ul><h1><a name="p-5"></a>Part 5 - Company + Right Fit</h1><h2><a name="ch-9"></a>Chapter 9 - Crafting and Communicating How the Company Works</h2>
-<ul>
-  <li>Employee experience:
-  <ul>
-    <li>All the touch points an employee has with the company in a single year:</li>
-    <li>Physical, human, digital and administrative.</li>
-    <li>Excludes &ldquo;culture&rdquo;. Culture is an outcome.</li>
-    <li>3 elements:
-    <ol>
-      <li>Work principles:
-      <ul>
-        <li>How it should feel to work in a team.</li>
-        <li>What differentiates the company.</li>
-      </ul></li>
-      <li>Work practices: chapter 4.</li>
-      <li>Work platforms: the technology used to do work.</li>
-    </ol></li>
-  </ul></li>
-  <li>With each new recruit, it gets harder to consistently teach or develop consistent unwritten practices.</li>
-  <li>Creating <em>Right Fit</em> doesn&rsquo;t mean being the right place for everyone.</li>
-  <li>To know how to the company should work in the future, study the company&rsquo;s most productive teams of today:
-  <ul>
-    <li>Make consistent what has already been innovated on.</li>
-  </ul></li>
-  <li>Research: people make judgements within a fraction of a second upon seeing a person&rsquo;s face.</li>
-  <li>Balance first impression is key: both who the company is today and what want to be tomorrow.</li>
-  <li>Tips:
-  <ol>
-    <li>Make values the ground and work principles/practices/platforms the figure.</li>
-    <li>Purpose and how it makes money overt.</li>
-    <li>Show the real company in real ways.</li>
-    <li>Create a network.</li>
-  </ol></li>
-  <li><a name="realistic-job-preview"></a>Realistic job preview:
-  <ol>
-    <li>Nonnegotiables: set the base at a certain level.</li>
-    <li>What we do:
-    <ul>
-      <li>How the product/service flows through the system.</li>
-      <li>Focus on how the role adds value.</li>
-    </ul></li>
-    <li>How we work:
-    <ul>
-      <li>Be super clear about how work gets done.</li>
-      <li>Prose-based work principles, practices and platforms.</li>
-    </ul></li>
-    <li>What capabilities we need.</li>
-    <li>The three top deliverables for this position or this team:
-    <ul>
-      <li>In the next eighteen to twenty-four months.</li>
-    </ul></li>
-  </ol></li>
-</ul><h2><a name="ch-10"></a>Chapter 10 - Reimagining Fit - Recruiting and (Re)recruiting for Right Fit</h2>
-<ul>
-  <li>Onboarding:
-  <ul>
-    <li>A company will never have a more excited or engaged employee than the moment they walk into their first day.</li>
-    <li>If a company just focuses on the new joiners, their culture will transform automatically over the next few years:
-    <ul>
-      <li>Turnover + growth.</li>
-    </ul></li>
-    <li>Anything the company spends on onboarding will be far less expensive than the hidden cost of losing new employees within their first six months.</li>
-    <li>Cultural immersion: what is expected, what is valued and how works get done.</li>
-  </ul></li>
-  <li>Your early network will dictate much of your long-term success.</li>
-  <li>Great managers are rare:
-  <ul>
-    <li>Gallup: companies fail to choose the right candidate 82% of time.</li>
-  </ul></li>
-  <li>Team membership is as much of an art as team leadership:
-  <ul>
-    <li>Teach our teams &ldquo;teaming&rdquo;.</li>
-  </ul></li>
-  <li>Performance as the collective act by individuals dedicated to a single mission:
-  <ul>
-    <li>Have one strategy:
-    <ul>
-      <li>Teams/individuals simply need to know their place in the strategy.</li>
-    </ul></li>
-    <li>Outcomes, not activities.</li>
-    <li>1-2-1 focus on ensuring everyone is growing faster than the company:
-    <ul>
-      <li>Moving key events to lessons of experience.</li>
-    </ul></li>
-    <li>Pay well and distribute bonuses to the team.</li>
-    <li>Find and celebrate the &ldquo;better practice&rdquo;:
-    <ul>
-      <li>Somewhere out in your company, there is a better practice for everything.</li>
-      <li>Positive disobedient.</li>
-    </ul></li>
-  </ul></li>
-  <li>Ensure strategy is participated in, not just developed:
-  <ul>
-    <li>The life or death of strategy is determined in the number of day-to-day decisions that are made in service of it (or not).</li>
-  </ul></li>
-  <li>Unnecessary meetings:
-  <ul>
-    <li>Those that don&rsquo;t directly connect to purpose, how we work or sense of community.</li>
-    <li>Asses the monetary cost of every meeting.</li>
-    <li>Clear outcomes for each meeting.
-    <ul>
-      <li>What cannot be done in another way?</li>
-    </ul></li>
-    <li>Set a limit for the size of meeting.</li>
-  </ul></li>
-  <li>Transition from one role to another:
-  <ul>
-    <li>Companies usually ask to cover for both roles:
-    <ul>
-      <li>More stress in an already stressful situation.</li>
-    </ul></li>
-    <li>Instead:
-    <ul>
-      <li>7 days off to rest.</li>
-      <li>7 days for reflection, reconnection and reset.</li>
-    </ul></li>
-  </ul></li>
-  <li>In times of transformation, think about how you work before you launch and design how it will work after.</li>
 </ul>]]></description></item></channel></rss>
