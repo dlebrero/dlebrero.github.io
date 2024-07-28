@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Unbundling the Enterprise</title>
+	<meta content="Book notes on &quot;Unbundling the Enterprise: APIs, Optionality, &amp; the Science of Happy Accidents&quot; by Stephen Fishman and Matt McLarty" name="description" /><meta content="Book review notes summary, API, digital treasure hunting, unbundling, value dynamics, feedback loops, exchange optimization, distributed innovation, capability capitalization, value aggregation, digital strategy, business capabilities, innovation, platform strategy, value network, value exchange, value dynamics, feedback collection, experimental mindset, convexity, optionality, business model canvas, Peter Senge, Bezos API Mandate, API-enabled transformation, strategic planning, customer-centric, combinable capabilities, scalable experimentation, value optimization, digital transformation, competitive advantage, feedback loops, learning culture, API security, operational complexity, MVP, revenue cannibalization, technology strategy, talent model, uncertainty management, semantic web, generative AI, API traffic" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Unbundling the Enterprise" property="og:title" /><meta content="Book notes on &quot;Unbundling the Enterprise: APIs, Optionality, &amp; the Science of Happy Accidents&quot; by Stephen Fishman and Matt McLarty" property="og:description" /><meta content="https://danlebrero.com/2024/07/31/unbundling-the-enterprise-book-summary/" property="og:url" /><meta content="Book notes: Unbundling the Enterprise" name="twitter:title" /><meta content="Book notes on &quot;Unbundling the Enterprise: APIs, Optionality, &amp; the Science of Happy Accidents&quot; by Stephen Fishman and Matt McLarty" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/unbundling-the-enterprise/unbundling-the-enterprise.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/unbundling-the-enterprise/unbundling-the-enterprise.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2024/07/31/unbundling-the-enterprise-book-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+	<!-- Google tag (gtag.js) -->
+	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-3KPNQF7Y7S"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3KPNQF7Y7S');
+</script>	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+<!--				 <li id="menu-popular"><a class="smoothscroll" href="/popular/">Popular entries.</a></li>-->
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Unbundling the Enterprise</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 31 Jul 2024</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Unbundling the Enterprise: APIs, Optionality, &amp; the Science of Happy Accidents" by Stephen Fishman and Matt McLarty</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/unbundling-the-enterprise/unbundling-the-enterprise.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3zETQQg">Unbundling the Enterprise: APIs, Optionality, &amp; the Science of Happy Accidents</a> by <a href="https://twitter.com/fistsofreason">Stephen Fishman</a> and <a href="https://twitter.com/MattMcLartyBC">Matt McLarty</a>.</p><p>Summary of summaries:</p>
+<blockquote><p>Most valuable treasures out there are the ones you don’t yet know to look for.</p>
+</blockquote><h1>Key Insights</h1>
+<ul>
+  <li><code>OOOps</code>:
+  <ul>
+    <li>Create <strong>O</strong>ptionality through unbundled APIs
+    <ul>
+      <li>Spend less time trying to predict the future and more preparing for any eventuality.</li>
+    </ul></li>
+    <li>Identify <strong>O</strong>pportunities through value dynamics.</li>
+    <li>Drive <strong>O</strong>ptimization through feedback loops:
+    <ul>
+      <li>Use APIs to collect feedback on business activity that can guide digital strategy.</li>
+    </ul></li>
+  </ul></li>
+  <li>4 winning strategies:
+  <ol>
+    <li>Exchange optimization: adapt to the digital world, thus increasing speed and scale of value exchanges while lowering coordination costs.</li>
+    <li>Distributed innovation:
+    <ul>
+      <li>16m software developers globally vs 1 billion knowledge workers.</li>
+      <li>3 ways to increase innovation:
+      <ol>
+        <li>Involve non-IT knowledge workers.</li>
+        <li>Involve sw developers that do not work for you.</li>
+        <li>Your own customers.</li>
+      </ol></li>
+    </ul></li>
+    <li>Capability capitalization: unbundle and rebundle business capabilities to create new products.</li>
+    <li>Value aggregation: connect disparate value networks.</li>
+  </ol></li>
+  <li>Web functioned like an ecosystem: The more life there is, the more there is for everyone.</li>
+  <li>We underestimate longer-term change because we fail to see that innovation happens in combination.</li>
+  <li>Data is a non-rival good: it is not consumed or possessed by only one party at a time.
+  <ul>
+    <li>In digital products, the degree of convexity is driven by the cost of experimentation.</li>
+  </ul></li>
+  <li>Slowing down the process of making commitments conserves optionality.</li>
+  <li>Data beats math.</li>
+  <li>For experimentation at scale:
+  <ul>
+    <li>Feature flags.</li>
+    <li>Ramps: funnel a controllable percentage of all application traffic.</li>
+    <li>Visualization tools.</li>
+    <li>Statistical literacy and tooling.</li>
+  </ul></li>
+  <li>Feedback without a strategy direction would just provide a more accurate means of demonstrating stagnation.</li>
+  <li>Not a simple task to get all stakeholders aligned on the worthiness of making the investment when the outcome is undefined.
+  <ul>
+    <li>Finance and executive leadership are slow to recognize and support anything that can’t be expressed in a deterministic financial model.</li>
+    <li>How do you get the business to focus on walking away from revenue in the goal of eventually getting more revenue?</li>
+  </ul></li>
+  <li>Optionality:
+  <ol>
+    <li>The future is uncertain and inherently unpredictable.</li>
+    <li>Optionality can be preserved at low cost.</li>
+  </ol>
+  <ul>
+    <li>Then, potential gain is staggering because uncertainty increases the upside but not the downside. <img src="/images/blog/books/unbundling-the-enterprise/concave-and-convex-option.png" alt="concave and convex options model" /></li>
+  </ul></li>
+  <li>A large exposure to a single trial has lower expected return than a portfolio of small trials.</li>
+  <li>Abandon your sense of knowledge and instead look for systems with asymmetry between pain and gain.</li>
+  <li>Serial optionality, where winning options build upon each other to attain asymmetric gains.</li>
+  <li>If you understand the futility of trying to predict the future in an uncertain world, then manufacturing and preserving convex optionality is the surest way to outperform the competition over time.</li>
+  <li>The more uncertain the future, the greater the value of preserving optionality.</li>
+  <li>Open by default is a better strategy than closed by default.</li>
+  <li>Innovation is never done.</li>
+  <li>Innovation can be optimized:
+  <ol>
+    <li>Compress the cycle time of experiments.</li>
+    <li>Execute more experiments in parallel.</li>
+  </ol></li>
+  <li>You must consistently invest not only in creating the options themselves but also in cheapening the bets across the board.</li>
+  <li>Time to market and future planning are opposing forces.</li>
+  <li>Position shortcuts as the exception that needs scrutiny and justification.</li>
+  <li>Keep your commons teams close to the highest EBITDA revenue in order to buffer them from the unyielding waves of market volatility.</li>
+  <li>Jens Rasmussen and Dr. Richard Cook, <a href="https://medium.com/10x-curiosity/boundaries-of-failure-rasmussens-model-of-how-accidents-happen-58dc61eb1cf">Safe Boundary Model</a>. <img src="/images/blog/books/unbundling-the-enterprise/safe-boundary-model.png" alt="Safe boundary model" /></li>
+  <li>You’re never going to get the exact requirements to innovate.</li>
+  <li>Default to buy, build as the exception.</li>
+  <li>Firms adopting public APIs grew an additional 38.7% over sixteen years relative to similar non-adopters.</li>
+  <li>Quantify the value of performance.</li>
+  <li><a href="#ch-11">Risks</a>.</li>
+  <li>For APIs, coordination costs will drop again as APIs become self-describing once LLM agents are pointed towards them.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Introduction</a>
+  <ul>
+    <li><a href="#p-1">Part 1 - Innovation By Accident</a></li>
+    <li><a href="#ch-1">Chapter 1 - Treasure in Transformation</a></li>
+    <li><a href="#ch-2">Chapter 2 - The Science of Happy Accidents</a></li>
+    <li><a href="#ch-3">Chapter 3 - Optionality through API Unbundling</a></li>
+    <li><a href="#ch-4">Chapter 4 - Opportunism through Value Dynamics</a></li>
+    <li><a href="#ch-5">Chapter 5 - Optimization through Feedback Loops</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part 2 - Success Strategies</a>
+  <ul>
+    <li><a href="#ch-6">Chapter 6 - Strategies of Success #1: Exchange Optimization</a></li>
+    <li><a href="#ch-7">Chapter 7 - Strategies of Success #2: Distributed Innovation</a></li>
+    <li><a href="#ch-8">Chapter 8 - Strategies of Success #3: Capability Capitalization</a></li>
+    <li><a href="#ch-9">Chapter 9 - Strategies of Success #4: Value Aggregation</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part 3 - Practical Considerations To Finding Digital Treasure</a>
+  <ul>
+    <li><a href="#ch-10">Chapter 10 - Getting Started on the Path to Scaled Results</a></li>
+    <li><a href="#ch-11">Chapter 11 - Ensuring a Durable Transformation by Understanding the Risks</a></li>
+    <li><a href="#ch-12">Chapter 12 - Embracing Uncertainty</a></li>
+  </ul></li>
+  <li><a href="#ch-13">Conclusion</a></li>
+</ul><h1><a name="ch-0"></a>Introduction</h1>
+<ul>
+  <li>The most important aspect of API-enabled digital treasure hunting: you don’t need a map.</li>
+  <li>API allow them to be used in many unanticipated ways.</li>
+  <li>Treasure-Hunting methods:
+  <ol>
+    <li>Create optionality through unbundling:
+    <ul>
+      <li>Spend less time trying to predict the future and more preparing for any eventuality.</li>
+      <li>API: unbundle business capabilities into digital assets that can be combined and composed into new products, processes, and experiences that meet opportunities unlocked by innovation.</li>
+    </ul></li>
+    <li>Identify opportunities through value dynamics:
+    <ul>
+      <li>Value exchange by powering B2B.</li>
+      <li>Value dynamics is a visual method of designing business models through value network and API-enabled value exchange.</li>
+    </ul></li>
+    <li>Optimize value through feedback loops:
+    <ul>
+      <li>Use APIs to collect feedback on business activity that can guide digital strategy.</li>
+    </ul></li>
+  </ol></li>
+  <li>4 winning strategies:
+  <ol>
+    <li>Exchange optimization: adapt to the digital world, thus increasing speed and scale of value exchanges while lowering coordination costs.</li>
+    <li>Distributed innovation: Innovation in the hands of business users.</li>
+    <li>Capability capitalization: unbundle and rebundle business capabilities to create new products.</li>
+    <li>Value aggregation: connect disparate value networks.</li>
+  </ol></li>
+  <li>This is a book about connection:
+  <ul>
+    <li>Business to technology.</li>
+    <li>Long-term strategy to short term return on investment.</li>
+    <li>Intuition to science.</li>
+  </ul></li>
+</ul><h2><a name="p-1"></a>Part 1 - Innovation By Accident</h2>
+<ul>
+  <li>“Happy accidents” occur too frequently to be dismissed as coincidences.</li>
+</ul><h2><a name="ch-1"></a>Chapter 1 - Treasure in Transformation</h2>
+<ul>
+  <li>Whereas a product strategy is about trying to anticipate market and user needs and then delivering packaged products to meet those needs, a platform strategy is about giving the right tools to developers to test their own ideas and build their own products and services.</li>
+  <li>The Golden Rule of Platform is that you “Eat Your Own Dog-food”.</li>
+  <li><a href="https://nordicapis.com/the-bezos-api-mandate-amazons-manifesto-for-externalization/">Bezos API Mandate</a>.</li>
+  <li>O’Reilly listed four reasons Amazon needed to adopt a platform culture by unbundling their capabilities through APIs:
+  <ul>
+    <li>APIs would provide a gateway for all the smart and creative people who work outside of Amazon to create unanticipated innovation for the company.</li>
+    <li>New revenue opportunities for Amazon if they were willing to be patient.</li>
+    <li>Web functioned like an ecosystem: The more life there is, the more there is for everyone.</li>
+  </ul></li>
+  <li>Amazon “New Process Initiative” to prioritize funding for new ideas became a bottleneck:
+  <ul>
+    <li>They were able to unstick the process by addressing their software architecture.</li>
+    <li>It took several years to address getting all the teams to have hard, well-documented APIs.</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - The Science of Happy Accidents</h2>
+<ul>
+  <li>We underestimate longer-term change because we fail to see that innovation happens in combination.</li>
+  <li>Digital strategy:
+  <ol>
+    <li>Orgs should strive to have a lot of capabilities.</li>
+    <li>Those capabilities need to be “combinable”.</li>
+  </ol></li>
+  <li>Data is a non-rival good: it is not consumed or possessed by only one party at a time.</li>
+  <li>Rival products are limited by unit costs:
+  <ul>
+    <li>Return is capped by logistic constraints within their market.</li>
+    <li>Concave curve when plotting their costs vs returns.</li>
+    <li>Non-rival goods are the opposite.</li>
+  </ul></li>
+  <li>In digital products, the degree of convexity is driven by the cost of experimentation.</li>
+  <li><code>OOOps</code>:
+  <ul>
+    <li>Create <strong>O</strong>ptionality through unbundled APIs.</li>
+    <li>Identify <strong>O</strong>pportunities through value dynamics.</li>
+    <li>Drive <strong>O</strong>ptimization through feedback loops.</li>
+  </ul></li>
+  <li>Slowing down the process of making commitments conserves optionality.</li>
+  <li>Business Model Canvas defines business models as the way companies create, deliver, and capture value:
+  <ul>
+    <li>Value dynamics is a visual method for mapping out business models by illustrating the flow of value in a digital ecosystem:
+    <ul>
+      <li>Shapes to depict constituents in the ecosystem.</li>
+      <li>Arrows to show the flow of value between constituents.</li>
+      <li>Icons that indicate what type of value “currency” is being exchanged.</li>
+    </ul></li>
+  </ul></li>
+  <li>For experimentation at scale:
+  <ul>
+    <li>Feature flags.</li>
+    <li>Ramps: funnel a controllable percentage of all application traffic.</li>
+    <li>Visualization tools.</li>
+    <li>Statistical literacy and tooling:
+    <ul>
+      <li>Data beats math.</li>
+      <li>Statistics tools can be misleading and cause speed-killing friction when you don’t have the expertise to discern what the results mean and what they don’t.</li>
+    </ul></li>
+  </ul></li>
+  <li>Feedback without a strategy direction would just provide a more accurate means of demonstrating stagnation.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Optionality through API Unbundling</h2>
+<ul>
+  <li>Not a simple task to get all stakeholders aligned on the worthiness of making the investment when the outcome is undefined.
+  <ul>
+    <li>Finance and executive leadership are slow to recognize and support anything that can’t be expressed in a deterministic financial model.</li>
+    <li>There is a need for a new lens on how to view business forecasts along with a “new math” that will drive a different approach to investment and continual transformation.</li>
+  </ul></li>
+  <li><a href="https://en.wikipedia.org/wiki/Carliss_Y._Baldwin">Carliss Y. Baldwin</a>: Higher option value being present “when consumer tastes are heterogeneous or unpredictable, and technological trajectories are uncertain”.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Nassim_Nicholas_Taleb">Nassim Nicholas Taleb</a>:
+  <ul>
+    <li><a href="https://amzn.to/4eSpxFU">The Black Swan</a>.</li>
+    <li><a href="https://amzn.to/3Wc5meM">Antifragile: Things That Gain from Disorder</a>.</li>
+    <li>Two types of options: concave and convex.</li>
+    <li>Three factors of optionality:
+    <ul>
+      <li>Incremental cost (pain) to generate and maintain the option.</li>
+      <li>Potential value (gain) that could come when you exercise the option.</li>
+      <li>How the value scales when the rate of change (variable/uncertainty) scales on the Y axis.</li>
+    </ul></li>
+    <li>When:
+    <ol>
+      <li>The future is uncertain and inherently unpredictable.</li>
+      <li>Optionality can be preserved at low cost.</li>
+    </ol>
+    <ul>
+      <li>Then, potential gain is staggering because uncertainty increases the upside but not the downside. <img src="/images/blog/books/unbundling-the-enterprise/concave-and-convex-option.png" alt="concave and convex options model" /></li>
+    </ul></li>
+    <li>A large exposure to a single trial has lower expected return than a portfolio of small trials.</li>
+    <li>Attempts to use human understanding as a tool to predict future events are made in vain given that the prediction of future events in the modern worlds is impossible.</li>
+    <li>Abandon your sense of knowledge and instead look for systems with asymmetry between pain and gain.</li>
+    <li>Serial optionality, where winning options build upon each other to attain asymmetric gains.</li>
+  </ul></li>
+  <li>If you understand the futility of trying to predict the future in an uncertain world, then manufacturing and preserving convex optionality is the surest way to outperform the competition over time.</li>
+  <li>The more uncertain the future, the greater the value of preserving optionality.</li>
+  <li>Four rules:
+  <ol>
+    <li>Convexity is easier to attain than knowledge.</li>
+    <li>A convexity strategy can be executed by:
+    <ol>
+      <li>Lowering the cost per unit of trail, and</li>
+      <li>Increasing teh number of trails as large as possible.</li>
+    </ol>
+    <ul>
+      <li>This minimized the probability of missing the winning option rather than maximizing the profits of a winning option.</li>
+    </ul></li>
+    <li>Preserving serial optionality beats a strategic plan:
+    <ul>
+      <li>Long term strategic plans tend to have the side effect of restricting optionality by locking teams and systems into rigid models and policies.</li>
+    </ul></li>
+    <li>Get into the habit of cataloging negative results.</li>
+  </ol></li>
+  <li>Casinos don’t gamble: they provide entertainment to guests and work the math at scale.</li>
+  <li>What tactics will be the most efficient and effective at lowering the costs per unit of a trial?</li>
+  <li>Steps:
+  <ul>
+    <li>High concave:
+    <ul>
+      <li>Monolith apps + self-managed dedicated physical infrastructure.</li>
+    </ul></li>
+    <li>Partially transformed:
+    <ul>
+      <li>Infrastructure as a Service.</li>
+      <li>Multi-variable testing.</li>
+      <li>Still highly complex code that is conceptually tied to a single context of use.</li>
+    </ul></li>
+    <li>Highly convex:
+    <ul>
+      <li>Previous step plus decoupled APIs.</li>
+    </ul></li>
+  </ul></li>
+  <li>Baldwin, <a href="https://www.hbs.edu/ris/Publication%20Files/09-034_149607b7-2b95-4316-b4b6-1df66dd34e83.pdf">The Architecture of Platforms</a>:
+  <ul>
+    <li>Controlling the interfaces to value rather than just the systems that deliver value is the better strategy.</li>
+    <li>Open by default is a better strategy than closed by default.</li>
+  </ul></li>
+  <li>When you choose a popular and easy-to-understand interface, it is critical to make sure that your chosen interface won’t be too easy to commoditize or one that is easily abstracted.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - Opportunism through Value Dynamics</h2>
+<ul>
+  <li>Value dynamics will improve your ability to identify high-value opportunities where you can exploit the optionality.</li>
+  <li>Business model as “the rationale of how an organization creates, delivers and captures value”.</li>
+  <li>Value dynamics is a way of visually analyzing business models in an ecosystem context to develop strategies on how to intentionally evolve them.</li>
+  <li>Key concepts:
+  <ul>
+    <li>Value network: bounded business ecosystem within which value flows.</li>
+    <li>Constituents: orgs and groups of people defined by a role or persona.</li>
+    <li>Value exchange: bidirectional flow of value between two constituents.</li>
+    <li>Discrete set of value currencies: <img src="/images/blog/books/unbundling-the-enterprise/value-currencies.jpeg" alt="Set value currency" /></li>
+  </ul></li>
+  <li>Value networks are typically centered around a specific constituent. <img src="/images/blog/books/unbundling-the-enterprise/values-network-example-facebook.png" alt="Value network example" /></li>
+  <li>Opening business capabilities through APIs allowed an incremental rollout that gave the companies time to learn and adjust.</li>
+  <li>Six ways to use value dynamics:
+  <ol>
+    <li>Analyze existing business models:
+    <ul>
+      <li>How balanced and sustainable are?</li>
+      <li>How well-differentiated are your org’s enabling capabilities?</li>
+      <li>Are there additional value currencies that can be captured?</li>
+      <li>Are there any constituents who are positioned to disrupt the overall ecosystem?</li>
+    </ul></li>
+    <li>Define new business models:
+    <ul>
+      <li>Start by charting a specific customer segment.</li>
+      <li>Include intermediaries.</li>
+      <li>Consider supporting constituents.</li>
+      <li>What do my competitor’s value network look like?</li>
+      <li>Are there constituents or value exchanges missing?</li>
+      <li>What do the value networks look like for orgs in similar positions in other industries?</li>
+    </ul></li>
+    <li>Find new value channels:
+    <ul>
+      <li>Identify missing links, specially between your org and its end customer.</li>
+    </ul></li>
+    <li>Augment current value exchanges:
+    <ul>
+      <li>All value exchanges are asymmetrical, as each constituent values the different currencies being exchanged differently.
+      <ul>
+        <li>So, it is quite possible that there are new currencies your org could request without constituents feeling that they are giving anything away.</li>
+      </ul></li>
+    </ul></li>
+    <li>Optimize supply-side exchanges:</li>
+  </ol>
+  <ul>
+    <li>Diversify a sole-supplier to reduce cost or risk.</li>
+    <li>Are there suppliers that rise above their peers and warrant exclusivity?</li>
+    <li>Any supplier that could be insourced or any capability outsourced?</li>
+  </ul>
+  <ol>
+    <li>Connect value networks:
+    <ul>
+      <li>Connecting an org’s value networks can improve an org’s composite value proposition exponentially.</li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Optimization through Feedback Loops</h2>
+<ul>
+  <li>Innovation is never done.</li>
+  <li>Innovation can be optimized:
+  <ol>
+    <li>Compress the cycle time of experiments.</li>
+    <li>Execute more experiments in parallel.</li>
+  </ol></li>
+  <li>When the cost to deliver change in an org drops precipitously, a new state of “flow” will inevitably emerge within that org.</li>
+  <li>As the cost to make a small change falls, so does the opportunity cost of choosing one small change over another.
+  <ul>
+    <li>The demand to make those changes will inevitably go up.</li>
+  </ul></li>
+  <li><p>Focusing your resources on lowering the average cycle time of experiments within your enterprise is the most important concept in embracing optimization.</p>
+  <blockquote>The only sustainable competitive advantage is an org’s ability to learn faster than the competition. <cite>Peter Senge, <a href="https://amzn.to/4cDL5Vw">The Fifth Discipline</a></cite>
+  </blockquote></li>
+  <li><p>For the optionality-based approach to work at a financial level, you need to be able to place many low-cost bets.</p></li>
+  <li>You must consistently invest not only in creating the options themselves but also in cheapening the bets across the board.</li>
+</ul><h1><a name="p-2"></a>Part 2 - Success Strategies</h1><h2><a name="ch-6"></a>Chapter 6 - Strategies of Success #1: Exchange Optimization</h2>
+<ul>
+  <li>Making teams responsible for their own operational management acts as a forcing function to both keep teams honest on being efficient with their resources and to have them continually looking for ways to optimize the processes involved within their value-creating activities.</li>
+  <li>Given the cost-versus-value culture in most organizations, a leader will have to chart a course to support efforts to unbundle capabilities without having a well understood path to revenue.</li>
+  <li><a href="https://www.linkedin.com/in/davidlrice">David Rice</a>, SVP of Product and Engineering at Cox Automotive:
+  <ul>
+    <li>The barrier to achieving the potential value for all the stakeholders was more grounded in financial and operating structure than in the tech stacks and application infrastructure.</li>
+    <li>How do you get the business to focus on walking away from revenue in the goal of eventually getting more revenue?</li>
+    <li>What is more important than your org design is the remediations you put in place to deal with the fact that the org design is suboptimal in a bunch of other cases.</li>
+    <li>The path technology teams must walk is simple but not easy.
+    <ul>
+      <li>It requires business and cultural change, which is where the real complexities lie.</li>
+    </ul></li>
+    <li>Decisions will inevitably skew to localized optimization at the expense of the whole, no matter what.</li>
+    <li>Two clashing ideas that are simultaneously true:
+    <ol>
+      <li>The old way forces everything into a cost model.</li>
+      <li>Modularity is the best hedge to “manage the unpredictability of the future”.</li>
+    </ol></li>
+    <li>Time to market and future planning are opposing forces.</li>
+    <li>It is easy to optimize for time to market for the first version but that is not the strategy that easily scales when successful.</li>
+    <li>Position shortcuts as the exception that needs scrutiny and justification:
+    <ul>
+      <li>“Shortcut by default” is always adding more barriers to flexibility with every choice made.</li>
+    </ul></li>
+    <li>We want to teach teams to feel the pain of the business and the business teams to see the commons as the engine of value creation.</li>
+    <li>Keep your commons teams close to the highest EBITDA revenue in order to buffer them from the unyielding waves of market volatility.
+    <ul>
+      <li>Place development teams as close as possible to the point of revenue.</li>
+      <li>Leaders of business teams become more familiar with the value that comes out of engineering.</li>
+    </ul></li>
+    <li>Key concepts for Rice’s solution:
+    <ol>
+      <li>All org models are flawed. Choose the model that:
+      <ul>
+        <li>Has problem that are irrelevant for your context, or</li>
+        <li>Are the sort of problems that you are well-prepared to mitigate.</li>
+      </ul></li>
+      <li>Finance respects growth above all else:
+      <ul>
+        <li>Stasis and growth below expectations is also treated as decline.</li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>Jens Rasmussen and Dr. Richard Cook, <a href="https://medium.com/10x-curiosity/boundaries-of-failure-rasmussens-model-of-how-accidents-happen-58dc61eb1cf">Safe Boundary Model</a>. <img src="/images/blog/books/unbundling-the-enterprise/safe-boundary-model.png" alt="Safe boundary model" /></li>
+  <li>Three different development org topologies:
+  <ol>
+    <li>Traditional Enterprise IT:
+    <ul>
+      <li>IT teams are segmented from and have a transactional relationship with business teams.</li>
+      <li>Who owns “the what” vs who owns “the how”.</li>
+      <li>Optimized for hierarchy with clean distinctions on roles and responsibilities.</li>
+      <li>High risk of deep cutbacks.</li>
+    </ul></li>
+    <li>Stream aligned:
+    <ul>
+      <li>Multidisciplinary teams that pull together all the required skills to design, create, and operate a value stream.</li>
+      <li>Optimized for flow.</li>
+      <li>Often rely on a centralized platform team.</li>
+      <li>Platform team at risk.</li>
+    </ul></li>
+    <li>Business centric:
+    <ul>
+      <li>API product teams are integrated into business contexts as far as possible.</li>
+      <li>Optimized for stability when financial disruption inevitably comes:
+      <ul>
+        <li>Fine-tuning and reinvestment.</li>
+      </ul></li>
+    </ul></li>
+  </ol></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Strategies of Success #2: Distributed Innovation</h2>
+<ul>
+  <li>16m software developers globally vs 1 billion knowledge workers.</li>
+  <li>3 ways to increase innovation:
+  <ol>
+    <li>Involve non-IT knowledge workers.</li>
+    <li>Involve sw developers that do not work for you.</li>
+    <li>Your own customers.</li>
+  </ol></li>
+  <li>The business model of using APIs to reach developers as customers created its own economy.</li>
+  <li>“Legacy modernization” (shift-and-lift business to digital world) vs “functional modernization”.</li>
+  <li>Coca-Cola:
+  <ul>
+    <li>Mindset: turning the enterprise into a platform of business capabilities.</li>
+    <li>Productize business capabilities through APIs:
+    <ul>
+      <li>Without over-engineer the APIs for unknown consumers.</li>
+    </ul></li>
+    <li>Expanded from the core outward.</li>
+    <li>Big emphasis on feedback loops.</li>
+    <li>Solutions had two aspects: what they delivered and what they enabled.</li>
+  </ul></li>
+  <li>You’re never going to get the exact requirements to innovate.
+  <ul>
+    <li>To innovate, people have to work together, see and feel something tangible, then iterate on that.</li>
+  </ul></li>
+  <li>Minimum Viable Extensible Product.</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Strategies of Success #3: Capability Capitalization</h2>
+<ul>
+  <li>Most lucrative:
+  <ul>
+    <li>Unbundle and re-bundle capabilities.</li>
+  </ul></li>
+  <li>While luck may be evenly distributed and out of your control, the skills and capabilities to exploit that luck and make a return on it are in your control.</li>
+  <li>Case studies:
+  <ul>
+    <li>Amazon.</li>
+    <li>Flickr.</li>
+    <li>Slack:
+    <ul>
+      <li>The evolution from product to platform is all about letting users build.</li>
+      <li>APIs are forever, and changing them is very hard.</li>
+      <li>Has defined a set of API design guidelines that they share and use to allow teams work quickly and independently.</li>
+    </ul></li>
+    <li>Capital One.</li>
+  </ul></li>
+  <li>Build vs buy:
+  <ol>
+    <li>Default to buy, build as the exception.</li>
+    <li>If you build, consider it as an opportunity for a market-facing service to capitalize on.</li>
+  </ol></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Strategies of Success #4: Value Aggregation</h2>
+<ul>
+  <li>Use APIs as connection points between the models, use value dynamics to identify the opportunities for value network aggregation, and then adopt a “whole is greater than the sum of its parts” mentality to further optimize the landscape.</li>
+  <li>The digital economy is largely a data economy.</li>
+  <li>Amazon, Google, Facebook: data is what fuels and differentiates each of their business models.</li>
+  <li>Data breaks many stands economic assumptions that were established in the physical goods economic paradigm.</li>
+  <li>Data is:
+  <ul>
+    <li>Non-rival: can be consumed/held by multiple users.</li>
+    <li>Non-fungible: sufficiently unique so that it cannot be substituted.</li>
+    <li>Experience good:
+    <ul>
+      <li>Value is not know until it has been consumed.</li>
+      <li>Opposite is search good, which value can be determined prior to consumption.</li>
+      <li>There can be a wide variance in the perceived value depending on the consumer’s context.</li>
+    </ul></li>
+    <li>Positive externalities:
+    <ul>
+      <li>Accumulating more data makes the data you already have more valuable.</li>
+      <li>Data is the new oil: old is the exact opposite of data: a rival, fungible, search good.</li>
+    </ul></li>
+  </ul></li>
+  <li>Data is how disparate value networks can be connected.</li>
+  <li>Case studies:
+  <ul>
+    <li>Google Maps.</li>
+    <li>Best Buy.</li>
+  </ul></li>
+</ul><h1><a name="p-3"></a>Part 3 - Practical Considerations To Finding Digital Treasure</h1><h2><a name="ch-10"></a>Chapter 10 - Getting Started on the Path to Scaled Results</h2>
+<ul>
+  <li><a href="https://amzn.to/4f87JXL">Platform Revolution</a>:
+  <ul>
+    <li>Study of Uber, Airbnb and PayPal.</li>
+    <li>Two-sided marketplaces and network effects.</li>
+    <li>“Inverted firm”: create platforms that capture value by intermediating value exchanges between third parties.</li>
+  </ul></li>
+  <li><a href="https://pubsonline.informs.org/doi/full/10.1287/mnsc.2023.4968">How APIs Create Growth by Inverting the Firm</a>:
+  <ul>
+    <li>Firms adopting public APIs grew an additional 38.7% over sixteen years relative to similar non-adopters.</li>
+    <li>Relationship is causal, not just correlated.</li>
+    <li>No statistically significant relationship between internal API adoption and firm performance.</li>
+  </ul></li>
+  <li>Considerations for API Providers (page 167 or 195 in pdf).</li>
+  <li>Firms with public APIs see significantly increased risk of hack events in the years after opening an API.</li>
+  <li>Legal as a tool to be managed rather than as a constraint of business possibilities.
+  <ul>
+    <li>Best managed as an advisory function in the go-to-market phase rather than a gating function in the ideation and prototyping phases.</li>
+  </ul></li>
+  <li>Launching external API-based offering without some form of centralized monitoring and governance capabilities is akin of running with scissors.</li>
+  <li>Once you acknowledge that a specific future can’t be predicted, the basic premise of being flexible in the face of generic future changes is the commonsense choice to at least hedge your uncertainty.</li>
+  <li>Most critical business metrics for a digital transformation:
+  <ol>
+    <li>Time to experiment: time and resources required to expose an experimental delivery of value to the external market.</li>
+    <li>Time to impactful insight: time and resources to evaluate the outcome of the experiment with meaningful business implications.</li>
+    <li>Time to value: time and resources required to realize revenue from an experiment.</li>
+  </ol></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Ensuring a Durable Transformation by Understanding the Risks</h2>
+<ol>
+  <li>Increased security risk:
+  <ul>
+    <li>Orgs with APIs that are widely used in external contexts have a lower frequency of breaches by malicious insiders than orgs that use exclusively internal APIs.</li>
+    <li>Signs:
+    <ul>
+      <li>Security by obscurity.</li>
+      <li>Teams are expected to come up with an approach that works for their unique context.</li>
+    </ul></li>
+    <li>Mitigation: appropriate tools and support to treat security management as non-deferrable scope.</li>
+  </ul></li>
+  <li>Increased performance risk:
+  <ul>
+    <li>Due to more network hops.</li>
+    <li>Risk of degraded performance and increase in infrastructure cost is preferred to:
+    <ul>
+      <li>Over-engineering for performance.</li>
+      <li>Productivity loss due to monolith.</li>
+    </ul></li>
+    <li>Mitigation:
+    <ul>
+      <li>Detailed profiling and optimization can wait, but enabling quick cycle time for isolating and solving performance issues cannot.</li>
+      <li>Parity across technical environments.</li>
+      <li>Quantify the value of performance.</li>
+    </ul></li>
+  </ul></li>
+  <li>Increased risk to quality issues:
+  <ul>
+    <li>More moving parts means more things to break.</li>
+    <li>Signs:
+    <ul>
+      <li>Overly reliant on manual testing practices.</li>
+      <li>QA cycles and disciplines are segmented in a silo separated from sw dev.</li>
+    </ul></li>
+    <li>Mitigation:
+    <ul>
+      <li>Tools that help shift left.</li>
+      <li>Compress the timeline, risk, and scale of experiments.</li>
+    </ul></li>
+  </ul></li>
+  <li>Increased operational complexity:
+  <ul>
+    <li>More moving parts == more complex to operate.</li>
+    <li>Signs:
+    <ul>
+      <li>Documentation is scarce.</li>
+      <li>Automated onboarding tools for API consumers are not provisioned.</li>
+      <li>Teams routinely engaged in unplanned work.</li>
+    </ul></li>
+    <li>Mitigation:
+    <ul>
+      <li>Prepare early and optimize late.</li>
+    </ul></li>
+  </ul></li>
+  <li>Misapply the MVP concept:
+  <ul>
+    <li>MVP == maximum amount of validated customer feedback with minimal effort.
+    <ul>
+      <li>A tool for testing hypotheses and discovering what will meet customers’ needs.</li>
+    </ul></li>
+    <li>Signs:
+    <ul>
+      <li>Teams fail to consider that experiments must be iterative to yield useful feedback.</li>
+    </ul></li>
+  </ul></li>
+  <li>Cannibalizing Existing Revenue:
+  <ul>
+    <li>Teams must have a nuanced understanding of financial details of the existing revenue streams.</li>
+    <li>Signs:
+    <ul>
+      <li>Product dev team fails to evaluate how new offering would lead to revenue growth for existing offerings, or how to position it as extensions/add-ones to existing offerings.</li>
+    </ul></li>
+  </ul></li>
+  <li>Technology centered transformation:
+  <ul>
+    <li>Technology-specific objectives rather than business objectives.</li>
+  </ul></li>
+  <li>Misaligned talent model and processes:
+  <ul>
+    <li>Signs:
+    <ul>
+      <li>Over-reliance on proxy metrics and singular numbers that don’t convey context.</li>
+      <li>Localized goals at the expense of enterprise goals.</li>
+    </ul></li>
+    <li>Mitigations:
+    <ul>
+      <li>“m-shaped” profiles.</li>
+      <li>Training on data visualization and statistical literacy.</li>
+    </ul></li>
+  </ul></li>
+  <li>Losing discipline in times of compression:
+  <ul>
+    <li>Financial compression tactics are not aligned with preservation of value creation.</li>
+  </ul></li>
+  <li>Choosing the wrong interface to control:
+  <ul>
+    <li>Control the interface to value rather than just the systems that deliver value is the better strategy.</li>
+    <li>Signs:
+    <ul>
+      <li>Your teams don’t have a process for understanding and evaluating how and when consumer value is added and harvested in your value stream.</li>
+    </ul></li>
+  </ul></li>
+  <li>Pervasive use of performative behaviors (aka optionality theater):
+  <ul>
+    <li>Performative compliance.</li>
+    <li>Signs:
+    <ul>
+      <li>Referring to hard rules that don’t offer insight into applying them with a smart mindset.</li>
+    </ul></li>
+    <li>Mitigation:
+    <ul>
+      <li>Decision makers must have “skin in the game” for the impacts of their choices.</li>
+    </ul></li>
+  </ul></li>
+</ol><h2><a name="ch-12"></a>Chapter 12 - Embracing Uncertainty</h2>
+<ul>
+  <li>The proliferation of hyper-specialized offerings is poised to continue its acceleration while simultaneously making larger firms more efficient and productive.
+  <ul>
+    <li>APIs are at the heart.</li>
+  </ul></li>
+  <li>One potential future implication of the fall in interaction costs is that large sectors of the global economy will depend upon increasingly complex networks of decoupled providers.
+  <ul>
+    <li>A natural outcome is the need to increase service robustness and fault-tolerant services.</li>
+    <li>May cause the emergency of a new type of provider - a meta-aggregator that manages and routes traffic to the most efficient source of fulfillment.</li>
+  </ul></li>
+  <li>The semantic web:
+  <ul>
+    <li>Generative AI looks like the key that will unlock this capability.</li>
+  </ul></li>
+  <li>For APIs, coordination costs will drop again as APIs become self-describing once LLM agents are pointed towards them.</li>
+</ul><h1><a name="ch-13"></a>Conclusion</h1>
+<ul>
+  <li>83% of all internet traffic in 2018 is API traffic.</li>
+  <li>Most valuable treasures out there are the ones you don’t yet know to look for.</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<!--div class="row">
+						<div id="toprightbanner" class="widget six columns">
+						</div>
+						<div id="toprightbanner2" class="widget six columns">
+						</div>
+					</div-->
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+<!--						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>-->
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (41)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (37)</a></li><li><a href="/tags/Humour/index.html">Humour (12)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (50)</a></li><li><a href="/tags/good_practices/index.html">good practices (27)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<!--h5 class="widget-title">Now Reading</h5>
+						<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=danlebrero-20&language=en_US&marketplace=amazon&region=US&placement=1950508838&asins=1950508838&linkId=1abcab6ed414fe6ad50e093b9d78cb44&show_border=true&link_opens_in_new_window=true"></iframe></iframe-->
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
