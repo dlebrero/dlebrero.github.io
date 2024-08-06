@@ -1,4 +1,313 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 31 Jul 2024 00:00:00 +0200</lastBuildDate><pubDate>Wed, 31 Jul 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Unbundling the Enterprise</title><link>https://danlebrero.com/2024/07/31/unbundling-the-enterprise-book-summary/</link><guid>https://danlebrero.com/2024/07/31/unbundling-the-enterprise-book-summary/</guid><pubDate>Wed, 31 Jul 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3zETQQg">Unbundling the Enterprise: APIs, Optionality, &amp; the Science of Happy Accidents</a> by <a href="https://twitter.com/fistsofreason">Stephen Fishman</a> and <a href="https://twitter.com/MattMcLartyBC">Matt McLarty</a>.</p><p>Summary of summaries:</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0200</lastBuildDate><pubDate>Wed, 07 Aug 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Tidy First?</title><link>https://danlebrero.com/2024/08/07/tidy-first-summary/</link><guid>https://danlebrero.com/2024/08/07/tidy-first-summary/</guid><pubDate>Wed, 07 Aug 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3SFYhRM">Tidy First? A Personal Exercise in Empirical Software Design</a> by <a href="https://x.com/kentbeck">Kent Beck</a>.</p><p>The book takes you from basic entry level refactorings to the economics of optionality, all in less than 100 pages.</p><h1>Key Insights</h1>
+<ul>
+  <li>Coupling and cohesion are simply measures of complexity.</li>
+  <li>SW design is an exercise in human relationships.</li>
+  <li>Design some time around when you can take advantage of the design.</li>
+  <li>Tidyings are a subset of refactoring that nobody could possibly hate on:
+  <ul>
+    <li>Tidying is geek self-care.</li>
+  </ul></li>
+  <li>As a code reader, you expect that difference means difference.</li>
+  <li>Sometimes better cohesion helps you live with the coupling.</li>
+  <li>Done well, SW design enables SW design that enables change.</li>
+  <li>Sometimes because of how small pieces interact, the code is harder to understand than one big pile of code.</li>
+  <li>More than one hour tidying at a time before making any behavioral changes, likely means you have lost track of the minimum set of structural changes needed.</li>
+  <li>Tidying later is a learning tool.</li>
+  <li>Understanding theory optimizes application.</li>
+  <li>SW designers can only:
+  <ul>
+    <li>Create and delete elements.</li>
+    <li>Create and delete relationships.</li>
+    <li>Increase the benefit of a relationship.</li>
+  </ul></li>
+  <li>SW creates value in two ways:
+  <ol>
+    <li>What it does today (== behaviour).</li>
+    <li>The possibility of new things we can make it do tomorrow (== optionality).</li>
+  </ol></li>
+  <li>SW structure creates options.</li>
+  <li>We can&rsquo;t really tell if we have invested or invested enough in SW structure.</li>
+  <li>Economic value of a SW system is the sum of the discounted future cash flows.</li>
+  <li>Most SW design decisions are easily reversible, hence there is little value to avoiding mistakes, hence we shouldn&rsquo;t invest much in doing so.
+  <ul>
+    <li>Make decisions reversible.</li>
+  </ul></li>
+  <li>Analyzing coupling requires knowing what changes have happened and/or likely to happen.</li>
+  <li>Cascading coupling are the bigger issue.</li>
+  <li>Constantine&rsquo;s equivalence:
+  <ul>
+    <li>cost(sw) ~= cost(changes) ~= cost(big changes) ~= coupling.</li>
+    <li>To reduce the cost of SW, we must reduce coupling.</li>
+  </ul></li>
+  <li>Make SW design an ordinary, balanced part of development.</li>
+  <li>Tidy first? Likely yes. Just enough. You are worth it.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Foreword</a></li>
+  <li><a href="#ch-00">Preface</a></li>
+  <li><a href="#ch-000">Introduction</a></li>
+  <li><a href="#p-1">Part I - Tidyings</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - Guard Clauses</a></li>
+    <li><a href="#ch-2">Chapter 2 - Dead Code</a></li>
+    <li><a href="#ch-3">Chapter 3 - Normalize Symmetries</a></li>
+    <li><a href="#ch-4">Chapter 4 - New Interface, Old Implementation</a></li>
+    <li><a href="#ch-5">Chapter 5 - Reading Order</a></li>
+    <li><a href="#ch-6">Chapter 6 - Cohesion Order</a></li>
+    <li><a href="#ch-7">Chapter 7 - Move Declaration and Initialization Together</a></li>
+    <li><a href="#ch-8">Chapter 8 - Explaining Variables</a></li>
+    <li><a href="#ch-9">Chapter 9 - Explaining Constants</a></li>
+    <li><a href="#ch-10">Chapter 10 - Explicit Parameters</a></li>
+    <li><a href="#ch-11">Chapter 11 - Chunk Statements</a></li>
+    <li><a href="#ch-12">Chapter 12 - Extract Helper</a></li>
+    <li><a href="#ch-13">Chapter 13 - One Pile</a></li>
+    <li><a href="#ch-14">Chapter 14 - Explaining Comments</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Managing</a>
+  <ul>
+    <li><a href="#ch-16">Chapter 16 - Separate Tidying</a></li>
+    <li><a href="#ch-17">Chapter 17 - Chaining</a></li>
+    <li><a href="#ch-18">Chapter 18 - Batch Sizes</a></li>
+    <li><a href="#ch-19">Chapter 19 - Rhythm</a></li>
+    <li><a href="#ch-20">Chapter 20 - Getting Untangled</a></li>
+    <li><a href="#ch-21">Chapter 21 - First, After, Later, Never</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - Theory</a>
+  <ul>
+    <li><a href="#ch-22">Chapter 22 - Beneficially Relating Elements</a></li>
+    <li><a href="#ch-23">Chapter 23 - Structure and Behaviour</a></li>
+    <li><a href="#ch-24">Chapter 24 - Economics: Time Value and Optionality</a></li>
+    <li><a href="#ch-25">Chapter 25 - A Dollar Today &gt; A Dollar Tomorrow</a></li>
+    <li><a href="#ch-26">Chapter 26 - Options</a></li>
+    <li><a href="#ch-27">Chapter 27 - Options Versus Cash Flows</a></li>
+    <li><a href="#ch-28">Chapter 28 - Reversible Structure Changes</a></li>
+    <li><a href="#ch-29">Chapter 29 - Coupling</a></li>
+    <li><a href="#ch-30">Chapter 30 - Constantine&rsquo;s Equivalence</a></li>
+    <li><a href="#ch-31">Chapter 31 - Coupling Versus Decoupling</a></li>
+  </ul></li>
+  <li><a href="#p-4">Conclusion</a></li>
+</ul><h1><a name="ch-0"></a>Foreword</h1>
+<ul>
+  <li>Larry Constantine:
+  <ul>
+    <li>Complexity of code depends on how it is organized into parts, on how coupled those parts are with each other, and on how cohesive the parts are in themselves.</li>
+  </ul></li>
+  <li>Coupling and cohesion are simply measures of complexity.</li>
+</ul><h1><a name="ch-00"></a>Preface</h1>
+<ul>
+  <li>SW design is an exercise in human relationships.</li>
+  <li>Why do we go down the rabbit hole of cleaning code to the exclusion of work that would help our users?</li>
+  <li>Design some time around when you can take advantage of the design:
+  <ul>
+    <li>This requires taste, negotiation and judgement.</li>
+    <li>Taste and judgement is an inevitable weakness.</li>
+  </ul></li>
+</ul><h1><a name="ch-000"></a>Introduction</h1>
+<ul>
+  <li>How much and when to do sw design.</li>
+</ul><h1><a name="p-1"></a>Part I - Tidyings</h1>
+<ul>
+  <li>Tidyings are a subset of refactoring that nobody could possibly hate on.</li>
+</ul><h2><a name="ch-1"></a>Chapter 1 - Guard Clauses</h2>
+<ul>
+  <li>Make code easier to read.</li>
+  <li>A routine with 7 or 8 guard clauses is not easier to read.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Dead Code</h2>
+<ul>
+  <li>Delete it.</li>
+  <li>If you suspect code isn&rsquo;t used, pre-tidy it by logging its use.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Normalize Symmetries</h2>
+<ul>
+  <li>As a reader, you expect that difference means difference.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - New Interface, Old Implementation</h2>
+<ul>
+  <li>Implement the interface you wish you could call and call it.</li>
+  <li>Creating a pass-through interface is the microscale essence of SW design.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Reading Order</h2>
+<ul>
+  <li>No single ordering of elements is perfect.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Cohesion Order</h2>
+<ul>
+  <li>Reorder code so the elements that change together are adjacent.</li>
+  <li>Sometimes better cohesion helps you live with the coupling.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Move Declaration and Initialization Together</h2>
+<ul>
+  <li>Is it easier to read if each var is declared and initialized just before it is used, or if they are all declared and initialized together at the top?</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Explaining Variables</h2>
+<ul>
+  <li>Extract subexpressions into named variables.</li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Explaining Constants</h2>
+<ul>
+  <li>I agree with the principle, disagree with the example (404 vs HTTP.NOT_FOUND).</li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Explicit Parameters</h2>
+<ul>
+  <li>A map with keys is not explicit enough.
+  <ul>
+    <li>Clojure?</li>
+  </ul></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Chunk Statements</h2>
+<ul>
+  <li>Put a blank line between parts of a routine.</li>
+  <li>Done well, sw design enables sw design that enables change.</li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Extract Helper</h2>
+<ul>
+  <li>New interfaces emerge when we&rsquo;re ready to think more abstractly, to add words to our design vocabulary.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - One Pile</h2>
+<ul>
+  <li>Sometimes because of how small pieces interact, the code is harder to understand:
+  <ul>
+    <li>Inline as much code as you need and tidy from there.</li>
+  </ul></li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Explaining Comments</h2>
+<ul>
+  <li>Write down what isn&rsquo;t obvious from the code:
+  <ul>
+    <li>Keep other people&rsquo;s perspective in mind.</li>
+  </ul></li>
+</ul><h1><a name="p-2"></a>Part II - Managing</h1>
+<ul>
+  <li>Tidying is geek self-care.</li>
+  <li>Just because you can tidy doesn&rsquo;t mean you should tidy.</li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - Separate Tidying</h2>
+<ul>
+  <li>Tidying go in their PRs, with as few tidying per PR as possible:
+  <ul>
+    <li>If you are comfortable with tidying, experiment with not requiring PRs for tidying.</li>
+  </ul></li>
+</ul><h2><a name="ch-17"></a>Chapter 17 - Chaining</h2>
+<ul>
+  <li>Stick to tiny tidying steps.</li>
+</ul><h2><a name="ch-18"></a>Chapter 18 - Batch Sizes</h2>
+<ul>
+  <li>Tidying is not looking towards a far-ahead future, but the immediate need.</li>
+  <li>Reduce the cost of reviews (for tidying).</li>
+</ul><h2><a name="ch-19"></a>Chapter 19 - Rhythm</h2>
+<ul>
+  <li>More than one hour tidying at a time before making any behavioral changes, likely means you have lost track of the minimum set of structural changes needed.</li>
+  <li>From Pareto rules, most changes will end up in a tidied up area.</li>
+</ul><h2><a name="ch-20"></a>Chapter 20 - Getting Untangled</h2>
+<ul>
+  <li>If you end up with a mess of tidyings and changes all tangled together, discard them and start over, tidying first:
+  <ul>
+    <li>Is more works.</li>
+    <li>Leaves a coherent chain of commits.</li>
+    <li>You might see something new.</li>
+  </ul></li>
+</ul><h2><a name="ch-21"></a>Chapter 21 - First, After, Later, Never</h2>
+<ul>
+  <li>When to tidy?
+  <ol>
+    <li>Never:
+    <ul>
+      <li>If you are never ever going to touch the code again.</li>
+      <li>Very unlikely.</li>
+    </ul></li>
+    <li>Later:
+    <ul>
+      <li>If you don&rsquo;t have enough time to do your work.</li>
+      <li>Create a list of tidyings and work on them when you don&rsquo;t have the energy or time to start something big.</li>
+      <li>Tidying later is a learning tool.</li>
+      <li>Feels good: don&rsquo;t underestimate how much better you are as a programmer when you are happy.</li>
+    </ul></li>
+    <li>After:
+    <ul>
+      <li>If you are going to change the same are again soon.</li>
+      <li>It is cheaper to do now.</li>
+      <li>Is proportional to the cost of the behavioral change.</li>
+    </ul></li>
+    <li>First:
+    <ul>
+      <li>If the change is easier after the tidying.</li>
+      <li>If it helps you understand the code.</li>
+    </ul></li>
+  </ol></li>
+  <li>Be wary of tidying becoming an end in itself.</li>
+</ul><h1><a name="p-3"></a>Part III - Theory</h1>
+<ul>
+  <li>Understanding theory optimizes application.</li>
+  <li>If we disagree in principle, and we can discuss our principles, then we have a chance to agree sooner.</li>
+</ul><h2><a name="ch-22"></a>Chapter 22 - Beneficially Relating Elements</h2>
+<ul>
+  <li>SW designers can only:
+  <ul>
+    <li>Create and delete elements.</li>
+    <li>Create and delete relationships.</li>
+    <li>Increase the benefit of a relationship.</li>
+  </ul></li>
+  <li>Structure of a system:
+  <ul>
+    <li>Element hierarchy.</li>
+    <li>Relationship between elements.</li>
+    <li>Benefits created by those relationships.</li>
+  </ul></li>
+</ul><h2><a name="ch-23"></a>Chapter 23 - Structure and Behaviour</h2>
+<ul>
+  <li>SW creates value in two ways:
+  <ol>
+    <li>What it does today (== behaviour).</li>
+    <li>The possibility of new things we can make it do tomorrow (== optionality).</li>
+  </ol></li>
+  <li>The mere presence of a system behaving a certain way changes the desire for how the system should behave (Heisenberg&rsquo;s uncertainty principle).</li>
+  <li>The more volatile the env is, the more valuable options become.</li>
+  <li>A reason for option value to reduce is if exercising an option takes a month instead of a day.</li>
+  <li>SW structure creates options.</li>
+  <li>We can&rsquo;t really tell if we have invested or invested enough in SW structure.</li>
+</ul><h2><a name="ch-24"></a>Chapter 24 - Economics: Time Value and Optionality</h2>
+<ul>
+  <li>When geeky imperatives clash with money imperatives, money wins.</li>
+  <li>Nature of money:
+  <ol>
+    <li>A dollar today is worth more than a dollar tomorrow, so earn sooner and spend later.</li>
+    <li>In a chaotic situation, options are better than things, so create options in the face of uncertainty.</li>
+  </ol></li>
+</ul><h2><a name="ch-25"></a>Chapter 25 - A Dollar Today &gt; A Dollar Tomorrow</h2>
+<ul>
+  <li>The time value of money encourages tidy after over tidy first.</li>
+</ul><h2><a name="ch-26"></a>Chapter 26 - Options</h2>
+<ul>
+  <li>Economic value of a SW system is the sum of the discounted future cash flows:
+  <ul>
+    <li>We create value when we change those flows:
+    <ul>
+      <li>Earning more money, sooner, and with greater likelihood.</li>
+      <li>Spending less money, later, and with less likelihood.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-27"></a>Chapter 27 - Options Versus Cash Flows</h2>
+<ul>
+  <li>Tidying first may make economic sense in spite of discounted cash flows if the value of the options created is greater than the value lost by spending money sooner and with certainty:
+  <ul>
+    <li>We are firmly in the last of judgement here.</li>
+  </ul></li>
+</ul><h2><a name="ch-28"></a>Chapter 28 - Reversible Structure Changes</h2>
+<ul>
+  <li>There is great value in reviewing, double-checking irreversible decisions. The pace should b slow and deliberate.</li>
+  <li>Most SW design decisions are easily reversible, hence there is little value to avoiding mistakes, hence we shouldn&rsquo;t invest much in doing so.</li>
+  <li>Code reviews should distinguish between reversible and irreversible changes, and the investment should be accordingly.</li>
+  <li>Make decisions reversible.</li>
+</ul><h2><a name="ch-29"></a>Chapter 29 - Coupling</h2>
+<ul>
+  <li>If two elements are coupled with respect to a change that never happens, then they aren&rsquo;t coupled in a way that should concern us.</li>
+  <li>Analyzing coupling requires knowing what changes have happened and/or likely to happen.</li>
+  <li>Cascading coupling are the bigger issue.</li>
+  <li>Coupling drives the cost of sw.</li>
+</ul><h2><a name="ch-30"></a>Chapter 30 - Constantine&rsquo;s Equivalence</h2>
+<ul>
+  <li>The most expensive behaviour changes cost together far more than all the least expensive behaviour changes.</li>
+  <li>Constantine&rsquo;s equivalence:
+  <ul>
+    <li>cost(sw) ~= cost(changes) ~= cost(big changes) ~= coupling.</li>
+  </ul></li>
+  <li>To reduce the cost of SW, we must reduce coupling.</li>
+</ul><h2><a name="ch-31"></a>Chapter 31 - Coupling Versus Decoupling</h2>
+<ul>
+  <li>Coupling often isn&rsquo;t obvious until you step on it.</li>
+  <li>The more you reduce coupling for one class of changes, the greater the coupling becomes for other classes of changes.</li>
+</ul><h1><a name="p-4"></a>Conclusion</h1>
+<ul>
+  <li>Make SW design an ordinary, balanced part of development.</li>
+  <li>Tidy first? Likely yes. Just enough. You are worth it.</li>
+</ul>]]></description></item><item><title>Book notes: Unbundling the Enterprise</title><link>https://danlebrero.com/2024/07/31/unbundling-the-enterprise-book-summary/</link><guid>https://danlebrero.com/2024/07/31/unbundling-the-enterprise-book-summary/</guid><pubDate>Wed, 31 Jul 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3zETQQg">Unbundling the Enterprise: APIs, Optionality, &amp; the Science of Happy Accidents</a> by <a href="https://twitter.com/fistsofreason">Stephen Fishman</a> and <a href="https://twitter.com/MattMcLartyBC">Matt McLarty</a>.</p><p>Summary of summaries:</p>
 <blockquote><p>Most valuable treasures out there are the ones you don&rsquo;t yet know to look for.</p>
 </blockquote><h1>Key Insights</h1>
 <ul>
@@ -4825,325 +5134,4 @@
 <ul>
   <li>Transactional leaders focus on the process itself.</li>
   <li>Developmental mindset assumes that their limitation is insufficient understanding about how to use the resource available to them. They don&rsquo;t try to fix everything all at once.</li>
-</ul>]]></description></item><item><title>Book notes: Code that fits in your head: Heuristics for Software Engineering</title><link>https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/</link><guid>https://danlebrero.com/2023/11/08/code-that-fits-your-head-summary/</guid><pubDate>Wed, 08 Nov 2023 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3Hi4Y6K">Code that fits in your head: Heuristics for Software Engineering</a> by <a href="https://twitter.com/ploeh">Mark Seemann</a>.</p><p>Good advise for junior and mid level devs that have to work with Object-Oriented languages.</p><p>But my favourite quote:</p>
-<blockquote><p>Do yourself a favour and learn functional programming. It fits better in your head.</p>
-</blockquote><h1>Key Insights</h1>
-<ul>
-  <li><p>Only unsuccessful software ends.</p>
-  <blockquote>The act of describing a program in unambiguous detail and the act of programming are one and the same <cite>Kevlin Henney</cite>
-  </blockquote></li>
-  <li>SW engineering was derailed by personal computers:
-  <ul>
-    <li>They created a generation of self-taught programmers that grow unaware of existing SW engineering knowledge.</li>
-    <li>SW engineering should make the SW dev process more <strong>regular</strong>.</li>
-  </ul></li>
-  <li>Change compiler and linter warnings into errors.</li>
-  <li>High-level tests should go easy on assertions.</li>
-  <li>Don&rsquo;t get derailed: write down your improvement ideas and move on.</li>
-  <li>Explicit is better than implicit.</li>
-  <li>Cyclomatic complexity is one of the rare code metrics that I find useful in practice.</li>
-  <li>You can compose code in many ways, but there are more wrong ways than good ways.</li>
-  <li>Good interface design considers not only what is possible, but also what should be deliberately impossible.</li>
-  <li>Every time your code successfully builds, commit it.</li>
-  <li>Code reviews that take more than one hour are not effective.</li>
-  <li>Do not sit with the author to do a code review:
-  <ul>
-    <li>Author will influence the reviewer.</li>
-  </ul></li>
-  <li>The more you edit test code, the less you can trust it.</li>
-  <li>Write a test to reproduce the bug.</li>
-  <li>Time it takes to execute a test suite matters: Less than 10 seconds.</li>
-  <li>Do yourself a favour and learn functional programming. It fits better in your head.</li>
-  <li>What to log:
-  <ul>
-    <li>Log all impure actions but not more.</li>
-  </ul></li>
-  <li>Meetings don&rsquo;t scale, documentation does.</li>
-  <li>Security is like insurance.</li>
-</ul><h1>TOC</h1>
-<ul>
-  <li><a href="#part-1">Part I: Acceleration</a>
-  <ul>
-    <li><a href="#ch-1">Chapter 1: Art or Science?</a></li>
-    <li><a href="#ch-2">Chapter 2: Checklists</a></li>
-    <li><a href="#ch-3">Chapter 3 - Tackling Complexity</a></li>
-    <li><a href="#ch-4">Chapter 4 - Vertical Slice</a></li>
-    <li><a href="#ch-5">Chapter 5 - Encapsulation</a></li>
-    <li><a href="#ch-6">Chapter 6 - Triangulation</a></li>
-    <li><a href="#ch-7">Chapter 7 - Decomposition</a></li>
-    <li><a href="#ch-8">Chapter 8 - API Design</a></li>
-    <li><a href="#ch-9">Chapter 9 - Teamwork</a></li>
-  </ul></li>
-  <li><a href="#p-2">Part II - Sustainability</a>
-  <ul>
-    <li><a href="#ch-10">Chapter 10 - Augmenting Code</a></li>
-    <li><a href="#ch-11">Chapter 11 - Editing Unit Tests</a></li>
-    <li><a href="#ch-12">Chapter 12 - Troubleshooting</a></li>
-    <li><a href="#ch-13">Chapter 13 - Separation of Concerns</a></li>
-    <li><a href="#ch-14">Chapter 14 - Rhythm</a></li>
-    <li><a href="#ch-15">Chapter 15 - The Usual Suspects</a></li>
-    <li><a href="#ch-16">Chapter 16 - Tour</a></li>
-  </ul></li>
-</ul><h1><a name="part-1"></a>Part I: Acceleration</h1><h2><a name="ch-1"></a>Chapter 1: Art or Science?</h2>
-<ul>
-  <li>How we think about SW development shapes how we work.</li>
-  <li>Only unsuccessful software ends.</li>
-</ul>
-<blockquote><p>The act of describing a program in unambiguous detail and the act of programming are one and the same <cite>Kevlin Henney</cite></p>
-</blockquote>
-<ul>
-  <li>None of the metaphors fit:
-  <ul>
-    <li>House building:
-    <ul>
-      <li>Projects.</li>
-      <li>Phases.</li>
-      <li>Dependencies.</li>
-    </ul></li>
-    <li>Garden:
-    <ul>
-      <li>Who grows the garden?</li>
-    </ul></li>
-    <li>Craftsman:
-    <ul>
-      <li>Heuristics: It does not scale.</li>
-    </ul></li>
-    <li>SW engineering:
-    <ul>
-      <li>It was derailed by personal computers:
-      <ul>
-        <li>They created a generation of self-taught programmers that grow unaware of existing SW engineering  knowledge.</li>
-      </ul></li>
-    </ul></li>
-  </ul></li>
-  <li>The skills you need to work as a professional SW dev tend to be situational (codebase, tools, &hellip;).</li>
-</ul>
-<blockquote><p>Programming is Pop Culture <cite>Alan Kay</cite></p>
-</blockquote><h2><a name="ch-2"></a>Chapter 2: Checklists</h2>
-<ul>
-  <li>To enable, support and liberate.
-  <ul>
-    <li>Not to monitor or audit.</li>
-  </ul></li>
-  <li>Improve the outcome with no increase in skill.</li>
-  <li>Change compiler and linter warnings into errors.
-  <ul>
-    <li>On existing codebases, enable one rule/namespace at a time.</li>
-  </ul></li>
-  <li>You are the technical expert, it is your job to make technical decisions, which includes internal quality decisions.</li>
-</ul><h2><a name="ch-3"></a>Chapter 3 - Tackling Complexity</h2>
-<ul>
-  <li>What does fit in your head.</li>
-  <li>SW engineering should make the SW dev process more <strong>regular</strong>.</li>
-  <li>Sustainability: balance between too much focus vs too little on value.</li>
-  <li>Why is programming difficult?
-  <ol>
-    <li>Short-memory con hold only 4-7 pieces of information.</li>
-    <li>You spend more time reading than writing code:</li>
-  </ol>
-  <ul>
-    <li>Optimise for code readability.</li>
-    <li>Every minute you invest in making the code easier to understand pays itself back tenfold.</li>
-  </ul>
-  <ol>
-    <li>System 1 (making decision based on immediate information) vs System 2.</li>
-  </ol></li>
-  <li>You can do SW engineering without understanding Computer Science.</li>
-</ul><h2><a name="ch-4"></a>Chapter 4 - Vertical Slice</h2>
-<ul>
-  <li>SW eng: methodology to make sure that SW works as intended, and that stays that way.
-  <ul>
-    <li>As intended != solving the user problem.</li>
-  </ul></li>
-  <li>Implement features with the simples possible code, but look out for duplication.</li>
-  <li>Walking skeleton.</li>
-  <li>Drive changes through tests.</li>
-  <li>Author ignores compiler warning when writing tests because readability, but does not for production code.</li>
-  <li>High-level tests should go easy on assertions:
-  <ul>
-    <li>Make only the essentials visible.</li>
-  </ul></li>
-  <li>Author moves to unit tests with all behaviours test in green (???).</li>
-  <li>DTO, Repository, Entity, equals &amp; hashcode. Very glad I left all of this behind.</li>
-  <li>Manual testing from time to time is ok.</li>
-</ul><h2><a name="ch-5"></a>Chapter 5 - Encapsulation</h2>
-<ul>
-  <li>Trading a compile-time error for a runtime exception is a poor trade-off.</li>
-  <li>Encapsulation is a contract that describes valid interactions between objects and callers.</li>
-  <li>Red-green-refactor.</li>
-  <li>Postel&rsquo;s Law: Be conservative in what you send, be liberal in what you accept.</li>
-  <li>With immutable objects, you only need to consider validity in one place: the constructor.</li>
-</ul><h2><a name="ch-6"></a>Chapter 6 - Triangulation</h2>
-<ul>
-  <li>When you work with legacy code, you slowly, painstakingly commit the structure of the code base to long-term memory:
-  <ul>
-    <li>Information in long-term memory is harder to change, hence legacy code is harder to change.</li>
-  </ul></li>
-  <li>Don&rsquo;t get derailed: write down your improvement ideas and move on.</li>
-  <li>Explicit is better than implicit.</li>
-  <li>Devil&rsquo;s advocate technique: try to pass test with an obviously incomplete implementation:
-  <ul>
-    <li>This works as a critique of your tests.</li>
-    <li>When to stop? Ask &ldquo;How likely is such a regression to happen?&rdquo;</li>
-  </ul></li>
-  <li>Use only &lt; or &lt;=.</li>
-</ul><h2><a name="ch-7"></a>Chapter 7 - Decomposition</h2>
-<ul>
-  <li>Once the team&rsquo;s mindset has changed, the rule itself becomes redundant.</li>
-  <li>Cyclomatic complexity is one of the rare code metrics that I find useful in practice.</li>
-  <li>No more than 7 things should be going on in a single piece of code:
-  <ul>
-    <li>Each branch as one thing, so no more than cyclomatic complexity of 7.</li>
-  </ul></li>
-  <li>&ldquo;Static&rdquo; methods or methods with 0 parameters are a code smell.</li>
-  <li>Parse, don&rsquo;t validate:
-  <ul>
-    <li>Instead of returning a bool, return either an error or a class from the domain model.</li>
-  </ul></li>
-  <li>Fractal architecture:
-  <ul>
-    <li>Each layer/piece of code should have no more than 7 things, those things themselves being composed of no more than 7 things.</li>
-    <li>Low level details should be represented as a single abstract chunk, and higher level details should be either irrelevant at that level of zoom, or otherwise explicitly visible as method parameters or injected dependencies.</li>
-  </ul></li>
-  <li>Count variables to measure complexity:
-  <ul>
-    <li>Params + locals + class fields.</li>
-    <li>Consider refactoring to Parameter Object if complexity becomes high.</li>
-  </ul></li>
-  <li>&ldquo;If you know ASP.NET &hellip;&rdquo;: In my experience with Spring, this is a big &ldquo;if&rdquo;. Spring has become a beast able to do many things, so knowing a lot of complex machinery beforehand should count somehow towards the complexity of the codebase.</li>
-</ul><h2><a name="ch-8"></a>Chapter 8 - API Design</h2>
-<ul>
-  <li>You can compose code in many ways, but there are more wrong ways than good ways:
-  <ul>
-    <li>It requires skill and taste.</li>
-  </ul></li>
-  <li>Good interface design considers not only what is possible, but also what should be deliberately impossible.
-  <ul>
-    <li>Design APIs so that it is difficult to misuse them.</li>
-  </ul></li>
-  <li>Favour specialised APIs over Swiss Army API.</li>
-  <li>Remove method names from an interface and see if you can guess what they do out of the interface name + inputs + outputs.</li>
-  <li>Methods with side effects should return no data (void), so makes it trivial to recognise them:
-  <ul>
-    <li>Does this mean throw exceptions to signal errors?</li>
-  </ul></li>
-  <li>From best to worse communication options:
-  <ol>
-    <li>Types as they are check at compile time.</li>
-    <li>Method names.</li>
-    <li>Comments.</li>
-    <li>Automated tests.</li>
-    <li>Commit messages.</li>
-    <li>Documentation.</li>
-  </ol></li>
-</ul><h2><a name="ch-9"></a>Chapter 9 - Teamwork</h2>
-<ul>
-  <li>Git: 50/72 rule
-  <ul>
-    <li>Headline in imperative 50 chars.</li>
-    <li>Body 72 chars wide.</li>
-  </ul></li>
-  <li>CI: integrate every 4 hours.</li>
-  <li>Every time your code successfully builds, commit it.</li>
-  <li>Reject big PR.</li>
-  <li>Code reviews that take more than one hour are not effective.</li>
-  <li>Code review question: Will I be okay maintaining this?</li>
-  <li>Do not sit with the author to do a code review:
-  <ul>
-    <li>Author will influence the reviewer.</li>
-  </ul></li>
-  <li>Cheer when you see something you like.</li>
-</ul><h1><a name="p-2"></a>Part II - Sustainability</h1><h2><a name="ch-10"></a>Chapter 10 - Augmenting Code</h2>
-<ul>
-  <li>Strangler pattern at the method and class level.</li>
-</ul><h2><a name="ch-11"></a>Chapter 11 - Editing Unit Tests</h2>
-<ul>
-  <li>The more you edit test code, the less you can trust it.</li>
-  <li>You can&rsquo;t refactor unit tests.</li>
-  <li>A test method having only one assertion: too simplistic.</li>
-  <li>When you need to change your test code, try to do it without touching the production code.</li>
-  <li>Don&rsquo;t trust a test that you haven&rsquo;t seen fail:
-  <ul>
-    <li>Comment out production code and bring it back a piece at a time.</li>
-  </ul></li>
-</ul><h2><a name="ch-12"></a>Chapter 12 - Troubleshooting</h2>
-<ul>
-  <li>Step 1: Try to understand what is going on:
-  <ul>
-    <li>Use the scientific method:
-    <ol>
-      <li>Make a prediction (hypothesis).</li>
-      <li>Perform an experiment.</li>
-      <li>Compare outcome with prediction.</li>
-      <li>Goto 1 until you understand.</li>
-    </ol></li>
-  </ul></li>
-  <li>Delete code to simplify.</li>
-  <li>Time-box the process and take breaks if no progress is made.</li>
-  <li>Rubber ducking: the mere act of explaining a problem tends to produce new insights.</li>
-  <li>When a bug appears, stop what you are doing and fix it.</li>
-  <li>Write a test to reproduce the bug.</li>
-  <li>Time it takes to execute a test suite matters: Less than 10 seconds.</li>
-</ul><h2><a name="ch-13"></a>Chapter 13 - Separation of Concerns</h2>
-<ul>
-  <li>You must be able to recompose what you decomposed.</li>
-  <li>Nested composition:
-  <ul>
-    <li>Typical in OO</li>
-    <li>Around side-effects:
-    <ul>
-      <li>You model actions.</li>
-      <li>Compose by nesting.</li>
-      <li>Hidden interactions: increases complexity.</li>
-    </ul></li>
-  </ul></li>
-  <li>Sequential composition:
-  <ul>
-    <li>Pipeline.</li>
-    <li>No side-effects.</li>
-    <li>Good, pure functions.</li>
-  </ul></li>
-  <li>Push side-effects to the edge of the system.</li>
-  <li>Functional programming fits better in your head.</li>
-  <li>If you see an exception in the logs, treat it as a defect.</li>
-  <li>What to log:
-  <ul>
-    <li>HTTP request + response.</li>
-    <li>DB request + response.</li>
-    <li>Log all impure actions but not more.</li>
-  </ul></li>
-</ul><h2><a name="ch-14"></a>Chapter 14 - Rhythm</h2>
-<ul>
-  <li>Personal:
-  <ul>
-    <li>Pomodoro: time-box 25 mins, 5 min break even when in the flow.</li>
-    <li>Don&rsquo;t work long hours.</li>
-    <li>Meetings don&rsquo;t scale, documentation does.</li>
-    <li>Learn to touch type.</li>
-  </ul></li>
-  <li>Team:
-  <ul>
-    <li>Update dependencies regularly.</li>
-  </ul></li>
-</ul><h2><a name="ch-15"></a>Chapter 15 - The Usual Suspects</h2>
-<ul>
-  <li>Security is like insurance.</li>
-  <li>STRIDE:
-  <ul>
-    <li>Spoofing: try to pose as somebody else.</li>
-    <li>Tampering.</li>
-    <li>Repudiation: deny performing an action, like receiving an item.</li>
-    <li>Information disclosure.</li>
-    <li>Denial of service.</li>
-    <li>Elevation of privilege.</li>
-  </ul></li>
-  <li>Property base testing.</li>
-  <li><a href="https://codescene.com/">Behavioural code analysis</a></li>
-</ul><h2><a name="ch-16"></a>Chapter 16 - Tour</h2>
-<ul>
-  <li>File organization: put all files in one directory:
-  <ul>
-    <li>Break into multiple packages to enforce no cyclic dependencies.</li>
-  </ul></li>
-  <li>Learn a new system from tests.</li>
 </ul>]]></description></item></channel></rss>

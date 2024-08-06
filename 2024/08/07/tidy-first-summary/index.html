@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]--><!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]--><!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]--><!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8" />
+	<title>Book notes: Tidy First?</title>
+	<meta content="Book notes on &quot;Tidy First? A Personal Exercise in Empirical Software Design&quot; by Kent Beck" name="description" /><meta content="Book review notes summary, Kent Beck, Tidy First, empirical software design, refactoring, coupling, cohesion, software complexity, software design, human relationships, optionality, software value, SW structure, SW behaviour, Constantine's equivalence, software economics, reversible changes, cascading coupling, guard clauses, dead code, normalize symmetries, interface design, reading order, cohesion order, variable declaration, explaining variables, explaining constants, explicit parameters, chunk statements, extract helper, code comments, managing code, code tidying, software theory" name="keywords" /><meta content="Daniel Lebrero Berna" name="author" /><meta content="Book notes: Tidy First?" property="og:title" /><meta content="Book notes on &quot;Tidy First? A Personal Exercise in Empirical Software Design&quot; by Kent Beck" property="og:description" /><meta content="https://danlebrero.com/2024/08/07/tidy-first-summary/" property="og:url" /><meta content="Book notes: Tidy First?" name="twitter:title" /><meta content="Book notes on &quot;Tidy First? A Personal Exercise in Empirical Software Design&quot; by Kent Beck" name="twitter:description" /><meta content="summary_large_image" name="twitter:card" /><meta content="https://danlebrero.com/images/blog/books/tidy-first.jpg" name="twitter:image" /><meta content="https://danlebrero.com/images/blog/books/tidy-first.jpg" property="og:image" />
+	<meta name="twitter:site" content="@danlebrero" />
+	<meta name="twitter:creator" content="@danlebrero" />
+	<link rel="canonical" href="https://danlebrero.com/2024/08/07/tidy-first-summary/" />
+
+	<link rel="alternate" type="application/rss+xml" title="Daniel Lebrero Berna Blog" href="/feed.rss" />
+	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+	<!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/main.css" />
+   <link rel="stylesheet" href="/css/media-queries.css" />
+   <link rel="stylesheet" href="/css/railscasts.css" />
+   <link rel="stylesheet" href="/css/shariff.min.css" />
+
+   <!-- Script
+   =================================================== -->
+	<script src="/js/modernizr.js"></script>
+
+   <!-- Favicons
+	=================================================== -->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+	<!-- Google tag (gtag.js) -->
+	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-3KPNQF7Y7S"></script>
+	<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3KPNQF7Y7S');
+</script>	<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css" />
+	<style type="text/css">#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }</style>
+</head>
+
+<body>
+
+   <!-- Header
+   =================================================== -->
+   <header id="main-header">
+
+   	<div class="row header-inner">
+
+	      <!--div class="logo">
+	         <a class="smoothscroll" href="#hero">Puremedia.</a>
+	      </- -div-->
+
+	      <nav id="nav-wrap">         
+	         
+	         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+	         	<span class="menu-text">Show Menu</span>
+	         	<span class="menu-icon"></span>
+	         </a>
+         	<a class="mobile-btn" href="#" title="Hide navigation">
+         		<span class="menu-text">Hide Menu</span>
+         		<span class="menu-icon"></span>
+         	</a>         
+
+	         <ul id="nav" class="nav">
+	            <li class="current"><a href="/">Home.</a></li>
+				<!--<li id="menu-work"><a class="smoothscroll" href="/portfolio.html">Works.</a></li>-->
+				 <li id="menu-archives"><a href="/archives/">Archives.</a></li>
+<!--				 <li id="menu-popular"><a class="smoothscroll" href="/popular/">Popular entries.</a></li>-->
+	         </ul>
+
+	      </nav> <!-- /nav-wrap -->	      
+
+	   </div> <!-- /header-inner -->
+
+   </header>
+
+
+   <!-- Page Title
+   ================================================== -->
+   <section id="page-title">
+
+		<div class="row">
+
+			<div class="twelve columns">
+
+				<p id="the-title"><a href="/">@DanLebrero<span>.</span></a></p>
+				<p>software, simply</p>
+
+			</div>
+
+		</div> <!-- /row -->
+
+   </section> <!-- /page-title -->
+
+
+   <!-- Content
+   ================================================== -->
+   <section id="content">
+
+   	<div class="row">
+
+	   	<div id="main" class="tab-whole nine columns">
+
+	         <article class="entry">
+
+				 
+
+				 <header class="entry-header">
+
+						<h1 class="entry-title">Book notes: Tidy First?</h1>
+
+						<div class="entry-meta">
+							<ul>
+								<li id="entry-date">Wed, 7 Aug 2024</li>
+							</ul>
+						</div>
+
+					</header>
+
+				 <p class="lead" id="entry-summary">Book notes on "Tidy First? A Personal Exercise in Empirical Software Design" by Kent Beck</p>
+
+				 <div class="entry-content-media">
+						<div class="post-thumb">
+							<img src="/images/blog/books/tidy-first.jpg" />
+						</div>
+					</div>
+				 
+
+					<div class="entry-content"><p>These are my notes on <a href="https://amzn.to/3SFYhRM">Tidy First? A Personal Exercise in Empirical Software Design</a> by <a href="https://x.com/kentbeck">Kent Beck</a>.</p><p>The book takes you from basic entry level refactorings to the economics of optionality, all in less than 100 pages.</p><h1>Key Insights</h1>
+<ul>
+  <li>Coupling and cohesion are simply measures of complexity.</li>
+  <li>SW design is an exercise in human relationships.</li>
+  <li>Design some time around when you can take advantage of the design.</li>
+  <li>Tidyings are a subset of refactoring that nobody could possibly hate on:
+  <ul>
+    <li>Tidying is geek self-care.</li>
+  </ul></li>
+  <li>As a code reader, you expect that difference means difference.</li>
+  <li>Sometimes better cohesion helps you live with the coupling.</li>
+  <li>Done well, SW design enables SW design that enables change.</li>
+  <li>Sometimes because of how small pieces interact, the code is harder to understand than one big pile of code.</li>
+  <li>More than one hour tidying at a time before making any behavioral changes, likely means you have lost track of the minimum set of structural changes needed.</li>
+  <li>Tidying later is a learning tool.</li>
+  <li>Understanding theory optimizes application.</li>
+  <li>SW designers can only:
+  <ul>
+    <li>Create and delete elements.</li>
+    <li>Create and delete relationships.</li>
+    <li>Increase the benefit of a relationship.</li>
+  </ul></li>
+  <li>SW creates value in two ways:
+  <ol>
+    <li>What it does today (== behaviour).</li>
+    <li>The possibility of new things we can make it do tomorrow (== optionality).</li>
+  </ol></li>
+  <li>SW structure creates options.</li>
+  <li>We can’t really tell if we have invested or invested enough in SW structure.</li>
+  <li>Economic value of a SW system is the sum of the discounted future cash flows.</li>
+  <li>Most SW design decisions are easily reversible, hence there is little value to avoiding mistakes, hence we shouldn’t invest much in doing so.
+  <ul>
+    <li>Make decisions reversible.</li>
+  </ul></li>
+  <li>Analyzing coupling requires knowing what changes have happened and/or likely to happen.</li>
+  <li>Cascading coupling are the bigger issue.</li>
+  <li>Constantine’s equivalence:
+  <ul>
+    <li>cost(sw) ~= cost(changes) ~= cost(big changes) ~= coupling.</li>
+    <li>To reduce the cost of SW, we must reduce coupling.</li>
+  </ul></li>
+  <li>Make SW design an ordinary, balanced part of development.</li>
+  <li>Tidy first? Likely yes. Just enough. You are worth it.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Foreword</a></li>
+  <li><a href="#ch-00">Preface</a></li>
+  <li><a href="#ch-000">Introduction</a></li>
+  <li><a href="#p-1">Part I - Tidyings</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - Guard Clauses</a></li>
+    <li><a href="#ch-2">Chapter 2 - Dead Code</a></li>
+    <li><a href="#ch-3">Chapter 3 - Normalize Symmetries</a></li>
+    <li><a href="#ch-4">Chapter 4 - New Interface, Old Implementation</a></li>
+    <li><a href="#ch-5">Chapter 5 - Reading Order</a></li>
+    <li><a href="#ch-6">Chapter 6 - Cohesion Order</a></li>
+    <li><a href="#ch-7">Chapter 7 - Move Declaration and Initialization Together</a></li>
+    <li><a href="#ch-8">Chapter 8 - Explaining Variables</a></li>
+    <li><a href="#ch-9">Chapter 9 - Explaining Constants</a></li>
+    <li><a href="#ch-10">Chapter 10 - Explicit Parameters</a></li>
+    <li><a href="#ch-11">Chapter 11 - Chunk Statements</a></li>
+    <li><a href="#ch-12">Chapter 12 - Extract Helper</a></li>
+    <li><a href="#ch-13">Chapter 13 - One Pile</a></li>
+    <li><a href="#ch-14">Chapter 14 - Explaining Comments</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Managing</a>
+  <ul>
+    <li><a href="#ch-16">Chapter 16 - Separate Tidying</a></li>
+    <li><a href="#ch-17">Chapter 17 - Chaining</a></li>
+    <li><a href="#ch-18">Chapter 18 - Batch Sizes</a></li>
+    <li><a href="#ch-19">Chapter 19 - Rhythm</a></li>
+    <li><a href="#ch-20">Chapter 20 - Getting Untangled</a></li>
+    <li><a href="#ch-21">Chapter 21 - First, After, Later, Never</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - Theory</a>
+  <ul>
+    <li><a href="#ch-22">Chapter 22 - Beneficially Relating Elements</a></li>
+    <li><a href="#ch-23">Chapter 23 - Structure and Behaviour</a></li>
+    <li><a href="#ch-24">Chapter 24 - Economics: Time Value and Optionality</a></li>
+    <li><a href="#ch-25">Chapter 25 - A Dollar Today &gt; A Dollar Tomorrow</a></li>
+    <li><a href="#ch-26">Chapter 26 - Options</a></li>
+    <li><a href="#ch-27">Chapter 27 - Options Versus Cash Flows</a></li>
+    <li><a href="#ch-28">Chapter 28 - Reversible Structure Changes</a></li>
+    <li><a href="#ch-29">Chapter 29 - Coupling</a></li>
+    <li><a href="#ch-30">Chapter 30 - Constantine’s Equivalence</a></li>
+    <li><a href="#ch-31">Chapter 31 - Coupling Versus Decoupling</a></li>
+  </ul></li>
+  <li><a href="#p-4">Conclusion</a></li>
+</ul><h1><a name="ch-0"></a>Foreword</h1>
+<ul>
+  <li>Larry Constantine:
+  <ul>
+    <li>Complexity of code depends on how it is organized into parts, on how coupled those parts are with each other, and on how cohesive the parts are in themselves.</li>
+  </ul></li>
+  <li>Coupling and cohesion are simply measures of complexity.</li>
+</ul><h1><a name="ch-00"></a>Preface</h1>
+<ul>
+  <li>SW design is an exercise in human relationships.</li>
+  <li>Why do we go down the rabbit hole of cleaning code to the exclusion of work that would help our users?</li>
+  <li>Design some time around when you can take advantage of the design:
+  <ul>
+    <li>This requires taste, negotiation and judgement.</li>
+    <li>Taste and judgement is an inevitable weakness.</li>
+  </ul></li>
+</ul><h1><a name="ch-000"></a>Introduction</h1>
+<ul>
+  <li>How much and when to do sw design.</li>
+</ul><h1><a name="p-1"></a>Part I - Tidyings</h1>
+<ul>
+  <li>Tidyings are a subset of refactoring that nobody could possibly hate on.</li>
+</ul><h2><a name="ch-1"></a>Chapter 1 - Guard Clauses</h2>
+<ul>
+  <li>Make code easier to read.</li>
+  <li>A routine with 7 or 8 guard clauses is not easier to read.</li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Dead Code</h2>
+<ul>
+  <li>Delete it.</li>
+  <li>If you suspect code isn’t used, pre-tidy it by logging its use.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Normalize Symmetries</h2>
+<ul>
+  <li>As a reader, you expect that difference means difference.</li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - New Interface, Old Implementation</h2>
+<ul>
+  <li>Implement the interface you wish you could call and call it.</li>
+  <li>Creating a pass-through interface is the microscale essence of SW design.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - Reading Order</h2>
+<ul>
+  <li>No single ordering of elements is perfect.</li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - Cohesion Order</h2>
+<ul>
+  <li>Reorder code so the elements that change together are adjacent.</li>
+  <li>Sometimes better cohesion helps you live with the coupling.</li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Move Declaration and Initialization Together</h2>
+<ul>
+  <li>Is it easier to read if each var is declared and initialized just before it is used, or if they are all declared and initialized together at the top?</li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Explaining Variables</h2>
+<ul>
+  <li>Extract subexpressions into named variables.</li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - Explaining Constants</h2>
+<ul>
+  <li>I agree with the principle, disagree with the example (404 vs HTTP.NOT_FOUND).</li>
+</ul><h2><a name="ch-10"></a>Chapter 10 - Explicit Parameters</h2>
+<ul>
+  <li>A map with keys is not explicit enough.
+  <ul>
+    <li>Clojure?</li>
+  </ul></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Chunk Statements</h2>
+<ul>
+  <li>Put a blank line between parts of a routine.</li>
+  <li>Done well, sw design enables sw design that enables change.</li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - Extract Helper</h2>
+<ul>
+  <li>New interfaces emerge when we’re ready to think more abstractly, to add words to our design vocabulary.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - One Pile</h2>
+<ul>
+  <li>Sometimes because of how small pieces interact, the code is harder to understand:
+  <ul>
+    <li>Inline as much code as you need and tidy from there.</li>
+  </ul></li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Explaining Comments</h2>
+<ul>
+  <li>Write down what isn’t obvious from the code:
+  <ul>
+    <li>Keep other people’s perspective in mind.</li>
+  </ul></li>
+</ul><h1><a name="p-2"></a>Part II - Managing</h1>
+<ul>
+  <li>Tidying is geek self-care.</li>
+  <li>Just because you can tidy doesn’t mean you should tidy.</li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - Separate Tidying</h2>
+<ul>
+  <li>Tidying go in their PRs, with as few tidying per PR as possible:
+  <ul>
+    <li>If you are comfortable with tidying, experiment with not requiring PRs for tidying.</li>
+  </ul></li>
+</ul><h2><a name="ch-17"></a>Chapter 17 - Chaining</h2>
+<ul>
+  <li>Stick to tiny tidying steps.</li>
+</ul><h2><a name="ch-18"></a>Chapter 18 - Batch Sizes</h2>
+<ul>
+  <li>Tidying is not looking towards a far-ahead future, but the immediate need.</li>
+  <li>Reduce the cost of reviews (for tidying).</li>
+</ul><h2><a name="ch-19"></a>Chapter 19 - Rhythm</h2>
+<ul>
+  <li>More than one hour tidying at a time before making any behavioral changes, likely means you have lost track of the minimum set of structural changes needed.</li>
+  <li>From Pareto rules, most changes will end up in a tidied up area.</li>
+</ul><h2><a name="ch-20"></a>Chapter 20 - Getting Untangled</h2>
+<ul>
+  <li>If you end up with a mess of tidyings and changes all tangled together, discard them and start over, tidying first:
+  <ul>
+    <li>Is more works.</li>
+    <li>Leaves a coherent chain of commits.</li>
+    <li>You might see something new.</li>
+  </ul></li>
+</ul><h2><a name="ch-21"></a>Chapter 21 - First, After, Later, Never</h2>
+<ul>
+  <li>When to tidy?
+  <ol>
+    <li>Never:
+    <ul>
+      <li>If you are never ever going to touch the code again.</li>
+      <li>Very unlikely.</li>
+    </ul></li>
+    <li>Later:
+    <ul>
+      <li>If you don’t have enough time to do your work.</li>
+      <li>Create a list of tidyings and work on them when you don’t have the energy or time to start something big.</li>
+      <li>Tidying later is a learning tool.</li>
+      <li>Feels good: don’t underestimate how much better you are as a programmer when you are happy.</li>
+    </ul></li>
+    <li>After:
+    <ul>
+      <li>If you are going to change the same are again soon.</li>
+      <li>It is cheaper to do now.</li>
+      <li>Is proportional to the cost of the behavioral change.</li>
+    </ul></li>
+    <li>First:
+    <ul>
+      <li>If the change is easier after the tidying.</li>
+      <li>If it helps you understand the code.</li>
+    </ul></li>
+  </ol></li>
+  <li>Be wary of tidying becoming an end in itself.</li>
+</ul><h1><a name="p-3"></a>Part III - Theory</h1>
+<ul>
+  <li>Understanding theory optimizes application.</li>
+  <li>If we disagree in principle, and we can discuss our principles, then we have a chance to agree sooner.</li>
+</ul><h2><a name="ch-22"></a>Chapter 22 - Beneficially Relating Elements</h2>
+<ul>
+  <li>SW designers can only:
+  <ul>
+    <li>Create and delete elements.</li>
+    <li>Create and delete relationships.</li>
+    <li>Increase the benefit of a relationship.</li>
+  </ul></li>
+  <li>Structure of a system:
+  <ul>
+    <li>Element hierarchy.</li>
+    <li>Relationship between elements.</li>
+    <li>Benefits created by those relationships.</li>
+  </ul></li>
+</ul><h2><a name="ch-23"></a>Chapter 23 - Structure and Behaviour</h2>
+<ul>
+  <li>SW creates value in two ways:
+  <ol>
+    <li>What it does today (== behaviour).</li>
+    <li>The possibility of new things we can make it do tomorrow (== optionality).</li>
+  </ol></li>
+  <li>The mere presence of a system behaving a certain way changes the desire for how the system should behave (Heisenberg’s uncertainty principle).</li>
+  <li>The more volatile the env is, the more valuable options become.</li>
+  <li>A reason for option value to reduce is if exercising an option takes a month instead of a day.</li>
+  <li>SW structure creates options.</li>
+  <li>We can’t really tell if we have invested or invested enough in SW structure.</li>
+</ul><h2><a name="ch-24"></a>Chapter 24 - Economics: Time Value and Optionality</h2>
+<ul>
+  <li>When geeky imperatives clash with money imperatives, money wins.</li>
+  <li>Nature of money:
+  <ol>
+    <li>A dollar today is worth more than a dollar tomorrow, so earn sooner and spend later.</li>
+    <li>In a chaotic situation, options are better than things, so create options in the face of uncertainty.</li>
+  </ol></li>
+</ul><h2><a name="ch-25"></a>Chapter 25 - A Dollar Today &gt; A Dollar Tomorrow</h2>
+<ul>
+  <li>The time value of money encourages tidy after over tidy first.</li>
+</ul><h2><a name="ch-26"></a>Chapter 26 - Options</h2>
+<ul>
+  <li>Economic value of a SW system is the sum of the discounted future cash flows:
+  <ul>
+    <li>We create value when we change those flows:
+    <ul>
+      <li>Earning more money, sooner, and with greater likelihood.</li>
+      <li>Spending less money, later, and with less likelihood.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-27"></a>Chapter 27 - Options Versus Cash Flows</h2>
+<ul>
+  <li>Tidying first may make economic sense in spite of discounted cash flows if the value of the options created is greater than the value lost by spending money sooner and with certainty:
+  <ul>
+    <li>We are firmly in the last of judgement here.</li>
+  </ul></li>
+</ul><h2><a name="ch-28"></a>Chapter 28 - Reversible Structure Changes</h2>
+<ul>
+  <li>There is great value in reviewing, double-checking irreversible decisions. The pace should b slow and deliberate.</li>
+  <li>Most SW design decisions are easily reversible, hence there is little value to avoiding mistakes, hence we shouldn’t invest much in doing so.</li>
+  <li>Code reviews should distinguish between reversible and irreversible changes, and the investment should be accordingly.</li>
+  <li>Make decisions reversible.</li>
+</ul><h2><a name="ch-29"></a>Chapter 29 - Coupling</h2>
+<ul>
+  <li>If two elements are coupled with respect to a change that never happens, then they aren’t coupled in a way that should concern us.</li>
+  <li>Analyzing coupling requires knowing what changes have happened and/or likely to happen.</li>
+  <li>Cascading coupling are the bigger issue.</li>
+  <li>Coupling drives the cost of sw.</li>
+</ul><h2><a name="ch-30"></a>Chapter 30 - Constantine’s Equivalence</h2>
+<ul>
+  <li>The most expensive behaviour changes cost together far more than all the least expensive behaviour changes.</li>
+  <li>Constantine’s equivalence:
+  <ul>
+    <li>cost(sw) ~= cost(changes) ~= cost(big changes) ~= coupling.</li>
+  </ul></li>
+  <li>To reduce the cost of SW, we must reduce coupling.</li>
+</ul><h2><a name="ch-31"></a>Chapter 31 - Coupling Versus Decoupling</h2>
+<ul>
+  <li>Coupling often isn’t obvious until you step on it.</li>
+  <li>The more you reduce coupling for one class of changes, the greater the coupling becomes for other classes of changes.</li>
+</ul><h1><a name="p-4"></a>Conclusion</h1>
+<ul>
+  <li>Make SW design an ordinary, balanced part of development.</li>
+  <li>Tidy first? Likely yes. Just enough. You are worth it.</li>
+</ul></div>
+
+				 
+
+				 <hr />
+
+				 <div class="cta">
+					 <center>Did you enjoy it? <a href="https://twitter.com/DanLebrero" class="twitter-follow-button" data-show-count="true">Follow @DanLebrero</a><script async="async" src="//platform.twitter.com/widgets.js" charset="utf-8"></script> or share!</center>
+				 </div>
+
+				 <div class="shariff" data-lang="en" data-mail-url="mailto:" data-twitter-via="danlebrero" data-services="[&quot;reddit&quot;,&quot;twitter&quot;, &quot;linkedin&quot;,&quot;facebook&quot;,&quot;mail&quot;]"></div>
+
+				 <p class="tags">
+					 <span>Tagged in </span>:
+					 <a href="/tags/book_notes/index.html">book notes </a>
+				 </p>
+
+				 <div id="disqus_thread"></div>
+				 <script id="disqus_script">
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://danlebrero.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+			 </article> <!-- /entry -->
+
+	   	</div> <!-- /main -->
+
+	      <div class="tab-whole three columns end" id="secondary">
+
+				<aside id="sidebar">
+
+	            <div class="widget-title">
+	               <form class="ddg" name="x" action="//duckduckgo.com/">
+						<input type="hidden" value="danlebrero.com" name="sites" />
+						<input type="hidden" value="1" name="kh" />
+						<input type="hidden" value="1" name="kn" />
+						<input type="hidden" value="1" name="kac" />
+						<input type="search" placeholder="Search" name="q" />
+						<input type="submit" value="Go" class="button" />
+					</form>
+
+	            </div> <!-- /widget_search -->
+
+	            <div class="widget widget_text">
+
+	               <h5 class="widget-title">About me</h5>
+	               <div class="textwidget">
+					   <img class="pull-left" style="border-radius: 5a 0%;" src="https://en.gravatar.com/userimage/38792381/b0f54df774ad03c9b8c553be0af3b322.jpeg" />
+					   Daniel Lebrero is a baby CTO, a teen remote worker, a mature Clojurian, an elder Architect, an ancient TDDer and an antediluvian Java dev.
+					   <br />
+					   With more than 20 years of software development experience, he has worked on monolithic websites, embedded applications, low latency systems, micro services, streaming applications and big data.
+					   <br />
+					   <p>Right now, Principal Software Engineer at <a href="https://www.lifecheq.co.za">LifeCheq</a>. Maybe <a href="https://lifecheq.freshteam.com/jobs">we are hiring.</a></p>
+					   <p><b>Need help?</b> Reach me at <a href="https://twitter.com/DanLebrero"><i class="fab fa-twitter-square"></i></a>,
+						   drop me an <a href="mailto:dlebrero@gmail.com"><i class="far fa-envelope"></i></a>
+						   or connect with <a href="https://www.linkedin.com/in/danlebrero/"><i class="fab fa-linkedin"></i>.</a></p>
+				   </div>
+
+					<!--h5 class="widget-title">Next talks</h5>
+					<div class="textwidget">
+						<a href="https://www.wearedevelopers.com/sessions/java-with-a-clojure-mindset"><img src="/images/logo-wearedevelopers-2018.png"/></a>
+					</div-->
+
+					<div class="container">
+					<!--div class="row">
+						<div id="toprightbanner" class="widget six columns">
+						</div>
+						<div id="toprightbanner2" class="widget six columns">
+						</div>
+					</div-->
+					</div>
+
+			      </div> <!-- /widget_text -->
+
+					<div class="widget">
+						<h5 class="widget-title"><a href="/archives/">Archives</a></h5>
+<!--						<h5 class="widget-title"><a href="/popular/">Popular Entries</a></h5>-->
+						<h5 class="widget-title">RSS feed: <a href="/feed.rss"><img src="/images/feed.png" /></a></h5>
+						<!-- Begin Mailchimp Signup Form -->
+						<form action="https://danlebrero.us7.list-manage.com/subscribe/post?u=261eea2437ba4ca873e34b694&amp;id=eec8fa45ea" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="novalidate">
+							<div id="mc_embed_signup_scroll">
+								<h5 class="widget-title">Subscribe by email:</h5>
+								<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="required" />
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" />
+								<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_261eea2437ba4ca873e34b694_eec8fa45ea" tabindex="-1" value="" /></div>
+							</div>
+						</form>
+
+						<!--End mc_embed_signup-->
+					</div>
+
+	            <div class="widget widget_categories">
+
+	               <h5 class="widget-title">Categories</h5>
+	               <ul id="categories" class="link-list group"><li><a href="/tags/Architecture/index.html">Architecture (41)</a></li><li><a href="/tags/CTO_diary/index.html">CTO diary (9)</a></li><li><a href="/tags/Career/index.html">Career (11)</a></li><li><a href="/tags/Clojure/index.html">Clojure (37)</a></li><li><a href="/tags/Humour/index.html">Humour (12)</a></li><li><a href="/tags/Java/index.html">Java (7)</a></li><li><a href="/tags/Kafka/index.html">Kafka (8)</a></li><li><a href="/tags/Kubernetes/index.html">Kubernetes (5)</a></li><li><a href="/tags/Talks/index.html">Talks (12)</a></li><li><a href="/tags/book_notes/index.html">book notes (51)</a></li><li><a href="/tags/good_practices/index.html">good practices (27)</a></li><li><a href="/tags/resilience/index.html">resilience (7)</a></li><li><a href="/tags/testing/index.html">testing (10)</a></li></ul>
+
+	            </div> <!-- /widget_categories -->
+
+					<div class="widget widget_categories">
+
+						<!--h5 class="widget-title">Now Reading</h5>
+						<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=danlebrero-20&language=en_US&marketplace=amazon&region=US&placement=1950508838&asins=1950508838&linkId=1abcab6ed414fe6ad50e093b9d78cb44&show_border=true&link_opens_in_new_window=true"></iframe></iframe-->
+					</div>
+
+
+	             <!-- /widget_tag_cloud -->
+
+	         </aside> <!-- /sidebar -->
+
+	      </div> <!-- /secondary -->
+
+	   </div> <!-- /row -->
+
+   </section> <!-- /content -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+	   <p class="copyright">© Copyright 2016 Daniel Lebrero. Design by <a href="http://www.styleshout.com/">Styleshout.</a></p>
+
+	   <div id="go-top">
+		   <a class="smoothscroll" title="Back to Top" href="#content"><span>Top</span><i class="fas fa-long-arrow-alt-up"></i></a>
+	   </div>
+
+
+   </footer> <!-- /footer -->
+
+
+   <!-- Java Script
+   ================================================== -->
+	<div id="scripts" style="display:none;">
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <script src="/js/jquery-1.10.2.min.js"></script>
+	   <script type="text/javascript" src="/js/jquery-migrate-1.2.1.min.js"></script>
+	   <script src="/js/jquery.flexslider.js"></script>
+	   <script src="/js/jquery.fittext.js"></script>
+	   <script src="/js/backstretch.js"></script>
+	   <script src="/js/waypoints.js"></script>
+	   <script src="/js/main.js"></script>
+	   <script src="/js/highlight.pack.10.5.0.js"></script>
+	   <script src="/js/shariff.min.js"></script>
+	   <script>hljs.initHighlightingOnLoad();</script>
+	   <script>
+$(document).ready(function() {
+	$(".shariff").find('a').each(function() {
+		var which = $(this).attr("title").substr(9);;
+		$(this).click(function(event) {
+			ga('send', 'social', which, 'share', window.location.href);
+		});
+	});
+});
+		</script>
+	   <div id="debug" style="display: none;">
+	   </div>
+   </div>
+
+</body>
+
+</html>
