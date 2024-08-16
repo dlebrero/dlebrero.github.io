@@ -1,4 +1,330 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 07 Aug 2024 00:00:00 +0200</lastBuildDate><pubDate>Wed, 07 Aug 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Tidy First?</title><link>https://danlebrero.com/2024/08/07/tidy-first-summary/</link><guid>https://danlebrero.com/2024/08/07/tidy-first-summary/</guid><pubDate>Wed, 07 Aug 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3SFYhRM">Tidy First? A Personal Exercise in Empirical Software Design</a> by <a href="https://x.com/kentbeck">Kent Beck</a>.</p><p>The book takes you from basic entry level refactorings to the economics of optionality, all in less than 100 pages.</p><h1>Key Insights</h1>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Fri, 16 Aug 2024 00:00:00 +0200</lastBuildDate><pubDate>Fri, 16 Aug 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: The HP Way</title><link>https://danlebrero.com/2024/08/16/the-hp-way-summary/</link><guid>https://danlebrero.com/2024/08/16/the-hp-way-summary/</guid><pubDate>Fri, 16 Aug 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/4dKZsXY">The HP Way: How Bill Hewlett and I Built Our Company</a> by <a href="https://en.wikipedia.org/wiki/David_Packard">David Packard</a>.</p>
+<blockquote><p>Not about adopting the HP way, but an example of the power of building a company based on a framework of principles.</p>
+</blockquote><h1>Key Insights</h1>
+<ul>
+  <li>5 fundamental concepts:
+  <ol>
+    <li>HP exists to make a technical contribution:
+    <ul>
+      <li>Only pursue opportunities consistent with this purpose.</li>
+    </ul></li>
+    <li>HP demands of itself and its people superior performance.</li>
+    <li>Best results come when you get the right people, trust them, give them freedom to find the best path to achieve objectives, and share in the rewards their work makes possible.</li>
+    <li>Responsibility to contribute directly to the well-being of the communities in which it operates.</li>
+    <li>Integrity.</li>
+  </ol></li>
+  <li>The principle that underpins every truly great company: preserve the core (what we stand for) and stimulate progress (how we do things):
+  <ul>
+    <li>Duality of continuity and change.</li>
+  </ul></li>
+  <li>Companies exist so a group of people are able to accomplish something collectively which they could not accomplish separately.</li>
+  <li>Profit is the measure of how well we work together.</li>
+  <li>Personal communication was often necessary to back up written instructions.</li>
+  <li>To this day, HP has a profit-sharing program that encourages teamwork and maintains that important link between employee effort and corporate success.</li>
+  <li>Our success depends in large part on giving the responsibility to the level where it can be exercised effectively, usually on the lowest possible level of the organization, the level nearest to the customer.</li>
+  <li>If managers were to be guided by written objectives, they should have a part in developing them.</li>
+  <li>Growth: as a measure of strength and a requirement for survival.</li>
+  <li>No matter what the pay, the employee thinks they need about 10 percent more.</li>
+  <li>One of the most important management tasks: Right balance between short-term profit and investment for growth.
+  <ul>
+    <li>R&amp;D between 8 to 10% of sales.</li>
+  </ul></li>
+  <li>There is no shortage of ideas. The problem is to select those likely to fill a read need in the marketplace.</li>
+  <li>Products should at least deliver profit six times the cost of developing them:
+  <ul>
+    <li>The products that beat the six-to-one ratio by the widest margin were the most innovative.</li>
+  </ul></li>
+  <li>Bill Hewlett &ldquo;hat-wearing process&rdquo; to keep inventors motivated on the face their ideas being turned down:
+  <ol>
+    <li>Enthusiasm hat:
+    <ul>
+      <li>Listen.</li>
+      <li>Express excitement and appreciation.</li>
+      <li>Ask few gentle questions.</li>
+    </ul></li>
+    <li>Inquisition hat:
+    <ul>
+      <li>Few days later.</li>
+      <li>Lots of very pointed questions.</li>
+      <li>Thorough probing of the idea.</li>
+    </ul></li>
+    <li>Decision hat:
+    <ul>
+      <li>Shortly thereafter.</li>
+      <li>With logic and sensitively, deliver judgement.</li>
+    </ul></li>
+  </ol></li>
+  <li>People want to do a good job.</li>
+  <li>Individual freedom and initiative while emphasizing commonness of purpose and teamwork.</li>
+  <li>Acquisitions main difficulty: Blending two cultures, operating philosophies, and a management styles.</li>
+  <li>No operating policy has contributed more to HP success than the policy of &ldquo;management by objectives&rdquo;:
+  <ul>
+    <li>Employees must take sufficient interest in their work to want to plan it, to propose new solutions to old problems, and to jmp in when they have something to contribute.</li>
+  </ul></li>
+  <li>The best job can be done when the manager has a genuine and thorough understanding of the work:
+  <ul>
+    <li>What standards to observe.</li>
+    <li>What performance to require.</li>
+    <li>How to measure results.</li>
+  </ul></li>
+  <li>In no way charts dictate the communication channels.</li>
+  <li>Most successful companies have a practice of promoting from within.</li>
+  <li>A career in business would ill prepare me for the frustrations of government bureaucracy.</li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#ch-0">Foreword</a></li>
+  <li><a href="#ch-00">Speech by Dave Packard to HP managers, 1960</a></li>
+  <li><a href="#ch-2">Chapter 2 - Friendship with Hewlett</a></li>
+  <li><a href="#ch-4">Chapter 4 - Gaining More Space</a></li>
+  <li><a href="#ch-5">Chapter 5 - From Partnership to Corporation</a></li>
+  <li><a href="#ch-6">Chapter 6 - Growth from Profit</a></li>
+  <li><a href="#ch-7">Chapter 7 - Commitment to Innovation</a></li>
+  <li><a href="#ch-8">Chapter 8 - Listening to Customers</a></li>
+  <li><a href="#ch-9">Chapter 9 - Trust in People</a></li>
+  <li><a href="#ch-10">Chapter 10 - Growing the Organization</a></li>
+  <li><a href="#ch-11">Chapter 11 - Managing the Organization</a></li>
+  <li><a href="#ch-12">Chapter 12 - Responsibility to Society</a></li>
+</ul><h1><a name="ch-0"></a>Foreword</h1>
+<ul>
+  <li>Not about adopting the HP way, but an example of the power of building a company based on a framework of principles.</li>
+  <li>5 fundamental concepts:
+  <ol>
+    <li>HP exists to make a technical contribution:
+    <ul>
+      <li>Only pursue opportunities consistent with this purpose.</li>
+    </ul></li>
+    <li>HP demands of itself and its people superior performance.</li>
+    <li>Best results come when you get the right people, trust them, give them freedom to find the best path to achieve objectives, and share in the rewards their work makes possible.</li>
+    <li>Responsibility to contribute directly to the well-being of the communities in which it operates.</li>
+    <li>Integrity.</li>
+  </ol></li>
+  <li>Cornerstone concept: contribution.
+  <ul>
+    <li>Not &ldquo;How can we succeed?&rdquo; but &ldquo;What can we contribute?&rdquo;</li>
+  </ul></li>
+  <li>The principle that underpins every truly great company: preserve the core (what we stand for) and stimulate progress (how we do things):
+  <ul>
+    <li>Duality of continuity and change.</li>
+  </ul></li>
+</ul><h1><a name="ch-00"></a>Speech by Dave Packard to HP managers, 1960</h1>
+<ul>
+  <li>Companies exist so a group of people are able to accomplish something collectively which they could not accomplish separately.</li>
+  <li>Individuals work for money and to accomplish something worthwhile.</li>
+  <li>People work best when they have a real objective and are able to use their own capabilities to the greatest extent:
+  <ul>
+    <li>Management by Objectives instead of Management by Control.</li>
+  </ul></li>
+  <li>Supervision is the job of providing the opportunity for people to use their capabilities efficiently and effectively.</li>
+  <li>They get an instrument to the place where it is about ready to go and the job is about half done.</li>
+  <li>As a supervisor, tolerance is tremendously significant.</li>
+  <li>Profit is the measure of how well we work together.</li>
+</ul><h1><a name="ch-2"></a>Chapter 2 - Friendship with Hewlett</h1>
+<ul>
+  <li>Terman: business opportunities were even greater for someone with a sound theoretical background.</li>
+  <li>Personal communication was often necessary to back up written instructions:
+  <ul>
+    <li>Genesis of &ldquo;management by walking around&rdquo;.</li>
+  </ul></li>
+</ul><h1><a name="ch-4"></a>Chapter 4 - Gaining More Space</h1>
+<ul>
+  <li>More businesses die from indigestion than starvation.</li>
+  <li>It was better to have two companies (competitors) introducing a new product, especially if it incorporated new tech, because that made it all the more credible to the customer.</li>
+  <li>To this day, HP has a profit-sharing program that encourages teamwork and maintains that important link between employee effort and corporate success.</li>
+  <li>Build a group of complementary products, rather than becoming involved in a lot of unrelated things.</li>
+</ul><h1><a name="ch-5"></a>Chapter 5 - From Partnership to Corporation</h1>
+<ul>
+  <li>Hire top engineering graduates:
+  <ul>
+    <li>An important factor in the success of the company.</li>
+    <li>Honors Cooperative Program: qualified HP engineers to pursue advance degrees at Standford, while at full salary, with HP paying part of full tuition.</li>
+  </ul></li>
+  <li>To get cattle through the gate:
+  <ul>
+    <li>Best was to apply steady gentle pressure from the rear.</li>
+    <li>Too much pressure == panic and scattering.</li>
+    <li>Too little == cattle just head back to their old grazing spots.</li>
+    <li>This insight was useful throughout my management career.</li>
+  </ul></li>
+  <li>Our success depends in large part on giving the responsibility to the level where it can be exercised effectively, usually on the lowest possible level of the organization, the level nearest to the customer.</li>
+  <li>90 eng in product dev: restructure into 4 smaller, more efficient groups.
+  <ul>
+    <li>In also allowed a design engineer to concentrate on one customer.</li>
+  </ul></li>
+  <li>If managers were to be guided by written objectives, they should have a part in developing them.</li>
+  <li>Objectives were meant to be evaluated from time to time and to be modified if necessary.</li>
+  <li>1966 objectives:
+  <ol>
+    <li>Profit: best single measurement of contribution to society and ultimate source of corporate strength.</li>
+    <li>Customers: continual improvement in quality, usefulness and value we offer our customers.</li>
+    <li>Field of interest. Focus.</li>
+    <li>Growth: as a measure of strength and a requirement for survival.</li>
+    <li>Employees:
+    <ul>
+      <li>Share HP success.</li>
+      <li>Job security based on performance.</li>
+      <li>Personal satisfaction from a sense of accomplishment.</li>
+    </ul></li>
+    <li>Organization: that fosters individual motivation, initiate and creativity, and wide latitude of freedom in working towards objectives.</li>
+    <li>Citizenship: contribute to the community which generate the env in which we operate.</li>
+  </ol></li>
+  <li>Any org develops a philosophy, a set of values, a series of traditions and customs: there are unique to the org.</li>
+</ul><h1><a name="ch-6"></a>Chapter 6 - Growth from Profit</h1>
+<ul>
+  <li>Financing growth primarily out of earnings rather than borrowing.</li>
+  <li>Employee stock purchase plans provided significant amounts of cash:
+  <ul>
+    <li>Mistake: allow people to immediately sell stock.</li>
+  </ul></li>
+  <li>No matter what the pay, the employee thinks they need about 10 percent more.</li>
+  <li>Self-financing requires constant vigilance and self-discipline.</li>
+  <li>It is often more practical to acquire a company by an exchange of stock than by outright purchase.</li>
+  <li>Good new products are the lifeblood of tech companies.</li>
+  <li>One of the most important management tasks:
+  <ul>
+    <li>Right balance between short-term profit and investment for growth.</li>
+  </ul></li>
+  <li>R&amp;D between 8 to 10% of sales.</li>
+  <li>Introducing a product at a price too low to make an adequate short-term profit, with the thinking that costs will go down in the future and enable good profit, rarely works.</li>
+  <li>Capturing market share by undercutting competitor&rsquo;s price results in little or no profit.</li>
+</ul><h1><a name="ch-7"></a>Chapter 7 - Commitment to Innovation</h1>
+<ul>
+  <li>There is no shortage of ideas. The problem is to select those likely to fill a read need in the marketplace:
+  <ul>
+    <li>Ideas must be practical and useful.</li>
+    <li>Useful == fill a need + economical + efficient.</li>
+  </ul></li>
+  <li>Products should at least deliver profit six times the cost of developing them:
+  <ul>
+    <li>The products that beat the six-to-one ratio by the widest margin were the most innovative.</li>
+  </ul></li>
+  <li>Bill Hewlett &ldquo;hat-wearing process&rdquo; to keep inventors motivated on the face their ideas being turned down:
+  <ol>
+    <li>Enthusiasm hat:
+    <ul>
+      <li>Listen.</li>
+      <li>Express excitement and appreciation.</li>
+      <li>Ask few gentle questions.</li>
+    </ul></li>
+    <li>Inquisition hat:
+    <ul>
+      <li>Few days later.</li>
+      <li>Lots of very pointed questions.</li>
+      <li>Thorough probing of the idea.</li>
+    </ul></li>
+    <li>Decision hat:
+    <ul>
+      <li>Shortly thereafter.</li>
+      <li>With logic and sensitively, deliver judgement.</li>
+    </ul></li>
+  </ol></li>
+  <li>HP strives to add something new and different:
+  <ul>
+    <li>This was a hindrance in entering the PC field.</li>
+    <li>We have to learn that the contribution HP can make is in ease of use, speed, reliability and affordability.</li>
+  </ul></li>
+  <li>Sometimes management turn down of a new idea doesn&rsquo;t effectively kill it:
+  <ul>
+    <li>How to distinguish between insubordination and entrepreneurship?
+    <ul>
+      <li>The difference lay in the intent: the engineer just wanted a success for HP.</li>
+    </ul></li>
+  </ul></li>
+</ul><h1><a name="ch-8"></a>Chapter 8 - Listening to Customers</h1>
+<ul>
+  <li>Vice President of Marketing wanted our sales engineers to make the customer&rsquo;s side in any dispute with the company.</li>
+  <li>We are not selling hardware; we&rsquo;re selling solutions to customers problems.</li>
+  <li>Salespeople to never speak disparagingly of the competition.</li>
+  <li>Gains in quality come from meticulous attention to detail and every step in the manufacturing process must be done as carefully as possible, not as quickly as possible.</li>
+</ul><h1><a name="ch-9"></a>Chapter 9 - Trust in People</h1>
+<ul>
+  <li>People want to do a good job.</li>
+  <li>High management positions must not only be enthusiastic themselves, they must be able to engender enthusiasm among their associates.</li>
+  <li>Each person is important and every job is important:
+  <ul>
+    <li>Little details often make the difference between a quality product and one that isn&rsquo;t as good.</li>
+  </ul></li>
+  <li>Individual freedom and initiative while emphasizing commonness of purpose and teamwork.</li>
+  <li>As the company grew, we could no longer take teamwork for granted:
+  <ul>
+    <li>Why profit sharing are provided not to selected individuals but to all eligible employees.</li>
+  </ul></li>
+  <li>My wife started the practice of buying a wedding gift for every employee who married and a baby blanket for every family having a baby:
+  <ul>
+    <li>Helped create a sense of belonging.</li>
+  </ul></li>
+  <li>Picnics were an important part of the HP Way.</li>
+  <li>The underlying principle of HP&rsquo;s personnel policies became the concept of sharing:
+  <ul>
+    <li>Responsibility for defining and meeting goals.</li>
+    <li>Company ownership through stock purchase plans.</li>
+    <li>Profits.</li>
+    <li>Opportunities for personal and professional development.</li>
+    <li>Burden by downturns in business.</li>
+  </ul></li>
+  <li>Keep storerooms and part bins open:
+  <ul>
+    <li>Builds trust.</li>
+    <li>Allow those who wanted to work out new ideas at home or on weekends.</li>
+  </ul></li>
+</ul><h1><a name="ch-10"></a>Chapter 10 - Growing the Organization</h1>
+<ul>
+  <li>Decentralized in order to retain emphasis on individual responsibility and achievement.</li>
+  <li>Each division aimed to be autonomous.</li>
+  <li>Company growth allows ample opportunity for personal growth and progress.</li>
+  <li>Acquisitions useful for expanding a company&rsquo;s technology and gain quick entry into new markets.</li>
+  <li>Acquisitions main difficulty:
+  <ul>
+    <li>Blending two cultures, operating philosophies, and a management styles.</li>
+  </ul></li>
+  <li>Split divisions when they are about 1500 people.</li>
+  <li>By 1990, 65 divisions organized into 13 product groups.</li>
+  <li>Widely decentralized companies should be alert to signs of cumbersome centralization.</li>
+</ul><h1><a name="ch-11"></a>Chapter 11 - Managing the Organization</h1>
+<ul>
+  <li>No operating policy has contributed more to HP success than the policy of &ldquo;management by objectives&rdquo;:
+  <ul>
+    <li>Employees must take sufficient interest in their work to want to plan it, to propose new solutions to old problems, and to jmp in when they have something to contribute.</li>
+  </ul></li>
+  <li>Peter Drucker:
+  <ul>
+    <li>In emerging org, the skeleton or internal structure is a combination of mutual understanding and responsibility.</li>
+  </ul></li>
+  <li>The best job can be done when the manager has a genuine and thorough understanding of the work:
+  <ul>
+    <li>What standards to observe.</li>
+    <li>What performance to require.</li>
+    <li>How to measure results.</li>
+  </ul></li>
+  <li>Managing by walking around:
+  <ul>
+    <li>If done reluctantly or infrequently, it just won&rsquo;t work.</li>
+    <li>It needs to be frequent, friendly, unfocused and unscheduled.</li>
+    <li>It requires good listening.</li>
+  </ul></li>
+  <li>Open door policy:
+  <ul>
+    <li>Benefits outweigh interruptions.</li>
+  </ul></li>
+  <li>In no way charts dictate the communication channels:
+  <ul>
+    <li>An individual is expected to seek information from the most likely source.</li>
+  </ul></li>
+  <li>Nothing beats personal, two-way communication for fostering cooperation and teamwork and for building an attitude of trust and understanding.</li>
+  <li>Managing succession is especially critical at the upper levels:
+  <ul>
+    <li>Responsibility of managers for selecting and training their potential successors.</li>
+  </ul></li>
+  <li>Yearly review of division operations by top-management:
+  <ul>
+    <li>One whole day + dinner.</li>
+    <li>Key people asked to make a presentation as a way to assess their manager training and development responsibilities.</li>
+  </ul></li>
+  <li>Most successful companies have a practice of promoting from within.</li>
+</ul><h1><a name="ch-12"></a>Chapter 12 - Responsibility to Society</h1>
+<ul>
+  <li>A career in business would ill prepare me for the frustrations of government bureaucracy.</li>
+  <li>The betterment of our society is not a job to be left to a few; it is responsibility to be shared by all.</li>
+</ul>]]></description></item><item><title>Book notes: Tidy First?</title><link>https://danlebrero.com/2024/08/07/tidy-first-summary/</link><guid>https://danlebrero.com/2024/08/07/tidy-first-summary/</guid><pubDate>Wed, 07 Aug 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3SFYhRM">Tidy First? A Personal Exercise in Empirical Software Design</a> by <a href="https://x.com/kentbeck">Kent Beck</a>.</p><p>The book takes you from basic entry level refactorings to the economics of optionality, all in less than 100 pages.</p><h1>Key Insights</h1>
 <ul>
   <li>Coupling and cohesion are simply measures of complexity.</li>
   <li>SW design is an exercise in human relationships.</li>
@@ -4433,705 +4759,4 @@
   <li>Too often, managing by hard numbers sacrifices quality.</li>
   <li>Organizations need to be a place where people can teach themselves.</li>
   <li>Perfection is not for this world.</li>
-</ul>]]></description></item><item><title>Book notes: Wiring the Winning Organization</title><link>https://danlebrero.com/2023/11/27/wiring-the-winning-organization-summary/</link><guid>https://danlebrero.com/2023/11/27/wiring-the-winning-organization-summary/</guid><pubDate>Mon, 27 Nov 2023 23:30:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3tT8Xmk">Wiring the Winning Organization</a> by <a href="https://twitter.com/RealGeneKim">Gene Kim</a> and <a href="https://twitter.com/StevenJSpear">Steven J. Spear</a>.</p><p>Gene and Steven present the <a href="https://en.wikipedia.org/wiki/Grand_Unified_Theory">Grand Unified Theory</a> of organization performance.</p><p>3 questions to get started:</p>
-<ol>
-  <li>Are we solving our toughest problems in planning and practice, where we can iterate and learn?</li>
-  <li>Are we shaping our problems so that they are easier to solve because they are simple, low risk, controllable, and easy to understand and iterate and learn from?</li>
-  <li>Are we calling out problems loudly and consistently so that they can be swarmed, container, solved and prevent future occurrences?</li>
-</ol><h1>Key Insights</h1>
-<ul>
-  <li>People with the best work experiences need fewer resources, less capital equipment, and less time to accomplish greater things:
-  <ul>
-    <li>It is the management system.</li>
-  </ul></li>
-  <li>Collaborative problem-solving occurs in three distinct layers:
-  <ol>
-    <li>Layer 1 contains the technical objects being worked on. Code in our case.</li>
-    <li>Layer 2 contains the tools.</li>
-    <li>Layer 3 contains the social circuitry:
-    <ul>
-      <li>Workers have what they need, when they need it, and in the format they need it.</li>
-    </ul></li>
-  </ol>
-  <ul>
-    <li>Layer 1 and 2 are the &ldquo;technical&rdquo; part of a sociotechnical system. Layer 3 is the &ldquo;socio&rdquo; part.</li>
-  </ul></li>
-  <li>Three mechanisms which create the difference between success and failure:
-  <ol>
-    <li>Slowification, to make solving problems easier to do:
-    <ul>
-      <li>Pulling problem-solving out of the realm of performance (operations or execution).</li>
-      <li>Instead, realms of planning and practice.</li>
-    </ul></li>
-    <li>Simplification, to make the problems themselves easier to solve:
-    <ul>
-      <li>Partitioning large systems into smaller, coherent pieces allow to solve more problems independently and in parallel.</li>
-    </ul>
-    <ol>
-      <li>Incrementalization:
-      <ul>
-        <li>Partition what is novel (which needs to be tested) from what is known (which is already validated).</li>
-        <li>Adds to the novelty in smaller increments.</li>
-        <li>Allow to iterate and test changes on fewer factors, so more quickly and safely.</li>
-      </ul></li>
-      <li>Modularization:
-      <ul>
-        <li>Smaller, simpler, more numerous coherent pieces.</li>
-        <li>Less coupled as they are connected through only a few well-defined and stable interfaces.</li>
-      </ul></li>
-      <li>Linearization:
-      <ul>
-        <li>Assembly line.</li>
-        <li>Partitions operations that share resources to accomplish multiple objectives into independent and coherent workflows.</li>
-        <li>Coherence is achieved by committing all resources needed to generate outputs to workflows.</li>
-        <li>Partitioning across workflows is achieved by preventing the sharing of resources between them.</li>
-        <li>Partitioning within workflows is achieved by defining hand-offs between steps.</li>
-      </ul></li>
-    </ol></li>
-    <li>Amplification, to make it obvious that there are problems that demand attention and whether they&rsquo;ve been seen and solved.</li>
-  </ol></li>
-  <li>Toyota + General Motors joint venture <a href="https://en.wikipedia.org/wiki/NUMMI">NUMMI</a>:
-  <ul>
-    <li>From worst to best with same people after changing management system.</li>
-  </ul></li>
-  <li>Difference between exceptional and ordinary is obvious by observing the experiences of people doing their work.</li>
-  <li>Boundary of a group solving problems must be large enough that it is coherent, having all the people and resources needed, but small enough to not require large amounts of coordination.
-  <ul>
-    <li>How much coupling there is determines how much coherence leaders must create.</li>
-  </ul></li>
-  <li>To slowify or not is a choice that leaders make.</li>
-  <li>To make things simpler, aim to no need to coordinate with anyone outside the team.</li>
-  <li>Change their behaviours, which is a precursor for changing their beliefs.</li>
-  <li>When we have more time, lower stakes, and less fear, our creativity can flourish.</li>
-  <li>Three phases of work:
-  <ol>
-    <li>Planning.</li>
-    <li>Practice:
-    <ul>
-      <li>Preproduction/testing.</li>
-      <li>We can control the pace and the incremental complexity of what is occurring, so we are not overwhelmed.</li>
-      <li>Feedback is used to find flaws and improve our plans.</li>
-      <li>Time to coach and improve our abilities to execute those plans.</li>
-    </ul></li>
-    <li>Performance:
-    <ul>
-      <li>Force us to depend on already-developed routines, skills, and habits.</li>
-      <li>Bring issues back to practice or planning.</li>
-    </ul></li>
-  </ol></li>
-  <li>Training on speaking up directly, fostering psychologically safe conditions for others to speak up.</li>
-  <li>Knowledge capture and the potential for continued progress are never-ending.</li>
-  <li>A learning leader are more concerned with asking the question and listening to their team.</li>
-  <li>Knowledge can also be captured as code.</li>
-  <li>Knowledge capture can be conveyed in routines.</li>
-  <li>They believed they couldn&rsquo;t think their way to the right answer; instead, they experimented relentlessly with great frequency and at low cost.</li>
-  <li><p><a href="#center-out">Center-out leadership</a>.</p>
-  <blockquote>As the complexity of the system increases, so do the cognitive demands on the organization. Managing cognitive load through teams with clear responsibilities and boundaries is a distinguishing focus of effective team design. <cite><a href="https://twitter.com/ruthmalan">Ruth Malan</a></cite>
-  </blockquote></li>
-  <li>Linearized processes can be fragile:
-  <ul>
-    <li>Without various stabilization mechanisms, they can quickly devolve into &ldquo;job shops&rdquo;.</li>
-  </ul></li>
-  <li>Design requires isomorphism between Layers 1 and 3. Production requires isomorphism in all three layers:
-  <ul>
-    <li>If there is a mismatch, orgs underperform.</li>
-  </ul></li>
-  <li>If effectively run orgs:
-  <ul>
-    <li>The functional leader is responsible for &ldquo;who&rdquo; and &ldquo;how&rdquo; - providing trainer people.</li>
-    <li>The flow owner is responsible for the &ldquo;what&rdquo; and &ldquo;when&rdquo; of how those people are deployed.</li>
-  </ul></li>
-  <li>Accident investigations that stop at &ldquo;human error&rdquo; are not just bad but dangerous.</li>
-  <li>Control theory addresses a broad variety of situations where no static plan can achieve the desired goal, no matter how good the plan is:
-  <ul>
-    <li>Feedback mechanisms are needed.</li>
-    <li>Must be significantly faster and more reliable than the object being controlled.</li>
-    <li>Fail: People become indifferent, when they point out problems that are never fixed, or help is requested but never arrives.</li>
-  </ul></li>
-  <li>Standards make succeeding easier; they make it more obvious that something is difficult or even wrong.</li>
-  <li>One team leader for every four or so associates doing direct work:
-  <ul>
-    <li>Primary job is to help associates when they encounter problems.</li>
-  </ul></li>
-  <li>When we consider that the most precious resource in any organization is people&rsquo;s ingenuity and creativity, the most common risk is cognitive overload.</li>
-</ul><h1>Practices</h1><p>List of practices and theories and if they support Slowification, Simplification ( <strong>I</strong>ncrementalization, <strong>M</strong>odularization, <strong>L</strong>inearization) or Amplification.</p>
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Slowification</th>
-      <th>Simplification </th>
-      <th>Amplification </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Toyota Production System </td>
-      <td>X </td>
-      <td>I M L </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>DevOps </td>
-      <td>X </td>
-      <td>I M L </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Deming </td>
-      <td>X </td>
-      <td>L </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Agile SW Dev </td>
-      <td>X </td>
-      <td>I </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Lean Startup </td>
-      <td>X </td>
-      <td>I </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Resilience Engineering </td>
-      <td>X </td>
-      <td>M </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>System Dynamics </td>
-      <td>X </td>
-      <td> </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Double-Loop Learning </td>
-      <td>X </td>
-      <td> </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Improvement Kata </td>
-      <td>X </td>
-      <td> </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Gemba walks, Empowerment, Participative Management </td>
-      <td>X </td>
-      <td> </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Conway&rsquo;s Law </td>
-      <td> </td>
-      <td>M L </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Cognitive Load </td>
-      <td> </td>
-      <td>M L </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Team Topologies </td>
-      <td>X </td>
-      <td>M L </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Technical Debt </td>
-      <td>X </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Software Architecture </td>
-      <td> </td>
-      <td>M </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Normalization of Deviance </td>
-      <td> </td>
-      <td> </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Lean Thinking </td>
-      <td> </td>
-      <td>L </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>Psychological Safety </td>
-      <td> </td>
-      <td> </td>
-      <td>X </td>
-    </tr>
-    <tr>
-      <td>Westrum Cultural Typologies </td>
-      <td> </td>
-      <td> </td>
-      <td>X </td>
-    </tr>
-  </tbody>
-</table><p><br/></p><h1>Case Studies</h1><p>List of all cases studies in the book:</p>
-<ol>
-  <li>Chapter 5:
-  <ul>
-    <li>Case studies:</li>
-    <li>MIT Sloan School Sailing Team.</li>
-    <li>Mrs. Morris/Ms. Morrison.</li>
-    <li>Apollo 11.</li>
-    <li>The Columbia Space Shuttle Disaster.</li>
-    <li>The Imperial Japanese Navy and Command, Control, and Compliance Leadership.</li>
-    <li>The US Navy and Learning Leadership.</li>
-    <li>United Airlines Flight 232 Crash Landing.</li>
-    <li>United Airlines Flight 173 Crash.</li>
-    <li>Google and Amazon Disaster Readiness Drills.</li>
-    <li>Netflix.</li>
-  </ul></li>
-  <li>Chapter 6:
-  <ul>
-    <li>Boston Marathon: Preparing for a Mass Casualty Event.</li>
-  </ul></li>
-  <li>Chapter 8:
-  <ul>
-    <li>Wright Brother&rsquo;s First Flight.</li>
-    <li>Incrementalization in the Arts.</li>
-    <li>Apple iPhone vs Nokia.</li>
-    <li>Menomonee Falls Safe School Reopenings.</li>
-    <li>Mastering New Naval Technology.</li>
-    <li>Amazon (pre-2002).</li>
-    <li>IBM System/360.</li>
-    <li>Accelerate Drug Development.</li>
-    <li>Pratt &amp; Whitney&rsquo;s Jet Engine Design.</li>
-    <li>Team of Teams.</li>
-  </ul></li>
-  <li>Chapter 9:
-  <ul>
-    <li>NASA Space Program: Mercury, Gemini, and Apollo.</li>
-  </ul></li>
-  <li>Chapter 10:
-  <ul>
-    <li>Toyota.</li>
-  </ul></li>
-</ol><h1>TOC</h1>
-<ul>
-  <li><a href="#p-0">Preface</a></li>
-  <li><a href="#p-1">Part I - A New Theory of Performance Management</a>
-  <ul>
-    <li><a href="#ch-1">Chapter 1 - The Pinnacles of Human Achievement and Why We Form Organizations</a></li>
-    <li><a href="#ch-2">Chapter 2 - Navigating from Danger Zones to Winning Zones</a></li>
-    <li><a href="#ch-3">Chapter 3 - Winning Based on Liberating Ingenuity</a></li>
-  </ul></li>
-  <li><a href="#p-2">Part II - Slowification</a>
-  <ul>
-    <li><a href="#ch-4">Chapter 4 - Slowification: A Theory Overview</a></li>
-    <li><a href="#ch-5">Chapter 5 - Slowification: Case Studies in Planning, Practice, and Performance</a></li>
-    <li><a href="#ch-6">Chapter 6 - Slowification: Exemplar Case Study and Further Examination</a></li>
-  </ul></li>
-  <li><a href="#p-3">Part III - Simplification</a>
-  <ul>
-    <li><a href="#ch-7">Chapter 7 - Simplification: A Theory Overview</a></li>
-    <li><a href="#ch-8">Chapter 8 - Simplification: Case Studies in Incrementalization, Modularization, and Linearization</a></li>
-    <li><a href="#ch-9">Chapter 9 - Simplification: Exemplar Case Study and Further Examination</a></li>
-  </ul></li>
-  <li><a href="#p-4">Part IV - Amplification</a>
-  <ul>
-    <li><a href="#ch-10">Chapter 10 - Amplification: A Theory Overview and Exemplar Case Study</a></li>
-  </ul></li>
-  <li><a href="#p-5">Conclusion</a></li>
-  <li><a href="#p-6">Appendix B - Transactional vs Developmental Leadership</a></li>
-</ul><h1><a name="p-0"></a>Preface</h1>
-<ul>
-  <li>People with the best work experiences need fewer resources, less capital equipment, and less time to accomplish greater things:
-  <ul>
-    <li>It is the management system.</li>
-  </ul></li>
-  <li>Social circuity: the overlay of precesses, procedures, routines, and norms that enable people to do their work easily and well.</li>
-</ul><h1><a name="p-1"></a>Part I - A New Theory of Performance Management</h1><h2><a name="ch-1"></a>Chapter 1 - The Pinnacles of Human Achievement and Why We Form Organizations</h2>
-<ul>
-  <li>Three mechanisms which create the difference between success and failure:
-  <ol>
-    <li>Slowification, to make solving problems easier to do:
-    <ul>
-      <li>Pulling problem-solving out of the realm of performance (operations or execution).</li>
-      <li>Instead, realms of planning and practice.</li>
-    </ul></li>
-    <li>Simplification, to make the problems themselves easier to solve:
-    <ul>
-      <li>Through incrementalization, modularization, and linearization.</li>
-      <li>Aim to make Layer 1 problem-solving parallel with little coordination from Layer 3.</li>
-    </ul></li>
-    <li>Amplification, to make it obvious that there are problems that demand attention and whether they&rsquo;ve been seen and solved:
-    <ul>
-      <li>Early and often, before problem become large and systematically disruptive.</li>
-    </ul></li>
-  </ol></li>
-  <li>Toyota + General Motors joint venture <a href="https://en.wikipedia.org/wiki/NUMMI">NUMMI</a>:
-  <ul>
-    <li>From worst to best with same people after changing management system.</li>
-  </ul></li>
-  <li>Difference between exceptional and ordinary is obvious by observing the experiences of people doing their work.</li>
-  <li>Collaborative problem-solving occurs in three distinct layers:
-  <ol>
-    <li>Layer 1 contains the technical objects being worked on. Code in our case.</li>
-    <li>Layer 2 contains the tools.</li>
-    <li>Layer 3 contains the social circuitry:
-    <ul>
-      <li>Workers have what they need, when they need it, and in the format they need it.</li>
-    </ul></li>
-  </ol>
-  <ul>
-    <li>Layer 1 and 2 are the &ldquo;technical&rdquo; part of a sociotechnical system. Layer 3 is the &ldquo;socio&rdquo; part.</li>
-  </ul></li>
-</ul><h2><a name="ch-2"></a>Chapter 2 - Navigating from Danger Zones to Winning Zones</h2>
-<ul>
-  <li>Boundary of a group solving problems must be large enough that it is coherent, having all the people and resources needed, but small enough to not require large amounts of coordination.</li>
-  <li>Coherent:
-  <ul>
-    <li>Having the quality of a unified whole.</li>
-    <li>In the same group, communicating directly with the needed frequency, speed, accuracy and detail required.</li>
-  </ul></li>
-  <li>Coupling:
-  <ul>
-    <li>When changes in one affect the other.</li>
-  </ul></li>
-  <li>How much coupling there is determines how much coherence leaders must create.</li>
-  <li>Bad:
-  <ul>
-    <li>Over coupled and under partitioned.</li>
-    <li>Under coupled and over partitioned.</li>
-  </ul></li>
-  <li>Estimates for the time (to remove furniture) is nearly always wrong:
-  <ul>
-    <li>First, they try to create a more accurate schedule by getting better information.</li>
-    <li>Then, try to help by finding from others teams who doesn&rsquo;t seem too busy.</li>
-    <li>This makes matters much worse.</li>
-    <li>Now had two problems instead of one.</li>
-    <li>Instead: keep people that are good at dealing with trickier issues in reserve.</li>
-  </ul></li>
-</ul><h2><a name="ch-3"></a>Chapter 3 - Winning Based on Liberating Ingenuity</h2>
-<ul>
-  <li>To slowify or not is a choice that leaders make.</li>
-  <li>To make things simpler, aim to no need to coordinate with anyone outside the team.</li>
-  <li>Recursive modularization:
-  <ul>
-    <li>Work was increasingly able to be performed and improved in parallel.</li>
-  </ul></li>
-  <li>Linearization does for sequential processes what modularization does for parallel processes.</li>
-  <li>Flawed wiring: talking to the wrong people, at the wrong time, in the wrong way, about the wrong things.</li>
-  <li>Wiring also dictates the type of feedback that is generated.</li>
-  <li>Model line:
-  <ul>
-    <li>Transformative tool.</li>
-    <li>Segment of the larger enterprise where new approaches can be tested.</li>
-    <li>Small but coherent.</li>
-  </ul></li>
-  <li>Change their behaviours, which is a precursor for changing their beliefs.</li>
-</ul><h1><a name="p-2"></a>Part II - Slowification</h1><h2><a name="ch-4"></a>Chapter 4 - Slowification: A Theory Overview</h2>
-<ul>
-  <li>Slowification is applied in one of two ways:
-  <ol>
-    <li>Slowing ourselves down, so we can be more deliberative and self-reflective.</li>
-    <li>Slowing down the environment.</li>
-  </ol></li>
-  <li>When we have more time, lower stakes, and less fear, our creativity can flourish.</li>
-  <li>When using System 1 (fast thinking):
-  <ul>
-    <li>We use only what we already know.</li>
-    <li>Does not encourage or allow time to improve our thinking.</li>
-  </ul></li>
-  <li>Three phases of work:
-  <ol>
-    <li>Planning:
-    <ul>
-      <li>Safest environment.</li>
-      <li>Cost of expressing and capturing ideas is low.</li>
-      <li>Allow for slowification.</li>
-    </ul></li>
-    <li>Practice:
-    <ul>
-      <li>Preproduction/testing.</li>
-      <li>Ideas are put into action.</li>
-      <li>We can control the pace and the incremental complexity of what is occurring, so we are not overwhelmed.</li>
-      <li>Feedback is used to find flaws and improve our plans.</li>
-      <li>Time to coach and improve our abilities to execute those plans.</li>
-      <li>Develop capabilities to address:
-      <ul>
-        <li>Most likely scenarios.</li>
-        <li>Less likely but highly consequential scenarios.</li>
-      </ul></li>
-    </ul></li>
-  </ol>
-  <ul>
-    <li>Allow for slowification.</li>
-  </ul>
-  <ol>
-    <li>Performance:</li>
-  </ol>
-  <ul>
-    <li>It controls the pace of the experience.</li>
-    <li>Force us to depend on already-developed routines, skills, and habits.</li>
-    <li>Bring issues back to practice or planning.</li>
-  </ul></li>
-  <li>Common element to slowification is feedback.</li>
-</ul><h2><a name="ch-5"></a>Chapter 5 - Slowification: Case Studies in Planning, Practice, and Performance</h2>
-<ul>
-  <li>Deming&rsquo;s learning cycle of Plan-Do-Study-Act is a tool to encourage slowification.</li>
-  <li>Leaders must capture the lessons learned to create an ever-improving baseline.</li>
-  <li>&ldquo;Pause time&rdquo; culture to figure out what the problem is.</li>
-  <li>Stress-testing their systems during practice sessions.</li>
-  <li>Compliance leadership expect that instructions are followed without question.</li>
-  <li>In learning leadership, plans are treated as best guesses and are subject to forceful backup.</li>
-  <li>Training on speaking up directly, fostering psychologically safe conditions for others to speak up.</li>
-  <li>Certain engineers were marked as either &ldquo;abducted by aliens&rdquo; or &ldquo;killed by zombies&rdquo;.</li>
-  <li>An often-overlooked area of testing is business process and communications.</li>
-  <li>Most often, stress testing discovered weak points in the Layer 3 social circuitry of their operations.</li>
-</ul><h2><a name="ch-6"></a>Chapter 6 - Slowification: Exemplar Case Study and Further Examination</h2>
-<ul>
-  <li>Knowledge capture and the potential for continued progress are never-ending.</li>
-  <li>Book of lessons learned.</li>
-  <li>How often and well do we capture lessons learned in a way that is easy to access?</li>
-  <li>How often are incorporated into future planning and used in future practice?</li>
-  <li>Knowledge can also be captured as code.</li>
-  <li>Knowledge capture can be conveyed in routines.</li>
-  <li>A learning leader are more concerned with asking the question and listening to their team.</li>
-</ul><h1><a name="p-3"></a>Part III - Simplification</h1><h2><a name="ch-7"></a>Chapter 7 - Simplification: A Theory Overview</h2>
-<ul>
-  <li>Partitioning large systems into smaller, coherent pieces allow to solve more problems independently and in parallel.</li>
-  <li>A coherent component often requires teams to be cross-functional.</li>
-  <li>When a coherent unit is decoupled from others, disruptions in one don&rsquo;t spill over.</li>
-  <li>Three simplification techniques:
-  <ol>
-    <li>Incrementalization:
-    <ul>
-      <li>Partition what is novel (which needs to be tested) from what is known (which is already validated) into their own self-contained, coherent units.</li>
-      <li>Adds to the novelty in smaller increments.</li>
-      <li>Allow to iterate and test changes on fewer factors, so more quickly and safely.</li>
-    </ul></li>
-    <li>Modularization:
-    <ul>
-      <li>Smaller, simpler, more numerous coherent pieces.</li>
-      <li>Less coupled as they are connected through only a few well-defined and stable interfaces.</li>
-      <li>Creates option value: decouple (temporally) decisions tomorrow from conditions today, giving latitude of action to decision-makers.</li>
-      <li>Downsides:
-      <ul>
-        <li>Potential incompatibility.</li>
-        <li>Misspecification at the interfaces.</li>
-        <li>Inability to change the interface when it proves to be inadequate.</li>
-      </ul></li>
-      <li>Leader has the Layer 3 responsibility to balance independence of action with ensuring enough compatibility that all integrate into a cohesive whole.</li>
-    </ul></li>
-    <li>Linearization:
-    <ul>
-      <li>Assembly line.</li>
-      <li>Partitions operations that share resources to accomplish multiple objectives into independent and coherent workflows.</li>
-      <li>Coherence is achieved by committing all resources needed to generate outputs to workflows.</li>
-      <li>Partitioning across workflows is achieved by preventing the sharing of resources between them.</li>
-      <li>Partitioning within workflows is achieved by defining hand-offs between steps.</li>
-      <li>4 elements:
-      <ol>
-        <li>Sequentialization: outputs are generated along the single dedicated, non-looping pathway of connected activities.</li>
-        <li>Standardization: output, steps/activities, handoffs and how work is done in each individual activity.</li>
-        <li>Stabilization: triggers when there is a problem and resources to swarm it.</li>
-        <li>Self-synchronization: system can automatically self-pace without elaborate scheduling.</li>
-      </ol></li>
-    </ul></li>
-  </ol></li>
-  <li>People can focus on a small number of novel items in a small number of projects and interact with the smallest number of people necessary.</li>
-  <li>Ideally, there should be coordinated collaboration among those whose work depends on or is depended on by others:
-  <ul>
-    <li>However, too often, coordination is done only &ldquo;at the top of the silo&rdquo;.</li>
-  </ul></li>
-  <li>Nonlinearized flows need considerably more Layer 3 coordination.</li>
-  <li>Managing how work is performed at the bottleneck is much simpler and more effective than scheduling the entire factory.</li>
-  <li>Linearization is also essential in high-speed, sustained improvement.</li>
-</ul><h2><a name="ch-8"></a>Chapter 8 - Simplification: Case Studies in Incrementalization, Modularization, and Linearization</h2>
-<ul>
-  <li>They believed they couldn&rsquo;t think their way to the right answer; instead, they experimented relentlessly with great frequency and at low cost.</li>
-  <li>Breaking large problems into smaller pieces, around which it is easier to experiment and learn.</li>
-  <li>Nokia engineers took over 48 hours to compile the Symbian OS, and two week to get a software build that could run on a prototype.</li>
-  <li><a name="center-out"></a>Center-out leadership:
-  <ul>
-    <li>Collect as much information as they can get and push it out to those running local operations.</li>
-    <li>Then delegate authority to local leaders to generate solutions that work for their unique situations.</li>
-    <li>Then gather local lessons and synthesize them into shareable, collective wisdom.</li>
-    <li>Useful when operational responsibility is distributed or when work happens in coherent local units that do not affect each other.</li>
-  </ul></li>
-  <li>Amazon pre-2002:
-  <ul>
-    <li>To change the ordering process, the digital teams would walk to the 80 different ordering teams and say &ldquo;We need to change this&rdquo;. The ordering teams would respond that they hadn&rsquo;t budgeted for it.</li>
-    <li>SKU changes caused many global outages.</li>
-    <li>Hire more project managers to help coordinate the work.</li>
-    <li>Put in more approval processes in an attempt to reduce outages.</li>
-  </ul></li>
-  <li>Ruth Malan: As the complexity of the system increases, so do the cognitive demands on the organization. Managing cognitive load through teams with clear responsibilities and boundaries is a distinguishing focus of effective team design.</li>
-  <li>Stabilization mechanism: they assigned only enough work to account for 85% of their colleagues&rsquo; time.</li>
-  <li>Linearized processes can be fragile:
-  <ul>
-    <li>Without various stabilization mechanisms, they can quickly devolve into &ldquo;job shops&rdquo;.</li>
-  </ul></li>
-</ul><h2><a name="ch-9"></a>Chapter 9 - Simplification: Exemplar Case Study and Further Examination</h2>
-<ul>
-  <li>By having clarity around how these technical subsystems interact at Layer 1, orgs can be formed on how they should interact in Layer 3.</li>
-  <li>Design requires isomorphism between Layers 1 and 3. Production requires isomorphism in all three layers:
-  <ul>
-    <li>If there is a mismatch, orgs underperform.</li>
-  </ul></li>
-  <li>If effectively run orgs, the functional leader is responsible for &ldquo;who&rdquo; and &ldquo;how&rdquo; - providing trainer people.</li>
-  <li>The flow owner is responsible for:
-  <ul>
-    <li>The &ldquo;what&rdquo; and &ldquo;when&rdquo; of how those people are deployed.</li>
-    <li>Establish what outputs.</li>
-    <li>Work is sequenced properly.</li>
-    <li>Balance cycle times and work load.</li>
-    <li>Exchanges and handoffs between steps are well established.</li>
-  </ul></li>
-  <li>All-at-once leadership:
-  <ul>
-    <li>Must hold in their heads the entire Layer 1 system for which they are responsible and must coordinate nearly everyone and everything in Layer 3.</li>
-  </ul></li>
-  <li>Incremental leadership:
-  <ul>
-    <li>Maintain comm channels and mechanism of knowledge sharing.</li>
-    <li>Partition novel from validated and ensuring experiments are being conducted rigorously and frequently.</li>
-  </ul></li>
-</ul><h1><a name="p-4"></a>Part IV - Amplification</h1><h2><a name="ch-10"></a>Chapter 10 - Amplification: A Theory Overview and Exemplar Case Study</h2>
-<ul>
-  <li>Amplification is the act of calling out problems loudly and consistently enough so help is triggered to swarm them.</li>
-  <li>Control theory addresses a broad variety of situations where no static plan can achieve the desired goal, no matter how good the plan is:
-  <ul>
-    <li>Feedback mechanisms are needed.</li>
-    <li>It can fail because of delays and imprecision.</li>
-    <li>Must be significantly faster and more reliable than the object being controlled.</li>
-  </ul></li>
-  <li>Layer 3 processes and procedures must integrate signaling that should be frequent enough, fast enough, accurate enough, and loud enough.
-  <ul>
-    <li>Signaling must be designed well and deliberately.</li>
-  </ul></li>
-  <li>Six steps of amplification:
-  <ol>
-    <li>Sender generates signal:
-    <ul>
-      <li>Fail: People become indifferent, when they point out problems that are never fixed, or help is requested but never arrives.</li>
-      <li>NASA culture: call out and examine anything anomalous or unexpected, and study it until it could be explained.</li>
-    </ul></li>
-    <li>Sender transmits signal:
-    <ul>
-      <li>Fail: People recognize a problem but do not feel safe calling it out.</li>
-    </ul></li>
-    <li>Receiver receives signal:
-    <ul>
-      <li>Simon Sinek: Communication is not about speaking what we think. It&rsquo;s about ensuring others hear what we mean.</li>
-      <li>Fail: Leaders consumed with maintaining operational tempo can&rsquo;t pause long enough to develop new approaches.</li>
-      <li>Apollo missions: only people allowed to communicate with astronauts in space were CAPCOMs:
-      <ul>
-        <li>Backup astronauts or training crew.</li>
-        <li>Same training and same shared experiences allowed them to develop a highly efficient code.</li>
-      </ul></li>
-    </ul></li>
-    <li>Corrective reaction is started:
-    <ul>
-      <li>Fail: signal arrives too late.</li>
-      <li>Fail: nobody reacts to signal.</li>
-    </ul></li>
-    <li>Corrective reaction is completed.</li>
-    <li>Sender confirms that reported problem has been solved:
-    <ul>
-      <li>Otherwise, they send another signal.</li>
-    </ul></li>
-  </ol></li>
-  <li>In the best factories, mechanics pulled the anon cord twelve times a shift:
-  <ul>
-    <li>There were enough capable team leaders to consistently provide help.</li>
-  </ul></li>
-  <li>Accident investigations that stop at &ldquo;human error&rdquo; are not just bad but dangerous.</li>
-  <li>Toyota&rsquo;s policy of &ldquo;global localization&rdquo;: building where it sells and buying where it builds.</li>
-  <li>Exemplar case study:
-  <ul>
-    <li>One vehicle per minute.</li>
-    <li>Varied and complex work.</li>
-    <li>Several thousand employees.</li>
-    <li>On-site suppliers.</li>
-    <li>One team leader for every four or so associates doing direct work:
-    <ul>
-      <li>Primary job is to help associates when they encounter problems.</li>
-      <li>Deliberate inversion of who was responsible.</li>
-      <li>Ratio depends on technical sophistication of the work, and the frequency and severity with which problems occur.</li>
-    </ul></li>
-    <li>President:
-    <ul>
-      <li>Spend several hours a day on the shop floor.</li>
-      <li>See the nuance and detail of what is actually occurring.</li>
-    </ul></li>
-    <li>Stopping the line was routine:
-    <ul>
-      <li>Short pause, associates tidy the work area.</li>
-      <li>Long pauses: improvement activities or training.</li>
-      <li>Back-shop teams use the time to do maintenance and repair.</li>
-    </ul></li>
-    <li>62 problem-solving stations:
-    <ul>
-      <li>Each focused in one big problem.</li>
-      <li>Shared by both shifts, collaborating continually.</li>
-      <li>Clear visibility.</li>
-    </ul></li>
-  </ul></li>
-  <li>Standards make succeeding easier; they make it more obvious that something is difficult or even wrong.</li>
-</ul><h1><a name="p-5"></a>Conclusion</h1>
-<ul>
-  <li>Successes are fantastic, yet often without obvious evidence of leadership involvement:
-  <ul>
-    <li>Leadership was everywhere in planning and practice.</li>
-  </ul></li>
-  <li>Both DevOps and TPS have the commonality of being developed to create conditions in which it is easier for individuals to succeed at what they do and have their efforts contribute seamlessly to a much larger whole.</li>
-  <li>When we consider that the most precious resource in any organization is people&rsquo;s ingenuity and creativity, the most common risk is cognitive overload.</li>
-  <li>3 questions to get started:
-  <ol>
-    <li>Are we solving our toughest problems in planning and practice, where we can iterate and learn?</li>
-    <li>Are we shaping our problems so that they are easier to solve because they are simple, low risk, controllable, and easy to understand and iterate and learn from?</li>
-    <li>Are we calling out problems loudly and consistently so that they can be swarmed, container, solved and prevent future occurrences?</li>
-  </ol></li>
-</ul><h1><a name="p-6"></a>Appendix B - Transactional vs Developmental Leadership</h1>
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Transactional orientation </th>
-      <th>Developmental orientation </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Limit </td>
-      <td>Scare resources </td>
-      <td>Useful understanding of resources&rsquo; best possible use </td>
-    </tr>
-    <tr>
-      <td>Actions </td>
-      <td>Optimization by allocation of scarce resources to best possible use </td>
-      <td>Make it quicker and easier to solve difficult problems better </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td>People has to adapt to the system </td>
-      <td>The system has to adapt to the people </td>
-    </tr>
-    <tr>
-      <td>How increase output </td>
-      <td>More resources </td>
-      <td>Better problem-solving </td>
-    </tr>
-  </tbody>
-</table>
-<ul>
-  <li>Transactional leaders focus on the process itself.</li>
-  <li>Developmental mindset assumes that their limitation is insufficient understanding about how to use the resource available to them. They don&rsquo;t try to fix everything all at once.</li>
 </ul>]]></description></item></channel></rss>
