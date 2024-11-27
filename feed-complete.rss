@@ -1,4 +1,799 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Fri, 16 Aug 2024 00:00:00 +0200</lastBuildDate><pubDate>Fri, 16 Aug 2024 00:00:00 +0200</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: The HP Way</title><link>https://danlebrero.com/2024/08/16/the-hp-way-summary/</link><guid>https://danlebrero.com/2024/08/16/the-hp-way-summary/</guid><pubDate>Fri, 16 Aug 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/4dKZsXY">The HP Way: How Bill Hewlett and I Built Our Company</a> by <a href="https://en.wikipedia.org/wiki/David_Packard">David Packard</a>.</p>
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="https://danlebrero.com" rel="self" type="application/rss+xml"/><title>Daniel Lebrero Berna Blog</title><link>https://danlebrero.com</link><language>en</language><lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0100</lastBuildDate><pubDate>Wed, 27 Nov 2024 00:00:00 +0100</pubDate><description>Daniel Lebrero blog</description><generator>clj-rss</generator><item><title>Book notes: Become an Effective Software Engineering Manager</title><link>https://danlebrero.com/2024/11/27/become-an-effective-software-engineering-manager-summary/</link><guid>https://danlebrero.com/2024/11/27/become-an-effective-software-engineering-manager-summary/</guid><pubDate>Wed, 27 Nov 2024 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/4fAWDtw">Become an Effective Software Engineering Manager:How to Be the Leader Your Development Team Needs</a> by <a href="https://www.linkedin.com/in/jstanier/">James Stanier</a>.</p><p>I would consider this book a must-read for any new manager, as it is very practical and detailed.</p>
+<blockquote><p>If it scares you, it might be a good thing to try <cite>Seth Godin</cite></p>
+</blockquote><h1>Key Insights</h1>
+<ul>
+  <li>Meetings are how a lot of your work as a manager gets done.</li>
+  <li>Core principle: keep as little information in your head as possible.</li>
+  <li>To feel productive, use <a href="/2023/04/12/high-output-management-summary/#content">Andy Grove categories</a>.</li>
+  <li>The ability to decide is a privilege that not everybody has.</li>
+</ul>
+<blockquote><p>The single biggest problem in communication is the illusion that it has taken place. <cite><a href="https://en.wikipedia.org/wiki/George_Bernard_Shaw">George Bernard Shaw</a></cite></p>
+</blockquote>
+<ul>
+  <li>Good comm is the connective tissue between everything you do as a manager:
+  <ul>
+    <li>Choose the right medium.</li>
+    <li>Be mindful of your mood.</li>
+    <li>Think twice.</li>
+    <li>Communication is not about you.</li>
+  </ul></li>
+  <li>You do not delegate accountability
+  <ul>
+    <li>Never get frustrated and do it yourself.</li>
+  </ul></li>
+  <li>Working with your manager:
+  <ul>
+    <li>Most important piece of advise: you should pull on your manager, not wait for them to push to you.</li>
+    <li>Show an interest in their world: best source of info+ opportunities to grow.</li>
+    <li>Weekly journaling.</li>
+  </ul></li>
+  <li>1-2-1:
+  <ul>
+    <li>It is the report&rsquo;s meeting: they should talk 70% of the time.</li>
+    <li>You are not a therapist. And you don&rsquo;t have the qualifications.</li>
+  </ul></li>
+  <li><a href="#zoneproximaldev">Zone of proximal development</a>.</li>
+  <li>Two kinds of developers: Cathedral constructors and Bazaar Browsers.</li>
+  <li>Performance review:
+  <ul>
+    <li>The people that benefit the most are the highest performing staff.</li>
+  </ul></li>
+  <li>Too many seniors: too many strong opinions may cause conflict and disarray rather than getting there twice as fast.</li>
+  <li>Culture fit is impossible as a concept: people instead add or contribute to a culture.</li>
+  <li>Hiring: If you are on the fence, say no.</li>
+  <li>Everybody that interviews for your company should be left with the impression that it is a great place to work.</li>
+  <li>When fighting for someone to stay, are you willing to accept an imbalance to keep someone within your company?</li>
+  <li>The bar that you set for acceptable performance is firmly fixed at the level of your worst performer.</li>
+  <li>As with most issues with interpersonal relationships, open and honest comms is the remedy.</li>
+  <li>&ldquo;The team is not working hard enough&rdquo; can mean: Lack of visible output, &ldquo;hustle&rdquo; or passion.</li>
+  <li>You have to accept the fact that productivity per head will decrease as the company gets larger.</li>
+  <li>Shift conversation towards trade-off.</li>
+  <li>You need to ack as an information gatekeeper deciding what, when and how.</li>
+  <li>In absence of information, people tend to assume the worst.</li>
+  <li>Carve out 10% of your time each week to do absolutely nothing other than let your thoughts emerge.</li>
+  <li>Progression framework should act as a compass rather than a GPS.</li>
+  <li>A promotion should be a ratification of a position that has been almost reached.</li>
+  <li>Framework to decide on pay increases:
+  <ol>
+    <li>Fix anyone underpaid according to market rate or their peers.</li>
+    <li>Increase anyone promote to a new role.</li>
+    <li>Inflation.</li>
+    <li>Increase pay in line with performance.</li>
+  </ol></li>
+  <li>Every job that you have should be a meaningful step towards the vision that you have for yourself in the future.</li>
+  <li>People struggle to create a vision because:
+  <ol>
+    <li>They don&rsquo;t dream big enough.</li>
+    <li>They aren&rsquo;t clear enough.</li>
+  </ol></li>
+</ul><h1>TOC</h1>
+<ul>
+  <li><a href="#p-1">Part I - Getting Oriented</a>
+  <ul>
+    <li><a href="#ch-1">Chapter 1 - A New Adventure</a></li>
+    <li><a href="#ch-2">Chapter 2 - Manager Yourself First</a></li>
+  </ul></li>
+  <li><a href="#p-2">Part II - Working with Individuals</a>
+  <ul>
+    <li><a href="#ch-3">Chapter 3 - Interfacing with Humans</a></li>
+    <li><a href="#ch-4">Chapter 4 - One-to-Ones</a></li>
+    <li><a href="#ch-5">Chapter 5 - The Right Job for the Person</a></li>
+    <li><a href="#ch-6">Chapter 6 - The Most Wonderful Time of the Year</a></li>
+    <li><a href="#ch-7">Chapter 7 - Join Us!</a></li>
+    <li><a href="#ch-8">Chapter 8 - Game Over</a></li>
+    <li><a href="#ch-9">Chapter 9 - How to Win Friends and Influence People</a></li>
+  </ul></li>
+  <li><a href="#p-3">Part III - The Bigger Picture</a>
+  <ul>
+    <li><a href="#ch-10">Chapter 10 - Humans Are Hard</a></li>
+    <li><a href="#ch-11">Chapter 11 - Projects Are Hard</a></li>
+    <li><a href="#ch-12">Chapter 12 - The Information Stock Exchange</a></li>
+    <li><a href="#ch-13">Chapter 13 - Letting Go of Control</a></li>
+    <li><a href="#ch-14">Chapter 14 - Good Housekeeping</a></li>
+    <li><a href="#ch-15">Chapter 15 - Dual Ladders</a></li>
+    <li><a href="#ch-16">Chapter 16 - The Modern Workplace</a></li>
+    <li><a href="#ch-17">Chapter 17 - Startups</a></li>
+    <li><a href="#ch-18">Chapter 18 - The Crystal Ball</a></li>
+  </ul></li>
+</ul><h1><a name="p-1"></a>Part I - Getting Oriented</h1><h2><a name="ch-1"></a>Chapter 1 - A New Adventure</h2>
+<blockquote><p>If it scares you, it might be a good thing to try <cite>Seth Godin</cite></p>
+</blockquote>
+<ul>
+  <li>First steps as a manager: create a snapshot of the team:
+  <ol>
+    <li>Your own observations, your manager&rsquo;s and the team&rsquo;s.</li>
+    <li>30 mins 1-2-1 informal to chat about team responsibilities and current project, and to chat about what is/isn&rsquo;t working at the team/company level.
+    <ul>
+      <li>Repeat any actions you are taking.</li>
+    </ul></li>
+    <li>Book a weekly 1-2-1 with everyone is your team:
+    <ul>
+      <li>Meetings are how a lot of your work as a manager gets done.</li>
+      <li>Book them at their convenience time.</li>
+      <li>1 hour to start with.</li>
+    </ul></li>
+    <li>Introductory meeting with your manager:
+    <ul>
+      <li>Find out current performance of team and individuals.</li>
+      <li>Current project/work stream.</li>
+      <li>Thoughts on how best to work with them.</li>
+      <li>How to do your role in the org.</li>
+      <li>Set up weekly 1-2-1 with them.</li>
+    </ul></li>
+    <li>Create snapshot:<br> <img src="/images/blog/books/become-effective-software-engineering-manager/team-snapshot.jpg" alt="team snapshot" /></li>
+  </ol></li>
+  <li>Poor communication downward: you and your manager share/agree but team is unaware/disagrees.</li>
+  <li>Action List:
+  <ul>
+    <li>Items to talk with team: poor comms down, false beliefs.</li>
+    <li>Items to talk with your manager: poor comms upwards, false beliefs.</li>
+  </ul></li>
+</ul><h2><a name="ch-2"></a>Chapter 2 - Manager Yourself First</h2>
+<ul>
+  <li>Catastrophe doesn&rsquo;t have to strike to feel like your work day was a waste of time.
+  <ul>
+    <li>You won&rsquo;t survive without a system to org yourself.</li>
+  </ul></li>
+  <li>System to organise yourself:
+  <ul>
+    <li>Core principle: keep as little information in your head as possible.</li>
+    <li>Tools:
+    <ol>
+      <li>Calendar:
+      <ul>
+        <li>Organizing your time.</li>
+        <li>You should live your day by your calendar.</li>
+        <li>There should be plenty of free space for others to book if they wish.</li>
+        <li>Should contain only:
+        <ul>
+          <li>Meetings.</li>
+          <li>Busy periods.</li>
+          <li>Focus time.</li>
+        </ul></li>
+        <li>Make it public to the org by default.</li>
+      </ul></li>
+      <li>TODO list:
+      <ul>
+        <li>Only place where your tasks live.</li>
+        <li>If it is not on your TODO list, then you are not doing it.</li>
+        <li>Asana.</li>
+      </ul></li>
+      <li>Email Inbox:
+      <ul>
+        <li>Never delete email.</li>
+        <li>Unsubscribe from lists you don&rsquo;t read.</li>
+        <li>Batch email sessions.</li>
+        <li>Email is not your TODO list.</li>
+        <li>All other SW should just email you.</li>
+      </ul></li>
+      <li>Place to capture information:
+      <ul>
+        <li>For when you are away from your computer:
+        <ul>
+          <li>Notebook or phone.</li>
+        </ul></li>
+      </ul></li>
+    </ol></li>
+  </ul></li>
+  <li>Reasons managers do you feel unproductive:
+  <ul>
+    <li>You works through other people.</li>
+    <li>You do dozens of little tasks rather than a few big ones.</li>
+    <li>Context-switching and more likely to be interrupted.</li>
+    <li>Loads of time in meetings and discussions.</li>
+  </ul></li>
+  <li>To feel productive, use <a href="/2023/04/12/high-output-management-summary/#content">Andy Grove categories</a>:
+  <ul>
+    <li>Information gathering.</li>
+    <li>Decision-making:
+    <ul>
+      <li>The ability to decide is a privilege that not everybody has.</li>
+    </ul></li>
+    <li>Nudging:
+    <ul>
+      <li>Be aware that your word carries some authority, so bear that in mind when offering your opinion freely.</li>
+    </ul></li>
+    <li>Being a role model.</li>
+  </ul></li>
+  <li>Measure output as a manager (also from Andy Grove book):
+  <ul>
+    <li>The output of your team + the output of others that you influence.</li>
+    <li>Your team&rsquo;s output is more important than your own personal output:
+    <ul>
+      <li>More delegating, less doing.</li>
+    </ul></li>
+  </ul></li>
+</ul><h1><a name="p-2"></a>Part II - Working with Individuals</h1>
+<ul>
+  <li>If you thought that getting computers to do the right things was hard, wait until you start working more with humans.</li>
+</ul><h2><a name="ch-3"></a>Chapter 3 - Interfacing with Humans</h2>
+<blockquote><p>The single biggest problem in communication is the illusion that it has taken place. <cite><a href="https://en.wikipedia.org/wiki/George_Bernard_Shaw">George Bernard Shaw</a></cite></p>
+</blockquote>
+<ul>
+  <li>Managers in the tech industry have a tooling crisis.</li>
+  <li>Comms:
+  <ul>
+    <li>Good comm is the connective tissue between everything you do as a manager.</li>
+    <li>Clear, candid and empathetic.</li>
+    <li>First step is to choose the right medium. Depends on:
+    <ul>
+      <li>The message itself.</li>
+      <li>The recipient.</li>
+    </ul></li>
+    <li>Be mindful of your mood, it might be better to:
+    <ul>
+      <li>Delay next activity.</li>
+      <li>Be upfront and share why, so the other person knows it has nothing to do with them.</li>
+    </ul></li>
+    <li>Think twice before broadcasting information.</li>
+    <li>Dont communicate when you want to, but when you need to.</li>
+    <li>Radical candor: care personally (in their best interest) and challenge directly (get to the point).</li>
+    <li>Communication is not about you.</li>
+    <li>Bad traits:
+    <ul>
+      <li>Over communication.</li>
+      <li>Waffling.</li>
+      <li>Playing to the crowd.</li>
+      <li>Inconsistency.</li>
+      <li>Letting emotions get in the way.</li>
+    </ul></li>
+  </ul></li>
+  <li>Delegation:
+  <ul>
+    <li>You do not delegate accountability.</li>
+    <li>Full delegation can only happen when the person being delegated to can perform that task exactly to the standard that you expect with no guidance.</li>
+    <li>From less delegation to more, from more control to less:
+    <ul>
+      <li>You do it (no delegation):</li>
+      <li>You show them how to do it.</li>
+      <li>They do it with your guidance.</li>
+      <li>They do it with frequent check-ins.</li>
+      <li>They do it with infrequent check-ins.</li>
+      <li>They tell you when it is done.</li>
+      <li>They do it (full delegation).</li>
+    </ul></li>
+    <li>Never get frustrated and do it yourself.</li>
+  </ul></li>
+  <li>Working with your manager:
+  <ul>
+    <li>Most important piece of advise: you should pull on your manager, not wait for them to push to you.</li>
+    <li>Be proactive.</li>
+    <li>Figure out:
+    <ul>
+      <li>What your performance equate to in their eyes.</li>
+      <li>What is their performance depend upon?</li>
+    </ul></li>
+    <li>Show an interest in their world: best source of info+ opportunities to grow.</li>
+    <li>Weekly journaling:
+    <ul>
+      <li>Progress.</li>
+      <li>Problems: what happen and what needs addressing.</li>
+      <li>Plans: for the problems.</li>
+      <li>People.</li>
+      <li>Block 30 mins to do it.</li>
+      <li>Write as if you were talking to a good friend.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-4"></a>Chapter 4 - One-to-Ones</h2>
+<ul>
+  <li>Contracting:
+  <ul>
+    <li>Set of questions for the first 1-2-1.</li>
+    <li>Sets expectations on both sides.</li>
+    <li>Both should answer:
+    <ol>
+      <li>Which ares would you like the most support with?</li>
+      <li>How would you like to receive feedback and support?</li>
+      <li>What could be a challenge of us working together?</li>
+      <li>How might we know if the support I&rsquo;m offering isn&rsquo;t going well?</li>
+      <li>How confidential is the content of our meetings?</li>
+    </ol></li>
+  </ul></li>
+  <li>It is the report&rsquo;s meeting:
+  <ul>
+    <li>They should talk 70% of the time.</li>
+    <li>Don&rsquo;t solve their problems:
+    <ul>
+      <li>Ask more questions for them to arrive to their own conclusions.</li>
+    </ul></li>
+  </ul></li>
+  <li>Avoid status updates.</li>
+  <li>You are not a therapist. And you don&rsquo;t have the qualifications.</li>
+</ul><h2><a name="ch-5"></a>Chapter 5 - The Right Job for the Person</h2>
+<ul>
+  <li>It is not about getting the right person for the job, it is about getting the right job for the person.</li>
+  <li><a name="zoneproximaldev"></a>Zone of proximal development:
+  <ul>
+    <li>Area in which a person cannot progress without the help of a higher skilled individual.</li>
+    <li>You have to give such tasks.</li>
+    <li>You have to ensure higher skilled people can assist.</li>
+    <li>Can be applied at the task and career levels.</li>
+  </ul></li>
+  <li>Two kinds of developers:
+  <ul>
+    <li>Cathedral constructors:
+    <ul>
+      <li>Subject-matter experts.</li>
+      <li>Deep, not wide knowledge.</li>
+      <li>Teachers.</li>
+      <li>Revel in the detail.</li>
+    </ul></li>
+    <li>Bazaar Browsers:
+    <ul>
+      <li>Get as much newness as possible.</li>
+      <li>Build and throw away.</li>
+      <li>Avoid stagnation: wide, not deep.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-6"></a>Chapter 6 - The Most Wonderful Time of the Year</h2>
+<ul>
+  <li>Performance review:
+  <ul>
+    <li>Should be a two-way process.</li>
+    <li>The people that benefit the most are the highest performing staff.</li>
+    <li>For praise, critique, planning, career goals, and dreaming about the future.</li>
+    <li>Every 6 months.</li>
+    <li>Start 3 weeks before teh review meeting.</li>
+    <li>Feedback from 2-5 peers:
+    <ul>
+      <li>What has this person excelled at?</li>
+      <li>What should this person do differently and why?</li>
+      <li>What other feedback would you like to give?</li>
+      <li>Would you like to give this feedback anonymously?</li>
+    </ul></li>
+  </ul></li>
+  <li>Review forms parts:
+  <ul>
+    <li>Fill and share 1 and 2 before the review meeting.</li>
+  </ul>
+  <ol>
+    <li>Your report&rsquo;s observations:
+    <ol>
+      <li>Achievements:
+      <ul>
+        <li>This about your achievements big or small over the last six months. What have you accomplished that makes your proud and why?</li>
+      </ul></li>
+      <li>Reflection:
+      <ul>
+        <li>How do you feel in your role right now? Has that changed for the better or worse since your last review?</li>
+      </ul></li>
+      <li>Development:
+      <ul>
+        <li>Is there anything that could have gone better during the period? What skills do you think that you need to develop?</li>
+      </ul></li>
+      <li>The Future:
+      <ul>
+        <li>Consider your future at the company. Where are you aiming to go? What would you ideally like to accomplish or work on? Or are you happy where you are now?</li>
+      </ul></li>
+      <li>Support:
+      <ul>
+        <li>What sort of support do you need in order to get to where you want to go in the future?</li>
+      </ul></li>
+    </ol></li>
+    <li>Your observations:
+    <ol>
+      <li>Achievements:
+      <ul>
+        <li>What has this person done in the last six months that has impressed you? What do you consider their biggest achievement?</li>
+      </ul></li>
+      <li>Development:
+      <ul>
+        <li>Where do you think that this person should focus on developing? What traits and skills could they work on and how can you help them get there?
+        <ul>
+          <li>Especially hard, and especially important for staff doing exceptionally well.</li>
+        </ul></li>
+      </ul></li>
+      <li>Peer Feedback:
+      <ul>
+        <li>What were the key themes from this person&rsquo;s peer feedback? Does it reinforce what ou both already know, or are there any new observations?</li>
+      </ul></li>
+    </ol></li>
+    <li>Goals</li>
+  </ol></li>
+  <li>Writing your part should take about 1 hour.</li>
+  <li>Review meeting agenda:
+  <ol>
+    <li>Reflective discussion about the period.</li>
+    <li>Forward-thinking discussion about the future.</li>
+    <li>Collaborative session drafting goals.</li>
+  </ol>
+  <ul>
+    <li>Let them do most of the talking in 1 and 2.</li>
+    <li>You are not there to figure out their future career.</li>
+  </ul></li>
+</ul><h2><a name="ch-7"></a>Chapter 7 - Join Us!</h2>
+<ul>
+  <li>Too many seniors: too many strong opinions may cause conflict and disarray rather than getting there twice as fast.</li>
+  <li>Culture fit is impossible as a concept: people instead add or contribute to a culture.</li>
+  <li>Job description template:
+  <ol>
+    <li>About the company:
+    <ul>
+      <li>Why and purpose.</li>
+      <li>Aim for &ldquo;Wow! I&rsquo;d love to contribute towards that!&rdquo;</li>
+    </ul></li>
+    <li>About the role:
+    <ul>
+      <li>Why is important for the company.</li>
+      <li>What it entails, using examples.</li>
+      <li>What is like working here.</li>
+    </ul></li>
+    <li>Who you are looking for:
+    <ul>
+      <li>Broad traits rather than specific skills.</li>
+      <li>Inviting: what they can do when at the company.</li>
+      <li>Barrier to entry: listing specific skills.</li>
+    </ul></li>
+    <li>Salary and benefits:
+    <ul>
+      <li>Salary range very desirable.</li>
+    </ul></li>
+    <li>How to apply.</li>
+  </ol></li>
+  <li>Highlight flexible working policy if you have one.</li>
+  <li>If you are on the fence, say no.</li>
+  <li>Interview process:
+  <ul>
+    <li>Everybody that interviews for your company should be left with the impression that it is a great place to work.</li>
+    <li>Funnel:
+    <ol>
+      <li>Review applications:
+      <ul>
+        <li>On reflection, don&rsquo;t be too specific on why, and don&rsquo;t make empty promises about the future.</li>
+      </ul></li>
+      <li>Screening calls:
+      <ul>
+        <li>15-30 mins.</li>
+        <li>Tell about the company and role.</li>
+        <li>Admin items: timezone, visa, notice period.</li>
+        <li>Ask about:
+        <ul>
+          <li>Their last role.</li>
+          <li>Why they decided to apply.</li>
+          <li>Salary expectations.</li>
+          <li>Any questions?</li>
+        </ul></li>
+        <li>Tell about what is next.</li>
+      </ul></li>
+      <li>First interview:
+      <ul>
+        <li>Tell the candidate beforehand as much as possible.</li>
+        <li>One hour.</li>
+        <li>Manager + other team member.</li>
+        <li>Aim is to know each other (past roles and experiences).</li>
+        <li>Tech exercise done collaboratively.</li>
+        <li>Prep:
+        <ul>
+          <li>What are their main strengths?</li>
+          <li>What skills will be valuable to the team?</li>
+          <li>Prepare questions and share with fellow interviewer.</li>
+        </ul></li>
+        <li>Describe what you do before you do it.</li>
+      </ul></li>
+      <li>Optional technical exercise:
+      <ul>
+        <li>Take-home exercise.</li>
+        <li>2 hours.</li>
+        <li>Make the scope extremely clear.</li>
+        <li>Related to what they will work on.</li>
+      </ul></li>
+      <li>Final interview:
+      <ul>
+        <li>To discuss take-home test.</li>
+        <li>More eyes to validate your views:
+        <ul>
+          <li>Two new people to do the interview.</li>
+        </ul></li>
+      </ul></li>
+      <li>Make the offer.</li>
+    </ol></li>
+  </ul></li>
+</ul><h2><a name="ch-8"></a>Chapter 8 - Game Over</h2>
+<ul>
+  <li>People will always leave.</li>
+  <li>Good leavers:
+  <ul>
+    <li>Work out best date that work for both.</li>
+    <li>Ask if they want a reference.</li>
+    <li>Focus on handover.</li>
+    <li>Keep the door open.</li>
+  </ul></li>
+  <li>Bad reasons for leaving:
+  <ul>
+    <li>Zingers: lack of open and honest communication from both parties, which results in simmering issues not being caught early.</li>
+    <li>Compensation.</li>
+    <li>Issues with coworkers.</li>
+    <li>Career progression.</li>
+    <li>Lack of challenge or new experiences.</li>
+  </ul></li>
+  <li>When fighting for someone to stay, are you willing to accept an imbalance to keep someone within your company?</li>
+  <li>The bar that you set for acceptable performance is firmly fixed at the level of your worst performer.</li>
+  <li>Personal Improvement Plan (PIP):
+  <ul>
+    <li>When other means of improving a poor performance have failed.</li>
+    <li>Contract terminated if PIP fails.</li>
+    <li>Example page 161 and 162.</li>
+    <li>It is in both your best interests in them to be able to succeed.</li>
+  </ul></li>
+  <li>Layoffs:
+  <ul>
+    <li>You will typically be given some script to follow that details the reasoning plus their severance package. If not, you have the right to ask for once.</li>
+    <li>This is one of the hardest things to do as a manager, but they will be hurting more.</li>
+  </ul></li>
+</ul><h2><a name="ch-9"></a>Chapter 9 - How to Win Friends and Influence People</h2>
+<ul>
+  <li>Being well-connected means more opportunities to have a positive impact on more people.
+  <ul>
+    <li>Influencing others positively builds stronger connections.</li>
+  </ul></li>
+  <li><a href="https://amzn.to/3AOugcB">Only the Paranoid Survive</a>:
+  <ul>
+    <li>Snow melts at the periphery. Employees on the periphery of the business see the real situation in the market much quicker than you do.</li>
+  </ul></li>
+  <li>Don&rsquo;t be afraid of &ldquo;cold email&rdquo; introductions:
+  <ul>
+    <li>Check in via email or coffee regularly (once a month).</li>
+  </ul></li>
+  <li>Mentorship agreement:
+  <ul>
+    <li>Before the first meeting.</li>
+  </ul>
+  <ol>
+    <li>Time: when, where and for how long the relationship would last.</li>
+    <li>Flexibility: can the mentee contact at any time? What medium?</li>
+    <li>What is confidential.</li>
+    <li>Boundaries.</li>
+    <li>Review and evaluation: when to stop.</li>
+  </ol></li>
+  <li>Two modes of conversation:
+  <ul>
+    <li>Directive.</li>
+    <li>Following interest: listening to understand, reflecting on what they are saying, and summarizing.</li>
+  </ul></li>
+  <li>Coaching:
+  <ul>
+    <li>Mostly following interest, with the occasional directive if they are getting nowhere.</li>
+    <li>For structured coaching sessions, use GROW:
+    <ul>
+      <li>Goal: what problem are we trying to solve?</li>
+      <li>Reality: who, what, where, and how much?</li>
+      <li>Options.</li>
+      <li>Wrap-up: clear choice, and discuss what support is needed.</li>
+    </ul></li>
+  </ul></li>
+</ul><h1><a name="p-3"></a>Part III - The Bigger Picture</h1><h2><a name="ch-10"></a>Chapter 10 - Humans Are Hard</h2>
+<ul>
+  <li>Increasingly senior positions invite more scrutiny.</li>
+  <li>Your staff reaction when you have a bad day:
+  <ul>
+    <li>Kindness and understanding: you have a fantastic squad, and you are doing a good job.</li>
+    <li>Concern and worry: reassure them it is nothing to do with them.</li>
+    <li>Resentment: It often isn&rsquo;t entirely about you. Dig deeper in your conversations.</li>
+    <li>Mutiny: danger zone. It never ends well for anyone involved.</li>
+  </ul></li>
+  <li>As with most issues with interpersonal relationships, open and honest comms is the remedy.</li>
+  <li>As a manager, you have to shield your team from input that is too messy, disruptive, and emotional when it will disrupt their job:
+  <ol>
+    <li>Listen and observe without judgement.
+    <ul>
+      <li>Separate facts from emotions.</li>
+    </ul></li>
+    <li>Digest:
+    <ul>
+      <li>Give yourself time before communicating downwards.</li>
+      <li>What the facts (not the emotions) really mean?</li>
+      <li>Which individuals will react badly? Why?</li>
+      <li>Sleep over it.</li>
+    </ul></li>
+    <li>Communicate:
+    <ul>
+      <li>Consider reframming the message into something more positive.</li>
+      <li>Decide the best medium.</li>
+      <li>Never shy away from the facts.</li>
+    </ul></li>
+  </ol></li>
+  <li>&ldquo;The team is not working hard enough&rdquo; can mean:
+  <ol>
+    <li>Lack of visible output.</li>
+    <li>Lack of &ldquo;hustle&rdquo;.</li>
+    <li>Lack of passion.</li>
+  </ol></li>
+  <li>Being a good manager is about turning the whip into a carrot.
+  <ul>
+    <li>You should be creating the conditions that make your staff happy and productive through nurturing their autonomy, mastery, and purpose.</li>
+  </ul></li>
+  <li>Dunning-Kruger effect leads to:
+  <ol>
+    <li>Pool decisions by junior engineers:
+    <ul>
+      <li>Ideally, coach them so they figure out themselves that they are overconfident.</li>
+    </ul></li>
+    <li>Rash decisions by senior staff:
+    <ul>
+      <li>Present only the facts.</li>
+      <li>Consider taking the conversation offline.</li>
+    </ul></li>
+  </ol></li>
+  <li>Imposter syndrome:
+  <ul>
+    <li>Junior: pair with senior staff who can show the junior that they are doing a great job will build their confidence.</li>
+    <li>Senior:
+    <ul>
+      <li>Pair them with junior: they will realize just how much they have to teach.</li>
+      <li>If they are reserved, ask their opinion directly in debates.</li>
+    </ul></li>
+  </ul></li>
+</ul><h2><a name="ch-11"></a>Chapter 11 - Projects Are Hard</h2>
+<ul>
+  <li>When high-stakes projects are handled correctly, you will be looking at career growth.</li>
+  <li>At times of immense pressure:
+  <ul>
+    <li>Over-communicate.</li>
+    <li>Open a clear comm channel.</li>
+    <li>Release frequently.</li>
+    <li>Be pragmatic == create tech debt.</li>
+    <li>Set example.</li>
+    <li>Afterwards:
+    <ul>
+      <li>Celebrate.</li>
+      <li>Pay tech debt.</li>
+      <li>Do a retro.</li>
+      <li>Allow for self-guided time.</li>
+    </ul></li>
+  </ul></li>
+  <li>Adding more person-power to a team/department/org makes everything more complicated.</li>
+  <li>If you are successful:
+  <ul>
+    <li>Business as usual gets harder:
+    <ul>
+      <li>Just keeping the lights on takes an increasing amount of time and effort.</li>
+    </ul></li>
+    <li>More and more legacy code.</li>
+    <li>Comms and process overhead are ever-increasing.</li>
+  </ul></li>
+  <li>You have to accept the fact that productivity per head will decrease as the company gets larger.</li>
+  <li>Scope, resources, time triangle:
+  <ul>
+    <li>You don&rsquo;t want to compromise quality.</li>
+    <li>Scoping:
+    <ul>
+      <li>MosCoW.</li>
+      <li>Stretch goal.</li>
+    </ul></li>
+    <li>Resources:
+    <ul>
+      <li>How much work can be done in parallel?
+      <ul>
+        <li>Without stepping into each other&rsquo;s code.</li>
+      </ul></li>
+      <li>What technical competency is required?</li>
+      <li>If shit hits the fan, moving people around isn&rsquo;t your strongest lever to pull.</li>
+    </ul></li>
+    <li>Time: find out the impact of the deadline moving.</li>
+    <li>Shift conversation towards trade-off.</li>
+  </ul></li>
+</ul><h2><a name="ch-12"></a>Chapter 12 - The Information Stock Exchange</h2>
+<ul>
+  <li>As a manager, information is your currency. But not all information is good.</li>
+  <li>Never be a spy.</li>
+  <li>You need to ack as an information gatekeeper deciding what, when and how.</li>
+  <li>Unless there is a critical reason for hiding information, it should be shared, although care should be taken in how the message is delivered.</li>
+  <li>You must be consistent with how you treat information with different people.</li>
+  <li>You always share just enough.</li>
+  <li>Information classification:
+  <ul>
+    <li>Completely confidential.</li>
+    <li>Closed box.</li>
+    <li>Open box.</li>
+  </ul></li>
+  <li>In absence of information, people tend to assume the worst.</li>
+  <li>Politics in the workspace are always going to happen:
+  <ul>
+    <li>They arise because of tension between different types of social structures:
+    <ul>
+      <li>The org chart.</li>
+      <li>Close-knit informal groups.</li>
+      <li>Influential people.</li>
+    </ul></li>
+  </ul></li>
+  <li>Good use of politics: Identify who you can collaborate with on different issues with the least amount of friction.</li>
+</ul><h2><a name="ch-13"></a>Chapter 13 - Letting Go of Control</h2>
+<ul>
+  <li>As a manager, you do work through other people, and they are going to do it in a different way than how you&rsquo;d have done it.</li>
+  <li>Stoicism:
+  <ul>
+    <li>Live in the present, in accordance with nature.</li>
+    <li>Use logic and reasoning.</li>
+    <li>Negative visualization: appreciate more what we have.</li>
+    <li>Denying of some pleasures:
+    <ul>
+      <li>Enjoy them more.</li>
+      <li>Increase self-discipline.</li>
+    </ul></li>
+    <li>Not worry about things that are out of your control.</li>
+    <li>For the things you have some, but not complete control, you should set internal goals rather than external ones.</li>
+  </ul></li>
+  <li>Carve out 10% of your time each week to do absolutely nothing other than let your thoughts emerge.</li>
+  <li>Purposefully take on 85% of the work that you think that you can get done.</li>
+  <li>Practice and a good night&rsquo;s sleep makes perfect.</li>
+  <li>Sleep, exercise, meditate.</li>
+</ul><h2><a name="ch-14"></a>Chapter 14 - Good Housekeeping</h2>
+<ul>
+  <li>Getting comms right sounds a lot like network routing: unicast, broadcast, multicast.</li>
+  <li>Cross-functional feature teams without effective comms are just another type of silo.</li>
+  <li>Guilds:
+  <ul>
+    <li>Discussion and progression of best practices.</li>
+    <li>Information sharing across multiple teams.</li>
+    <li>Improving the visibility of that interest or discipline within the company.</li>
+  </ul></li>
+  <li>Lightning talks:
+  <ul>
+    <li>5 minutes.</li>
+    <li>30-1h to prepare.</li>
+    <li>Simple slides: <a href="https://en.wikipedia.org/wiki/Takahashi_method">Takahashi</a> or <a href="https://en.wikipedia.org/wiki/PechaKucha">Pecha Kucha</a>.</li>
+    <li>Practice multiple times.</li>
+    <li>Have a system of feedback for the speaker.</li>
+  </ul></li>
+  <li>Consider a Kanban with management &ldquo;bugs&rdquo; that anybody can add to.</li>
+</ul><h2><a name="ch-15"></a>Chapter 15 - Dual Ladders</h2>
+<ul>
+  <li>The most surefire way of a manager increasing their output is for their team to get bigger.</li>
+  <li>More seniority:
+  <ul>
+    <li>Increasingly effective at delegation (including whole teams).</li>
+    <li>More people reporting to them.</li>
+    <li>Larger and more important strategic areas.</li>
+  </ul></li>
+  <li>Progression framework should act as a compass rather than a GPS:
+  <ul>
+    <li>Competencies should be defined in a way that doesn&rsquo;t make them specific checkboxes to tick to unlock a promotion.</li>
+    <li>For the managers one, start with the same as IC, with the difference that instead of employing these skills to build SW, managers are using them to build people.</li>
+    <li>A promotion should be a ratification of a position that has been almost reached.</li>
+    <li>Progression is subjective.</li>
+    <li>FW to decide on increases:
+    <ol>
+      <li>Fix anyone underpaid according to market rate or their peers.</li>
+      <li>Increase anyone promote to a new role.</li>
+      <li>Inflation.</li>
+      <li>Increase pay in line with performance.</li>
+    </ol></li>
+  </ul></li>
+</ul><h2><a name="ch-16"></a>Chapter 16 - The Modern Workplace</h2>
+<ul>
+  <li>We all have an implicit bias.</li>
+  <li>Call out incorrect behaviour.</li>
+  <li>Remote working:
+  <ul>
+    <li>Work in the open.</li>
+    <li>Document though processes.</li>
+    <li>Write up decisions, priorities and actions.</li>
+    <li>Encourage all staff to take complete ownership of unblocking themselves.</li>
+    <li>Have multiple items to work on.</li>
+  </ul></li>
+  <li>Leave loudly.</li>
+</ul><h2><a name="ch-17"></a>Chapter 17 - Startups</h2>
+<ul>
+  <li>First manager == VP engineering
+  <ul>
+    <li>Ownership delivery process.</li>
+    <li>Performance of engineers.</li>
+    <li>Resource and prioritization of projects.</li>
+    <li>Hiring.</li>
+    <li>Building stuff.</li>
+    <li>Keep CTO focused on building.</li>
+  </ul></li>
+  <li>Are you a cathedral builder or a bazaar browser?</li>
+</ul><h2><a name="ch-18"></a>Chapter 18 - The Crystal Ball</h2>
+<ul>
+  <li>Sometimes having fewer options work out better.</li>
+  <li>Every job that you have should be a meaningful step towards the vision that you have for yourself in the future.</li>
+  <li>People struggle to create a vision because:
+  <ol>
+    <li>They don&rsquo;t dream big enough.</li>
+    <li>They aren&rsquo;t clear enough.</li>
+  </ol></li>
+</ul>]]></description></item><item><title>Book notes: The HP Way</title><link>https://danlebrero.com/2024/08/16/the-hp-way-summary/</link><guid>https://danlebrero.com/2024/08/16/the-hp-way-summary/</guid><pubDate>Fri, 16 Aug 2024 00:00:00 +0200</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/4dKZsXY">The HP Way: How Bill Hewlett and I Built Our Company</a> by <a href="https://en.wikipedia.org/wiki/David_Packard">David Packard</a>.</p>
 <blockquote><p>Not about adopting the HP way, but an example of the power of building a company based on a framework of principles.</p>
 </blockquote><h1>Key Insights</h1>
 <ul>
@@ -59,7 +854,7 @@
   <li>Acquisitions main difficulty: Blending two cultures, operating philosophies, and a management styles.</li>
   <li>No operating policy has contributed more to HP success than the policy of &ldquo;management by objectives&rdquo;:
   <ul>
-    <li>Employees must take sufficient interest in their work to want to plan it, to propose new solutions to old problems, and to jmp in when they have something to contribute.</li>
+    <li>Employees must take sufficient interest in their work to want to plan it, to propose new solutions to old problems, and to jump in when they have something to contribute.</li>
   </ul></li>
   <li>The best job can be done when the manager has a genuine and thorough understanding of the work:
   <ul>
@@ -283,7 +1078,7 @@
 <ul>
   <li>No operating policy has contributed more to HP success than the policy of &ldquo;management by objectives&rdquo;:
   <ul>
-    <li>Employees must take sufficient interest in their work to want to plan it, to propose new solutions to old problems, and to jmp in when they have something to contribute.</li>
+    <li>Employees must take sufficient interest in their work to want to plan it, to propose new solutions to old problems, and to jump in when they have something to contribute.</li>
   </ul></li>
   <li>Peter Drucker:
   <ul>
@@ -4450,313 +5245,4 @@
     <li>Go independent.</li>
     <li>Change careers.</li>
   </ul></li>
-</ul>]]></description></item><item><title>Book notes: Deming's Journey to Profound Knowledge: How Deming Helped Win a War, Altered the Face of Industry, and Holds the Key to Our Future</title><link>https://danlebrero.com/2024/01/04/deming-journey-to-profound-knowledge-summary/</link><guid>https://danlebrero.com/2024/01/04/deming-journey-to-profound-knowledge-summary/</guid><pubDate>Thu, 04 Jan 2024 00:00:00 +0100</pubDate><description><![CDATA[<p>These are my notes on <a href="https://amzn.to/3FFsMQH">Deming&rsquo;s Journey to Profound Knowledge: How Deming Helped Win a War, Altered the Face of Industry, and Holds the Key to Our Future</a> by <a href="https://twitter.com/botchagalupe">John Willis</a> with <a href="https://www.linkedin.com/in/dereklewisbooks/">Derek Lewis</a>.</p><p>&ldquo;This book is truly about how the lens of Profound Knowledge was found&rdquo;.</p><h1>Key Insights</h1>
-<ul>
-  <li>Deming is the foundation of Lean, Agile and DevOps.</li>
-  <li>Variability is a fact of life.</li>
-  <li>Elements of the System of Profound Knowledge:
-  <ol>
-    <li>A Theory of Knowledge: How we know what we believe we know?</li>
-    <li>A Theory of Variation: How do we analyze and understand what we know?</li>
-    <li>A Theory of Psychology: How do we account for human behaviour?</li>
-    <li>An Appreciation of Systems/Systems Thinking: Are we seeing the bigger picture?</li>
-  </ol></li>
-  <li>The opposite of analytic thinking is systems thinking.</li>
-  <li>Japanese workers believed they were doing something that <em>mattered</em>.</li>
-  <li>No matter how precise the machines and the processes, the outputs all slightly varied from each other.</li>
-  <li>Less waste allowed manufacturers to do more and more with less and less.</li>
-  <li>Shewhart’s method enabled management to see defects as result of process instead of the workers.</li>
-  <li>Defect classification:
-  <ol>
-    <li>Common cause: variations that could be predicted and should be planned for.</li>
-    <li>Special cause: couldn&rsquo;t be predicted and shouldn&rsquo;t be planned for.</li>
-  </ol></li>
-  <li>The real value of Statistical Process Control is that it allows you to observe variation and look at random vs non-random patterns:
-  <ul>
-    <li>A random pattern represents a stable process, aka a process &ldquo;under control&rdquo;.</li>
-    <li>A non-random pattern is a useful predictor of potential defects, signaling an amount of uncertainly in the process.</li>
-    <li>And here is the root of all evil: misidentifying variation.</li>
-  </ul></li>
-  <li>Under-performing and brand-new operators would have 100% of their work inspected until their work fell within the control limits.</li>
-  <li>We really didn’t believe. We did what we were told and it worked.</li>
-  <li>They shouldn’t strive to be better than others but to strive to be better than themselves - that is true competition.</li>
-  <li>Management by means (MBM):
-  <ul>
-    <li>If you don&rsquo;t know how you achieved your objective, how do you know if you can do it again?</li>
-  </ul></li>
-  <li><a href="https://deming.org/explore/fourteen-points/">14 Points for Management</a></li>
-  <li>A common disease that afflicts management is the impression that “our problems are different”.</li>
-  <li>Only 6% of problems are due to human error. 94% are system error. And since the system is the responsibility of management, 94% of problems are caused by bad management.</li>
-  <li><p>Quality is not so much about improving the product as it is about improving the process.</p>
-  <blockquote>In God we trust. All others must bring data. <cite>Dr. Deming</cite>
-  </blockquote></li>
-  <li>Organizations need to be a place where people can teach themselves.</li>
-  <li>Perfection is not for this world.</li>
-</ul><h1>TOC</h1>
-<ul>
-  <li><a href="#p-0">Preface</a></li>
-  <li><a href="#p-00">Introduction</a></li>
-  <li><a href="#p-1">Part I - Foundations of Profound Knowledge</a>
-  <ul>
-    <li><a href="#ch-1">Chapter 1 - Humble Origins &amp; Non-Determinism</a></li>
-    <li><a href="#ch-2">Chapter 2 - The Jungle in Paradise</a></li>
-    <li><a href="#ch-3">Chapter 3 - The Birth of Quality Control &amp; Standardization</a></li>
-    <li><a href="#ch-4">Chapter 4 - The Root of All Evil</a></li>
-    <li><a href="#ch-5">Chapter 5 - Pragmatist</a></li>
-  </ul></li>
-  <li><a href="#p-2">Part II - Applications of Profound Knowledge</a>
-  <ul>
-    <li><a href="#ch-6">Chapter 6 - Dr. Deming Goes to Washington</a></li>
-    <li><a href="#ch-7">Chapter 7 - Rosie &amp; World War II</a></li>
-    <li><a href="#ch-8">Chapter 8 - CLASSIFIED</a></li>
-  </ul></li>
-  <li><a href="#p-3">Part III - International Implications of Profound Knowledge</a>
-  <ul>
-    <li><a href="#ch-9">Chapter 9 - Samurai Statistics</a></li>
-    <li><a href="#ch-10">Chapter 10 - JUSE &amp; the Gentle Giant</a></li>
-    <li><a href="#ch-11">Chapter 11 - The Butterfly Effect</a></li>
-    <li><a href="#ch-12">Chapter 12 - Made in Japan</a></li>
-    <li><a href="#ch-13">Chapter 13 - Rising Sun, Falling Eagle</a></li>
-    <li><a href="#ch-14">Chapter 14 - Demingmania</a></li>
-    <li><a href="#ch-15">Chapter 15 - Dr. Quinn, Medicine Woman</a></li>
-  </ul></li>
-  <li><a href="#p-4">Part IV - The Next Generation of Profound Knowledge</a>
-  <ul>
-    <li><a href="#ch-16">Chapter 16 - The Digital Cambrian Explosion</a></li>
-    <li><a href="#ch-17">Chapter 17 - What Would Deming Do?</a></li>
-    <li><a href="#ch-18">Chapter 18 - Deming&rsquo;s Dark Legacy</a></li>
-    <li><a href="#ch-19">Chapter 19 - Out of the Cyber Crisis</a></li>
-  </ul></li>
-</ul><h1><a name="p-0"></a>Preface</h1>
-<ul>
-  <li><a href="https://amzn.to/3s94VpF">Eliyahu Goldratt</a> books:
-  <ul>
-    <li>The Goal.</li>
-    <li>Theory of Constraints.</li>
-    <li>Critical Chain.</li>
-    <li>It&rsquo;s Not Luck.</li>
-    <li>Necessary but Not Sufficient.</li>
-  </ul></li>
-  <li>Deming is the foundation of Lean, Agile and DevOps.</li>
-</ul><h2><a name="p-00"></a>Introduction</h2>
-<ul>
-  <li>The Allies won because the US outproduced the rest of the world:
-  <ul>
-    <li>Despite the absence of millions of skilled American workers and managers.</li>
-    <li>Thanks to the statistical process control method.</li>
-  </ul></li>
-  <li>The very nature of reality is random.</li>
-  <li>Variability is a fact of life.</li>
-  <li>Elements of the System of Profound Knowledge:
-  <ol>
-    <li>A Theory of Knowledge: How we know what we believe we know?</li>
-    <li>A Theory of Variation: How do we analyze and understand what we know?</li>
-    <li>A Theory of Psychology: How do we account for human behaviour?</li>
-    <li>An Appreciation of Systems/Systems Thinking: Are we seeing the bigger picture?</li>
-  </ol></li>
-  <li>Deming&rsquo;s mission was to work himself out of a job.</li>
-</ul><h1><a name="p-1"></a>Part I - Foundations of Profound Knowledge</h1><h2><a name="ch-1"></a>Chapter 1 - Humble Origins &amp; Non-Determinism</h2>
-<ul>
-  <li>Determinism (Newtonian Physics): World operates solely on cause and effect.</li>
-  <li>Non-Determinism:
-  <ul>
-    <li>No matter how much you know, there is an infinite amount of change and randomness in the universe.</li>
-    <li>No such thing as absolute certainty.</li>
-    <li>Crucial role in shaping Deming&rsquo;s worldview:
-    <ol>
-      <li>Long-established and long-held beliefs weren&rsquo;t necessarily true.</li>
-      <li>Underpinnings of our very existence are random.</li>
-      <li>Forced him to look at problems as multifaceted, complex systems.</li>
-    </ol></li>
-  </ul></li>
-  <li>The opposite of analytic thinking is systems thinking.</li>
-</ul><h2><a name="ch-2"></a>Chapter 2 - The Jungle in Paradise</h2>
-<ul>
-  <li>Hawthorne Works:
-  <ul>
-    <li>Treated its workers more like partners than peasants. And it worked.</li>
-    <li>Corporate success forged a bond of loyalty with its employees.</li>
-    <li>&ldquo;Hawthorne Effect&rdquo;:
-    <ul>
-      <li>The act of subjects changing their behaviour in response to being observed.</li>
-    </ul></li>
-  </ul></li>
-  <li>Japanese workers believed they were doing something that <em>mattered</em>.</li>
-  <li>Workers:
-  <ul>
-    <li>Ford:
-    <ul>
-      <li>Saw them as inconvenient cogs in the machine.</li>
-      <li>Standardize to make them interchangeable.</li>
-    </ul></li>
-    <li>Taylor:
-    <ul>
-      <li>Scientific management.</li>
-      <li>Saw them as machines themselves.</li>
-      <li>Optimize them for maximum efficiency, through right physical and psychological conditions.</li>
-    </ul></li>
-    <li>Both:
-    <ul>
-      <li>Think that workers don&rsquo;t want to work.</li>
-      <li>Antagonism between workers and managers.</li>
-    </ul></li>
-  </ul></li>
-  <li>Piecework is man&rsquo;s lowest degradation:
-  <ul>
-    <li>Incentivices workers to focus on quantity, not quality.</li>
-  </ul></li>
-</ul><h2><a name="ch-3"></a>Chapter 3 - The Birth of Quality Control &amp; Standardization</h2>
-<ul>
-  <li>The eternal question of quality has always been this: &ldquo;How good is good enough?&rdquo;</li>
-  <li>Machine age: standardization was the catalyst.</li>
-  <li>Interchangeable parts were the turning point in the history of quality control and led to the theory of variation.</li>
-  <li>No matter how precise the machines and the processes, the outputs all slightly varied from each other:
-  <ul>
-    <li>This spawned a need to allow for variance in product specifications.</li>
-    <li>This is more in line with a non-deterministic approach.</li>
-  </ul></li>
-</ul><h2><a name="ch-4"></a>Chapter 4 - The Root of All Evil</h2>
-<ul>
-  <li>Statistics is about how confident you feel when dealing with uncertainty.</li>
-  <li>Operational definition: procedure agreed upon to translate a concept into a precise measurement.</li>
-  <li>If you can track variation, then you can trace variation to better understand why a production line creates defects and detect it much earlier in the process.</li>
-  <li>Statistical Process Control (SPC) let managers compare variation across workers and machines.</li>
-  <li>Less waste allowed manufacturers to do more and more with less and less.</li>
-  <li>Shewhart&rsquo;s method enabled management to see defects as result of process instead of the workers.</li>
-  <li>Plan, do, check, study.</li>
-  <li>Defect classification:
-  <ol>
-    <li>Common cause: variations that could be predicted and should be planned for.</li>
-    <li>Special cause: couldn&rsquo;t be predicted and shouldn&rsquo;t be planned for.</li>
-  </ol></li>
-  <li>Shewhart: as long as the variance fell within standard-deviation limits, the variance was inherent to the manufacturing process (common cause).</li>
-  <li>The real value of SPC is that it allows you to observe variation and look at random vs non-random patterns:
-  <ul>
-    <li>A random pattern represents a stable process, aka a process &ldquo;under control&rdquo;.</li>
-    <li>A non-random pattern is a useful predictor of potential defects, signaling an amount of uncertainly in the process.</li>
-    <li>And here is the root of all evil: misidentifying variation.</li>
-    <li>As a result, managers can spend their time on things they can control.</li>
-  </ul></li>
-  <li>SPC allows you to statistically predict defects before they occur.</li>
-</ul><h2><a name="ch-5"></a>Chapter 5 - Pragmatist</h2>
-<ul>
-  <li>The philosophy of pragmatism, what Deming would later call the Theory of Knowledge.</li>
-  <li>A meter would be defined as the cord length needed for a clock&rsquo;s pendulum to travel one swing per second.</li>
-  <li>Two types of knowledge: a priori and a posteriori.</li>
-  <li>A posteriori thinkers or &ldquo;pragmatists&rdquo;:
-  <ul>
-    <li>Experience is the best teacher.</li>
-    <li>Begin with observations and empirical data (hard evidence) and then work their way backwards.</li>
-  </ul></li>
-  <li>A standard is a measurement that suffices and that everybody agrees upon.</li>
-</ul><h1><a name="p-2"></a>Part II - Applications of Profound Knowledge</h1><h2><a name="ch-6"></a>Chapter 6 - Dr. Deming Goes to Washington</h2>
-<ul>
-  <li>Under-performing and brand-new operators would have 100% of their work inspected until their work fell within the control limits.</li>
-</ul><h2><a name="ch-7"></a>Chapter 7 - Rosie &amp; World War II</h2>
-<ul>
-  <li>Victory came because the US outproduced the rest of the world.</li>
-</ul><h2><a name="ch-8"></a>Chapter 8 - CLASSIFIED</h2>
-<ul>
-  <li>Bounded rationality: humans can process only so much information at a time.</li>
-  <li>David Woods: Anomaly response situations frequently involved time pressure, multiple interacting goals, high consequences of failure, and multiple interleaved tasks.</li>
-</ul><h1><a name="p-3"></a>Part III - International Implications of Profound Knowledge</h1><h2><a name="ch-9"></a>Chapter 9 - Samurai Statistics</h2>
-<ul>
-  <li>The US used statistics to win the war, even as Japan threw statistics out of the windows. Afterwards, Japan used statistics to win the economic war, even as the US threw statistics out the window.</li>
-</ul><h2><a name="ch-10"></a>Chapter 10 - JUSE &amp; the Gentle Giant</h2>
-<ul>
-  <li>SPC wasn&rsquo;t just about applying statistics to output. Quality touched everything in the process, including the quality of raw materials and components received from supplier and vendors.</li>
-  <li>Ed knew that unless it included top management, the classes were unlikely to succeed.</li>
-  <li>JUSE used the proceeds from the lecture fees and book royalties to fund a prize in Deming&rsquo;s honor. Accomplished three critical purposes:
-  <ol>
-    <li>Associated JUSE with one of the most famous statisticians in the world.</li>
-    <li>Laid a sort of territorial claim to the man.</li>
-    <li>Guaranteed Deming&rsquo;s involvement in Japan.</li>
-  </ol></li>
-  <li>Deming: They wanted more conferences, so we had more. It was a terrifying experience for me because I was new at it. I was a technical man.</li>
-  <li>We really didn&rsquo;t believe. We did what we were told and it worked.</li>
-  <li>He inspired hope, if not confidence.</li>
-</ul><h2><a name="ch-11"></a>Chapter 11 - The Butterfly Effect</h2>
-<ul>
-  <li>He demonstrated how even competitors working together benefited their respective companies and, more importantly, their customers.</li>
-  <li>What is Deming&rsquo;s real legacy? It is seeing the grander scheme and preaching cooperation instead of competition.</li>
-  <li>They shouldn&rsquo;t strive to be better than others but to strive to be better than themselves - that is true competition.</li>
-</ul><h2><a name="ch-12"></a>Chapter 12 - Made in Japan</h2>
-<ul>
-  <li>Because demand and profit margins were so high, US companies could afford waste, rework, stockpiling inventory, and other inefficiencies.</li>
-  <li>Taylorism focused on eliminating individual waste. Ohno focused on systemic waste.</li>
-  <li>Assembly-line workers were cross-trained in different positions.</li>
-  <li>Machines were make multipurpose.</li>
-  <li>Kanban:
-  <ul>
-    <li>The aim was to produce only what was needed, when it was needed, and in the amount needed.</li>
-    <li>It went against everything Henry Ford believed and practiced.</li>
-  </ul></li>
-</ul><h2><a name="ch-13"></a>Chapter 13 - Rising Sun, Falling Eagle</h2>
-<ul>
-  <li>Kaizen: a process of deliberate, patient, continual refinement.</li>
-  <li>How long do you think it will take the US to catch up with Japan?
-  <ul>
-    <li>Do you think Japan is standing still?</li>
-  </ul></li>
-  <li>What made one manufacturing plant better than others? Adopting a lean manufacturing philosophy trumped all those other factors.</li>
-  <li>US companies focused on the process but forgot the people.</li>
-</ul><h2><a name="ch-14"></a>Chapter 14 - Demingmania</h2>
-<ul>
-  <li>Management by means (MBM):
-  <ul>
-    <li>If you don&rsquo;t know how you achieved your objective, how do you know if you can do it again?</li>
-  </ul></li>
-  <li><a href="https://deming.org/explore/fourteen-points/">14 Points for Management</a>:
-  <ul>
-    <li>Improve constantly and forever the system.</li>
-    <li>Eliminate slogans, exhortations, and targets for the workforce asking for zero defects and new levels of productivity. Such exhortations only create adversarial relationships, as the build of the causes of low quality and low productivity belong to the system and thus lie beyond the power of the workforce.</li>
-  </ul></li>
-  <li>Waraniak didn&rsquo;t focus on the race: he looked at the preparations and training leading up to it:
-  <ul>
-    <li>By using two cars and two teams in the design, training, and setup phases, GM could prototype twice the number of ideas and innovations.</li>
-  </ul></li>
-</ul><h2><a name="ch-15"></a>Chapter 15 - Dr. Quinn, Medicine Woman</h2><h1><a name="p-4"></a>Part IV - The Next Generation of Profound Knowledge</h1><h2><a name="ch-16"></a>Chapter 16 - The Digital Cambrian Explosion</h2>
-<ul>
-  <li>Dr. Deming reaction to someone who was complaning that he had changed something in his teaching: &ldquo;I will never apologize for learning&rdquo;.</li>
-  <li>Lean development focus on waste, whereas agile focus on delivery.</li>
-  <li>Steve Blank, The Lean Startup: putting together build, measure, learn and MVP with agile and lean methodologies.</li>
-  <li>DevOps: collaboration between devs and ops, and automation of agile and lean principles.</li>
-  <li>Read Deming&rsquo;s 14 Points of Management to understand the roots of DevOps.</li>
-</ul><h2><a name="ch-17"></a>Chapter 17 - What Would Deming Do?</h2>
-<ul>
-  <li>A common disease that afflicts management is the impression that &ldquo;our problems are different&rdquo;:
-  <ul>
-    <li>They are different, to be sure, but the principles that will help are universal in nature.</li>
-  </ul></li>
-  <li>To profoundly change a system, requires know-how outside of that system.
-  <ul>
-    <li>If the system had the knowledge, then it would change itself on its own.</li>
-    <li>Ed&rsquo;s System of Profound Knowledge does not require someone from the outside.</li>
-  </ul></li>
-  <li>Only 6% of problems are due to human error. 94% are system error.
-  <ul>
-    <li>And since the system is the responsibility of management, 94% of problems are caused by bad management.</li>
-  </ul></li>
-</ul><h2><a name="ch-18"></a>Chapter 18 - Deming&rsquo;s Dark Legacy</h2>
-<ul>
-  <li>From 2021, federal government&rsquo;s vendors are required to supply a software bill of materials.</li>
-</ul><h2><a name="ch-19"></a>Chapter 19 - Out of the Cyber Crisis</h2>
-<ul>
-  <li>When you silo cybersecurity, seeing it as an independent component instead of a system, you put your entire organization at risk.</li>
-  <li><p>Shannon Lietz: security needs to be designed into an organization&rsquo;s system.</p>
-  <blockquote>It is not necessary to change. Survival is not mandatory. <cite>Dr. Deming</cite>
-  </blockquote></li>
-  <li>Today, leaders wait until there is a problem before they fix it.</li>
-  <li>Quality is not so much about improving the product as it is about improving the process.</li>
-  <li>Tighter relationships with fewer suppliers lead to increased process alignment and lower overall costs.</li>
-  <li>In God we trust. All others must bring data.</li>
-  <li>Instead of looking at incidents through arbitrary categories (P1 to P4), System of Profound Knowledge could be used to identify common-cause and special-cause patterns across all incidents.</li>
-  <li>Blameless post-mortem: instead of assigning a problem to a certain person, blame would be placed on the system.</li>
-  <li>&ldquo;I didn&rsquo;t question it&rdquo;: famous last words.</li>
-  <li>Plenty of executive managers still don&rsquo;t understand the nature of the digital world and demand &ldquo;zero defects&rdquo; or &ldquo;never fail&rdquo; software.</li>
-  <li>Maginot Line thinking is when you expend considerable resources in an effort to counteract a past threat.</li>
-  <li>The security industry should assume that hackers will gain access to the system. We should plan for the inevitability of them getting in.</li>
-  <li>Too often, managing by hard numbers sacrifices quality.</li>
-  <li>Organizations need to be a place where people can teach themselves.</li>
-  <li>Perfection is not for this world.</li>
 </ul>]]></description></item></channel></rss>
